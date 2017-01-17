@@ -1,0 +1,70 @@
+#
+#	《TWP》WorldServer配置文件
+#
+
+
+# server log
+# 0 LOG_LEVEL_DEBUG 1 LOG_LEVEL_INFO 
+# 2LOG_LEVEL_WARN 3 LOG_LEVEL_ERROR 4 LOG_LEVEL_FATAL
+log_level = 0
+# net log
+net_log_level = 1
+
+# 服务器大区
+server_realm = 1
+# 集群组
+server_cluster = 1
+
+# ip for server
+ip_for_server = 127.0.0.1
+# port for server
+port_for_server = 18888
+
+# game options
+daily_reset_time_hour = 14
+daily_reset_time_min = 0
+anti_system_is_open = 0
+
+# 播放假VIP公告
+enable_fake_vip_broadcast = true
+fake_vip_broadcast_rate = 432000000
+
+# activity options
+enable_rob_food_war = true
+rob_food_war_prepare_time = 2009-01-01 18:50:00.000
+rob_food_war_begin_time = 2009-01-01 19:00:00.000
+rob_food_war_to_end_time = 2009-01-01 19:25:00.000
+rob_food_war_end_time = 2009-01-01 19:29:58.000
+
+# activity options
+enable_rob_copper_war = true
+rob_copper_war_prepare_time = 2009-01-01 12:50:00.000
+rob_copper_war_begin_time = 2009-01-01 13:00:00.000
+rob_copper_war_to_end_time = 2009-01-01 13:25:00.000
+rob_copper_war_end_time = 2009-01-01 13:29:58.000
+
+# activity options
+enable_guild_war = true
+guild_war_prepare_time = 2009-01-01 20:20:00.000
+guild_war_begin_time = 2009-01-01 20:30:00.000
+guild_war_to_end_time = 2009-01-01 20:55:00.000
+guild_war_end_time = 2009-01-01 20:59:58.000
+
+# activity options
+enable_arena_war = true
+arena_war_prepare_time = 2009-01-01 20:50:00.000
+arena_war_begin_time = 2009-01-01 21:00:00.000
+arena_war_to_end_time = 2009-01-01 22:55:00.000
+arena_war_end_time = 2009-01-01 23:00:00.000
+
+# activity options
+enable_group_war = true
+group_war_prepare_time1 = 2009-01-01 13:29:00.000
+group_war_begin_time1 = 2009-01-01 13:30:00.000
+group_war_to_end_time1 = 2009-01-01 14:29:00.000
+group_war_end_time1 = 2009-01-01 14:30:00.000
+
+group_war_prepare_time2 = 2009-01-01 19:29:00.000
+group_war_begin_time2 = 2009-01-01 19:30:00.000
+group_war_to_end_time2 = 2009-01-01 20:29:00.000
+group_war_end_time2 = 2009-01-01 20:29:58.000
