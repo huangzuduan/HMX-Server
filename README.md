@@ -17,7 +17,7 @@ HMX-Server分步式服务器框架，主要分为网关、登录、世界、场�
 ![世界服启动](https://github.com/huangzuduan/HMX-Server/blob/master/Pics/ws.png?raw=true)
 
 **数据服**
-![数据服](https://github.com/huangzuduan/HMX-Server/blob/master/Pics/ss.png?raw=true)
+![数据服](https://github.com/huangzuduan/HMX-Server/blob/master/Pics/dp.png?raw=true)
 
 **场景服**
 ![场景服](https://github.com/huangzuduan/HMX-Server/blob/master/Pics/ss.png?raw=true)
