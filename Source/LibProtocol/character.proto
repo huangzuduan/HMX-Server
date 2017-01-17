@@ -1,0 +1,69 @@
+syntax = "proto2";
+
+package protobuf;
+
+// 计数器 
+message CounterInfo
+{
+	optional int32 itemid = 1;
+	optional int32 itemval = 2;
+	optional int32 starttime = 3;
+	optional int32 endtime = 4;
+}
+
+message MyCounters
+{
+	repeated CounterInfo counters = 1; 
+}
+
+// 单项记录唯一ID 
+message UniqueIDItem
+{
+	optional int32 itemid = 1;
+	optional int32 startid = 2;
+	optional int32 endid = 3;
+	optional int32 steplenght = 4;
+	optional int32 startcount = 5;
+}
+
+// 我的所有项唯一ID
+message MyUniqueID
+{
+	repeated UniqueIDItem uuids = 1; 
+}
+
+// 社会成员
+message RelInfo
+{
+	optional int64 uid = 1;
+	optional int32 rel = 2;
+	optional int32 createtime = 3;
+	optional int32 dealreltime = 4;
+}
+
+// 社会关系
+message Relation
+{
+	repeated RelInfo rels = 99;
+}
+
+// 角色二进制数据 
+message UserBinary {
+
+	optional MyCounters counters = 1;	// 计数器 
+	optional MyUniqueID uniqueid = 2;	// 唯一ID
+	optional Relation   relation = 3;   
+}
+
+
+// 离线数据角色表（WS）
+message WsUser
+{
+	optional int64 char_id = 1;
+	optional int64 account_id = 2;
+	optional string name = 3;
+	optional int32 type = 4;
+	optional int32 level = 5;
+}
+
+

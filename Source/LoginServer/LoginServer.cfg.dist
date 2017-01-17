@@ -1,0 +1,25 @@
+#	 《TWP》LoginServer配置文件
+#
+
+# log 显示等级
+# 0 LOG_LEVEL_DEBUG 1 LOG_LEVEL_INFO 
+# 2 LOG_LEVEL_WARN 3 LOG_LEVEL_ERROR 4 LOG_LEVEL_FATAL
+log_level = 1
+# net log 显示等级
+net_log_level = 1
+
+# World Server IP
+ws_ip = 127.0.0.1
+
+# World Server Port
+ws_port = 18888
+
+############################################
+# login type
+user_login_type = 2
+# server
+authentication_urls = http://192.168.1.78/portal
+# game name
+authentication_game_id = yaowan_td
+# game code
+authentication_game_code = sefs)-=3ae32!l

@@ -1,0 +1,34 @@
+syntax = "proto2";
+
+package protobuf;
+
+// 频道消息
+
+
+message UserData
+{
+	optional int64 uid = 1;		// 唯一ID 
+	optional string name = 2;	// 缓存名字
+	optional int32 createtime = 3; 	// 参与时间
+	optional int32 receivetime = 4; // 收到时间(如果不在线，则该值为0),> 0 代表已经发送过给用户 
+}
+
+message MsgData
+{
+	optional int64 msgid = 1;
+	optional int32 createtime = 2;
+	optional string msgstr = 3;
+}
+
+
+// 单条频道信息的Binary
+message ChatMsgBinary 
+{
+	//optional int64 id = 1;
+	//optional int32 createtime = 2;
+	repeated UserData users = 1; 
+	repeated MsgData msgs = 2;
+}
+
+
+

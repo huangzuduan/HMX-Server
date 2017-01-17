@@ -1,0 +1,24 @@
+#
+#	《TD》SectionServer配置文件
+#
+
+#log 显示等级
+#0 LOG_LEVEL_DEBUG 1 LOG_LEVEL_INFO 
+#2 LOG_LEVEL_WARN 3 LOG_LEVEL_ERROR 4 LOG_LEVEL_FATAL
+log_level = 0
+# net log 显示等级
+#net_log_level = 2
+
+#World Server IP
+ws_ip = 127.0.0.1
+
+#World Server Port
+ws_port = 18888
+
+#场景服务器ID
+#0  副本场景服
+#!0 固定场景服
+game_server_id = 5001
+
+#资源路径
+resfiles_dir = ../../../../res

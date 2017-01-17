@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package protobuf;
+
+// 单个道具
+message ItemInfo 
+{
+	optional int32 itemid = 1;
+	optional int32 itemnum = 2;
+	optional int32 index = 3;
+	optional int32 uniqueid = 4;
+}
+
+// 二进制杂项
+message ItemBinaryData
+{	
+	repeated ItemInfo items = 1; // 背包道具记录 
+}
+
+// 背包表 
+message Itemslots {
+	optional int64 char_id = 1;
+	optional int32 capacity = 2;
+	optional int32 usecapacity = 3;
+	optional ItemBinaryData binary_data = 4;
+}
+
+
+

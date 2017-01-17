@@ -1,0 +1,117 @@
+CC      = g++
+
+CFLAGS = -c -g \
+-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -D_USE_FAST_MACRO
+#-W -Wall warring -Wcast-qual -Wcast-align
+#-Waggregate-return
+###########################################################
+#Check system:
+#       Linux, SunOS, Solaris, BSD variants, AIX, HP-UX
+SYSLIB = -lpthread
+CHECKSYSRES = @echo "Unknow system type!";exit 1
+UNIXNAME = $(shell uname -sm)
+
+ifeq ($(CC),)
+        CC = gcc
+endif
+
+# For FreeBSD
+ifeq ($(findstring FreeBSD, $(UNIXNAME)), FreeBSD)
+	ifeq ($(findstring gcc, $(CC)), gcc)
+		CFLAGS += -Wstrict-prototypes
+	endif
+	CFLAGS += -DFREEBSD -D_REENTRANT -Wshadow
+	SYSLIB = -lcrypt -lpthread
+endif
+
+#Path for Linux
+ifeq ($(findstring Linux, $(UNIXNAME)), Linux)
+	CFLAGS += -DLINUX2 -D_REENTRANT
+endif
+
+#Path for SunOS
+ifeq ($(findstring SunOS, $(UNIXNAME)), SunOS)
+	ifeq ($(findstring 86, $(UNIXNAME)), 86)
+		SYSLIB += -lsocket -lnsl -lrt
+	endif
+	ifeq ($(findstring sun4u, $(UNIXNAME)), sun4u)
+		SYSLIB += -lsocket -lnsl -lrt
+	endif
+	ifeq ($CC, "gcc")
+		CFLAGS += -Wstrict-prototypes
+	endif
+	CFLAGS += -DSUNOS5 -D_REENTRANT
+endif
+
+#Path for HP-UX
+ifeq ($(findstring HP-UX, $(UNIXNAME)), HP-UX)
+	ifeq ($CC, "gcc")
+		CFLAGS += -Wstrict-prototypes
+	endif
+	CFLAGS += -DHP_UX -DHPUX11 -Wshadow
+	PLAT_NAME=hp-ux
+endif
+
+#Find system type.
+ifneq ($(SYSPATH),)
+	CHECKSYSRES = @echo "System is $(shell uname -sm)"
+endif
+###########################################################
+#-----------------------------------------------------------
+#CFLAGS += -I. -I引入头文件路径  -I引入头文件路径
+#EXTLIBS = 其他libs路径
+#LDFLAGS = -L库路径 -l载入的
+#-----------------------------------------------------------
+CFLAGS += -I. -I/usr/local/boost/include -I/usr/local/mysql/include -I/usr/local/protobuf/include \
+	-I../DyNetMysql -I../DyNetSocket -I../Shared/CommonDef -I../Shared/Protocol -I../Shared/Utility -I../Shared/Zebra
+EXTLIBS = -lnetmysql -lnetsocket -lprotobuf -lmysqlclient \
+	-lboost_system -lboost_thread -lboost_date_time -lboost_iostreams -lboost_program_options -lboost_regex -lboost_filesystem -lboost_chrono
+LDFLAGS = -L/usr/local/boost/lib -L/usr/local/mysql/lib  -L/usr/local/protobuf/lib -L../DyNetMysql/lib -L../DyNetSocket/lib \
+	$(EXTLIBS) $(SYSLIB)
+
+COMPILE = $(CC) $(CFLAGS)
+LINK = $(CC) $(OBJ) $(OBJPRO) $(LDFLAGS)
+###########################################################
+OBJ_PATH = .
+
+#Project's objs
+
+SRCPRO := $(wildcard ../Shared/Protocol/*.cc) $(UTIL)
+OBJPRO := $(patsubst %.cc, $(OBJ_PATH)/%.o, $(notdir $(SRCPRO)))
+
+#$(OBJ_PATH)/%.pb.o: ../Shared/Protocol/%.pb.cc
+#	$(COMPILE) $< -o $@
+
+###########################################################
+
+SRC := $(wildcard *.cpp) $(wildcard ../Shared/CommonDef/*.cpp)  $(wildcard ../Shared/Utility/*.cpp) $(wildcard ../Shared/Zebra/*.cpp) $(UTIL)
+OBJ := $(patsubst %.cpp, $(OBJ_PATH)/%.o, $(notdir $(SRC)))
+
+
+
+$(OBJ_PATH)/%.o: %.cpp
+	$(COMPILE) $< -o $@
+$(OBJ_PATH)/%.o: ../Shared/CommonDef/%.cpp
+	$(COMPILE) $< -o $@
+$(OBJ_PATH)/%.o: ../Shared/Protocol/%.cc
+	$(COMPILE) $< -o $@
+$(OBJ_PATH)/%.o: ../Shared/Utility/%.cpp
+	$(COMPILE) $< -o $@
+$(OBJ_PATH)/%.o: ../Shared/Zebra/%.cpp
+	$(COMPILE) $< -o $@
+
+
+
+.PHONY = all clean
+all: RM $(OBJPRO) $(OBJ)
+	$(LINK) -o $(PROG)
+	@echo ""
+	@echo "All ok! Output:$(PROG)"
+	@echo ""
+RM:
+	rm -f $(PROG)
+clean:
+	rm -f $(PROG)
+	rm -f $(OBJPRO)
+	rm -f $(OBJ)
+###########################################################

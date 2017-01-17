@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<!-- local -->
+	<local id="5001" host="127.0.0.1" port="9905" type="5"></local>
+	<!-- wsserver -->
+	<remote id="3001" host="127.0.0.1" port="9903" type="3"></remote>
+	<!-- database -->
+	<database host="127.0.0.1" user="root" pass="root" dbname="stock_data" port="3306"></database>
+</items>

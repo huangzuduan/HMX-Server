@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<!-- 本地Server_For_Ss服，给其他服务器通信用，如ss,ls的连接 -->
+	<local id="1001" host="127.0.0.1" port="9101" type="1"/>
+	<!-- 本地Client_Connect_Ws，连接世界服 -->
+	<remote id="3001" host="127.0.0.1" port="9903" type="3"/>
+	<!-- 本地Server_For_Client服，给外界连接用，如玩家客户端 -->
+	<client id="0" host="127.0.0.1" port="9001" type="0"/>
+</items>

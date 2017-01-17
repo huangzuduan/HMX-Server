@@ -1,0 +1,49 @@
+#	 《TWP》dp配置文件
+#
+
+# 服务器本身 log 显示等级
+# 1 LOG_LEVEL_DEBUG 1 LOG_LEVEL_INFO 
+# 2 LOG_LEVEL_WARN 3 LOG_LEVEL_ERROR 4 LOG_LEVEL_FATAL
+log_level = 0
+# net log 显示等级
+net_log_level = 1
+
+# Server 连接IP
+ip_for_server = 127.0.0.1
+# Server 连接 端口
+port_for_server = 40000
+
+# World Server IP
+ws_ip = 127.0.0.1
+
+# World Server Port
+ws_port = 18888
+
+# ------------------------------------------------------
+# db charset type
+# 0 latin1 1 GBK Simplified Chinese
+# 2 SJIS for Windows Japanese
+# 4 utf-8
+db_charset = 4
+# member db 
+db_member_address = 127.0.0.1
+db_member_port = 3306
+db_member_username = root
+db_member_password = root
+db_member_schema = td_memberdb
+db_member_thread_num = 3
+# game db
+db_game_address = 127.0.0.1
+db_game_port = 3306
+db_game_username = root
+db_game_password = root
+db_game_schema = td_gamedb
+db_game_thread_num = 6
+# log db
+db_log_address = 127.0.0.1
+db_log_port = 3306
+db_log_username = root
+db_log_password = root
+db_log_schema = td_logdb
+db_log_thread_num = 3
+# ---------------------------------------------------------
