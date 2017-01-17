@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16821" name="钢化巨灵">
+	<quest id="20629" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_钢化巨灵" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_钢化巨灵" value="1"/>
+				<refresh name="kill_钢化巨灵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_钢化巨灵" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_钢化巨灵"/>
+				<notify content="得到钢化巨灵情报"/>
+				<notify1 content="恭喜你你已经打探到所有不速之客的情报,快去找材料王领取奖励吧."/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>
+

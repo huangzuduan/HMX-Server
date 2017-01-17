@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="361" name="杂货商">
+	<!--new means new quest, default is quest on user-->
+	<quest id="900011">
+		<embranchment id="1">
+			<conditions>
+			   <gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("精致升级宝石存储功能(0)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("    本店现开放精致升级宝石的存储功能，每10颗精致升级宝石加10两银子能够换取1张精致宝石券，可以随时拿精致宝石券换取10颗精致升级宝石。")
+this:AddTaskCmdItem("存储10颗宝石+10两(0)", "v361", 100901, 11)
+this:AddTaskCmdItem("宝石券换取10颗宝石(0)", "v361", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="2">
+			<conditions>
+			   <gold type="Less" value="1000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("精致升级宝石存储功能(0)", "Dialog7")
+end
+function Dialog7()
+this:AddTalk("    本店现开放精致升级宝石的存储功能，每10颗精致升级宝石加10两银子能够换取1张精致宝石券，可以随时拿精致宝石券换取10颗精致升级宝石。")
+this:AddDialogItem("存储10颗宝石+10两(0)", "Dialog4")
+this:AddDialogItem("宝石券换取10颗宝石(0)", "Dialog4")
+this:AddCloseItem("离开")
+end
+function Dialog4()
+this:AddTalk("    对不起，你身上的钱不足10两。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<quest id="100901" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="10" id="795"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<notify1 content="获得精致宝石券"/>
+				<notify1 content="金钱-10两"/>
+				<removeitem value="10" id="795" log="10个精致升级宝石兑换成一张精致宝石券"/>
+				<gold type="Sub" value="1000"/>
+				<additem value="1" id="797"/>
+				<var type="Set" name="state" value="-2"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    本店现开放精致升级宝石的存储功能，每10颗精致升级宝石加10两银子能够换取1张精致宝石券，可以随时拿精致宝石券换取10颗精致升级宝石。")
+this:AddTaskCmdItem("存储10颗宝石+10两(0)", "v361", 100901, 11)
+this:AddTaskCmdItem("宝石券换取10颗宝石(0)", "v361", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<space size="10"/>
+				<item value="1" id="797"/>
+			</conditions>
+			<actions>
+				<notify1 content="获得10颗精致升级宝石"/>
+				<removeitem value="1" id="797" log="删除一张精致宝石券兑换成１０个精致升级宝石"/>
+				<gold type="Sub" value="1000"/>
+				<additem value="10" id="795"/>
+				<var type="Set" name="state" value="-2"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    本店现开放精致升级宝石的存储功能，每10颗精致升级宝石加10两银子能够换取1张精致宝石券，可以随时拿精致宝石券换取10颗精致升级宝石。")
+this:AddTaskCmdItem("存储10颗宝石+10两(0)", "v361", 100901, 11)
+this:AddTaskCmdItem("宝石券换取10颗宝石(0)", "v361", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

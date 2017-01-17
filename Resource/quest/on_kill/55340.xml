@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="55340" name="宝石树">
+	<quest id="470" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_宝石树" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_宝石树" value="1"/>
+				<refresh name="kill_宝石树"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_宝石树" value="9"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_宝石树"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了家具材料采集任务，向家具制造商(90,228)汇报吧。"/>
+				<notify1 content="家具制造商(90,228)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50115" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_宝石树" value="80"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_宝石树" value="1"/>
+				<refresh name="kill_宝石树"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_宝石树" value="79"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_宝石树"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了桃园采集任务，向采集管理员(44,170)汇报吧。"/>
+				<notify1 content="采集管理员(44,170)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

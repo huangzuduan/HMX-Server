@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15079" name="凤祥镇西郊-叛军哨探(151,160)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="354" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_叛军哨探" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_叛军哨探" value="1"/>
+				<refresh name="kill_叛军哨探"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_叛军哨探" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_叛军哨探"/>
+				<notify content="你已经消灭了40个叛军哨探,回凤祥镇西郊－独孤简(221,276)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

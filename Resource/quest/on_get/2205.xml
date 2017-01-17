@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2205" name="2205-机械工厂平面图">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20518" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20518"/>
+				<var type="Less" name="get_机械工厂平面图" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一页机械工厂平面图"/>
+				<var type="Add" name="get_机械工厂平面图" value="1"/>
+				<refresh name="get_机械工厂平面图"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20518"/>
+				<var type="Great" name="get_机械工厂平面图" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20518"/>
+				<refresh name="state"/>
+				<refresh name="get_机械工厂平面图"/>
+				<notify content="你已经收集齐了机械工厂平面图,回皇城－花傲剑(886,732)处交任务吧"/>
+				<notify1 content="去找皇城－花傲剑(886,732)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

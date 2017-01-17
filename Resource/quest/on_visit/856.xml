@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="856" name="王城-葫铁花(816,431)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30806">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="48"/>
+				<level type="Less" value="60"/>
+				<var type="Differ" name="state" value="-1" id="20806"/>
+				<var type="Differ" name="state" value="1" id="20806"/>
+				<var type="Differ" name="state" value="-3" id="20806"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：调查异军(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;调查异军\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去南郊消灭1250个50级的异军驯兽师，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    听说南郊的异军驯兽师最近正在大规模的训练猛兽，我担心他们有不良的企图，你去帮我查探一下吧。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10909\"&gt;   冰鳞靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10910\"&gt;   破浪靴(魔)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20806, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20806"/>
+				<var type="Differ" name="state" value="-3" id="20806"/>
+				<var type="Differ" name="state" value="-1" id="20806"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1250个50级的异军驯兽师，清源村的村长(114,93)也许等的有点不耐烦了.");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20806" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="48"/>
+				<level type="Less" value="60"/>
+				<var type="Differ" name="state" value="-1" id="20806"/>
+				<var type="Differ" name="state" value="1" id="20806"/>
+				<var type="Differ" name="state" value="-3" id="20806"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去南郊消灭1250个50级的异军驯兽师,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去南郊消灭1250个50级的异军驯兽师,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+<quest id="30807">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="52"/>
+				<level type="Less" value="63"/>
+				<var type="Differ" name="state" value="-1" id="20807"/>
+				<var type="Differ" name="state" value="1" id="20807"/>
+				<var type="Differ" name="state" value="-3" id="20807"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：异军计划(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;异军计划\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去东郊消灭1500个55级的异军操兽师，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这些天，东郊的异族人又开始不安稳了，他们蠢蠢欲动，特别是异军操兽师，他们的实力很大，如果能大大削弱异军操兽师的实力，那异族人就不敢轻举妄动，你能去东郊帮我消灭1500个55级的异军操兽师吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10861\"&gt;   琥珀护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10862\"&gt;   飞雪护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的，我这就去{10001}", "v856", 20807, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20807"/>
+				<var type="Differ" name="state" value="-3" id="20807"/>
+				<var type="Differ" name="state" value="-1" id="20807"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1500个55级的异军操兽师。清源村的村长(114,93)也许等的有点不耐烦了.");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<quest id="20807" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="52"/>
+				<level type="Less" value="63"/>
+				<var type="Differ" name="state" value="-1" id="20807"/>
+				<var type="Differ" name="state" value="1" id="20807"/>
+				<var type="Differ" name="state" value="-3" id="20807"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去东郊消灭1500个55级的异军操兽师,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去东郊消灭1500个55级的异军操兽师,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30808">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="56"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-1" id="20808"/>
+				<var type="Differ" name="state" value="1" id="20808"/>
+				<var type="Differ" name="state" value="-3" id="20808"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：异军之乱(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;异军之乱\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去南郊消灭1750个55级的异军弓兵，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    南郊的异军弓兵，居然跑到王城的郊区，到处抢劫财物，如果不给他们点颜色看看，他们会更加猖獗，你帮我去南郊消灭1750个异军弓兵。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10861\"&gt;   琥珀护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10862\"&gt;   飞雪护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20808, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20808"/>
+				<var type="Differ" name="state" value="-3" id="20808"/>
+				<var type="Differ" name="state" value="-1" id="20808"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1750个55级的异军弓兵，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<quest id="20808" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="56"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-1" id="20808"/>
+				<var type="Differ" name="state" value="1" id="20808"/>
+				<var type="Differ" name="state" value="-3" id="20808"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去南郊消灭1750个55级的异军弓兵,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去南郊消灭1750个55级的异军弓兵,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30809">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="60"/>
+				<level type="Less" value="72"/>
+				<var type="Differ" name="state" value="-1" id="20809"/>
+				<var type="Differ" name="state" value="1" id="20809"/>
+				<var type="Differ" name="state" value="-3" id="20809"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：抢劫的异军(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;抢劫的异军\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去南郊消灭2000个60级的异军枪兵，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    南郊的异军枪兵打着：此路是我开，此树是我栽，要想此路过，留下买路财！的口号。凡是从南郊经过的人，都被抢劫一空！我正想找个能力超群的人帮我去消灭这些异军枪兵，你能帮我吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10813\"&gt;   风神腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10814\"&gt;   风神腰带(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20809, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20809"/>
+				<var type="Differ" name="state" value="-3" id="20809"/>
+				<var type="Differ" name="state" value="-1" id="20809"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2000个60级的异军枪兵，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+	</quest>
+	<quest id="20809" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="60"/>
+				<level type="Less" value="72"/>
+				<var type="Differ" name="state" value="-1" id="20809"/>
+				<var type="Differ" name="state" value="1" id="20809"/>
+				<var type="Differ" name="state" value="-3" id="20809"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去南郊消灭2000个60级的异军枪兵,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去南郊消灭2000个60级的异军枪兵,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+
+
+	</quest>
+<quest id="30810">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="64"/>
+				<level type="Less" value="76"/>
+				<var type="Differ" name="state" value="-1" id="20810"/>
+				<var type="Differ" name="state" value="1" id="20810"/>
+				<var type="Differ" name="state" value="-3" id="20810"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：队长的企图(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;队长的企图\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去南郊消灭2250个65级的异军队长，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    据王城的羽林将军说，南郊的异军队长集结了大批异军，而且派出了大量细作到王城来活动，并四处打听王城的情况。此种迹象表明：异军有可能对王城发动突然袭击，并使用闪电战来夺取王城。虽然羽林将军已经作好了严密的部署，但是始终放心不下。如果你能去南郊消灭异军队长，那就能粉碎异族的攻城计划。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10763\"&gt;   风神盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10764\"&gt;   风神盔(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20810, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20810"/>
+				<var type="Differ" name="state" value="-3" id="20810"/>
+				<var type="Differ" name="state" value="-1" id="20810"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2250个65级的异军队长，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20810" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="64"/>
+				<level type="Less" value="76"/>
+				<var type="Differ" name="state" value="-1" id="20810"/>
+				<var type="Differ" name="state" value="1" id="20810"/>
+				<var type="Differ" name="state" value="-3" id="20810"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去南郊消灭2250个65级的异军队长,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去南郊消灭2250个65级的异军队长,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30811">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="68"/>
+				<level type="Less" value="80"/>
+				<var type="Differ" name="state" value="-1" id="20811"/>
+				<var type="Differ" name="state" value="1" id="20811"/>
+				<var type="Differ" name="state" value="-3" id="20811"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：千江地痞(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;千江地痞\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去千江镇收拾2500个70级的地痞，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    千江镇的赵高看上了王城的服装师-小鹃，于是请王城的媒婆帮他说媒。谁知道小鹃也暗自喜欢风度翩翩的赵高，并托媒婆把自己的一块传家玉带该赵高作为定情信物，媒婆带着定情玉到千江镇找赵高时，碰到了千江镇的地痞，他们抢走了定情玉，而且不肯还给赵高。我想找人去摆平这件事，你愿意帮这个忙吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10913\"&gt;   水神靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10914\"&gt;   水神靴(魔)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我愿意！{10001}", "v856", 20811, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20811"/>
+				<var type="Differ" name="state" value="-3" id="20811"/>
+				<var type="Differ" name="state" value="-1" id="20811"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2500个70级的地痞，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20811" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="68"/>
+				<level type="Less" value="80"/>
+				<var type="Differ" name="state" value="-1" id="20811"/>
+				<var type="Differ" name="state" value="1" id="20811"/>
+				<var type="Differ" name="state" value="-3" id="20811"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去千江镇收拾2500个70级的地痞,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去千江镇收拾2500个70级的地痞,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30812">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="72"/>
+				<level type="Less" value="84"/>
+				<var type="Differ" name="state" value="-1" id="20812"/>
+				<var type="Differ" name="state" value="1" id="20812"/>
+				<var type="Differ" name="state" value="-3" id="20812"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：狂乱钢犀(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;狂乱钢犀\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去北郊消灭2750个75级的钢犀，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    听北郊的副官说，他最近遇到了大麻烦：在保卫凤翼村的时候，经常遇到发狂的钢犀袭击村民们的家畜，这些钢犀皮坚肉厚，普通的刀根本伤不了他们。我正在寻找一个武艺高强的人，帮副官解决这个燃眉之急。你能接受这个挑战吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10865\"&gt;   水神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10866\"&gt;   水神护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("当然，我这就去！{10001}", "v856", 20812, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20812"/>
+				<var type="Differ" name="state" value="-3" id="20812"/>
+				<var type="Differ" name="state" value="-1" id="20812"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2750个75级的钢犀，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20812" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="72"/>
+				<level type="Less" value="84"/>
+				<var type="Differ" name="state" value="-1" id="20812"/>
+				<var type="Differ" name="state" value="1" id="20812"/>
+				<var type="Differ" name="state" value="-3" id="20812"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去北郊消灭2750个75级的钢犀,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去北郊消灭2750个75级的钢犀,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30813">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="76"/>
+				<level type="Less" value="88"/>
+				<var type="Differ" name="state" value="-1" id="20813"/>
+				<var type="Differ" name="state" value="1" id="20813"/>
+				<var type="Differ" name="state" value="-3" id="20813"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：打手之乱(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;打手之乱\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去千江镇消灭3000个75级的打手，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    千江镇的地保最近可倒了血霉了，打手似乎有意跟他过不去，他们到处惹事生非，最近还把地保给打了一顿：说是地保长的一副欠揍相。地保已经向王城的官府递交了好几封辞职信啦！可是官府又找不到合适的人选去管理千江镇，也就没有同意地保的辞职申请。我现在正到处寻找合适的人选，去整一整千江镇的不正之风。你愿意去吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10865\"&gt;   水神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10866\"&gt;   水神护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20813, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20813"/>
+				<var type="Differ" name="state" value="-3" id="20813"/>
+				<var type="Differ" name="state" value="-1" id="20813"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭3000个75级的打手，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20813" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="76"/>
+				<level type="Less" value="88"/>
+				<var type="Differ" name="state" value="-1" id="20813"/>
+				<var type="Differ" name="state" value="1" id="20813"/>
+				<var type="Differ" name="state" value="-3" id="20813"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去千江镇消灭3000个75级的打手,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去千江镇消灭3000个75级的打手,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30814">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="80"/>
+				<level type="Less" value="92"/>
+				<var type="Differ" name="state" value="-1" id="20814"/>
+				<var type="Differ" name="state" value="1" id="20814"/>
+				<var type="Differ" name="state" value="-3" id="20814"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：无耻混混(2)", "Dialog44")
+end
+function Dialog44()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;无耻混混\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去千江镇消灭3250个80级的混混，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    花非花是千江镇出了名的美女，有沉鱼落燕之容，蔽月羞花之貌。镇上的混混对花非花的美貌垂涎三尺，经常去为难花非花。地保想出力，又惹不起混混。这种调戏良家妇女的行为是极其不厚道的，我们要坚决打击千江镇的混混。这件差事有很多人都想去，可是我却想找个品行端正，武艺超群的人担当。让你去给千江镇的花非花解围，怎么样？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10817\"&gt;   雷神腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10818\"&gt;   雷神腰带(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我马上去！{10001}", "v856", 20814, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20814"/>
+				<var type="Differ" name="state" value="-3" id="20814"/>
+				<var type="Differ" name="state" value="-1" id="20814"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭3250个80级的混混，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20814" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="80"/>
+				<level type="Less" value="92"/>
+				<var type="Differ" name="state" value="-1" id="20814"/>
+				<var type="Differ" name="state" value="1" id="20814"/>
+				<var type="Differ" name="state" value="-3" id="20814"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去千江镇消灭3250个80级的混混,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去千江镇消灭3250个80级的混混,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30815">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="84"/>
+				<level type="Less" value="96"/>
+				<var type="Differ" name="state" value="-1" id="20815"/>
+				<var type="Differ" name="state" value="1" id="20815"/>
+				<var type="Differ" name="state" value="-3" id="20815"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：调查精怪(2)", "Dialog47")
+end
+function Dialog47()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;调查精怪\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去精怪洞八层(70,69)消灭3500只85级的暗虎精，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    王城的慎离最近想调查以下精怪洞穴八层的情况，但却始终未能找到合适的人选。所以他托我帮他找个武艺高强，头脑精明的人，下一趟精怪洞穴八层，你有这个胆量去吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10767\"&gt;   雷神盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10768\"&gt;   雷神盔(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没什么可怕的，我去！{10001}", "v856", 20815, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20815"/>
+				<var type="Differ" name="state" value="-3" id="20815"/>
+				<var type="Differ" name="state" value="-1" id="20815"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完3500只85级的暗虎精，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20815" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="84"/>
+				<level type="Less" value="96"/>
+				<var type="Differ" name="state" value="-1" id="20815"/>
+				<var type="Differ" name="state" value="1" id="20815"/>
+				<var type="Differ" name="state" value="-3" id="20815"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去精怪洞八层消灭3500只85级的暗虎精,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去精怪洞八层消灭3500只85级的暗虎精,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+<quest id="30816">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="88"/>
+				<level type="Less" value="100"/>
+				<var type="Differ" name="state" value="-1" id="20816"/>
+				<var type="Differ" name="state" value="1" id="20816"/>
+				<var type="Differ" name="state" value="-3" id="20816"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：邪恶势力(2)", "Dialog50")
+end
+function Dialog50()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;邪恶势力\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去白骨洞十层消灭3750只90级的吸魂僵尸，完成后去找去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这段日子，王城的慎离显的很不安，因为慎离已经感觉到白骨洞十层的邪恶势力正日益庞大，应该把这股邪恶势力消灭在萌芽状态，你是否有这个勇气接受这个任务？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10917\"&gt;   火神靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10918\"&gt;   火神靴(魔)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我可不是胆小鬼。{10001}", "v856", 20816, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20816"/>
+				<var type="Differ" name="state" value="-3" id="20816"/>
+				<var type="Differ" name="state" value="-1" id="20816"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完3750只90级的吸魂僵尸，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20816" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="88"/>
+				<level type="Less" value="100"/>
+				<var type="Differ" name="state" value="-1" id="20816"/>
+				<var type="Differ" name="state" value="1" id="20816"/>
+				<var type="Differ" name="state" value="-3" id="20816"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去白骨洞十层消灭3750只90级的吸魂僵尸,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去白骨洞十层消灭3750只90级的吸魂僵尸,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	
+<quest id="30817">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="92"/>
+				<level type="Less" value="105"/>
+				<var type="Differ" name="state" value="-1" id="20817"/>
+				<var type="Differ" name="state" value="1" id="20817"/>
+				<var type="Differ" name="state" value="-3" id="20817"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：沼泽之险(2)", "Dialog53")
+end
+function Dialog53()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;沼泽之险\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去沼泽湿地消灭4000只95级的狂齿鳄，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    前些天，黄药师去沼泽湿地寻找一种珍惜的草药，在湿地里，他惊奇的发现狂齿鳄似乎中了某种魔法，他们比一般鳄鱼凶猛百倍。这件事情非常蹊跷，你可以去调查一下情况吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10869\"&gt;   火神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10870\"&gt;   火神护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20817, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20817"/>
+				<var type="Differ" name="state" value="-3" id="20817"/>
+				<var type="Differ" name="state" value="-1" id="20817"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完4000只95级的狂齿鳄，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20817" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="92"/>
+				<level type="Less" value="105"/>
+				<var type="Differ" name="state" value="-1" id="20817"/>
+				<var type="Differ" name="state" value="1" id="20817"/>
+				<var type="Differ" name="state" value="-3" id="20817"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去沼泽湿地消灭4000只95级的狂齿鳄,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去沼泽湿地消灭4000只95级的狂齿鳄,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+<quest id="30818">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="96"/>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="state" value="-1" id="20818"/>
+				<var type="Differ" name="state" value="1" id="20818"/>
+				<var type="Differ" name="state" value="-3" id="20818"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：狡猾的鱼精(2)", "Dialog56")
+end
+function Dialog56()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;狡猾的鱼精\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去精怪洞穴九层（198,154）消灭4250个95级的通魔鱼精，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    慎离在跟我谈话时说过，精怪洞穴里的通魔鱼精很狡猾，他们经常幻化成人形，并跑到洞穴外面来害人。所以我想找人去查探一下通魔鱼精的情况，发现什么异常情况立刻向我汇报？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10869\"&gt;   火神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10870\"&gt;   火神护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v856", 20818, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20818"/>
+				<var type="Differ" name="state" value="-3" id="20818"/>
+				<var type="Differ" name="state" value="-1" id="20818"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完4250个95级的通魔鱼精，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20818" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="96"/>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="state" value="-1" id="20818"/>
+				<var type="Differ" name="state" value="1" id="20818"/>
+				<var type="Differ" name="state" value="-3" id="20818"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去精怪洞穴九层消灭4250个95级的通魔鱼精,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去精怪洞穴九层消灭4250个95级的通魔鱼精,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+<quest id="30819">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="112"/>
+				<var type="Differ" name="state" value="-1" id="20819"/>
+				<var type="Differ" name="state" value="1" id="20819"/>
+				<var type="Differ" name="state" value="-3" id="20819"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：虎精之乱(2)", "Dialog59")
+end
+function Dialog59()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;虎精之乱\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去精怪洞穴十层(88,146)消灭4500只100级的赤虎精，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    慎离前几天来找我，告诉我一件重要的秘密，有一次他在用水晶球施法时，看见精怪洞穴十层的赤虎精正在大量聚集，估计是要干什么坏事，所以我想请你去精怪洞穴十层打他们一个措手不及，是可否愿意？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10821\"&gt;   夜魔腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10822\"&gt;   夜魔腰带(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我同意。{10001}", "v856", 20819, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20819"/>
+				<var type="Differ" name="state" value="-3" id="20819"/>
+				<var type="Differ" name="state" value="-1" id="20819"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完4500只100级的赤虎精，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20819" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="112"/>
+				<var type="Differ" name="state" value="-1" id="20819"/>
+				<var type="Differ" name="state" value="1" id="20819"/>
+				<var type="Differ" name="state" value="-3" id="20819"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去精怪洞穴十层消灭4500只100级的赤虎精,完成后去找清源村的村长(114,93)"/>
+             <notify1 content="任务：去精怪洞穴十层消灭4500只100级的赤虎精,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+</event>

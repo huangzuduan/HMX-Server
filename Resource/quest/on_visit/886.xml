@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="886" name="清源村-小强(135,122)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="900605">
+		<embranchment id="1">
+			<conditions>
+				<space size="1"/>
+				<item value="1" id="1988"/>
+				<item value="1" id="1989"/>
+				<item value="1" id="1990"/>
+				<item value="1" id="1991"/>
+				<item value="1" id="1992"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：藏宝图兑换奖品(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("     如果你给我一份完整的藏宝图，我将运用我的法力帮你得到传说中的钻石宝箱！\n\n完整的藏宝图包括：藏宝图碎片一、藏宝图碎片二、藏宝图碎片三、藏宝图碎片四、藏宝图碎片五")
+this:AddTaskCmdItem("拿出藏宝图{10001}", "v886", 100605, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="1988"/>
+				<item value="1" id="1989"/>
+				<item value="1" id="1990"/>
+				<item value="1" id="1991"/>
+				<item value="1" id="1992"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：藏宝图兑换奖品(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("     对不起，你包裹空间不足，请整理好包裹再来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="100605" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="1" id="1988"/>
+				<item value="1" id="1989"/>
+				<item value="1" id="1990"/>
+				<item value="1" id="1991"/>
+				<item value="1" id="1992"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="1988" log="交藏宝图兑换奖品(100605)-删除藏宝图碎片一(1988)"/>
+				<removeitem value="1" id="1989" log="交藏宝图兑换奖品(100605)-删除藏宝图碎片二(1989)"/>
+				<removeitem value="1" id="1990" log="交藏宝图兑换奖品(100605)-删除藏宝图碎片三(1990)"/>
+				<removeitem value="1" id="1991" log="交藏宝图兑换奖品(100605)-删除藏宝图碎片四(1991)"/>
+				<removeitem value="1" id="1992" log="交藏宝图兑换奖品(100605)-删除藏宝图碎片五(1992)"/>
+				<additem value="1" id="900"/>
+				<notify content="交出藏宝图碎片，得到钻石宝箱"/>
+				<notify1 content="交出藏宝图碎片，得到钻石宝箱"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="901605">
+		<embranchment id="221">
+			<conditions>
+				<extentimer start="2006-8-29-12:00:01" end="2006-9-5-12:00:01"/>
+				<space size="2"/>
+				<timeouts long="8640000" id="101605" less="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;     (GetName)，今天你赚到了！我已研制出不同等级的太极珠，从即日起到2006年9月5日12点，我将对每人送出经验道具太极珠（初级）和太极珠（中级）各一颗，以助大家练级一臂之力。注意哦，平时这些经验道具要在王城，凤凰城的杂货商或高级杂货商处才可以购买到。\n \n&lt;/n&gt;&lt;n color=\"255,100,249,0\"&gt;使用太极珠、乾坤珠后，练级效率大幅提高。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("领取太极珠{10001}", "v886", 101605, 222)
+this:AddDialogItem("太极珠、乾坤珠说明", "Dialog26")
+this:AddCloseItem("离开")
+end
+function Dialog26()
+this:AddTalk("太极珠、乾坤珠说明: \n1、使用太极珠、乾坤珠后，练级效率大幅提高。\n\n 2、太极珠、乾坤珠在有效时间上的区分：每个太极珠的有效时间为2小时；每个乾坤珠的有效时间为24小时。\n\n3、太极珠和乾坤珠在效果上分为三个等级：初级、中级、高级。初级的练功效率为平时的1.25倍；中级的练功效率为平时的1.5倍；高级的练功效率为平时的1.75倍。\n\n4、在王城和凤凰城内，可以从高级杂货商以及杂货店伙计处购买太极珠和乾坤珠。 \n\n5、记住：不同效果的太极珠和乾坤珠是不能混合使用的。")
+this:AddDialogItem("返回","MainDialog")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="229">
+			<conditions>
+				<extentimer start="2006-8-29-12:00:01" end="2006-9-5-12:00:01"/>
+				<timeouts long="8640000" id="101605" less="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;     (GetName)，今天你赚到了！我已研制出不同等级的太极珠，从即日起到2006年9月5日12点，我将对每人送出经验道具太极珠（初级）和太极珠（中级）各一颗，以助大家练级一臂之力。注意哦，平时这些经验道具要在王城，凤凰城的杂货商或高级杂货商处才可以购买到。\n \n&lt;/n&gt;&lt;n color=\"255,100,249,0\"&gt;使用太极珠、乾坤珠后，练级效率大幅提高。&lt;/n&gt;&lt;/p&gt;")
+this:AddDialogItem("领取太极珠", "Dialog116")
+this:AddCloseItem("离开")
+end
+function Dialog116()
+this:AddTalk("  对不起，你包裹空间不足，请整理好包裹再来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="101605" new="1">
+		<embranchment id="222" active="1">
+			<conditions>
+				<extentimer start="2006-8-29-12:00:01" end="2006-9-5-12:00:01"/>
+				<space size="2"/>
+				<timeouts long="8640000" id="101605" less="0"/>
+			</conditions>
+			<actions>
+				<addbinditem value="1" id="769"/>
+				<addbinditem value="1" id="770"/>
+				<notify content="得到太极珠(初级)和太极珠(中级)各一个"/>
+				<notify1 content="得到太极珠(初级)和太极珠(中级)各一个"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="901606">
+		<embranchment id="1">
+			<conditions>
+				<extentimer start="2006-9-15-17:01:01" end="2006-9-18-23:59:59"/>
+				<space size="1"/>
+				<item value="5" id="911"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是神仙小强，感谢您参加世界清洁地球日活动，让我们一起为地球更美丽而努力！恭喜您找到了5个疯狂的石头，我可以运用法力帮你得到疯狂的宝箱以及丰厚经验奖励，注意：“调皮鬼”的弟弟咕噜咕噜小妖出现时间为9月15日17：00-9月17日24：00，兑换疯狂的宝箱和经验的时间为9月15日17：00-9月18日24：00，只要凑够5个疯狂的石头，经验和宝箱就可以反复领取哦")
+this:AddTaskCmdItem("拿出5个疯狂的石头{10001}", "v886", 101606, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<extentimer start="2006-9-15-17:01:01" end="2006-9-18-23:59:59"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("   我是神仙小强，您参加世界清洁地球日活动了吗！在9月15日17：00-9月17日24：00将会有不同等级咕噜咕噜小妖出现在清源村，凤凰城，王城，皇城；打败他们将可获得疯狂的石头，如果你找到5个疯狂的石头，我可以运用法力帮你得到疯狂的宝箱以及丰厚经验奖励，注意：兑换疯狂的宝箱和经验的时间截止到9月18日24：00。")
+this:AddCloseItem("你没有5个疯狂的石头")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="101606" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<extentimer start="2006-9-15-17:01:01" end="2006-9-18-23:59:59"/>
+				<space size="1"/>
+				<item value="5" id="911"/>
+			</conditions>
+			<actions>
+				<removeitem value="5" id="911" log="换疯狂宝箱(101606)-删除5个疯狂的石头(911)"/>
+				<additem value="1" id="902"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="GetP" name="crazy_stone__selflevel" value="1"/>
+				<vars type="Mul" name1="crazy_stone__selflevel" name2="crazy_stone__selflevel"/>
+				<var type="Set" name="crazy_stone__num" value="5"/>
+				<vars type="Mul" name1="crazy_stone__selflevel" name2="crazy_stone__num"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="crazy_stone__selflevel" name2="baseexp"/>
+				<vars type="Div" name1="crazy_stone__selflevel" name2="div"/>
+				<refresh name="crazy_stone__selflevel"/>
+				<exp1 value="100" id="101606" name="crazy_stone__selflevel"/>
+				<varnotify1 content="拿出5个疯狂的石头，得到疯狂的宝箱一个，获得经验%u" value="crazy_stone__selflevel" id="101606"/>
+				<varnotify2 content="拿出5个疯狂的石头，得到疯狂的宝箱一个，获得经验%u" value="crazy_stone__selflevel" id="101606"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="901607">
+		<embranchment id="1">
+			<conditions>
+				<extentimer start="2006-10-01-17:01:01" end="2006-10-08-23:59:59"/>
+				<space size="1"/>
+				<item value="10" id="927"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  谢谢您帮嫦娥找回了玉兔，为了表示感谢每兑换10个月饼我将给予一次丰厚经验奖励，注意：玉兔出现的时间为10月1日-10月7日每天18：00-23：00兑换月饼的时间为10月1日17：00-10月8日24：00，只要够10个月饼，就可反复获得丰厚经验奖励哦！")
+this:AddTaskCmdItem("拿出10个月饼{10001}", "v899", 101607, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<extentimer start="2006-10-01-17:01:01" end="2006-10-08-23:59:59"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  您好，你看到嫦娥的玉兔了吗？在10月1日-10月7日，每天18：00-23：00将会有不同等级玉兔出现在清源村，凤凰城，王城，皇城；帮我把它抓住，拿到10个它所携带的月饼，我将给你丰厚的经验奖励，注意：月饼兑换经验的时间为10月1日18：00-10月8日24：00。")
+this:AddCloseItem("你没有10个月饼")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="101607" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<extentimer start="2006-10-01-17:01:01" end="2006-10-08-23:59:59"/>
+				<space size="1"/>
+				<item value="10" id="927"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="927" log="交月饼活动(101607)-删除10个月饼(927)"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="GetP" name="yuebing_selflevel" value="1"/>
+				<vars type="Mul" name1="yuebing_selflevel" name2="yuebing_selflevel"/>
+				<var type="Set" name="yuebing_num" value="10"/>
+				<vars type="Mul" name1="yuebing_selflevel" name2="yuebing_num"/>
+				<refresh name="yuebing_selflevel"/>
+				<exp1 value="100" id="101607" name="yuebing_selflevel"/>
+				<varnotify1 content="拿出10个月饼，获得经验%u" value="yuebing_selflevel" id="101607"/>
+				<varnotify2 content="拿出10个月饼，获得经验%u" value="yuebing_selflevel" id="101607"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31041">
+		<embranchment id="51">
+			<conditions>
+				<!--低等级提示-->
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<level type="Less" value="20"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  (GetName)！你需要锻炼到20级才能接受挑战。铁人六项活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="111">
+			<conditions>
+				<!--任务继续或者失败以及完成任务后访问NPC的提示-->
+				<week value="127"/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="51"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<uservar type="Equal" name="begin_begin_1" value="1"/>
+				<var type="Equal" name="state" value="1" id="21041"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("铁人六项活动介绍", "Dialog201")
+this:AddDialogItem("铁人六项注销介绍", "Dialog202")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21041, 71)
+end
+function Dialog201()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("知道了")
+end
+function Dialog202()
+this:AddTalk("  如果你想放弃铁人六项的考验，随时来找我都可注销任务。")
+this:AddCloseItem("知道了")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		
+	
+		
+		
+				
+		<embranchment id="141">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21041"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  上次任务没有完成。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21041, 71)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!--embranchment id="711">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21041"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  你是想放弃铁人六项的考验吗？&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21041, 71)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment-->
+
+
+		<embranchment id="81">
+			<conditions>
+				<!--开始任务-->
+				<week value="127"/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="51"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21041"/>
+				<uservar type="Differ" name="begin_begin_1" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我要参加活动{10001}", "v886", 21041, 81)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		
+		
+		<embranchment id="91">
+			<conditions>
+				<!--初级任务-->
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Equal" name="state" value="1" id="21041"/>
+				<var type="Equal" name="progame_state_1" value="1" id="21041"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21041"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;(GetName)，快点接受此次活动的任务吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("活动开始{10001}", "v886", 21041, 91)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	<quest id="21041" new="1">
+		<embranchment id="71" active="1">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21041"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="21041"/>
+				<notify content="成功注销铁人六项活动任务"/>
+				<notify1 content="成功注销铁人六项活动任务"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="81" active="1">
+			<conditions>
+				<!--初级开始任务-->
+				<week value="127"/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="51"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21041"/>
+				<uservar type="Differ" name="begin_begin_1" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="21041"/>
+				<var type="Set" name="progame_state_1" value="1" id="21041"/>
+				<uservar type="Set" name="begin_begin_1" value="1"/>
+				<notify content="成功参加铁人六项活动任务，请找小强进行第一项考验"/>
+				<notify1 content="成功参加铁人六项活动任务，请找小强进行第一项考验"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="91" active="1">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Equal" name="state" value="1" id="21041"/>
+				<var type="Equal" name="progame_state_1" value="1" id="21041"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21041"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="21041"/>
+				<var type="Set" name="action_gamebegin" value="1" id="21041"/>
+				<notify content="开始铁人六项任务的第一项:运镖"/>
+				<notify1 content="开始铁人六项任务的第一项:运镖"/>
+				<addguard id="54035" odds1="100" id2="54081" odds2="0" map="凤凰城" ltpos="113,68" rbpos="119,77" gold="0" exp="0" dest="406,377"/>
+				<notify content="你接了一个镖车，送到凤凰城谢无欢处"/>
+				<notify1 content="你接了一个镖车，送到凤凰城谢无欢处"/>
+				<var type="GetP" name="yunbiao_selflevel" value="1"/>
+				<vars type="Mul" name1="yunbiao_selflevel" name2="yunbiao_selflevel"/>
+				<var type="Set" name="baseexp" value="240"/>
+				<vars type="Mul" name1="yunbiao_selflevel" name2="baseexp"/>
+				<refresh name="yunbiao_selflevel"/>
+			</actions>
+		</embranchment>
+		
+		
+		
+
+
+	</quest>
+	<quest id="31042">
+		<embranchment id="111">
+			<conditions>
+				<!--任务继续或者失败以及完成任务后访问NPC的提示-->
+				<week value="127"/>
+				<level type="Great" value="50"/>
+				<level type="Less" value="101"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<uservar type="Equal" name="begin_begin_1" value="1"/>
+				<var type="Equal" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("铁人六项活动介绍", "Dialog201")
+this:AddDialogItem("铁人六项注销介绍", "Dialog202")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21042, 71)
+end
+function Dialog201()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("知道了")
+end
+function Dialog202()
+this:AddTalk("  如果你想放弃铁人六项的考验，随时来找我都可注销任务。")
+this:AddCloseItem("知道了")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		
+		
+				
+		<embranchment id="141">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  上次任务没有完成。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21042, 71)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+		<!--embranchment id="711">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  你是想放弃铁人六项的考验吗？&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21042, 71)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment-->
+
+
+
+		<embranchment id="81">
+			<conditions>
+				<!--开始任务-->
+				<week value="127"/>
+				<level type="Great" value="50"/>
+				<level type="Less" value="101"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Differ" name="state" value="1" id="21042"/>
+				<uservar type="Differ" name="begin_begin_1" value="1"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n        19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我要参加活动{10001}", "v886", 21042, 81)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="91">
+			<conditions>
+				<!--初级任务-->
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Equal" name="state" value="1" id="21042"/>
+				<var type="Equal" name="progame_state_1" value="1" id="21042"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21042"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("活动开始{10001}", "v886", 21042, 91)
+ 
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+
+	</quest>
+	<quest id="21042" new="1">
+		<embranchment id="71" active="1">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="21042"/>
+				<notify content="成功注销铁人六项活动任务"/>
+				<notify1 content="成功注销铁人六项活动任务"/>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="81" active="1">
+			<conditions>
+				<!--初级开始任务-->
+				<week value="127"/>
+				<level type="Great" value="50"/>
+				<level type="Less" value="101"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Differ" name="state" value="1" id="21042"/>
+				<uservar type="Differ" name="begin_begin_1" value="1"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="21042"/>
+				<var type="Set" name="progame_state_1" value="1" id="21042"/>
+				<uservar type="Set" name="begin_begin_1" value="1"/>
+				<notify content="成功参加铁人六项活动任务，请找小强进行第一项考验"/>
+				<notify1 content="成功参加铁人六项活动任务，请找小强进行第一项考验"/>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="91" active="1">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Equal" name="state" value="1" id="21042"/>
+				<var type="Equal" name="progame_state_1" value="1" id="21042"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21042"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="21042"/>
+				<var type="Set" name="action_gamebegin" value="1" id="21042"/>
+				<notify content="开始铁人六项任务的第一项:运镖"/>
+				<notify1 content="开始铁人六项任务的第一项:运镖"/>
+				<addguard id="54037" odds1="100" id2="54083" odds2="0" map="凤凰城" ltpos="113,68" rbpos="119,77" gold="0" exp="0" dest="406,377"/>
+				<notify content="你接了一个镖车，送到凤凰城谢无欢处"/>
+				<notify1 content="你接了一个镖车，送到凤凰城谢无欢处"/>
+				<var type="GetP" name="yunbiao_selflevel" value="1"/>
+				<vars type="Mul" name1="yunbiao_selflevel" name2="yunbiao_selflevel"/>
+				<var type="Set" name="baseexp" value="240"/>
+				<vars type="Mul" name1="yunbiao_selflevel" name2="baseexp"/>
+				<refresh name="yunbiao_selflevel"/>
+			</actions>
+		</embranchment>
+
+
+
+
+
+
+	</quest>
+	<quest id="31043">
+		<embranchment id="111">
+			<conditions>
+				<!--任务继续或者失败以及完成任务后访问NPC的提示-->
+				<week value="127"/>
+				<level type="Great" value="100"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<uservar type="Equal" name="begin_begin_1" value="1"/>
+				<var type="Equal" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("铁人六项活动介绍", "Dialog201")
+this:AddDialogItem("铁人六项注销介绍", "Dialog202")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21043, 71)
+end
+function Dialog201()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("知道了")
+end
+function Dialog202()
+this:AddTalk("  如果你想放弃铁人六项的考验，随时来找我都可注销任务。")
+this:AddCloseItem("知道了")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="141">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  上次任务没有完成。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21043, 71)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+		<!--embranchment id="711">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="12:00:05" end="13:59:55"/>
+				<var type="Equal" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  你是想放弃铁人六项的考验吗？&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("注销上次活动{10001}", "v886", 21043, 71)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment-->
+
+
+
+		<embranchment id="81">
+			<conditions>
+				<!--开始任务-->
+				<week value="127"/>
+				<level type="Great" value="100"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Differ" name="state" value="1" id="21043"/>
+				<uservar type="Differ" name="begin_begin_1" value="1"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我要参加活动{10001}", "v886", 21043, 81)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="91">
+			<conditions>
+				<!--初级任务-->
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Equal" name="state" value="1" id="21043"/>
+				<var type="Equal" name="progame_state_1" value="1" id="21043"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21043"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,100,249,0\"&gt;  参加铁人六项活动了吗？这是力量，智慧与意志的考验，朋友想挑战的话，就赶快参加吧！在规定时间2小时内根据任务提示完成六项考验就可获得超乎想象的海量经验成绩优秀者还将获得获增值道具奖励。此次活动分为初中高三个等级，20-50级，51-100级，101级以上活动时间为:\n  本周末每天:\n    19:00-21:00   &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("活动开始{10001}", "v886", 21043, 91)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+
+	</quest>
+	<quest id="21043" new="1">
+		<embranchment id="71" active="1">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-30-23:59:55"/>
+				<var type="Equal" name="state" value="1" id="21043"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="21043"/>
+				<notify content="成功注销铁人六项活动任务"/>
+				<notify1 content="成功注销铁人六项活动任务"/>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="81" active="1">
+			<conditions>
+				<!--初级开始任务-->
+				<week value="127"/>
+				<level type="Great" value="100"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Differ" name="state" value="1" id="21043"/>
+				<uservar type="Differ" name="begin_begin_1" value="1"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="21043"/>
+				<var type="Set" name="progame_state_1" value="1" id="21043"/>
+				<uservar type="Set" name="begin_begin_1" value="1"/>
+				<notify content="成功参加铁人六项活动任务，请找小强进行第一项考验"/>
+				<notify1 content="成功参加铁人六项活动任务，请找小强进行第一项考验"/>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="91" active="1">
+			<conditions>
+				<week value="127"/>
+				<extentimer start="2006-11-28-00:00:05" end="2006-12-03-23:59:55"/>
+				<timer start="19:00:05" end="20:59:55"/>
+				<var type="Equal" name="state" value="1" id="21043"/>
+				<var type="Equal" name="progame_state_1" value="1" id="21043"/>
+				<var type="Differ" name="action_gamebegin" value="1" id="21043"/>
+				<var type="Differ" name="state" value="1" id="21041"/>
+				<var type="Differ" name="state" value="1" id="21042"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="21043"/>
+				<var type="Set" name="action_gamebegin" value="1" id="21043"/>
+				<notify content="开始铁人六项任务的第一项:运镖"/>
+				<notify1 content="开始铁人六项任务的第一项:运镖"/>
+				<addguard id="54061" odds1="100" id2="54085" odds2="0" map="凤凰城" ltpos="113,68" rbpos="119,77" gold="0" exp="0" dest="406,377"/>
+				<notify content="你接了一个镖车，送到凤凰城谢无欢处"/>
+				<notify1 content="你接了一个镖车，送到凤凰城谢无欢处"/>
+				<var type="GetP" name="yunbiao_selflevel" value="1"/>
+				<vars type="Mul" name1="yunbiao_selflevel" name2="yunbiao_selflevel"/>
+				<var type="Set" name="baseexp" value="240"/>
+				<vars type="Mul" name1="yunbiao_selflevel" name2="baseexp"/>
+				<refresh name="yunbiao_selflevel"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

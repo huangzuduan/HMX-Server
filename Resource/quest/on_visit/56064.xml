@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56064" name="王城-刘婆婆(428,860)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30358">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="20358"/>
+				<var type="Differ" name="state" value="-1" id="20358"/>
+				<var type="Differ" name="state" value="1" id="20358"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：行踪成谜(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;行踪成谜\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去问羽林将军(516,507)为什么我儿子没回来。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，我儿子怎么还不回来啊！隔壁一起去参军的二胖都已经回来了！官府又还没有发来讣告……你能帮我问问羽林将军么？我一个妇道人家，实在不方便抛头露面。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 37152&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v56064", 20358, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20358" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="20358"/>
+				<var type="Differ" name="state" value="-1" id="20358"/>
+				<var type="Differ" name="state" value="1" id="20358"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找羽林将军(516,507)"/>
+				<notify1 content="羽林将军(516,507)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30362">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20362"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：回归(2)", "Dialog51")
+end
+function Dialog51()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;回归\n \n&lt;/n&gt;&lt;n&gt;    你怎么又来了，是不是来感谢我的啊，呵呵。\n    啊，儿子！儿子啊！几年不见，你又黑又瘦还一身的伤……说，是不是你打的我儿子？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 42000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("……真是恩将仇报……{10002}", "v56064", 20362, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20362" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20362"/>
+			</conditions>
+			<actions>
+				<exp value="42000"/>
+				<notify1 content="经验+42000"/>
+				<notify content="恭喜你完成了“回归”任务"/>
+				<var type="Set" name="state" value="-1" id="20362"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

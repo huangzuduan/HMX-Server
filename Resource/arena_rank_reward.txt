@@ -1,0 +1,15 @@
+服务器输出文件名	config_arena_rank_reward.xml	根名称	ability
+客户端输出文件名	config_arena_rank_reward.xml	项名称	arena_rank_reward
+排名	声望		
+3	3	3	
+rank	single_prestige	all_prestige	
+1	500	50	
+2	400	40	
+3	350	35	
+4	300	30	
+5	250	25	
+6	200	20	
+7	150	15	
+8	100	10	
+9	100	10	
+10	100	10	

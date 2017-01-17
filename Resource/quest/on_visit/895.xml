@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="895" name="王城-小道消息王(135,122)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="903601">
+		<embranchment id="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question1" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好！我是万事通。\n\n 想知道最新的消息，来我这就对了！\n回答我的问题每题只有一次机会，每答一题需要一两银子的费用。答对会有丰厚奖励哦！")
+this:AddDialogItem("开始答题", "Dialog10")
+this:AddCloseItem("我没兴趣")
+end
+function Dialog10()
+this:AddTalk("题目：以下对2月17日—2月24日春节大型系列活动描述错误的是？")
+this:AddTaskCmdItem("A：17日-20日赶年兽，新年烟火晚会{10001}", "v895", 103601, 2)
+this:AddTaskCmdItem("B：17日-24日财神福神贺新春{10001}", "v895", 103601, 2)
+this:AddTaskCmdItem("C：18日-20日春节大礼包活动{10001}", "v895", 103601, 2)
+this:AddTaskCmdItem("D：没有活动{10001}", "v895", 103601, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<uservar type="Differ" name="anwser_question2" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好！我是万事通。\n\n 想知道最新的消息，来我这就对了！\n回答我的问题每题只有一次机会，每答一题需要一两银子的费用。答对会有丰厚奖励哦！")
+this:AddDialogItem("开始答题", "Dialog10")
+this:AddCloseItem("我没兴趣")
+end
+function Dialog10()
+this:AddTalk("题目：以下对2月17日—2月20日年兽活动，参加等级与地点描述错误的是？")
+this:AddTaskCmdItem("A：30-50级在清源村参加{10001}", "v895", 103602, 2)
+this:AddTaskCmdItem("B：51-100级在凤凰城参加{10001}", "v895", 103602, 2)
+this:AddTaskCmdItem("C：101级以上在皇城参加{10001}", "v895", 103602, 1)
+this:AddTaskCmdItem("D：101级以上在王城参加{10001}", "v895", 103602, 2)
+this:AddCloseItem("离开")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<uservar type="Differ" name="anwser_question3" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好！我是万事通。\n\n 想知道最新的消息，来我这就对了！\n回答我的问题每题只有一次机会，每答一题需要一两银子的费用。答对会有丰厚奖励哦！")this:AddDialogItem("开始答题", "Dialog10")
+this:AddCloseItem("我没兴趣")
+end
+function Dialog10()
+this:AddTalk("题目：以下对2月17日-2月20日年兽活动描述错误的是？")
+this:AddTaskCmdItem("A：在不怕妹妹处接在大胆哥哥处交{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("B：赶年兽所需鞭炮杂货商处有售{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("C：活动中上下线当天将不能再参加{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("D：自己的年兽别人不能用鞭炮控制{10001}", "v895", 103603, 1)
+this:AddCloseItem("离开")
+
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<uservar type="Differ" name="anwser_question4" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好！我是万事通。\n\n 想知道最新的消息，来我这就对了！\n回答我的问题每题只有一次机会，每答一题需要一两银子的费用。答对会有丰厚奖励哦！")this:AddDialogItem("开始答题", "Dialog10")
+this:AddCloseItem("我没兴趣")
+end
+function Dialog10()
+this:AddTalk("题目：以下对春节大型系列活动中，魔幻迷宫和铁人六项活动描述错误的是？")
+this:AddTaskCmdItem("A：2月21日-2月22日魔幻迷宫{10001}", "v895", 103604, 2)
+this:AddTaskCmdItem("B：2月23日-2月24日铁人六项{10001}", "v895", 103604, 2)
+this:AddTaskCmdItem("C：以上说法不对{10001}", "v895", 103604, 1)
+this:AddCloseItem("离开")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<uservar type="Differ" name="anwser_question5" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好！我是万事通。\n\n 想知道最新的消息，来我这就对了！\n回答我的问题每题只有一次机会，每答一题需要一两银子的费用。答对会有丰厚奖励哦！")this:AddDialogItem("开始答题", "Dialog10")
+this:AddCloseItem("我没兴趣")
+end
+function Dialog10()
+this:AddTalk("题目：2月17日00点-20日24点，2月23日00点-24日24点开双倍经验吗？")
+this:AddTaskCmdItem("A：开{10001}", "v895", 103605, 1)
+this:AddTaskCmdItem("B：不开{10001}", "v895", 103605, 2)
+this:AddTaskCmdItem("C：不一定{10001}", "v895", 103605, 2)
+this:AddCloseItem("离开")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<uservar type="Differ" name="anwser_question5" value="1"/>
+				<!--人物身上携带银子条件判断，当银子少于100文时，执行-->
+				<gold type="Less" value="100"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好！我是万事通。\n\n 想知道最新的消息，来我这就对了！\n回答我的问题每题只有一次机会，每答一题需要一两银子的费用。答对会有丰厚奖励哦！")
+this:AddCloseItem("银子不足1两")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="103601" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question1" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<gold type="Sub" value="100"/>
+				<notify content="答对一题，用去1两银子"/>
+				<uservar type="Set" name="anwser_question1" value="1"/>
+				<var type="GetP" name="anwser_question__selflevel" value="1"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__selflevel"/>
+				<var type="Set" name="anwser_question__num" value="5"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__num"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="baseexp"/>
+				<vars type="Div" name1="anwser_question__selflevel" name2="div"/>
+				<refresh name="anwser_question__selflevel"/>
+				<exp1 value="100" id="103601" name="anwser_question__selflevel"/>
+				<varnotify1 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103601"/>
+				<varnotify2 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103601"/>
+				<uservar type="Add" name="anwser_question_over" value="1"/>
+             <refresh name="anwser_question_over"/>
+				<playsound path="sound\ui\10300.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：以下对2月17日—2月20日年兽活动，参加等级与地点描述错误的是？")
+this:AddTaskCmdItem("A：30-50级在清源村参加{10001}", "v895", 103602, 2)
+this:AddTaskCmdItem("B：51-100级在凤凰城参加{10001}", "v895", 103602, 2)
+this:AddTaskCmdItem("C：101级以上在皇城参加{10001}", "v895", 103602, 1)
+this:AddTaskCmdItem("D：101级以上在王城参加{10001}", "v895", 103602, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question1" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<notify content="很不幸，你答错了！请继续答题"/>
+				<notify1 content="很不幸，你答错了！请继续答题"/>
+				<playsound path="sound\ui\10301.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：以下对2月17日—2月24日春节大型系列活动描述错误的是？")
+this:AddTaskCmdItem("A：17日-20日赶年兽，新年烟火晚会{10001}", "v895", 103601, 2)
+this:AddTaskCmdItem("B：17日-24日财神福神贺新春{10001}", "v895", 103601, 2)
+this:AddTaskCmdItem("C：18日-20日春节大礼包活动{10001}", "v895", 103601, 2)
+this:AddTaskCmdItem("D：没有活动{10001}", "v895", 103601, 1)
+this:AddCloseItem("离开")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="103602" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question2" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<gold type="Sub" value="100"/>
+				<notify content="答对一题，用去1两银子"/>
+				<uservar type="Set" name="anwser_question2" value="1"/>
+				<var type="GetP" name="anwser_question__selflevel" value="1"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__selflevel"/>
+				<var type="Set" name="anwser_question__num" value="5"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__num"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="baseexp"/>
+				<vars type="Div" name1="anwser_question__selflevel" name2="div"/>
+				<refresh name="anwser_question__selflevel"/>
+				<exp1 value="100" id="103602" name="anwser_question__selflevel"/>
+				<varnotify1 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103602"/>
+				<varnotify2 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103602"/>
+				<uservar type="Add" name="anwser_question_over" value="1"/>
+             <refresh name="anwser_question_over"/>
+				<playsound path="sound\ui\10300.wav"/>
+				<menu>
+
+function TaskDialog()
+this:AddTalk("题目：以下对2月17日-2月20日年兽活动描述错误的是？")
+this:AddTaskCmdItem("A：在不怕妹妹处接在大胆哥哥处交{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("B：赶年兽所需鞭炮杂货商处有售{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("C：活动中上下线当天将不能再参加{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("D：自己的年兽别人不能用鞭炮控制{10001}", "v895", 103603, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question2" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<notify content="很不幸，你答错了！请继续答题"/>
+				<notify1 content="很不幸，你答错了！请继续答题"/>
+				<playsound path="sound\ui\10301.wav"/>
+				<menu>
+
+function TaskDialog()
+this:AddTalk("题目：以下对2月17日—2月20日年兽活动，参加等级与地点描述错误的是？")
+this:AddTaskCmdItem("A：30-50级在清源村参加{10001}", "v895", 103602, 2)
+this:AddTaskCmdItem("B：51-100级在凤凰城参加{10001}", "v895", 103602, 2)
+this:AddTaskCmdItem("C：101级以上在皇城参加{10001}", "v895", 103602, 1)
+this:AddTaskCmdItem("D：101级以上在王城参加{10001}", "v895", 103602, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="103603" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question3" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<gold type="Sub" value="100"/>
+				<notify content="答对一题，用去1两银子"/>
+				<uservar type="Set" name="anwser_question3" value="1"/>
+				<var type="GetP" name="anwser_question__selflevel" value="1"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__selflevel"/>
+				<var type="Set" name="anwser_question__num" value="5"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__num"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="baseexp"/>
+				<vars type="Div" name1="anwser_question__selflevel" name2="div"/>
+				<refresh name="anwser_question__selflevel"/>
+				<exp1 value="100" id="103603" name="anwser_question__selflevel"/>
+				<varnotify1 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103603"/>
+				<varnotify2 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103603"/>
+				<uservar type="Add" name="anwser_question_over" value="1"/>
+             <refresh name="anwser_question_over"/>
+				<playsound path="sound\ui\10300.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：以下对春节大型系列活动中，魔幻迷宫和铁人六项活动描述错误的是？")
+this:AddTaskCmdItem("A：2月21日-2月22日魔幻迷宫{10001}", "v895", 103604, 2)
+this:AddTaskCmdItem("B：2月23日-2月24日铁人六项{10001}", "v895", 103604, 2)
+this:AddTaskCmdItem("C：以上说法不对{10001}", "v895", 103604, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question3" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<notify content="很不幸，你答错了！请继续答题"/>
+				<notify1 content="很不幸，你答错了！请继续答题"/>
+				<playsound path="sound\ui\10301.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：以下对2月17日-2月20日年兽活动描述错误的是？")
+this:AddTaskCmdItem("A：在不怕妹妹处接在大胆哥哥处交{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("B：赶年兽所需鞭炮杂货商处有售{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("C：活动中上下线当天将不能再参加{10001}", "v895", 103603, 2)
+this:AddTaskCmdItem("D：自己的年兽别人不能用鞭炮控制{10001}", "v895", 103603, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="103604" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question4" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<gold type="Sub" value="100"/>
+				<notify content="答对一题，用去1两银子"/>
+				<uservar type="Set" name="anwser_question4" value="1"/>
+				<var type="GetP" name="anwser_question__selflevel" value="1"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__selflevel"/>
+				<var type="Set" name="anwser_question__num" value="5"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__num"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="baseexp"/>
+				<vars type="Div" name1="anwser_question__selflevel" name2="div"/>
+				<refresh name="anwser_question__selflevel"/>
+				<exp1 value="100" id="103604" name="anwser_question__selflevel"/>
+				<varnotify1 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103604"/>
+				<varnotify2 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103604"/>
+				<uservar type="Add" name="anwser_question_over" value="1"/>
+             <refresh name="anwser_question_over"/>
+				<playsound path="sound\ui\10300.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：2月17日00点-20日24点，2月23日00点-24日24点开双倍经验吗？")
+this:AddTaskCmdItem("A：开{10001}", "v895", 103605, 1)
+this:AddTaskCmdItem("B：不开{10001}", "v895", 103605, 2)
+this:AddTaskCmdItem("C：不一定{10001}", "v895", 103605, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question4" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<notify content="很不幸，你答错了！请继续答题"/>
+				<notify1 content="很不幸，你答错了！请继续答题"/>
+				<playsound path="sound\ui\10301.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：以下对春节大型系列活动中，魔幻迷宫和铁人六项活动描述错误的是？")
+this:AddTaskCmdItem("A：2月21日-2月22日魔幻迷宫{10001}", "v895", 103604, 2)
+this:AddTaskCmdItem("B：2月23日-2月24日铁人六项{10001}", "v895", 103604, 2)
+this:AddTaskCmdItem("C：以上说法不对{10001}", "v895", 103604, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="103605" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question5" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<gold type="Sub" value="100"/>
+				<notify content="答对一题，用去1两银子"/>
+				<uservar type="Set" name="anwser_question5" value="1"/>
+				<var type="GetP" name="anwser_question__selflevel" value="1"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__selflevel"/>
+				<var type="Set" name="anwser_question__num" value="5"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="anwser_question__num"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="anwser_question__selflevel" name2="baseexp"/>
+				<vars type="Div" name1="anwser_question__selflevel" name2="div"/>
+				<refresh name="anwser_question__selflevel"/>
+				<exp1 value="100" id="103605" name="anwser_question__selflevel"/>
+				<varnotify1 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103605"/>
+				<varnotify2 content="恭喜你答对了，获得经验%u" value="anwser_question__selflevel" id="103605"/>
+				<uservar type="Add" name="anwser_question_over" value="1"/>
+             <refresh name="anwser_question_over"/>
+				<playsound path="sound\ui\10300.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你已经答完5道题目了。\n\n   今天答题结束，记住明天再来哦！")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<uservar type="Differ" name="anwser_question5" value="1"/>
+				<!--人物身上携带银子条件判断，必须大于这99文才能执行-->
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<!--答题扣钱指令，value="100" 其中100是具体的数值，单位是文。-->
+				<notify content="很不幸，你答错了！请继续答题"/>
+				<notify1 content="很不幸，你答错了！请继续答题"/>
+				<playsound path="sound\ui\10301.wav"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("题目：2月17日00点-20日24点，2月23日00点-24日24点开双倍经验吗？")
+this:AddTaskCmdItem("A：开{10001}", "v895", 103605, 1)
+this:AddTaskCmdItem("B：不开{10001}", "v895", 103605, 2)
+this:AddTaskCmdItem("C：不一定{10001}", "v895", 103605, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

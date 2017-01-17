@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2130" name="碎骨片">
+	<!--new means new quest, default is quest on user-->
+	<quest id="341" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="341"/>
+				<var type="Less" name="get_碎骨片" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个碎骨片"/>
+				<var type="Add" name="get_碎骨片" value="1"/>
+				<refresh name="get_碎骨片"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="341"/>
+				<var type="Great" name="get_碎骨片" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="341"/>
+				<refresh name="state"/>
+				<refresh name="get_碎骨片"/>
+				<notify content="恭喜你完成了收集碎骨片的任务,回王城-慎篱(451,225)处交任务吧"/>
+				<notify1 content="去王城-慎篱(451,225)处汇报！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5201" name="世外桃源-公寓管理员(122,203)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10475">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="475"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：温暖的家(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;温暖的家\n \n&lt;/n&gt;&lt;n&gt;    (GetName)!只要你把房契拿给我，我就会给你一套房子。如果你没有房契，可以去问问小金猪！ \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v5201", 475, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="475" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="475"/>
+			</conditions>
+			<actions>
+				<exp1 value="100" id="475" name="fangwu_selflevel"/>
+				<varnotify2 content="经验+%u" value="fangwu_selflevel" id="475"/>
+				<notify content="完成了“温暖的家”任务"/>
+				<notify1 content="有好家具的房子,才是好房子！"/>
+				<var type="Set" name="state" value="-1" id="475"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

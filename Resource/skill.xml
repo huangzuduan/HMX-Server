@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<root>
+	<item id="1" name="天劫之雷" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="1" effect_speed="10"/>
+	<item id="2" name="三昧真火" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="3" name="虎啸九天" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="4" name="九转元功" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="6" name="含沙射影" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="7" name="火凤怒魂" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="8" name="风卷残云" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="9" name="破冰惩戒" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="11" name="降妖伏魔" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="13" name="紫青剑法" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="14" name="太极玄天阵" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="15" name="定身咒" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="16" name="如来神掌" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="17" name="五毒咒" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="18" name="雾炎舞龙" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="19" name="冰狐蚀心" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="20" name="回天术" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="21" name="妙音天玄" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="22" name="龙吟怒涛" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="23" name="众生皆灭" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="24" name="五雷天心法" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="25" name="天罡火" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="26" name="地煞功" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="27" name="月影飞舞" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="28" name="凤凰涅槃" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="29" name="炼狱火海" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="30" name="凝神术" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="31" name="移花接木" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="32" name="返魂禁咒" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="33" name="黄泉追命" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="34" name="刀枪不入" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="35" name="仙灵护体" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="36" name="弥患无形" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="37" name="百毒不侵" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="38" name="千杯不倒" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="39" name="此时有声" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="40" name="逆天之棒" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="41" name="天神霸体" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="42" name="横扫千军" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="43" name="无法无天" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="44" name="神龙突击" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="45" name="灭世矛击" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="46" name="冥龙怒吼" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="47" name="卸甲迫击" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="48" name="见龙卸甲" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="49" name="润物无声" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="50" name="天旋地转" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="51" name="土龙裂地" type="1" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="52" name="毁天灭地" type="1" hurt_cate="2" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="53" name="金钟罩" type="1" hurt_cate="3" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="54" name="星宿之盾" type="1" hurt_cate="4" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="55" name="极乐境界" type="1" hurt_cate="5" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+	<item id="56" name="幻影迷踪" type="2" hurt_cate="1" description="xx" effect_type="1" effect_obj="2" effect_hit="100" effect_cd="2" effect_speed="10"/>
+</root>
+

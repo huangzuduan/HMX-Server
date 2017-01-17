@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="19" name="19级">
+	<quest id="21119" new="1">
+		<embranchment id="11">
+			<conditions>
+				<var type="Less" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_19级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_19级" value="1"/>
+				<refresh name="kill_19级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Less" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_19级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="4600" id="150000" name="t1"/>
+				<refresh name="kill_19级"/>
+				<notify content="恭喜你完成了19级培训任务"/>
+				<notify1 content="今日任务完成数：1/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21119"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_19级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_19级" value="1"/>
+				<refresh name="kill_19级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_19级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="4600" id="150000" name="t2"/>
+				<refresh name="kill_19级"/>
+				<notify content="恭喜你完成了19级培训任务"/>
+				<notify1 content="今日任务完成数：2/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21119"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<var type="Equal" name="time" value="2" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_19级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_19级" value="1"/>
+				<refresh name="kill_19级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<var type="Equal" name="time" value="2" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_19级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="4600" id="150000" name="t3"/>
+				<refresh name="kill_19级"/>
+				<notify content="恭喜你完成了19级培训任务"/>
+				<notify1 content="今日任务完成数：3/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21119"/>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<var type="Equal" name="time" value="3" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_19级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_19级" value="1"/>
+				<refresh name="kill_19级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<var type="Equal" name="time" value="3" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_19级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="4600" id="150000" name="t4"/>
+				<refresh name="kill_19级"/>
+				<notify content="恭喜你完成了19级培训任务"/>
+				<notify1 content="今日任务完成数：4/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21119"/>
+			</actions>
+		</embranchment>
+		<embranchment id="51">
+			<conditions>
+				<var type="Equal" name="time" value="4" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_19级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_19级" value="1"/>
+				<refresh name="kill_19级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="52">
+			<conditions>
+				<var type="Equal" name="time" value="4" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_19级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="4600" id="150000" name="t5"/>
+				<refresh name="kill_19级"/>
+				<notify content="恭喜你完成了19级培训任务"/>
+				<notify1 content="今日任务完成数：5/5"/>
+				<notify content="恭喜你完成了今天所有培训任务，明天您才能继续培训计划"/>
+				<notify1 content="完成了今天培训计划，明天继续"/>
+				<var type="Set" name="state" value="2" id="150000"/>
+				<var type="Set" name="today" value="0" id="150000"/>
+				<var type="Set" name="time" value="0" id="150000"/>
+				<timeouts id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21119"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2144" name="虎精的毛">
+	<!--new means new quest, default is quest on user-->
+	<quest id="367" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="367"/>
+				<var type="Less" name="get_虎精的毛" value="30"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一撮虎精的毛"/>
+				<var type="Add" name="get_虎精的毛" value="1"/>
+				<refresh name="get_虎精的毛"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="367"/>
+				<var type="Great" name="get_虎精的毛" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="367"/>
+				<refresh name="state"/>
+				<refresh name="get_虎精的毛"/>
+				<notify content="你已经收集了30撮虎精的毛,快去交给王城的慎篱(451,225)"/>
+				<notify1 content="去找王城的慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

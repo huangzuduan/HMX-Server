@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2125" name="僵尸内脏">
+	<!--new means new quest, default is quest on user-->
+<quest id="331" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="331"/>
+				<var type="Less" name="get_僵尸内脏" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个僵尸内脏"/>
+				<var type="Add" name="get_僵尸内脏" value="1"/>
+				<refresh name="get_僵尸内脏"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="331"/>
+				<var type="Great" name="get_僵尸内脏" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="331"/>
+				<refresh name="state"/>
+				<refresh name="get_僵尸内脏"/>
+				<notify content="你已经收集了20个僵尸内脏,回王城-羽林将军(516,507)处交任务吧"/>
+				<notify1 content="回王城-羽林将军(516,507)处汇报！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 、16(竞技区) -->
+	<septnpc id="241"/>
+	<septnpc id="201"/>
+	<septnpc id="91"/>
+	<septnpc id="205"/>
+	<septnpc id="206"/>
+	<septnpc id="242"/>
+	<septnpc id="252"/>
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<waypoint>
+		<point x="198" y="14"/>
+		<point x="199" y="14"/>
+		<point x="200" y="14"/>
+		<point x="201" y="14"/>
+		<point x="202" y="14"/>
+		<point x="203" y="14"/>
+		<point x="204" y="14"/>
+		<point x="205" y="14"/>
+		<point x="206" y="14"/>
+		<point x="198" y="15"/>
+		<point x="199" y="15"/>
+		<point x="200" y="15"/>
+		<point x="201" y="15"/>
+		<point x="202" y="15"/>
+		<point x="203" y="15"/>
+		<point x="204" y="15"/>
+		<point x="205" y="15"/>
+		<point x="206" y="15"/>
+		<point x="198" y="16"/>
+		<point x="199" y="16"/>
+		<point x="199" y="16"/>
+		<point x="200" y="16"/>
+		<point x="201" y="16"/>
+		<point x="202" y="16"/>
+		<point x="203" y="16"/>
+		<point x="204" y="16"/>
+		<point x="205" y="16"/>
+		<point x="205" y="15"/>
+		<point x="206" y="15"/>
+		<point x="198" y="16"/>
+		<point x="199" y="16"/>
+		<point x="200" y="16"/>
+		<point x="201" y="16"/>
+		<point x="206" y="16"/>
+		<dest name="fengzuiling" country="0" x="25" y="89"/>
+		<dest name="fengzuiling" country="0" x="25" y="90"/>
+		<dest name="fengzuiling" country="0" x="25" y="91"/>
+		<dest name="fengzuiling" country="0" x="25" y="92"/>
+		<dest name="fengzuiling" country="0" x="25" y="93"/>
+		<dest name="fengzuiling" country="0" x="25" y="94"/>
+		<dest name="fengzuiling" country="0" x="25" y="95"/>
+		<dest name="fengzuiling" country="0" x="25" y="96"/>
+		<dest name="fengzuiling" country="0" x="25" y="97"/>
+		<dest name="fengzuiling" country="0" x="25" y="98"/>
+		<dest name="fengzuiling" country="0" x="25" y="99"/>
+		<dest name="fengzuiling" country="0" x="25" y="100"/>
+		<dest name="fengzuiling" country="0" x="25" y="101"/>
+		<dest name="fengzuiling" country="0" x="25" y="102"/>
+		<dest name="fengzuiling" country="0" x="25" y="103"/>
+		<dest name="fengzuiling" country="0" x="25" y="104"/>
+		<dest name="fengzuiling" country="0" x="25" y="105"/>
+		<dest name="fengzuiling" country="0" x="24" y="89"/>
+		<dest name="fengzuiling" country="0" x="24" y="90"/>
+		<dest name="fengzuiling" country="0" x="24" y="91"/>
+		<dest name="fengzuiling" country="0" x="24" y="92"/>
+		<dest name="fengzuiling" country="0" x="24" y="93"/>
+		<dest name="fengzuiling" country="0" x="24" y="94"/>
+		<dest name="fengzuiling" country="0" x="24" y="95"/>
+		<dest name="fengzuiling" country="0" x="24" y="96"/>
+		<dest name="fengzuiling" country="0" x="24" y="97"/>
+		<dest name="fengzuiling" country="0" x="24" y="98"/>
+		<dest name="fengzuiling" country="0" x="24" y="99"/>
+		<dest name="fengzuiling" country="0" x="24" y="100"/>
+		<dest name="fengzuiling" country="0" x="24" y="101"/>
+		<dest name="fengzuiling" country="0" x="24" y="102"/>
+		<dest name="fengzuiling" country="0" x="24" y="103"/>
+		<dest name="fengzuiling" country="0" x="24" y="104"/>
+		<dest name="fengzuiling" country="0" x="24" y="105"/>
+	</waypoint>
+	<npc id="413" name="无花" width="1" height="1" x="349" y="104" num="1" interval="300" color="0,255,0,0"/>
+	<npc id="546" name="北郊方向" width="1" height="1" x="199" y="18" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="829" name="长老" width="1" height="1" x="138" y="470" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="830" name="地保" width="1" height="1" x="234" y="380" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="831" name="鲁匠心" width="1" height="1" x="256" y="407" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="832" name="花非花" width="1" height="1" x="133" y="415" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="535" name="花飞" width="1" height="1" x="111" y="421" num="1" interval="1800" color="0,255,0,0"/>
+	<!--npc id="361" name="高级钱庄老板" width="1" height="1" x="230" y="176" num="1" interval="5400" color="0,255,0,0"/-->
+	<npc id="93" name="传递" width="1" height="1" x="226" y="245" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="93" name="传递" width="1" height="1" x="344" y="295" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="93" name="传递" width="1" height="1" x="88" y="158" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="264" name="千江镇守卫" width="2" height="2" x="200" y="20" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="265" name="千江镇守卫" width="2" height="2" x="382" y="520" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="219" name="饲养员" width="1" height="1" x="213" y="130" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="241" name="秘籍" width="1" height="1" x="158" y="233" num="1" interval="5400" color="0,255,0,0"/>
+	<npc id="56069" name="蒙阔" width="1" height="1" x="222" y="338" num="1" interval="1800" color="0,255,0,0"/>
+	<!--npc id="104" name="防具商" width="1" height="1" x="193" y="219" num="1" interval="1800" color="0,255,0,0"/-->
+	<npc id="460" name="赵普" width="1" height="1" x="151" y="583" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="461" name="赵高" width="1" height="1" x="271" y="550" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="462" name="来俊臣" width="1" height="1" x="79" y="420" num="1" interval="1800" color="0,255,0,0"/>
+	<!--npc id="100" name="物武" width="1" height="1" x="194" y="192" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="101" name="法武" width="1" height="1" x="199" y="188" num="1" interval="1800" color="0,255,0,0"/-->
+	<npc id="5098" name="车夫" width="1" height="1" x="217" y="151" num="1" interval="1800" color="0,255,0,0"/>
+	<!--npc id="196" name="客栈老板" width="1" height="1" x="237" y="185" num="1" interval="1800" color="0,255,0,0"/-->
+	<npc id="201" name="杂货商" width="1" height="1" x="222" y="176" num="1" interval="5400" color="0,255,0,0"/>
+	<npc id="242" name="药店老板" width="1" height="1" x="203" y="171" num="1" interval="5400" color="0,255,0,0"/>
+	<npc id="252" name="炼药师" width="1" height="1" x="219" y="179" num="1" interval="5400" color="0,255,0,0"/>
+	<npc id="91" name="整容" width="1" height="1" x="174" y="232" num="1" interval="5400" color="0,255,0,0"/>
+	<npc id="205" name="美发" width="1" height="1" x="173" y="226" num="1" interval="5400" color="0,255,0,0"/>
+	<npc id="206" name="服美" width="1" height="1" x="178" y="221" num="1" interval="5400" color="0,255,0,0"/>
+	<!--npc id="209" name="钱庄老板" width="1" height="1" x="228" y="149" num="1" interval="1800" color="0,255,0,0"/-->
+	<!--npc id="1" name="箱子" width="1" height="1" x="230" y="152" num="1" interval="1800" color="0,255,0,0"/-->
+	<!--npc id="213" name="锻造" width="1" height="1" x="249" y="281" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="214" name="锻造" width="1" height="1" x="258" y="263" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="211" name="锻造" width="1" height="1" x="266" y="255" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="217" name="锻造" width="1" height="1" x="256" y="270" num="1" interval="1800" color="0,255,0,0"/-->
+	<npc id="171" name="小女孩" width="5" height="5" x="314" y="213" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="180" name="小男孩" width="5" height="5" x="359" y="331" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="181" name="小男孩" width="5" height="5" x="314" y="213" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="166" name="居民" width="5" height="5" x="304" y="153" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="167" name="居民" width="5" height="5" x="219" y="414" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="178" name="流浪汉" width="5" height="5" x="79" y="517" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="169" name="农夫" width="5" height="5" x="125" y="394" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="176" name="老者" width="5" height="5" x="375" y="328" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="55001" name="兔儿草" width="32" height="92" x="30" y="206" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55021" name="狐狸草" width="29" height="77" x="72" y="183" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55041" name="甘草" width="40" height="104" x="200" y="216" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55061" name="天芯草" width="72" height="78" x="223" y="448" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55081" name="枫丹草" width="59" height="58" x="294" y="304" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55101" name="野果" width="69" height="85" x="241" y="356" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55121" name="蛇果" width="69" height="93" x="94" y="292" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55141" name="毒果" width="18" height="70" x="285" y="191" num="2" interval="1800" color="0,255,0,0"/>
+	<npc id="55161" name="奇异果" width="50" height="92" x="128" y="402" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="89" height="41" x="32" y="579" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55221" name="破损箱子" width="61" height="69" x="300" y="449" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55021" name="狐狸草" width="58" height="57" x="96" y="21" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55141" name="毒果" width="26" height="126" x="342" y="115" num="5" interval="1800" color="0,255,0,0"/>
+	<npc id="55161" name="奇异果" width="53" height="71" x="22" y="309" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="74" height="102" x="48" y="388" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55041" name="甘草" width="40" height="131" x="2" y="443" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55001" name="兔儿草" width="68" height="69" x="57" y="501" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55221" name="破损箱子" width="61" height="69" x="253" y="18" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="89" height="41" x="140" y="20" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55141" name="毒果" width="37" height="83" x="305" y="365" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55141" name="毒果" width="63" height="65" x="262" y="101" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="89" height="41" x="147" y="577" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55081" name="枫丹草" width="82" height="58" x="133" y="509" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="46" height="136" x="240" y="192" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="29" height="128" x="307" y="169" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="35" height="172" x="186" y="328" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55021" name="狐狸草" width="26" height="51" x="119" y="148" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55101" name="野果" width="69" height="85" x="242" y="529" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55221" name="破损箱子" width="61" height="73" x="283" y="523" num="2" interval="1800" color="0,255,0,0"/>
+	<npc id="21110" name="地痞" width="260" height="558" x="67" y="70" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="21113" name="恶少" width="260" height="558" x="67" y="70" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="26110" name="地痞" width="260" height="558" x="67" y="70" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="15175" name="远" width="55" height="224" x="67" y="44" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="10007" name="鸡" width="62" height="99" x="45" y="80" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10007" name="鸡" width="19" height="56" x="201" y="152" num="4" interval="20" color="0,255,0,0"/>
+	<npc id="10007" name="鸡" width="28" height="48" x="220" y="153" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10007" name="鸡" width="46" height="36" x="200" y="117" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10012" name="狗" width="62" height="99" x="45" y="80" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10012" name="狗" width="19" height="56" x="201" y="152" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10012" name="狗" width="28" height="48" x="220" y="153" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10012" name="狗" width="46" height="36" x="200" y="117" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="15030" name="黑豹" width="106" height="54" x="79" y="12" num="50" interval="90" color="0,255,0,0"/>
+	<npc id="15095" name="蝙蝠" width="116" height="48" x="73" y="16" num="12" interval="90" color="0,255,0,0"/>
+	<npc id="15030" name="黑豹" width="33" height="21" x="188" y="44" num="12" interval="90" color="0,255,0,0"/>
+	<npc id="15170" name="地痞" width="101" height="227" x="23" y="96" num="180" interval="100" color="0,255,0,0"/>
+	<npc id="15171" name="女匪" width="101" height="227" x="25" y="91" num="22" interval="90" color="0,255,0,0"/>
+	<npc id="15172" name="地痞魔" width="101" height="227" x="21" y="98" num="22" interval="90" color="0,255,0,0"/>
+	<npc id="15173" name="打手" width="157" height="305" x="17" y="325" num="140" interval="90" color="0,255,0,0"/>
+	<npc id="15172" name="地痞魔" width="28" height="25" x="68" y="178" num="6" interval="90" color="0,255,0,0"/>
+	<npc id="15172" name="地痞魔" width="28" height="25" x="38" y="260" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15171" name="女匪" width="28" height="25" x="60" y="96" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15171" name="女匪" width="28" height="25" x="93" y="249" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15170" name="地痞" width="28" height="25" x="66" y="137" num="40" interval="45" color="0,255,0,0"/>
+	<npc id="15171" name="地痞" width="28" height="25" x="67" y="139" num="3" interval="40" color="0,255,0,0"/>
+	<npc id="15172" name="地痞" width="28" height="25" x="66" y="137" num="3" interval="40" color="0,255,0,0"/>
+	<npc id="15174" name="女匪" width="157" height="305" x="13" y="331" num="32" interval="90" color="0,255,0,0"/>
+	<npc id="15175" name="恶少mo" width="157" height="305" x="14" y="327" num="32" interval="90" color="0,255,0,0"/>
+	<npc id="15175" name="恶少mo" width="30" height="44" x="68" y="410" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15174" name="女匪" width="31" height="45" x="91" y="446" num="6" interval="90" color="0,255,0,0"/>
+	<npc id="15173" name="打手" width="49" height="74" x="71" y="422" num="25" interval="40" color="0,255,0,0"/>
+	<npc id="15175" name="恶少mo" width="16" height="27" x="44" y="550" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15174" name="女匪" width="16" height="27" x="42" y="510" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15173" name="打手" width="19" height="29" x="40" y="529" num="15" interval="40" color="0,255,0,0"/>
+	<npc id="15173" name="打手" width="19" height="29" x="145" y="451" num="15" interval="40" color="0,255,0,0"/>
+	<npc id="15174" name="女匪" width="16" height="27" x="143" y="447" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15175" name="恶少mo" width="16" height="27" x="156" y="445" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="15053" name="陈彪" width="28" height="40" x="156" y="445" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="16445" name="花花公子" width="28" height="40" x="44" y="550" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="15177" name="女匪" width="181" height="222" x="203" y="413" num="32" interval="90" color="0,255,0,0"/>
+	<npc id="15177" name="女匪" width="115" height="266" x="264" y="341" num="32" interval="90" color="0,255,0,0"/>
+	<npc id="15178" name="恶少魔" width="115" height="266" x="266" y="336" num="32" interval="90" color="0,255,0,0"/>
+	<npc id="15176" name="打手" width="115" height="266" x="267" y="333" num="180" interval="100" color="0,255,0,0"/>
+	<npc id="15178" name="恶少魔" width="181" height="222" x="201" y="411" num="20" interval="90" color="0,255,0,0"/>
+	<npc id="15176" name="打手" width="181" height="221" x="198" y="408" num="150" interval="90" color="0,255,0,0"/>
+	<npc id="15170" name="地痞" width="83" height="185" x="283" y="119" num="150" interval="100" color="0,255,0,0"/>
+	<npc id="15176" name="打手" width="45" height="45" x="299" y="456" num="50" interval="40" color="0,255,0,0"/>
+	<npc id="15176" name="打手" width="45" height="45" x="200" y="562" num="55" interval="40" color="0,255,0,0"/>
+	<npc id="15171" name="女匪" width="85" height="61" x="266" y="89" num="30" interval="90" color="0,255,0,0"/>
+	<npc id="15030" name="黑豹" width="106" height="54" x="250" y="18" num="50" interval="90" color="0,255,0,0"/>
+	<npc id="15095" name="蝙蝠" width="116" height="48" x="247" y="27" num="12" interval="90" color="0,255,0,0"/>
+	<npc id="16631" name="异军护卫" width="28" height="32" x="139" y="370" num="45" interval="10"/>
+	<npc id="16609" name="叛军禁卫" width="28" height="37" x="144" y="444" num="45" interval="10"/>
+	<npc id="16614" name="异域逃兵" width="28" height="32" x="215" y="461" num="45" interval="10"/>
+	<npc id="16610" name="嗜血屠夫" width="28" height="33" x="208" y="535" num="45" interval="10"/>
+	<npc id="16603" name="高级打手" width="30" height="35" x="192" y="328" num="45" interval="10"/>
+	<npc id="16604" name="变异魔鳄" width="30" height="35" x="364" y="56" num="40" interval="10"/>
+	<npc id="16604" name="变异魔鳄" width="31" height="35" x="351" y="81" num="15" interval="10"/>
+	<zonedef width="27" height="38" x="187" y="2" type="1" color="0,0,255,0"/>
+</map>

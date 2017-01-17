@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="414" name="郭靖">
+	<quest id="50026" new="1">
+		<embranchment id="1">
+			<conditions>
+							<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="郭靖：1/1"/>
+				<notify content="恭喜你完成了击败敌国郭靖的任务,回国家任务发布者处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

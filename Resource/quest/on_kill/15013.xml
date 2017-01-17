@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="15013" name="狂熊">
+	<quest id="255" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2092" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20328" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_狂熊" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_狂熊" value="1"/>
+				<refresh name="kill_狂熊"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_狂熊" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_狂熊"/>
+				<notify content="恭喜你完成了狂暴的任务,回灵猴处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

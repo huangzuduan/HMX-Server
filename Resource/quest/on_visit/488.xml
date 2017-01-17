@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="488" name="凤凰城-棺材铺老板(197,562)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10281">
+		<embranchment id="13">
+			<conditions>
+				<level type="Less" value="29"/>
+				<var type="Equal" name="state" value="-3" id="281"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("	你如此低级之人，我怎会告诉你如此天大秘密。29级以后再来吧")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+			<level type="Great" value="28"/>
+				<var type="Equal" name="state" value="-3" id="281"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：祈死(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;祈死\n \n&lt;/n&gt;&lt;n&gt;  什么？你问我为何在瘟疫过后去庙里烧香还愿？呵呵这是我们生意人的秘诀啦，怎么能告诉你？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("告诉我吧。{10002}", "v488", 281, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="281" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+			<level type="Great" value="28"/>
+				<var type="Equal" name="state" value="-3" id="281"/>
+			</conditions>
+			<actions>
+				<exp value="4000"/>
+				<notify1 content="经验+4000"/>
+				<notify content="恭喜你完成了“祈死”任务"/>
+				<var type="Set" name="state" value="-1" id="281"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10282">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="281"/>
+				<var type="Differ" name="state" value="-1" id="282"/>
+				<var type="Differ" name="state" value="1" id="282"/>
+				<var type="Differ" name="state" value="-3" id="282"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：人亡我利(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;人亡我利\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打强化翼鸟得到10个香囊，然后再回到棺材铺老板(181,262)处换取秘密。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    好吧，这也不是什么见不得人的事，但我们生意人不做亏本的买卖。我店里的香料要用完了，你若是帮我弄到强化翼鸟翅膀底下的香囊，我便告诉你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("一言为定。{10001}", "v488", 282, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<item value="10" id="2097"/>
+				<var type="Equal" name="state" value="-3" id="282"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：人亡我利(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;人亡我利?\n \n&lt;/n&gt;&lt;n&gt;   呵呵好香啊，果然是上乘的香料！不错不错。多谢你啦，下次你若有个三长两短，我可以给你个折扣。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("可以告诉我秘密了吧{10002}", "v488", 282, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="282"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：人亡我利(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("怎么又回来了，我还等着要香囊呢。快去吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="282" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="281"/>
+				<var type="Differ" name="state" value="-1" id="282"/>
+				<var type="Differ" name="state" value="1" id="282"/>
+				<var type="Differ" name="state" value="-3" id="282"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去兽王谷打强化翼鸟(255,24)，拿10个香囊跟棺材铺老板交换秘密。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<item value="10" id="2097"/>
+				<var type="Equal" name="state" value="-3" id="282"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="2097" log="交人亡我利(282)-删除10个动物香囊(2097)"/>
+				<exp value="10200"/>
+				<notify1 content="经验+10200"/>
+				<notify content="恭喜你完成了“人亡我利”任务"/>
+				<var type="Set" name="state" value="-1" id="282"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10283">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="282"/>
+				<var type="Differ" name="state" value="-3" id="283"/>
+				<var type="Differ" name="state" value="-1" id="283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：利之所驱(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;  人利我利\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找韩非(336,419)回复\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我们生意人最讲究诚信，既然答应了你，我也只好告诉你真相了。\n    其实我每次都是去庙里祈求天降瘟疫，因为瘟疫到来会死很多人，我们棺材铺的生意就很好！所以瘟疫过后我才会去还愿的，呵呵呵呵……\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("原来如此{10001}", "v488", 283, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="283" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="282"/>
+				<var type="Differ" name="state" value="-3" id="283"/>
+				<var type="Differ" name="state" value="-1" id="283"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找韩非(336,419)"/>
+				<notify1 content="韩非(336,419)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

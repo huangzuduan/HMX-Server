@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="50043" name="彩翼鸟">
+	<quest id="253" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2090" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20312" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Differ" name="num" value="1" id="20312"/>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2058" odds="4000"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="num" value="1" id="20312"/>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify1 content="已得到羽毛,去找颜梦梦(310,521)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

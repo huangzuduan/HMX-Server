@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10202" name="机械一层－工厂哨兵">
+	<!--new means new quest, default is quest on user-->
+	<quest id="388" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_工厂哨兵" value="35"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_工厂哨兵" value="1"/>
+				<refresh name="kill_工厂哨兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_工厂哨兵" value="34"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2165"/>
+				<refresh name="state"/>
+				<refresh name="kill_工厂哨兵"/>
+				<notify content="你已经找到了《天机卷》,回皇城的鲁建瓴(810,640)处交任务吧"/>
+				<notify1 content="《天机卷》:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>
+

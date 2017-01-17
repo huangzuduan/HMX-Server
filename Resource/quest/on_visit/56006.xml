@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56006" name="清源村-隐者(180,69)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10219">
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="219"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：天书(2)", "Dialog3")
+end
+function Dialog3()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;天书\n \n&lt;/n&gt;&lt;n&gt;    (GetName)嘛，真是难得，怎么有空跑到我这里来啊。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 120&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("给他看玉佩的图{10002}", "v56006", 219, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="219"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空点再来领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="219" new="1">
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="219"/>
+			</conditions>
+			<actions>
+				<additem value="10" id="585"/>
+				<notify1 content="得到甘草露 10个"/>
+				<exp value="120"/>
+				<notify1 content="经验+120"/>
+				<notify content="恭喜你完成了“天书”任务"/>
+				<var type="Set" name="state" value="-1" id="219"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这不是你那个玉佩上的古书么，哎，当年我看不懂现在还是不懂。")
+this:AddDialogItem("我要学习识字，自己读懂它(2)", "Dialog13")
+end
+function Dialog13()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;知识\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍商(126,70)取本《三字经》。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    果然有魄力,可惜我书都卖给秘籍商了。你去要一本《三字经》来，让我从基础开始教你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 140&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这便去{10001}", "v56006", 220, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10220">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="219"/>
+				<var type="Differ" name="state" value="-1" id="220"/>
+				<var type="Differ" name="state" value="1" id="220"/>
+				<var type="Differ" name="state" value="-3" id="220"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这不是你那个玉佩上的古书么，哎，当年我看不懂现在还是不懂。")
+this:AddDialogItem("我要学习识字，自己读懂它(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;知识\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍商(126,70)取本《三字经》。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    果然有魄力,可惜我书都卖给秘籍商了。你去要一本《三字经》来，让我从基础开始教你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 140&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这便去{10001}", "v56006", 220, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="220" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="219"/>
+				<var type="Differ" name="state" value="-1" id="220"/>
+				<var type="Differ" name="state" value="-3" id="220"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找秘籍商(126,70)"/>
+				<notify1 content="秘籍商"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10222">
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<item value="1" id="2085"/>
+				<var type="Equal" name="state" value="-3" id="222"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：识字(2)", "Dialog6")
+end
+function Dialog6()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;识字\n \n&lt;/n&gt;&lt;n&gt;    书拿来了？我们现在开始学习吧。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"578\"&gt;   铁仙丹 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 180&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("是，师傅{10002}", "v56006", 222, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<item value="1" id="2085"/>
+				<var type="Equal" name="state" value="-3" id="222"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="222"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="222"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你把《三字经》丢了，你只能注销此任务，再做一次了。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="222" new="1">
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="1" id="2085"/>
+				<var type="Equal" name="state" value="-3" id="222"/>
+			</conditions>
+			<actions>
+				<exp value="180"/>
+				<removeitem value="1" id="2085" log="交识字(222)-删除三字经(2085)"/>
+				<additem value="10" id="578"/>
+				<notify1 content="你得到了10个甘草露"/>
+				<notify1 content="经验+180"/>
+				<notify content="恭喜你完成了“识字”任务"/>
+				<var type="Set" name="state" value="-1" id="222"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;求教\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找闻广(166,167)询问古文体。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName),没想到你竟然有过目不忘的本事,我已经没有什么可教你的了。\n    听说最近村里来了个叫闻广的人，认识古体文字，你可以去向他求教一下。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v56006", 223, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10223">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="222"/>
+				<var type="Differ" name="state" value="-1" id="223"/>
+				<var type="Differ" name="state" value="1" id="223"/>
+				<var type="Differ" name="state" value="-3" id="223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：求教(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;求教\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找闻广(166,167)询问古文体。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName),没想到你竟然有过目不忘的本事,我已经没有什么可教你的了。\n    听说最近村里来了个叫闻广的人，认识古体文字，你可以去向他求教一下。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v56006", 223, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="223" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="222"/>
+				<var type="Differ" name="state" value="-1" id="223"/>
+				<var type="Differ" name="state" value="-3" id="223"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找闻广(166,167)询问古文体"/>
+				<notify1 content="闻广"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	
+	<quest id="901609">
+		<embranchment id="1">
+			<conditions>
+				
+				<space size="1"/>
+				<item value="1" id="928"/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;;&lt;n&gt;  恭喜你获得了猫眼石，只要&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;花费5两银子&lt;/n&gt;&lt;n&gt;我将帮你变成精致的升级宝石，&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("拿出1颗猫眼石{10001}", "v56006", 101609, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		 <embranchment id="2">
+			<conditions>
+				
+				<gold type="Less" value="500"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;;&lt;n&gt;  您好，花费5两银子&lt;/n&gt;&lt;n&gt;将可变成一颗精致的升级宝石&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("对不起，你银子不够")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				
+				<gold type="Great" value="499"/>
+				<space size="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;;&lt;n&gt;  您好，花费5两银子&lt;/n&gt;&lt;n&gt;将可变成一颗精致的升级宝石&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("你没有猫眼石")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				
+				<gold type="Great" value="499"/>
+				<item value="1" id="928"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;;&lt;n&gt;  您好，花费5两银子&lt;/n&gt;&lt;n&gt;将可变成一颗精致的升级宝石&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("你包裹满了")
+end
+				</menu>
+			</actions>
+		</embranchment>	
+		
+	</quest>
+	<quest id="101609" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				
+				<space size="1"/>
+				<item value="1" id="928"/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="500"/>
+				<removeitem value="1" id="928" log="换一个精致升级宝石-删除一个猫眼石"/>
+				<additem value="1" id="795"/>
+				<notify content="拿出一个猫眼石，花掉5两，获得一个精致升级宝石"/>
+				<notify1 content="拿出一个猫眼石，花掉5两，获得一个精致升级宝石"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

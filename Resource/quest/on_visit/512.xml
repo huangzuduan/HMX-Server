@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="512" name="龙冈山三寨-牢笼(197,118)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10305">
+		<embranchment id="2">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="305"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    谁能救救我啊。")
+this:AddTaskCmdItem("救出小男孩{10001}", "v512", 305, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="305" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="305"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54010" map="龙冈山二寨" ltpos="194,118" rbpos="200,117" gold="0" exp="0" dest="179,52"/>
+				<notify content="把小孩带到龙冈山二寨反抗者处"/>
+				<notify1 content="送到反抗者处"/>
+				<var type="Set" name="state" value="2" id="305"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56066" name="白骨洞三层-守魂僵尸(167,22)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10347">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="347"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：假冒僵尸(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;假冒僵尸\n \n&lt;/n&gt;&lt;n&gt;    哦？你是新来的吗？似乎什么也不知道呢。那些异族人把我们复活以后，原本准备利用我们去进攻王城的。但现在我们没有办法抵抗阳光，他们只好放弃我们了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 140740&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那他们就这样算了？{10002}", "v56066", 347, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="347" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="347"/>
+			</conditions>
+			<actions>
+				<exp value="140740"/>
+				<notify1 content="经验+140740"/>
+				<notify content="恭喜你完成了“假冒僵尸”任务"/>
+				<var type="Set" name="state" value="-1" id="347"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10348">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="347"/>
+				<var type="Differ" name="state" value="-3" id="348"/>
+				<var type="Differ" name="state" value="-1" id="348"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：回报(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;回报\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找王城的羽林将军。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    不，他们早就联合了北郊的叛军，只等时机来临，一举攻占王城。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 54000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("原来是这样{10001}", "v56066", 348, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="348" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="347"/>
+				<var type="Differ" name="state" value="-3" id="348"/>
+				<var type="Differ" name="state" value="-1" id="348"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把探听到的消息报告给王城的羽林将军(516,507)"/>
+				<notify1 content="去找王城的羽林将军"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

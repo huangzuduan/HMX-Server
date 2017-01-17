@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56043" name="凤凰城-颜梦梦(310,521)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10272">
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2075"/>
+				<var type="Equal" name="num" value="1" id="272"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("   哦，做狐皮大衣么？明白了，这就做给你。是红露那个家伙趁机敲诈吧！呵呵。")
+this:AddTaskCmdItem("多谢你啦{10002}", "v56043", 272, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="272" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2075"/>
+				<var type="Equal" name="num" value="1" id="272"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="2075" log="换狐皮衣(272:2076)-删除10个狐皮(2075)"/>
+				<additem value="1" id="2076"/>
+				<notify1 content="得到狐皮大衣，可以去找红露了。"/>
+				<var type="Set" name="state" value="-3" id="272"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30300">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="10"/>
+				<var type="Differ" name="state" value="-1" id="20300"/>
+				<var type="Differ" name="state" value="1" id="20300"/>
+				<var type="Differ" name="state" value="-3" id="20300"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：狐衣(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;水犀皮\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败水犀(507,268)收集10块水犀皮，然后交给颜梦梦(268,200)来换取水犀皮大衣。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    生意忙啊，都没有空出门采集原料了。怎么样，愿意帮我收集十块水犀皮吗？我会感谢你的！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("明白了。我帮你去弄水犀皮。{10001}", "v56043", 20300, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2116"/>
+				<var type="Equal" name="state" value="-3" id="20300"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：嘘寒问暖(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;水犀皮\n \n&lt;/n&gt;&lt;n&gt;   回来啦，拜托你果然没错，多谢你啦！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不用谢。{10002}", "v56043", 20300, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20300" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="10"/>
+				<var type="Differ" name="state" value="-1" id="20300"/>
+				<var type="Differ" name="state" value="1" id="20300"/>
+				<var type="Differ" name="state" value="-3" id="20300"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败水犀取10块水犀皮"/>
+				<notify1 content="去收集10块水犀皮"/>
+				<notify content="任务：去凤凰城(507,268)打败水犀，把收集的10块水犀皮给颜梦梦(310,521)制作皮衣"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2116"/>
+				<var type="Equal" name="state" value="-3" id="20300"/>
+			</conditions>
+			<actions>
+				<exp value="2400"/>
+				<removeitem value="10" id="2116" log="交嘘寒问暖(20300)-删除10个水犀皮(2116)"/>
+				<notify1 content="经验+2400"/>
+				<notify content="恭喜你完成了“嘘寒问暖”任务"/>
+				<var type="Set" name="state" value="-1" id="20300"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30301">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="20300"/>
+				<var type="Differ" name="state" value="-3" id="20301"/>
+				<var type="Differ" name="state" value="-1" id="20301"/>
+				<var type="Differ" name="state" value="1" id="20301"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：千里送单衣(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;千里送单衣\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  将水犀皮衣送给清源村的找马叔(180,184) \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这一件水犀皮衣是马叔上次来我这里时定下的，请你帮我送去好吗？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的，举手之劳。{10001}", "v56043", 20301, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20300"/>
+				<var type="Differ" name="state" value="-3" id="20301"/>
+				<var type="Differ" name="state" value="-1" id="20301"/>
+				<var type="Differ" name="state" value="1" id="20301"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，你空间已经满了，清空些再来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20301" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="20300"/>
+				<var type="Differ" name="state" value="-3" id="20301"/>
+				<var type="Differ" name="state" value="-1" id="20301"/>
+				<var type="Differ" name="state" value="1" id="20301"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2117"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找清源村-马叔(180,184)"/>
+				<notify1 content="得到水犀皮衣"/>
+				<notify1 content="清源村-马叔(180,184)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30312">
+		<embranchment id="5">
+			<conditions>
+				<!--item value="1" id="2115"/-->
+				<var type="Equal" name="state" value="-3" id="20312"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  我已经把羽衣交给你了，快去找齐飞吧！")
+this:AddCloseItem("我这就去。")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="num" value="1" id="20312"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    哦，原来齐飞看上冰琳啦？怪不得如此辛苦呢。我这就做羽衣，也算是祝福他们吧。")
+this:AddTaskCmdItem("就是嘛。多谢你啦。{10002}", "v56043", 20312, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20312" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="num" value="1" id="20312"/>
+			</conditions>
+			<actions>
+				<removeitem value="20" id="2058" log="换羽衣(20312:2115)-删除20个七彩翼羽(2058)"/>
+				<additem value="1" id="2115"/>
+				<notify1 content="得到羽衣，可以去找齐飞了。"/>
+				<var type="Set" name="state" value="-3" id="20312"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

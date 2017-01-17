@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16258" name="通魔猪精-精怪洞八层（100,60）">
+	<!--new means new quest, default is quest on user-->
+	<quest id="366" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2143" odds="4000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>
+

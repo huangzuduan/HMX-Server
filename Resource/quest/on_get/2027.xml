@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2027" name="染血的盔甲">
+
+	<quest id="318" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="318"/>
+				<var type="Less" name="get_染血的盔甲" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一件染血的盔甲"/>
+				<var type="Add" name="get_染血的盔甲" value="1"/>
+				<refresh name="get_染血的盔甲"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="318"/>
+				<var type="Great" name="get_染血的盔甲" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="318"/>
+				<refresh name="state"/>
+				<refresh name="get_染血的盔甲"/>
+				<notify content="恭喜你完成了收集染血的盔甲的任务,回王城闻广处交任务吧"/>
+				<notify1 content="王城闻广"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+</event>

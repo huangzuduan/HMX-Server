@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="837" name="凤凰城-谢无欢(406,377)">
+	<!--new means new quest, default is quest on user-->
+
+	<quest id="30105">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20105"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：辞官(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;辞官\n \n&lt;/n&gt;&lt;n&gt;    什么？他竟然辜负了我对他的一番栽培，实在太让我失望了。\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("每个人都有他自己的选择{10002}", "v837", 20105, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20105" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20105"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20105" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<notify content="恭喜你完成了“辞官”任务"/>
+				<var type="Set" name="state" value="-1" id="20105"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+	<quest id="30106">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20105"/>
+				<var type="Differ" name="state" value="-3" id="20106"/>
+				<var type="Differ" name="state" value="1" id="20106"/>
+				<var type="Differ" name="state" value="-1" id="20106"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：证人(2)", "Dialog46")
+end
+function Dialog46()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;证人\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找陈满神询问张倾城的下落，并且找到张倾城让她做证。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    张昆仑是无法逃出我手心的，但是还有件事情我需要你的帮助。\n    本案一个关键性人物张倾城至今下落不明，你能不能帮我找自称万事皆知的陈满神问一下张倾城的下落，我实在不愿意去听陈满神的唠叨。\n    找到张倾城后让她到凤凰城来找我，我们需要她的证词。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v837", 20106, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20106"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：证人(2)", "Dialog69")
+end
+function Dialog69()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;证人\n \n&lt;/n&gt;&lt;n&gt;    哈哈哈，真是太好了，那个女人终于落到了我手上，真是要感谢你啊。\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("此话怎讲{10002}", "v837", 20106, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20106" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+			<var type="Equal" name="state" value="-1" id="20105"/>
+				<var type="Differ" name="state" value="-3" id="20106"/>
+				<var type="Differ" name="state" value="-1" id="20106"/>
+				<var type="Differ" name="state" value="1" id="20106"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找凤凰城的陈满神询问张倾城的下落"/>
+				<notify1 content="凤凰城陈满神"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20106"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20106" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<notify content="恭喜你完成了“证人”任务"/>
+				<var type="Set" name="state" value="-1" id="20106"/>
+			</actions>
+		</embranchment>		
+	</quest>
+
+	<quest id="30107">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20106"/>
+				<var type="Differ" name="state" value="-3" id="20107"/>
+				<var type="Differ" name="state" value="1" id="20107"/>
+				<var type="Differ" name="state" value="-1" id="20107"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：真相(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;真相\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找陈大班定购馒头，每天都要。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    张倾城那个女人，真是罪大恶极，竟然包庇罪犯。最可恶的是，她竟然......\n    那年，我才9岁，她竟然为了一个馒头，就欺骗我纯洁善良的心灵，那次的创伤让我至今无法痊愈，你说，她是不是罪大恶极！\n &lt;/n&gt;&lt;/p&gt;")
+this:AddDialogItem("我不知道(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("    为了让她后悔，你帮我去找王城里制作大戏陈大班订购一批馒头，记得每天都要哦。\n    我要让那个女人每天都对着那些馒头忏悔她的罪行。")
+this:AddTaskCmdItem("好吧，我这就去{10002}", "v837", 20107, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20107" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20106"/>
+				<var type="Differ" name="state" value="-3" id="20107"/>
+				<var type="Differ" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="1" id="20107"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="找王城里的陈大班"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+
+</event>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5015" name="皇城-杂货店伙计(838,687)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30368">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20368"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    哦哦，慎篱要的纸啊！你拿去吧。")
+this:AddTaskCmdItem("那我就拿走了{10002}", "v5015", 20368, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20368" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20368"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54016" map="王城" ltpos="834,687" rbpos="842,693" gold="0" exp="0" dest="451,225"/>
+				<notify content="回王城去找慎篱(451,225)"/>
+				<var type="Set" name="state" value="-3" id="20368"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

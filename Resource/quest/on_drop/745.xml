@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="745" name="八宝肉">
+	<quest id="111">
+		<embranchment id="21">
+			<conditions>
+				<profession value="1"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="111"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="112">
+		<embranchment id="22">
+			<conditions>
+				<profession value="2"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="112"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="113">
+		<embranchment id="23">
+			<conditions>
+				<profession value="4"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="113"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="114">
+		<embranchment id="24">
+			<conditions>
+				<profession value="8"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="114"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="115">
+		<embranchment id="25">
+			<conditions>
+				<profession value="16"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="115"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="116">
+		<embranchment id="26">
+			<conditions>
+				<profession value="32"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="116"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="117">
+		<embranchment id="27">
+			<conditions>
+				<profession value="64"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="117"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="118">
+		<embranchment id="28">
+			<conditions>
+				<profession value="128"/>
+				<var type="Differ" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="state" value="-2" id="118"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="10055" name="海贼">
+	<quest id="285" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_土匪" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_土匪" value="1"/>
+				<refresh name="kill_土匪"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_土匪" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_土匪"/>
+				<notify content="恭喜你打败了40个土匪,向黄大人(184,364)汇报成果吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20333" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_土匪" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_土匪" value="1"/>
+				<refresh name="kill_土匪"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_土匪" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_土匪"/>
+				<notify content="恭喜你完成了土匪任务,回衙役交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20337" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_土匪" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_土匪" value="1"/>
+				<refresh name="kill_土匪"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_土匪" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_土匪"/>
+				<notify content="恭喜你完成了无胆匪类的任务,回考官处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

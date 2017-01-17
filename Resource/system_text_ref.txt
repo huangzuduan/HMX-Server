@@ -1,0 +1,9 @@
+服务器输出文件名	config_text_ref.xml	根名称	ability
+客户端输出文件名	config_text_ref.xml	项名称	text_ref
+文字索引	内容		
+3	3	0	
+text_id	text_content	explain	
+1	send VIP	发送标题	
+2	send VIP gift by#$	邮件内容	
+3	arena reward	发送标题	
+4	arena reward	邮件内容	

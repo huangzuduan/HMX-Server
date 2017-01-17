@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="334" name="凤凰城-家族任务发布者(295,432)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="250003">
+		<embranchment id="10">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="family_master" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("家族自定义任务发布(0)", "Dialog15")
+end
+function Dialog15()
+this:AddTalk("    尊敬的族长，你们家族想做哪个任务呢？")
+this:AddTaskCmdItem("攻击怪物-每天3次{10001}", "v334", 150003, 11)
+this:AddDialogItem("家族任务介绍(0)", "Dialog16")
+end
+function Dialog16()
+this:AddTalk("攻击怪物任务 - 每个家族成员都能接到适合自己等级的杀怪任务，该任务每天最多做三次。")
+this:AddDialogItem("返回(0)", "Dialog15")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150003" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<grade value="4"/>
+				<familyvar type="Differ" name="family_master" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="今天家族任务是攻击怪物"/>
+				<familyvar type="Set" name="r_family_kill" value="1"/>
+				<uservar type="Set" name="family_master" value="1"/>
+				<bulletin content="本家族今天任务是杀怪" kind="2"/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的族长，你们家族成员今天接的都是打怪任务，如果想要更改任务类型，您必须等明天来更改。\n    如果不更改，那么您家族今后任务都是打怪任务。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<grade value="4"/>
+				<familyvar type="Differ" name="family_master" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="今天家族任务是5人运镖"/>
+				<familyvar type="Set" name="r_family_car" value="1"/>
+				<familyvar type="Set" name="family_master" value="1"/>
+				<bulletin content="本家族今天任务是运镖" kind="2"/>
+				<familyvar type="Set" name="family_total_car" value="5"/>
+				<familyvar type="Set" name="family_car_finish" value="5"/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的族长，你们家族成员今天接的是家族运镖任务，如果想要更改任务类型，您必须等明天来更改。\n    如果不更改，那么您家族今后任务都是家族运镖任务。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="260001">
+		<embranchment id="101">
+			<conditions>
+				<innation/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击25级以上的怪物50只。\n经验奖励：5000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<innation/>
+				<level type="Great" value="29"/>
+				<level type="Less" value="40"/>
+				
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击35级以上的怪物50只。\n经验奖励：15000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 12)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<innation/>
+				<level type="Great" value="39"/>
+				<level type="Less" value="50"/>
+				<septid type="Great" value="0"/>
+
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击45级以上的怪物50只。\n经验奖励：25000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 13)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="60"/>
+				<septid type="Great" value="0"/>
+
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击55级以上的怪物50只。\n经验奖励：40000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 14)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<innation/>
+				<level type="Great" value="59"/>
+				<level type="Less" value="70"/><septid type="Great" value="0"/>
+
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击65级以上的怪物50只。\n经验奖励：50000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 15)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="106">
+			<conditions>
+				<innation/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="80"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击75级以上的怪物50只。\n经验奖励：80000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 16)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<innation/>
+				<level type="Great" value="79"/>
+				<level type="Less" value="90"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击85级以上的怪物50只。\n经验奖励：100000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 17)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="108">
+			<conditions>
+				<innation/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="100"/><septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击95级以上的怪物50只。\n经验奖励：140000")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50003, 18)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="900">
+			<conditions>
+				<innation/>
+				<uservar type="Equal" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,您今天的家族任务已经完成，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="25" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：5000")
+this:AddTaskCmdItem("接受奖励{10001}", "v334", 50003, 21)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="35" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：15000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 22)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="45" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：25000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 23)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="55" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：40000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 24)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="65" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：50000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 25)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="75" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：80000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 26)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="85" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：100000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 27)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="28">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="95" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。\n经验奖励：140000")
+this:AddTaskCmdItem("完成任务{10001}", "v334", 50003, 28)
+end
+</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50003" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：攻击25级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="25"/>
+				<var type="Set" name="min" value="25"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="septid_kill_num"/>
+				<refresh name="min"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="29"/>
+				<level type="Less" value="40"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败35级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="35"/>
+				<var type="Set" name="min" value="35"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="39"/>
+				<level type="Less" value="50"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：45级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="45"/>
+				<var type="Set" name="min" value="45"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="60"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败55级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="55"/>
+				<var type="Set" name="min" value="55"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="59"/>
+				<level type="Less" value="70"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败65级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="65"/>
+				<var type="Set" name="min" value="65"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="80"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败75级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="75"/>
+				<var type="Set" name="min" value="75"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="79"/>
+				<level type="Less" value="90"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败85级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="85"/>
+				<var type="Set" name="min" value="85"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="89"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败95级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="95"/>
+				<var type="Set" name="min" value="95"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="septid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="25" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖5000"/>
+				<exp value="5000"/>
+				<notify content="经验+5000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="35" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖15000"/>
+				<exp value="15000"/>
+				<notify content="经验+15000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="45" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖25000"/>
+				<exp value="25000"/>
+				<notify content="经验+25000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="24" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="55" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖40000"/>
+				<exp value="40000"/>
+				<notify content="经验+40000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="65" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖50000"/>
+				<exp value="50000"/>
+				<notify content="经验+50000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="26" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="75" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖80000"/>
+				<exp value="80000"/>
+				<notify content="经验+80000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="27" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="85" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖100000"/>
+				<exp value="100000"/>
+				<notify content="经验+100000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="28" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="95" id="50003"/>
+				<var type="Equal" name="state" value="-3" id="50003"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖140000"/>
+				<exp value="140000"/>
+				<notify content="经验+140000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+	<quest id="150006">
+		<embranchment id="2">
+			<conditions>
+				<isguard/>
+				<familyvar type="Equal" name="r_family_car" value="1"/>
+				<familyvar type="Less" name="family_car_times" value="5"/>
+				<familyvar type="Less" name="family_car_septid_kill_num" value="5"/>
+				<var type="Differ" name="state" value="1" id="50006"/>
+				<var type="Differ" name="state" value="-3" id="50006"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("家族五人镖", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("    本任务需要你家族中五人全部将指定镖运送到目的地后，运镖的五人才能够一起回来领取经验奖励。每个家族每天只有五次此任务。")
+this:AddTaskCmdItem("接镖{10001}", "v334", 50006, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<level type="Great" value="19"/>
+				<level type="Less" value="20"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+				<familyvar type="Great" name="family_car_finish" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你们真厉害，作为团结的奖励，你们能获得更多的经验。\n经验奖励：5000")
+this:AddTaskCmdItem("接受奖励{10002}", "v334", 50006, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<level type="Great" value="19"/>
+				<level type="Less" value="20"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+				<familyvar type="Equal" name="family_car_finish" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你们真厉害，作为团结的奖励，你们能获得更多的经验。\n经验奖励：5000")
+this:AddTaskCmdItem("接受奖励{10002}", "v334", 50006, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<level type="Great" value="29"/>
+				<level type="Less" value="30"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+				<familyvar type="Great" name="family_car_finish" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你们真厉害，作为团结的奖励，你们能获得更多的经验。\n经验奖励：20000")
+this:AddTaskCmdItem("接受奖励{10002}", "v334", 50006, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<level type="Great" value="29"/>
+				<level type="Less" value="30"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+				<familyvar type="Equal" name="family_car_finish" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你们真厉害，作为团结的奖励，你们能获得更多的经验。\n经验奖励：20000")
+this:AddTaskCmdItem("接受奖励{10002}", "v334", 50006, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<level type="Great" value="39"/>
+				<level type="Less" value="40"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+				<familyvar type="Great" name="family_car_finish" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你们真厉害，作为团结的奖励，你们能获得更多的经验。\n经验奖励：40000")
+this:AddTaskCmdItem("接受奖励{10002}", "v334", 50006, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<level type="Great" value="39"/>
+				<level type="Less" value="40"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+				<familyvar type="Equal" name="family_car_finish" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你们真厉害，作为团结的奖励，你们能获得更多的经验。\n经验奖励：40000")
+this:AddTaskCmdItem("接受奖励{10002}", "v334", 50006, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50006" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+				<isguard/>
+				<familyvar type="Less" name="family_car_times" value="5"/>
+				<familyvar type="Less" name="family_car_septid_kill_num" value="5"/>
+				<var type="Differ" name="state" value="1" id="50006"/>
+				<var type="Differ" name="state" value="-3" id="50006"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<addguard id="50006" map="凤尾村" ltpos="299,463" rbpos="306,470" gold="0" exp="0" dest="75,119"/>
+				<notify content="你接了一个家族镖，需要5个人都完成才能领取经验"/>
+				<notify1 content="接了家族镖"/>
+				<familyvar type="Add" name="family_car_septid_kill_num" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+			</conditions>
+			<actions>
+				<exp value="5000"/>
+				<notify content="你完成了家族运镖，增加了经验"/>
+				<notify1 content="经验+5000"/>
+				<var type="Set" name="state" value="-2"/>
+				<familyvar type="Set" name="family_total_car" value="5"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+			</conditions>
+			<actions>
+				<exp value="20000"/>
+				<notify content="你完成了家族运镖，增加了经验"/>
+				<notify1 content="经验+20000"/>
+				<familyvar type="Set" name="family_total_car" value="5"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+			</conditions>
+			<actions>
+				<exp value="40000"/>
+				<notify content="你完成了家族运镖，增加了经验"/>
+				<notify1 content="经验+40000"/>
+				<familyvar type="Set" name="family_total_car" value="5"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="260022">
+		<embranchment id="101">
+			<conditions>
+				<innation/>
+				<level type="Great" value="99"/>
+				<level type="Less" value="110"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击110级以上的怪物50只。")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50022, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<innation/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击120级以上的怪物50只。")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50022, 12)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<innation/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击130级以上的怪物50只。")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50022, 13)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<innation/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击140级以上的怪物50只。")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50022, 14)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<innation/>
+				<level type="Great" value="139"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的家族任务是攻击150级以上的怪物50只。")
+this:AddTaskCmdItem("接受任务{10001}", "v334", 50022, 15)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="900">
+			<conditions>
+				<innation/>
+				<uservar type="Equal" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50003"/>
+				<var type="Differ" name="state" value="1" id="50003"/>
+				<var type="Differ" name="state" value="-3" id="50003"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,您今天的家族任务已经完成，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的家族任务，要现在领取奖励么。")
+this:AddTaskCmdItem("接受奖励{10001}", "v334", 50022, 21)
+end
+</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50022" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="99"/>
+				<level type="Less" value="110"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<notify content="任务：攻击110级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="110"/>
+				<var type="Set" name="min" value="21"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="septid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="septid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="septid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="septid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="septid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="septid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="septid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="septid_kill_selflevel" name2="septid_kill_selflevel2"/>
+				<refresh name="septid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败120级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="120"/>
+				<var type="Set" name="min" value="35"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="level"/>
+				<refresh name="septid_kill_num"/>
+				<var type="GetP" name="septid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="septid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="septid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="septid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="septid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="septid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="septid_kill_selflevel" name2="septid_kill_selflevel2"/>
+				<refresh name="septid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<notify content="任务：130级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="130"/>
+				<var type="Set" name="min" value="45"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="level"/>
+				<refresh name="septid_kill_num"/>
+				<var type="GetP" name="septid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="septid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="septid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="septid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="septid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="septid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="septid_kill_selflevel" name2="septid_kill_selflevel2"/>
+				<refresh name="septid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败140级以上的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="140"/>
+				<var type="Set" name="min" value="55"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="min"/>
+				<refresh name="level"/>
+				<refresh name="septid_kill_num"/>
+				<var type="GetP" name="septid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="septid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="septid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="septid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="septid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="septid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="septid_kill_selflevel" name2="septid_kill_selflevel2"/>
+				<refresh name="septid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="139"/>
+				<familyvar type="Equal" name="r_family_kill" value="1"/>
+				<uservar type="Less" name="family_kill_times" value="3"/>
+				<var type="Differ" name="state" value="-1" id="50022"/>
+				<var type="Differ" name="state" value="1" id="50022"/>
+				<var type="Differ" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败150级的怪物50只"/>
+				<uservar type="Add" name="family_kill_times" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="150"/>
+				<var type="Set" name="min" value="65"/>
+				<var type="Set" name="septid_kill_num" value="50"/>
+				<refresh name="level"/>
+				<refresh name="septid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="septid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="septid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="septid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="septid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="septid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="septid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="septid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="septid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="septid_kill_selflevel" name2="septid_kill_selflevel2"/>
+				<refresh name="septid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50022"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验增加"/>
+				<exp1 value="100" id="50022" name="selflevel"/>
+				<exp1 value="100" id="50022" name="septid_kill_selflevel"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

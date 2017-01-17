@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="15014" name="老虎">
+	<quest id="287" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2098" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+<quest id="20802" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_老虎" value="500"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_老虎" value="1"/>
+				<refresh name="kill_老虎"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_老虎" value="499"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_老虎"/>
+				<notify content="恭喜你，你已经消灭了500只35级的老虎，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

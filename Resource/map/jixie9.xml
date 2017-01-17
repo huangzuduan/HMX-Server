@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- Edited with XMLSPY C.+ v2007 rel. 2 U  by QQ 49636010 -->
+
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512 -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<npc id="10239" name="魔铜法卫" width="191" height="198" x="12" y="5" num="5" interval="5" color="0,255,0,0"/>
+	<npc id="10238" name="技师师范" width="191" height="198" x="12" y="5" num="5" interval="5" color="0,255,0,0"/>
+	<npc id="10244" name="机关督领" width="191" height="198" x="12" y="5" num="5" interval="5" color="0,255,0,0"/>
+	<npc id="10245" name="魔铜卫长" width="191" height="198" x="12" y="5" num="5" interval="5" color="0,255,0,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="89" y="19"/>
+		<point x="90" y="19"/>
+		<point x="91" y="19"/>
+		<point x="92" y="19"/>
+		<point x="89" y="20"/>
+		<point x="90" y="20"/>
+		<point x="91" y="20"/>
+		<point x="92" y="20"/>
+		<point x="88" y="21"/>
+		<point x="89" y="21"/>
+		<point x="90" y="21"/>
+		<point x="91" y="21"/>
+		<dest name="jixie8" country="6" x="45" y="143"/>
+		<dest name="jixie8" country="6" x="46" y="143"/>
+		<dest name="jixie8" country="6" x="47" y="143"/>
+		<dest name="jixie8" country="6" x="48" y="143"/>
+		<dest name="jixie8" country="6" x="45" y="144"/>
+		<dest name="jixie8" country="6" x="46" y="144"/>
+		<dest name="jixie8" country="6" x="47" y="144"/>
+		<dest name="jixie8" country="6" x="48" y="144"/>
+		<dest name="jixie8" country="6" x="44" y="145"/>
+		<dest name="jixie8" country="6" x="45" y="145"/>
+		<dest name="jixie8" country="6" x="46" y="145"/>
+		<dest name="jixie8" country="6" x="47" y="145"/>
+	</waypoint>
+	<waypoint>
+		<point x="128" y="183"/>
+		<point x="129" y="183"/>
+		<point x="130" y="183"/>
+		<point x="131" y="183"/>
+		<point x="128" y="184"/>
+		<point x="129" y="184"/>
+		<point x="130" y="184"/>
+		<point x="131" y="184"/>
+		<point x="127" y="185"/>
+		<point x="128" y="185"/>
+		<point x="129" y="185"/>
+		<point x="130" y="185"/>
+		<dest name="jixie10" country="6" x="45" y="170"/>
+		<dest name="jixie10" country="6" x="46" y="170"/>
+		<dest name="jixie10" country="6" x="47" y="170"/>
+		<dest name="jixie10" country="6" x="48" y="170"/>
+		<dest name="jixie10" country="6" x="45" y="171"/>
+		<dest name="jixie10" country="6" x="46" y="171"/>
+		<dest name="jixie10" country="6" x="47" y="171"/>
+		<dest name="jixie10" country="6" x="48" y="171"/>
+		<dest name="jixie10" country="6" x="44" y="172"/>
+		<dest name="jixie10" country="6" x="45" y="172"/>
+		<dest name="jixie10" country="6" x="46" y="172"/>
+		<dest name="jixie10" country="6" x="47" y="172"/>
+	</waypoint>
+	<npc id="10237" name="工匠师范" width="15" height="20" x="120" y="129" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10248" name="妖铜护法" width="15" height="20" x="120" y="129" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10246" name="灵木副卫" width="15" height="20" x="23" y="94" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10241" name="圣石卫兵" width="15" height="20" x="23" y="94" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10240" name="灵木步卒" width="15" height="20" x="154" y="49" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10247" name="圣石亲卫" width="15" height="20" x="154" y="49" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10242" name="妖铜护卫" width="15" height="20" x="180" y="176" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10243" name="工匠督领" width="15" height="20" x="180" y="176" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10242" name="妖铜护卫" width="15" height="20" x="77" y="98" num="15" interval="2" color="0,255,0,0"/>
+	<npc id="10243" name="工匠督领" width="15" height="20" x="77" y="98" num="15" interval="2" color="0,255,0,0"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="20" height="36" x="79" y="0" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="27" x="115" y="169" type="1" color="0,0,255,0"/>
+</map>

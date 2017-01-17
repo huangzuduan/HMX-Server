@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5226" name="世外桃源-桃源车夫(135,248)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10471">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="471"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：寻找归途(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;寻找归途\n \n&lt;/n&gt;&lt;n&gt;    原来是广而告之介绍来的人！看见你真好！如果你有急事，我可以带你回到王城！\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v5226", 471, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="471" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="471"/>
+			</conditions>
+			<actions>
+				<exp1 value="100" id="471" name="xunzhao_selflevel"/>
+				<refresh name="xunzhao_selflevel"/>
+				<varnotify2 content="经验+%u" value="xunzhao_selflevel" id="471"/>
+				<notify content="完成了“寻找归途”任务"/>
+				<notify content="你可以通过车夫回到王城！"/>
+				<var type="Set" name="state" value="-1" id="471"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+	<quest id="10472">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="472"/>
+				<var type="Differ" name="state" value="-1" id="472"/>
+				<var type="Differ" name="state" value="1" id="472"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：越野大赛(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;越野大赛\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找世外桃源的自行车赛发令员。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，世外桃源有一种很有趣的活动－自行车越野大赛！如果你想参加的话，就去找世外桃源的自行车赛发令员了解情况吧！\n &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v5226", 472, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="472"/>
+				<var type="Differ" name="state" value="-1" id="472"/>
+				<var type="Differ" name="state" value="1" id="472"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：越野大赛(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;越野大赛\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找世外桃源的自行车赛发令员。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，世外桃源有一种很有趣的活动－自行车越野大赛！如果你想参加的话，就去找世外桃源的自行车赛发令员了解情况吧！\n &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v5226", 472, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="472" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="472"/>
+				<var type="Differ" name="state" value="-1" id="472"/>
+				<var type="Differ" name="state" value="1" id="472"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<var type="GetP" name="yueye_selflevel" value="1"/>
+				<vars type="Mul" name1="yueye_selflevel" name2="yueye_selflevel"/>
+				<var type="Set" name="yueye_num" value="25"/>
+				<vars type="Mul" name1="yueye_selflevel" name2="yueye_num"/>
+				<refresh name="yueye_selflevel"/>
+				<notify content="任务:在世外桃源找自行车赛发令员(194,248)"/>
+				<notify1 content="任务:在世外桃源找自行车赛发令员(194,248)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="472"/>
+				<var type="Differ" name="state" value="-1" id="472"/>
+				<var type="Differ" name="state" value="1" id="472"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<var type="GetP" name="yueye_selflevel" value="1"/>
+				<vars type="Mul" name1="yueye_selflevel" name2="yueye_selflevel"/>
+				<var type="Set" name="yueye_num" value="50"/>
+				<vars type="Mul" name1="yueye_selflevel" name2="yueye_num"/>
+				<refresh name="yueye_selflevel"/>
+				<notify content="任务:在世外桃源找自行车赛发令员(194,248)"/>
+				<notify1 content="任务:在世外桃源找自行车赛发令员(194,248)"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+	<quest id="960103">
+		<embranchment id="2">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="2"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="3"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="4"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 4)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="5"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="7"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="8"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 8)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="9"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="10"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 10)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="11"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<gold type="Great" value="199"/>
+                <nation value="12"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是桃源的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("回王城-2两(0)", "v5226", 160103, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="40">
+			<conditions>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的车夫，你有什么地方想去的么？")
+this:AddDialogItem("回王城(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+                <nation value="2"/>
+			</conditions>
+			<actions>
+				<goto name="宋国·王城" pos="812,419"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你回到了王城,花了2两车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+                <nation value="3"/>
+			</conditions>
+			<actions>
+				<goto name="魏国·王城" pos="812,419"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你回到了王城,花了2两车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+</event>

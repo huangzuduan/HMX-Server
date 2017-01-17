@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<ScenesInfo>
+	<!--id:服务器编号,country:国家编号,mapID:地图编号-->
+	<server id="4001">
+		<!--1:魏国,2:蜀国,3:吴国,4:中立区-->　　
+		<country id="1">　　
+			<map mapID="101"/>
+			<map mapID="102"/>
+			<map mapID="103"/>
+		</country>
+		<country id="2">　　
+			<map mapID="101"/>
+			<map mapID="102"/>
+			<map mapID="103"/>
+		</country>
+		<country id="3">　　
+			<map mapID="101"/>
+			<map mapID="102"/>
+			<map mapID="103"/>
+		</country>
+		<country id="4">　　　
+			<map mapID="104"/>
+			<map mapID="105"/>
+			<map mapID="106"/>   
+			<map mapID="107"/>  				
+		</country>
+	</server>
+	<!--id:国家编号,name:国家名称,mapID:该国家主城(新手出生等);国家名称不能有特殊字符"·"function:0表示可以注册，1表示不可以注册。-->
+	<countryinfo>
+		<country id="1" name="魏国" mapID="101" function="0"/>
+		<country id="2" name="蜀国" mapID="101" function="0"/>
+		<country id="3" name="吴国" mapID="101" function="0"/>
+		<country id="4" name="中立区" mapID="104" function="1"/>
+	</countryinfo>
+	<!--mapID:地图编号,name:地图名称,fileName:地图文件名,foreignerbackto:外国人死亡候重生地图,commoncountrybackto:在公共国的公共地图上死亡后重生地图,commonuserbackto:无国籍人在国外死亡重生地,backto:死亡后重生地图编号;地图名称不能有特殊字符"·",文件名称不能有特殊字符".",backtocity:表示回城符可以回到的城市 backtodare正式国战复活 countrydarebackto 就是指定在该地图上，国战期间死亡的攻方国家的人，死后去哪个地图复活。countrydefbackto 守方复活地图国战期间 exprate经验加成-->
+	<!--special特殊功能定义(用二进制表示),function特殊功能定义(用二进制表示),包括:不可骑马(1),主城(2). 练功点（4）  转轴不可以使用（8） 不红名地图（16） 收费地图（32） 不可组队（64）不可使用令牌 （128） ：256,表示该地图杀人不增加功勋    512表示不可以使用家族战车    1024 ， 不能使用技能地图
+	-->
+	<mapinfo>
+		<map mapID="101" name="清源村" fileName="qingyuancun-main" backtocity="101" foreignerbackto="102" function="" commonuserbackto="134" backtodare="102" pklevel="59"/>
+		<map mapID="102" name="凤凰城" fileName="fenghuangcheng-main" backtocity="102" foreignerbackto="102" function="2" commonuserbackto="134" backtodare="102" level="10" pklevel="59"/>
+		<map mapID="103" name="北郊" fileName="fengzuiling" backtocity="139" foreignerbackto="139" backto="139" function="4" commonuserbackto="134" backtodare="139" level="30"/>
+		<map mapID="104" name="凤尾村" fileName="fengweicun-main" backtocity="102" foreignerbackto="102" backto="102" function="" commonuserbackto="134" backtodare="102" level="19" pklevel="59"/>
+		<map mapID="105" name="山寨前哨" fileName="fengshoucun-main" backtocity="102" foreignerbackto="102" backto="102" function="4" commonuserbackto="134" backtodare="102" level="19" pklevel="59"/>
+		<map mapID="106" name="凤祥镇" fileName="fengxiangzhen-main" backtocity="139" foreignerbackto="139" backto="139" commonuserbackto="134" backtodare="139" level="30"/>
+		<map mapID="107" name="滨海之岛" fileName="haizeiyingdi" backtocity="134" foreignerbackto="134" backto="5" function="4" commonuserbackto="134" backtodare="134" level="30" commoncountrybackto="134" exprate="10"/>
+	</mapinfo>
+</ScenesInfo>

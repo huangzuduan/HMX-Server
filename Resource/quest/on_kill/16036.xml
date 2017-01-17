@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="GB2312"?>
+<event id="16036" name="°׹ŵ-Ѫצ½©ʬ(ħ)">
+	<!--quest id="318" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2027" odds="2500"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<quest id="334" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2126" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

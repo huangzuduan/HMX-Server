@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5026" name="皇城-史料馆看守(470,623)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10399">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="399"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：户籍(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;户籍\n \n&lt;/n&gt;&lt;n&gt;     嗯，不错，这是侍郎大人的官印。我这就去给你拿户籍册。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 91220&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("知道了。{10002}", "v5026", 399, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="399" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="399"/>
+			</conditions>
+			<actions>
+				<exp value="91220"/>
+				<notify1 content="经验+91220"/>
+				<notify content="恭喜你完成了“查询”任务"/>
+				<var type="Set" name="state" value="-1" id="399"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10400">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="95"/>
+				<level type="Less" value="103"/>
+				<var type="Equal" name="state" value="-1" id="399"/>
+				<var type="Differ" name="state" value="-3" id="400"/>
+				<var type="Differ" name="state" value="-1" id="400"/>
+				<var type="Differ" name="state" value="1" id="400"/>
+				<var type="Differ" name="state" value="2" id="400"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：运送(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;运送\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将户籍册运给皇城－户部侍郎(424,284)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这里是二十年来的皇城户籍册，小心保管！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 375990&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这么多！{10001}", "v5026", 400, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="400" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="95"/>
+				<level type="Less" value="103"/>
+				<var type="Equal" name="state" value="-1" id="399"/>
+				<var type="Differ" name="state" value="-3" id="400"/>
+				<var type="Differ" name="state" value="-1" id="400"/>
+				<var type="Differ" name="state" value="1" id="400"/>
+				<var type="Differ" name="state" value="2" id="400"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54050" map="皇城" ltpos="470,615" rbpos="472,626" gold="0" exp="0" dest="424,284"/>
+				<var type="Set" name="state" value="2" id="400"/>
+				<refresh name="state"/>
+				<notify content="任务：将户籍册运给皇城－户部侍郎(424,284)"/>
+				<notify1 content="将户籍册运给皇城－户部侍郎(424,284)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10442">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="442"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：查阅(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;查阅\n \n&lt;/n&gt;&lt;n&gt;     是您啊！不知此来所为何事？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 167760&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("查阅图腾书籍。{10002}", "v5026", 442, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="442" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="442"/>
+			</conditions>
+			<actions>
+				<exp value="167760"/>
+				<notify1 content="经验+167760"/>
+				<notify content="恭喜你完成了“查阅”任务"/>
+				<var type="Set" name="state" value="-1" id="442"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10443">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="127"/>
+				<level type="Less" value="135"/>
+				<var type="Equal" name="state" value="-1" id="442"/>
+				<var type="Differ" name="state" value="-3" id="443"/>
+				<var type="Differ" name="state" value="-1" id="443"/>
+				<var type="Differ" name="state" value="1" id="443"/>
+				<var type="Differ" name="state" value="2" id="443"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：借回(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;借回\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把资料运给皇城的夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    番邦异志全在此，请拿去查阅吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 671040&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢！{10001}", "v5026", 443, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="443" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="127"/>
+				<level type="Less" value="135"/>
+				<var type="Equal" name="state" value="-1" id="442"/>
+				<var type="Differ" name="state" value="-3" id="443"/>
+				<var type="Differ" name="state" value="-1" id="443"/>
+				<var type="Differ" name="state" value="1" id="443"/>
+				<var type="Differ" name="state" value="2" id="443"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<addguard id="54067" map="皇城" ltpos="472,623" rbpos="473,628" gold="0" exp="0" dest="563,84"/>
+				<refresh name="state"/>
+				<notify content="任务：把资料运给皇城的夏侯望(563,84)。"/>
+				<notify1 content="把资料运给皇城的夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

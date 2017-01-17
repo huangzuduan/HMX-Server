@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2001" name="铜原石">
+	<quest id="9120">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="120"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块铜原石"/>
+				<var type="Add" name="get_铜原石" value="1"/>
+				<refresh name="get_铜原石"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="120"/>
+				<var type="Equal" name="get_铜原石" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="120"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了收集铜原石的任务,回武器商王麻子处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

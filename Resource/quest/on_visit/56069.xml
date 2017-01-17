@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56069" name="千江镇-蒙阔(222,338)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10370">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="370"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：凶险之地(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;凶险之地\n \n&lt;/n&gt;&lt;n&gt;    什么？我们这里出产内丹？这内丹是何物，怎么我们还没见过，异族人便先盗取了去！这还了得！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 356415&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("……不必如此激动……{10002}", "v56069", 370, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="370" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="370"/>
+			</conditions>
+			<actions>
+				<exp value="356415"/>
+				<notify1 content="经验+356415"/>
+				<notify content="恭喜你完成了“凶险之地”任务"/>
+				<var type="Set" name="state" value="-1" id="370"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30394">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20394"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：奖赏(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;奖赏\n \n&lt;/n&gt;&lt;n&gt;    上次花家为千江镇除害，消灭盗匪的义举上面已经知道了，因此打算奖赏他们。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 86940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我替他们多谢大人。{10002}", "v56069", 20394, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20394" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20394"/>
+			</conditions>
+			<actions>
+				<exp value="86940"/>
+				<notify1 content="经验+86940"/>
+				<notify content="恭喜你完成了“奖赏”任务"/>
+				<var type="Set" name="state" value="-1" id="20394"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30395">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20394"/>
+				<var type="Differ" name="state" value="-1" id="20395"/>
+				<var type="Differ" name="state" value="1" id="20395"/>
+				<var type="Differ" name="state" value="-3" id="20395"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：替天行道(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;替天行道\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去千江镇右下消灭45个狂生，再向千江镇的蒙阔(222,338)汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    并不是我们官府不为民除害，实在是那些恶少靠山强硬，我们不敢拿他们怎么样。今日出了你们这等少年英豪，拜请少侠替我千江镇除害，消灭45个狂生。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 434700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这又何难！{10001}", "v56069", 20395, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20395"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：替天行道(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;替天行道\n \n&lt;/n&gt;&lt;n&gt;    太好了，这次千江镇清净了不少。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 434700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("为民除害嘛！{10002}", "v56069", 20395, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20395"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：替天行道(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("你是想欺骗本大将军吗，你根本没消灭狂生。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20395" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20394"/>
+				<var type="Differ" name="state" value="-1" id="20395"/>
+				<var type="Differ" name="state" value="1" id="20395"/>
+				<var type="Differ" name="state" value="-3" id="20395"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去千江镇右下消灭45个狂生，再向千江镇的蒙阔(222,338)汇报"/>
+				<notify1 content="任务：去千江镇右下消灭45个狂生，向千江镇的蒙阔汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20395"/>
+			</conditions>
+			<actions>
+				<exp value="434700"/>
+				<notify1 content="经验+434700"/>
+				<notify content="恭喜你完成了“替天行道”任务"/>
+				<var type="Set" name="state" value="-1" id="20395"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30396">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20395"/>
+				<var type="Differ" name="state" value="-3" id="20396"/>
+				<var type="Differ" name="state" value="-1" id="20396"/>
+				<var type="Differ" name="state" value="1" id="20396"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：赐匾(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;赐匾\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把嘉奖的匾送给千江镇的花飞(111,421)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这次千江镇能获得安宁，多亏了你跟花家的人。这是上级赏赐的一块“为民除害”的匾，请帮我送到花飞手中。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 96940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("真是太好了。{10001}", "v56069", 20396, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20396" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20395"/>
+				<var type="Differ" name="state" value="-3" id="20396"/>
+				<var type="Differ" name="state" value="-1" id="20396"/>
+				<var type="Differ" name="state" value="1" id="20396"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<additem value="1" id="2157"/>
+				<refresh name="state"/>
+				<notify content="任务：把嘉奖的匾送给千江镇的花飞(111,421)"/>
+				<notify1 content="把嘉奖的匾送给千江镇的花飞(111,421)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="122" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="84"/>
+				<var type="Equal" name="state" value="-1" id="370"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，去修炼到84级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10371">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="370"/>
+				<var type="Differ" name="state" value="-3" id="371"/>
+				<var type="Differ" name="state" value="-1" id="371"/>
+				<var type="Differ" name="state" value="1" id="371"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：地保(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;地保\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    在千江镇找地保(234,380)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    内丹？这是什么东西？奇怪的床单？陶瓷的内胆？嗯……(GetName)，本地的事情你还是问地保好了，他是最清楚的了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 92392&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不错，地保总比你知道得多。{10001}", "v56069", 371, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="371" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="370"/>
+				<var type="Differ" name="state" value="-3" id="371"/>
+				<var type="Differ" name="state" value="-1" id="371"/>
+				<var type="Differ" name="state" value="1" id="371"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="122"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：在千江镇找地保(234,380)"/>
+				<notify1 content="千江镇-地保(234,380)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10380">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="380"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：报告(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;报告\n \n&lt;/n&gt;&lt;n&gt;    原来是这样，沼泽湿地中竟有蛟龙洞，洞中竟有侏儒……\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 96785&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("真是匪夷所思。{10002}", "v56069", 380, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="380" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="380"/>
+			</conditions>
+			<actions>
+				<exp value="96785"/>
+				<notify1 content="经验+96785"/>
+				<notify content="恭喜你完成了“报告”任务"/>
+				<var type="Set" name="state" value="-1" id="380"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10381">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="380"/>
+				<var type="Differ" name="state" value="-1" id="381"/>
+				<var type="Differ" name="state" value="1" id="381"/>
+				<var type="Differ" name="state" value="-3" id="381"/>
+				<var type="Differ" name="state" value="3" id="381"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：侏儒史书(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;侏儒史书\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去蛟龙洞1层(213,127)杀侏儒投手收集史书碎片。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    原先也曾听说，那洞中确有些侏儒，乃是几百年前迁入洞中的。原以为是传说，不想竟是真的。详细如何，我也不太清楚。但侏儒族中，定有史书记录此事，但时日已久，不知是否保存完好。你若想知道，不如从侏儒投手抢到30页史书碎片，然后交由欧阳编修编译成册。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 754500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("知道了。{10001}", "v56069", 381, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2164"/>
+				<var type="Equal" name="state" value="-3" id="381"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：侏儒史书(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;侏儒史书\n \n&lt;/n&gt;&lt;n&gt;    嗯，原来如此。这是几百年前的侏儒族，由于在境内散布邪教为害百姓，使官府下令歼灭全族。但毕竟有些幸存者逃了出来，躲在蛟龙洞中。龙神心存怜悯，收留了他们。但他们竟贪心龙神的力量，偷偷用邪法诅咒龙神，致使龙神变成了恶龙！龙神变成恶龙之后，力量虽已远不如以前强大，但却对他们言听计从。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 754500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这侏儒族竟如此可恶。{10002}", "v56069", 381, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="381" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="380"/>
+				<var type="Differ" name="state" value="-1" id="381"/>
+				<var type="Differ" name="state" value="1" id="381"/>
+				<var type="Differ" name="state" value="-3" id="381"/>
+				<var type="Differ" name="state" value="3" id="381"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去蛟龙洞1层(213,127)杀侏儒投手收集史书碎片。"/>
+				<notify content="任务：去蛟龙洞1层(213,127)杀侏儒投手收集史书碎片。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2164"/>
+				<var type="Equal" name="state" value="-3" id="381"/>
+			</conditions>
+			<actions>
+				<exp value="754500"/>
+				<removeitem value="1" id="2164" log="交侏儒史书(381)-删除侏儒史书(2164)"/>
+				<notify1 content="经验+754500"/>
+				<notify content="恭喜你完成了“侏儒史书”任务"/>
+				<var type="Set" name="state" value="-1" id="381"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10382">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="381"/>
+				<var type="Differ" name="state" value="-1" id="382"/>
+				<var type="Differ" name="state" value="1" id="382"/>
+				<var type="Differ" name="state" value="-3" id="382"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：歼灭(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;歼灭\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去蛟龙1层(130,29)杀40个侏儒战士，完成后向千江镇的蒙阔(222,338)汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    原来恶龙在水泽边培养龙精水怪，而侏儒捕猎内丹，提供异族人攻打我国！有这等邪物在镇子左近，真是太可怕了，我百姓命悬一线，大好河山要落入虎口！若你愿意，可随我们一起去消灭侏儒！愿意的话，一个人须消灭40个侏儒战士！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 782850&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("国家兴亡，匹夫有责。{10001}", "v56069", 382, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="382"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：歼灭(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;歼灭\n \n&lt;/n&gt;&lt;n&gt;    那些侏儒虽然邪恶，数量却不甚多，能灭得一些是最好！&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 782850&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那些侏儒还真顽强。{10002}", "v56069", 382, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="382"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：歼灭(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("  你是被侏儒战士吓的跑回来了吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="382" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="381"/>
+				<var type="Differ" name="state" value="-1" id="382"/>
+				<var type="Differ" name="state" value="1" id="382"/>
+				<var type="Differ" name="state" value="-3" id="382"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去蛟龙1层(130,29)杀40个侏儒战士，完成后向千江镇的蒙阔(222,338)汇报。"/>
+				<notify1 content="任务：去蛟龙1层(130,29)杀40个侏儒战士。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="382"/>
+			</conditions>
+			<actions>
+				<exp value="782850"/>
+				<notify1 content="经验+782850"/>
+				<notify content="恭喜你完成了“歼灭”任务"/>
+				<var type="Set" name="state" value="-1" id="382"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10383">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="382"/>
+				<var type="Differ" name="state" value="-1" id="383"/>
+				<var type="Differ" name="state" value="1" id="383"/>
+				<var type="Differ" name="state" value="-3" id="383"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：复仇(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;复仇\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去蛟龙一层(176,115)消灭40个巫咒侏儒，然后再向千江镇－蒙阔(222,338)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    上次我们进入蛟龙洞损失惨重，虽然有羽林将军给我们送来的甲胄兵器，但仍然惨败给那些巫咒侏儒。你能去帮我们解决40个巫咒侏儒么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 807750&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("义不容辞。{10001}", "v56069", 383, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="383"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：复仇(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;复仇\n \n&lt;/n&gt;&lt;n&gt;    阁下真是大仁大义！&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 807750&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("承蒙夸奖。{10002}", "v56069", 383, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="383"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：复仇(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("  看你灰头土脸的，是被巫咒侏儒打的跑回来了吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="383" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="382"/>
+				<var type="Differ" name="state" value="-1" id="383"/>
+				<var type="Differ" name="state" value="1" id="383"/>
+				<var type="Differ" name="state" value="-3" id="383"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去蛟龙一层(176,115)消灭40个巫咒侏儒，然后再向千江镇－蒙阔(222,338)处汇报。。"/>
+				<notify content="任务：去蛟龙一层(176,115)消灭40个巫咒侏儒，然后再向千江镇－蒙阔(222,338)处汇报。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="383"/>
+			</conditions>
+			<actions>
+				<exp value="807750"/>
+				<notify1 content="经验+807750"/>
+				<notify content="恭喜你完成了“复仇”任务"/>
+				<var type="Set" name="state" value="-1" id="383"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10384">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="383"/>
+				<var type="Differ" name="state" value="-3" id="384"/>
+				<var type="Differ" name="state" value="-1" id="384"/>
+				<var type="Differ" name="state" value="2" id="384"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：上缴(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;上缴\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把战利品运给王城的羽林将军(516,507)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，上次进入蛟龙洞，从侏儒那里缴获了不少战利品。路途艰险，想请你帮我们将战利品护送到羽林将军那里，不知可否？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 380340&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("当然可以。{10001}", "v56069", 384, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="384" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="383"/>
+				<var type="Differ" name="state" value="-3" id="384"/>
+				<var type="Differ" name="state" value="-1" id="384"/>
+				<var type="Differ" name="state" value="2" id="384"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54048" map="王城" ltpos="225,336" rbpos="226,347" gold="0" exp="0" dest="516,507"/>
+				<var type="Set" name="state" value="2"/>
+				<refresh name="state"/>
+				<notify content="任务：把战利品运给王城的羽林将军(516,507)"/>
+				<notify1 content="把战利品运给王城的羽林将军(516,507)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

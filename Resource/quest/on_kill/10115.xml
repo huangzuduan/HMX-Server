@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="10115" name="山贼工匠(魔)">
+	<quest id="312" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2104" odds="1000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20353" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_山贼工匠" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_山贼工匠" value="1"/>
+				<refresh name="kill_山贼工匠"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_山贼工匠" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_山贼工匠"/>
+				<notify content="恭喜你完成了巧匠的任务,回副官处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

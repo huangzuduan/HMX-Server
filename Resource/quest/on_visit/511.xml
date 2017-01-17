@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="511" name="山寨一层-犯人(95,111)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30344">
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="1905"/>
+				<var type="Equal" name="state" value="1" id="20344"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;贩卖\n \n&lt;/n&gt;&lt;n&gt;    好饿……给我点吃的吧……我可以用钱买，真的，我有钱！我一直藏了一些元宝，现在实在饿得不行了，请你把食物卖给我，这些元宝都给你。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那我就收下了。{10002}", "v511", 20344, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20344" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="1905"/>
+				<var type="Equal" name="state" value="1" id="20344"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="1905" log="换银两(20344:2049)-删除10个牛肉干(1905)"/>
+				<additem value="1" id="2049"/>
+				<notify1 content="得到元宝，可以去找富不仁了"/>
+				<var type="Set" name="state" value="-3" id="20344"/>
+			</actions>
+		</embranchment>
+	</quest>
+	</event>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="502" name="百兽谷-灵猴(228,175)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30326">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20326"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：灵兽(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;灵兽\n \n&lt;/n&gt;&lt;n&gt;  咭咭咭咭，等了很久，终于等到这样一个人来到这里了！五千年前是百兽拯救人类，如今也轮到人类拯救百兽了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("到底发生什么事{10002}", "v502", 20326, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20326" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20326"/>
+			</conditions>
+			<actions>
+				<exp value="2200"/>
+				<notify1 content="经验+2200"/>
+				<notify content="恭喜你完成了“灵兽”任务"/>
+				<var type="Set" name="state" value="-1" id="20326"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30327">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20326"/>
+				<var type="Differ" name="state" value="-1" id="20327"/>
+				<var type="Differ" name="state" value="1" id="20327"/>
+				<var type="Differ" name="state" value="-3" id="20327"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：大难(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;大难\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    百兽谷打败50只毒蝎子(228,199)，然后再回到灵猴(228,175)处。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哎，现在谷里越来越危险了，百兽开始自相残杀，你能不能帮我击退那些蝎子，要不是我跑的快差点被它们毒死。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你吧{10001}", "v502", 20327, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20327"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：大难(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;大难\n \n&lt;/n&gt;&lt;n&gt;    太好了，毒蝎子果然少了很多，老命保住了。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("总算安全了{10002}", "v502", 20327, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20327" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20326"/>
+				<var type="Differ" name="state" value="-1" id="20327"/>
+				<var type="Differ" name="state" value="1" id="20327"/>
+				<var type="Differ" name="state" value="-3" id="20327"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：打败50只毒蝎子(228,199),完成后找百兽谷灵猴(228,175)"/>
+        <notify1 content="任务：打败50只毒蝎子(228,199)！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20327"/>
+			</conditions>
+			<actions>
+				<exp value="12900"/>
+				<notify1 content="经验+12900"/>
+				<notify content="恭喜你完成了“大难”任务"/>
+				<var type="Set" name="state" value="-1" id="20327"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30328">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20327"/>
+				<var type="Differ" name="state" value="-1" id="20328"/>
+				<var type="Differ" name="state" value="1" id="20328"/>
+				<var type="Differ" name="state" value="-3" id="20328"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：狂暴(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;狂暴\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去兽王谷(193,78)打败50只狂熊，然后再回到灵猴(228,175)处。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我终于发现谷中疯病是怎么传播的了，狂熊，所有被它袭击过的野兽也全都疯了。帮我消灭狂熊吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题{10001}", "v502", 20328, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20328"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狂暴(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;狂暴\n \n&lt;/n&gt;&lt;n&gt;    哎，虽然狂熊少了，但疯病还在蔓延啊。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("总算安全了{10002}", "v502", 20328, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20328" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20327"/>
+				<var type="Differ" name="state" value="-1" id="20328"/>
+				<var type="Differ" name="state" value="1" id="20328"/>
+				<var type="Differ" name="state" value="-3" id="20328"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去兽王谷(193,78)打败50只狂熊，然后找百兽谷灵猴(228,175)"/>
+        <notify1 content="任务：去兽王谷(193,78)打败50只狂熊"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20328"/>
+			</conditions>
+			<actions>
+				<exp value="12900"/>
+				<notify1 content="经验+12900"/>
+				<notify content="恭喜你完成了“狂暴”任务"/>
+				<var type="Set" name="state" value="-1" id="20328"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30329">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20328"/>
+				<var type="Differ" name="state" value="-1" id="20329"/>
+				<var type="Differ" name="state" value="1" id="20329"/>
+				<var type="Differ" name="state" value="-3" id="20329"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：托孤(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;托孤\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将百兽谷灵猴的儿子带到凤凰城黑豹(276,427)的身边。\n\n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这里实在太危险，可我还不能离开这里，我要研究出怎样解救这里的动物们。请你将我的儿子带到凤凰城我的朋友黑豹的身边，这里的危险我承担就可以了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题{10001}", "v502", 20329, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20329" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20328"/>
+				<var type="Differ" name="state" value="-3" id="20329"/>
+				<var type="Differ" name="state" value="1" id="20329"/>
+				<var type="Differ" name="state" value="-1" id="20329"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54015" map="凤凰城" ltpos="226,176" rbpos="226,182" gold="0" exp="0" dest="276,427"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：将灵猴的儿子带到黑豹身边"/>
+				<notify1 content="凤凰城-黑豹(276,427)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

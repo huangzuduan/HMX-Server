@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="219" name="凤凰城-饲养员(403,495)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10247">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="247"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：得不偿失(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;得不偿失\n \n&lt;/n&gt;&lt;n&gt;    猫我倒是可以给你。但我有个条件。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("什么条件？{10002}", "v219", 247, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="247" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="247"/>
+			</conditions>
+			<actions>
+				<exp value="1200"/>
+				<notify1 content="经验+1200"/>
+				<notify content="恭喜你完成了“得不偿失”任务"/>
+				<var type="Set" name="state" value="-1" id="247"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10248">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="247"/>
+				<var type="Differ" name="state" value="-1" id="248"/>
+				<var type="Differ" name="state" value="1" id="248"/>
+				<var type="Differ" name="state" value="-3" id="248"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：狼群(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;狼群\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    到凤凰城南门外打败40只灰狼(468,545)，然后回到饲养员(403,495)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我养了很多动物，常常被狼吃掉，你替我去打败40只灰狼。我便给你猫。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这有何难。{10001}", "v219", 248, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="248"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狼群(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;狼群\n \n&lt;/n&gt;&lt;n&gt;    果然打败了狼，为我家的小动物报了仇，我太开心了！&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这次可以把猫给我了吧{10002}", "v219", 248, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="248" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="247"/>
+				<var type="Differ" name="state" value="-1" id="248"/>
+				<var type="Differ" name="state" value="1" id="248"/>
+				<var type="Differ" name="state" value="-3" id="248"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：帮饲养员打败40只灰狼(468,545)"/>
+				<notify1 content="任务：帮饲养员打败40只灰狼(468,545)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="248"/>
+			</conditions>
+			<actions>
+				<exp value="5000"/>
+				<notify1 content="经验+5000"/>
+				<notify content="恭喜你完成了“狼群”任务"/>
+				<var type="Set" name="state" value="-1" id="248"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="105" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="18"/>
+				<var type="Equal" name="state" value="-1" id="248"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，猫儿不肯跟你走，去修炼到18级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10249">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="17"/>
+				<var type="Equal" name="state" value="-1" id="248"/>
+				<var type="Differ" name="state" value="-3" id="249"/>
+				<var type="Differ" name="state" value="-1" id="249"/>
+				<var type="Differ" name="state" value="1" id="249"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：天敌(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;天敌\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把猫送给粮仓保管员(387,484)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，猫给你，一定要小心照料哦，如果它饿着了我找你算帐。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢。{10001}", "v219", 249, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="249" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="17"/>
+				<var type="Equal" name="state" value="-1" id="248"/>
+				<var type="Differ" name="state" value="-3" id="249"/>
+				<var type="Differ" name="state" value="-1" id="249"/>
+				<var type="Differ" name="state" value="1" id="249"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="state" value="-2" id="105"/>
+				<refresh name="state"/>
+				<addguard id="54009" map="凤凰城" ltpos="400,494" rbpos="401,502" gold="0" exp="0" dest="387,484"/>
+				<notify content="任务：去找粮仓保管员(387,484)"/>
+				<notify1 content="粮仓保管员(387,484)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10326">
+		<embranchment id="10">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="999"/>
+				<var type="Equal" name="state" value="1" id="326"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("你想买狗吗？我这里的狗可是精心挑选出来的。")
+this:AddTaskCmdItem("买狗-10两{10002}", "v219", 326, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Great" value="999"/>
+				<var type="Equal" name="state" value="1" id="326"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，你在运镖状态下，无法做此任务")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<gold type="Less" value="1000"/>
+				<var type="Equal" name="state" value="1" id="326"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，您的钱不足，不能从我这里买狗。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="326" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<gold type="Great" value="999"/>
+				<var type="Equal" name="state" value="1" id="326"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<addguard id="54008" map="王城" ltpos="400,494" rbpos="401,502" gold="0" exp="0" dest="516,507"/>
+				<notify content="把狗带给王城的羽林将军(516,507)。"/>
+				<var type="Set" name="state" value="2" id="326"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

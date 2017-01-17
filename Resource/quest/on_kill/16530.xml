@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16530" name="武夷王墓六层－骸骨卫兵">
+	<!--new means new quest, default is quest on user-->
+	<quest id="436" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_骸骨卫兵" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨卫兵" value="1"/>
+				<refresh name="kill_骸骨卫兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_骸骨卫兵" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_骸骨卫兵"/>
+				<notify content="你已经消灭了很多骸骨卫兵,回皇城－夏侯望(563,84)处交任务吧"/>
+				<notify1 content="去找皇城－夏侯望(563,84)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="807" name="王城药店伙计">
+	<quest id="50006" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="药店伙计：1/1"/>
+				<notify content="恭喜你完成了击败敌国药店伙计的任务,回家族任务发布者处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

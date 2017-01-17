@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16441" name="山贼隐士">
+
+	<quest id="50011" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify1 content="山贼隐士：1/1"/>
+				<var type="Set" name="state" value="-3"/>
+				<notify content="恭喜你完成了家族击败山贼隐士的任务,回家族升级使者处交任务"/>
+				<notify1 content="恭喜你完成了家族击败山贼隐士的任务"/>
+				<notify1 content="回家族升级使者处交任务"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20206" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20206"/>
+				<refresh name="state"/>
+				<notify1 content="山贼隐士：1/1"/>
+				<notify content="恭喜你完成了重赏的任务,回捕头处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

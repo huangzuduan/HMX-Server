@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2156" name="灵蛇胆">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20391" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20391"/>
+				<var type="Less" name="get_灵蛇胆" value="30"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个灵蛇胆"/>
+				<var type="Add" name="get_灵蛇胆" value="1"/>
+				<refresh name="get_灵蛇胆"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20391"/>
+				<var type="Great" name="get_灵蛇胆" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20391"/>
+				<refresh name="state"/>
+				<refresh name="get_灵蛇胆"/>
+				<notify content="你已经收集了30个灵蛇胆,回王城的玄火(288,393)处交任务吧"/>
+				<notify1 content="去找王城的玄火(288,393)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="336" y="321"/>
+		<point x="336" y="322"/>
+		<point x="336" y="323"/>
+		<point x="336" y="323"/>
+		<point x="336" y="324"/>
+		<point x="337" y="321"/>
+		<point x="337" y="321"/>
+		<point x="337" y="322"/>
+		<point x="337" y="322"/>
+		<point x="337" y="323"/>
+		<point x="337" y="323"/>
+		<point x="337" y="324"/>
+		<point x="338" y="322"/>
+		<point x="338" y="323"/>
+		<dest name="luanzangku9" country="0" x="192" y="82"/>
+		<dest name="luanzangku9" country="0" x="192" y="83"/>
+		<dest name="luanzangku9" country="0" x="192" y="84"/>
+		<dest name="luanzangku9" country="0" x="192" y="85"/>
+		<dest name="luanzangku9" country="0" x="192" y="86"/>
+		<dest name="luanzangku9" country="0" x="192" y="87"/>
+		<dest name="luanzangku9" country="0" x="192" y="88"/>
+		<dest name="luanzangku9" country="0" x="192" y="89"/>
+		<dest name="luanzangku9" country="0" x="192" y="90"/>
+		<dest name="luanzangku9" country="0" x="192" y="91"/>
+		<dest name="luanzangku9" country="0" x="192" y="92"/>
+		<dest name="luanzangku9" country="0" x="192" y="93"/>
+		<dest name="luanzangku9" country="0" x="192" y="95"/>
+		<dest name="luanzangku9" country="0" x="192" y="94"/>
+	</waypoint>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="16" height="27" x="329" y="306" type="1" color="0,0,255,0"/>
+	<npc id="30070" name="飞天猪" width="409" height="399" x="46" y="19" num="1" interval="3600" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="224" y="119" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="265" y="286" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16487" name="绝命僵尸(魔)" width="409" height="399" x="46" y="19" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="16483" name="白骨神射" width="409" height="399" x="46" y="19" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="16077" name="白骨精(魔)" width="409" height="399" x="46" y="19" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="26225" name="碎骨骷髅(魔)" width="409" height="399" x="46" y="19" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="26224" name="骷髅弓手" width="409" height="399" x="46" y="19" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="21022" name="骷髅弓手" width="409" height="399" x="46" y="19" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="26086" name="碎骨骷髅(魔)" width="409" height="399" x="46" y="19" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="55186" name="草" width="409" height="399" x="46" y="19" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="草" width="409" height="399" x="46" y="19" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55186" name="草" width="409" height="399" x="46" y="19" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="草" width="409" height="399" x="46" y="19" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55221" name="草" width="409" height="399" x="46" y="19" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="30015" name="骷髅王" width="26" height="40" x="110" y="83" num="1" interval="10800" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="253" y="156" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="281" y="212" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="87" y="70" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="157" y="141" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="60" y="294" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="289" y="62" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16486" name="妖魂白骨" width="10" height="12" x="123" y="68" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="138" y="199" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="81" y="119" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="207" y="149" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="215" y="273" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="290" y="258" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="132" y="93" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16485" name="吸魂僵尸" width="10" height="12" x="187" y="180" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16484" name="啮魂白骨(近魔)" width="10" height="12" x="184" y="217" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16484" name="啮魂白骨(近魔)" width="10" height="12" x="306" y="213" num="40" interval="2" color="0,255,0,0"/>
+</map>

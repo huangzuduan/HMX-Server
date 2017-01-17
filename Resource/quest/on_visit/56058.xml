@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56058" name="王城-情报商人(318,302)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10324">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="323"/>
+				<var type="Differ" name="state" value="-1" id="324"/>
+				<var type="Differ" name="state" value="1" id="324"/>
+				<var type="Differ" name="state" value="-3" id="324"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：痞子(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;痞子\n\n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去边境消灭50个痞子！ \n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哦？想知道异族人的情报？呵呵呵，我可不能免费提供哦，若是到边境替我击败50个痞子，我倒是可以考虑。\n    你问为什么要打痞子？这也是你想知道的情报么？可以告诉你，但是要付出代价的哦。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 144000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去打痞子就是了。{10001}", "v56058", 324, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="324"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：痞子(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;痞子\n \n&lt;/n&gt;&lt;n&gt;    哦哦，50个痞子消灭了？来，这就是你要的情报了。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 144000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢。{10002}", "v56058", 324, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="324"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您包裹空间不够，清空点包裹再来吧。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="324"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：痞子(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("   难道你想骗我？你根本就没打败50个痞子")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="90">
+			<conditions>
+				<item value="1" id="2122"/>
+				<var type="Equal" name="state" value="-1" id="324"/>
+				<var type="Differ" name="state" value="-1" id="323"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    什么？羽林将军又让你来找我了！你真是个麻烦的家伙，下次不要再来找我了。")
+this:AddTaskCmdItem("好的。{10002}", "v56058", 324, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="324"/>
+				<var type="Differ" name="state" value="-1" id="323"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    什么？情报丢了？哎！再给你一份吧。下次可不白给。")
+this:AddTaskCmdItem("多谢{10002}", "v56058", 324, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="324" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="323"/>
+				<var type="Differ" name="state" value="-1" id="324"/>
+				<var type="Differ" name="state" value="1" id="324"/>
+				<var type="Differ" name="state" value="-3" id="324"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：为了得到情报，去边境消灭50个痞子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="324"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2122"/>
+				<exp value="144000"/>
+				<notify1 content="经验+144000"/>
+				<notify content="恭喜你完成了“痞子”任务"/>
+				<notify1 content="得到情报，去交给羽林将军(516,507)"/>
+				<var type="Set" name="state" value="-1" id="324"/>
+				<var type="Set" name="state" value="-3" id="323"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18" active="1">
+			<conditions>
+				<item value="1" id="2122"/>
+				<var type="Equal" name="state" value="-1" id="324"/>
+				<var type="differ" name="state" value="-1" id="323"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到情报，去交给羽林将军(516,507)"/>
+				<var type="Set" name="state" value="-3" id="323"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="324"/>
+				<var type="differ" name="state" value="-1" id="323"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2122"/>
+				<notify1 content="得到情报，去交给羽林将军(516,507)"/>
+				<var type="Set" name="state" value="-3" id="323"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

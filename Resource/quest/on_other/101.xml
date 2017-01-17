@@ -1,0 +1,1535 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="101" name="运镖达到">
+	<!--new means new quest, default is quest on user-->
+	<quest id="249" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="249"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将猫送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="249"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="265" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="265"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将小男孩送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="265"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="301" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="301"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将美女送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="301"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="305" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="305"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将小男孩送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="305"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="309" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="309"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将部队送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="309"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="326" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="326"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将狗送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="326"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="347" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="347"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将鬼魂带到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="347"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="353" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="353"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将士兵送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="353"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="358" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="358"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将传令兵送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="358"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="364" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="364"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将救出的军人送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="364"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="370" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="370"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将军饷送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="370"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="377" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="377"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将龙鳞送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="377"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="384" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="384"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将战利品送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="384"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="392" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="392"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将零件送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="392"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="400" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="400"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将户籍册送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="400"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="408" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="408"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将机甲木人送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="408"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="417" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="417"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将铜人机甲送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="417"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="424" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="424"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将机甲石人送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="424"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="426" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="426"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将仿制铜人送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="426"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="438" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="438"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将守护灵送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="438"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="443" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="443"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将资料送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="443"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="458" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="458"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将慰灵物资送到"/>
+				<notify1 content="顺利到达"/>
+				<var type="Set" name="state" value="-3" id="458"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20102" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将陈满神送到"/>
+				<notify1 content="顺利将陈满神送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20110" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将彩礼车送到"/>
+				<notify1 content="顺利将彩礼车送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20111" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将花轿送到"/>
+				<notify1 content="顺利将花轿送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20374" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20374"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将皮甲送到"/>
+				<notify1 content="顺利将皮甲送到"/>
+				<var type="Set" name="state" value="-3" id="20374"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20379" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20379"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将药师送到"/>
+				<notify1 content="顺利将药师送到"/>
+				<var type="Set" name="state" value="-3" id="20379"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20317" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20317"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将鱼送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20317"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20319" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="car" value="1" id="20319"/>
+				<var type="Equal" name="state" value="1" id="20319"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将小男孩送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20319"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20303" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20303"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20303"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20329" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20329"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将小猴送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20329"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20323" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20323"/>
+			</conditions>
+			<actions>
+				<notify content="顺利送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20323"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20341" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20341"/>
+			</conditions>
+			<actions>
+				<notify content="顺利送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20341"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20361" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="顺利送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20368" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20368"/>
+			</conditions>
+			<actions>
+				<notify content="顺利送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20368"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20500" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20500"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将薛神医送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20500"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20525" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20525"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将机甲木人送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20525"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20526" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20526"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将机甲木人送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20526"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20532" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20532"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将粗铜法卫送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20532"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20544" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20544"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将嫁妆送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20544"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20549" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20549"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将弓弩送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20549"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20552" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20552"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将墓葬品送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20552"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20556" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20556"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将墓葬品送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20556"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20561" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20561"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将机甲铜兵送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20561"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20565" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20565"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将鲁怜心送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20565"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20573" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20573"/>
+			</conditions>
+			<actions>
+				<notify content="顺利将兵丁送到"/>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3" id="20573"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--quest id="21001" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="1000" id="21001" less="1"/>
+				<var type="Equal" name="state" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="state" value="-3" id="21001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="1000" id="21001" less="0"/>
+				<var type="Equal" name="state" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21001"/>
+				<var type="Set" name="time" value="1" id="21001"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21002" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3600" id="21002" less="1"/>
+				<var type="Equal" name="state" value="1" id="21002"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="state" value="-3" id="21002"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3600" id="21002" less="0"/>
+				<var type="Equal" name="state" value="1" id="21002"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21002"/>
+				<var type="Set" name="time" value="1" id="21002"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21003" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3600" id="21003" less="1"/>
+				<var type="Equal" name="state" value="1" id="21003"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="state" value="-3" id="21003"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3600" id="21003" less="0"/>
+				<var type="Equal" name="state" value="1" id="21003"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21003"/>
+				<var type="Set" name="time" value="1" id="21003"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21004" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3600" id="21004" less="1"/>
+				<var type="Equal" name="state" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="state" value="-3" id="21004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3600" id="21004" less="0"/>
+				<var type="Equal" name="state" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21004"/>
+				<var type="Set" name="time" value="1" id="21004"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21005" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21005"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="21005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21006" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21006"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="21006"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21007" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21007"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="21007"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21008" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21008"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="21008"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21009" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21009"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="21009"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="22005" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22005"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="22005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="22006" new="1">
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="attack_sign" value="1"/>
+				<var type="Set" name="state" value="-3" id="22006"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21035" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3000" id="21035" less="1"/>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21035"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3000" id="21035" less="0"/>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21035"/>
+				<var type="Set" name="time" value="1" id="21035"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="3000" id="21035" less="1"/>
+				<var type="Equal" name="state" value="2" id="21035"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21035"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="3000" id="21035" less="0"/>
+				<var type="Equal" name="state" value="2" id="21035"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21035"/>
+				<var type="Set" name="time" value="1" id="21035"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21036" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3000" id="21036" less="1"/>
+				<var type="Equal" name="state" value="1" id="21036"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21036"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3000" id="21036" less="0"/>
+				<var type="Equal" name="state" value="1" id="21036"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21036"/>
+				<var type="Set" name="time" value="1" id="21036"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="3000" id="21036" less="1"/>
+				<var type="Equal" name="state" value="2" id="21036"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21036"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="3000" id="21036" less="0"/>
+				<var type="Equal" name="state" value="2" id="21036"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21036"/>
+				<var type="Set" name="time" value="1" id="21036"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21037" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3000" id="21037" less="1"/>
+				<var type="Equal" name="state" value="1" id="21037"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2" id="21037"/>
+				<var type="Set" name="state" value="-3" id="21037"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3000" id="21037" less="0"/>
+				<var type="Equal" name="state" value="1" id="21037"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21037"/>
+				<var type="Set" name="time" value="1" id="21037"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="3000" id="21037" less="1"/>
+				<var type="Equal" name="state" value="2" id="21037"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2" id="21037"/>
+				<var type="Set" name="state" value="-3" id="21037"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="3000" id="21037" less="0"/>
+				<var type="Equal" name="state" value="2" id="21037"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21037"/>
+				<var type="Set" name="time" value="1" id="21037"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21038" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3000" id="21038" less="1"/>
+				<var type="Equal" name="state" value="1" id="21038"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21038"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3000" id="21038" less="0"/>
+				<var type="Equal" name="state" value="1" id="21038"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21038"/>
+				<var type="Set" name="time" value="1" id="21038"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="3000" id="21038" less="1"/>
+				<var type="Equal" name="state" value="2" id="21038"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21038"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="3000" id="21038" less="0"/>
+				<var type="Equal" name="state" value="2" id="21038"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21038"/>
+				<var type="Set" name="time" value="1" id="21038"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21039" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="3000" id="21039" less="1"/>
+				<var type="Equal" name="state" value="1" id="21039"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21039"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="3000" id="21039" less="0"/>
+				<var type="Equal" name="state" value="1" id="21039"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21039"/>
+				<var type="Set" name="time" value="1" id="21039"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="3000" id="21039" less="1"/>
+				<var type="Equal" name="state" value="2" id="21039"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21039"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="3000" id="21039" less="0"/>
+				<var type="Equal" name="state" value="2" id="21039"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了护送,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21039"/>
+				<var type="Set" name="time" value="1" id="21039"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21025" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="2400" id="21025" less="1"/>
+				<var type="Equal" name="state" value="1" id="21025"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21025"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="2400" id="21025" less="0"/>
+				<var type="Equal" name="state" value="1" id="21025"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21025"/>
+				<var type="Set" name="time" value="1" id="21025"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="2400" id="21025" less="1"/>
+				<var type="Equal" name="state" value="2" id="21025"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21025"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="2400" id="21025" less="0"/>
+				<var type="Equal" name="state" value="2" id="21025"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21025"/>
+				<var type="Set" name="time" value="1" id="21025"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21026" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="2400" id="21026" less="1"/>
+				<var type="Equal" name="state" value="1" id="21026"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21026"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="2400" id="21026" less="0"/>
+				<var type="Equal" name="state" value="1" id="21026"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21026"/>
+				<var type="Set" name="time" value="1" id="21026"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="2400" id="21026" less="1"/>
+				<var type="Equal" name="state" value="2" id="21026"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21026"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="2400" id="21026" less="0"/>
+				<var type="Equal" name="state" value="2" id="21026"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21026"/>
+				<var type="Set" name="time" value="1" id="21026"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21027" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="2400" id="21027" less="1"/>
+				<var type="Equal" name="state" value="1" id="21027"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21027"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="2400" id="21027" less="0"/>
+				<var type="Equal" name="state" value="1" id="21027"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21027"/>
+				<var type="Set" name="time" value="1" id="21027"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="2400" id="21027" less="1"/>
+				<var type="Equal" name="state" value="2" id="21027"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21027"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="2400" id="21027" less="0"/>
+				<var type="Equal" name="state" value="2" id="21027"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21027"/>
+				<var type="Set" name="time" value="1" id="21027"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21028" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="2400" id="21028" less="1"/>
+				<var type="Equal" name="state" value="1" id="21028"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21028"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="2400" id="21028" less="0"/>
+				<var type="Equal" name="state" value="1" id="21028"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21028"/>
+				<var type="Set" name="time" value="1" id="21028"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="2400" id="21028" less="1"/>
+				<var type="Equal" name="state" value="2" id="21028"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21028"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="2400" id="21028" less="0"/>
+				<var type="Equal" name="state" value="2" id="21028"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21028"/>
+				<var type="Set" name="time" value="1" id="21028"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21029" new="1">
+		<embranchment id="3">
+			<conditions>
+				<timeouts long="2400" id="21029" less="1"/>
+				<var type="Equal" name="state" value="1" id="21029"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21029"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="2400" id="21029" less="0"/>
+				<var type="Equal" name="state" value="1" id="21029"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21029"/>
+				<var type="Set" name="time" value="1" id="21029"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="2400" id="21029" less="1"/>
+				<var type="Equal" name="state" value="2" id="21029"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="state" value="-3" id="21029"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timeouts long="2400" id="21029" less="0"/>
+				<var type="Equal" name="state" value="2" id="21029"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="你完成了运镖,但是超时了，押金返还减半"/>
+				<var type="Set" name="state" value="-3" id="21029"/>
+				<var type="Set" name="time" value="1" id="21029"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21030" new="1">
+		<embranchment id="3">
+			<conditions>
+				<grade value="4"/>
+				<var type="Equal" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<bulletin content="恭喜贵家族顺利把镖运到，可以找梁镖头领取奖励了" kind="2"/>
+				<var type="Set" name="state" value="-3" id="21030"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<grade value="4"/>
+				<var type="Equal" name="state" value="2" id="21030"/>
+			</conditions>
+			<actions>
+				<bulletin content="恭喜贵家族顺利把镖运到，可以找梁镖头领取奖励了" kind="2"/>
+				<var type="Set" name="state" value="-3" id="21030"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<quest id="21206" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21206"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3" id="21206"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21216" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21226" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21236" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21246" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21256" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21266" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21276" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21286" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21296" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="你完成了运肥"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21412" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21422" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21432" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21442" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21452" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21462" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21472" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21482" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify1 content="顺利送到"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--quest id="50006" new="1">
+		<embranchment id="3">
+			<conditions>
+				<familyvar type="Great" name="family_total_car" value="1"/>
+				<var type="Equal" name="state" value="1" id="50006"/>
+			</conditions>
+			<actions>
+				<notify content="顺利送到,等其他镖车都送到可以去家族任务发布者处领奖励"/>
+				<notify1 content="顺利送到，等其他同伴送到才能领奖励"/>
+				<var type="Set" name="state" value="-3" id="50006"/>
+				<familyvar type="Sub" name="family_total_car" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<familyvar type="Equal" name="family_total_car" value="1"/>
+				<var type="Equal" name="state" value="1" id="50006"/>
+			</conditions>
+			<actions>
+				<notify content="顺利送到,请叫同伴一起去家族任务发布者处领奖励"/>
+				<notify1 content="家族运镖完成"/>
+				<notify1 content="家族任务发布者处领奖励"/>
+				<bulletin content="完成家族运镖，接过镖的可以去领取奖励" kind="2"/>
+				<var type="Set" name="state" value="-3" id="50006"/>
+				<familyvar type="Sub" name="family_total_car" value="1"/>
+			</actions>
+		</embranchment>
+	</quest-->
+</event>

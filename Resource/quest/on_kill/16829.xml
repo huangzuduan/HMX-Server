@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16829" name="月魔弓手">
+	<quest id="20629" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_月魔弓手" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_月魔弓手" value="1"/>
+				<refresh name="kill_月魔弓手"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_月魔弓手" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<refresh name="kill_月魔弓手"/>
+				<notify content="得到月魔弓手情报"/>
+				<notify1 content="得到“月魔弓手情报”请继续打听别处的情报."/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2127" name="骷髅骨灰">
+	<!--new means new quest, default is quest on user-->
+	<quest id="335" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="335"/>
+				<var type="Less" name="get_骷髅骨灰" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一瓶骷髅骨灰"/>
+				<var type="Add" name="get_骷髅骨灰" value="1"/>
+				<refresh name="get_骷髅骨灰"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="335"/>
+				<var type="Great" name="get_骷髅骨灰" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="335"/>
+				<refresh name="state"/>
+				<refresh name="get_骷髅骨灰"/>
+				<notify content="你已经收集了20瓶骷髅骨灰,回王城-慎篱(451,225)处交任务吧"/>
+				<notify1 content="王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20367" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20367"/>
+				<var type="Less" name="get_骷髅骨灰" value="50"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个骷髅骨灰"/>
+				<var type="Add" name="get_骷髅骨灰" value="1"/>
+				<refresh name="get_骷髅骨灰"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20367"/>
+				<var type="Great" name="get_骷髅骨灰" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20367"/>
+				<refresh name="state"/>
+				<refresh name="get_骷髅骨灰"/>
+				<notify content="你已经收集到了50个骷髅骨灰,回慎篱(451,225)处交任务吧"/>
+				<notify1 content="王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

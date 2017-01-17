@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2203" name="龙牙箭">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20517" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20517"/>
+				<var type="Less" name="get_龙牙箭" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一支龙牙箭"/>
+				<var type="Add" name="get_龙牙箭" value="1"/>
+				<refresh name="get_龙牙箭"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20517"/>
+				<var type="Great" name="get_龙牙箭" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20517"/>
+				<refresh name="state"/>
+				<refresh name="get_龙牙箭"/>
+				<notify content="你已经收集了足够的龙牙箭,回皇城－吕思远(602,281)处交任务吧"/>
+				<notify1 content="去找皇城－吕思远(602,281)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

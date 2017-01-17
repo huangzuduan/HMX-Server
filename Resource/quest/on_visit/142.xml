@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="142" name="清源车夫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960100">
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("我是清源村的车夫，你有什么地方想去的么？绝对经济快捷哦！\n  路上很危险，所以只有你达到10级，我才能带你去凤凰城。");
+this:AddTaskCmdItem("凤凰城-2两(0)", "v142", 160100, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("我是清源村的车夫，你有什么地方想去的么？绝对经济快捷哦！\n  路上很危险，所以只有你达到10级，我才能带你去凤凰城。")
+this:AddDialogItem("凤凰城-2两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160100" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Great" value="9"/> 
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="凤凰城" pos="422,379"/>
+				<notify content="你被马车载到了凤凰城，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

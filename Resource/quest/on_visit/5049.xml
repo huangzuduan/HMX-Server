@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5049" name="武夷王墓七层-箱子(171,127)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30563">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20563"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    这箱子好象能打开。")
+this:AddTaskCmdItem("打开箱子。{10002}", "v5049", 20563, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20563" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20563"/>
+			</conditions>
+			<actions>
+				<notify content="回去找皇城-花傲剑(886,732)"/>
+				<notify1 content="回去找皇城-花傲剑(886,732)"/>
+				<additem value="1" id="2257"/>
+				<var type="Set" name="state" value="-3" id="20563"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

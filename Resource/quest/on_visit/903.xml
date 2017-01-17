@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="903" name="王城-国务官(836,529)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960110">
+		<embranchment id="10">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 11)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<grade value="1"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 11)
+this:AddDialogItem("领取国探奖励(0)",  "Dialog5")
+this:AddCloseItem("离开")
+end
+function Dialog5()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国探任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<grade value="1"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddDialogItem("领取国运奖励(0)",  "Dialog6")
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 12)
+this:AddCloseItem("离开")
+end
+function Dialog6()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国运任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你已经领取过国家刺探和国家运镖的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，不过你已经领取过国家运镖任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，不过你已经领取过国探任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_caption_get_travel" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，不过你已经领取过国家运镖任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 21)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<grade value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 21)
+this:AddDialogItem("领取国探奖励(0)",  "Dialog5")
+this:AddCloseItem("离开")
+end
+function Dialog5()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国探任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<grade value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddDialogItem("领取国运奖励(0)",  "Dialog6")
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 12)
+this:AddCloseItem("离开")
+end
+function Dialog6()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国运任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，但是你已经领取过国探任务和国运任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 21)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，但是你已经领取过国家运镖的经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，但是你已经领取过国家刺探任务的经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="28">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_caption_get_travel" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Differ" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 23)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="29">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<global type="Equal" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，但是你已经领取过国家运镖任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="30">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 11)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 22)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<grade value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 11)
+this:AddDialogItem("领取国探奖励(0)",  "Dialog5")
+this:AddCloseItem("离开")
+end
+function Dialog5()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国探任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<grade value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddDialogItem("领取国运奖励(0)",  "Dialog6")
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 22)
+this:AddCloseItem("离开")
+end
+function Dialog6()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国运任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，可是你已经把国探任务和国运任务的经验奖励都领了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="35">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，可是你已经领取过国家运镖的经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="36">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，可是你已经领取过国家刺探任务的经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="37">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 22)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="38">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_caption_get_travel" value="1"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="39">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，可是你已经领取过国家运镖任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="40">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 21)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 22)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<grade value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 21)
+this:AddDialogItem("领取国探奖励(0)",  "Dialog5")
+this:AddCloseItem("离开")
+end
+function Dialog5()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国探任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<innation/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<grade value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddDialogItem("领取国运奖励(0)",  "Dialog6")
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 22)
+this:AddCloseItem("离开")
+end
+function Dialog6()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国运任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="43">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countryguard value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖和国家刺探任务已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddDialogItem("领取国运奖励(0)",  "Dialog6")
+this:AddDialogItem("领取国探奖励(0)",  "Dialog5")
+this:AddCloseItem("离开")
+end
+function Dialog5()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国探任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+function Dialog6()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经领取过国运任务的奖励了。")
+this:AddDialogItem("返回", "TaskDialog")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="44">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 21)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="45">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家运镖已经结束，只是你已经领取过国运任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="46">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，只是你已经领取过国探任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="47">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，国家刺探任务已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国探奖励(0)", "v903", 160110, 22)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="48">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Equal" name="r_caption_get_travel" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，您现在可以领取经验奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddTaskCmdItem("领取国运奖励(0)", "v903", 160110, 23)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="49">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Equal" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的城主，国家运镖已经结束，只是你已经领取过国运任务的奖励了！")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddDialogItem("领取国运奖励(0)",  "Dialog7")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="63">
+			<conditions>
+				<innation/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你来找我有什么事？")
+this:AddTaskCmdItem("查询国运完成次数(0)", "v903", 160111, 1)
+this:AddTaskCmdItem("查询国探完成次数(0)", "v903", 160111, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160110" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<!--国王在国运时的领取标志-->
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<!--国王在国运时领取系数判断-->
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<!--国王在国运时唯一领取标志-->
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<global type="Set" name="king_c_guard_over" value="1" id="160110"/>
+				<!--把国王在国运时的领取标志清空-->
+				<countrysvar type="Set" name="r_king_get_travel" value="0"/>
+				<var type="GetP" name="king_c_guard_selflevel" value="1"/>
+				<vars type="Mul" name1="king_c_guard_selflevel" name2="king_c_guard_selflevel"/>
+				<usecountrysvar name="r_king_c_travel" id="160110"/>
+				<vars type="Mul" name1="king_c_guard_selflevel" name2="r_king_c_travel"/>
+				<refresh name="king_c_guard_selflevel"/>
+				<exp1 value="100" id="160110" name="king_c_guard_selflevel"/>
+				<varnotify1 content="成功领取国运奖励，获得经验%u" value="king_c_guard_selflevel" id="160110"/>
+				<getname name="king_name" id="160110"/>
+				<varbulletin kind="3" count="2" content="国王%s领取了国运任务奖励,经验:%s" var1="king_name" var2="king_c_guard_selflevel"/>
+				<!--varnotify2 content="成功领取国运奖励，获得经验%u" value="king_c_guard_selflevel" id="160110"/-->
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<!--国王国探可领取标志-->
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<!--国王在国探时领取系数判断-->
+				<countrysvar type="Less" name="r_king_c_walk" value="1000" id="160110"/>
+				<!--国王在国探时唯一领取标志-->
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<global type="Set" name="king_c_walk_over" value="1" id="160110"/>
+				<!--把国王国探可领取标志清空-->
+				<countrysvar type="Set" name="r_king_get_walk" value="0"/>
+				<var type="GetP" name="r_king_c_walk_selflevel" value="1"/>
+				<vars type="Mul" name1="r_king_c_walk_selflevel" name2="r_king_c_walk_selflevel"/>
+				<usecountrysvar name="r_king_c_walk" id="160110"/>
+				<vars type="Mul" name1="r_king_c_walk_selflevel" name2="r_king_c_walk"/>
+				<refresh name="r_king_c_walk_selflevel"/>
+				<exp1 value="100" id="160110" name="r_king_c_walk_selflevel"/>
+				<getname name="king_name" id="160110"/>
+				<varbulletin kind="3" count="2" content="国王%s领取了国探任务奖励,经验:%s" var1="king_name" var2="r_king_c_walk_selflevel"/>
+				<varnotify1 content="成功领取国探奖励，获得经验%u" value="r_king_c_walk_selflevel" id="160110"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<!--城主在国运时的领取标志-->
+				<countrysvar type="Equal" name="r_caption_get_travel" value="1"/>
+				<!--国探时领取系数判断-->
+				<countrysvar type="Less" name="r_king_c_travel" value="1000" id="160110"/>
+				<!--城主在国运时唯一领取标志-->
+				<global type="Differ" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<global type="Set" name="caption_c_guard_over" value="1" id="160110"/>
+				<!--把城主在国运时领取标志清空-->
+				<countrysvar type="Set" name="r_caption_get_travel" value="0"/>
+				<var type="GetP" name="caption_c_guard_selflevel" value="1"/>
+				<vars type="Mul" name1="caption_c_guard_selflevel" name2="caption_c_guard_selflevel"/>
+				<usecountrysvar name="r_king_c_travel" id="160110"/>
+				<vars type="Mul" name1="caption_c_guard_selflevel" name2="r_king_c_travel"/>
+				<refresh name="caption_c_guard_selflevel"/>
+				<exp1 value="100" id="160110" name="caption_c_guard_selflevel"/>
+				<varnotify1 content="成功领取国运奖励，获得经验%u" value="caption_c_guard_selflevel" id="160110"/>
+				<getname name="caption_name" id="160110"/>
+				<varbulletin kind="3" count="2" content="城主%s领取了国运任务奖励,经验:%s" var1="caption_name" var2="caption_c_guard_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryguard value="0"/>
+				<!--国王在国运时的领取标志-->
+				<countrysvar type="Equal" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<global type="Differ" name="king_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<global type="Set" name="king_c_guard_over" value="1" id="160110"/>
+				<!--把国王在国运时的领取标志清空-->
+				<countrysvar type="Set" name="r_king_get_travel" value="0"/>
+				<var type="GetP" name="king_c_guard_selflevel" value="1"/>
+				<vars type="Mul" name1="king_c_guard_selflevel" name2="king_c_guard_selflevel"/>
+				<var type="Set" name="baseexp" value="1000"/>
+				<vars type="Mul" name1="king_c_guard_selflevel" name2="baseexp"/>
+				<refresh name="king_c_guard_selflevel"/>
+				<exp1 value="100" id="160110" name="king_c_guard_selflevel"/>
+				<getname name="king_name" id="160110"/>
+				<varbulletin kind="3" count="2" content="国王%s领取了国运任务奖励,经验:%s" var1="king_name" var2="r_king_c_walk_selflevel"/>
+				<varnotify1 content="成功领取国运奖励，获得经验%u" value="king_c_guard_selflevel" id="160110"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<countryspy value="0"/>
+				<!--国王国探可领取标志-->
+				<countrysvar type="Equal" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Great" name="r_king_c_walk" value="999" id="160110"/>
+				<global type="Differ" name="king_c_walk_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<global type="Set" name="king_c_walk_over" value="1" id="160110"/>
+				<!--把国王国探可领取标志清空-->
+				<countrysvar type="Set" name="r_king_get_walk" value="0"/>
+				<var type="GetP" name="r_king_c_walk_selflevel" value="1"/>
+				<vars type="Mul" name1="r_king_c_walk_selflevel" name2="r_king_c_walk_selflevel"/>
+				<var type="Set" name="baseexp" value="1000"/>
+				<vars type="Mul" name1="r_king_c_walk_selflevel" name2="baseexp"/>
+				<refresh name="r_king_c_walk_selflevel"/>
+				<exp1 value="100" id="160110" name="r_king_c_walk_selflevel"/>
+				<getname name="king_name" id="160110"/>
+				<varbulletin kind="3" count="2" content="国王%s领取了国探任务奖励,经验:%s" var1="king_name" var2="r_king_c_walk_selflevel"/>
+				<varnotify1 content="成功领取国探奖励，获得经验%u" value="r_king_c_walk_selflevel" id="160110"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<innation/>
+				<caption/>
+				<countryguard value="0"/>
+				<!--城主在国运时的领取标志-->
+				<countrysvar type="Equal" name="r_caption_get_travel" value="1"/>
+				<countrysvar type="Great" name="r_king_c_travel" value="999" id="160110"/>
+				<global type="Differ" name="caption_c_guard_over" value="1" id="160110"/>
+			</conditions>
+			<actions>
+				<global type="Set" name="caption_c_guard_over" value="1" id="160110"/>
+				<!--把城主在国运时领取标志清空-->
+				<countrysvar type="Set" name="r_caption_get_travel" value="0"/>
+				<var type="GetP" name="caption_c_guard_selflevel" value="1"/>
+				<vars type="Mul" name1="caption_c_guard_selflevel" name2="caption_c_guard_selflevel"/>
+				<var type="Set" name="baseexp" value="1000"/>
+				<vars type="Mul" name1="caption_c_guard_selflevel" name2="baseexp"/>
+				<refresh name="caption_c_guard_selflevel"/>
+				<exp1 value="100" id="160110" name="caption_c_guard_selflevel"/>
+				<varnotify1 content="成功领取国运奖励，获得经验%u" value="caption_c_guard_selflevel" id="160110"/>
+				<getname name="caption_name" id="160110"/>
+				<varbulletin kind="3" count="2" content="城主%s领取了国运任务奖励,经验:%s" var1="caption_name" var2="caption_c_guard_selflevel"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160111" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+			</conditions>
+			<actions>
+				<usecountrysvar name="r_king_c_travel" id="160111"/>
+				<flexmenu content="国运完成次数:%s" value="r_king_c_travel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+			</conditions>
+			<actions>
+				<usecountrysvar name="r_king_c_walk" id="160111"/>
+				<flexmenu content="国探完成次数:%s" value="r_king_c_walk"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

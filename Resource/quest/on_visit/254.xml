@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="254" name="凤凰城-炼药师洪老汉(396,349)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10244">
+		<embranchment id="4">
+			<conditions>
+				<level type="Less" value="16"/>
+				<var type="Equal" name="state" value="-3" id="244"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你等级太低了，不到16级和你说了也没用。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Great" value="15"/>
+				<var type="Equal" name="state" value="-3" id="244"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：鼠灾(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;鼠灾\n \n&lt;/n&gt;&lt;n&gt;    需要老鼠药？此药缺一味毒囊呢。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("哪里能弄到毒囊？{10002}", "v254", 244, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="244" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Great" value="15"/>
+				<var type="Equal" name="state" value="-3" id="244"/>
+			</conditions>
+			<actions>
+				<exp value="1900"/>
+				<notify1 content="经验+1900"/>
+				<notify content="恭喜你完成了“鼠灾”任务"/>
+				<var type="Set" name="state" value="-1" id="244"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10245">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="244"/>
+				<var type="Differ" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="245"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：鼠药(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;鼠药\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去浅草滩附近打败毒蛇(82,543)，收集10个毒囊，然后交给炼药师洪老汉(396,349)来换取老鼠药。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    城西浅草滩那里毒蛇很多，打败毒蛇便能取到毒囊了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"580\"&gt;   小还丹 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去去就来{10001}", "v254", 245, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="10" id="2087"/>
+				<var type="Equal" name="state" value="-3" id="245"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：鼠药(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;鼠药\n \n&lt;/n&gt;&lt;n&gt;    这么快便取来毒囊？请稍等片刻。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"580\"&gt;   小还丹 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10002}", "v254", 245, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<item value="10" id="2087"/>
+				<var type="Equal" name="state" value="-3" id="245"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    对不起，你包裹满了。请清理完包裹再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="245" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="244"/>
+				<var type="Differ" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="245"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去(82,543)打败毒蛇，药师需要10个毒囊"/>
+				<notify content="任务：去(82,543)打败毒蛇，药师需要10个毒囊"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="10" id="2087"/>
+				<var type="Equal" name="state" value="-3" id="245"/>
+			</conditions>
+			<actions>
+				<additem value="10" id="580"/>
+				<notify1 content="得到小还丹10个"/>
+				<exp value="4600"/>
+				<removeitem value="10" id="2087" log="交鼠药(245)-删除10个毒囊(2087)"/>
+				<notify1 content="经验+4600"/>
+				<notify content="恭喜你完成了“鼠药”任务"/>
+				<var type="Set" name="state" value="-1" id="245"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="104" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="17"/>
+				<var type="Equal" name="state" value="-1" id="245"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    等你17级了药才能做好，去修炼会再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10246">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+                                <var type="Differ" name="state" value="-3" id="20314"/>
+				<var type="Equal" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="246"/>
+				<var type="Differ" name="state" value="-1" id="246"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：下药(2)", "Dialog110")
+end
+function Dialog110()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;下药\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将老鼠药交给粮仓保管员(387,484)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这是做好的老鼠药，按约定给你。不过你还真厉害，打了那么多蛇都安然无恙。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢，我去送药了{10001}", "v254", 246, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+                                <var type="Differ" name="state" value="-3" id="20314"/>
+                                <var type="Differ" name="state" value="-3" id="20315"/>
+                                <var type="Differ" name="state" value="1" id="20314"/>
+                                <var type="Differ" name="state" value="1" id="20315"/>
+				<var type="Equal" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="246"/>
+				<var type="Differ" name="state" value="-1" id="246"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("   你包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="246"/>
+				<var type="Differ" name="state" value="-1" id="246"/>
+                                <var type="Differ" name="state" value="-3" id="20314"/>
+                                <var type="Differ" name="state" value="-3" id="20315"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    老鼠药呢？你怎么丢在这里了，快拿去给粮仓保管员吧。")
+this:AddTaskCmdItem("多谢，我去送药了{10001}", "v254", 246, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="246" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+                               <var type="Differ" name="state" value="-3" id="20314"/>
+				<var type="Equal" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="246"/>
+				<var type="Differ" name="state" value="-1" id="246"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2088"/>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="state" value="-2" id="104"/>
+				<refresh name="state"/>
+				<notify content="任务：去找粮仓保管员(387,484)"/>
+				<notify1 content="得到鼠药，去找粮仓保管员(387,484)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="245"/>
+				<var type="Differ" name="state" value="-3" id="246"/>
+				<var type="Differ" name="state" value="-1" id="246"/>
+                                <var type="Differ" name="state" value="-3" id="20314"/>
+                                <var type="Differ" name="state" value="-3" id="20315"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2088"/>
+				<notify content="得到鼠药"/>
+				<notify1 content="得到鼠药"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30314">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="16"/>
+				<var type="Differ" name="state" value="-1" id="20314"/>
+				<var type="Differ" name="state" value="1" id="20314"/>
+				<var type="Differ" name="state" value="-3" id="20314"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：蛙眼(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;蛙眼\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败铁甲蛙(80,542)收集10只蛙眼，然后交给炼药师洪老汉(396,349)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哎呀呀哎呀呀，怎么办呢，这可如何是好。我忙的要死，偏偏这个时候药童出了错，拿错了一味药，现在需要铁甲蛙的眼睛入药。我实在脱不开身，谁能帮我找10个铁甲蛙的眼睛呢？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你吧。{10001}", "v254", 20314, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2037"/>
+				<var type="Equal" name="state" value="-3" id="20314"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：蛙眼(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;蛙眼\n \n&lt;/n&gt;&lt;n&gt;    啊，蛙眼，这正是我入药用的蛙眼啊，真是上等的材料，多谢你了。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("哈哈那当然，也不看看是谁找的药材{10002}", "v254", 20314, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20314" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="16"/>
+				<var type="Differ" name="state" value="-1" id="20314"/>
+				<var type="Differ" name="state" value="1" id="20314"/>
+				<var type="Differ" name="state" value="-3" id="20314"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败铁甲蛙取10只蛙眼"/>
+				<notify1 content="去收集10只蛙眼"/>
+				<notify content="任务：去(80,542)打败铁甲蛙，洪老汉需要10只蛙眼"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2037"/>
+				<var type="Equal" name="state" value="-3" id="20314"/>
+			</conditions>
+			<actions>
+				<exp value="5100"/>
+				<removeitem value="10" id="2037" log="交蛙眼(20314)-删除10个铁甲蛙的眼睛(2037)"/>
+				<notify1 content="经验+5100"/>
+				<notify content="恭喜你完成了“蛙眼”任务"/>
+				<var type="Set" name="state" value="-1" id="20314"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30315">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20314"/>
+				<var type="Differ" name="state" value="-1" id="20315"/>
+				<var type="Differ" name="state" value="1" id="20315"/>
+				<var type="Differ" name="state" value="-3" id="20315"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：龟壳(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;龟壳\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败铁龟(32,305)收集10只龟壳，然后交给炼药师洪老汉(396,349)来换取药方。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哎呀呀哎呀呀，怎么办呢，这可如何是好。我忙的要死，偏偏这个时候药童出了错，拿错了一味药，现在需要铁龟的壳入药。我实在脱不开身，谁能帮我找10个铁龟的壳呢？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你吧。{10001}", "v254", 20315, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2010"/>
+				<var type="Equal" name="state" value="-3" id="20315"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：龟壳(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;龟壳\n \n&lt;/n&gt;&lt;n&gt;    啊，龟壳，这正是我入药用的龟壳啊，真是上等的材料，多谢你了。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("哈哈那当然，也不看看是谁找的药材{10002}", "v254", 20315, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20315" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20314"/>
+				<var type="Differ" name="state" value="-1" id="20315"/>
+				<var type="Differ" name="state" value="1" id="20315"/>
+				<var type="Differ" name="state" value="-3" id="20315"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败铁龟取10只龟壳"/>
+				<notify1 content="去收集10只龟壳"/>
+				<notify content="任务：去(32,305)打败铁龟，洪老汉需要10只龟壳"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2010"/>
+				<var type="Equal" name="state" value="-3" id="20315"/>
+			</conditions>
+			<actions>
+				<exp value="5100"/>
+				<removeitem value="10" id="2010" log="交龟壳(20315)-删除10个龟壳(2010)"/>
+				<notify1 content="经验+5100"/>
+				<notify content="恭喜你完成了“龟壳”任务"/>
+				<var type="Set" name="state" value="-1" id="20315"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

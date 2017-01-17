@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="504" name="凤凰城-雷老虎(281,478)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30320">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="19"/>
+				<var type="Differ" name="state" value="-3" id="20320"/>
+				<var type="Differ" name="state" value="-1" id="20320"/>
+				<var type="Differ" name="state" value="1" id="20320"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：比武招亲(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;比武招亲\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去皇榜(206,329)帮雷老虎贴告示,然后向雷老虎汇报。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我要帮女儿办一个比武招亲大会！现在要贴告示，人手不够用忙不过来。你是来帮我贴告示的么？来，拿去，贴在皇榜和路牌上，回头老爷定有重谢。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不妨帮你一次{10001}", "v504", 20320, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20320"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：比武招亲(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;汇报\n \n&lt;/n&gt;&lt;n&gt;    嗯，贴出去效果不错啊！\n       \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("嗯，好多人看呢{10001}", "v504", 20320, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20320" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+				<var type="Differ" name="state" value="-3" id="20320"/>
+				<var type="Differ" name="state" value="-1" id="20320"/>
+				<var type="Differ" name="state" value="1" id="20320"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去皇榜贴告示(206,329)"/>
+				<notify1 content="皇榜(206,329)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20320"/>
+			</conditions>
+			<actions>
+				<exp value="1600"/>
+				<notify1 content="经验+1600"/>
+				<notify content="恭喜你完成了“比武招亲”任务"/>
+				<var type="Set" name="state" value="-1" id="20320"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30321">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20320"/>
+				<var type="Differ" name="state" value="-3" id="20321"/>
+				<var type="Differ" name="state" value="-1" id="20321"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：失踪的新娘(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;失踪的新娘\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  雷老虎的女儿失踪，找衙役报案。 \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我的女儿啊！我的宝贝女儿！怎么就不见了呢？啊，对了，我家所有的人手都派去找女儿了，你帮我去找衙役报案可以么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这……好吧{10001}", "v504", 20321, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20321" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20320"/>
+				<var type="Differ" name="state" value="-3" id="20321"/>
+				<var type="Differ" name="state" value="-1" id="20321"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找衙役"/>
+				<notify1 content="衙役"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30323">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20323"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：父母之命(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;父母之命\n \n&lt;/n&gt;&lt;n&gt;    哎呀，女儿啊！你终于回来了。原来是方大玉那个浑小子骗我女儿，让我见到撕了他。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("年轻人爱情不能勉强{10002}", "v504", 20323, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20323" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20323"/>
+			</conditions>
+			<actions>
+				<exp value="6000"/>
+				<notify1 content="经验+6000"/>
+				<notify content="恭喜你完成了“父母之命”任务"/>
+				<var type="Set" name="state" value="-1" id="20323"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30324">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20323"/>
+				<var type="Differ" name="state" value="-3" id="20324"/>
+				<var type="Differ" name="state" value="-1" id="20324"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：传家宝(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;传家宝\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  让方大玉找回雷老虎的传家宝。 \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你说的也有道理，但是方大玉必须要证明自己是有能力的人，我可不能让我女儿跟一个废人。\n    就这样吧，我家的传家宝血玲珑前段时间丢了，只要方大玉能找回来，他就够格娶我的女儿。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去告诉方大玉{10001}", "v504", 20324, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20324" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20323"/>
+				<var type="Differ" name="state" value="-3" id="20324"/>
+				<var type="Differ" name="state" value="-1" id="20324"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去百兽谷(268,280)找方大玉"/>
+				<notify1 content="去百兽谷(268,280)找方大玉"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

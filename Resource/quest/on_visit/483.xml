@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="483" name="凤凰城-牢笼(189,473)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10261">
+		<embranchment id="9">
+			<conditions>
+				<level type="Less" value="23"/>
+				<var type="Equal" name="state" value="-3" id="261"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    23级以后再来见我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Great" value="22"/>
+				<var type="Equal" name="state" value="-3" id="261"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：问话(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;问话\n \n&lt;/n&gt;&lt;n&gt;    又是什么人？不管怎么拷问，我也不会说的！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("你可有何未了心愿{10002}", "v483", 261, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="261" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Great" value="22"/>
+				<var type="Equal" name="state" value="-3" id="261"/>
+			</conditions>
+			<actions>
+				<exp value="3400"/>
+				<notify1 content="经验+3400"/>
+				<notify content="恭喜你完成了“问话”任务"/>
+				<var type="Set" name="state" value="-1" id="261"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10262">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="261"/>
+				<var type="Differ" name="state" value="-1" id="262"/>
+				<var type="Differ" name="state" value="1" id="262"/>
+				<var type="Differ" name="state" value="-3" id="262"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：蝎肉(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;蝎肉\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去百兽谷捕捉毒蝎子(236,123)收集10块蝎肉，然后交给大厨师沙红芋(330,299)来换取蝎肉菜，再将菜交给犯人(189,473)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    当年我立了一大功，我们老大招待我吃蝎子肉，那个美味我至今难忘。要是能再吃一次红烧蝎子肉就好了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去帮你找。{10001}", "v483", 262, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2094"/>
+				<var type="Equal" name="state" value="-3" id="262"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：蝎肉(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;蝎肉\n \n&lt;/n&gt;&lt;n&gt;    啊，真的是我梦寐以求的蝎子肉啊！在我有生之年还能再次吃到，真是太幸福了。你是第一个待我这么好的人……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("四海之内皆兄弟，大家互相帮助嘛{10002}", "v483", 262, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="262" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="261"/>
+				<var type="Differ" name="state" value="-1" id="262"/>
+				<var type="Differ" name="state" value="1" id="262"/>
+				<var type="Differ" name="state" value="-3" id="262"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="捕捉毒蝎子(236,123)取10块蝎肉"/>
+				<notify1 content="去收集10块蝎肉"/>
+				<notify content="任务：去百兽谷(236,123)捕捉毒蝎子，把10块蝎肉给沙红芋(322,392)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2094"/>
+				<var type="Equal" name="state" value="-3" id="262"/>
+			</conditions>
+			<actions>
+				<exp value="10000"/>
+				<removeitem value="1" id="2094" log="交蝎肉(262)-删除蝎肉菜(2094)"/>
+				<notify1 content="经验+10000"/>
+				<notify content="恭喜你完成了“蝎肉”任务"/>
+				<var type="Set" name="state" value="-1" id="262"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10264">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="262"/>
+				<var type="Differ" name="state" value="-3" id="264"/>
+				<var type="Differ" name="state" value="-1" id="264"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：家人(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;家人\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去请张嫂(335,405)和她儿子来探望犯人。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，你这句话说的真是太好了，这辈子除了我们老大，还没人对我这么好过。我们老大他……咳咳，我好想念我的老婆孩子啊！要是再见他们母子俩一面，就是立时死了我也甘愿。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("……我去帮你把妻儿带来{10001}", "v483", 264, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="264" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="262"/>
+				<var type="Differ" name="state" value="-3" id="264"/>
+				<var type="Differ" name="state" value="-1" id="264"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找张嫂(335,405)"/>
+				<notify1 content="张嫂(335,405)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10265">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="265"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：骨肉(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;骨肉\n \n&lt;/n&gt;&lt;n&gt;    啊，儿子！我的儿啊！呜呜呜，爹爹对不起你……\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("为了令郎，也应该好好做人啊！{10002}", "v483", 265, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="265" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="265"/>
+			</conditions>
+			<actions>
+				<exp value="7000"/>
+				<notify1 content="经验+7000"/>
+				<notify content="恭喜你完成了“骨肉”任务"/>
+				<var type="Set" name="state" value="-1" id="265"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10266">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="265"/>
+				<var type="Differ" name="state" value="-3" id="266"/>
+				<var type="Differ" name="state" value="-1" id="266"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：坦白(2)", "Dialog66")
+end
+function Dialog66()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;坦白\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找捕头(172,389)报告犯人的供词\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我从没遇到一个人对我如此仁慈，如此关怀。我决定把我们老大的真实身份告诉你,请你告诉捕头。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("以后好好做人吧{10001}", "v483", 266, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="266" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="265"/>
+				<var type="Differ" name="state" value="-3" id="266"/>
+				<var type="Differ" name="state" value="-1" id="266"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找捕头(172,389)"/>
+				<notify1 content="捕头(172,389)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10286">
+		<embranchment id="9">
+			<conditions>
+				<level type="Less" value="31"/>
+				<var type="Equal" name="state" value="1" id="286"/>
+				<var type="Differ" name="state" value="-3" id="286"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么派一个等级如此低的人来见我，走走，找个31级以上的来见我。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Great" value="30"/>
+				<var type="Equal" name="state" value="1" id="286"/>
+				<var type="Differ" name="state" value="-3" id="286"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("唉，连年战乱，在家辛辛苦苦种田，靠天吃饭，才得一口粮食，但出来当土匪，不但钱财来得容易，既是被抓住了，只是关押几日便又放出，还有不要钱的皇粮吃，干啥不做？！")
+this:AddTaskCmdItem("果然如此。{10002}", "v483", 286, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="286" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Great" value="30"/>
+				<var type="Equal" name="state" value="1" id="286"/>
+				<var type="Differ" name="state" value="-3" id="286"/>
+			</conditions>
+			<actions>
+				<notify1 content="回去转告黄大人。"/>
+				<var type="Set" name="state" value="-3" id="286"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

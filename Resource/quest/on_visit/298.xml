@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="298" name="">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30232">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="39"/>
+				<horse value="3000"/>
+				<var type="Differ" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="1" id="20232"/>
+				<var type="Differ" name="state" value="-3" id="20232"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：哭马(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;哭马\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去击败山贼头目，然后回凤尾饲养员处交任务。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我那可怜的小红，被那个粗暴的山贼头目当驴来拉车，最后被活活累死了，呜呜呜......\n    谁能主持公道啊，天理王法呢？呜呜呜......\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：&lt;/n&gt;&lt;n&gt; 将枣红马升级为战马&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 30000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v298", 20232, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<level type="Great" value="39"/>
+				<var type="Differ" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="1" id="20232"/>
+				<var type="Differ" name="state" value="-3" id="20232"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：哭马(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("    对不起，你没有马匹无法接此任务。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="39"/>
+				<horse value="3000"/>
+				<var type="Differ" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="1" id="20232"/>
+				<var type="Equal" name="state" value="-3" id="20232"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：哭马(2)", "Dialog42")
+end
+function Dialog42()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt; 哭马\n \n&lt;/n&gt;&lt;n&gt;    啊！你把山贼头目打伤了啊？他只是把我的小红马打死了，似乎太严重了吧。不过你还真是古道热肠啊。\n    你这匹马......很有潜力成为战马啊，只是被用来赶路真是太浪费了，让我来帮你训练一下吧，这样以后你就能在马上做战了。\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：&lt;/n&gt;&lt;n&gt; 将枣红马升级为战马&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 30000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v298", 20232, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20232" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="39"/>
+				<horse value="3000"/>
+				<var type="Differ" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="1" id="20232"/>
+				<var type="Differ" name="state" value="-3" id="20232"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：消灭山寨里的山贼头目"/>
+			</actions>
+		</embranchment>
+		<embranchment id="1" active="1">
+			<conditions>
+				<level type="Great" value="39"/>
+				<horse value="3000"/>
+				<var type="Differ" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="1" id="20232"/>
+				<var type="Equal" name="state" value="-3" id="20232"/>
+			</conditions>
+			<actions>
+				<horse value="3200"/>
+				<notify content="枣红马升级为战马"/>
+				<notify1 content="得到枣红战马"/>
+				<exp value="30000"/>
+				<notify content="恭喜你完成了“哭马”任务"/>
+				<notify1 content="经验+30000"/>
+				<var type="Set" name="state" value="-1" id="20232"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30243">
+		<embranchment id="8">
+			<conditions>
+				<horse value="3000"/>
+				<var type="Equal" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Differ" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：战马(2)", "Dialog46")
+this:AddDialogItem("购买战马-5锭(0)", "Dialog49")
+end
+function Dialog46()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;战马\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去击败山贼头目，然后回凤尾饲养员处领战马。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    上次给你的战马又死了？如果你还想要一匹的话，就再去把该死的山贼头目击败。\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：&lt;/n&gt;&lt;n&gt; 战马&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v298", 20243, 3)
+end
+function Dialog49()
+this:AddTalk("    您的战马丢了么？要不要我帮你把现在的马培训成战马呢？只要5锭哦。")
+this:AddTaskCmdItem("购买战马-5锭{10001}", "v298", 20243, 5)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Equal" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：战马(2)", "Dialog45")
+end
+function Dialog45()
+this:AddTalk("    你打败了山贼头目啊，那太好了，让他知道老是虐待马儿的代价。\n    按约定，给你一匹战马吧。")
+this:AddTaskCmdItem("接受奖励{10002}", "v298", 20243, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20243" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<horse value="3000"/>
+				<var type="Equal" name="state" value="-1" id="20232"/>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Differ" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：消灭山寨里的山贼头目"/>
+			</actions>
+		</embranchment>
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Equal" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<horse value="3200"/>
+				<notify1 content="得到战马"/>
+				<notify content="恭喜你完成了“战马”任务"/>
+				<var type="Set" name="state" value="-2" id="20243"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<gold type="Great" value="49999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="50000"/>
+				<horse value="3200"/>
+				<notify1 content="得到战马"/>
+				<var type="Set" name="state" value="-2" id="20243"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

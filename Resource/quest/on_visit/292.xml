@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="292" name="凤尾村-风水先生(72,133)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="300001">
+		<embranchment id="80">
+			<conditions>
+				<fivetype value="0"/>
+				<fivelevel type="Equal" value="1"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("金属性强化(0)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("    这位请留步，如果我没看错，阁下人物属性应该是属金的。嘿嘿，不用惊讶，我就是干这行的。\n    怎么样，想不想把你的金属性继续强化下去呢？只要付10两哦！\n\n    强化属性可是很有用的哦，这样你的麒麟称号也能够得到强化，称号等级越高，对应相克属性的攻会增加，受到相克属性的攻击时防御也会增强。")
+this:AddTaskCmdItem("金属性强化{10002}", "v292", 200002, 10)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="81">
+			<conditions>
+				<fivetype value="1"/>
+				<fivelevel type="Equal" value="1"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("木属性强化(0)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("    这位请留步，如果我没看错，阁下人物属性应该是属木的。嘿嘿，不用惊讶，我就是干这行的。\n    怎么样，想不想把你的木属性继续强化下去呢？只要付10两哦！\n\n    强化属性可是很有用的哦，这样你的青龙称号也能够得到强化，称号等级越高，对应相克属性的攻会增加，受到相克属性的攻击时防御也会增强。")
+this:AddTaskCmdItem("木属性强化{10002}", "v292", 200002, 11)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="82">
+			<conditions>
+				<fivetype value="2"/>
+				<fivelevel type="Equal" value="1"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("土属性强化(0)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("    这位请留步，如果我没看错，阁下人物属性应该是属土的。嘿嘿，不用惊讶，我就是干这行的。\n    怎么样，想不想把你的土属性继续强化下去呢？只要付10两哦！\n\n    强化属性可是很有用的哦，这样你的玄武称号也能够得到强化，称号等级越高，对应相克属性的攻会增加，受到相克属性的攻击时防御也会增强。")
+this:AddTaskCmdItem("土属性强化{10002}", "v292", 200002, 12)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="83">
+			<conditions>
+				<fivetype value="3"/>
+				<fivelevel type="Equal" value="1"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("水属性强化(0)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("    这位请留步，如果我没看错，阁下人物属性应该是属水的。嘿嘿，不用惊讶，我就是干这行的。\n    怎么样，想不想把你的水属性继续强化下去呢？只要付10两哦！\n\n    强化属性可是很有用的哦，这样你的白虎称号也能够得到强化，称号等级越高，对应相克属性的攻会增加，受到相克属性的攻击时防御也会增强。")
+this:AddTaskCmdItem("水属性强化{10002}", "v292", 200002, 13)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="84">
+			<conditions>
+				<fivetype value="4"/>
+				<fivelevel type="Equal" value="1"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("火属性强化(0)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("    这位请留步，如果我没看错，阁下人物属性应该是属火的。嘿嘿，不用惊讶，我就是干这行的。\n    怎么样，想不想把你的火属性继续强化下去呢？只要付10两哦！\n\n    强化属性可是很有用的哦，这样你的朱雀称号也能够得到强化，称号等级越高，对应相克属性的攻会增加，受到相克属性的攻击时防御也会增强。")
+this:AddTaskCmdItem("火属性强化{10002}", "v292", 200002, 14)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="100">
+			<conditions>
+				<level type="Great" value="39"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("穷人快走开，不要把你的晦气传给我。")
+this:AddCloseItem("离开")
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="200002" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<fivetype value="0"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<fivelevel type="Add" value="1"/>
+				<notify content="你强化了金属性，获得麒麟2级称号"/>
+				<notify1 content="麒麟2级"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<fivetype value="1"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<fivelevel type="Add" value="1"/>
+				<notify content="你强化了木属性，获得青龙2级称号"/>
+				<notify1 content="青龙2级"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<fivetype value="2"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<fivelevel type="Add" value="1"/>
+				<notify content="你强化了土属性，获得玄武2级称号"/>
+				<notify1 content="玄武2级"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<fivetype value="3"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<fivelevel type="Add" value="1"/>
+				<notify content="你强化了水属性，获得白虎2级称号"/>
+				<notify1 content="白虎2级"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<fivetype value="4"/>
+				<level type="Great" value="39"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<fivelevel type="Add" value="1"/>
+				<notify content="你强化了火属性，获得朱雀2级称号"/>
+				<notify1 content="朱雀2级"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

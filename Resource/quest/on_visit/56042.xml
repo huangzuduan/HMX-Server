@@ -1,0 +1,1583 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56042" name="凤凰城-黄大人(184,364)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30600">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20600"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：汇报(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;汇报\n \n&lt;/n&gt;&lt;n&gt;    啊？雷老虎的女儿也失踪啦？这件事情很蹊跷。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem(" 跑的好累~~~。{10002}", "v56042", 20600, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20600" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20600"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<exp value="5000"/>
+				<notify1 content="经验+5000"/>
+				<notify content="恭喜你完成了“汇报”任务"/>
+				<var type="Set" name="state" value="-1" id="20600"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30601">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20600"/>
+				<var type="Differ" name="state" value="-3" id="20601"/>
+				<var type="Differ" name="state" value="-1" id="20601"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：授命(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;授命\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  把黄大人的命令传达给衙役(276,303) \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你去告诉衙役，我要他立刻查办此事。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去。{10001}", "v56042", 20601, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20601" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20600"/>
+				<var type="Differ" name="state" value="-3" id="20601"/>
+				<var type="Differ" name="state" value="-1" id="20601"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把黄大人的命令传达给衙役(276,303)。"/>
+				<notify1 content="去找衙役(276,303)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10284">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="284"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：乱世重典(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;乱世重典\n \n&lt;/n&gt;&lt;n&gt;  你是说我的律法太过仁慈吗？可是，仁慈乃圣人之道，我们一直如此。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("现在治安可好？{10002}", "v56042", 284, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="284" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="284"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<exp value="3200"/>
+				<notify1 content="经验+3200"/>
+				<notify content="恭喜你完成了“乱世重典”任务"/>
+				<var type="Set" name="state" value="-1" id="284"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10285">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="284"/>
+				<var type="Differ" name="state" value="-1" id="285"/>
+				<var type="Differ" name="state" value="1" id="285"/>
+				<var type="Differ" name="state" value="-3" id="285"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：平乱(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;平乱\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败40个土匪(117,62)，然后再回到黄大人(184,364)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    现今天下大乱，土匪横行，不管怎样抓捕，总是不能长治久安。你能帮我教化那些土匪吗？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务。{10001}", "v56042", 285, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="285"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：平乱(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;平乱?\n \n&lt;/n&gt;&lt;n&gt;   啊，你打败了众多土匪！治安果然好多了。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("对犯罪的人就该这样。{10002}", "v56042", 285, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="285"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：平乱(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("怎么又回来了，你不是说惩治那些土匪吗？快去吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="285" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="284"/>
+				<var type="Differ" name="state" value="-1" id="285"/>
+				<var type="Differ" name="state" value="1" id="285"/>
+				<var type="Differ" name="state" value="-3" id="285"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去打败40个土匪(117,62)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="285"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<exp value="12200"/>
+				<notify1 content="经验+12200"/>
+				<notify content="恭喜你完成了“平乱”任务"/>
+				<var type="Set" name="state" value="-1" id="285"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10286">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="285"/>
+				<var type="Differ" name="state" value="-3" id="286"/>
+				<var type="Differ" name="state" value="-1" id="286"/>
+				<var type="Differ" name="state" value="1" id="286"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：仁义之乱(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;仁义之乱\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去牢笼问犯人(189,473)为何频频犯罪\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，为何我对百姓如此宽厚，却还有这么多的人去当土匪？为何你使用武力，就再也不敢有人犯罪了，我心中困惑。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"666\"&gt;   记忆蝴蝶&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你去牢中问问犯人。{10001}", "v56042", 286, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="286"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：仁义之乱(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;汇报\n \n&lt;/n&gt;&lt;n&gt;    事情果然像你预料的那样啊，唯今之计只有变法。对推行新法你有何良策？\n       \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"666\"&gt;   记忆蝴蝶&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不如实行辕门立木之法。{10001}", "v56042", 286, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="286"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：仁义之乱(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("    你包裹满了，清空些再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="286" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="285"/>
+				<var type="Differ" name="state" value="-3" id="286"/>
+				<var type="Differ" name="state" value="-1" id="286"/>
+				<var type="Differ" name="state" value="1" id="286"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去牢笼找犯人(189,473)"/>
+				<notify1 content="牢笼(189,473)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="286"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="666"/>
+				<notify1 content="获得记忆蝴蝶一个"/>
+				<notify content="获得记忆蝴蝶一个"/>
+				<exp value="4800"/>
+				<notify1 content="经验+4800"/>
+				<notify content="恭喜你完成了“仁义之乱”任务"/>
+				<var type="Set" name="state" value="-1" id="286"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10287">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="286"/>
+				<var type="Differ" name="state" value="-1" id="287"/>
+				<var type="Differ" name="state" value="1" id="287"/>
+				<var type="Differ" name="state" value="-3" id="287"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：虎头(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;虎头\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去兽王谷打败老虎(70,135)，收集10个虎头，然后回来报告黄大人 (184,364)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    真是好计！为了推行新法，需要先立威。我要悬赏虎头10个，赏银1000锭，请你帮我去城外打10个虎头。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的，我这便去{10001}", "v56042", 287, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2098"/>
+				<var type="Equal" name="state" value="-3" id="287"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：虎头(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;虎头\n \n&lt;/n&gt;&lt;n&gt;   真不错，你已经帮我收集到了10个虎头，真是帮了我的大忙啊\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这个嘛，小菜一碟{10002}", "v56042", 287, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="287"/>
+				<var type="Equal" name="state" value="1" id="289"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    虎头掉了？我这里还有呢，快去拿给高俅。")
+this:AddTaskCmdItem("这次不会掉了{10002}", "v56042", 287, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="287" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="286"/>
+				<var type="Differ" name="state" value="-1" id="287"/>
+				<var type="Differ" name="state" value="1" id="287"/>
+				<var type="Differ" name="state" value="-3" id="287"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败兽王谷的老虎取(70,135)，收集个虎头"/>
+				<notify1 content="打败兽王谷的老虎取(70,135)，收集个虎头"/>
+				<notify content="任务：去兽王谷(70,135)打败老虎，收集10个虎头后找黄大人(184,364)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2098"/>
+				<var type="Equal" name="state" value="-3" id="287"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<exp value="12600"/>
+				<notify1 content="经验+12600"/>
+				<notify content="恭喜你完成了“取信于民”任务"/>
+				<var type="Set" name="state" value="-1" id="287"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="287"/>
+				<var type="Equal" name="state" value="1" id="289"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<additem value="10" id="2098"/>
+				<notify1 content="得到10个虎头"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10289">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="287"/>
+				<var type="Differ" name="state" value="-3" id="289"/>
+				<var type="Differ" name="state" value="-1" id="289"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：民意(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;民意\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把虎头带给高俅(280,272),然后回来向黄大人(184,364)汇报。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    接下来要找个人领赏就可以了，找谁呢？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("找城里的无赖高俅{10001}", "v56042", 289, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="289"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：民意(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;无效的药\n \n&lt;/n&gt;&lt;n&gt;    他已经来领过奖赏了，果然不出所料，他在城里到处炫耀呢，这样新法推行人民就会相信了。\n    这都多亏了你的辕门立木之策啊。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接下来就看效果了{10001}", "v56042", 289, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="289" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="287"/>
+				<var type="Differ" name="state" value="-3" id="289"/>
+				<var type="Differ" name="state" value="-1" id="289"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：把虎头带给高俅(280,272)，然后回来向黄大人报告。"/>
+				<notify1 content="高俅(280,272)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="289"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<exp value="3000"/>
+				<notify1 content="经验+3000"/>
+				<notify content="恭喜你完成了“民意”任务"/>
+				<var type="Set" name="state" value="-1" id="289"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10290">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="289"/>
+				<var type="Differ" name="state" value="-3" id="290"/>
+				<var type="Differ" name="state" value="-1" id="290"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：感谢(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt; 感谢\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找韩非(336,419)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    谢谢你的帮忙。现今治安大大提高，百姓路不拾遗，夜不闭户！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("变法果然效果很好{10001}", "v56042", 290, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="290" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="289"/>
+				<var type="Differ" name="state" value="-3" id="290"/>
+				<var type="Differ" name="state" value="-1" id="290"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去回报韩非(336,419)"/>
+				<notify1 content="韩非(336,419)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30606">
+		<embranchment id="10">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="8999"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog40")
+end
+function Dialog40()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第1次招募")
+this:AddTaskCmdItem("我募捐-90两{10001}", "v56042", 20606, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="9000"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连90两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="30">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="14999"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog42")
+end
+function Dialog42()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第1次招募")
+this:AddTaskCmdItem("我募捐-150两{10001}", "v56042", 20606, 2)
+end
+
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="40">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="15000"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog43")
+end
+function Dialog43()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连150两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="50">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="20999"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog44")
+end
+function Dialog44()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第1次招募")
+this:AddTaskCmdItem("我募捐-210两{10001}", "v56042", 20606, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="60">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="21000"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog45")
+end
+function Dialog45()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连210两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="70">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="26999"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog46")
+end
+function Dialog46()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第1次招募")
+this:AddTaskCmdItem("我募捐-270两{10001}", "v56042", 20606, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="80">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="27000"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog47")
+end
+function Dialog47()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连270两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="90">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="32999"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog48")
+end
+function Dialog48()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第1次招募")
+this:AddTaskCmdItem("我募捐-330两{10001}", "v56042", 20606, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="100">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="33000"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog49")
+end
+function Dialog49()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连330两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="13499"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog50")
+end
+function Dialog50()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第2次招募")
+this:AddTaskCmdItem("我募捐-135两{10001}", "v56042", 20606, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="13500"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog51")
+end
+function Dialog51()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连135两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="22499"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog52")
+end
+function Dialog52()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第2次招募")
+this:AddTaskCmdItem("我募捐-225两{10001}", "v56042", 20606, 12)
+end
+
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="22500"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog53")
+end
+function Dialog53()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连225两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="51">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="31499"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog54")
+end
+function Dialog54()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第2次招募")
+this:AddTaskCmdItem("我募捐-315两{10001}", "v56042", 20606, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="61">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="31500"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog55")
+end
+function Dialog55()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连315两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="71">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="40499"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog56")
+end
+function Dialog56()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第2次招募")
+this:AddTaskCmdItem("我募捐-405两{10001}", "v56042", 20606, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="81">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="40500"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog57")
+end
+function Dialog57()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连405两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="91">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="49499"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog58")
+end
+function Dialog58()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第2次招募")
+this:AddTaskCmdItem("我募捐-495两{10001}", "v56042", 20606, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="49500"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog59")
+end
+function Dialog59()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连495两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="17999"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog60")
+end
+function Dialog60()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第3次招募")
+this:AddTaskCmdItem("我募捐-180两{10001}", "v56042", 20606, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="18000"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog61")
+end
+function Dialog61()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连180两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="29999"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog62")
+end
+function Dialog62()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第3次招募")
+this:AddTaskCmdItem("我募捐-300两{10001}", "v56042", 20606, 22)
+end
+
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="30000"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog63")
+end
+function Dialog63()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连300两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="52">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="41999"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第3次招募")
+this:AddTaskCmdItem("我募捐-420两{10001}", "v56042", 20606, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="62">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="42000"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog65")
+end
+function Dialog65()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连420两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="72">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="53999"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog66")
+end
+function Dialog66()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第3次招募")
+this:AddTaskCmdItem("我募捐-540两{10001}", "v56042", 20606, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="82">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="54000"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog67")
+end
+function Dialog67()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连540两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="92">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="65999"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog68")
+end
+function Dialog68()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n本日第3次招募")
+this:AddTaskCmdItem("我募捐-660两{10001}", "v56042", 20606, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Less" value="66000"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog69")
+end
+function Dialog69()
+this:AddTalk("   (GetName)，我也听说了清源村的事！但是我现在忙于凤凰城的防御建设，这需要一笔不小的资金，如果你能帮助我的话，我就以官府的名义发布一道“招募勇士”的告示，并亲自把招募的勇士送到清源村的长老处。\n\n  但是你现在连660两都捐不出来。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20606" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="8999"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="9000"/>
+				<notify content="你向官府募捐了90两！"/>
+				<notify1 content="你向官府募捐了90两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="14999"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="15000"/>
+				<notify content="你向官府募捐了150两！"/>
+				<notify1 content="你向官府募捐了150两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="20999"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="21000"/>
+				<notify content="你向官府募捐了210两！"/>
+				<notify1 content="你向官府募捐了210两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="26999"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="27000"/>
+				<notify content="你向官府募捐了270两！"/>
+				<notify1 content="你向官府募捐了270两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="1" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="32999"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="33000"/>
+				<notify content="你向官府募捐了330两！"/>
+				<notify1 content="你向官府募捐了330两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="13499"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="13500"/>
+				<notify content="你向官府募捐了135两！"/>
+				<notify1 content="你向官府募捐了135两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="22499"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="22500"/>
+				<notify content="你向官府募捐了225两！"/>
+				<notify1 content="你向官府募捐了225两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="31499"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="31500"/>
+				<notify content="你向官府募捐了315两！"/>
+				<notify1 content="你向官府募捐了315两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="40499"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="40500"/>
+				<notify content="你向官府募捐了405两！"/>
+				<notify1 content="你向官府募捐了405两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="2" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="49499"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="49500"/>
+				<notify content="你向官府募捐了495两！"/>
+				<notify1 content="你向官府募捐了495两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="17999"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="18000"/>
+				<notify content="你向官府募捐了180两！"/>
+				<notify1 content="你向官府募捐了180两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="29999"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="30000"/>
+				<notify content="你向官府募捐了300两！"/>
+				<notify1 content="你向官府募捐了300两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="41999"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="42000"/>
+				<notify content="你向官府募捐了420两！"/>
+				<notify1 content="你向官府募捐了420两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="24" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="53999"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="54000"/>
+				<notify content="你向官府募捐了540两！"/>
+				<notify1 content="你向官府募捐了540两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="catch_people_num" value="3" id="20606"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<gold type="Great" value="65999"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="160"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="66000"/>
+				<notify content="你向官府募捐了660两！"/>
+				<notify1 content="你向官府募捐了660两！"/>
+				<var type="Set" name="state" value="-3" id="20606"/>
+				<refresh name="state"/>
+				<notify content="官府已经发出“招募勇士”的告示，去向清源村的长老汇报"/>
+				<notify1 content="向清源村的长老汇报"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

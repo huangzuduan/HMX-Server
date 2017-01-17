@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="915" name="国战防守者">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30608">
+		<embranchment id="10">
+			<conditions>
+				<innation/>
+                                <countrydefence   value="2"/>
+				<var type="Differ" name="state" value="-1" id="20608"/>
+				<var type="Differ" name="state" value="1" id="20608"/>
+				<var type="Differ" name="state" value="-3" id="20608"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的勇士，战争之火正在燃烧，王城时刻受到威胁。你是否愿意接受保卫王城的任务？")
+this:AddTaskCmdItem("保卫王城{10001}", "v915", 20608, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="12">
+			<conditions>
+				<innation/>
+                                <countrydefence   value="2"/>
+				<timeouts long="300" id="20608" less="1"/>
+				<var type="Equal" name="state" value="1" id="20608"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    战争还在继续，危机四伏，请继续巡逻。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="11">
+			<conditions>
+				<innation/>
+				<countrydefence   value="2"/>
+				<timeouts long="300" id="20608" less="0"/>
+				<var type="Equal" name="state" value="1" id="20608"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    由于你奋勇保卫王城，请接受我给你的奖励。");
+this:AddTaskCmdItem("接受奖励", "v915", 20608, 21)
+end 
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20608" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+                                <countrydefence   value="2"/>
+				<var type="Differ" name="state" value="-1" id="20608"/>
+				<var type="Differ" name="state" value="1" id="20608"/>
+				<var type="Differ" name="state" value="-3" id="20608"/>
+			</conditions>
+			<actions>
+				<notify1 content="你接受了保卫王城的任务"/>
+                                <notify content="你接受了保卫王城的任务"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="GetP" name="baowei_general_selflevel" value="1"/>
+				<vars type="Mul" name1="baowei_general_selflevel" name2="baowei_general_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<vars type="Mul" name1="baowei_general_selflevel" name2="baseexp"/>
+				<refresh name="baowei_general_selflevel"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="300"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<countrydefence   value="2"/>
+				<timeouts long="300" id="20608" less="0"/>
+				<var type="Equal" name="state" value="1" id="20608"/>
+			</conditions>
+			<actions>
+				<notify1 content="成功保卫王城，经验增加"/>
+                                <notify content="成功保卫王城，经验增加"/>
+				<exp value="100" id="20608" name="baowei_general_selflevel"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+                                <timeouts/>
+				<var type="Set" name="clock" value="300"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

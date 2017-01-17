@@ -1,0 +1,2880 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="862" name="王城-绸缎商(832,533)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20001">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找凤凰城甲镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31045">
+		<embranchment id="100">
+			<conditions>
+				<week value="123"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="5"/>
+				<isguard/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="199"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付2两哦(此费用不返还)。\n\n本日第1次任务")
+this:AddTaskCmdItem("接受任务-2两{10001}", "v862", 21045, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付20两哦(此费用不返还)。\n\n本日第2次任务")
+this:AddTaskCmdItem("接受任务-20两{10001}", "v862", 21045, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付20两哦(此费用不返还)。\n\n本日第3次任务")
+this:AddTaskCmdItem("接受任务-20两{10001}", "v862", 21045, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付20两哦(此费用不返还)。\n\n本日第4次任务")
+this:AddTaskCmdItem("接受任务-20两{10001}", "v862", 21045, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付20两哦(此费用不返还)。\n\n本日第5次任务")
+this:AddTaskCmdItem("接受任务-20两{10001}", "v862", 21045, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了,不然还可以帮我运货。50级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21045, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21045, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21045, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="251">
+			<conditions>
+				<septid type="Less" value="1"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,没有家族替你担保,无法信任你。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21045" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<addguard id="54202" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="200" exp="0" dest="265,443"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你接了一个50级镖车,付了2两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<addguard id="54202" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="2000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="2000"/>
+				<notify content="你接了一个50级镖车,付了20两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<addguard id="54202" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="2000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="2000"/>
+				<notify content="你接了一个50级镖车,付了20两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<addguard id="54202" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="2000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="2000"/>
+				<notify content="你接了一个50级镖车,付了20两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21045"/>
+				<var type="Differ" name="state" value="2" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<addguard id="54202" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="2000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="2000"/>
+				<notify content="你接了一个50级镖车,付了20两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次运镖"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31046">
+		<embranchment id="100">
+			<conditions>
+				<week value="123"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="5"/>
+				<isguard/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="499"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付5两哦(此费用不返还)。\n\n本日第1次任务")
+this:AddTaskCmdItem("接受任务-5两{10001}", "v862", 21046, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付40两哦(此费用不返还)。\n\n本日第2次任务")
+this:AddTaskCmdItem("接受任务-40两{10001}", "v862", 21046, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付40两哦(此费用不返还)。\n\n本日第3次任务")
+this:AddTaskCmdItem("接受任务-40两{10001}", "v862", 21046, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付40两哦(此费用不返还)。\n\n本日第4次任务")
+this:AddTaskCmdItem("接受任务-40两{10001}", "v862", 21046, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付40两哦(此费用不返还)。\n\n本日第5次任务")
+this:AddTaskCmdItem("接受任务-40两{10001}", "v862", 21046, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了,不然还可以帮我运货。70级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21046, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21046, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21046, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="251">
+			<conditions>
+				<septid type="Less" value="1"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,没有家族替你担保,无法信任你。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21046" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<addguard id="54203" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="500" exp="0" dest="265,443"/>
+				<gold type="Sub" value="500"/>
+				<notify content="你接了一个70级镖车,付了5两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<addguard id="54203" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="4000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="4000"/>
+				<notify content="你接了一个70级镖车,付了40两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<addguard id="54203" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="4000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="4000"/>
+				<notify content="你接了一个70级镖车,付了40两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<addguard id="54203" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="4000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="4000"/>
+				<notify content="你接了一个70级镖车,付了40两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21046"/>
+				<var type="Differ" name="state" value="2" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<addguard id="54203" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="4000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="4000"/>
+				<notify content="你接了一个70级镖车,付了40两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次运镖"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31047">
+		<embranchment id="100">
+			<conditions>
+				<week value="123"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="5"/>
+				<isguard/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付10两哦(此费用不返还)。\n\n本日第1次任务")
+this:AddTaskCmdItem("接受任务-10两{10001}", "v862", 21047, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付60两哦(此费用不返还)。\n\n本日第2次任务")
+this:AddTaskCmdItem("接受任务-60两{10001}", "v862", 21047, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付60两哦(此费用不返还)。\n\n本日第3次任务")
+this:AddTaskCmdItem("接受任务-60两{10001}", "v862", 21047, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付60两哦(此费用不返还)。\n\n本日第4次任务")
+this:AddTaskCmdItem("接受任务-60两{10001}", "v862", 21047, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付60两哦(此费用不返还)。\n\n本日第5次任务")
+this:AddTaskCmdItem("接受任务-60两{10001}", "v862", 21047, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了,不然还可以帮我运货。90级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21047, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21047, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21047, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="251">
+			<conditions>
+				<septid type="Less" value="1"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,没有家族替你担保,无法信任你。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21047" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<addguard id="54204" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="1000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="1000"/>
+				<notify content="你接了一个90级镖车,付了10两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+			</conditions>
+			<actions>
+				<addguard id="54204" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="6000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="6000"/>
+				<notify content="你接了一个90级镖车,付了60两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+			</conditions>
+			<actions>
+				<addguard id="54204" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="6000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="6000"/>
+				<notify content="你接了一个90级镖车,付了60两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+			</conditions>
+			<actions>
+				<addguard id="54204" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="6000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="6000"/>
+				<notify content="你接了一个90级镖车,付了60两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21047"/>
+				<var type="Differ" name="state" value="2" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+			</conditions>
+			<actions>
+				<addguard id="54204" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="6000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="6000"/>
+				<notify content="你接了一个90级镖车,付了60两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次运镖"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31048">
+		<embranchment id="100">
+			<conditions>
+				<week value="123"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="5"/>
+				<isguard/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付20两哦(此费用不返还)。\n\n本日第1次任务")
+this:AddTaskCmdItem("接受任务-20两{10001}", "v862", 21048, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付90两哦(此费用不返还)。\n\n本日第2次任务")
+this:AddTaskCmdItem("接受任务-90两{10001}", "v862", 21048, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付90两哦(此费用不返还)。\n\n本日第3次任务")
+this:AddTaskCmdItem("接受任务-90两{10001}", "v862", 21048, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付90两哦(此费用不返还)。\n\n本日第4次任务")
+this:AddTaskCmdItem("接受任务-90两{10001}", "v862", 21048, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付90两哦(此费用不返还)。\n\n本日第5次任务")
+this:AddTaskCmdItem("接受任务-90两{10001}", "v862", 21048, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了,不然还可以帮我运货。110级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21048, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21048, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21048, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="251">
+			<conditions>
+				<septid type="Less" value="1"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,没有家族替你担保,无法信任你。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21048" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<addguard id="54205" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="2000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="2000"/>
+				<notify content="你接了一个110级镖车,付了20两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+			</conditions>
+			<actions>
+				<addguard id="54205" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="9000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="9000"/>
+				<notify content="你接了一个110级镖车,付了90两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+			</conditions>
+			<actions>
+				<addguard id="54205" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="9000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="9000"/>
+				<notify content="你接了一个110级镖车,付了90两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+			</conditions>
+			<actions>
+				<addguard id="54205" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="9000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="9000"/>
+				<notify content="你接了一个110级镖车,付了90两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21048"/>
+				<var type="Differ" name="state" value="2" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="8999"/>
+			</conditions>
+			<actions>
+				<addguard id="54205" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="9000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="9000"/>
+				<notify content="你接了一个110级镖车,付了90两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次运镖"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31049">
+		<embranchment id="100">
+			<conditions>
+				<week value="123"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<level type="Great" value="129"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="5"/>
+				<isguard/>
+				<level type="Great" value="129"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天没有绸缎需要你运了,请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付40两哦(此费用不返还)。\n\n本日第1次任务")
+this:AddTaskCmdItem("接受任务-40两{10001}", "v862", 21049, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次任务需要付120两哦(此费用不返还)。\n\n本日第2次任务")
+this:AddTaskCmdItem("接受任务-120两{10001}", "v862", 21049, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付120两哦(此费用不返还)。\n\n本日第3次任务")
+this:AddTaskCmdItem("接受任务-120两{10001}", "v862", 21049, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付120两哦(此费用不返还)。\n\n本日第4次任务")
+this:AddTaskCmdItem("接受任务-120两{10001}", "v862", 21049, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    凤凰城的黄大人向我定购了很多绸缎,他让我把绸缎运到凤凰城的甲镖头处,不知道黄大人为什么要这么多绸缎。你能帮我把绸缎送到凤凰城的甲镖头处吗？\n    不过接这次绸缎需要付120两哦(此费用不返还)。\n\n本日第5次任务")
+this:AddTaskCmdItem("接受任务-120两{10001}", "v862", 21049, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了,不然还可以帮我运货。130级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21049, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21049, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次任务么？");
+this:AddTaskCmdItem("放弃{10001}", "v862", 21049, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="251">
+			<conditions>
+				<septid type="Less" value="1"/>
+				<var type="Differ" name="state" value="-3" id="21045"/>
+				<var type="Differ" name="state" value="-3" id="21046"/>
+				<var type="Differ" name="state" value="-3" id="21047"/>
+				<var type="Differ" name="state" value="-3" id="21048"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21045"/>
+				<var type="Differ" name="state" value="3" id="21046"/>
+				<var type="Differ" name="state" value="3" id="21047"/>
+				<var type="Differ" name="state" value="3" id="21048"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,没有家族替你担保,无法信任你。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21049" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<uservar type="Less" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<addguard id="54206" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="4000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="4000"/>
+				<notify content="你接了一个130级镖车,付了40两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+			</conditions>
+			<actions>
+				<addguard id="54206" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="12000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="12000"/>
+				<notify content="你接了一个130级镖车,付了120两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<uservar type="Equal" name="beforetravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+			</conditions>
+			<actions>
+				<addguard id="54206" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="12000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="12000"/>
+				<notify content="你接了一个130级镖车,付了120两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="80"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+			</conditions>
+			<actions>
+				<addguard id="54206" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="12000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="12000"/>
+				<notify content="你接了一个130级镖车,付了120两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<week value="4"/>
+				<uservar type="Equal" name="beforetravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="21049"/>
+				<var type="Differ" name="state" value="2" id="21049"/>
+				<var type="Differ" name="state" value="-3" id="21049"/>
+				<var type="Differ" name="state" value="3" id="21049"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="11999"/>
+			</conditions>
+			<actions>
+				<addguard id="54206" map="凤凰城" ltpos="836,534" rbpos="835,543" gold="12000" exp="0" dest="265,443"/>
+				<gold type="Sub" value="12000"/>
+				<notify content="你接了一个130级商队,付了120两,送到凤凰城的甲镖头处"/>
+				<notify1 content="凤凰城的甲镖头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="beforetravel" value="1"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次运镖"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="102" name="运镖被劫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="185" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="185"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="2" id="185"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="249" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="249"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="2" id="249"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="265" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="265"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="2" id="265"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="301" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="301"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3" id="301"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="305" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="305"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3" id="305"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="309" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="309"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3" id="309"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20303" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20317" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你送鱼失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20319" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="car" value="1" id="20319"/>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你送鱼失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20329" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20323" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20341" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20368" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了，再接一次任务吧"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--quest id="21001" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="time" value="2" id="21001"/>
+				<var type="Set" name="state" value="2" id="21001"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21002" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21002"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="time" value="2" id="21002"/>
+				<var type="Set" name="state" value="-2" id="21002"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21003" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21003"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="state" value="-2" id="21003"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21004" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="state" value="-2" id="21004"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21005" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21005"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2" id="21005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21006" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21007" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21008" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21009" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21035" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2" id="21035"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21036" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21037" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21038" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21039" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21025" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21025"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="2" id="21025"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21026" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21026"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="2" id="21026"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21027" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21027"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="2" id="21027"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21028" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21028"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="2" id="21028"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21029" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21029"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="2" id="21029"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<!--quest id="21030" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<refresh name="clock"/>
+				<bulletin content="贵家族运镖失败" kind="2"/>
+				<var type="Set" name="state" value="-2" id="21030"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<quest id="21206" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21216" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21226" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21236" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21246" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21256" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21266" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21276" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21286" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21296" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21412" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21422" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21432" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21442" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21452" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21462" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21472" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21482" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你护送失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16527" name="武夷王墓五层-骸骨巫师">
+	<!--new means new quest, default is quest on user-->
+	<quest id="435" new="1">
+		<embranchment id="1">
+			<conditions>
+				<item value="1" id="2186"/>
+				<var type="Equal" name="state" value="2"/>
+				<var type="Less" name="kill_骸骨巫师" value="20"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨巫师" value="1"/>
+				<refresh name="kill_骸骨巫师"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<item value="1" id="2186"/>
+				<var type="Equal" name="state" value="2"/>
+				<var type="Great" name="kill_骸骨巫师" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<removeitem value="1" id="2186"/>
+				<refresh name="kill_骸骨巫师"/>
+				<notify content="你已经消灭了很多骸骨巫师,回皇城－夏侯望(563,84)处交任务吧"/>
+				<notify1 content="去找皇城－夏侯望(563,84)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

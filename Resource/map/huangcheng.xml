@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!--type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512国占复活区  256国战传送区  1024去内景后的区域  4096 攻方集合区域帮会战争 2048 国家战争拉人区域  32768皇城战守方复活区      65536皇城战攻方复活区     8192表示国战为绝对安全区 非国战为普通区    1048576 平时为绝对安全区，NPC争夺战时，只有交战双方才能PK
+-->
+	<waypoint>
+		<point x="760" y="491"/>
+		<point x="760" y="492"/>
+		<point x="761" y="490"/>
+		<point x="761" y="491"/>
+		<point x="761" y="492"/>
+		<point x="761" y="493"/>
+		<dest name="hmufang" country="6" x="16" y="14"/>
+		<dest name="hmufang" country="6" x="17" y="14"/>
+		<dest name="hmufang" country="6" x="18" y="14"/>
+		<dest name="hmufang" country="6" x="19" y="14"/>
+		<dest name="hmufang" country="6" x="19" y="14"/>
+		<dest name="hmufang" country="6" x="20" y="14"/>
+	</waypoint>
+	<waypoint>
+		<point x="615" y="381"/>
+		<point x="615" y="382"/>
+		<point x="615" y="383"/>
+		<point x="615" y="384"/>
+		<point x="616" y="381"/>
+		<point x="616" y="382"/>
+		<point x="616" y="383"/>
+		<point x="616" y="384"/>
+		<dest name="hmufangzi" country="6" x="16" y="14"/>
+		<dest name="hmufangzi" country="6" x="17" y="14"/>
+		<dest name="hmufangzi" country="6" x="18" y="14"/>
+		<dest name="hmufangzi" country="6" x="18" y="14"/>
+		<dest name="hmufangzi" country="6" x="18" y="14"/>
+		<dest name="hmufangzi" country="6" x="19" y="14"/>
+		<dest name="hmufangzi" country="6" x="19" y="14"/>
+		<dest name="hmufangzi" country="6" x="20" y="14"/>
+	</waypoint>
+	<waypoint>
+		<point x="509" y="539"/>
+		<point x="509" y="540"/>
+		<point x="509" y="541"/>
+		<point x="509" y="541"/>
+		<point x="510" y="539"/>
+		<point x="510" y="539"/>
+		<dest name="hzhaizi" country="6" x="16" y="29"/>
+		<dest name="hzhaizi" country="6" x="17" y="29"/>
+		<dest name="hzhaizi" country="6" x="18" y="29"/>
+		<dest name="hzhaizi" country="6" x="19" y="29"/>
+		<dest name="hzhaizi" country="6" x="20" y="29"/>
+		<dest name="hzhaizi" country="6" x="21" y="29"/>
+	</waypoint>
+	<params fixedrush="6"/>
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区 2048 表示国战拉人-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<waypoint>
+		<point x="15" y="984"/>
+		<point x="16" y="984"/>
+		<point x="17" y="984"/>
+		<point x="18" y="984"/>
+		<point x="19" y="984"/>
+		<point x="20" y="984"/>
+		<point x="21" y="984"/>
+		<point x="22" y="984"/>
+		<point x="23" y="984"/>
+		<point x="24" y="984"/>
+		<point x="25" y="984"/>
+		<point x="26" y="984"/>
+		<point x="27" y="984"/>
+		<point x="28" y="984"/>
+		<point x="29" y="984"/>
+		<point x="30" y="984"/>
+		<point x="31" y="984"/>
+		<point x="32" y="984"/>
+		<point x="33" y="984"/>
+		<point x="34" y="984"/>
+		<point x="35" y="984"/>
+		<point x="36" y="984"/>
+		<point x="37" y="984"/>
+		<point x="38" y="984"/>
+		<point x="39" y="984"/>
+		<point x="40" y="984"/>
+		<point x="41" y="984"/>
+		<point x="42" y="984"/>
+		<point x="43" y="984"/>
+		<point x="44" y="984"/>
+		<point x="45" y="984"/>
+		<point x="46" y="984"/>
+		<point x="47" y="984"/>
+		<point x="48" y="984"/>
+		<point x="15" y="986"/>
+		<point x="16" y="986"/>
+		<point x="17" y="986"/>
+		<point x="18" y="986"/>
+		<point x="19" y="986"/>
+		<point x="20" y="986"/>
+		<point x="21" y="986"/>
+		<point x="22" y="986"/>
+		<point x="23" y="986"/>
+		<point x="24" y="986"/>
+		<point x="25" y="986"/>
+		<point x="26" y="986"/>
+		<point x="27" y="986"/>
+		<point x="28" y="986"/>
+		<point x="29" y="986"/>
+		<point x="30" y="986"/>
+		<point x="31" y="986"/>
+		<point x="32" y="986"/>
+		<point x="33" y="986"/>
+		<point x="34" y="986"/>
+		<point x="35" y="986"/>
+		<point x="36" y="986"/>
+		<point x="37" y="986"/>
+		<point x="38" y="986"/>
+		<point x="39" y="986"/>
+		<point x="40" y="986"/>
+		<point x="41" y="986"/>
+		<point x="42" y="986"/>
+		<point x="43" y="986"/>
+		<point x="44" y="986"/>
+		<point x="45" y="986"/>
+		<point x="46" y="986"/>
+		<point x="47" y="986"/>
+		<point x="48" y="986"/>
+		<point x="15" y="985"/>
+		<point x="16" y="985"/>
+		<point x="17" y="985"/>
+		<point x="18" y="985"/>
+		<point x="19" y="985"/>
+		<point x="20" y="985"/>
+		<point x="21" y="985"/>
+		<point x="22" y="985"/>
+		<point x="23" y="985"/>
+		<point x="24" y="985"/>
+		<point x="25" y="985"/>
+		<point x="26" y="985"/>
+		<point x="27" y="985"/>
+		<point x="28" y="985"/>
+		<point x="29" y="985"/>
+		<point x="30" y="985"/>
+		<point x="31" y="985"/>
+		<point x="32" y="985"/>
+		<point x="33" y="985"/>
+		<point x="34" y="985"/>
+		<point x="35" y="985"/>
+		<point x="36" y="985"/>
+		<point x="37" y="985"/>
+		<point x="38" y="985"/>
+		<point x="39" y="985"/>
+		<point x="40" y="985"/>
+		<point x="41" y="985"/>
+		<point x="42" y="985"/>
+		<point x="43" y="985"/>
+		<point x="44" y="985"/>
+		<point x="45" y="985"/>
+		<point x="46" y="985"/>
+		<point x="47" y="985"/>
+		<point x="48" y="985"/>
+		<dest name="muchang" country="6" x="51" y="94"/>
+		<dest name="muchang" country="6" x="52" y="94"/>
+		<dest name="muchang" country="6" x="53" y="94"/>
+		<dest name="muchang" country="6" x="54" y="94"/>
+		<dest name="muchang" country="6" x="55" y="94"/>
+		<dest name="muchang" country="6" x="56" y="94"/>
+		<dest name="muchang" country="6" x="57" y="94"/>
+		<dest name="muchang" country="6" x="58" y="94"/>
+		<dest name="muchang" country="6" x="59" y="94"/>
+		<dest name="muchang" country="6" x="60" y="94"/>
+		<dest name="muchang" country="6" x="61" y="94"/>
+		<dest name="muchang" country="6" x="62" y="94"/>
+		<dest name="muchang" country="6" x="63" y="94"/>
+		<dest name="muchang" country="6" x="64" y="94"/>
+		<dest name="muchang" country="6" x="65" y="94"/>
+		<dest name="muchang" country="6" x="66" y="94"/>
+		<dest name="muchang" country="6" x="51" y="95"/>
+		<dest name="muchang" country="6" x="52" y="95"/>
+		<dest name="muchang" country="6" x="53" y="95"/>
+		<dest name="muchang" country="6" x="54" y="95"/>
+		<dest name="muchang" country="6" x="55" y="95"/>
+		<dest name="muchang" country="6" x="56" y="95"/>
+		<dest name="muchang" country="6" x="57" y="95"/>
+		<dest name="muchang" country="6" x="58" y="95"/>
+		<dest name="muchang" country="6" x="59" y="95"/>
+		<dest name="muchang" country="6" x="60" y="95"/>
+		<dest name="muchang" country="6" x="61" y="95"/>
+		<dest name="muchang" country="6" x="62" y="95"/>
+		<dest name="muchang" country="6" x="63" y="95"/>
+		<dest name="muchang" country="6" x="64" y="95"/>
+		<dest name="muchang" country="6" x="65" y="95"/>
+		<dest name="muchang" country="6" x="66" y="95"/>
+		<dest name="muchang" country="6" x="51" y="94"/>
+		<dest name="muchang" country="6" x="52" y="94"/>
+		<dest name="muchang" country="6" x="53" y="94"/>
+		<dest name="muchang" country="6" x="54" y="94"/>
+		<dest name="muchang" country="6" x="55" y="94"/>
+		<dest name="muchang" country="6" x="56" y="94"/>
+		<dest name="muchang" country="6" x="57" y="94"/>
+		<dest name="muchang" country="6" x="58" y="94"/>
+		<dest name="muchang" country="6" x="59" y="94"/>
+		<dest name="muchang" country="6" x="60" y="94"/>
+		<dest name="muchang" country="6" x="61" y="94"/>
+		<dest name="muchang" country="6" x="62" y="94"/>
+		<dest name="muchang" country="6" x="63" y="94"/>
+		<dest name="muchang" country="6" x="64" y="94"/>
+		<dest name="muchang" country="6" x="65" y="94"/>
+		<dest name="muchang" country="6" x="66" y="94"/>
+		<dest name="muchang" country="6" x="51" y="95"/>
+		<dest name="muchang" country="6" x="52" y="95"/>
+		<dest name="muchang" country="6" x="53" y="95"/>
+		<dest name="muchang" country="6" x="54" y="95"/>
+		<dest name="muchang" country="6" x="55" y="95"/>
+		<dest name="muchang" country="6" x="56" y="95"/>
+		<dest name="muchang" country="6" x="57" y="95"/>
+		<dest name="muchang" country="6" x="58" y="95"/>
+		<dest name="muchang" country="6" x="59" y="95"/>
+		<dest name="muchang" country="6" x="60" y="95"/>
+		<dest name="muchang" country="6" x="61" y="95"/>
+		<dest name="muchang" country="6" x="62" y="95"/>
+		<dest name="muchang" country="6" x="63" y="95"/>
+		<dest name="muchang" country="6" x="64" y="95"/>
+		<dest name="muchang" country="6" x="65" y="95"/>
+		<dest name="muchang" country="6" x="66" y="95"/>
+		<dest name="muchang" country="6" x="51" y="94"/>
+		<dest name="muchang" country="6" x="52" y="94"/>
+		<dest name="muchang" country="6" x="53" y="94"/>
+		<dest name="muchang" country="6" x="54" y="94"/>
+		<dest name="muchang" country="6" x="55" y="94"/>
+		<dest name="muchang" country="6" x="56" y="94"/>
+		<dest name="muchang" country="6" x="57" y="94"/>
+		<dest name="muchang" country="6" x="58" y="94"/>
+		<dest name="muchang" country="6" x="59" y="94"/>
+		<dest name="muchang" country="6" x="60" y="94"/>
+		<dest name="muchang" country="6" x="61" y="94"/>
+		<dest name="muchang" country="6" x="62" y="94"/>
+		<dest name="muchang" country="6" x="63" y="94"/>
+		<dest name="muchang" country="6" x="64" y="94"/>
+		<dest name="muchang" country="6" x="65" y="94"/>
+		<dest name="muchang" country="6" x="66" y="94"/>
+		<dest name="muchang" country="6" x="51" y="95"/>
+		<dest name="muchang" country="6" x="52" y="95"/>
+		<dest name="muchang" country="6" x="53" y="95"/>
+		<dest name="muchang" country="6" x="54" y="95"/>
+		<dest name="muchang" country="6" x="55" y="95"/>
+		<dest name="muchang" country="6" x="56" y="95"/>
+		<dest name="muchang" country="6" x="57" y="95"/>
+		<dest name="muchang" country="6" x="58" y="95"/>
+		<dest name="muchang" country="6" x="59" y="95"/>
+		<dest name="muchang" country="6" x="60" y="95"/>
+		<dest name="muchang" country="6" x="61" y="95"/>
+		<dest name="muchang" country="6" x="62" y="95"/>
+		<dest name="muchang" country="6" x="63" y="95"/>
+		<dest name="muchang" country="6" x="64" y="95"/>
+		<dest name="muchang" country="6" x="65" y="95"/>
+		<dest name="muchang" country="6" x="66" y="95"/>
+		<dest name="muchang" country="6" x="51" y="94"/>
+		<dest name="muchang" country="6" x="52" y="94"/>
+		<dest name="muchang" country="6" x="53" y="94"/>
+		<dest name="muchang" country="6" x="54" y="94"/>
+		<dest name="muchang" country="6" x="55" y="94"/>
+		<dest name="muchang" country="6" x="56" y="94"/>
+	</waypoint>
+	<waypoint>
+		<point x="822" y="979"/>
+		<point x="823" y="979"/>
+		<point x="824" y="979"/>
+		<point x="825" y="979"/>
+		<point x="826" y="979"/>
+		<point x="827" y="979"/>
+		<point x="828" y="979"/>
+		<point x="829" y="979"/>
+		<point x="830" y="979"/>
+		<point x="831" y="979"/>
+		<point x="832" y="979"/>
+		<point x="833" y="979"/>
+		<point x="834" y="979"/>
+		<point x="835" y="979"/>
+		<point x="836" y="979"/>
+		<point x="837" y="979"/>
+		<point x="838" y="979"/>
+		<point x="822" y="978"/>
+		<point x="823" y="978"/>
+		<point x="824" y="978"/>
+		<point x="825" y="978"/>
+		<point x="826" y="978"/>
+		<point x="827" y="978"/>
+		<point x="828" y="978"/>
+		<point x="829" y="978"/>
+		<point x="830" y="978"/>
+		<point x="831" y="978"/>
+		<point x="832" y="978"/>
+		<point x="833" y="978"/>
+		<point x="834" y="978"/>
+		<point x="835" y="978"/>
+		<point x="836" y="978"/>
+		<point x="837" y="978"/>
+		<point x="838" y="978"/>
+		<point x="822" y="977"/>
+		<point x="823" y="977"/>
+		<point x="824" y="977"/>
+		<point x="825" y="977"/>
+		<point x="826" y="977"/>
+		<point x="827" y="977"/>
+		<point x="828" y="977"/>
+		<point x="829" y="977"/>
+		<point x="830" y="977"/>
+		<point x="831" y="977"/>
+		<point x="832" y="977"/>
+		<point x="833" y="977"/>
+		<point x="834" y="977"/>
+		<point x="835" y="977"/>
+		<point x="836" y="977"/>
+		<point x="837" y="977"/>
+		<point x="838" y="977"/>
+		<point x="822" y="979"/>
+		<point x="823" y="979"/>
+		<point x="824" y="979"/>
+		<point x="825" y="979"/>
+		<point x="826" y="979"/>
+		<point x="827" y="979"/>
+		<point x="828" y="979"/>
+		<point x="829" y="979"/>
+		<point x="830" y="979"/>
+		<point x="831" y="979"/>
+		<point x="832" y="979"/>
+		<point x="833" y="979"/>
+		<point x="834" y="979"/>
+		<point x="835" y="979"/>
+		<point x="836" y="979"/>
+		<point x="837" y="979"/>
+		<point x="838" y="979"/>
+		<point x="822" y="978"/>
+		<point x="823" y="978"/>
+		<point x="824" y="978"/>
+		<point x="825" y="978"/>
+		<point x="826" y="978"/>
+		<point x="827" y="978"/>
+		<point x="828" y="978"/>
+		<point x="829" y="978"/>
+		<point x="830" y="978"/>
+		<point x="831" y="978"/>
+		<point x="832" y="978"/>
+		<point x="833" y="978"/>
+		<point x="834" y="978"/>
+		<point x="835" y="978"/>
+		<point x="836" y="978"/>
+		<point x="837" y="978"/>
+		<point x="838" y="978"/>
+		<point x="822" y="977"/>
+		<point x="823" y="977"/>
+		<point x="824" y="977"/>
+		<point x="825" y="977"/>
+		<point x="826" y="977"/>
+		<point x="827" y="977"/>
+		<point x="828" y="977"/>
+		<point x="829" y="977"/>
+		<point x="830" y="977"/>
+		<point x="831" y="977"/>
+		<point x="832" y="977"/>
+		<point x="833" y="977"/>
+		<point x="834" y="977"/>
+		<point x="835" y="977"/>
+		<point x="836" y="977"/>
+		<point x="837" y="977"/>
+		<point x="838" y="977"/>
+		<point x="822" y="979"/>
+		<point x="823" y="979"/>
+		<point x="824" y="979"/>
+		<point x="825" y="979"/>
+		<point x="826" y="979"/>
+		<point x="827" y="979"/>
+		<point x="828" y="979"/>
+		<point x="829" y="979"/>
+		<point x="830" y="979"/>
+		<point x="831" y="979"/>
+		<point x="832" y="979"/>
+		<point x="833" y="979"/>
+		<point x="834" y="979"/>
+		<point x="835" y="979"/>
+		<point x="836" y="979"/>
+		<point x="837" y="979"/>
+		<point x="838" y="979"/>
+		<point x="822" y="978"/>
+		<dest name="chuansongdian" country="0" x="377" y="169"/>
+		<dest name="chuansongdian" country="0" x="377" y="170"/>
+		<dest name="chuansongdian" country="0" x="377" y="171"/>
+		<dest name="chuansongdian" country="0" x="377" y="172"/>
+		<dest name="chuansongdian" country="0" x="377" y="173"/>
+		<dest name="chuansongdian" country="0" x="377" y="174"/>
+		<dest name="chuansongdian" country="0" x="377" y="175"/>
+		<dest name="chuansongdian" country="0" x="377" y="176"/>
+		<dest name="chuansongdian" country="0" x="377" y="177"/>
+		<dest name="chuansongdian" country="0" x="377" y="178"/>
+		<dest name="chuansongdian" country="0" x="377" y="179"/>
+		<dest name="chuansongdian" country="0" x="377" y="180"/>
+		<dest name="chuansongdian" country="0" x="378" y="169"/>
+		<dest name="chuansongdian" country="0" x="378" y="170"/>
+		<dest name="chuansongdian" country="0" x="378" y="171"/>
+		<dest name="chuansongdian" country="0" x="378" y="172"/>
+		<dest name="chuansongdian" country="0" x="378" y="173"/>
+		<dest name="chuansongdian" country="0" x="378" y="174"/>
+		<dest name="chuansongdian" country="0" x="378" y="175"/>
+		<dest name="chuansongdian" country="0" x="378" y="176"/>
+		<dest name="chuansongdian" country="0" x="378" y="177"/>
+		<dest name="chuansongdian" country="0" x="378" y="178"/>
+		<dest name="chuansongdian" country="0" x="378" y="179"/>
+		<dest name="chuansongdian" country="0" x="378" y="180"/>
+		<dest name="chuansongdian" country="0" x="377" y="169"/>
+		<dest name="chuansongdian" country="0" x="377" y="170"/>
+		<dest name="chuansongdian" country="0" x="377" y="171"/>
+		<dest name="chuansongdian" country="0" x="377" y="172"/>
+		<dest name="chuansongdian" country="0" x="377" y="173"/>
+		<dest name="chuansongdian" country="0" x="377" y="174"/>
+		<dest name="chuansongdian" country="0" x="377" y="175"/>
+		<dest name="chuansongdian" country="0" x="377" y="176"/>
+		<dest name="chuansongdian" country="0" x="377" y="177"/>
+		<dest name="chuansongdian" country="0" x="377" y="178"/>
+		<dest name="chuansongdian" country="0" x="377" y="179"/>
+		<dest name="chuansongdian" country="0" x="377" y="180"/>
+		<dest name="chuansongdian" country="0" x="378" y="169"/>
+		<dest name="chuansongdian" country="0" x="378" y="170"/>
+		<dest name="chuansongdian" country="0" x="378" y="171"/>
+		<dest name="chuansongdian" country="0" x="378" y="172"/>
+		<dest name="chuansongdian" country="0" x="378" y="173"/>
+		<dest name="chuansongdian" country="0" x="378" y="174"/>
+		<dest name="chuansongdian" country="0" x="378" y="175"/>
+		<dest name="chuansongdian" country="0" x="378" y="176"/>
+		<dest name="chuansongdian" country="0" x="378" y="177"/>
+		<dest name="chuansongdian" country="0" x="378" y="178"/>
+		<dest name="chuansongdian" country="0" x="378" y="179"/>
+		<dest name="chuansongdian" country="0" x="378" y="180"/>
+		<dest name="chuansongdian" country="0" x="377" y="169"/>
+		<dest name="chuansongdian" country="0" x="377" y="170"/>
+		<dest name="chuansongdian" country="0" x="377" y="171"/>
+		<dest name="chuansongdian" country="0" x="377" y="172"/>
+		<dest name="chuansongdian" country="0" x="377" y="173"/>
+		<dest name="chuansongdian" country="0" x="377" y="174"/>
+		<dest name="chuansongdian" country="0" x="377" y="175"/>
+		<dest name="chuansongdian" country="0" x="377" y="176"/>
+		<dest name="chuansongdian" country="0" x="377" y="177"/>
+		<dest name="chuansongdian" country="0" x="377" y="178"/>
+		<dest name="chuansongdian" country="0" x="377" y="179"/>
+		<dest name="chuansongdian" country="0" x="377" y="180"/>
+		<dest name="chuansongdian" country="0" x="378" y="169"/>
+		<dest name="chuansongdian" country="0" x="378" y="170"/>
+		<dest name="chuansongdian" country="0" x="378" y="171"/>
+		<dest name="chuansongdian" country="0" x="378" y="172"/>
+		<dest name="chuansongdian" country="0" x="378" y="173"/>
+		<dest name="chuansongdian" country="0" x="378" y="174"/>
+		<dest name="chuansongdian" country="0" x="378" y="175"/>
+		<dest name="chuansongdian" country="0" x="378" y="176"/>
+		<dest name="chuansongdian" country="0" x="378" y="177"/>
+		<dest name="chuansongdian" country="0" x="378" y="178"/>
+		<dest name="chuansongdian" country="0" x="378" y="179"/>
+		<dest name="chuansongdian" country="0" x="378" y="180"/>
+		<dest name="chuansongdian" country="0" x="377" y="169"/>
+		<dest name="chuansongdian" country="0" x="377" y="170"/>
+		<dest name="chuansongdian" country="0" x="377" y="171"/>
+		<dest name="chuansongdian" country="0" x="377" y="172"/>
+		<dest name="chuansongdian" country="0" x="377" y="173"/>
+		<dest name="chuansongdian" country="0" x="377" y="174"/>
+		<dest name="chuansongdian" country="0" x="377" y="175"/>
+		<dest name="chuansongdian" country="0" x="377" y="176"/>
+		<dest name="chuansongdian" country="0" x="377" y="177"/>
+		<dest name="chuansongdian" country="0" x="377" y="178"/>
+		<dest name="chuansongdian" country="0" x="377" y="179"/>
+		<dest name="chuansongdian" country="0" x="377" y="180"/>
+		<dest name="chuansongdian" country="0" x="378" y="169"/>
+		<dest name="chuansongdian" country="0" x="378" y="170"/>
+		<dest name="chuansongdian" country="0" x="378" y="171"/>
+		<dest name="chuansongdian" country="0" x="378" y="172"/>
+		<dest name="chuansongdian" country="0" x="378" y="173"/>
+		<dest name="chuansongdian" country="0" x="378" y="174"/>
+		<dest name="chuansongdian" country="0" x="378" y="175"/>
+		<dest name="chuansongdian" country="0" x="378" y="176"/>
+		<dest name="chuansongdian" country="0" x="378" y="177"/>
+		<dest name="chuansongdian" country="0" x="378" y="178"/>
+		<dest name="chuansongdian" country="0" x="378" y="179"/>
+		<dest name="chuansongdian" country="0" x="378" y="180"/>
+		<dest name="chuansongdian" country="0" x="377" y="169"/>
+		<dest name="chuansongdian" country="0" x="377" y="170"/>
+		<dest name="chuansongdian" country="0" x="377" y="171"/>
+		<dest name="chuansongdian" country="0" x="377" y="172"/>
+		<dest name="chuansongdian" country="0" x="377" y="173"/>
+		<dest name="chuansongdian" country="0" x="377" y="174"/>
+		<dest name="chuansongdian" country="0" x="377" y="175"/>
+		<dest name="chuansongdian" country="0" x="377" y="176"/>
+		<dest name="chuansongdian" country="0" x="377" y="177"/>
+		<dest name="chuansongdian" country="0" x="377" y="178"/>
+		<dest name="chuansongdian" country="0" x="377" y="179"/>
+		<dest name="chuansongdian" country="0" x="377" y="180"/>
+		<dest name="chuansongdian" country="0" x="378" y="169"/>
+		<dest name="chuansongdian" country="0" x="378" y="170"/>
+		<dest name="chuansongdian" country="0" x="378" y="171"/>
+		<dest name="chuansongdian" country="0" x="378" y="172"/>
+		<dest name="chuansongdian" country="0" x="378" y="173"/>
+		<dest name="chuansongdian" country="0" x="378" y="174"/>
+		<dest name="chuansongdian" country="0" x="378" y="175"/>
+		<dest name="chuansongdian" country="0" x="378" y="176"/>
+		<dest name="chuansongdian" country="0" x="378" y="177"/>
+		<dest name="chuansongdian" country="0" x="378" y="178"/>
+		<dest name="chuansongdian" country="0" x="378" y="179"/>
+		<dest name="chuansongdian" country="0" x="378" y="180"/>
+	</waypoint>
+	<waypoint>
+		<point x="880" y="488"/>
+		<point x="881" y="488"/>
+		<point x="882" y="488"/>
+		<point x="880" y="489"/>
+		<point x="881" y="489"/>
+		<point x="882" y="489"/>
+		<point x="880" y="487"/>
+		<point x="881" y="487"/>
+		<point x="880" y="488"/>
+		<point x="881" y="488"/>
+		<point x="882" y="488"/>
+		<point x="880" y="489"/>
+		<point x="880" y="489"/>
+		<point x="880" y="489"/>
+		<point x="881" y="489"/>
+		<point x="882" y="489"/>
+		<point x="880" y="487"/>
+		<point x="881" y="487"/>
+		<dest name="jixie1" country="6" x="15" y="165"/>
+		<dest name="jixie1" country="6" x="16" y="165"/>
+		<dest name="jixie1" country="6" x="17" y="165"/>
+		<dest name="jixie1" country="6" x="18" y="165"/>
+		<dest name="jixie1" country="6" x="19" y="165"/>
+		<dest name="jixie1" country="6" x="20" y="165"/>
+		<dest name="jixie1" country="6" x="15" y="166"/>
+		<dest name="jixie1" country="6" x="16" y="166"/>
+		<dest name="jixie1" country="6" x="17" y="166"/>
+		<dest name="jixie1" country="6" x="18" y="166"/>
+		<dest name="jixie1" country="6" x="19" y="166"/>
+		<dest name="jixie1" country="6" x="20" y="166"/>
+		<dest name="jixie1" country="6" x="15" y="167"/>
+		<dest name="jixie1" country="6" x="16" y="167"/>
+		<dest name="jixie1" country="6" x="17" y="167"/>
+		<dest name="jixie1" country="6" x="18" y="167"/>
+		<dest name="jixie1" country="6" x="19" y="167"/>
+		<dest name="jixie1" country="6" x="20" y="167"/>
+	</waypoint>
+	<waypoint>
+		<point x="16" y="14"/>
+		<point x="17" y="14"/>
+		<point x="18" y="14"/>
+		<point x="19" y="14"/>
+		<point x="20" y="14"/>
+		<point x="21" y="14"/>
+		<point x="22" y="14"/>
+		<point x="23" y="14"/>
+		<point x="24" y="14"/>
+		<point x="25" y="14"/>
+		<point x="26" y="14"/>
+		<point x="27" y="14"/>
+		<point x="28" y="14"/>
+		<point x="16" y="15"/>
+		<point x="17" y="15"/>
+		<point x="18" y="15"/>
+		<point x="19" y="15"/>
+		<point x="20" y="15"/>
+		<point x="21" y="15"/>
+		<point x="22" y="15"/>
+		<point x="23" y="15"/>
+		<point x="24" y="15"/>
+		<point x="25" y="15"/>
+		<point x="26" y="15"/>
+		<point x="27" y="15"/>
+		<point x="28" y="15"/>
+		<point x="17" y="16"/>
+		<point x="18" y="16"/>
+		<point x="19" y="16"/>
+		<point x="20" y="16"/>
+		<point x="21" y="16"/>
+		<point x="22" y="16"/>
+		<point x="23" y="16"/>
+		<point x="24" y="16"/>
+		<point x="25" y="16"/>
+		<point x="26" y="16"/>
+		<point x="27" y="16"/>
+		<point x="28" y="16"/>
+		<dest name="shengshou1" country="6" x="22" y="104"/>
+		<dest name="shengshou1" country="6" x="23" y="104"/>
+		<dest name="shengshou1" country="6" x="24" y="104"/>
+		<dest name="shengshou1" country="6" x="25" y="104"/>
+		<dest name="shengshou1" country="6" x="26" y="104"/>
+		<dest name="shengshou1" country="6" x="27" y="104"/>
+		<dest name="shengshou1" country="6" x="28" y="104"/>
+		<dest name="shengshou1" country="6" x="29" y="104"/>
+		<dest name="shengshou1" country="6" x="30" y="104"/>
+		<dest name="shengshou1" country="6" x="22" y="105"/>
+		<dest name="shengshou1" country="6" x="23" y="105"/>
+		<dest name="shengshou1" country="6" x="24" y="105"/>
+		<dest name="shengshou1" country="6" x="25" y="105"/>
+		<dest name="shengshou1" country="6" x="26" y="105"/>
+		<dest name="shengshou1" country="6" x="27" y="105"/>
+		<dest name="shengshou1" country="6" x="28" y="105"/>
+		<dest name="shengshou1" country="6" x="29" y="105"/>
+		<dest name="shengshou1" country="6" x="29" y="105"/>
+		<dest name="shengshou1" country="6" x="30" y="105"/>
+		<dest name="shengshou1" country="6" x="22" y="104"/>
+		<dest name="shengshou1" country="6" x="23" y="104"/>
+		<dest name="shengshou1" country="6" x="24" y="104"/>
+		<dest name="shengshou1" country="6" x="25" y="104"/>
+		<dest name="shengshou1" country="6" x="25" y="104"/>
+		<dest name="shengshou1" country="6" x="26" y="104"/>
+		<dest name="shengshou1" country="6" x="27" y="104"/>
+		<dest name="shengshou1" country="6" x="28" y="104"/>
+		<dest name="shengshou1" country="6" x="29" y="104"/>
+		<dest name="shengshou1" country="6" x="30" y="104"/>
+		<dest name="shengshou1" country="6" x="22" y="105"/>
+		<dest name="shengshou1" country="6" x="23" y="105"/>
+		<dest name="shengshou1" country="6" x="24" y="105"/>
+		<dest name="shengshou1" country="6" x="25" y="105"/>
+		<dest name="shengshou1" country="6" x="26" y="105"/>
+		<dest name="shengshou1" country="6" x="27" y="105"/>
+		<dest name="shengshou1" country="6" x="28" y="105"/>
+		<dest name="shengshou1" country="6" x="29" y="105"/>
+		<dest name="shengshou1" country="6" x="30" y="105"/>
+	</waypoint>
+	<waypoint>
+		<point x="985" y="54"/>
+		<point x="985" y="55"/>
+		<point x="985" y="56"/>
+		<point x="985" y="57"/>
+		<point x="985" y="58"/>
+		<point x="985" y="59"/>
+		<point x="985" y="60"/>
+		<point x="985" y="61"/>
+		<point x="985" y="62"/>
+		<point x="985" y="63"/>
+		<point x="985" y="64"/>
+		<point x="985" y="65"/>
+		<point x="985" y="66"/>
+		<point x="985" y="67"/>
+		<point x="985" y="68"/>
+		<point x="985" y="69"/>
+		<point x="985" y="70"/>
+		<point x="985" y="71"/>
+		<point x="985" y="72"/>
+		<point x="985" y="73"/>
+		<point x="985" y="74"/>
+		<point x="985" y="75"/>
+		<point x="985" y="76"/>
+		<point x="985" y="77"/>
+		<point x="985" y="78"/>
+		<point x="985" y="79"/>
+		<point x="985" y="80"/>
+		<point x="984" y="54"/>
+		<point x="984" y="55"/>
+		<point x="984" y="56"/>
+		<point x="984" y="57"/>
+		<point x="984" y="58"/>
+		<point x="984" y="59"/>
+		<point x="984" y="60"/>
+		<point x="984" y="61"/>
+		<point x="984" y="62"/>
+		<point x="984" y="63"/>
+		<point x="984" y="64"/>
+		<point x="984" y="65"/>
+		<point x="984" y="66"/>
+		<point x="984" y="67"/>
+		<point x="984" y="68"/>
+		<point x="984" y="69"/>
+		<point x="984" y="70"/>
+		<point x="984" y="71"/>
+		<point x="984" y="72"/>
+		<point x="984" y="73"/>
+		<point x="984" y="74"/>
+		<point x="984" y="75"/>
+		<point x="984" y="76"/>
+		<point x="984" y="77"/>
+		<point x="984" y="78"/>
+		<point x="984" y="79"/>
+		<point x="984" y="80"/>
+		<point x="983" y="54"/>
+		<point x="983" y="55"/>
+		<point x="983" y="56"/>
+		<point x="983" y="57"/>
+		<point x="983" y="58"/>
+		<point x="983" y="59"/>
+		<point x="983" y="60"/>
+		<point x="983" y="61"/>
+		<point x="983" y="62"/>
+		<point x="983" y="63"/>
+		<point x="983" y="64"/>
+		<point x="983" y="65"/>
+		<point x="983" y="66"/>
+		<point x="983" y="67"/>
+		<point x="983" y="68"/>
+		<point x="983" y="69"/>
+		<point x="983" y="70"/>
+		<point x="983" y="71"/>
+		<point x="983" y="72"/>
+		<point x="983" y="73"/>
+		<point x="983" y="74"/>
+		<point x="983" y="75"/>
+		<point x="983" y="76"/>
+		<point x="983" y="77"/>
+		<point x="983" y="78"/>
+		<point x="983" y="79"/>
+		<point x="983" y="80"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="122"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="123"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="124"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="125"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="126"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="127"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="128"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="129"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="130"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="131"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="132"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="133"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="134"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="122"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="123"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="124"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="125"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="126"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="127"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="128"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="129"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="130"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="131"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="132"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="133"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="134"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="122"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="123"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="124"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="125"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="126"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="127"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="128"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="129"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="130"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="131"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="132"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="133"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="134"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="126"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="126"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="127"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="128"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="129"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="130"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="131"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="132"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="133"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="134"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="119"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="120"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="122"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="123"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="124"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="125"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="126"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="127"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="128"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="121"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="122"/>
+		<dest name="haizeiyingdi" country="6" x="22" y="123"/>
+	</waypoint>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!--npc id="5029" name="典狱官" width="1" height="1" x="813" y="707" num="1" interval="1800"/-->
+	<septnpc id="5003"/>
+	<septnpc id="5004"/>
+	<septnpc id="5005"/>
+	<septnpc id="5006"/>
+	<septnpc id="5007"/>
+	<septnpc id="5008"/>
+	<septnpc id="5121"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="31" height="40" x="143" y="664" type="2" color="0,0,255,0"/>
+	<zonedef width="73" height="57" x="194" y="489" type="40960" color="0,0,255,0"/>
+	<zonedef width="77" height="69" x="700" y="234" type="73728" color="0,0,255,0"/>
+	<zonedef width="44" height="50" x="783" y="613" type="2" color="0,0,255,0"/>
+	<zonedef width="63" height="80" x="809" y="645" type="2" color="0,0,255,0"/>
+	<zonedef width="59" height="74" x="819" y="914" type="2" color="0,0,255,0"/>
+	<zonedef width="26" height="32" x="880" y="476" type="1" color="0,0,255,0"/>
+	<zonedef width="22" height="30" x="558" y="23" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="33" x="298" y="160" type="2" color="0,0,255,0"/>
+	<zonedef width="40" height="45" x="819" y="669" type="6" color="0,0,255,0"/>
+	<zonedef width="30" height="67" x="968" y="36" type="1" color="0,0,255,0"/>
+	<zonedef width="35" height="27" x="12" y="5" type="1" color="0,0,255,0"/>
+	<zonedef width="37" height="28" x="11" y="965" type="1" color="0,0,255,0"/>
+	<zonedef width="43" height="130" x="766" y="656" type="130" color="0,0,255,0"/>
+	<zonedef width="90" height="83" x="804" y="715" type="130" color="0,0,255,0"/>
+	<zonedef width="34" height="80" x="868" y="647" type="130" color="0,0,255,0"/>
+	<zonedef width="39" height="56" x="832" y="589" type="1048576" color="0,0,255,0"/>
+	<npc id="58203" name="大将军王" width="1" height="1" x="369" y="281" num="1" interval="10000" color="0,255,0,0"/>
+	<npc id="58204" name="禁军" width="1" height="1" x="388" y="324" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="58204" name="禁军" width="1" height="1" x="413" y="297" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="58204" name="禁军" width="1" height="1" x="414" y="488" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="58204" name="禁军" width="1" height="1" x="556" y="342" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="30003" name="山寨霸王" width="340" height="177" x="222" y="230" num="2" interval="43200" color="0,255,0,0"/>
+	<npc id="30026" name="万(魔)" width="379" height="274" x="383" y="215" num="2" interval="43200" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="40" height="50" x="305" y="65" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16318" name="叛军弓兵" width="40" height="50" x="280" y="95" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16320" name="叛军驯兽师" width="40" height="50" x="255" y="125" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="40" height="50" x="230" y="155" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16319" name="叛军法师(魔)" width="40" height="50" x="205" y="185" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16320" name="叛军驯兽师" width="40" height="50" x="105" y="305" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="40" height="50" x="330" y="120" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16319" name="叛军法师(魔)" width="40" height="50" x="305" y="150" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16320" name="叛军驯兽师" width="40" height="50" x="280" y="180" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="40" height="50" x="255" y="210" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16318" name="叛军弓兵" width="40" height="50" x="230" y="240" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16320" name="叛军驯兽师" width="40" height="50" x="130" y="360" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="355" y="175" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16314" name="叛军弓兵" width="40" height="50" x="330" y="205" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="305" y="235" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="280" y="265" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16315" name="叛军法师(魔)" width="40" height="50" x="255" y="295" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="230" y="325" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="205" y="355" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16314" name="叛军弓兵" width="40" height="50" x="180" y="385" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="155" y="415" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="380" y="230" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16315" name="叛军法师(魔)" width="40" height="50" x="355" y="260" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="330" y="290" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="305" y="320" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16314" name="叛军弓兵" width="40" height="50" x="280" y="350" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="255" y="380" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="230" y="410" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16315" name="叛军法师(魔)" width="40" height="50" x="205" y="440" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="180" y="470" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="40" height="50" x="405" y="115" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16315" name="叛军法师(魔)" width="40" height="50" x="380" y="145" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16314" name="叛军弓兵" width="40" height="50" x="430" y="170" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16313" name="叛军步兵" width="40" height="50" x="405" y="200" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="40" height="50" x="530" y="135" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16310" name="叛军弓兵" width="40" height="50" x="505" y="165" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16312" name="叛军驯兽师" width="40" height="50" x="480" y="195" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="40" height="50" x="455" y="225" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16311" name="叛军法师(魔)" width="40" height="50" x="430" y="255" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16312" name="叛军驯兽师" width="40" height="50" x="405" y="285" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="40" height="50" x="380" y="315" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16310" name="叛军弓兵" width="40" height="50" x="355" y="345" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16312" name="叛军驯兽师" width="40" height="50" x="330" y="375" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="40" height="50" x="305" y="405" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16311" name="叛军法师(魔)" width="40" height="50" x="280" y="435" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16312" name="叛军驯兽师" width="40" height="50" x="255" y="465" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="40" height="50" x="230" y="495" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16310" name="叛军弓兵" width="40" height="50" x="205" y="525" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="655" y="70" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16306" name="叛军弓兵" width="40" height="50" x="630" y="100" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="40" height="50" x="605" y="130" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="580" y="160" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16307" name="叛军法师(魔)" width="40" height="50" x="555" y="190" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="40" height="50" x="530" y="220" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="505" y="250" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16306" name="叛军弓兵" width="40" height="50" x="480" y="280" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="40" height="50" x="455" y="310" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="430" y="340" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16307" name="叛军法师(魔)" width="40" height="50" x="405" y="370" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="40" height="50" x="380" y="400" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="355" y="430" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16306" name="叛军弓兵" width="40" height="50" x="330" y="460" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="40" height="50" x="305" y="490" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="280" y="520" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16307" name="叛军法师(魔)" width="40" height="50" x="255" y="550" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="40" height="50" x="230" y="580" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16305" name="叛军步兵" width="40" height="50" x="705" y="10" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16345" name="铁犀" width="40" height="50" x="305" y="65" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16346" name="红蜘蛛(魔)" width="40" height="50" x="755" y="35" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16347" name="狂熊" width="40" height="50" x="730" y="65" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16348" name="老虎" width="40" height="50" x="705" y="95" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16304" name="叛军驯兽师" width="40" height="50" x="655" y="155" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="40" height="50" x="630" y="185" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16302" name="叛军弓兵" width="40" height="50" x="605" y="215" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16304" name="叛军驯兽师" width="40" height="50" x="580" y="245" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="40" height="50" x="555" y="275" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16303" name="叛军法师(魔)" width="40" height="50" x="530" y="305" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16304" name="叛军驯兽师" width="40" height="50" x="505" y="335" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="40" height="50" x="480" y="365" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16302" name="叛军弓兵" width="40" height="50" x="455" y="395" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16304" name="叛军驯兽师" width="40" height="50" x="430" y="425" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="40" height="50" x="405" y="455" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16303" name="叛军法师(魔)" width="40" height="50" x="380" y="485" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16304" name="叛军驯兽师" width="40" height="50" x="355" y="515" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16345" name="铁犀" width="40" height="50" x="330" y="545" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16346" name="红蜘蛛(魔)" width="40" height="50" x="305" y="575" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16347" name="狂熊" width="40" height="50" x="280" y="605" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16348" name="老虎" width="40" height="50" x="255" y="635" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="830" y="30" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16342" name="红蜘蛛魔）" width="40" height="50" x="805" y="60" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="780" y="90" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="755" y="120" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16343" name="翼鸟(魔)" width="40" height="50" x="730" y="150" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="705" y="180" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="680" y="210" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16342" name="红蜘蛛魔）" width="40" height="50" x="655" y="240" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="630" y="270" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="605" y="300" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16343" name="翼鸟(魔)" width="40" height="50" x="580" y="330" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="555" y="360" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="530" y="390" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16342" name="红蜘蛛魔）" width="40" height="50" x="505" y="420" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="480" y="450" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="455" y="480" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16343" name="翼鸟(魔)" width="40" height="50" x="430" y="510" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="405" y="540" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16342" name="红蜘蛛魔）" width="40" height="50" x="380" y="570" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="355" y="600" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16341" name="铁犀" width="40" height="50" x="330" y="630" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16343" name="翼鸟(魔)" width="40" height="50" x="305" y="660" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="40" height="50" x="280" y="690" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="880" y="55" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16339" name="灵狐(魔)" width="40" height="50" x="855" y="85" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="830" y="115" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="805" y="145" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16340" name="绿蟒(魔)" width="40" height="50" x="780" y="175" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="755" y="205" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="730" y="235" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16339" name="灵狐(魔)" width="40" height="50" x="705" y="265" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="680" y="295" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="655" y="325" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16340" name="绿蟒(魔)" width="40" height="50" x="630" y="355" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="605" y="385" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="580" y="415" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16339" name="灵狐(魔)" width="40" height="50" x="555" y="445" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="530" y="475" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="505" y="505" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16340" name="绿蟒(魔)" width="40" height="50" x="480" y="535" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="455" y="565" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="430" y="595" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16339" name="灵狐(魔)" width="40" height="50" x="405" y="625" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="40" height="50" x="380" y="655" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16340" name="绿蟒(魔)" width="40" height="50" x="355" y="685" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16337" name="灰狼" width="40" height="50" x="330" y="715" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="930" y="80" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="905" y="110" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16335" name="火猪(魔)" width="40" height="50" x="880" y="140" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="855" y="170" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="830" y="200" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16336" name="白翼鸟（魔）" width="40" height="50" x="805" y="230" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="780" y="260" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="755" y="290" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16335" name="火猪(魔)" width="40" height="50" x="730" y="320" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="705" y="350" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="680" y="380" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16336" name="白翼鸟（魔）" width="40" height="50" x="655" y="410" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="630" y="440" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="605" y="470" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16335" name="火猪(魔)" width="40" height="50" x="580" y="500" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="555" y="530" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="530" y="560" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16336" name="白翼鸟（魔）" width="40" height="50" x="505" y="590" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="480" y="620" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16335" name="火猪(魔)" width="40" height="50" x="455" y="650" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="430" y="680" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="40" height="50" x="405" y="710" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16336" name="白翼鸟（魔）" width="40" height="50" x="380" y="740" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16333" name="狂熊" width="40" height="50" x="355" y="770" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="955" y="135" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16330" name="红蜘蛛(魔)" width="40" height="50" x="930" y="165" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="905" y="195" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="880" y="225" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16331" name="翼鸟(魔)" width="40" height="50" x="855" y="255" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="830" y="285" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="805" y="315" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16330" name="红蜘蛛(魔)" width="40" height="50" x="780" y="345" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="755" y="375" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="730" y="405" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16331" name="翼鸟(魔)" width="40" height="50" x="705" y="435" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="680" y="465" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="655" y="495" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16330" name="红蜘蛛(魔)" width="40" height="50" x="630" y="525" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="605" y="555" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="580" y="585" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16331" name="翼鸟(魔)" width="40" height="50" x="555" y="615" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="530" y="645" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="505" y="675" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16330" name="红蜘蛛(魔)" width="40" height="50" x="480" y="705" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="455" y="735" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="430" y="765" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16331" name="翼鸟(魔)" width="40" height="50" x="405" y="795" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="380" y="825" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="955" y="220" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="930" y="250" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="905" y="280" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="880" y="310" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="855" y="340" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="830" y="370" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="805" y="400" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="780" y="430" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="755" y="460" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="730" y="490" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="705" y="520" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="655" y="580" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="955" y="305" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="930" y="335" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="905" y="365" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="730" y="575" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="705" y="605" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="680" y="635" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="655" y="665" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="630" y="695" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="605" y="725" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="587" y="768" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="563" y="798" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="536" y="833" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="510" y="861" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="483" y="897" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="934" y="404" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="907" y="443" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="935" y="471" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="911" y="501" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="943" y="522" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="342" y="899" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16330" name="红蜘蛛(魔)" width="40" height="50" x="379" y="933" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="297" y="851" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="40" height="50" x="275" y="893" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16331" name="翼鸟(魔)" width="40" height="50" x="306" y="906" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="325" y="943" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16332" name="黑豹" width="40" height="50" x="417" y="911" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16330" name="红蜘蛛(魔)" width="40" height="50" x="438" y="890" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16326" name="毒蝎子" width="40" height="50" x="524" y="913" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16327" name="灵狐(魔)" width="40" height="50" x="566" y="890" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="40" height="50" x="580" y="849" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16449" name="叛军驯兽师" width="28" height="39" x="164" y="250" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16450" name="叛军步兵" width="35" height="42" x="149" y="255" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16451" name="叛军弓兵" width="40" height="50" x="130" y="275" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16449" name="异域叛兵" width="42" height="37" x="134" y="270" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16446" name="异域叛兵" width="30" height="40" x="198" y="291" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16447" name="叛军步兵" width="40" height="50" x="180" y="300" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16448" name="叛军法师(魔)" width="30" height="37" x="167" y="327" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16446" name="叛军驯兽师" width="30" height="40" x="180" y="311" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16452" name="异域叛兵" width="29" height="80" x="103" y="160" num="15" interval="40" color="0,255,0,0"/>
+	<npc id="16454" name="异域偷猎者" width="29" height="80" x="114" y="141" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16453" name="异域巫师(魔)" width="29" height="80" x="101" y="137" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16452" name="异域叛兵" width="19" height="46" x="118" y="178" num="15" interval="40" color="0,255,0,0"/>
+	<npc id="16457" name="异域偷猎者" width="29" height="80" x="37" y="46" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16456" name="异域巫师(魔)" width="29" height="80" x="57" y="40" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16455" name="异域叛兵" width="38" height="64" x="42" y="60" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16455" name="异域叛兵" width="29" height="80" x="53" y="67" num="8" interval="80" color="0,255,0,0"/>
+	<npc id="16455" name="异域叛兵" width="20" height="40" x="59" y="58" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16452" name="异域叛兵" width="20" height="40" x="130" y="174" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16449" name="异域叛兵" width="20" height="40" x="140" y="300" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16449" name="异域叛兵" width="20" height="40" x="162" y="251" num="10" interval="60" color="0,255,0,0"/>
+	<npc id="16446" name="异域叛兵" width="20" height="40" x="175" y="335" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16446" name="异域叛兵" width="20" height="40" x="211" y="287" num="10" interval="60" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="20" height="40" x="630" y="185" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="20" height="40" x="555" y="275" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="20" height="40" x="480" y="365" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16301" name="叛军步兵" width="20" height="40" x="405" y="455" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="20" height="40" x="605" y="130" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="20" height="40" x="530" y="220" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="20" height="40" x="655" y="70" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16308" name="叛军驯兽师" width="20" height="40" x="580" y="160" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="20" height="40" x="355" y="345" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="20" height="40" x="205" y="525" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="20" height="40" x="430" y="255" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16309" name="叛军步兵" width="20" height="40" x="280" y="435" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="20" height="40" x="355" y="260" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="20" height="40" x="205" y="440" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="20" height="40" x="380" y="145" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16316" name="叛军驯兽师" width="20" height="40" x="305" y="235" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="20" height="40" x="180" y="300" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="20" height="40" x="280" y="95" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="20" height="40" x="130" y="275" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16317" name="叛军步兵" width="20" height="40" x="230" y="240" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="20" height="40" x="755" y="460" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="20" height="40" x="705" y="520" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="20" height="40" x="930" y="335" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16325" name="灰狼" width="20" height="40" x="730" y="575" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="20" height="40" x="430" y="765" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="20" height="40" x="342" y="899" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="20" height="40" x="275" y="893" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16329" name="铁犀" width="20" height="40" x="930" y="165" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="20" height="40" x="480" y="620" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="20" height="40" x="405" y="710" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="20" height="40" x="880" y="140" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16334" name="老虎" width="20" height="40" x="730" y="320" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="20" height="40" x="505" y="505" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="20" height="40" x="380" y="655" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="20" height="40" x="855" y="85" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16338" name="毒蝎子" width="20" height="40" x="705" y="265" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="20" height="40" x="305" y="65" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="20" height="40" x="330" y="545" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="20" height="40" x="755" y="35" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16344" name="黑豹" width="20" height="40" x="305" y="575" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16348" name="老虎" width="20" height="40" x="755" y="35" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16347" name="狂熊" width="20" height="40" x="305" y="575" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="16348" name="老虎" width="20" height="40" x="730" y="65" num="30" interval="30" color="0,255,0,0"/>
+	<npc id="16347" name="狂熊" width="20" height="40" x="280" y="605" num="15" interval="60" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="23" height="27" x="37" y="628" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="31" y="507" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="76" height="31" x="30" y="801" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="180" y="678" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="28" y="454" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="36" y="474" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="57" y="439" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="72" y="467" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="88" y="431" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="100" y="459" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="32" height="23" x="64" y="499" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="15" height="15" x="109" y="493" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="101" height="101" x="21" y="434" num="4" interval="100" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="101" height="101" x="21" y="434" num="5" interval="100" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="101" height="101" x="21" y="434" num="5" interval="100" color="0,255,0,0"/>
+	<npc id="55324" name="木" width="101" height="101" x="21" y="434" num="4" interval="150" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="222" y="913" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="190" y="927" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="162" y="941" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="194" y="856" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="163" y="880" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="202" y="819" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="244" y="838" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="221" y="792" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="15" height="15" x="182" y="793" num="8" interval="40" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="81" height="149" x="167" y="783" num="4" interval="100" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="81" height="149" x="167" y="783" num="5" interval="100" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="81" height="149" x="167" y="783" num="5" interval="100" color="0,255,0,0"/>
+	<npc id="55322" name="矿" width="81" height="149" x="167" y="783" num="4" interval="150" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="47" y="575" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="75" y="607" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="69" y="669" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="42" y="689" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="79" y="706" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="107" y="692" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="15" height="15" x="103" y="605" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="79" height="152" x="34" y="563" num="6" interval="100" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="79" height="152" x="34" y="563" num="6" interval="100" color="0,255,0,0"/>
+	<npc id="55323" name="棉" width="79" height="152" x="34" y="563" num="6" interval="150" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="157" y="644" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="204" y="700" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="218" y="741" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="175" y="703" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="140" y="736" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="33" height="40" x="174" y="734" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="127" y="639" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="15" height="15" x="151" y="613" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="90" height="52" x="130" y="712" num="6" interval="100" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="96" height="63" x="105" y="721" num="6" interval="100" color="0,255,0,0"/>
+	<npc id="55326" name="皮" width="33" height="160" x="107" y="623" num="6" interval="150" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="30" y="745" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="61" y="766" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="87" y="813" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="22" height="23" x="102" y="778" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="85" y="852" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="31" y="837" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="52" y="813" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="15" height="15" x="34" y="867" num="8" interval="15" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="102" height="120" x="21" y="752" num="6" interval="100" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="102" height="120" x="21" y="752" num="6" interval="100" color="0,255,0,0"/>
+	<npc id="55325" name="玉" width="102" height="120" x="21" y="752" num="6" interval="150" color="0,255,0,0"/>
+	<npc id="5121" name="药店老板" width="1" height="1" x="853" y="623" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5224" name="帮会采集员" width="1" height="1" x="165" y="687" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5225" name="帮会资源管理者" width="1" height="1" x="168" y="690" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5107" name="天姑" width="1" height="1" x="307" y="173" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5103" name="李克用" width="1" height="1" x="37" y="42" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5078" name="改造宗师(中立)" width="1" height="1" x="836" y="704" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5067" name=" 燕北飞" width="1" height="1" x="867" y="706" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5051" name="大臣" width="1" height="1" x="301" y="177" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5047" name="花情" width="1" height="1" x="779" y="665" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5048" name="风华郡主" width="1" height="1" x="805" y="703" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5046" name="守墓者" width="1" height="1" x="573" y="41" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5050" name="护墓术士" width="1" height="1" x="567" y="50" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="551" name="边境方向" width="1" height="1" x="828" y="966" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="554" name="牧场方向" width="1" height="1" x="42" y="973" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="555" name="倭寇营地方向" width="1" height="1" x="978" y="72" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="556" name="圣兽巢穴方向" width="1" height="1" x="26" y="14" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5025" name="户部侍郎" width="1" height="1" x="424" y="284" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5034" name="花傲剑" width="1" height="1" x="886" y="732" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5023" name="鲁建瓴" width="1" height="1" x="810" y="640" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5035" name="鲁睿" width="1" height="1" x="662" y="389" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5026" name="史料馆看守" width="1" height="1" x="470" y="623" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5024" name="鲁怜心" width="1" height="1" x="822" y="627" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5038" name="吕隐" width="1" height="1" x="676" y="421" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5039" name="闻将军" width="1" height="1" x="526" y="446" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5040" name="夏侯望" width="1" height="1" x="563" y="84" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5027" name="矿工" width="1" height="1" x="162" y="684" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5041" name="吕思远" width="1" height="1" x="602" y="281" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5014" name="判国者" width="1" height="1" x="304" y="179" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="81" name="机械工厂方向" width="1" height="1" x="880" y="491" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="82" name="武夷亡墓方向" width="1" height="1" x="568" y="45" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5015" name="杂货店老板(中立)" width="1" height="1" x="838" y="687" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5016" name="药店掌柜(中立)" width="1" height="1" x="846" y="685" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5017" name="高级武器商(中立)" width="1" height="1" x="828" y="682" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5018" name="高级防具商(中立)" width="1" height="1" x="818" y="687" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5019" name="高级锻造师(中立)" width="1" height="1" x="308" y="179" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5020" name="采集地传送者" width="1" height="1" x="823" y="704" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="58" name="区域路牌" width="1" height="1" x="143" y="634" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="5031" name="戚继光" width="1" height="1" x="818" y="671" num="1" interval="1800" color="0,255,0,0"/>
+	<zonedef width="31" height="40" x="143" y="664" type="2" color="0,0,255,0"/>
+</map>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 country:0表示本国 非0表示指定国家-->
+	<waypoint>
+		<point x="15" y="289"/>
+		<point x="16" y="289"/>
+		<point x="17" y="289"/>
+		<point x="18" y="289"/>
+		<point x="19" y="289"/>
+		<point x="20" y="289"/>
+		<point x="15" y="289"/>
+		<point x="16" y="289"/>
+		<point x="17" y="289"/>
+		<point x="18" y="289"/>
+		<point x="19" y="289"/>
+		<point x="20" y="289"/>
+		<dest name="fengshoucun-main" counrty="0" x="14" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="15" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="16" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="17" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="18" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="19" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="20" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="21" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="22" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="23" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="14" y="25"/>
+		<dest name="fengshoucun-main" counrty="0" x="15" y="25"/>
+	</waypoint>
+	<waypoint>
+		<point x="141" y="16"/>
+		<point x="142" y="16"/>
+		<point x="143" y="16"/>
+		<point x="144" y="16"/>
+		<point x="145" y="16"/>
+		<point x="146" y="16"/>
+		<point x="147" y="16"/>
+		<point x="148" y="16"/>
+		<point x="149" y="16"/>
+		<point x="150" y="16"/>
+		<point x="151" y="16"/>
+		<point x="152" y="16"/>
+		<point x="153" y="16"/>
+		<point x="154" y="16"/>
+		<point x="155" y="16"/>
+		<point x="141" y="17"/>
+		<point x="142" y="17"/>
+		<point x="143" y="17"/>
+		<point x="144" y="17"/>
+		<point x="145" y="17"/>
+		<point x="146" y="17"/>
+		<point x="147" y="17"/>
+		<point x="148" y="17"/>
+		<point x="149" y="17"/>
+		<point x="150" y="17"/>
+		<point x="151" y="17"/>
+		<point x="152" y="17"/>
+		<point x="153" y="17"/>
+		<point x="154" y="17"/>
+		<point x="155" y="17"/>
+		<dest name="shanzhai2" counrty="0" x="45" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="46" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="47" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="48" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="49" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="50" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="51" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="52" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="53" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="54" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="55" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="56" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="57" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="58" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="59" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="45" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="46" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="47" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="48" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="49" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="50" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="51" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="52" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="53" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="54" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="55" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="56" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="57" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="58" y="253"/>
+		<dest name="shanzhai2" counrty="0" x="59" y="253"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="19" height="46" x="16" y="236" type="1" color="0,0,255,0"/>
+	<zonedef width="28" height="40" x="139" y="5" type="1" color="0,0,255,0"/>
+	<npc id="521" name="张镖头" width="1" height="1" x="70" y="161" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="16440" name="山刺客" width="1" height="1" x="223" y="276" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="511" name="牢笼" width="1" height="1" x="95" y="111" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="240" name="走私者" width="1" height="1" x="21" y="27" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="34" name="凤首村方向" width="1" height="1" x="18" y="254" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="35" name="龙冈山二寨方向" width="1" height="1" x="158" y="24" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="285" name="流浪小贩" width="1" height="1" x="72" y="156" num="1" interval="600" color="0,255,0,0"/>
+	<npc id="20096" name="女山贼" width="232" height="226" x="7" y="34" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="55185" name="石头" width="232" height="226" x="7" y="34" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="石头" width="232" height="226" x="7" y="34" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55185" name="小花" width="232" height="226" x="7" y="34" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="小花" width="232" height="226" x="7" y="34" num="2" interval="1800" color="0,255,0,0"/>
+	<npc id="55185" name="果树" width="232" height="226" x="7" y="34" num="2" interval="1800" color="0,255,0,0"/>
+	<npc id="55185" name="破箱子" width="232" height="226" x="7" y="34" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="破箱子" width="232" height="226" x="7" y="34" num="3" interval="1800" color="0,255,0,0"/>
+	<npc id="20105" name="男山贼(魔)" width="50" height="30" x="170" y="249" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="187" name="兵器" width="50" height="50" x="40" y="138" num="1" interval="20" color="0,255,0,0"/>
+	<npc id="187" name="兵器" width="50" height="50" x="76" y="189" num="1" interval="20" color="0,255,0,0"/>
+	<npc id="187" name="兵器" width="50" height="50" x="153" y="168" num="1" interval="20" color="0,255,0,0"/>
+	<npc id="187" name="兵器" width="50" height="50" x="218" y="208" num="1" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="18" height="98" x="125" y="189" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="34" height="28" x="9" y="178" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10094" name="男山贼（魔）" width="16" height="29" x="5" y="159" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="46" height="33" x="9" y="199" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="19" height="60" x="36" y="218" num="8" interval="20" color="0,255,0,0"/>
+	<npc id="10094" name="男山贼（魔）" width="12" height="25" x="69" y="220" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10094" name="男山贼（魔）" width="16" height="29" x="62" y="227" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10094" name="男山贼（魔）" width="16" height="29" x="10" y="182" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="16" height="24" x="55" y="262" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10094" name="男山贼（魔）" width="16" height="29" x="80" y="219" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="16" height="29" x="69" y="264" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="25" height="31" x="79" y="255" num="4" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="31" height="23" x="103" y="225" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="27" height="44" x="124" y="192" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="44" height="36" x="147" y="236" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="23" height="29" x="145" y="245" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="20" height="25" x="112" y="259" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10094" name="女山贼" width="19" height="43" x="128" y="227" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="34" height="30" x="184" y="251" num="5" interval="20" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="28" y="23" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="27" y="24" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="28" y="26" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="172" y="136" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="178" y="178" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="178" y="70" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="100" y="114" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="223" y="192" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="209" y="79" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="5" height="5" x="66" y="169" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="225" y="190" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="180" y="178" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="65" y="168" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="101" y="115" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="210" y="80" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="178" y="70" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="5" height="5" x="173" y="135" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="180" y="176" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="173" y="136" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="105" y="109" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="66" y="167" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="178" y="68" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="210" y="78" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="5" height="5" x="224" y="193" num="2" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="40" height="51" x="16" y="108" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="26" height="78" x="98" y="125" num="6" interval="40" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="49" height="40" x="152" y="79" num="6" interval="60" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="15" height="58" x="11" y="56" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="50" height="58" x="47" y="139" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10100" name="山贼弓手" width="52" height="72" x="69" y="119" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="89" height="31" x="23" y="90" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="57" height="191" x="179" y="16" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="19" height="47" x="22" y="38" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="51" height="90" x="126" y="67" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="42" height="35" x="162" y="190" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="29" height="39" x="152" y="161" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="20" height="27" x="213" y="146" num="6" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="26" height="94" x="202" y="105" num="6" interval="60" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="30" height="110" x="208" y="28" num="6" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="20" height="27" x="184" y="138" num="6" interval="60" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="10" height="19" x="190" y="92" num="6" interval="60" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="16" height="24" x="18" y="125" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="16" height="24" x="50" y="168" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="16" height="24" x="10" y="80" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10096" name="女山贼" width="30" height="78" x="207" y="212" num="10" interval="20" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="81" height="30" x="160" y="187" num="10" interval="20" color="0,255,0,0"/>
+	<npc id="100102" name="山贼战士" width="23" height="36" x="150" y="166" num="10" interval="20" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="21" height="33" x="227" y="88" num="6" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="30" height="78" x="137" y="86" num="15" interval="20" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="21" height="33" x="142" y="138" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10101" name="山贼法师（魔）" width="21" height="33" x="99" y="150" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="21" height="33" x="226" y="56" num="3" interval="20" color="0,255,0,0"/>
+	<npc id="10102" name="山贼战士" width="21" height="33" x="145" y="52" num="3" interval="20" color="0,255,0,0"/>
+</map>

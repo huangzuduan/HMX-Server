@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16818" name="骸骨骑兵">
+	<quest id="20629" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_骸骨骑兵" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨骑兵" value="1"/>
+				<refresh name="kill_骸骨骑兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_骸骨骑兵" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<refresh name="kill_骸骨骑兵"/>
+				<notify content="得到骸骨骑兵情报"/>
+				<notify1 content="得到“骸骨骑兵情报”请继续打听别处的情报."/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<zonedef width="1" height="1" x="1" y="1" type="1" color="0,0,255,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="5" y="5"/>
+		<dest name="fenghuangcheng-main" country="0" x="5" y="5"/>
+	</waypoint>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<npc id="16834" name="山寨霸王" width="60" height="80" x="30" y="10" num="10" interval="2" color="0,255,0,0"/>
+	<npc id="919" name="返回使者" width="1" height="1" x="53" y="76" num="1" interval="1800" color="0,255,0,0"/>
+</map>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="15009" name="巨蛇">
+	<quest id="20331" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_巨蛇" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_巨蛇" value="1"/>
+				<refresh name="kill_巨蛇"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_巨蛇" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_巨蛇"/>
+				<notify content="恭喜你完成了消灭巨蛇的任务,回衙役交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20335" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_圆筒灰白间" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_圆筒灰白间" value="1"/>
+				<refresh name="kill_圆筒灰白间"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_圆筒灰白间" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_圆筒灰白间"/>
+				<notify content="恭喜你完成了消灭圆筒灰白间的任务,回考官交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

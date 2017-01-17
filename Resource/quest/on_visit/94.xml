@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="94" name="凤凰城-皇榜(206,329)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30320">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20320"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    皇榜上正好有块空地。")
+this:AddTaskCmdItem("贴雷老虎的告示{10002}", "v94", 20320, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20320" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20320"/>
+			</conditions>
+			<actions>
+				<notify1 content="向雷老虎汇报"/>
+				<var type="Set" name="state" value="-3" id="20320"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

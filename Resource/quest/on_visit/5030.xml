@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5030" name="栖息地-栖息地管理者(132,347)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30224">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="89"/>
+				<var type="Differ" name="state" value="-1" id="20224"/>
+				<var type="Differ" name="state" value="1" id="20224"/>
+				<var type="Differ" name="state" value="-3" id="20224"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：古墓入场券(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;古墓入场券\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    通过皇城去滨海之岛并打败100个滨海浪人，再向栖息地的栖息地管理者汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    那些滨海浪人在滨海之岛撒野，并扬言中原之地无人能与之抗衡，实在是中华之耻啊。\n\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;物品奖励：&lt;/n&gt;&lt;n&gt; 护身符&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去给他们点颜色看看{10001}", "v5030", 20224, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20224"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;古墓入场券\n \n&lt;/n&gt;&lt;n&gt;    你果然没有让我失望，堂堂中华怎可向如此贼寇示弱。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;物品奖励：&lt;/n&gt;&lt;n&gt; 护身符&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v5030", 20224, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20224"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    请将身上包裹清空。")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20224" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="89"/>
+				<var type="Differ" name="state" value="-1" id="20224"/>
+				<var type="Differ" name="state" value="1" id="20224"/>
+				<var type="Differ" name="state" value="-3" id="20224"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="打败滨海浪人"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20224"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="786"/>
+				<notify content="你获得了护身符，使用可以传送去古墓"/>
+				<var type="Set" name="state" value="-2" id="20224"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

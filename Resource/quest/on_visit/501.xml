@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="501" name="凤凰城-黑豹(276,427)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30326">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="23"/>
+				<var type="Differ" name="state" value="-3" id="20326"/>
+				<var type="Differ" name="state" value="-1" id="20326"/>
+				<var type="Differ" name="state" value="1" id="20326"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：灵兽(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;灵兽\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去找百兽谷中的灵猴(228,175) \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    来……来……是我在叫你呢！\n    别怕，我不会伤害你，我是想请你帮助。请你听我说完。\n    百兽谷里的野兽原本是五千年前帮助黄帝战胜了蚩尤的灵兽。黄帝念众生有功，因此开辟百兽谷给有功的动物居住，因此百兽谷的生物都有灵气，会说话，一直以来，与人类相安无事。前段时间百兽谷突然来了一个神秘人，将百兽谷里的动物都迷惑了，现在百兽谷里的生物都受他们操纵，变得凶残无比。\n    也不知现在谷中群兽怎么样了，你能不能帮我去看望我的好友灵猴。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去找灵猴{10001}", "v501", 20326, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20326" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="23"/>
+				<var type="Differ" name="state" value="1" id="20326"/>
+				<var type="Differ" name="state" value="-3" id="20326"/>
+				<var type="Differ" name="state" value="-1" id="20326"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找百兽谷的灵猴(228,175)"/>
+				<notify1 content="百兽谷灵猴(228,175)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30329">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20329"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：托孤(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;托孤\n \n&lt;/n&gt;&lt;n&gt;    哦，这是我朋友灵猴的儿子么，明白了。安心放在我这里吧。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("交给你了{10002}", "v501", 20329, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20329" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20329"/>
+			</conditions>
+			<actions>
+				<exp value="4300"/>
+				<notify1 content="经验+4300"/>
+				<notify content="恭喜你完成了“托孤”任务"/>
+				<var type="Set" name="state" value="-1" id="20329"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

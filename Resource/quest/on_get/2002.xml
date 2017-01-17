@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2002" name="犀角">
+	<quest id="232" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="232"/>
+				<var type="Less" name="get_犀角" value="5"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个犀角"/>
+				<var type="Add" name="get_犀角" value="1"/>
+				<refresh name="get_犀角"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="232"/>
+				<var type="Great" name="get_犀角" value="4"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="232"/>
+				<refresh name="state"/>
+				<refresh name="get_犀角"/>
+				<notify content="你已经收集齐犀角,到武器锻造师司徒(388,342)处打造犀角杖吧"/>
+				<notify1 content="武器锻造师司徒(388,342)"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+</event>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56045" name="凤凰城-捕头(172,389)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10260">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="260"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：仁(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;仁\n \n&lt;/n&gt;&lt;n&gt;    那么，你就是孔先生派来帮我审问犯人的？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("正是在下{10002}", "v56045", 260, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="260" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="260"/>
+			</conditions>
+			<actions>
+				<exp value="3000"/>
+				<notify1 content="经验+3000"/>
+				<notify content="恭喜你完成了“仁”任务"/>
+				<var type="Set" name="state" value="-1" id="260"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10261">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="260"/>
+				<var type="Differ" name="state" value="-3" id="261"/>
+				<var type="Differ" name="state" value="-1" id="261"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：问话(2)", "Dialog44")
+end
+function Dialog44()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;问话\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去劝牢笼里的犯人(189,473)招供。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，犯人在那边的牢中，不管怎么拷打，就是不肯招。\n    唉，怎么办呢？要想办法让他招供，说出背后主使人。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去试试看{10001}", "v56045", 261, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="261" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="260"/>
+				<var type="Differ" name="state" value="-3" id="261"/>
+				<var type="Differ" name="state" value="-1" id="261"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找牢笼(189,473)"/>
+				<notify1 content="牢笼(189,473)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10266">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="266"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：坦白(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;坦白\n \n&lt;/n&gt;&lt;n&gt;    你竟然能让这犯人招供了？真奇人也，孔先生推荐的人果然没错！！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("区区小事，何足挂齿{10002}", "v56045", 266, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="266" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="266"/>
+			</conditions>
+			<actions>
+				<exp value="3600"/>
+				<notify1 content="经验+3600"/>
+				<notify content="恭喜你完成了“坦白”任务"/>
+				<var type="Set" name="state" value="-1" id="266"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10267">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="266"/>
+				<var type="Differ" name="state" value="-3" id="267"/>
+				<var type="Differ" name="state" value="-1" id="267"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：万世之师(2)", "Dialog84")
+end
+function Dialog84()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;万世之师\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    回去向孔孙(314,418)报告成果。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，原来你是用仁义来打动犯人，果然比我们强硬手段有效。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这便是夫子教我的仁义之道{10001}", "v56045", 267, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="267" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="266"/>
+				<var type="Differ" name="state" value="-3" id="267"/>
+				<var type="Differ" name="state" value="-1" id="267"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找孔孙(314,418)"/>
+				<notify1 content="孔孙(314,418)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	
+	
+	
+	<quest id="30206">
+		<embranchment id="8">
+			<conditions>
+<level type="Great" value="44"/> 
+				<var type="Differ" name="state" value="-1" id="20206"/>
+				<var type="Differ" name="state" value="1" id="20206"/>
+				<var type="Differ" name="state" value="-3" id="20206"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：重赏(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;重赏\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去山寨四层消灭山贼隐士，然后向捕头交任务。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哎，上次进攻山寨我们损失惨重，主要是关键时刻出来的那个山贼隐士太厉害了，要是谁能打败他就好了。\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"684\"&gt;   天羽令&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 20000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v56045", 20206, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<level type="Great" value="44"/> 
+				<var type="Differ" name="state" value="-1" id="20206"/>
+				<var type="Differ" name="state" value="1" id="20206"/>
+				<var type="Equal" name="state" value="-3" id="20206"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：重赏(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt; 重赏\n \n&lt;/n&gt;&lt;n&gt;    什么，你把山贼隐士打败了，哈哈哈，太好了，你帮了我们大忙。\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"684\"&gt;   天羽令&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 20000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v56045", 20206, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="20206"/>
+				<var type="Differ" name="state" value="1" id="20206"/>
+				<var type="Equal" name="state" value="-3" id="20206"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20206" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="44"/> 
+				<var type="Differ" name="state" value="-1" id="20206"/>
+				<var type="Differ" name="state" value="1" id="20206"/>
+				<var type="Differ" name="state" value="-3" id="20206"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去打败山寨四层的山贼隐士"/>
+			</actions>
+		</embranchment>
+		<embranchment id="1" active="1">
+			<conditions>
+				<space size="1"/>
+				<level type="Great" value="44"/> 
+				<var type="Differ" name="state" value="-1" id="20206"/>
+				<var type="Differ" name="state" value="1" id="20206"/>
+				<var type="Equal" name="state" value="-3" id="20206"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="684"/>
+				<notify content="得到天羽令"/>
+				<notify1 content="天羽令"/>
+				<exp value="20000"/>
+				<notify content="恭喜你完成了“重赏”任务"/>
+				<notify1 content="经验+20000"/>
+				<var type="Set" name="state" value="-1" id="20206"/>
+			</actions>
+		</embranchment>
+	</quest>	
+	
+	
+	
+	
+	
+	
+	
+	
+</event>

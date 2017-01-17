@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2081" name="香花">
+	<quest id="20311" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<notify1 content="已得到香花,去交给齐飞"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

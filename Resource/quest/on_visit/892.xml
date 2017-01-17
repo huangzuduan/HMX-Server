@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="892" name="王城-御赐商人">
+<quest id="900011">
+<embranchment id="1">
+<conditions>
+<level type="Great" value="119"/>
+<gold type="Great" value="19999"/>
+<timeouts long="86400" id="100901" less="0"/>
+</conditions>
+<actions>
+<menu>
+function TaskDialog()
+this:AddTalk("    您现在可以花20锭买一颗御赐金符，但每天只能购买一次哦，您要现在购买么？？")
+this:AddDialogItem("购买御赐金符-20锭(0)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("    购买御赐金符-要20锭哦，你确定要买么？")
+this:AddTaskCmdItem("确定购买-20锭(0)", "v869", 100901, 11)
+end
+</menu>
+</actions>
+</embranchment>
+<embranchment id="2">
+<conditions>
+<level type="Great" value="119"/>
+<gold type="Great" value="19999"/>
+<timeouts long="86400" id="100901" less="1"/>
+</conditions>
+<actions>
+<menu>
+function TaskDialog()
+this:AddTalk("    对不起，御赐金符今天卖光了，请明天再来。")
+end
+</menu>
+</actions>
+</embranchment>
+<embranchment id="15">
+<conditions>
+<level type="Great" value="119"/>
+<gold type="Less" value="20000"/>
+</conditions>
+<actions>
+<menu>
+function TaskDialog()
+this:AddDialogItem("购买御赐金符-20锭(2)", "Dialog75")
+end
+function Dialog75()
+this:AddTalk("等级或者钱不够吧?买这个需要120级+20锭银子呢")
+this:AddCloseItem("离开")
+end
+</menu>
+</actions>
+</embranchment>
+</quest>
+<quest id="100901" new="1">
+<embranchment id="11" active="1">
+<conditions>
+<space size="1"/>
+<timeouts long="86400" id="100901" less="0"/>
+<gold type="Great" value="19999"/>
+</conditions>
+<actions>
+<notify content="你购买了御赐金符"/>
+<notify1 content="获得御赐金符"/>
+<notify1 content="金钱-20锭"/>
+<gold type="Sub" value="20000"/>
+<additem value="1" id="969"/>
+<timeouts/>
+</actions>
+</embranchment>
+</quest>
+</event>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2" name="运镖被劫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="21001" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="time" value="2" id="21001"/>
+				<var type="Set" name="state" value="2" id="21001"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21002" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21002"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="time" value="2" id="21002"/>
+				<var type="Set" name="state" value="-2" id="21002"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21003" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21003"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="state" value="-2" id="21003"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21004" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="state" value="-2" id="21004"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+	<quest id="21005" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+				<secondguard id="54135" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21005"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54135" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10" id="21005"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21005"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2" id="21005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21006" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54136" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54136" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21007" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54137" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54137" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21008" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54138" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54138" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21009" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54161" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54161" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21035" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2" id="21035"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21036" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21037" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21038" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21039" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	<quest id="22005" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22005"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54162" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10" id="22005"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22005"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54162" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10" id="22005"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22005"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2" id="22005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	<quest id="22006" new="1">
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22006"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54163" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10" id="22006"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22006"/>
+			</conditions>
+			<actions>
+				<notify content="你镖车被打坏了"/>
+                                <secondguard id="54163" map="边境" gold="0" exp="0" dest="365,180"/>
+				<var type="Set" name="state" value="10" id="22006"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<var type="Set" name="state" value="-2" id="22006"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+	<quest id="21030" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/>
+				<bulletin content="贵家族运镖失败" kind="2"/>
+				<var type="Set" name="state" value="-2" id="21030"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

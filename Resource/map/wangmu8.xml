@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<waypoint>
+		<point x="63" y="194"/>
+		<point x="63" y="195"/>
+		<point x="63" y="196"/>
+		<point x="63" y="197"/>
+		<point x="63" y="198"/>
+		<point x="64" y="194"/>
+		<point x="64" y="195"/>
+		<point x="64" y="196"/>
+		<point x="64" y="197"/>
+		<point x="64" y="197"/>
+		<point x="64" y="198"/>
+		<dest name="wangmu7" country="6" x="165" y="143"/>
+		<dest name="wangmu7" country="6" x="166" y="143"/>
+		<dest name="wangmu7" country="6" x="167" y="143"/>
+		<dest name="wangmu7" country="6" x="168" y="143"/>
+		<dest name="wangmu7" country="6" x="169" y="143"/>
+		<dest name="wangmu7" country="6" x="170" y="143"/>
+		<dest name="wangmu7" country="6" x="171" y="143"/>
+		<dest name="wangmu7" country="6" x="172" y="143"/>
+		<dest name="wangmu7" country="6" x="173" y="143"/>
+		<dest name="wangmu7" country="6" x="174" y="143"/>
+		<dest name="wangmu7" country="6" x="175" y="143"/>
+	</waypoint>
+	<waypoint>
+		<point x="167" y="123"/>
+		<point x="167" y="124"/>
+		<point x="168" y="122"/>
+		<point x="168" y="123"/>
+		<point x="168" y="124"/>
+		<point x="168" y="125"/>
+		<point x="168" y="126"/>
+		<point x="169" y="122"/>
+		<point x="169" y="123"/>
+		<point x="169" y="124"/>
+		<point x="169" y="125"/>
+		<point x="169" y="126"/>
+		<point x="168" y="125"/>
+		<point x="168" y="126"/>
+		<point x="169" y="122"/>
+		<point x="169" y="123"/>
+		<dest name="wangmu9" country="6" x="111" y="201"/>
+		<dest name="wangmu9" country="6" x="111" y="202"/>
+		<dest name="wangmu9" country="6" x="111" y="203"/>
+		<dest name="wangmu9" country="6" x="111" y="204"/>
+		<dest name="wangmu9" country="6" x="111" y="205"/>
+		<dest name="wangmu9" country="6" x="111" y="206"/>
+		<dest name="wangmu9" country="6" x="111" y="207"/>
+		<dest name="wangmu9" country="6" x="111" y="208"/>
+		<dest name="wangmu9" country="6" x="111" y="209"/>
+		<dest name="wangmu9" country="6" x="111" y="210"/>
+		<dest name="wangmu9" country="6" x="111" y="211"/>
+		<dest name="wangmu9" country="6" x="111" y="212"/>
+		<dest name="wangmu9" country="6" x="111" y="213"/>
+		<dest name="wangmu9" country="6" x="111" y="214"/>
+		<dest name="wangmu9" country="6" x="111" y="215"/>
+		<dest name="wangmu9" country="6" x="111" y="216"/>
+		<dest name="wangmu9" country="6" x="111" y="217"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<npc id="16544" name="亡灵枪兵" width="9" height="10" x="44" y="65" num="35" interval="2" color="0,255,0,0"/>
+	<npc id="16544" name="亡灵枪兵" width="10" height="12" x="70" y="112" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16547" name="守墓护卫" width="10" height="12" x="123" y="90" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16544" name="亡灵枪兵" width="10" height="12" x="72" y="86" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16544" name="亡灵枪兵" width="10" height="12" x="122" y="139" num="65" interval="2" color="0,255,0,0"/>
+	<npc id="16547" name="守墓护卫" width="10" height="12" x="78" y="30" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16544" name="亡灵枪兵" width="10" height="12" x="50" y="94" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16547" name="守墓护卫" width="10" height="12" x="120" y="60" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16542" name="亡灵法师(魔)" width="10" height="10" x="52" y="147" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16543" name="亡灵护卫" width="10" height="10" x="102" y="97" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16545" name="守墓巫师(魔)" width="10" height="10" x="61" y="56" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16542" name="亡灵法师(魔)" width="10" height="12" x="26" y="84" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="16543" name="亡灵护卫" width="10" height="12" x="81" y="173" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="16545" name="守墓巫师(魔)" width="10" height="12" x="22" y="132" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="16546" name="守墓哨卫" width="7" height="8" x="91" y="131" num="8" interval="5" color="0,255,0,0"/>
+	<npc id="16546" name="守墓哨卫" width="7" height="8" x="95" y="127" num="7" interval="5" color="0,255,0,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="177" height="210" x="6" y="2" type="2" color="0,255,0,0"/>
+</map>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="653" name="锄头">
+	<quest id="21202" new="1">
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21202"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="21202"/>
+				<refresh name="state"/>
+				<notify1 content="你得到一个苹果种子"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

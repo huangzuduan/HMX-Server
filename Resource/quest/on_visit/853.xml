@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="853" name="公测活动员">
+	<!--new means new quest, default is quest on user-->
+	<quest id="250004">
+		<!--embranchment id="1">
+			<conditions>
+				<uservar type="Equal" name="get" value="3"/>
+				<uservar type="Differ" name="plantrenew" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    看来你已经做完了种植任务，今天是不是还想做呢？")
+this:AddTaskCmdItem("重做种植{10002}", "v853", 150004, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<uservar type="Equal" name="getseed" value="3"/>
+				<uservar type="Differ" name="seedrenew" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    看来你已经做完了养殖任务，今天是不是还想做呢？")
+this:AddTaskCmdItem("重接养殖{10002}", "v853", 150004, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<uservar type="Equal" name="newtravel" value="5"/>
+				<uservar type="Differ" name="newtravelrenew" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    看来你已经做完了运镖任务，今天是不是还想做呢？")
+this:AddTaskCmdItem("重接运镖{10002}", "v853", 150004, 13)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment-->
+		<embranchment id="14">
+			<conditions>
+				<uservar type="Equal" name="tong_mine" value="3"/>
+				<uservar type="Differ" name="minerenew" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    看来你已经做完了采集任务，今天是不是还想做呢？")
+this:AddTaskCmdItem("重接采集{10002}", "v853", 150004, 14)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150004" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify1 content="种植任务允许重接"/>
+				<uservar type="Set" name="get" value="0"/>
+				<uservar type="Set" name="plant" value="0"/>
+				<uservar type="Set" name="plantrenew" value="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify1 content="养殖任务允许重接"/>
+				<uservar type="Set" name="getseed" value="0"/>
+				<uservar type="Set" name="seed" value="0"/>
+				<uservar type="Set" name="seedrenew" value="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify1 content="运镖任务允许重接"/>
+				<uservar type="Set" name="newtravel" value="0"/>
+				<uservar type="Set" name="newtravelrenew" value="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify1 content="采集任务允许重接"/>
+				<uservar type="Set" name="tong_mine" value="0"/>
+				<uservar type="Set" name="minerenew" value="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

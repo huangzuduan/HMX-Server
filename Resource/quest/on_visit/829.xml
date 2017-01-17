@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="829" name="千江镇-长老(138,470)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10372">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="372"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：长老(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;长老\n \n&lt;/n&gt;&lt;n&gt;    内丹……你从哪里知道的？我虽然不知道我们这里是不是有内丹，但是，本地确实发生了奇怪的事。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 93000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("什么事？{10002}", "v829", 372, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="372" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="372"/>
+			</conditions>
+			<actions>
+				<exp value="93000"/>
+				<notify1 content="经验+93000"/>
+				<notify content="恭喜你完成了“长老”任务"/>
+				<var type="Set" name="state" value="-1" id="372"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10373">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="372"/>
+				<var type="Differ" name="state" value="-1" id="373"/>
+				<var type="Differ" name="state" value="1" id="373"/>
+				<var type="Differ" name="state" value="-3" id="373"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：水泽(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;水泽\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去沼泽湿地(49,235)击败30只深水鳄\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    最近常有鬼魅作祟，吸食活人精元！我们怀疑是沼泽湿地那边的水怪，却不敢派人去看。传说那边有恶龙，这恶龙将沼泽中的鳄鱼与蟒蛇，都养成精怪！若你有胆识，可以过去查查看。但我劝你不要去，从没有人能够活着出来。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 692940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我偏要去，击败30只鳄鱼给你看。{10001}", "v829", 373, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="373"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：水泽(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;水泽\n \n&lt;/n&gt;&lt;n&gt;    神人……真乃神人也！居然活着从沼泽湿地中走出，还击败30只深水鳄！&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 692940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那里的鳄鱼真是强得奇怪。{10002}", "v829", 373, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="373"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：水泽(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("   怎么了，是不是害怕又回来了？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="373" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="372"/>
+				<var type="Differ" name="state" value="-1" id="373"/>
+				<var type="Differ" name="state" value="1" id="373"/>
+				<var type="Differ" name="state" value="-3" id="373"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去沼泽湿地(49,235)击败30只深水鳄！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="373"/>
+			</conditions>
+			<actions>
+				<exp value="692940"/>
+				<notify1 content="经验+692940"/>
+				<notify content="恭喜你完成了“水泽”任务"/>
+				<var type="Set" name="state" value="-1" id="373"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10374">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="373"/>
+				<var type="Differ" name="state" value="-3" id="374"/>
+				<var type="Differ" name="state" value="-1" id="374"/>
+				<var type="Differ" name="state" value="1" id="374"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：内丹(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;内丹\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去王城找玄火(288,393)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，果然如传说中所说——几十年前，沼泽湿地的龙神突然变成恶龙，恶龙将沼泽湿地的鳄鱼与蟒蛇都变成了怪物。若你说的内丹就是我想的那种，那么说不定这些水精鳄就有。但是怎么才能弄到内丹呢？或许那些方士会有办法。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 94231&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我有认识的方士，我去找。{10001}", "v829", 374, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="374" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="373"/>
+				<var type="Differ" name="state" value="-3" id="374"/>
+				<var type="Differ" name="state" value="-1" id="374"/>
+				<var type="Differ" name="state" value="1" id="374"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去王城找玄火(288,393)"/>
+				<notify1 content="去找王城的玄火(288,393)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10375">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2160"/>
+				<var type="Equal" name="state" value="-3" id="375"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：吐哺(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;吐哺\n \n&lt;/n&gt;&lt;n&gt;      这个就是内丹？传说中能延年益寿的……\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 707940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("吃了以后会变成怪物。{10002}", "v829", 375, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="375" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2160"/>
+				<var type="Equal" name="state" value="-3" id="375"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2160" log="交吐哺(375)-删除内丹(2160)"/>
+				<removeitem value="1" id="2159" log="交吐哺(375)-删除吐哺神丹(2159)"/>
+				<exp value="707940"/>
+				<notify1 content="经验+707940"/>
+				<notify content="恭喜你完成了“吐哺”任务"/>
+				<var type="Set" name="state" value="-1" id="375"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10376">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="375"/>
+				<var type="Differ" name="state" value="-1" id="376"/>
+				<var type="Differ" name="state" value="1" id="376"/>
+				<var type="Differ" name="state" value="-3" id="376"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：化龙(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;化龙\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去沼泽湿地沼泽湿地(29,310)击败碧蟒，收集10片龙鳞给千江镇的长老。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    太奇怪了，老汉今年已七十八，几十年前，那沼泽湿地的鳄鱼与蟒蛇虽也厉害，可镇子上的壮年还是常常去捕猎。几十年的工夫，那里竟变化如此之大，难道真是恶龙所为？你能帮我调查此事么？\n    蛇又称小龙，最易受龙影响。若他们身上已有了龙鳞，那恐怕确是恶龙所为了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 722940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去查查。{10001}", "v829", 376, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2161"/>
+				<var type="Equal" name="state" value="-3" id="376"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：化龙(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;化龙\n \n&lt;/n&gt;&lt;n&gt;    看来这就是龙鳞！蟒蛇身上竟已出现龙鳞，果不出我所料！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 722940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("难道沼泽湿地真的有龙么？{10002}", "v829", 376, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="376" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="375"/>
+				<var type="Differ" name="state" value="-1" id="376"/>
+				<var type="Differ" name="state" value="1" id="376"/>
+				<var type="Differ" name="state" value="-3" id="376"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去沼泽湿地沼泽湿地(29,310)击败碧蟒，收集10片龙鳞给千江镇长老。"/>
+				<notify content="去沼泽湿地沼泽湿地(29,310)击败碧蟒，收集10片龙鳞给千江镇长老。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2161"/>
+				<var type="Equal" name="state" value="-3" id="376"/>
+			</conditions>
+			<actions>
+				<exp value="722940"/>
+				<removeitem value="10" id="2161" log="交化龙(376)-删除10个龙鳞(2161)"/>
+				<notify1 content="经验+722940"/>
+				<notify content="恭喜你完成了“化龙”任务"/>
+				<var type="Set" name="state" value="-1" id="376"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10377">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="376"/>
+				<var type="Differ" name="state" value="-3" id="377"/>
+				<var type="Differ" name="state" value="-1" id="377"/>
+				<var type="Differ" name="state" value="1" id="377"/>
+				<var type="Differ" name="state" value="2" id="377"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：护送(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;护送\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把内丹和龙鳞送给王城的玄火(288,393)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，王城的方士玄火带话过来，说想要一些内丹与龙鳞炼化神丹，想请你帮忙送去，不知可否？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 360000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("包在我身上{10001}", "v829", 377, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="377" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="376"/>
+				<var type="Differ" name="state" value="-3" id="377"/>
+				<var type="Differ" name="state" value="-1" id="377"/>
+				<var type="Differ" name="state" value="1" id="377"/>
+				<var type="Differ" name="state" value="2" id="377"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54047" map="王城" ltpos="141,469" rbpos="139,478" gold="0" exp="0" dest="288,393"/>
+				<var type="Set" name="state" value="2"/>
+				<refresh name="state"/>
+				<notify content="任务：把内丹和龙鳞送给王城的玄火(288,393)"/>
+				<notify1 content="把内丹和龙鳞送给王城的玄火(288,393)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10378">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2162"/>
+				<var type="Equal" name="state" value="-3" id="378"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：避邪(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;避邪\n \n&lt;/n&gt;&lt;n&gt;    此物是避邪灵丹？太好了，有了此物，百姓可免无妄之灾。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 95600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("可精怪还在肆虐。{10002}", "v829", 378, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="378" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2162"/>
+				<var type="Equal" name="state" value="-3" id="378"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2162" log="交避邪(378)-删除避邪灵丹(2162)"/>
+				<exp value="95600"/>
+				<gold type="Add" value="20000"/>
+				<notify1 content="经验+95600；银子+2锭"/>
+				<notify content="恭喜你完成了“避邪”任务"/>
+				<var type="Set" name="state" value="-1" id="378"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10379">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="378"/>
+				<var type="Differ" name="state" value="-1" id="379"/>
+				<var type="Differ" name="state" value="1" id="379"/>
+				<var type="Differ" name="state" value="-3" id="379"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：恶毒(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;恶毒\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    帮村里去蛟龙洞1层(146,215)消灭30只毒蝙蝠，然后再回到长老(138,470)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    老汉幼时也听祖辈说过，那水泽龙神居在沼泽湿地一蛟龙洞中。自那龙神变成恶龙，洞中便有了一种毒蝙蝠，吸人精血，十分可恨。若你能进得蛟龙洞，请帮我消灭30只，解我百姓危难。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 739500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("你放心吧。{10001}", "v829", 379, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="379"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：恶毒(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;恶毒\n \n&lt;/n&gt;&lt;n&gt;    毒蝙蝠少了，老汉我也放心多了……&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 739500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那洞中的绿色侏儒是怎么回事？{10002}", "v829", 379, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="379"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("   你是想戏弄我老人家吗，毒蝙蝠根本没减少。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="379" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="378"/>
+				<var type="Differ" name="state" value="-1" id="379"/>
+				<var type="Differ" name="state" value="1" id="379"/>
+				<var type="Differ" name="state" value="-3" id="379"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去蛟龙洞1层(146,215)消灭30只毒蝙蝠"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="379"/>
+			</conditions>
+			<actions>
+				<exp value="739500"/>
+				<notify1 content="经验+739500"/>
+				<notify content="恭喜你完成了“恶毒”任务"/>
+				<var type="Set" name="state" value="-1" id="379"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10380">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="379"/>
+				<var type="Differ" name="state" value="-3" id="380"/>
+				<var type="Differ" name="state" value="-1" id="380"/>
+				<var type="Differ" name="state" value="1" id="380"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：报告(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;报告\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找千江镇的蒙阔(222,338)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    原来蛟龙洞中竟真的别有阴谋，此事需尽快禀告蒙阔将军。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 96785&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去。{10001}", "v829", 380, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="380" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="87"/>
+				<level type="Less" value="95"/>
+				<var type="Equal" name="state" value="-1" id="379"/>
+				<var type="Differ" name="state" value="-3" id="380"/>
+				<var type="Differ" name="state" value="-1" id="380"/>
+				<var type="Differ" name="state" value="1" id="380"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找千江镇的蒙阔(222,338)"/>
+				<notify1 content="去找千江镇的蒙阔(222,338)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5079" name="中立区·角斗-车夫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960109">
+		<embranchment id="2">
+			<conditions>
+				<nation value="2"/> 
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 2)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+ 
+		
+		<embranchment id="3">
+			<conditions>
+				<nation value="3"/> 
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 3)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="4">
+			<conditions>
+				<nation value="4"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 4)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<nation value="5"/> 
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 5)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>			
+		
+		
+		<embranchment id="7">
+			<conditions>
+				<nation value="7"/> 
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 7)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>				
+
+
+		<embranchment id="8">
+			<conditions>
+				<nation value="8"/> 
+				
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 8)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>		
+
+		<embranchment id="9">
+			<conditions>
+				<nation value="9"/> 
+				
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 9)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>		
+		
+		<embranchment id="10">
+			<conditions>
+				<nation value="10"/> 
+				
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 10)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>	
+
+
+		<embranchment id="11">
+			<conditions>
+				<nation value="11"/> 
+				
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 11)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>	
+
+
+		<embranchment id="12">
+			<conditions>
+				<nation value="12"/> 
+				
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这位客官，争霸赛结束了吗？我天天忙着赶车也没啥时间到这里瞧瞧。你现在想回国吗，我送你回去，路上顺便给我说说这争霸赛比赛情况如何！")
+this:AddTaskCmdItem("我想回国(0)", "v5079", 160109, 12)
+this:AddCloseItem("我还不想回去(0)")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+	</quest>
+
+
+
+	<quest id="160109" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="宋国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="魏国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="齐国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="燕国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="唐国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="汉国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="吴国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="赵国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="周国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="楚国·王城" pos="877,500"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

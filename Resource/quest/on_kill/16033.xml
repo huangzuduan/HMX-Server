@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16033" name="白骨洞-白骨斧手">
+	<quest id="332" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2021" odds="4000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20365" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_白骨斧手" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_白骨斧手" value="1"/>
+				<refresh name="kill_白骨斧手"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_白骨斧手" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2136"/>
+				<refresh name="state"/>
+				<refresh name="kill_白骨斧手"/>
+				<notify content="您已经抓到了小骷髅,回慎篱(451,225)处交任务吧"/>
+				<notify1 content="小骷髅:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

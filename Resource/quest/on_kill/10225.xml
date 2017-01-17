@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10225" name="机械工厂八层(99,76)-高级工匠">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20541" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_高级工匠" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_高级工匠" value="1"/>
+				<refresh name="kill_高级工匠"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_高级工匠" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2242"/>
+				<refresh name="state"/>
+				<refresh name="kill_高级工匠"/>
+				<notify content="恭喜你完成了收集设计图的任务,回皇城－吕思远(602,281)处交任务吧"/>
+				<notify1 content="总设计图:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20822" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_高级工匠" value="5250"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_高级工匠" value="1"/>
+				<refresh name="kill_高级工匠"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_高级工匠" value="5249"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_高级工匠"/>
+				<notify content="恭喜你，你已经击败了5250个115级的高级工匠，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

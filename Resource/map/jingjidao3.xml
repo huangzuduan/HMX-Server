@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 131072,    // 比武岛低经验区
+ZONE_PK_MAP_MID_EXP     =   262144,    // 比武岛中经验区
+ZONE_PK_MAP_HIGH_EXP    =   524288,    // 比武岛高经验区-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<zonedef width="13" height="22" x="46" y="98" type="2" color="0,0,255,0"/>
+	<zonedef width="13" height="23" x="40" y="152" type="2" color="0,0,255,0"/>
+	<zonedef width="12" height="22" x="77" y="42" type="2" color="0,0,255,0"/>
+	<zonedef width="13" height="24" x="117" y="39" type="2" color="0,0,255,0"/>
+	<zonedef width="11" height="27" x="145" y="77" type="2" color="0,0,255,0"/>
+	<zonedef width="15" height="21" x="146" y="120" type="2" color="0,0,255,0"/>
+	<zonedef width="13" height="26" x="146" y="155" type="2" color="0,0,255,0"/>
+	<zonedef width="14" height="22" x="46" y="195" type="2" color="0,0,255,0"/>
+	<zonedef width="13" height="26" x="78" y="252" type="2" color="0,0,255,0"/>
+	<zonedef width="13" height="24" x="102" y="256" type="2" color="0,0,255,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<zonedef width="130" height="257" x="38" y="26" type="131072" color="0,0,255,0"/>
+	<zonedef width="48" height="98" x="77" y="104" type="262144" color="0,0,255,0"/>
+	<zonedef width="5" height="7" x="94" y="127" type="524288" color="0,0,255,0"/>
+	<zonedef width="5" height="7" x="85" y="154" type="524288" color="0,0,255,0"/>
+	<zonedef width="5" height="7" x="108" y="154" type="524288" color="0,0,255,0"/>
+	<zonedef width="200" height="300" x="0" y="0" type="16" color="0,0,255,0"/>
+	<npc id="16845" name="比武岛旗子" width="1" height="1" x="98" y="149" num="1" interval="7200"/>
+	<npc id="30039" name="恶魔尊主(魔)" width="5" height="5" x="98" y="149" num="1" interval="3600" color="0,255,0,0"/> 
+        <npc id="30031" name="武夷王" width="29" height="15" x="117" y="150" num="1" interval="3600" color="0,255,0,0"/> 
+        <npc id="5068" name="回城传送者" width="1" height="1" x="54" y="108" num="1" interval="1800"/>
+	<npc id="5069" name="回城传送者" width="1" height="1" x="47" y="164" num="1" interval="1800"/>
+	<npc id="5070" name="回城传送者" width="1" height="1" x="52" y="205" num="1" interval="1800"/>
+	<npc id="5071" name="回城传送者" width="1" height="1" x="82" y="58" num="1" interval="1800"/>
+	<npc id="5072" name="回城传送者" width="1" height="1" x="122" y="51" num="1" interval="1800"/>
+	<npc id="5073" name="回城传送者" width="1" height="1" x="83" y="263" num="1" interval="1800"/>
+	<npc id="5074" name="回城传送者" width="1" height="1" x="107" y="267" num="1" interval="1800"/>
+	<npc id="5075" name="回城传送者" width="1" height="1" x="150" y="93" num="1" interval="1800"/>
+	<npc id="5076" name="回城传送者" width="1" height="1" x="150" y="130" num="1" interval="1800"/>
+	<npc id="5077" name="回城传送者" width="1" height="1" x="149" y="172" num="1" interval="1800"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+</map>

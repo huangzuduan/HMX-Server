@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2126" name="僵尸肉块">
+	<!--new means new quest, default is quest on user-->
+	<quest id="334" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="334"/>
+				<var type="Less" name="get_僵尸肉块" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块僵尸肉块"/>
+				<var type="Add" name="get_僵尸肉块" value="1"/>
+				<refresh name="get_僵尸肉块"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="334"/>
+				<var type="Great" name="get_僵尸肉块" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="334"/>
+				<refresh name="state"/>
+				<refresh name="get_僵尸肉块"/>
+				<notify content="你已经收集了20块僵尸肉块,回王城-慎篱(451,225)处交任务吧"/>
+				<notify1 content="去找王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20366" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20366"/>
+				<var type="Less" name="get_僵尸肉块" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个僵尸肉块"/>
+				<var type="Add" name="get_僵尸肉块" value="1"/>
+				<refresh name="get_僵尸肉块"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20366"/>
+				<var type="Great" name="get_僵尸肉块" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20366"/>
+				<refresh name="state"/>
+				<refresh name="get_僵尸肉块"/>
+				<notify content="你已经收集到了20个僵尸肉块,回慎篱(451,225)处交任务吧"/>
+				<notify1 content="去找王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56061" name="王城-欧阳编修(502,802)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10329">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="329"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    哦，这个字……我最近正在研究这种文字呢。来，我帮你翻译好了。")
+this:AddTaskCmdItem("多谢。{10002}", "v56061", 329, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="329" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="329"/>
+			</conditions>
+			<actions>
+				<notify content="回去找黄药师(441,685)"/>
+                                <notify1 content="回去找黄药师(441,685)"/>
+				<var type="Set" name="state" value="-3" id="329"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10381">
+		<embranchment id="10">
+			<conditions>
+				<item value="10" id="2163"/>
+				<var type="Equal" name="state" value="3" id="381"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：侏儒史书(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;侏儒史书\n \n&lt;/n&gt;&lt;n&gt;    嗯……这个……啊，这真是太珍贵的史料了！来，我将编译的史稿给你，你拿给蒙将军吧。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 754500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢了。{10002}", "v56061", 381, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="381" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="10" id="2163"/>
+				<var type="Equal" name="state" value="3" id="381"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="2163" log="换侏儒史书(381:2164)-删除10个史书碎片(2163)"/>
+				<additem value="1" id="2164"/>
+				<notify1 content="史书已经翻译好了，快拿给千江镇的蒙阔将军吧。"/>
+				<notify content="史书已经翻译好了，快拿给千江镇的蒙阔将军吧。"/>
+				<var type="Set" name="state" value="-3" id="381"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10385">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="385"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：禁术(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;禁术\n \n&lt;/n&gt;&lt;n&gt;    三百年前，令狐家族所造的机甲神兵出征平乱所向披靡，令其余诸侯国胆战心惊！他们使用卑鄙的伎俩，让皇上相信令狐世家谋反，结果诛灭九族，无一幸免。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 85000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("真的无一幸免吗？{10002}", "v56061", 385, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="385" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="385"/>
+			</conditions>
+			<actions>
+				<exp value="85000"/>
+                                <gold type="Add" value="20000"/>
+				<notify1 content="经验+85000；银子+2锭"/>
+				<notify content="恭喜你完成了“禁术”任务"/>
+				<var type="Set" name="state" value="-1" id="385"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10386">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="91"/>
+				<level type="Less" value="99"/>
+                                <var type="Equal" name="state" value="-1" id="385"/>
+				<var type="Differ" name="state" value="-1" id="386"/>
+				<var type="Differ" name="state" value="1" id="386"/>
+				<var type="Differ" name="state" value="-3" id="386"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：考验(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;考验\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去沼泽湿地(134,298)消灭40只狂齿鳄\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我们家族已经为令狐家保密了三百年。如今，皇朝大乱，皇位空悬，想来也是说出来的时候了。但你要向我证明你的诚心，我才能告诉你。请你去沼泽湿地击败40只铁鳞鳄或者狂齿鳄，回来我才能告诉你真相。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 750300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v56061", 386, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="386"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：考验(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;考验\n \n&lt;/n&gt;&lt;n&gt;    你果然诚心诚意，纵使遇到危险，也能坚持到底。我便将那秘密告诉你吧。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 750300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这太好了。{10002}", "v56061", 386, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="386"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：考验(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("怎么又回来了？现在我还不能把消息告诉你。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="386" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="91"/>
+				<level type="Less" value="99"/>
+                                <var type="Equal" name="state" value="-1" id="385"/>
+				<var type="Differ" name="state" value="-1" id="386"/>
+				<var type="Differ" name="state" value="1" id="386"/>
+				<var type="Differ" name="state" value="-3" id="386"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去沼泽湿地(134,298)消灭40只狂齿鳄！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="386"/>
+			</conditions>
+			<actions>
+				<exp value="750300"/>
+				<notify1 content="经验+750300"/>
+				<notify content="恭喜你完成了“考验”任务"/>
+				<var type="Set" name="state" value="-1" id="386"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10387">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+				<level type="Great" value="91"/>
+				<level type="Less" value="99"/>
+				<var type="Equal" name="state" value="-1" id="386"/>
+				<var type="Differ" name="state" value="-3" id="387"/>
+				<var type="Differ" name="state" value="-1" id="387"/>
+				<var type="Differ" name="state" value="1" id="387"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：密函(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;密函\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去皇城找鲁建瓴(810,640)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，事情是这样的。当年令狐家惨遭灭族，曾逃出来一男一女。男孩不知去向，女孩却隐姓埋名，嫁给一名姓鲁的男子，将机甲之术传了下来，便是当今巧匠鲁家。若要打听机甲之术，你可以去找鲁建瓴。我给你一封密信，他看到后，应该会帮助你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 86200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢。{10001}", "v56061", 387, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<level type="Great" value="91"/>
+				<level type="Less" value="99"/>
+				<var type="Equal" name="state" value="-1" id="386"/>
+				<var type="Differ" name="state" value="-3" id="387"/>
+				<var type="Differ" name="state" value="-1" id="387"/>
+				<var type="Differ" name="state" value="1" id="387"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：密函(2)", "Dialog124")
+end
+function Dialog124()
+this:AddTalk("  你包裹满了，请清理好你的包裹再来找我。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="387" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+				<level type="Great" value="91"/>
+				<level type="Less" value="99"/>
+				<var type="Equal" name="state" value="-1" id="386"/>
+				<var type="Differ" name="state" value="-3" id="387"/>
+				<var type="Differ" name="state" value="-1" id="387"/>
+				<var type="Differ" name="state" value="1" id="387"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2068"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找皇城－鲁建瓴(810,640)"/>
+				<notify1 content="去找皇城－鲁建瓴(810,640)"/>
+			</actions>
+		</embranchment>
+	</quest>
+<quest id="10430">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="430"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：“诸怀”底细(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;“诸怀”底细\n \n&lt;/n&gt;&lt;n&gt;     嗯，你是问诸怀么？我记得是五百年前的事情……诸怀行凶食人，为害百姓，听到他声音的就会死。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 122220&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("后来呢?{10002}", "v56061", 430, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="430" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="430"/>
+			</conditions>
+			<actions>
+				<exp value="122220"/>
+				<notify1 content="经验+122220"/>
+				<notify content="恭喜你完成了““诸怀”底细”任务"/>
+				<var type="Set" name="state" value="-1" id="430"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10431">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="115"/>
+				<level type="Less" value="121"/>
+				<var type="Equal" name="state" value="-1" id="430"/>
+				<var type="Differ" name="state" value="-3" id="431"/>
+				<var type="Differ" name="state" value="-1" id="431"/>
+				<var type="Differ" name="state" value="1" id="431"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：历史(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;历史\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找王城－祭师(457,471)打听如何祭祀武夷王墓？\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    当时的诸侯“武夷王”带领军队用计剿灭了诸怀。后来武夷王被葬在皇城北郊，乃是先皇威武仁圣皇帝御赐的宝地。至今，仍有百姓祭拜武夷王墓。你可去祭师处，他应当知道墓穴所在。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 123220&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("原来如此，我去问他。{10001}", "v56061", 431, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="431" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="115"/>
+				<level type="Less" value="121"/>
+				<var type="Equal" name="state" value="-1" id="430"/>
+				<var type="Differ" name="state" value="-3" id="431"/>
+				<var type="Differ" name="state" value="-1" id="431"/>
+				<var type="Differ" name="state" value="1" id="431"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找王城－祭师(457,471)打听如何祭祀武夷王墓？"/>
+				<notify1 content="去找王城－祭师(457,471)打听如何祭祀武夷王墓？"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

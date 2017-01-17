@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56054" name="凤凰城-林虎头(241,393)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30303">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20303"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：养狐(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;养狐\n \n&lt;/n&gt;&lt;n&gt;    啊，这不是狐狸吗？真是太厉害了，这下子小朋友们都要羡慕我。谢谢你啦\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("呵呵，你开心就好{10002}", "v56054", 20303, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20303" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20303"/>
+			</conditions>
+			<actions>
+				<exp value="1400"/>
+				<notify1 content="经验+1400"/>
+				<notify content="恭喜你完成了“养狐”任务"/>
+				<var type="Set" name="state" value="-1" id="20303"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

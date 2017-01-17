@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="828" name="王城-祭师(457,471)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10431">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="431"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：历史(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;历史\n \n&lt;/n&gt;&lt;n&gt;     嗯，不错，原先确是每年祭祀一次，但后来战乱纷起，祭祀之事也就被耽搁了，皇城的百姓都纷逃至其他诸侯国，我们也不再敢去皇城。你若要去，待我先行占卜，看看吉凶。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 123220&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("有劳了。{10002}", "v828", 431, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="431" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="431"/>
+			</conditions>
+			<actions>
+				<exp value="123220"/>
+				<notify1 content="经验+123220"/>
+				<notify content="恭喜你完成了“历史”任务"/>
+				<var type="Set" name="state" value="-1" id="431"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10432">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="115"/>
+				<level type="Less" value="121"/>
+				<var type="Equal" name="state" value="-1" id="431"/>
+				<var type="Differ" name="state" value="-3" id="432"/>
+				<var type="Differ" name="state" value="-1" id="432"/>
+				<var type="Differ" name="state" value="1" id="432"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：占卜(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;占卜\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把祭师占卜的结果告诉皇城－夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    奇怪，奇怪。上天启示，武夷王墓中不宁。我听祖师说，武夷王归天不久，便升天做了神仙，为何他墓中会有不宁？你可去皇城城北去找守墓人夏侯望。他守护武夷王墓已二十年，应知道些什么。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 124220&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("原来如此，我去问他。{10001}", "v828", 432, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="432" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="115"/>
+				<level type="Less" value="121"/>
+				<var type="Equal" name="state" value="-1" id="431"/>
+				<var type="Differ" name="state" value="-3" id="432"/>
+				<var type="Differ" name="state" value="-1" id="432"/>
+				<var type="Differ" name="state" value="1" id="432"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把祭师占卜的结果告诉皇城－夏侯望(563,84)。"/>
+				<notify1 content="把祭师占卜的结果告诉皇城－夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10435">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="435"/>
+				<var type="Differ" name="state" value="-3" id="435"/>
+				<var type="Differ" name="state" value="2" id="435"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    这也不难。我有一颗静灵宝珠，用它便能安抚骸骨。你拿去吧。不过想去武夷王墓，还需要带着银钥匙去找皇城的守墓者，然后进武夷王墓五层安抚20个骸骨巫师，然后去找皇城的夏侯望。")
+this:AddTaskCmdItem("多谢！{10002}", "v828", 435, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="435" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="435"/>
+				<var type="Differ" name="state" value="-3" id="435"/>
+				<var type="Differ" name="state" value="2" id="435"/>
+			</conditions>
+			<actions>
+				<notify content="已经拿到静灵宝珠，快去武夷王墓五层击败骸骨巫师，安抚他们的亡灵。"/>
+				<notify1 content="带着银钥匙去找皇城的守墓者(573,41)，进武夷王墓五层安抚骸骨巫师的亡灵！"/>
+				<var type="Set" name="state" value="2" id="435"/>
+				<additem value="1" id="2186"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10437">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="437"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：犬戎(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;犬戎\n \n&lt;/n&gt;&lt;n&gt;    原来如此……墓穴内竟有如此变故。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 158472&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("怎样保护夏侯望呢？{10002}", "v828", 437, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="437" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="437"/>
+			</conditions>
+			<actions>
+				<exp value="158472"/>
+				<gold type="Add" value="40000"/>
+				<notify1 content="经验+158472；银子+4锭"/>
+				<notify content="恭喜你完成了“犬戎”任务"/>
+				<var type="Set" name="state" value="-1" id="437"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10438">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="123"/>
+				<level type="Less" value="130"/>
+				<var type="Equal" name="state" value="-1" id="437"/>
+				<var type="Differ" name="state" value="-3" id="438"/>
+				<var type="Differ" name="state" value="-1" id="438"/>
+				<var type="Differ" name="state" value="1" id="438"/>
+				<var type="Differ" name="state" value="2" id="438"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：守护灵(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;守护灵\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把守护灵送给皇城－夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;      我这里有一只守护灵，你替我交给夏侯望吧。有了这只守护灵，夏侯望便不会受到亡灵与尸骸的侵扰。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 633888&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem(" 太好了，多谢！{10001}", "v828", 438, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="438" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="123"/>
+				<level type="Less" value="130"/>
+				<var type="Equal" name="state" value="-1" id="437"/>
+				<var type="Differ" name="state" value="-3" id="438"/>
+				<var type="Differ" name="state" value="-1" id="438"/>
+				<var type="Differ" name="state" value="1" id="438"/>
+				<var type="Differ" name="state" value="2" id="438"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<addguard id="54066" map="中立区·皇城" ltpos="459,471" rbpos="460,478" gold="0" exp="0" dest="563,84"/>
+				<refresh name="state"/>
+				<notify content="任务：把守护灵送给皇城－夏侯望(563,84)。"/>
+				<notify1 content="把守护灵送给皇城－夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10445">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="445"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：借问(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;借问\n \n&lt;/n&gt;&lt;n&gt;    哦，这个图腾倒真是不曾见过。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 236400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("请务必帮我查清。{10002}", "v828", 445, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="445" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="445"/>
+			</conditions>
+			<actions>
+				<exp value="236400"/>
+				<gold type="Add" value="40000"/>
+				<notify1 content="经验+236400；银子+4锭"/>
+				<notify content="恭喜你完成了“借问”任务"/>
+				<var type="Set" name="state" value="-1" id="445"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10446">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="131"/>
+				<level type="Less" value="140"/>
+                                <var type="Equal" name="state" value="-1" id="445"/>
+				<var type="Differ" name="state" value="-1" id="446"/>
+				<var type="Differ" name="state" value="1" id="446"/>
+				<var type="Differ" name="state" value="-3" id="446"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：祭师的兴趣(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;祭师的兴趣\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓七层(225,168)击败骸骨法师，收集10个奇怪的图腾，然后交给王城的祭师(457,471)作研究。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     这图腾倒真有趣，你再去武夷王墓7层，从骸骨法师那里帮我弄来10个吧。否则我不留神弄坏了，那可不好办。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1551375&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那好吧。{10001}", "v828", 446, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2230"/>
+				<var type="Equal" name="state" value="-3" id="446"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：祭师的兴趣(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;祭师的兴趣\n \n&lt;/n&gt;&lt;n&gt;    呵呵，给我带来更多图腾了吧？来，我这就将这图腾的来历告诉你。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1551375&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢多谢。{10002}", "v828", 446, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="446" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="131"/>
+				<level type="Less" value="140"/>
+                                <var type="Equal" name="state" value="-1" id="445"/>
+				<var type="Differ" name="state" value="-1" id="446"/>
+				<var type="Differ" name="state" value="1" id="446"/>
+				<var type="Differ" name="state" value="-3" id="446"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去武夷王墓七层击败骸骨法师，收集10个奇怪的图腾给王城的祭师(457,471)。"/>
+				<notify content="任务：去武夷王墓七层击败骸骨法师，收集10个奇怪的图腾给王城的祭师(457,471)。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2230"/>
+				<var type="Equal" name="state" value="-3" id="446"/>
+			</conditions>
+			<actions>
+				<exp value="1551375"/>
+				<removeitem value="10" id="2230" log="交祭师的兴趣(446)-删除10个奇怪的图腾(2230)"/>
+				<notify1 content="经验+1551375"/>
+				<notify content="恭喜你完成了“祭师的兴趣”任务"/>
+				<var type="Set" name="state" value="-1" id="446"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10447">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="131"/>
+				<level type="Less" value="140"/>
+				<var type="Equal" name="state" value="-1" id="446"/>
+				<var type="Differ" name="state" value="-3" id="447"/>
+				<var type="Differ" name="state" value="-1" id="447"/>
+				<var type="Differ" name="state" value="1" id="447"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：图腾的妙用(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;图腾的妙用\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把祭师的消息带给皇城的夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这图腾时用来防卫鬼魂、阴杀之物用的，放在骸骨身上，骸骨不会攻击同样佩戴图腾的人。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 238400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("原来如此。{10001}", "v828", 447, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="447" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="131"/>
+				<level type="Less" value="140"/>
+				<var type="Equal" name="state" value="-1" id="446"/>
+				<var type="Differ" name="state" value="-3" id="447"/>
+				<var type="Differ" name="state" value="-1" id="447"/>
+				<var type="Differ" name="state" value="1" id="447"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把祭师的消息带给皇城的夏侯望(563,84)。"/>
+				<notify1 content="把祭师的消息带给皇城的夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10450">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="450"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：骨片的问题(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;骨片的问题\n \n&lt;/n&gt;&lt;n&gt;    奇了，这残片上居然有生命迹象！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 240472&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("你别吓唬人！{10002}", "v828", 450, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="450" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="450"/>
+			</conditions>
+			<actions>
+				<exp value="240472"/>
+				<notify1 content="经验+240472"/>
+				<notify content="恭喜你完成了“骨片的问题”任务"/>
+				<var type="Set" name="state" value="-1" id="450"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10451">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="135"/>
+				<level type="Less" value="142"/>
+				<var type="Equal" name="state" value="-1" id="450"/>
+				<var type="Differ" name="state" value="-1" id="451"/>
+				<var type="Differ" name="state" value="1" id="451"/>
+				<var type="Differ" name="state" value="-3" id="451"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：亡灵法杖(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;亡灵法杖\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓七层(210,85)击败亡灵巫师，收集10个亡灵法杖，然后交给王城－祭师(457,471)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     请你去帮我从武夷王墓7层的亡灵巫师那里找来10根亡灵法杖，我要仔细看看,神秘力量是否与法杖有关.这关系到天下众生的生死,快点行动吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1571535&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我立刻飞奔去办。{10001}", "v828", 451, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2232"/>
+				<var type="Equal" name="state" value="-3" id="451"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：亡灵法杖(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;亡灵法杖\n \n&lt;/n&gt;&lt;n&gt;    啊，这法杖果然有一种神秘的力量，不过法杖的力量是否与骸骨上的生命迹象有关，尚待验证。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1571535&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这事果然很复杂。{10002}", "v828", 451, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="451" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="135"/>
+				<level type="Less" value="142"/>
+				<var type="Equal" name="state" value="-1" id="450"/>
+				<var type="Differ" name="state" value="-1" id="451"/>
+				<var type="Differ" name="state" value="1" id="451"/>
+				<var type="Differ" name="state" value="-3" id="451"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去武夷王墓七层击败亡灵巫师，收集10个亡灵法杖，然后交给王城－祭师(457,471)"/>
+				<notify content="任务：去武夷王墓七层击败亡灵巫师，收集10个亡灵法杖给王城－祭师(457,471)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2232"/>
+				<var type="Equal" name="state" value="-3" id="451"/>
+			</conditions>
+			<actions>
+				<exp value="1571535"/>
+				<removeitem value="10" id="2232" log="交亡灵法杖(2232)-删除10个亡灵法杖(2232)"/>
+				<notify1 content="经验+1571535"/>
+				<notify content="恭喜你完成了“亡灵法杖”任务"/>
+				<var type="Set" name="state" value="-1" id="451"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10452">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="135"/>
+				<level type="Less" value="142"/>
+				<var type="Equal" name="state" value="-1" id="451"/>
+				<var type="Differ" name="state" value="-3" id="452"/>
+				<var type="Differ" name="state" value="-1" id="452"/>
+				<var type="Differ" name="state" value="1" id="452"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：慰灵法术(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;慰灵法术\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    祭师找出了骸骨的秘密，快去告诉皇城－夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    若是犬戎复活了亡灵，那么法杖中就会留下犬戎施法的痕迹。但是这法杖中却只有亡魂的气息，说明亡灵是被另一种更强大的灵魂唤醒的。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 241472&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去转告夏侯望。{10001}", "v828", 452, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="452" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="135"/>
+				<level type="Less" value="142"/>
+				<var type="Equal" name="state" value="-1" id="451"/>
+				<var type="Differ" name="state" value="-3" id="452"/>
+				<var type="Differ" name="state" value="-1" id="452"/>
+				<var type="Differ" name="state" value="1" id="452"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：祭师找出了骸骨的秘密，快去告诉皇城－夏侯望(563,84)。"/>
+				<notify1 content="祭师找出了骸骨的秘密，快去告诉皇城－夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10454">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="454"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：询问(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;询问\n \n&lt;/n&gt;&lt;n&gt;    这个东西……嗯？等等，我要好好看看。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 245288&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("怎么啦？{10002}", "v828", 454, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="454" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="454"/>
+			</conditions>
+			<actions>
+				<exp value="245288"/>
+				<notify1 content="经验+245288"/>
+				<notify content="恭喜你完成了“询问”任务"/>
+				<var type="Set" name="state" value="-1" id="454"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10455">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="139"/>
+				<level type="Less" value="146"/>
+				<var type="Equal" name="state" value="-1" id="454"/>
+				<var type="Differ" name="state" value="-1" id="455"/>
+				<var type="Differ" name="state" value="1" id="455"/>
+				<var type="Differ" name="state" value="-3" id="455"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：亡灵头骨(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;亡灵头骨\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓八层(91,183)以下击败亡灵护卫，收集10个亡灵头骨，然后交给王城－祭师(457,471)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     这里面似乎藏有某种东西，但我需要亡灵护卫的头骨施法才能打开。你帮我去武夷王墓7层去打亡灵护卫，收集10个亡灵头骨来。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1670640&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这……好吧。{10001}", "v828", 455, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2234"/>
+				<var type="Equal" name="state" value="-3" id="455"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：亡灵头骨(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;亡灵头骨\n \n&lt;/n&gt;&lt;n&gt;    呵呵，难为你了，我这就设坛作法。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1670640&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("有劳了。{10002}", "v828", 455, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="455" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="139"/>
+				<level type="Less" value="146"/>
+				<var type="Equal" name="state" value="-1" id="454"/>
+				<var type="Differ" name="state" value="-1" id="455"/>
+				<var type="Differ" name="state" value="1" id="455"/>
+				<var type="Differ" name="state" value="-3" id="455"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去武夷王墓八层以下击败亡灵护卫，收集10个亡灵头骨，然后交给王城－祭师(457,471)"/>
+				<notify content="任务：去武夷王墓八层以下击败亡灵护卫，收集10个亡灵头骨，然后交给王城－祭师(457,471)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2234"/>
+				<var type="Equal" name="state" value="-3" id="455"/>
+			</conditions>
+			<actions>
+				<exp value="1670640"/>
+				<removeitem value="10" id="2234" log="交亡灵头骨(455)-删除10个亡灵头骨(2234)"/>
+				<notify1 content="经验+1670640"/>
+				<notify content="恭喜你完成了“亡灵头骨”任务"/>
+				<var type="Set" name="state" value="-1" id="455"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10456">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="139"/>
+				<level type="Less" value="146"/>
+				<var type="Equal" name="state" value="-1" id="455"/>
+				<var type="Differ" name="state" value="-3" id="456"/>
+				<var type="Differ" name="state" value="-1" id="456"/>
+				<var type="Differ" name="state" value="1" id="456"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：水晶的秘密(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;水晶的秘密\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把水晶球的秘密告诉皇城－夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     果然不出我所料，这个水晶的球正是那个灵魂操控武夷王墓中骸骨与犬戎族的工具。他似乎是让他们在墓穴中寻找某种能够恢复法力的宝物。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 250288&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("竟有此事。{10001}", "v828", 456, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="456" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="139"/>
+				<level type="Less" value="146"/>
+				<var type="Equal" name="state" value="-1" id="455"/>
+				<var type="Differ" name="state" value="-3" id="456"/>
+				<var type="Differ" name="state" value="-1" id="456"/>
+				<var type="Differ" name="state" value="1" id="456"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把水晶球的秘密告诉皇城－夏侯望(563,84)。"/>
+				<notify1 content="把水晶球的秘密告诉皇城－夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10458">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：慰灵物资(2)", "Dialog37")
+end
+function Dialog37()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;慰灵物资\n \n&lt;/n&gt;&lt;n&gt;    辛苦了！这一车东西至关重要，但还缺些东西。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 995220&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("还缺什么？{10002}", "v828", 458, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="458" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="458"/>
+			</conditions>
+			<actions>
+				<exp value="995220"/>
+				<notify1 content="经验+995220"/>
+				<notify content="恭喜你完成了“慰灵物资”任务"/>
+				<var type="Set" name="state" value="-1" id="458"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10459">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="143"/>
+				<level type="Less" value="150"/>
+				<var type="Equal" name="state" value="-1" id="458"/>
+				<var type="Differ" name="state" value="-1" id="459"/>
+				<var type="Differ" name="state" value="1" id="459"/>
+				<var type="Differ" name="state" value="-3" id="459"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：慰灵前夕(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;慰灵前夕\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓八层(91,183)以下击败亡灵护卫，收集10瓶亡灵骨灰，然后交给王城－祭师(457,471)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     重要的是亡灵护卫的骨灰，烦请你去武夷王墓第八层以下，收集10瓶亡灵护卫的骨灰。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1749135&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("都是可怕的东西！{10001}", "v828", 459, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2244"/>
+				<var type="Equal" name="state" value="-3" id="459"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：慰灵前夕(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;慰灵前夕\n \n&lt;/n&gt;&lt;n&gt;    有劳了有劳了，我今晚就开始慰灵祭祀。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1749135&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("快点开始吧！{10002}", "v828", 459, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="459" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="143"/>
+				<level type="Less" value="150"/>
+				<var type="Equal" name="state" value="-1" id="458"/>
+				<var type="Differ" name="state" value="-1" id="459"/>
+				<var type="Differ" name="state" value="1" id="459"/>
+				<var type="Differ" name="state" value="-3" id="459"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去武夷王墓八层以下击败亡灵护卫，收集10瓶亡灵骨灰，然后交给王城－祭师(457,471)。"/>
+				<notify content="任务：去武夷王墓八层以下击败亡灵护卫，收集10瓶亡灵骨灰，然后交给王城－祭师(457,471)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2244"/>
+				<var type="Equal" name="state" value="-3" id="459"/>
+			</conditions>
+			<actions>
+				<exp value="1749135"/>
+				<removeitem value="10" id="2244" log="交慰灵前夕(459)-删除10个亡灵骨灰(2244)"/>
+				<notify1 content="经验+1749135"/>
+				<notify content="恭喜你完成了“慰灵前夕”任务"/>
+				<var type="Set" name="state" value="-1" id="459"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10460">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="143"/>
+				<level type="Less" value="150"/>
+				<var type="Equal" name="state" value="-1" id="459"/>
+				<var type="Differ" name="state" value="-3" id="460"/>
+				<var type="Differ" name="state" value="-1" id="460"/>
+				<var type="Differ" name="state" value="1" id="460"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：借尸还魂(2)", "Dialog40")
+end
+function Dialog40()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;借尸还魂\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把祭师发现的秘密告诉皇城－夏侯望(563,84)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;      原先的武夷王在死后便已经受封位列仙班，诸怀阴魂不散，想要报仇却没有法力，只好侵占了武夷王的肉体。却没能恢复力量，因此暗暗诱惑犬戎族，让他们替他寻找武夷王墓中一个宝物，想借助宝物的精华来恢复法力。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 260392&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去传话。{10001}", "v828", 460, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="460" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="143"/>
+				<level type="Less" value="150"/>
+				<var type="Equal" name="state" value="-1" id="459"/>
+				<var type="Differ" name="state" value="-3" id="460"/>
+				<var type="Differ" name="state" value="-1" id="460"/>
+				<var type="Differ" name="state" value="1" id="460"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把祭师发现的秘密告诉皇城－夏侯望(563,84)。"/>
+				<notify1 content="把祭师发现的秘密告诉皇城－夏侯望(563,84)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30576">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20576"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    我可以给你一个法器，有了这个法器结成的结界，亡灵便不会出来作乱。")
+this:AddTaskCmdItem("多谢了！{10002}", "v828", 20576, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20576" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20576"/>
+			</conditions>
+			<actions>
+				<notify content="得到结界法器，回去找皇城-风华郡主(805,703)"/>
+				<notify1 content="去找皇城-风华郡主(805,703)"/>
+				<additem value="1" id="2254"/>
+				<var type="Set" name="state" value="-3" id="20576"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

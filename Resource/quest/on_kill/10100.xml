@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="10100" name="山贼弓手">
+	<quest id="299" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2101" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

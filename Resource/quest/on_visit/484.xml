@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="484" name="凤凰城-陈季常(245,517)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10268">
+		<embranchment id="14">
+			<conditions>
+				<level type="Less" value="25"/> 
+				<var type="Equal" name="state" value="-3" id="268"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    眼下我有天大的烦恼，可惜你等级太低了，如果25级以上或许可以帮我。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	
+	
+		<embranchment id="10">
+			<conditions>
+				<level type="Great" value="24"/>
+				<var type="Equal" name="state" value="-3" id="268"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：礼化天下(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;礼化天下\n \n&lt;/n&gt;&lt;n&gt;    原来你就是老师推荐的那个弟子。只是最近我遇着一桩烦恼事，实在无心于天下。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("何事令你如此？{10002}", "v484", 268, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="268" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Great" value="24"/>
+				<var type="Equal" name="state" value="-3" id="268"/>
+			</conditions>
+			<actions>
+				<exp value="3600"/>
+				<notify1 content="经验+3600"/>
+				<notify content="恭喜你完成了“礼化天下”任务"/>
+				<var type="Set" name="state" value="-1" id="268"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10269">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="268"/>
+				<var type="Differ" name="state" value="-3" id="269"/>
+				<var type="Differ" name="state" value="-1" id="269"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：河东狮吼(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;河东狮吼\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找红露(314,382)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，此事着实惭愧。近几日贱内误会了在下跟红露姑娘之间的关系，不准我进家门，无礼之至，古礼皆废也。\n    我自以为知礼，不料家中出了如此无礼的内人。我只是与红露姑娘说了几句话而已，实在没什么别的。\n    若是请红露姑娘跟内人解释一下便好，可在下实在不能亲自前去，唯恐内人又打翻了醋坛子。。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你找红露{10001}", "v484", 269, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="269" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="268"/>
+				<var type="Differ" name="state" value="-3" id="269"/>
+				<var type="Differ" name="state" value="-1" id="269"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找红露(314,382)"/>
+				<notify1 content="红露(314,382)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10274">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="274"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：竞争(2)", "Dialog93")
+end
+function Dialog93()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;竞争\n \n&lt;/n&gt;&lt;n&gt;   她允许我回家了么？多谢你啊！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不客气{10002}", "v484", 274, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="274" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="274"/>
+			</conditions>
+			<actions>
+				<exp value="2800"/>
+				<notify1 content="经验+2800"/>
+				<notify content="恭喜你完成了“竞争”任务"/>
+				<var type="Set" name="state" value="-1" id="274"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10275">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="274"/>
+				<var type="Differ" name="state" value="-3" id="275"/>
+				<var type="Differ" name="state" value="-1" id="275"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：认同(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;认同\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去找孔孙(314,418)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    多谢阁下相助。日后若有需要之处，我自当效力！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("如此多谢了{10001}", "v484", 275, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="275" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="274"/>
+				<var type="Differ" name="state" value="-3" id="275"/>
+				<var type="Differ" name="state" value="-1" id="275"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找孔孙(314,418)"/>
+				<notify1 content="孔孙(314,418)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

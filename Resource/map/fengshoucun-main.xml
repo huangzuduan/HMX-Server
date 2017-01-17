@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区)-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 country:0表示本国 非0表示指定国家-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<waypoint>
+		<point x="56" y="216"/>
+		<point x="57" y="216"/>
+		<point x="58" y="216"/>
+		<point x="59" y="216"/>
+		<point x="60" y="216"/>
+		<point x="61" y="216"/>
+		<point x="62" y="216"/>
+		<point x="55" y="215"/>
+		<point x="56" y="215"/>
+		<point x="57" y="215"/>
+		<point x="58" y="215"/>
+		<point x="59" y="215"/>
+		<point x="60" y="215"/>
+		<point x="61" y="215"/>
+		<point x="62" y="215"/>
+		<dest name="fengweicun-main" country="0" x="14" y="24"/>
+		<dest name="fengweicun-main" country="0" x="15" y="24"/>
+		<dest name="fengweicun-main" country="0" x="16" y="24"/>
+		<dest name="fengweicun-main" country="0" x="17" y="24"/>
+		<dest name="fengweicun-main" country="0" x="18" y="24"/>
+		<dest name="fengweicun-main" country="0" x="19" y="24"/>
+		<dest name="fengweicun-main" country="0" x="20" y="24"/>
+		<dest name="fengweicun-main" country="0" x="21" y="24"/>
+		<dest name="fengweicun-main" country="0" x="22" y="24"/>
+		<dest name="fengweicun-main" country="0" x="23" y="24"/>
+		<dest name="fengweicun-main" country="0" x="16" y="24"/>
+		<dest name="fengweicun-main" country="0" x="17" y="24"/>
+		<dest name="fengweicun-main" country="0" x="18" y="24"/>
+		<dest name="fengweicun-main" country="0" x="19" y="24"/>
+		<dest name="fengweicun-main" country="0" x="20" y="24"/>
+	</waypoint>
+	<waypoint>
+		<point x="14" y="16"/>
+		<point x="15" y="16"/>
+		<point x="16" y="16"/>
+		<point x="17" y="16"/>
+		<point x="18" y="16"/>
+		<point x="19" y="16"/>
+		<point x="20" y="16"/>
+		<point x="14" y="17"/>
+		<point x="15" y="17"/>
+		<point x="16" y="17"/>
+		<point x="17" y="17"/>
+		<point x="18" y="17"/>
+		<point x="19" y="17"/>
+		<point x="20" y="17"/>
+		<dest name="shanzhai1" country="0" x="18" y="273"/>
+		<dest name="shanzhai1" country="0" x="19" y="273"/>
+		<dest name="shanzhai1" country="0" x="20" y="273"/>
+		<dest name="shanzhai1" country="0" x="21" y="273"/>
+		<dest name="shanzhai1" country="0" x="22" y="273"/>
+		<dest name="shanzhai1" country="0" x="18" y="273"/>
+		<dest name="shanzhai1" country="0" x="19" y="273"/>
+		<dest name="shanzhai1" country="0" x="20" y="273"/>
+		<dest name="shanzhai1" country="0" x="21" y="273"/>
+		<dest name="shanzhai1" country="0" x="22" y="273"/>
+		<dest name="shanzhai1" country="0" x="18" y="273"/>
+		<dest name="shanzhai1" country="0" x="19" y="273"/>
+		<dest name="shanzhai1" country="0" x="20" y="273"/>
+		<dest name="shanzhai1" country="0" x="21" y="273"/>
+	</waypoint>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<zonedef width="13" height="20" x="54" y="202" type="1" color="0,0,255,0"/>
+	<zonedef width="11" height="21" x="11" y="11" type="1" color="0,0,255,0"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="6" height="6" x="59" y="216" type="1" color="0,0,255,0"/>
+	<zonedef width="6" height="6" x="15" y="25" type="1" color="0,0,255,0"/>
+	<npc id="519" name="镖头李" width="1" height="1" x="71" y="40" num="1" interval="1800"/>
+	<npc id="15048" name="杜周" width="1" height="1" x="70" y="40" num="1" interval="1800"/>
+	<npc id="499" name="陆机" width="1" height="1" x="82" y="113" num="1" interval="1800"/>
+	<npc id="493" name="石从" width="1" height="1" x="125" y="154" num="1" interval="1800"/>
+	<npc id="33" name="凤尾村方向" width="1" height="1" x="64" y="207" num="1" interval="1800"/>
+	<npc id="32" name="凤首山方向" width="1" height="1" x="17" y="41" num="1" interval="1800"/>
+	<npc id="20096" name="女山贼" width="74" height="77" x="41" y="118" num="1" interval="7200"/>
+	<npc id="55184" name="野果丛" width="111" height="133" x="20" y="58" num="4" interval="1500"/>
+	<npc id="55104" name="龙蛇草" width="111" height="133" x="20" y="58" num="4" interval="1500"/>
+	<npc id="55184" name="碎石" width="111" height="133" x="20" y="58" num="4" interval="1500"/>
+	<npc id="55184" name="果树" width="111" height="133" x="20" y="58" num="4" interval="1500"/>
+	<npc id="55104" name="破箱子" width="111" height="133" x="20" y="58" num="4" interval="1500"/>
+	<npc id="10096" name="女山贼" width="120" height="60" x="13" y="141" num="40" interval="90"/>
+	<npc id="10097" name="山贼哨兵" width="72" height="91" x="64" y="69" num="50" interval="90"/>
+	<npc id="10095" name="哨兵队长" width="62" height="49" x="43" y="46" num="16" interval="40"/>
+	<npc id="10094" name="男山贼魔" width="66" height="73" x="55" y="14" num="10" interval="65"/>
+	<npc id="10094" name="男山贼魔" width="16" height="60" x="14" y="145" num="7" interval="65"/>
+	<npc id="10096" name="女山贼" width="71" height="53" x="51" y="21" num="10" interval="65"/>
+	<npc id="10098" name="山贼战士" width="58" height="91" x="23" y="55" num="20" interval="40"/>
+	<npc id="10098" name="山贼战士" width="73" height="57" x="50" y="18" num="10" interval="65"/>
+	<npc id="10094" name="男山贼魔" width="22" height="30" x="83" y="144" num="5" interval="65"/>
+	<npc id="10094" name="男山贼魔" width="21" height="43" x="105" y="87" num="10" interval="65"/>
+	<npc id="10094" name="男山贼魔" width="38" height="44" x="35" y="92" num="5" interval="65"/>
+	<npc id="10097" name="山贼哨兵" width="69" height="75" x="7" y="70" num="50" interval="90"/>
+	<npc id="10098" name="山贼战士" width="58" height="91" x="79" y="77" num="14" interval="40"/>
+	<npc id="10095" name="哨兵队长" width="5" height="5" x="69" y="24" num="1" interval="40"/>
+	<npc id="10098" name="山贼战士" width="5" height="5" x="70" y="27" num="2" interval="40"/>
+	<npc id="10096" name="男山贼（魔）" width="5" height="5" x="69" y="25" num="2" interval="40"/>
+	<npc id="10095" name="哨兵队长" width="5" height="5" x="14" y="111" num="1" interval="40"/>
+	<npc id="10098" name="山贼战士" width="5" height="5" x="13" y="110" num="2" interval="40"/>
+	<npc id="10096" name="男山贼（魔）" width="5" height="5" x="15" y="109" num="2" interval="40"/>
+	<npc id="10095" name="哨兵队长" width="5" height="5" x="40" y="50" num="1" interval="40"/>
+	<npc id="10098" name="山贼战士" width="5" height="5" x="112" y="31" num="2" interval="40"/>
+	<npc id="10098" name="山贼战士" width="5" height="5" x="107" y="72" num="2" interval="40"/>
+	<npc id="10098" name="山贼战士" width="5" height="5" x="92" y="32" num="2" interval="40"/>
+	<npc id="10095" name="哨兵队长" width="5" height="5" x="91" y="34" num="1" interval="40"/>
+	<npc id="10095" name="哨兵队长" width="5" height="5" x="112" y="33" num="1" interval="40"/>
+	<npc id="10095" name="哨兵队长" width="5" height="5" x="107" y="72" num="1" interval="40"/>
+	<npc id="10098" name="山贼战士" width="5" height="5" x="41" y="48" num="2" interval="40"/>
+	<npc id="10096" name="男山贼（魔）" width="5" height="5" x="108" y="72" num="2" interval="40"/>
+	<npc id="10096" name="男山贼（魔）" width="5" height="5" x="93" y="33" num="2" interval="40"/>
+	<npc id="10096" name="男山贼（魔）" width="5" height="5" x="113" y="32" num="2" interval="40"/>
+	<npc id="10096" name="男山贼（魔）" width="5" height="5" x="40" y="49" num="2" interval="40"/>
+</map>

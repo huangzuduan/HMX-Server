@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5020" name="采集地传送者">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960103">
+		<embranchment id="9">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    想要去资源采集地么？我可知道一条捷径哦！要不要带你去啊？还有一些著名景点我也可以带你去哦。");
+this:AddTaskCmdItem("带路去资源采集地-2两(0)", "v5020", 160103, 11)
+this:AddTaskCmdItem("带路去机械工厂入口-2两(0)", "v5020", 160103, 13)
+this:AddTaskCmdItem("带路去武夷王墓入口-2两(0)", "v5020", 160103, 14)
+this:AddTaskCmdItem("带路去滨海之岛入口-2两(0)", "v5020", 160103, 15)
+this:AddTaskCmdItem("带路去栖息地入口-2两(0)", "v5020", 160103, 16)
+this:AddTaskCmdItem("带路去魔族巢穴入口-2两(0)", "v5020", 160103, 17)
+this:AddTaskCmdItem("去皇城入口-2两(0)", "v5020", 160103, 12)
+this:AddTaskCmdItem("我是宋国子民我要回去-2两(0)", "v5226", 160103, 2)
+this:AddTaskCmdItem("我是魏国子民我要回去-2两(0)", "v5226", 160103, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="155,683" pos1="149,673" pos2="146,690" pos3="161,699" pos4="171,691"/>
+				<notify content="你被带到了资源采集地"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="845,950"/>
+				<notify content="你被带到皇城入口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="13" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="873,488" pos1="875,502" pos2="885,502" pos3="894,490"/>
+				<notify content="你被带到机械工厂入口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="14" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="565,50" pos1="573,53" pos2="579,47" pos3="575,38"/>
+				<notify content="你被带到武夷王墓入口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="15" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="971,70" pos1="979,78" pos2="975,82" pos3="969,85"/>
+				<notify content="你被带到滨海之岛入口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>		
+
+		<embranchment id="16" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="45,970" pos1="35,970" pos2="35,964" pos3="43,962"/>
+				<notify content="你被带到栖息地入口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>		
+
+		<embranchment id="17" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="中立区·皇城" pos="29,15" pos1="22,20" pos2="28,26" pos3="34,19"/>
+				<notify content="你被带到魔族巢穴入口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>		
+
+			<embranchment id="2" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+                <nation value="2"/>
+			</conditions>
+			<actions>
+				<goto name="宋国·王城" pos="812,419"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你回到了王城,花了2两车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+                <nation value="3"/>
+			</conditions>
+			<actions>
+				<goto name="魏国·王城" pos="812,419"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你回到了王城,花了2两车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+</event>

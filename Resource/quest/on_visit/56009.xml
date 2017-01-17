@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56009" name="">
+	<!--new means new quest, default is quest on user-->
+	<quest id="250004">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="special" value="1" id="150000"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    11111111111111")
+this:AddTaskCmdItem("宋国{10002}", "v56009", 150004, 1)
+this:AddTaskCmdItem("魏国{10002}", "v56009", 150004, 2)
+this:AddTaskCmdItem("齐国{10002}", "v56009", 150004, 3)
+this:AddTaskCmdItem("燕国{10002}", "v56009", 150004, 4)
+this:AddTaskCmdItem("赵国{10002}", "v56009", 150004, 5)
+this:AddTaskCmdItem("唐国{10002}", "v56009", 150004, 6)
+this:AddTaskCmdItem("汉国{10002}", "v56009", 150004, 7)
+this:AddTaskCmdItem("周国{10002}", "v56009", 150004, 8)
+this:AddTaskCmdItem("吴国{10002}", "v56009", 150004, 9)
+this:AddTaskCmdItem("楚国{10002}", "v56009", 150004, 10)
+this:AddTaskCmdItem("重接跑商{10002}", "v56009", 150004, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddTaskCmdItem("宋国{10002}", "v56009", 150004, 1)
+this:AddTaskCmdItem("魏国{10002}", "v56009", 150004, 2)
+this:AddTaskCmdItem("齐国{10002}", "v56009", 150004, 3)
+this:AddTaskCmdItem("燕国{10002}", "v56009", 150004, 4)
+this:AddTaskCmdItem("赵国{10002}", "v56009", 150004, 5)
+this:AddTaskCmdItem("唐国{10002}", "v56009", 150004, 6)
+this:AddTaskCmdItem("汉国{10002}", "v56009", 150004, 7)
+this:AddTaskCmdItem("周国{10002}", "v56009", 150004, 8)
+this:AddTaskCmdItem("吴国{10002}", "v56009", 150004, 9)
+this:AddTaskCmdItem("楚国{10002}", "v56009", 150004, 10)
+this:AddTaskCmdItem("重接跑商{10002}", "v56009", 150004, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<uservar type="Equal" name="king" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog72")
+end
+function Dialog72()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请过段时间再更改国策吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<uservar type="Equal" name="todayend" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="todayend = 1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<uservar type="Equal" name="sp_renew" value="1"/>
+			</conditions>
+			<actions>
+				<notify content=" sp_renew = 1"/>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="25">
+			<conditions>
+				<uservar type="Equal" name="sp_renew" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="150000"/>
+				<notify content=" state = 1"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<quest id="150004" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为宋国1"/>
+				<global type="Set" name="r_country" value="2" id="150001"/>
+				<var type="Set" name="special" value="1" id="150000"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为魏国"/>
+				<global type="Set" name="r_country" value="3" id="150001"/>
+				<var type="Set" name="special" value="1" id="150000"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为齐国,环任务重置"/>
+				<global type="Set" name="r_country" value="4" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+				<uservar type="Set" name="todayend" value="0"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为燕国,环任务结束"/>
+				<global type="Set" name="r_country" value="5" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+				<uservar type="Set" name="todayend" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为赵国"/>
+				<global type="Set" name="r_country" value="7" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为唐国"/>
+				<global type="Set" name="r_country" value="8" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为汉国"/>
+				<global type="Set" name="r_country" value="9" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为周国"/>
+				<global type="Set" name="r_country" value="10" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<notify content="目标国家为吴国"/>
+				<global type="Set" name="r_country" value="11" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify content="目标国家为楚国"/>
+				<global type="Set" name="r_country" value="12" id="150001"/>
+				<refresh name="r_country"/>
+				<uservar type="Set" name="king" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify content="跑商重接"/>
+				<uservar type="Set" name="goldtravel" value="0"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

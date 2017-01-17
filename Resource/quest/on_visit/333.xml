@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="333" name="帮会任务发布员(290,437)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="250002">
+		<embranchment id="10">
+			<conditions>
+				<grade value="2"/>
+				<tongvar type="Differ" name="tong_master" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("帮会自定义任务发布(0)", "Dialog15")
+end
+function Dialog15()
+this:AddTalk("    尊敬的帮主，你们帮会想做哪个任务呢？")
+this:AddTaskCmdItem("攻击国外怪物{10001}", "v333", 150002, 11)
+this:AddTaskCmdItem("敌国骚扰战{10001}", "v333", 150002, 12)
+this:AddDialogItem("帮会任务介绍", "Dialog16")
+this:AddDialogItem("敌国骚扰战", "Dialog18")
+end
+function Dialog16()
+this:AddTalk("攻击怪物任务 - 每个帮会成员都能接到适合自己等级的杀怪任务，该任务每天最多做一次，该任务的目标怪物必须在国外杀。")
+this:AddDialogItem("返回(0)", "Dialog15")
+end
+function Dialog18()
+this:AddTalk("敌国骚扰战 - 每个帮会成员都能接，该任务每天最多做一次，该任务的目标是破坏其他国家王城的国旗，只要一人返回就可以交任务，任务完成后，全帮所有接了敌国骚扰战任务的人都能够在当天24：00前领取经验奖励。")
+this:AddDialogItem("返回(0)", "Dialog15")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150002" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<grade value="2"/>
+				<tongvar type="Differ" name="tong_master" value="1"/>
+			</conditions>
+			<actions>
+				<tongvar type="Set" name="r_tong_kill" value="1"/>
+				<tongvar type="Set" name="tong_master" value="1"/>
+				<bulletin content="本帮会今天任务是攻击外国怪物" kind="2"/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的帮主，你们帮会成员今天接的都是打怪任务，如果想要更改任务类型，您必须等明天来更改。\n    如果不更改，那么您帮会今后任务都是打怪任务。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<grade value="2"/>
+				<tongvar type="Differ" name="tong_master" value="1"/>
+			</conditions>
+			<actions>
+				<tongvar type="Set" name="r_country_kill" value="1"/>
+				<tongvar type="Set" name="tong_master" value="1"/>
+				<bulletin content="本帮会今天任务是破坏外国国旗" kind="2"/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    尊敬的帮主，你们帮会成员今天接是敌国骚扰战，如果想要更改任务类型，您必须等明天来更改。\n    如果不更改，那么您帮会今后任务都是敌国骚扰战。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="260001">
+		<embranchment id="11">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<tongvar type="Equal" name="r_country_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50014"/>
+				<var type="Differ" name="state" value="1" id="50014"/>
+				<var type="Differ" name="state" value="-3" id="50014"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    今天是伟大的日子，我们的帮主制定了对敌国的骚扰行动，目标是敌国王城的国旗，您是否愿意配合一起执行？")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50014, 9)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<var type="Equal" name="state" value="-3" id="50014"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你果然不辱使命，本帮必将因你而光大。")
+this:AddTaskCmdItem("接受奖励{10001}", "v333", 50014, 10)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<var type="Equal" name="state" value="1" id="50014"/>
+				<tongvar type="Equal" name="country_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    一起来为胜利欢呼吧，我们帮会终于出现了救国救民的英雄。由于他在万军之中取了敌国国旗，因此你可以领取今天的帮会奖励。")
+this:AddTaskCmdItem("接受奖励{10001}", "v333", 50014, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="901">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<tongvar type="Equal" name="r_country_kill" value="1"/>
+				<uservar type="Equal" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50014"/>
+				<var type="Differ" name="state" value="1" id="50014"/>
+				<var type="Differ" name="state" value="-3" id="50014"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    今天的帮会任务已经在帮主的指挥下完成，请明天再来看看有没有新任务。")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击国外25级以上的怪物100只。\n经验奖励：10000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="29"/>
+				<level type="Less" value="40"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击国外35级以上的怪物100只。\n经验奖励：30000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 12)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="39"/>
+				<level type="Less" value="50"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击国外45级以上的怪物100只。\n经验奖励：50000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 13)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="60"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击55级以上的怪物100只。\n经验奖励：80000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 14)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="59"/>
+				<level type="Less" value="70"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击65级以上的怪物100只。\n经验奖励：100000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 15)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="106">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="80"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击75级以上的怪物100只。\n经验奖励：160000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 16)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="79"/>
+				<level type="Less" value="90"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击85级以上的怪物100只。\n经验奖励：200000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 17)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="108">
+			<conditions>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="100"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击95级以上的怪物100只。\n经验奖励：250000")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50002, 18)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="900">
+			<conditions>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Equal" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,您今天的帮会任务已经完成，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="level" value="25" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：10000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 21)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="level" value="35" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：30000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 22)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<var type="Equal" name="level" value="45" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：50000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 23)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<var type="Equal" name="level" value="55" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：80000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 24)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<var type="Equal" name="level" value="65" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：100000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 25)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<var type="Equal" name="level" value="75" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：160000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 26)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<var type="Equal" name="level" value="85" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：200000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 27)
+end
+</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="28">
+			<conditions>
+				<var type="Equal" name="level" value="95" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。\n经验奖励：250000")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50002, 28)
+end
+</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50002" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：25级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="25"/>
+				<var type="Set" name="min" value="25"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="29"/>
+				<level type="Less" value="40"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：35级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="35"/>
+				<var type="Set" name="min" value="35"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="39"/>
+				<level type="Less" value="50"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：45级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="45"/>
+				<var type="Set" name="min" value="45"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="60"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败55级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="55"/>
+				<var type="Set" name="min" value="55"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="59"/>
+				<level type="Less" value="70"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败65级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="65"/>
+				<var type="Set" name="min" value="65"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="80"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败75级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="75"/>
+				<var type="Set" name="min" value="75"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="79"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败85级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="85"/>
+				<var type="Set" name="min" value="85"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="89"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50002"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败95级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="95"/>
+				<var type="Set" name="min" value="95"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="25" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖10000"/>
+				<exp value="10000"/>
+				<notify content="经验+10000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="35" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖30000"/>
+				<exp value="30000"/>
+				<notify content="经验+30000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="45" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖50000"/>
+				<exp value="50000"/>
+				<notify content="经验+50000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="24" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="55" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖80000"/>
+				<exp value="80000"/>
+				<notify content="经验+80000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="65" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖100000"/>
+				<exp value="100000"/>
+				<notify content="经验+100000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="26" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="75" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖160000"/>
+				<exp value="160000"/>
+				<notify content="经验+160000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="27" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="85" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖200000"/>
+				<exp value="200000"/>
+				<notify content="经验+200000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="28" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="level" value="95" id="50002"/>
+				<var type="Equal" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验奖250000"/>
+				<exp value="250000"/>
+				<notify content="经验+250000"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50014" new="1">
+		<embranchment id="9" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_country_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50014"/>
+				<var type="Differ" name="state" value="1" id="50014"/>
+				<var type="Differ" name="state" value="-3" id="50014"/>
+			</conditions>
+			<actions>
+				<notify1 content="破坏敌国王城主旗"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="GetP" name="unionid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<var type="Set" name="unionid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel2"/>
+				<uservar type="Set" name="tong_today" value="100"/>
+				<refresh name="unionid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="state" value="-3" id="50014"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<exp1 value="100" id="50014" name="unionid_kill_selflevel"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<tongvar type="Set" name="country_kill" value="1"/>
+				<bulletin content="有人完成了破坏敌国王城国旗旗的任务，可于本日前向帮会任务发布者领取奖励" kind="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<var type="Equal" name="state" value="1" id="50014"/>
+			</conditions>
+			<actions>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="verystupid"/>
+				<var type="Set" name="state" value="-2"/>
+				<exp1 value="100" id="50014" name="selflevel"/>
+				<exp1 value="100" id="50014" name="unionid_kill_selflevel"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="260021">
+		<embranchment id="101">
+			<conditions>
+				<innation/>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="99"/>
+				<level type="Less" value="110"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击国外110级以上的怪物100只。")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50021, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<innation/>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击国外120级以上的怪物100只。")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50021, 12)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<innation/>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击国外130级以上的怪物100只。")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50021, 13)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<innation/>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击140级以上的怪物100只。")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50021, 14)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<innation/>
+				<unionid type="Great" value="0"/>
+				<level type="Great" value="139"/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您好，您今天的帮会任务是攻击150级的怪物100只。")
+this:AddTaskCmdItem("接受任务{10001}", "v333", 50021, 15)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="900">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Equal" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50002"/>
+				<var type="Differ" name="state" value="-3" id="50002"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,您今天的帮会任务已经完成，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了今天的帮会任务，要现在领取奖励么。")
+this:AddTaskCmdItem("完成任务{10001}", "v333", 50021, 21)
+end
+</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50021" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<notify content="任务：110级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="110"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="unionid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<var type="Set" name="unionid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel2"/>
+				<refresh name="unionid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<notify content="任务：120级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="120"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="unionid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<var type="Set" name="unionid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel2"/>
+				<refresh name="unionid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<notify content="任务：130级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="130"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="unionid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<var type="Set" name="unionid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel2"/>
+				<refresh name="unionid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败140级以上的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="140"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="unionid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<var type="Set" name="unionid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel2"/>
+				<refresh name="unionid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Equal" name="r_tong_kill" value="1"/>
+				<uservar type="Differ" name="tong_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50021"/>
+				<var type="Differ" name="state" value="1" id="50021"/>
+				<var type="Differ" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<notify content="任务：击败150级的怪物100只"/>
+				<uservar type="Set" name="tong_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="150"/>
+				<var type="Set" name="unionid_kill_num" value="100"/>
+				<refresh name="min"/>
+				<refresh name="unionid_kill_num"/>
+				<refresh name="level"/>
+				<var type="GetP" name="unionid_kill_selflevel" value="1"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<var type="Set" name="unionid_kill_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="unionid_kill_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="unionid_kill_selflevel" name2="stupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="unionid_kill_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="unionid_kill_selflevel2" name2="div"/>
+				<vars type="Add" name1="unionid_kill_selflevel" name2="unionid_kill_selflevel2"/>
+				<refresh name="unionid_kill_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50021"/>
+			</conditions>
+			<actions>
+				<notify content="完成任务，经验增加"/>
+				<exp1 value="100" id="50021" name="selflevel"/>
+				<exp1 value="100" id="50021" name="unionid_kill_selflevel"/>
+				<notify content="经验增加"/>
+				<var type="Set" name="kill" value="0"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="kill"/>
+				<refresh name="state"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

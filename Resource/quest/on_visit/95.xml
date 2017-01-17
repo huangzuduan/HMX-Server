@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="95" name="传送师">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960103">
+		<embranchment id="9">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去哪里啊，我可以带你去，但我可不能保证你能活着回来哦。");
+this:AddTaskCmdItem("去白骨洞-10文(0)", "v95", 160103, 11)
+this:AddTaskCmdItem("去精怪洞穴-10文(0)", "v95", 160103, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+			<isguard/>
+				<gold type="Great" value="9"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="10"/>
+				<goto name="王城" pos="837,104"/>
+				<notify content="你被带到了白骨洞口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+			<isguard/>
+				<gold type="Great" value="9"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="10"/>
+				<goto name="王城" pos="924,650"/>
+				<notify content="你被带到了精怪洞穴"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+			<isguard/>
+				<gold type="Great" value="9"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="10"/>
+				<goto name="王城" pos="275,281"/>
+				<notify content="你被带到了国旗附近"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

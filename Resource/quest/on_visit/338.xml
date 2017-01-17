@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="338" name="神偷">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960103">
+		<embranchment id="9">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("开门-需要秘匙", "Dialog13")
+end
+function Dialog13()
+this:AddTalk("    想要开这扇门么？这个下水道可以直接通往王城内部哦，给我把秘匙我就可以帮你开这扇门了。");
+this:AddTaskCmdItem("给他秘匙(0)", "v338", 160103, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+		    	<item value="1" id="1837"/> 
+			</conditions>
+			<actions>
+		     	<goto name="下水道" pos="97,22"/>
+
+             <removeitem value="1" id="1837" log="进入下水道-删除秘匙(1837)"/> 
+             <notify content="你进入了下水道，似乎可以直接到达王城内部"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16035" name="白骨洞-白骨士兵">
+	<quest id="335" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2127" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="336" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2258" odds="4000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20367" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2127"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

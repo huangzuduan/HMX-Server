@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16545" name="武夷王墓八层以下－守墓巫师(魔)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20570" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_守墓巫师" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_守墓巫师" value="1"/>
+				<refresh name="kill_守墓巫师"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_守墓巫师" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_守墓巫师"/>
+				<notify content="你已经消灭了很多的守墓巫师,回皇城-风华郡主(805,703)处交任务吧"/>
+				<notify1 content="去找皇城-风华郡主(805,703)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

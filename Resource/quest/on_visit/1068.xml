@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="1068" name="王城-家族管理员(802,513)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="250006">
+		<embranchment id="20">
+			<conditions>
+				<grade value="4"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Differ" name="bufftoday" value="1"/>
+				<familyvar type="Differ" name="bufftoday" value="-3"/>
+				<familyvar type="Differ" name="family_roundquest" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="2"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("家族自定义任务发布(0)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("    年轻的族长，你好，你能不能让你的族人帮我将下面的那些怪物其中一个消灭掉，只要你们家族有一个人成功了，那么家族中每个成员都可以用领取我给你们的一个祝福。请组织家族中成员一起完成。\n 每天只能发布一种类型的家族自定义任务，如果你想改变家族任务，必须一天以后再重新发布。")
+this:AddTaskCmdItem("敌国凤凰城1面副旗{10001}", "v1068", 150006, 11)
+this:AddTaskCmdItem("敌国王城1面副旗{10001}", "v1068", 150006, 12)
+end
+function Dialog77()
+this:AddTalk("    如果你们家族能打败敌国王城的药店伙计，那么我能让你们家族重新做一次环任务。")
+this:AddTaskCmdItem("发布荣耀任务{10001}", "v1068", 150006, 15)
+this:AddDialogItem("家族荣耀任务{10001}",  "Dialog77")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150006" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<grade value="4"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Differ" name="bufftoday" value="1"/>
+				<familyvar type="Differ" name="bufftoday" value="-3"/>
+				<familyvar type="Differ" name="family_roundquest" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="2"/>
+			</conditions>
+			<actions>
+				<bulletin content="今天目标是敌国凤凰城副旗" kind="2"/>
+				<familyvar type="Set" name="bufftoday" value="1"/>
+				<familyvar type="Set" name="bufftype" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<grade value="4"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Differ" name="bufftoday" value="1"/>
+				<familyvar type="Differ" name="bufftoday" value="-3"/>
+				<familyvar type="Differ" name="family_roundquest" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="2"/>
+			</conditions>
+			<actions>
+				<bulletin content="今天目标是敌国王城副旗" kind="2"/>
+				<familyvar type="Set" name="bufftoday" value="1"/>
+				<familyvar type="Set" name="bufftype" value="2"/>
+			</actions>
+		</embranchment>
+		<!--embranchment id="13" active="1">
+			<conditions>
+				<grade value="4"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Differ" name="bufftoday" value="1"/>
+				<familyvar type="Differ" name="bufftoday" value="-3"/>
+			</conditions>
+			<actions>
+				<bulletin content="今天目标是东郊的异族王子" kind="2"/>
+				<familyvar type="Set" name="bufftoday" value="1"/>
+				<familyvar type="Set" name="bufftype" value="3"/>
+			</actions>
+		</embranchment-->
+		<!--embranchment id="15" active="1">
+			<conditions>
+				<grade value="4"/>
+				<septid type="Great" value="0"/>
+				<familyvar type="Differ" name="bufftoday" value="1"/>
+				<familyvar type="Differ" name="bufftoday" value="-3"/>
+				<familyvar type="Differ" name="family_roundquest" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="1"/>
+				<familyvar type="Differ" name="bufftype" value="2"/>
+			</conditions>
+			<actions>
+				<bulletin content="族长发布家族荣耀任务" kind="2"/>
+				<familyvar type="Set" name="bufftoday" value="1"/>
+				<familyvar type="Set" name="family_roundquest" value="1"/>
+				<notify1 content="你发布了家族荣耀任务:打败敌国王城药店伙计"/>
+				<notify content="你发布了家族荣耀任务:打败敌国王城药店伙计"/>
+			</actions>
+		</embranchment-->
+	</quest>
+	<quest id="260006">
+		<!--embranchment id="4">
+			<conditions>
+				<septid type="Great" value="0"/>
+				<var type="Differ" name="state" value="1" id="50006"/>
+				<uservar type="Equal" name="own_roundquest" value="1"/>
+				<familyvar type="Equal" name="family_roundquest" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("家族荣耀任务(0)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("    (GetName)!你今天已经使用过重做环任务的特权了。\n 每人每天只有一次重做环任务的机会。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="family_roundquest" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+				<var type="Differ" name="state" value="-3" id="50006"/>
+				<var type="Differ" name="state" value="1" id="50006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    贵族长今天发布了打败敌国王城药店伙计的任务，完成后回来汇报。")
+this:AddTaskCmdItem("接受任务{10001}", "v1068", 50006, 21)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<familyvar type="Equal" name="family_roundquest" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+				<familyvar type="Differ" name="roundagain" value="1"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看来你成功完成了任务，果然厉害。")
+this:AddTaskCmdItem("接受奖励{10001}", "v1068", 50006, 22)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="roundagain" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    由于贵家族其他成员成功打败敌国王城药店伙计，因此你可以获得本日环式任务做两次的特权。")
+this:AddTaskCmdItem("接受奖励{10001}", "v1068", 50006, 23)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="family_roundquest" value="1"/>
+				<familyvar type="Differ" name="roundagain" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+				<var type="Equal" name="state" value="1" id="50006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我正在等贵家族的人来向我报告成功打败敌国王城药店伙计的消息，如果你打败了敌国王城的药店伙计，就来找我吧。")
+this:AddCloseItem("知道了")
+end
+             </menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="21">
+			<conditions>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Differ" name="bufffinish" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50009"/>
+				<var type="Differ" name="state" value="1" id="50009"/>
+				<var type="Differ" name="state" value="-3" id="50009"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    贵族长今天发布了破坏敌国凤凰城副旗的任务，完成后回来汇报。")
+this:AddTaskCmdItem("接受任务{10001}", "v1068", 50009, 31)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50009"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了破坏敌国凤凰城副旗的任务，是否要现在领取奖励呢？")
+this:AddTaskCmdItem("接受奖励{10001}", "v1068", 50009, 33)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<septid type="Great" value="0"/>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Differ" name="bufffinish" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50007"/>
+				<var type="Differ" name="state" value="1" id="50007"/>
+				<var type="Differ" name="state" value="-3" id="50007"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    贵族长今天发布了袭击敌国王城副旗的任务，完成后回来汇报。")
+this:AddTaskCmdItem("接受任务{10001}", "v1068", 50007, 31)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50007"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    恭喜你完成了破坏敌国王城副旗的任务，是否要现在领取奖励呢？")
+this:AddTaskCmdItem("接受奖励{10001}", "v1068", 50007, 33)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看来你们家族已经有人完成破坏敌国凤凰城副旗的任务了，你是否要现在接受我的祝福。")
+this:AddTaskCmdItem("物理攻击上升祝福{10001}", "v1068", 50009, 11)
+this:AddTaskCmdItem("魔法攻击上升祝福{10001}", "v1068", 50009, 12)
+this:AddTaskCmdItem("物理防御上升祝福{10001}", "v1068", 50009, 13)
+this:AddTaskCmdItem("魔法防御上升祝福{10001}", "v1068", 50009, 14)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看来你们家族已经有人完成破坏敌国王城副旗的任务了，你是否要现在接受我的祝福。")
+this:AddTaskCmdItem("物理攻击上升祝福{10001}", "v1068", 50007, 11)
+this:AddTaskCmdItem("魔法攻击上升祝福{10001}", "v1068", 50007, 12)
+this:AddTaskCmdItem("物理防御上升祝福{10001}", "v1068", 50007, 13)
+this:AddTaskCmdItem("魔法防御上升祝福{10001}", "v1068", 50007, 14)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="100">
+			<conditions>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你们家族今天的任务是破坏敌国凤凰城副旗，但还没有人完成，请努力。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你们家族今天的任务是破坏敌国王城副旗，但还没有人完成，请努力。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<uservar type="Equal" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你已经领取过今天的祝福了，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--quest id="50006" new="1"-->
+		<!--变量解释： familyvar ：family_roundquest// 家族是否发布了荣耀任务：1为发布标志，非1为未发布
+	                       uservar ：  own_roundquest// 自身是否交过家族荣耀任务的标记：1交过标志，非1为没交过
+	                       familyvar ：roundagain // 家族内是否有人交过荣耀任务标记：1为交过任务标记，非1为没交
+	                       uservar ：  todayagain // 环任务重新做的标志：1为重做环任务标记，非1为不能重做环任务。
+	                       uservar ：  againagain // 是否能重做环任务的标记：1为可以重做，非1为不能重做
+	                       uservar ：  todayend   // 环任务的环全部做完标记：1为环任务做完标记。非1为未做完-->
+		<!--embranchment id="21" active="1">
+			<conditions>
+				<familyvar type="Equal" name="family_roundquest" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50006"/>
+				<var type="Differ" name="state" value="1" id="50006"/>
+				<var type="Differ" name="state" value="-3" id="50006"/>
+			</conditions>
+			<actions>
+				<notify1 content="去敌国王城药店伙计"/>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<familyvar type="Equal" name="family_roundquest" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+				<familyvar type="Differ" name="roundagain" value="1"/>
+				<var type="Equal" name="state" value="-3" id="50006"/>
+			</conditions>
+			<actions>
+				<notify content="恭喜你完成了打败敌国王城药店伙计任务,家族所有人完成环式任务后能重置环任务"/>
+				<bulletin content="恭喜贵家族完成了打败敌国王城药店伙计任务" kind="2"/>
+				<bulletin content="家族所有人完成环式任务后能重置环任务" kind="2"/>
+				<familyvar type="Set" name="roundagain" value="1"/>
+				<uservar type="Set" name="todayagain" value="1"/>
+				<uservar type="Set" name="own_roundquest" value="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<familyvar type="Equal" name="roundagain" value="1"/>
+				<uservar type="Differ" name="own_roundquest" value="1"/>
+			</conditions>
+			<actions>
+				<uservar type="Set" name="todayagain" value="1"/>
+				<uservar type="Set" name="own_roundquest" value="1"/>
+				<notify1 content="重置环任务成功，请去找环任务发布者重接环任务"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest-->
+	<quest id="50007" new="1">
+		<embranchment id="31" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Differ" name="bufffinish" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50007"/>
+				<var type="Differ" name="state" value="1" id="50007"/>
+				<var type="Differ" name="state" value="-3" id="50007"/>
+			</conditions>
+			<actions>
+				<notify1 content="破坏敌国王城副旗"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="30"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33" active="1">
+			<conditions>
+							<innation/>
+				<var type="Equal" name="state" value="-3" id="50007"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<exp1 value="100" id="50007" name="selflevel"/>
+				<familyvar type="Set" name="bufffinish" value="1"/>
+				<bulletin content="有人完成了破坏敌国王城副旗的任务，可向家族管理员处换取奖励" kind="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了物理攻击上升的祝福"/>
+				<useskill id="501" level="3"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了魔法攻击上升的祝福"/>
+				<useskill id="503" level="3"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了物理防御上升的祝福"/>
+				<useskill id="505" level="3"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="2"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了魔法防御上升的祝福"/>
+				<useskill id="507" level="3"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50009" new="1">
+		<embranchment id="31" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Differ" name="bufffinish" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50009"/>
+				<var type="Differ" name="state" value="1" id="50009"/>
+				<var type="Differ" name="state" value="-3" id="50009"/>
+			</conditions>
+			<actions>
+				<notify1 content="破坏敌国凤凰城副旗"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="30"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33" active="1">
+			<conditions>
+							<innation/>
+				<var type="Equal" name="state" value="-3" id="50009"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<exp1 value="100" id="50009" name="selflevel"/>
+				<familyvar type="Set" name="bufffinish" value="1"/>
+				<bulletin content="有人完成了破坏敌国凤凰城副旗的任务，可向家族管理员处换取奖励" kind="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了物理攻击上升的祝福"/>
+				<useskill id="501" level="2"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了魔法攻击上升的祝福"/>
+				<useskill id="503" level="2"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了物理防御上升的祝福"/>
+				<useskill id="505" level="2"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+							<innation/>
+				<familyvar type="Equal" name="bufftype" value="1"/>
+				<familyvar type="Equal" name="bufffinish" value="1"/>
+				<uservar type="Differ" name="buff" value="1"/>
+			</conditions>
+			<actions>
+				<notify content="你获得了魔法防御上升的祝福"/>
+				<useskill id="507" level="2"/>
+				<uservar type="Set" name="buff" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2179" name="2179-魔卫法轴">
+	<!--new means new quest, default is quest on user-->
+	<quest id="420" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="420"/>
+				<var type="Less" name="get_魔卫法轴" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个魔卫法轴"/>
+				<var type="Add" name="get_魔卫法轴" value="1"/>
+				<refresh name="get_魔卫法轴"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="420"/>
+				<var type="Great" name="get_魔卫法轴" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="420"/>
+				<refresh name="state"/>
+				<refresh name="get_魔卫法轴"/>
+				<notify content="你已经收集了10个魔卫法轴,快交给皇城的鲁建瓴(810,640)吧"/>
+				<notify1 content="去找皇城-鲁建瓴(810,640)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16255" name="精怪七层－怒焰蜘蛛精(精怪洞七层中间)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="360" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_怒焰蜘蛛精" value="45"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_怒焰蜘蛛精" value="1"/>
+				<refresh name="kill_怒焰蜘蛛精"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_怒焰蜘蛛精" value="44"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_怒焰蜘蛛精"/>
+				<notify content="你消灭了45只怒焰蜘蛛精,去精怪三层的牢笼(200,140)处解救士兵。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

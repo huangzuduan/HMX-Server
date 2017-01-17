@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5108" name="流浪者">
+	<!--new means new quest, default is quest on user-->
+	<quest id="970100">
+		<embranchment id="2">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20610" name="check_country_id"/>
+				<mapid id="20610" name="102"/>
+				<var type="Equal" name="state" value="1" id="20610"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：宋国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20610, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20610" name="check_country_id"/>
+				<mapid id="20610" name="108"/>
+				<var type="Equal" name="state" value="1" id="20610"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：宋国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20610, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20611" name="check_country_id"/>
+				<mapid id="20611" name="102"/>
+				<var type="Equal" name="state" value="1" id="20611"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：魏国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20611, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20611" name="check_country_id"/>
+				<mapid id="20611" name="108"/>
+				<var type="Equal" name="state" value="1" id="20611"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：魏国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20611, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20612" name="check_country_id"/>
+				<mapid id="20612" name="102"/>
+				<var type="Equal" name="state" value="1" id="20612"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：齐国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20612, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20612" name="check_country_id"/>
+				<mapid id="20612" name="108"/>
+				<var type="Equal" name="state" value="1" id="20612"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：齐国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20612, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20613" name="check_country_id"/>
+				<mapid id="20613" name="102"/>
+				<var type="Equal" name="state" value="1" id="20613"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：燕国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20613, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20613" name="check_country_id"/>
+				<mapid id="20613" name="108"/>
+				<var type="Equal" name="state" value="1" id="20613"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：燕国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20613, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20614" name="check_country_id"/>
+				<mapid id="20614" name="102"/>
+				<var type="Equal" name="state" value="1" id="20614"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：唐国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20614, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="43">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20614" name="check_country_id"/>
+				<mapid id="20614" name="108"/>
+				<var type="Equal" name="state" value="1" id="20614"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：唐国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20614, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="52">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20615" name="check_country_id"/>
+				<mapid id="20615" name="102"/>
+				<var type="Equal" name="state" value="1" id="20615"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：汉国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20615, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20615" name="check_country_id"/>
+				<mapid id="20615" name="108"/>
+				<var type="Equal" name="state" value="1" id="20615"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：汉国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20615, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="62">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20616" name="check_country_id"/>
+				<mapid id="20616" name="102"/>
+				<var type="Equal" name="state" value="1" id="20616"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：吴国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20616, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="63">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20616" name="check_country_id"/>
+				<mapid id="20616" name="108"/>
+				<var type="Equal" name="state" value="1" id="20616"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：吴国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20616, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="72">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20617" name="check_country_id"/>
+				<mapid id="20617" name="102"/>
+				<var type="Equal" name="state" value="1" id="20617"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：赵国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20617, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="73">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20617" name="check_country_id"/>
+				<mapid id="20617" name="108"/>
+				<var type="Equal" name="state" value="1" id="20617"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：赵国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20617, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="82">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20618" name="check_country_id"/>
+				<mapid id="20618" name="102"/>
+				<var type="Equal" name="state" value="1" id="20618"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：周国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20618, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="83">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20618" name="check_country_id"/>
+				<mapid id="20618" name="108"/>
+				<var type="Equal" name="state" value="1" id="20618"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：周国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20618, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="92">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20619" name="check_country_id"/>
+				<mapid id="20619" name="102"/>
+				<var type="Equal" name="state" value="1" id="20619"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：楚国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20619, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="93">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20619" name="check_country_id"/>
+				<mapid id="20619" name="108"/>
+				<var type="Equal" name="state" value="1" id="20619"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  嘘！小声点，别给人发现了。请用心记住下面的话：楚国的国情是如此如此如此......。你记好了吗？")
+this:AddTaskCmdItem("我已牢记在心(0)", "v5108", 20619, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20610" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20610" name="check_country_id"/>
+				<mapid id="20610" name="102"/>
+				<var type="Equal" name="state" value="1" id="20610"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20610"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到宋国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到宋国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20610" name="check_country_id"/>
+				<mapid id="20610" name="108"/>
+				<var type="Equal" name="state" value="1" id="20610"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20610"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到宋国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到宋国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20611" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20611" name="check_country_id"/>
+				<mapid id="20611" name="102"/>
+				<var type="Equal" name="state" value="1" id="20611"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20611"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到魏国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到魏国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20611" name="check_country_id"/>
+				<mapid id="20611" name="108"/>
+				<var type="Equal" name="state" value="1" id="20611"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20611"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到魏国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到魏国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20612" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20612" name="check_country_id"/>
+				<mapid id="20612" name="102"/>
+				<var type="Equal" name="state" value="1" id="20612"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20612"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到齐国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到齐国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20612" name="check_country_id"/>
+				<mapid id="20612" name="108"/>
+				<var type="Equal" name="state" value="1" id="20612"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20612"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到齐国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到齐国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20613" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20613" name="check_country_id"/>
+				<mapid id="20613" name="102"/>
+				<var type="Equal" name="state" value="1" id="20613"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20613"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到燕国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到燕国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20613" name="check_country_id"/>
+				<mapid id="20613" name="108"/>
+				<var type="Equal" name="state" value="1" id="20613"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20613"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到燕国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到燕国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20614" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20614" name="check_country_id"/>
+				<mapid id="20614" name="102"/>
+				<var type="Equal" name="state" value="1" id="20614"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20614"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到唐国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到唐国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20614" name="check_country_id"/>
+				<mapid id="20614" name="108"/>
+				<var type="Equal" name="state" value="1" id="20614"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20614"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到唐国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到唐国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20615" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20615" name="check_country_id"/>
+				<mapid id="20615" name="102"/>
+				<var type="Equal" name="state" value="1" id="20615"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20615"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到汉国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到汉国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20615" name="check_country_id"/>
+				<mapid id="20615" name="108"/>
+				<var type="Equal" name="state" value="1" id="20615"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20615"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到汉国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到汉国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20616" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20616" name="check_country_id"/>
+				<mapid id="20616" name="102"/>
+				<var type="Equal" name="state" value="1" id="20616"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20616"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到吴国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到吴国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20616" name="check_country_id"/>
+				<mapid id="20616" name="108"/>
+				<var type="Equal" name="state" value="1" id="20616"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20616"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到吴国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到吴国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20617" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20617" name="check_country_id"/>
+				<mapid id="20617" name="102"/>
+				<var type="Equal" name="state" value="1" id="20617"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20617"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到赵国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到赵国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20617" name="check_country_id"/>
+				<mapid id="20617" name="108"/>
+				<var type="Equal" name="state" value="1" id="20617"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20617"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到赵国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到赵国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20618" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20618" name="check_country_id"/>
+				<mapid id="20618" name="102"/>
+				<var type="Equal" name="state" value="1" id="20618"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20618"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到周国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到周国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20618" name="check_country_id"/>
+				<mapid id="20618" name="108"/>
+				<var type="Equal" name="state" value="1" id="20618"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20618"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到周国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到周国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20619" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				 
+				<mapcountry id="20619" name="check_country_id"/>
+				<mapid id="20619" name="102"/>
+				<var type="Equal" name="state" value="1" id="20619"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20619"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到楚国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到楚国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				 
+				<mapcountry id="20619" name="check_country_id"/>
+				<mapid id="20619" name="108"/>
+				<var type="Equal" name="state" value="1" id="20619"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20619"/>
+                                <refresh name="state"/>
+				<notify1 content="成功收集到楚国的情报，快回国报告兵马大元帅"/>
+				<notify content="成功收集到楚国的情报，快回国报告兵马大元帅"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

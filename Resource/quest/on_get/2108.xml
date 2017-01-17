@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="2108" name="粮袋">
+	<!--new means new quest, default is quest on user-->
+	<quest id="315" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="315"/>
+				<var type="Less" name="get_粮袋" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你抢到了粮袋"/>
+				<var type="Add" name="get_粮袋" value="1"/>
+				<refresh name="get_粮袋"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="315"/>
+				<var type="Great" name="get_粮袋" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="get_粮袋"/>
+				<notify content="恭喜你完成了抢劫粮草的任务,将粮袋给密探吧"/>
+				<notify1 content="凤尾-密探(18,150)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

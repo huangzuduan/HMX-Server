@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15070" name="凤祥镇西郊-叛军步卒">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20377" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2148" odds="4000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

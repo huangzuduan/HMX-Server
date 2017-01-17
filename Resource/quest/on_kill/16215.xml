@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16215" name="南郊-异军枪兵">
+	<quest id="318" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2027" odds="2500"/>
+			</actions>
+		</embranchment>
+	</quest>
+<quest id="20809" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_异军枪兵" value="2000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_异军枪兵" value="1"/>
+				<refresh name="kill_异军枪兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_异军枪兵" value="1999"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_异军枪兵"/>
+				<notify content="恭喜你，你已经击败了2000个60级的异军枪兵，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

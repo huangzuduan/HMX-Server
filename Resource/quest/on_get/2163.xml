@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2163" name="史书碎片">
+	<!--new means new quest, default is quest on user-->
+	<quest id="381" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="381"/>
+				<var type="Less" name="get_史书碎片" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一页史书碎片"/>
+				<var type="Add" name="get_史书碎片" value="1"/>
+				<refresh name="get_史书碎片"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="381"/>
+				<var type="Great" name="get_史书碎片" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3" id="381"/>
+				<refresh name="state"/>
+				<refresh name="get_史书碎片"/>
+				<notify content="你已经收集齐了史书碎片,再去王城找欧阳编修(502,802)翻译成史书"/>
+				<notify1 content="去王城找欧阳编修(502,802)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>
+

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="50" name="50级">
+
+	<quest id="20109" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="manshen_level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="manshen_level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="任务完成，找陈满神"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Equal" name="level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<var type="Equal" name="level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="任务完成，找陈满神"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+	<quest id="21223" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="任务完成，找工具商人"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21414" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="level" value="50"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill" value="39"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="任务完成，找饲料商人"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21150" new="1">
+		<embranchment id="11">
+			<conditions>
+				<var type="Less" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_50级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_50级" value="1"/>
+				<refresh name="kill_50级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Less" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_50级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="26000" id="150000" name="t1"/>
+				<refresh name="kill_50级"/>
+				<notify content="恭喜你完成了50级培训任务"/>
+				<notify1 content="今日任务完成数：1/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21150"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_50级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_50级" value="1"/>
+				<refresh name="kill_50级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="time" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_50级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="26000" id="150000" name="t2"/>
+				<refresh name="kill_50级"/>
+				<notify content="恭喜你完成了50级培训任务"/>
+				<notify1 content="今日任务完成数：2/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21150"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<var type="Equal" name="time" value="2" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_50级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_50级" value="1"/>
+				<refresh name="kill_50级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<var type="Equal" name="time" value="2" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_50级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="26000" id="150000" name="t3"/>
+				<refresh name="kill_50级"/>
+				<notify content="恭喜你完成了50级培训任务"/>
+				<notify1 content="今日任务完成数：3/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21150"/>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<var type="Equal" name="time" value="3" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_50级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_50级" value="1"/>
+				<refresh name="kill_50级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<var type="Equal" name="time" value="3" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_50级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="26000" id="150000" name="t4"/>
+				<refresh name="kill_50级"/>
+				<notify content="恭喜你完成了50级培训任务"/>
+				<notify1 content="今日任务完成数：4/5"/>
+				<var type="Add" name="time" value="1" id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21150"/>
+			</actions>
+		</embranchment>
+		<embranchment id="51">
+			<conditions>
+				<var type="Equal" name="time" value="4" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_50级" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_50级" value="1"/>
+				<refresh name="kill_50级"/>
+			</actions>
+		</embranchment>
+		<embranchment id="52">
+			<conditions>
+				<var type="Equal" name="time" value="4" id="150000"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_50级" value="49"/>
+			</conditions>
+			<actions>
+				<exp value="26000" id="150000" name="t5"/>
+				<refresh name="kill_50级"/>
+				<notify content="恭喜你完成了50级培训任务"/>
+				<notify1 content="今日任务完成数：5/5"/>
+				<notify content="恭喜你完成了今天所有培训任务，明天您才能继续培训计划"/>
+				<notify1 content="完成了今天培训计划，明天继续"/>
+				<var type="Set" name="state" value="2" id="150000"/>
+				<var type="Set" name="today" value="0" id="150000"/>
+				<var type="Set" name="time" value="0" id="150000"/>
+				<timeouts id="150000"/>
+				<refresh name="time" id="150000"/>
+				<var type="Set" name="state" value="-2" id="21150"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50001" new="1">
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="46"/>
+				<var type="Less" name="kill" value="100"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="46"/>
+				<var type="Great" name="kill" value="99"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的国家任务，请回国交任务"/>
+				<notify1 content="国家任务完成"/>
+				<var type="Set" name="state" value="-3" id="50001"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50002" new="1">
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="0"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="46"/>
+				<var type="Less" name="kill" value="100"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<selfcountry value="0"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="46"/>
+				<var type="Great" name="kill" value="99"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的帮会任务，请回帮会任务发布员处交任务"/>
+				<notify1 content="帮会任务完成"/>
+				<notify1 content="回帮会任务发布员处交任务"/>
+				<var type="Set" name="state" value="-3" id="50002"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50003" new="1">
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="46"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="46"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的家族任务，请回家族任务发布员处交任务"/>
+				<var type="Set" name="state" value="-3" id="50003"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

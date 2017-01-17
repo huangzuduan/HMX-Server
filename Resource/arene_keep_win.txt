@@ -1,0 +1,24 @@
+服务器输出文件名	config_arena_keep_win.xml	根名称	ability
+客户端输出文件名	config_arena_keep_win.xml	项名称	arena_keep_win
+连胜次数	奖励声望值		
+3	3		
+win_times	prestige		
+2	2		
+3	4		
+4	6		
+5	8		
+6	10		
+7	12		
+8	14		
+9	16		
+10	18		
+11	20		
+12	22		
+13	24		
+14	26		
+15	28		
+16	30		
+17	32		
+18	34		
+19	36		
+20	38		

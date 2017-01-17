@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56026" name="清源村-乙镖头(129,257)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="31001">
+		<embranchment id="2">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="230"/>
+				<var type="Differ" name="car" value="2" id="230"/>
+				<level type="Less" value="50"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：出村(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("    你也要去凤凰城么？我好久没去拜访凤凰城的甲镖头(382,401)了。刚好我这里有一趟镖要送到凤凰城甲镖头那里，你可以跟过去。记得替我问候甲镖头哦！\n经验奖励： 2000")
+this:AddTaskCmdItem("好的{10001}", "v56026", 230, 10)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<isguard/>
+                                <var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Differ" name="state" value="1" id="21001"/>
+				<var type="Differ" name="state" value="-3" id="21001"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<level type="Great" value="9"/>
+				<level type="Less" value="50"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("一等镖-2两", "Dialog10")
+end
+function Dialog10()
+this:AddTalk("    你能不能帮我把一个一等镖车保护到凤凰城的镖头(382,401)那里，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付2两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    因为是加急的镖，如果按时间没有运到的话，押金会扣除部分。\n经验奖励： 2000")
+this:AddTaskCmdItem("接镖{10001}", "v56026", 21001, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<isguard/>
+                                <var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Differ" name="state" value="1" id="21001"/>
+				<var type="Differ" name="state" value="-3" id="21001"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<level type="Great" value="9"/>
+				<level type="Less" value="50"/>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你能不能帮我把一个一等镖车保护到凤凰城的镖局，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付2两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    因为是加急的镖，如果按时间没有运到的话，押金会扣除部分。\n经验奖励： 2000")
+this:AddDialogItem("接镖{10001}", "Dialog18")
+this:AddCloseItem("离开")
+end
+function Dialog18()
+this:AddTalk("对不起，您的钱不够付押金的。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="1">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21001"/>
+				<var type="Differ" name="state" value="-3" id="21001"/>
+				<level type="Less" value="10"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我运运镖。10级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<isguard/>
+                                <var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Equal" name="state" value="1" id="21001"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你能不能帮我把一个一等镖车保护到凤凰城的镖局，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付2两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    因为是加急的镖，如果按时间没有运到的话，押金会扣除部分。\n经验奖励： 2000")
+this:AddDialogItem("接镖{10001}", "Dialog28")
+this:AddCloseItem("离开")
+end
+function Dialog28()
+this:AddTalk("对不起，您先把这趟镖押好再来吧。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21001" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+				<level type="Less" value="50"/>
+                                <var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Differ" name="state" value="1" id="21001"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="50005" map="凤凰城" ltpos="127,257" rbpos="128,265" gold="200" exp="0" dest="382,401"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="clock" value="1000"/>
+				<refresh name="clock"/>
+				<notify content="你接了一个一等镖，付了2两押金"/>
+				<var type="Set" name="state" value="1"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="230" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="50"/>
+				<var type="Equal" name="state" value="-3" id="230"/>
+				<var type="Differ" name="car" value="2" id="230"/>
+			</conditions>
+			<actions>
+				<!--addguard id="50005" map="凤凰城" ltpos="127,257" rbpos="128,265" gold="0" exp="0" dest="382,401"/-->
+				<notify content="替清源村的乙镖头问候凤凰城的甲镖头"/>
+				<notify1 content="替清源村的乙镖头问候凤凰城的甲镖头"/>
+				<var type="Set" name="car" value="2" id="230"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

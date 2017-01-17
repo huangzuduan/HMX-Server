@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="839" name="凤凰城-陈满神(411,430)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30106">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20106"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    又有何事求我啊？小心你会失去更多哦！")
+this:AddTaskCmdItem("请问张倾城的下落{10002}", "v839", 20106, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20106"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    她啊，自从跟了男人之后，就跑到凤尾村隐居了。真是可怜的女人啊，我早就说过她得不到真爱，为什么还要挣扎呢？")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20106" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20106"/>
+			</conditions>
+			<actions>
+				<notify1 content="去凤尾村找张倾城"/>
+				<var type="Set" name="state" value="2" id="20106"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30108">
+		<embranchment id="4">
+			<conditions>
+				<level type="Less" value="40"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只40级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只50级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<level type="Less" value="60"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只60级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只70级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="80"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只80级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<level type="Less" value="90"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只90级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Less" value="100"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只100级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只110级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<level type="Less" value="120"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只120级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只130级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<level type="Less" value="140"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只140级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<level type="Less" value="161"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    做馒头？那个我在行，我常在湖里打捞馒头的，这事就交给我吧。\n    不过你得消灭50只150级怪物保障我的安全才行哦，你愿不愿意啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v839", 20109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="40">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    那些该死的怪物真是活该，谁叫它们老干扰我梳头。")
+this:AddTaskCmdItem("接受奖励{10002}", "v839", 20109, 40)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20109" new="1">
+		<embranchment id="4" active="1">
+			<conditions>
+				<level type="Less" value="40"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="40"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个40级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="50"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个50级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<level type="Less" value="60"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="60"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个60级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="70"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个70级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<level type="Less" value="80"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="80"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个80级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<level type="Less" value="90"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="90"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个90级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<level type="Less" value="100"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="100"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个100级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Less" value="110"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="110"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个110级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Less" value="120"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="120"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个120级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="130"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个130级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<level type="Less" value="140"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="140"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个140级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<level type="Less" value="161"/>
+				<var type="Differ" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20109"/>
+				<var type="Differ" name="state" value="1" id="20109"/>
+				<var type="Differ" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="manshen_level" value="150"/>
+				<refresh name="manshen_level"/>
+				<notify content="任务：帮陈满神消灭50个150级怪物"/>
+				<var type="GetP" name="manshen_selflevel" value="1"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="manshen_selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="manshen_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="manshen_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="manshen_selflevel" name2="stupid"/>
+				<vars type="Div" name1="manshen_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="manshen_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="manshen_selflevel2" name2="div"/>
+				<vars type="Add" name1="manshen_selflevel" name2="manshen_selflevel2"/>
+				<refresh name="manshen_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="40" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20109"/>
+			</conditions>
+			<actions>
+				<exp1 value="100" id="20109" name="selflevel"/>
+				<exp1 value="100" id="20109" name="manshen_selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<var type="Set" name="step" value="2" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20109"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30110">
+		<embranchment id="4">
+			<conditions>
+				<level type="Less" value="40"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄20根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出20根檀木料{10001}", "v839", 20110, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄25根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出25根檀木料{10001}", "v839", 20110, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<level type="Less" value="60"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄30根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出30根檀木料{10001}", "v839", 20110, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Less" value="70"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄35根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出35根檀木料{10001}", "v839", 20110, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="80"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄40根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出40根檀木料{10001}", "v839", 20110, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<level type="Less" value="90"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄45根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出45根檀木料{10001}", "v839", 20110, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Less" value="100"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄50根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出50根檀木料{10001}", "v839", 20110, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<level type="Less" value="110"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄55根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出55根檀木料{10001}", "v839", 20110, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<level type="Less" value="120"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄60根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出60根檀木料{10001}", "v839", 20110, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<level type="Less" value="130"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄65根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出65根檀木料{10001}", "v839", 20110, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<level type="Less" value="140"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄70根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出70根檀木料{10001}", "v839", 20110, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头是捞出来了，只是......\n    馒头有点湿，但你千万别告诉别人哦，不然影响我的声誉，你帮我去弄75根檀木料来，我偷偷烤干它。\n    听说皇城有地方能砍到檀木料，杂货商那里也可以买到。我的清誉就靠你了。")
+this:AddTaskCmdItem("拿出75根檀木料{10001}", "v839", 20110, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20110" new="1">
+		<embranchment id="4" active="1">
+			<conditions>
+				<item value="20" id="531"/>
+				<level type="Less" value="40"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="20" id="531" log="馒头任务(20110)-删除20个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<item value="25" id="531"/>
+				<level type="Less" value="50"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="25" id="531" log="馒头任务(20110)-删除25个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="531"/>
+				<level type="Less" value="60"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="30" id="531" log="馒头任务(20110)-删除30个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<item value="35" id="531"/>
+				<level type="Less" value="70"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="35" id="531" log="馒头任务(20110)-删除35个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<item value="40" id="531"/>
+				<level type="Less" value="80"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="40" id="531" log="馒头任务(20110)-删除40个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<item value="45" id="531"/>
+				<level type="Less" value="90"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="45" id="531" log="馒头任务(20110)-删除45个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<item value="50" id="531"/>
+				<level type="Less" value="100"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="50" id="531" log="馒头任务(20110)-删除50个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="55" id="531"/>
+				<level type="Less" value="110"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="55" id="531" log="馒头任务(20110)-删除55个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<item value="60" id="531"/>
+				<level type="Less" value="120"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="60" id="531" log="馒头任务(20110)-删除60个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<item value="65" id="531"/>
+				<level type="Less" value="130"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="65" id="531" log="馒头任务(20110)-删除65个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<item value="70" id="531"/>
+				<level type="Less" value="140"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="70" id="531" log="馒头任务(20110)-删除70个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<item value="75" id="531"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="step" value="2" id="20108"/>
+				<var type="Equal" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-3" id="20110"/>
+				<var type="Differ" name="state" value="1" id="20110"/>
+				<var type="Differ" name="state" value="-1" id="20110"/>
+			</conditions>
+			<actions>
+				<removeitem value="75" id="531" log="馒头任务(20110)-删除75个檀木料(531)"/>
+				<var type="Set" name="state" value="-3" id="20108"/>
+				<var type="Set" name="state" value="-2" id="20110"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉陈大班馒头弄好了"/>
+				<notify1 content="陈大班"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<waypoint>
+		<point x="9" y="183"/>
+		<point x="10" y="183"/>
+		<point x="11" y="183"/>
+		<point x="12" y="183"/>
+		<point x="13" y="183"/>
+		<point x="14" y="183"/>
+		<point x="15" y="183"/>
+		<point x="16" y="183"/>
+		<point x="17" y="183"/>
+		<point x="9" y="182"/>
+		<point x="10" y="182"/>
+		<point x="11" y="182"/>
+		<point x="12" y="182"/>
+		<point x="13" y="182"/>
+		<point x="14" y="182"/>
+		<point x="15" y="182"/>
+		<point x="16" y="182"/>
+		<point x="17" y="182"/>
+		<point x="9" y="181"/>
+		<point x="10" y="181"/>
+		<point x="11" y="181"/>
+		<point x="12" y="181"/>
+		<point x="13" y="181"/>
+		<point x="14" y="181"/>
+		<point x="15" y="181"/>
+		<point x="16" y="181"/>
+		<point x="17" y="181"/>
+		<point x="9" y="183"/>
+		<point x="10" y="183"/>
+		<point x="11" y="183"/>
+		<point x="12" y="183"/>
+		<point x="13" y="183"/>
+		<point x="14" y="183"/>
+		<point x="15" y="183"/>
+		<point x="16" y="183"/>
+		<point x="17" y="183"/>
+		<point x="9" y="182"/>
+		<point x="10" y="182"/>
+		<point x="11" y="182"/>
+		<point x="12" y="182"/>
+		<point x="13" y="182"/>
+		<point x="14" y="182"/>
+		<point x="15" y="182"/>
+		<point x="16" y="182"/>
+		<point x="17" y="182"/>
+		<point x="9" y="181"/>
+		<point x="10" y="181"/>
+		<point x="11" y="181"/>
+		<point x="12" y="181"/>
+		<point x="13" y="181"/>
+		<point x="14" y="181"/>
+		<point x="15" y="181"/>
+		<point x="16" y="181"/>
+		<point x="17" y="181"/>
+		<dest name="fengzuiling" country="0" x="575" y="145"/>
+		<dest name="fengzuiling" country="0" x="575" y="146"/>
+		<dest name="fengzuiling" country="0" x="575" y="147"/>
+		<dest name="fengzuiling" country="0" x="575" y="148"/>
+		<dest name="fengzuiling" country="0" x="575" y="149"/>
+		<dest name="fengzuiling" country="0" x="575" y="150"/>
+		<dest name="fengzuiling" country="0" x="575" y="151"/>
+		<dest name="fengzuiling" country="0" x="575" y="152"/>
+		<dest name="fengzuiling" country="0" x="575" y="153"/>
+		<dest name="fengzuiling" country="0" x="575" y="154"/>
+		<dest name="fengzuiling" country="0" x="575" y="155"/>
+		<dest name="fengzuiling" country="0" x="575" y="156"/>
+		<dest name="fengzuiling" country="0" x="575" y="157"/>
+		<dest name="fengzuiling" country="0" x="575" y="158"/>
+		<dest name="fengzuiling" country="0" x="575" y="159"/>
+		<dest name="fengzuiling" country="0" x="575" y="160"/>
+		<dest name="fengzuiling" country="0" x="575" y="161"/>
+		<dest name="fengzuiling" country="0" x="575" y="162"/>
+		<dest name="fengzuiling" country="0" x="575" y="163"/>
+		<dest name="fengzuiling" country="0" x="575" y="164"/>
+		<dest name="fengzuiling" country="0" x="575" y="165"/>
+		<dest name="fengzuiling" country="0" x="575" y="166"/>
+		<dest name="fengzuiling" country="0" x="575" y="167"/>
+		<dest name="fengzuiling" country="0" x="575" y="168"/>
+		<dest name="fengzuiling" country="0" x="575" y="169"/>
+		<dest name="fengzuiling" country="0" x="575" y="170"/>
+		<dest name="fengzuiling" country="0" x="575" y="171"/>
+		<dest name="fengzuiling" country="0" x="575" y="172"/>
+		<dest name="fengzuiling" country="0" x="575" y="173"/>
+		<dest name="fengzuiling" country="0" x="575" y="145"/>
+		<dest name="fengzuiling" country="0" x="575" y="146"/>
+		<dest name="fengzuiling" country="0" x="575" y="147"/>
+		<dest name="fengzuiling" country="0" x="575" y="148"/>
+		<dest name="fengzuiling" country="0" x="575" y="149"/>
+		<dest name="fengzuiling" country="0" x="575" y="150"/>
+		<dest name="fengzuiling" country="0" x="575" y="151"/>
+		<dest name="fengzuiling" country="0" x="575" y="152"/>
+		<dest name="fengzuiling" country="0" x="575" y="153"/>
+		<dest name="fengzuiling" country="0" x="575" y="154"/>
+		<dest name="fengzuiling" country="0" x="575" y="155"/>
+		<dest name="fengzuiling" country="0" x="575" y="156"/>
+		<dest name="fengzuiling" country="0" x="575" y="157"/>
+		<dest name="fengzuiling" country="0" x="575" y="158"/>
+		<dest name="fengzuiling" country="0" x="575" y="159"/>
+		<dest name="fengzuiling" country="0" x="575" y="160"/>
+		<dest name="fengzuiling" country="0" x="575" y="161"/>
+		<dest name="fengzuiling" country="0" x="575" y="162"/>
+		<dest name="fengzuiling" country="0" x="575" y="163"/>
+		<dest name="fengzuiling" country="0" x="575" y="164"/>
+		<dest name="fengzuiling" country="0" x="575" y="165"/>
+		<dest name="fengzuiling" country="0" x="575" y="166"/>
+		<dest name="fengzuiling" country="0" x="575" y="167"/>
+		<dest name="fengzuiling" country="0" x="575" y="168"/>
+		<dest name="fengzuiling" country="0" x="575" y="169"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="20" height="50" x="7" y="154" type="1" color="0,0,255,0"/>
+	<npc id="5091" name="凤祥镇传送者" width="1" height="1" x="22" y="158" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="411" name="女英雄自在" width="1" height="1" x="170" y="24" num="1" interval="300" color="0,255,0,0"/>
+	<npc id="545" name="北郊方向" width="1" height="1" x="26" y="168" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="451" name="霍光" width="1" height="1" x="165" y="69" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="452" name="石守信" width="1" height="1" x="147" y="153" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="56067" name="独孤战" width="1" height="1" x="79" y="86" num="1" interval="1800" color="0,255,0,0"/>
+	<npc id="55121" name="草类" width="143" height="103" x="37" y="41" num="2" interval="1200"/>
+	<npc id="55106 " name="狐狸草" width="143" height="103" x="37" y="41" num="5" interval="1200"/>
+	<npc id="55187 " name="甘草" width="143" height="103" x="37" y="41" num="5" interval="1200"/>
+	<npc id="55106 " name="天芯草" width="143" height="103" x="37" y="41" num="5" interval="1200"/>
+	<npc id="55187 " name="枫丹草" width="143" height="103" x="37" y="41" num="5" interval="1200"/>
+	<npc id="21043" name="蓝怪物" width="143" height="103" x="37" y="41" num="1" interval="7200"/>
+	<npc id="15091" name="毒蝎子(魔)" width="70" height="82" x="20" y="53" num="15" interval="90"/>
+	<npc id="15092" name="叛军步兵" width="70" height="82" x="20" y="53" num="20" interval="30"/>
+	<npc id="15093" name="毒黄蛛(魔)" width="70" height="82" x="20" y="53" num="8" interval="90"/>
+	<npc id="15091" name="毒蝎子(魔)" width="51" height="49" x="45" y="132" num="15" interval="90"/>
+	<npc id="15092" name="叛军步兵" width="51" height="49" x="45" y="132" num="20" interval="90"/>
+	<npc id="15093" name="毒黄蛛(魔)" width="51" height="49" x="45" y="132" num="5" interval="90"/>
+	<npc id="15094" name="叛军弓兵" width="91" height="139" x="83" y="40" num="35" interval="30"/>
+	<npc id="15095" name="血蝙蝠(魔)" width="91" height="139" x="83" y="40" num="5" interval="90"/>
+	<npc id="15096" name="叛军步兵" width="91" height="139" x="83" y="40" num="30" interval="30"/>
+</map>

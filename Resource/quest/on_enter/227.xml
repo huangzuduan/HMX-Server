@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="1" name="初始">
+	<!--new means new quest, default is quest on user-->
+	<quest id="2" new="1">
+		<embranchment id="10">
+			<conditions>
+				<var type="Differ" name="state" value="-1"/>
+				<var type="Differ" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    欢迎你来到征途世界，希望你能愉快的进行我们的游戏。如果你想接受新手辅导，请去找村长(114,93)。\n\n    按“L”键可以查询任务列表。\n\n    鼠标左键点击任务列表里有下划线的文字，可实现自动寻路。");
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+         </mainmenu>
+				<notify content="请去找村长(114,93)"/>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Differ" name="state" value="-1"/>
+				<var type="Differ" name="state2" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state2" value="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Differ" name="state3" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state3" value="1"/>
+			</actions>
+		</embranchment>
+		
+
+		
+		<embranchment id="21">
+			<conditions>
+				<week value="63"/>
+				<uservar type="Equal" name="todayend" value="1"/>
+			</conditions>
+			<actions>
+				<uservar type="Set" name="todayend" value="0"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+
+	<quest id="100009" new="1">
+
+		<embranchment id="17">
+			<conditions>
+				<var type="Differ" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="100009"/>
+				<var type="Set" name="state" value="-2" id="21043"/>
+				<var type="Set" name="state" value="-2" id="21042"/>
+				<var type="Set" name="state" value="-2" id="21041"/>
+			</actions>
+		</embranchment>		
+
+	</quest>
+
+
+
+
+
+</event>

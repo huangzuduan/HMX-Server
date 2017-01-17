@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="10071" name="海贼">
+	<quest id="254" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2091" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20316" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2113" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20318" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_海贼" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_海贼" value="1"/>
+				<refresh name="kill_海贼"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_海贼" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_海贼"/>
+				<notify content="恭喜你完成了失子之痛任务,回李员外处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

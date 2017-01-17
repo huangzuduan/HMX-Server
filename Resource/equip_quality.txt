@@ -1,0 +1,10 @@
+服务器输出文件名	config_equip_quality.xml	根名称	ability				
+客户端输出文件名	config_equip_quality.xml	项名称	equip_quality				
+品质id	次属性数量	附加属性数量	升品需要的道具ID	升品需要的道具数量	升品需要的金币	当前开孔数	新属性描述
+3	3	3	3	3	3	3	1
+quality_idx	secondary_count	additional_count	up_need_item_idx	up_need_item_count	up_need_gold	stone_hole	addition_des
+1	0	0	220030001	10	100	0	随机获得1个新属性
+2	1	1	220030002	10	100	1	随机获得1个新属性
+3	2	2	220030003	10	100	2	随机获得1个新属性
+4	2	2	220030004	10	100	3	随机获得1个新属性
+5	3	3	220030004	10	100	4	

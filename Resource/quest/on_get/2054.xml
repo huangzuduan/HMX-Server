@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2054" name="闪豹皮">
+	<quest id="137" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="137"/>
+				<var type="Less" name="get_闪豹皮" value="10"/>
+				<var type="Differ" name="num" value="2" id="137"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块闪豹皮"/>
+				<var type="Add" name="get_闪豹皮" value="1"/>
+				<var type="Set" name="num" value="1"/>
+				<refresh name="get_闪豹皮"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="137"/>
+				<var type="Differ" name="num" value="2" id="137"/>
+				<var type="Great" name="get_闪豹皮" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="get_闪豹皮" value="10"/>
+				<var type="Set" name="num" value="2"/>
+				<refresh name="get_闪豹皮"/>
+				<notify content="你已收集了10张闪豹皮,去交给颜梦梦"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

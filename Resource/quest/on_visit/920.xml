@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="920" name="幸运之门使者(53,52)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960200">
+		<embranchment id="2">
+			<conditions>
+                                <selfcountry value="1"/>
+				<timer start="10:00:00" end="12:00:00"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级小于120级，我会把你传送到初级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddTaskCmdItem("初级幸运之门一层(0)", "v920", 160020, 10)
+this:AddTaskCmdItem("初级幸运之门二层(0)", "v920", 160020, 11)
+this:AddTaskCmdItem("初级幸运之门三层(0)", "v920", 160020, 12)
+this:AddTaskCmdItem("初级幸运之门四层(0)", "v920", 160020, 13)
+this:AddTaskCmdItem("初级幸运之门五层(0)", "v920", 160020, 14)
+this:AddTaskCmdItem("初级幸运之门六层(0)", "v920", 160020, 15)
+this:AddTaskCmdItem("初级幸运之门七层(0)", "v920", 160020, 16)
+this:AddTaskCmdItem("初级幸运之门八层(0)", "v920", 160020, 17)
+this:AddTaskCmdItem("初级幸运之门九层(0)", "v920", 160020, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+                                <selfcountry value="1"/>
+				<timer start="10:00:00" end="12:00:00"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="150"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级大于120级小于150级，我会把你传送到中级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddTaskCmdItem("中级幸运之门一层(0)", "v920", 160020, 19)
+this:AddTaskCmdItem("中级幸运之门二层(0)", "v920", 160020, 20)
+this:AddTaskCmdItem("中级幸运之门三层(0)", "v920", 160020, 21)
+this:AddTaskCmdItem("中级幸运之门四层(0)", "v920", 160020, 22)
+this:AddTaskCmdItem("中级幸运之门五层(0)", "v920", 160020, 23)
+this:AddTaskCmdItem("中级幸运之门六层(0)", "v920", 160020, 24)
+this:AddTaskCmdItem("中级幸运之门七层(0)", "v920", 160020, 25)
+this:AddTaskCmdItem("中级幸运之门八层(0)", "v920", 160020, 26)
+this:AddTaskCmdItem("中级幸运之门九层(0)", "v920", 160020, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+                                <selfcountry value="1"/>
+				<timer start="10:00:00" end="12:00:00"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="149"/>
+				<level type="Less" value="171"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级大于或等于150级，我会把你传送到高级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddTaskCmdItem("高级幸运之门一层(0)", "v920", 160020, 28)
+this:AddTaskCmdItem("高级幸运之门二层(0)", "v920", 160020, 29)
+this:AddTaskCmdItem("高级幸运之门三层(0)", "v920", 160020, 30)
+this:AddTaskCmdItem("高级幸运之门四层(0)", "v920", 160020, 31)
+this:AddTaskCmdItem("高级幸运之门五层(0)", "v920", 160020, 32)
+this:AddTaskCmdItem("高级幸运之门六层(0)", "v920", 160020, 33)
+this:AddTaskCmdItem("高级幸运之门七层(0)", "v920", 160020, 34)
+this:AddTaskCmdItem("高级幸运之门八层(0)", "v920", 160020, 35)
+this:AddTaskCmdItem("高级幸运之门九层(0)", "v920", 160020, 36)
+end
+
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+                                <selfcountry value="1"/>
+				<timer start="20:00:00" end="22:00:00"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级小于120级，我会把你传送到初级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddTaskCmdItem("初级幸运之门一层(0)", "v920", 160020, 10)
+this:AddTaskCmdItem("初级幸运之门二层(0)", "v920", 160020, 11)
+this:AddTaskCmdItem("初级幸运之门三层(0)", "v920", 160020, 12)
+this:AddTaskCmdItem("初级幸运之门四层(0)", "v920", 160020, 13)
+this:AddTaskCmdItem("初级幸运之门五层(0)", "v920", 160020, 14)
+this:AddTaskCmdItem("初级幸运之门六层(0)", "v920", 160020, 15)
+this:AddTaskCmdItem("初级幸运之门七层(0)", "v920", 160020, 16)
+this:AddTaskCmdItem("初级幸运之门八层(0)", "v920", 160020, 17)
+this:AddTaskCmdItem("初级幸运之门九层(0)", "v920", 160020, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+                                <selfcountry value="1"/>
+				<timer start="20:00:00" end="22:00:00"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="150"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级大于120级小于150级，我会把你传送到中级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddTaskCmdItem("中级幸运之门一层(0)", "v920", 160020, 19)
+this:AddTaskCmdItem("中级幸运之门二层(0)", "v920", 160020, 20)
+this:AddTaskCmdItem("中级幸运之门三层(0)", "v920", 160020, 21)
+this:AddTaskCmdItem("中级幸运之门四层(0)", "v920", 160020, 22)
+this:AddTaskCmdItem("中级幸运之门五层(0)", "v920", 160020, 23)
+this:AddTaskCmdItem("中级幸运之门六层(0)", "v920", 160020, 24)
+this:AddTaskCmdItem("中级幸运之门七层(0)", "v920", 160020, 25)
+this:AddTaskCmdItem("中级幸运之门八层(0)", "v920", 160020, 26)
+this:AddTaskCmdItem("中级幸运之门九层(0)", "v920", 160020, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+                                <selfcountry value="1"/>
+				<timer start="20:00:00" end="22:00:00"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="149"/>
+				<level type="Less" value="171"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级大于或等于150级，我会把你传送到高级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddTaskCmdItem("高级幸运之门一层(0)", "v920", 160020, 28)
+this:AddTaskCmdItem("高级幸运之门二层(0)", "v920", 160020, 29)
+this:AddTaskCmdItem("高级幸运之门三层(0)", "v920", 160020, 30)
+this:AddTaskCmdItem("高级幸运之门四层(0)", "v920", 160020, 31)
+this:AddTaskCmdItem("高级幸运之门五层(0)", "v920", 160020, 32)
+this:AddTaskCmdItem("高级幸运之门六层(0)", "v920", 160020, 33)
+this:AddTaskCmdItem("高级幸运之门七层(0)", "v920", 160020, 34)
+this:AddTaskCmdItem("高级幸运之门八层(0)", "v920", 160020, 35)
+this:AddTaskCmdItem("高级幸运之门九层(0)", "v920", 160020, 36)
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<gold type="Less" value="400"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级小于120级，我会把你传送到初级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddDialogItem("初级幸运之门一层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门二层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门三层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门四层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门五层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门六层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门七层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门八层(0)", "Dialog97")
+this:AddDialogItem("初级幸运之门九层(0)", "Dialog97")
+end
+function Dialog97()
+this:AddTalk("对不起，你的钱不够或等级不符，请凑够4两再来。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<gold type="Less" value="1000"/>
+				<level type="Less" value="150"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级大于120级小于150级，我会把你传送到初中级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddDialogItem("中级幸运之门一层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门二层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门三层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门四层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门五层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门六层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门七层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门八层(0)", "Dialog98")
+this:AddDialogItem("中级幸运之门九层(0)", "Dialog98")
+end
+function Dialog98()
+this:AddTalk("对不起，你的钱不够或等级不符，请凑够10两再来。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<gold type="Less" value="2000"/>
+				<level type="Great" value="149"/>
+				<level type="Less" value="171"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你好，我是幸运之门传送使者，您的等级大于或等于150级，我会把你传送到高级幸运之门。\n    幸运之门开放时间：10点-12点；20点-22点。")
+this:AddDialogItem("高级幸运之门一层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门二层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门三层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门四层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门五层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门六层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门七层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门八层(0)", "Dialog99")
+this:AddDialogItem("高级幸运之门九层(0)", "Dialog99")
+end
+function Dialog99()
+this:AddTalk("对不起，你的钱不够或等级不符，请凑够20两再来。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160020" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门一层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门一层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门二层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门二层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门三层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门三层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门四层" pos="53,55"/>
+				<notify content="初级幸运之门四层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门五层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门五层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门六层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门六层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门七层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门七层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门八层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门八层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<goto name="初级幸运之门九层" pos="53,55"/>
+				<notify content="你被带到了初级幸运之门九层，用掉了4两银子"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门一层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门一层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门二层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门二层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门三层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门三层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门四层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门四层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门五层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门五层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="24" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门六层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门六层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门七层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门七层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门八层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门八层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中级幸运之门九层" pos="53,55"/>
+				<notify content="你被带到了中级幸运之门九层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="28" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门一层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门一层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="29" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门二层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门二层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="30" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门三层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门三层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门四层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门四层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门五层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门五层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门六层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门六层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="34" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门七层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门七层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="35" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门八层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门八层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="36" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<goto name="高级幸运之门九层" pos="53,55"/>
+				<notify content="你被带到了高级幸运之门九层，用掉了20两银子"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

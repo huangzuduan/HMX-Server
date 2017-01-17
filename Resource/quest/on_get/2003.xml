@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2003" name="蛇牙">
+	<quest id="116" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="116"/>
+				<var type="Less" name="get_蛇牙" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一颗蛇牙"/>
+				<var type="Add" name="get_蛇牙" value="1"/>
+				<refresh name="get_蛇牙"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="116"/>
+				<var type="Great" name="get_蛇牙" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="116"/>
+				<refresh name="state"/>
+				<refresh name="get_蛇牙"/>
+				<notify content="恭喜你完成了收集蛇牙的任务,回白善(268,200)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

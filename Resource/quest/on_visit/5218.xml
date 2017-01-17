@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5218" name="边境-托运伙计(370,250)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960105">
+		<embranchment id="9">
+			<conditions>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是边境的托运伙计，我可以把你带到边境传送者处，现在出发吗？")
+this:AddTaskCmdItem("边境传送者-2两(0)", "v5218", 160105, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="1"/>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是边境的托运伙计，我可以把你带到边境传送者处，现在出发吗？");
+this:AddDialogItem("边境传送者-2两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="19">
+			<conditions>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是边境的托运伙计，我可以把你带到边境传送者处，现在出发吗？")
+this:AddTaskCmdItem("边境传送者-40两(0)", "v5218", 160105, 111)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<selfcountry value="0"/>
+				<gold type="Less" value="4000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是边境的托运伙计，我可以把你带到边境传送者处，现在出发吗？");
+this:AddDialogItem("边境传送者-40两(0)", "Dialog99")
+this:AddCloseItem("离开")
+end
+function Dialog99()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160105" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<selfcountry value="1"/>
+				<isguard/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="122,141"/>
+				<notify content="你被马车载到了边境传送者处，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<selfcountry value="1"/>
+				<isguard/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="122,141"/>
+				<notify content="你被马车载到了边境，付了5两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="111" active="1">
+			<conditions>
+				<selfcountry value="0"/>
+				<isguard/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="边境" pos="122,141"/>
+				<notify content="你被马车载到了边境传送者处，付了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="112" active="1">
+			<conditions>
+				<selfcountry value="0"/>
+				<isguard/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+                                <gold type="Sub" value="4000"/>
+				<goto name="边境" pos="122,141"/>
+				<notify content="你被马车载到了边境，付了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

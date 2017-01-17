@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="58005" name="王城国旗">
+	<quest id="50014" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="王城国旗：1/1"/>
+				<notify content="恭喜你完成了破坏敌国王城国旗的任务,回帮会任务发布者处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

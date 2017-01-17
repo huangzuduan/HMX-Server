@@ -1,0 +1,10 @@
+服务端文件名		根据名称	root							
+客户端文件名	pet.xml	项名称	item							
+地图ID	区域文件	场景阻挡文件								
+3	3	3								
+id	zonefile	scenefile								
+101	main_zone.zps	main_scene.mps								
+										
+										
+										
+										

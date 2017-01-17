@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!--1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域  512国占复活区  256国战传送区  1024去内景后的区域  4096 攻方集合区域帮会战争 2048 国家战争拉人区域    8192国战时为绝对安全区，平时为非安全区 16384帮会所属地第三方跳转区    131072 比武岛低经验区
+262144, 比武岛中经验区
+524288,比武岛高经验区   32768皇城战守方复活区      65536皇城战攻方复活区   1048576 平时为绝对安全区，NPC争夺战时，只有交战双方才能PK
+
+ZONE_SPA_WARM	= 2097152,	//温泉温水区
+ZONE_SPA_HOT	= 4194304,	//温泉热水区
+-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="10" y="30"/>
+		<point x="10" y="29"/>
+		<point x="11" y="29"/>
+		<point x="10" y="30"/>
+		<point x="10" y="29"/>
+		<point x="11" y="29"/>
+		<point x="10" y="30"/>
+		<point x="10" y="30"/>
+		<point x="10" y="29"/>
+		<point x="11" y="29"/>
+		<dest name="shiwai" country="6" x="116" y="199"/>
+		<dest name="shiwai" country="6" x="117" y="199"/>
+		<dest name="shiwai" country="6" x="118" y="199"/>
+		<dest name="shiwai" country="6" x="119" y="199"/>
+		<dest name="shiwai" country="6" x="120" y="199"/>
+		<dest name="shiwai" country="6" x="116" y="200"/>
+		<dest name="shiwai" country="6" x="117" y="200"/>
+		<dest name="shiwai" country="6" x="118" y="200"/>
+		<dest name="shiwai" country="6" x="119" y="200"/>
+		<dest name="shiwai" country="6" x="120" y="200"/>
+	</waypoint>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="100" height="100" x="1" y="1" type="2" color="0,0,255,0"/>
+</map>

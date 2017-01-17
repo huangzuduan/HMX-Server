@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5223" name="王城-小金猪(793,493）">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30232">
+		<embranchment id="1">
+			<conditions>
+				<level type="Less" value="80"/>
+				<var type="Differ" name="state" value="-1" id="20244"/>
+				<var type="Differ" name="state" value="1" id="20244"/>
+				<var type="Differ" name="state" value="-3" id="20244"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谁能打败白骨洞十层的飞天猪，我就送他一份房契.可惜你等级不满80级，这么重要的事我不能交给你去做！")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="79"/>
+				<var type="Differ" name="state" value="-1" id="20244"/>
+				<var type="Differ" name="state" value="1" id="20244"/>
+				<var type="Differ" name="state" value="-3" id="20244"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：房契(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("    白骨洞十层的飞天猪是我的兄弟，可是他总是欺负我，如果你帮我去教训教训他，我就送你一份房契！")
+this:AddTaskCmdItem("接受任务{10001}", "v5223", 20244, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="state" value="-1" id="20244"/>
+				<var type="Differ" name="state" value="1" id="20244"/>
+				<var type="Equal" name="state" value="-3" id="20244"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到你那么厉害，按约定就送给你一份房契吧。")
+this:AddTaskCmdItem("接受奖励{10002}", "v5223", 20244, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="20244"/>
+				<var type="Differ" name="state" value="1" id="20244"/>
+				<var type="Equal" name="state" value="-3" id="20244"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，我不能按约定把房契交给你。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20244" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="79"/>
+				<var type="Differ" name="state" value="-1" id="20244"/>
+				<var type="Differ" name="state" value="1" id="20244"/>
+				<var type="Differ" name="state" value="-3" id="20244"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="任务：打败白骨洞十层的飞天猪！"/>
+				<notify content="任务：打败白骨洞十层的飞天猪！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="1" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="state" value="-1" id="20244"/>
+				<var type="Differ" name="state" value="1" id="20244"/>
+				<var type="Equal" name="state" value="-3" id="20244"/>
+			</conditions>
+			<actions>
+				<addbinditem value="1" id="4299"/>
+				<notify1 content="恭喜你得到一份房契！"/>
+				<notify content="恭喜你得到一份房契！"/>
+				<var type="Set" name="state" value="-2" id="20244"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

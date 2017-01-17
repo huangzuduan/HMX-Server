@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="506" name="凤尾村-难民(75,79)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30338">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="29"/>
+				<var type="Differ" name="state" value="-1" id="20338"/>
+				<var type="Differ" name="state" value="1" id="20338"/>
+				<var type="Differ" name="state" value="-3" id="20338"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：难民(2)", "Dialog17")
+end
+function Dialog17()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;难民\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    难民需要5个甜果做食物，搜集5个甜果来交给难民吧。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    呜呜呜我家被山贼洗劫一空，已经三天没有吃饭了。谁给我点吃的，哪怕是几个野果子也好啊！你能帮我摘几个甜果么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好啊{10001}", "v506", 20338, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="5" id="1903"/>
+				<var type="Differ" name="state" value="-1" id="20338"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：难民(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;难民\n \n&lt;/n&gt;&lt;n&gt;    啊，谢谢，谢谢！这难道就是传说中的甜果么，好香的甜果啊。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("看来你们真的饿了{10002}", "v506", 20338, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20338" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="29"/>
+				<var type="Differ" name="state" value="-1" id="20338"/>
+				<var type="Differ" name="state" value="1" id="20338"/>
+				<var type="Differ" name="state" value="-3" id="20338"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去收集5个甜果"/>
+				<notify content="任务：收集5个交给难民"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="5" id="1903"/>
+				<var type="Differ" name="state" value="-1" id="20338"/>
+			</conditions>
+			<actions>
+				<exp value="6000"/>
+				<removeitem value="5" id="1903" log="交难民(20338)-删除5个甜果(1903)"/>
+				<notify1 content="经验+6000"/>
+				<notify content="恭喜你完成了“难民”任务"/>
+				<var type="Set" name="state" value="-1" id="20338"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30339">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20338"/>
+				<var type="Differ" name="state" value="-1" id="20339"/>
+				<var type="Differ" name="state" value="1" id="20339"/>
+				<var type="Differ" name="state" value="-3" id="20339"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：保暖(2)", "Dialog71")
+end
+function Dialog71()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;保暖\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败山贼收集20套山贼衣服，然后交给难民。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，苦啊眼看天气一点点冷了，我还没有衣服穿。好冷啊！\n    山贼们抢我的家当，我好想抢回来！他们就躲在山寨前哨，你去山寨前哨帮我找20套衣服，我分发给乡亲们？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 14000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题{10001}", "v506", 20339, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="20" id="2095"/>
+				<var type="Equal" name="state" value="-3" id="20339"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：保暖(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;保暖\n \n&lt;/n&gt;&lt;n&gt;    衣服……这么多衣服！你这么快就把20套衣服送过来了，我真是感动啊！恩公请受我一拜。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 14000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不必客气{10002}", "v506", 20339, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20339" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20338"/>
+				<var type="Differ" name="state" value="-1" id="20339"/>
+				<var type="Differ" name="state" value="1" id="20339"/>
+				<var type="Differ" name="state" value="-3" id="20339"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败山贼取20套山贼衣服"/>
+				<notify1 content="去收集20套山贼衣服"/>
+				<notify content="任务：去打败山贼，难民需要山贼的衣服"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="20" id="2095"/>
+				<var type="Equal" name="state" value="-3" id="20339"/>
+			</conditions>
+			<actions>
+				<exp value="14000"/>
+				<removeitem value="20" id="2095" log="交保暖(20339)-删除20个山贼衣服(2095)"/>
+				<notify1 content="经验+14000"/>
+				<notify content="恭喜你完成了“保暖”任务"/>
+				<var type="Set" name="state" value="-1" id="20339"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30340">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20339"/>
+				<var type="Differ" name="state" value="-1" id="20340"/>
+				<var type="Differ" name="state" value="1" id="20340"/>
+				<var type="Differ" name="state" value="-3" id="20340"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：武装(2)", "Dialog51")
+end
+function Dialog51()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;武装\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败山贼收集20件山贼武器，然后交给难民。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    可恨的山贼，时时下山抢掠。\n    我们没有武器自卫，下次山贼来时还是无能为力。你能不能帮我抢回来20件山贼们的武器，我分发给乡亲们？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 15600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题{10001}", "v506", 20340, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="20" id="2016"/>
+				<var type="Equal" name="state" value="-3" id="20340"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：武装(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;武装\n \n&lt;/n&gt;&lt;n&gt;    武器……这么多武器！你这么快就把20件山贼武器送过来了，我真是感动啊！恩公请受我一拜。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 15600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不必客气{10002}", "v506", 20340, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20340" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20339"/>
+				<var type="Differ" name="state" value="-1" id="20340"/>
+				<var type="Differ" name="state" value="1" id="20340"/>
+				<var type="Differ" name="state" value="-3" id="20340"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败山贼取20件山贼武器"/>
+				<notify1 content="去收集20件山贼武器"/>
+				<notify content="任务：去打败山贼，难民需要山贼的武器"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="20" id="2016"/>
+				<var type="Equal" name="state" value="-3" id="20340"/>
+			</conditions>
+			<actions>
+				<exp value="15600"/>
+				<removeitem value="20" id="2016" log="交武装(20340)-删除20个山贼武器(2016)"/>
+				<notify1 content="经验+15600"/>
+				<notify content="恭喜你完成了“武装”任务"/>
+				<var type="Set" name="state" value="-1" id="20340"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30341">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20340"/>
+				<var type="Differ" name="state" value="-3" id="20341"/>
+				<var type="Differ" name="state" value="-1" id="20341"/>
+				<var type="Differ" name="state" value="1" id="20341"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：疏散(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;疏散\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    替难民把子女送到凤凰城闻广处\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这里实在太危险了，吃不饱穿不暖，又时时刻刻担忧性命不保。请将我的子女带走好么？带到凤凰城去妥善安置，我们才能放心抵御山贼。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 16000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("放心吧{10001}", "v506", 20341, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20341" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20340"/>
+				<var type="Differ" name="state" value="-3" id="20341"/>
+				<var type="Differ" name="state" value="-1" id="20341"/>
+				<var type="Differ" name="state" value="1" id="20341"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找闻广"/>
+				<addguard id="54002" map="凤凰城" ltpos="73,76" rbpos="79,84" gold="0" exp="0" dest="393,397"/>
+				<notify1 content="闻广"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30345">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="35"/>
+				<var type="Equal" name="state" value="-1" id="20341"/>
+				<var type="Differ" name="state" value="-1" id="20345"/>
+				<var type="Differ" name="state" value="1" id="20345"/>
+				<var type="Differ" name="state" value="-3" id="20345"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：抵抗(2)", "Dialog67")
+end
+function Dialog67()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;抵抗\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    打败50个山贼战士，然后再回到难民处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    山贼们实在太可恶了！要是有人能帮我们消灭山贼就好了。你愿意去么？如果去的话，打败50个山贼战士就好。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 23000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("为民除害，替天行道{10001}", "v506", 20345, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20345"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：抵抗(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;抵抗\n \n&lt;/n&gt;&lt;n&gt;    嗯，太好了。这一下山贼们遭到重创，应该好久不敢来骚扰百姓了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 23000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不知何时才能彻底解决这些山贼{10002}", "v506", 20345, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20345"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么又回来了，山贼战士还是很多，你到底干什么去了。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20345" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="35"/>
+				<var type="Differ" name="state" value="-1" id="20345"/>
+				<var type="Differ" name="state" value="1" id="20345"/>
+				<var type="Differ" name="state" value="-3" id="20345"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：帮难民打败50个山贼战士"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20345"/>
+			</conditions>
+			<actions>
+				<exp value="23000"/>
+				<notify1 content="经验+23000"/>
+				<notify content="恭喜你完成了“抵抗”任务"/>
+				<var type="Set" name="state" value="-1" id="20345"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30346">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20345"/>
+				<var type="Differ" name="state" value="-1" id="20346"/>
+				<var type="Differ" name="state" value="1" id="20346"/>
+				<var type="Differ" name="state" value="-3" id="20346"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：宝盒(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;宝盒\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    从山贼法师处夺回难民的宝盒还给难民。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    以前偶然得到了一个宝盒，结果被山贼们抢走了。你能帮我抢回来么？我记得是被一个山贼法师抢走的。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 25400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10001}", "v506", 20346, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20346"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：宝盒(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;宝盒\n \n&lt;/n&gt;&lt;n&gt;    呀，这不是我的宝盒么，你这么快就帮我找到啦，真是太感谢你了！这下子，我跟乡亲们有饭吃了。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 25400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不知何时才能彻底解决这些山贼{10002}", "v506", 20346, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20346"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么又回来了，宝盒没有帮我抢回来吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20346" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20345"/>
+				<var type="Differ" name="state" value="-1" id="20346"/>
+				<var type="Differ" name="state" value="1" id="20346"/>
+				<var type="Differ" name="state" value="-3" id="20346"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：帮难民从山贼法师处夺回宝盒"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20346"/>
+			</conditions>
+			<actions>
+				<exp value="25400"/>
+				<notify1 content="经验+25400"/>
+				<notify content="恭喜你完成了“宝盒”任务"/>
+				<var type="Set" name="state" value="-1" id="20346"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30347">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20346"/>
+				<var type="Differ" name="state" value="-1" id="20347"/>
+				<var type="Differ" name="state" value="1" id="20347"/>
+				<var type="Differ" name="state" value="-3" id="20347"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：商人(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;商人\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    帮难民把宝盒卖掉，将赚来的银两交给难民。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这个宝盒留在这里也没什么用，一直很想卖了它，又担心会受人骗，请您帮我们卖了它好么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的{10001}", "v506", 20347, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2120"/>
+				<var type="Equal" name="state" value="-3" id="20347"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：商人(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;商人\n \n&lt;/n&gt;&lt;n&gt;    卖了银子么？啊，这么多啊，够我们用好一阵子的了。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那就好{10002}", "v506", 20347, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20347" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20346"/>
+				<var type="Differ" name="state" value="-1" id="20347"/>
+				<var type="Differ" name="state" value="1" id="20347"/>
+				<var type="Differ" name="state" value="-3" id="20347"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="帮难民卖宝盒赚钱"/>
+				<notify1 content="找人把难民的宝盒卖了"/>
+				<notify content="任务：把宝盒卖了，赚的银子还给难民。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2120"/>
+				<var type="Equal" name="state" value="-3" id="20347"/>
+			</conditions>
+			<actions>
+				<exp value="4100"/>
+				<removeitem value="1" id="2120" log="交商人(20347)-删除银票(2120)"/>
+				<notify1 content="经验+4100"/>
+				<notify content="恭喜你完成了“商人”任务"/>
+				<var type="Set" name="state" value="-1" id="20347"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

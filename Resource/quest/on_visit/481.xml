@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="481" name="凤凰城-沙红芋(322,392)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10252">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="252"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：下酒菜(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;下酒菜\n \n&lt;/n&gt;&lt;n&gt;    三珍五行羹啊，这道传说中菜肴的原料可是极其难得的！它需要飞禽，海鲜还有走兽的肉混合烧制才行。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("哪几种肉？{10002}", "v481", 252, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="252" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="252"/>
+			</conditions>
+			<actions>
+				<exp value="1800"/>
+				<notify1 content="经验+1800"/>
+				<notify content="恭喜你完成了“下酒菜”任务"/>
+				<var type="Set" name="state" value="-1" id="252"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10253">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="252"/>
+				<var type="Differ" name="state" value="-1" id="253"/>
+				<var type="Differ" name="state" value="1" id="253"/>
+				<var type="Differ" name="state" value="-3" id="253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：飞禽(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;飞禽\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败彩翼鸟(513,544)收集10块翼鸟肉，然后交给大厨沙红芋(322,392)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    需要天上飞的一味，叫做彩翼鸟，在城南快到海岸的地方就有。你要拿来翼鸟肉才行。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这难不倒我{10001}", "v481", 253, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2090"/>
+				<var type="Equal" name="state" value="-3" id="253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：飞禽(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;飞禽\n \n&lt;/n&gt;&lt;n&gt;    果然来得快。这第二味嘛……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("第二味是何种肉类{10002}", "v481", 253, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="253" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="252"/>
+				<var type="Differ" name="state" value="-1" id="253"/>
+				<var type="Differ" name="state" value="1" id="253"/>
+				<var type="Differ" name="state" value="-3" id="253"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败彩翼鸟取10块翼鸟肉"/>
+				<notify1 content="打败彩翼鸟取10块翼鸟肉"/>
+				<notify content="任务：去(513,544)打败彩翼鸟，大厨师需要10块翼鸟肉"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2090"/>
+				<var type="Equal" name="state" value="-3" id="253"/>
+			</conditions>
+			<actions>
+				<exp value="5400"/>
+				<removeitem value="10" id="2090" log="交飞禽(253)-删除10个翼鸟肉(2090)"/>
+				<notify1 content="经验+5400"/>
+				<notify content="恭喜你完成了“飞禽”任务"/>
+				<var type="Set" name="state" value="-1" id="253"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10254">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="253"/>
+				<var type="Differ" name="state" value="-1" id="254"/>
+				<var type="Differ" name="state" value="1" id="254"/>
+				<var type="Differ" name="state" value="-3" id="254"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：海鲜(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;海鲜\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败海贼(507,700)收集10个贝壳，然后交给大厨沙红芋(322,392)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你别急嘛！有天上飞的自然有水里游的。海岸那里的海贼喜欢吃贝壳，帮我从海贼那里抢几个贝壳。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧{10001}", "v481", 254, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2091"/>
+				<var type="Equal" name="state" value="-1" id="253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：海鲜(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;海鲜\n \n&lt;/n&gt;&lt;n&gt;    果然英雄出少年！竟然连海贼手里的贝壳都能抢来。那么就差一味走兽了……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那是何种肉{10002}", "v481", 254, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="254" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="253"/>
+				<var type="Differ" name="state" value="-1" id="254"/>
+				<var type="Differ" name="state" value="1" id="254"/>
+				<var type="Differ" name="state" value="-3" id="254"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败海贼取10个贝壳"/>
+				<notify1 content="打败海贼收集10个贝壳"/>
+				<notify content="任务：去海岸(507,700)打败海贼，大厨师需要10个贝壳"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2091"/>
+				<var type="Equal" name="state" value="-1" id="253"/>
+			</conditions>
+			<actions>
+				<exp value="6200"/>
+				<removeitem value="10" id="2091" log="交海鲜(254)-删除10个贝壳(2091)"/>
+				<notify1 content="经验+6200"/>
+				<notify content="恭喜你完成了“海鲜”任务"/>
+				<var type="Set" name="state" value="-1" id="254"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="107" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="20"/>
+				<var type="Equal" name="state" value="-1" id="254"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，去修炼到20级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10255">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="19"/>
+				<var type="Equal" name="state" value="-1" id="254"/>
+				<var type="Differ" name="state" value="-1" id="255"/>
+				<var type="Differ" name="state" value="1" id="255"/>
+				<var type="Differ" name="state" value="-3" id="255"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：走兽(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;走兽\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去百兽谷附近打熊(267,670)，收集10个熊掌，然后交给大厨沙红芋(322,392)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哎呀，有飞禽、有海鲜，还欠有走兽了。\n    去给我弄10个熊掌来。靠近百兽谷入口的地方，那里有很多熊。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去了。{10001}", "v481", 255, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2092"/>
+				<var type="Equal" name="state" value="-3" id="255"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：走兽(2)", "Dialog55")
+end
+function Dialog55()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;走兽\n \n&lt;/n&gt;&lt;n&gt;    熊掌也拿来了？好，我这就开始做。做这道菜啊，可不简单。还需要五味重要的调料，分占五行，不过不需要你帮我找。这第一味啊……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好了好了，你快点烧菜吧。{10002}", "v481", 255, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="255" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+				<var type="Equal" name="state" value="-1" id="254"/>
+				<var type="Differ" name="state" value="-1" id="255"/>
+				<var type="Differ" name="state" value="1" id="255"/>
+				<var type="Differ" name="state" value="-3" id="255"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="state" value="-2" id="107"/>
+				<notify content="去兽王谷附近(267,670)打熊取10个熊掌"/>
+				<notify1 content="兽王谷附近(267,670)打熊收集10个熊掌"/>
+				<notify content="任务：去兽王谷附近(267,670)打熊，大厨师需要10个熊掌"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2092"/>
+				<var type="Equal" name="state" value="-3" id="255"/>
+			</conditions>
+			<actions>
+				<exp value="7000"/>
+				<removeitem value="10" id="2092" log="交走兽(255)-删除熊掌(2092)"/>
+				<notify1 content="经验+7000"/>
+				<notify content="恭喜你完成了“走兽”任务"/>
+				<notify1 content="完成了“走兽”"/>
+				<var type="Set" name="state" value="-1" id="255"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10256">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="255"/>
+				<var type="Differ" name="state" value="-3" id="256"/>
+				<var type="Differ" name="state" value="-1" id="256"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：三珍五行羹(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;三珍五行羹\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将三珍五行羹送给玄真道长(282,323)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，三珍五行羹烧好了。你可真是个急性子啊。这三珍五行羹啊，乃是……哎，别走啊……\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("下次再来领教，后会有期。{10001}", "v481", 256, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="255"/>
+				<var type="Differ" name="state" value="-3" id="256"/>
+				<var type="Differ" name="state" value="-1" id="256"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空一些再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="256" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="255"/>
+				<var type="Differ" name="state" value="-3" id="256"/>
+				<var type="Differ" name="state" value="-1" id="256"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<additem value="1" id="2089"/>
+				<notify1 content="得到三珍五行羹"/>
+				<notify content="任务：去找玄真道长(282,323)"/>
+				<notify1 content="玄真道长(282,323)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10262">
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2093"/>
+				<var type="Equal" name="num" value="1" id="262"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要吃蝎子肉？这是你的蝎子肉。我已经细心烹煮过了，可以放心吃。")
+this:AddTaskCmdItem("多谢。{10002}", "v481", 262, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="262" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2093"/>
+				<var type="Equal" name="num" value="1" id="262"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="2093" log="换蝎肉菜(262:2094)-删除10个蝎肉(2093)"/>
+				<additem value="1" id="2094"/>
+				<notify1 content="得到蝎肉大餐，可以去找犯人(189,473)了"/>
+				<var type="Set" name="state" value="-3" id="262"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

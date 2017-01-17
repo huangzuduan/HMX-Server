@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<waypoint>
+		<point x="155" y="278"/>
+		<point x="155" y="279"/>
+		<point x="155" y="280"/>
+		<point x="155" y="281"/>
+		<point x="156" y="278"/>
+		<point x="156" y="279"/>
+		<point x="156" y="280"/>
+		<point x="156" y="281"/>
+		<point x="155" y="278"/>
+		<point x="155" y="279"/>
+		<point x="155" y="280"/>
+		<point x="155" y="281"/>
+		<point x="156" y="278"/>
+		<point x="156" y="279"/>
+		<point x="156" y="280"/>
+		<point x="156" y="281"/>
+		<dest name="wangmu3" country="6" x="161" y="46"/>
+		<dest name="wangmu3" country="6" x="162" y="46"/>
+		<dest name="wangmu3" country="6" x="163" y="46"/>
+		<dest name="wangmu3" country="6" x="164" y="46"/>
+		<dest name="wangmu3" country="6" x="165" y="46"/>
+		<dest name="wangmu3" country="6" x="166" y="46"/>
+		<dest name="wangmu3" country="6" x="167" y="46"/>
+		<dest name="wangmu3" country="6" x="168" y="46"/>
+		<dest name="wangmu3" country="6" x="161" y="46"/>
+		<dest name="wangmu3" country="6" x="162" y="46"/>
+		<dest name="wangmu3" country="6" x="163" y="46"/>
+		<dest name="wangmu3" country="6" x="164" y="46"/>
+		<dest name="wangmu3" country="6" x="165" y="46"/>
+		<dest name="wangmu3" country="6" x="166" y="46"/>
+		<dest name="wangmu3" country="6" x="167" y="46"/>
+		<dest name="wangmu3" country="6" x="168" y="46"/>
+	</waypoint>
+	<waypoint>
+		<point x="157" y="40"/>
+		<point x="157" y="41"/>
+		<point x="157" y="42"/>
+		<point x="157" y="43"/>
+		<point x="157" y="44"/>
+		<point x="157" y="45"/>
+		<point x="157" y="46"/>
+		<point x="158" y="40"/>
+		<point x="158" y="41"/>
+		<point x="158" y="42"/>
+		<point x="158" y="43"/>
+		<point x="158" y="44"/>
+		<point x="158" y="45"/>
+		<point x="158" y="46"/>
+		<point x="157" y="40"/>
+		<point x="157" y="41"/>
+		<point x="157" y="42"/>
+		<point x="157" y="43"/>
+		<point x="157" y="44"/>
+		<point x="157" y="45"/>
+		<point x="157" y="46"/>
+		<point x="158" y="40"/>
+		<point x="158" y="41"/>
+		<point x="158" y="42"/>
+		<point x="158" y="43"/>
+		<point x="158" y="44"/>
+		<point x="158" y="45"/>
+		<point x="158" y="46"/>
+		<dest name="wangmu5" country="6" x="64" y="206"/>
+		<dest name="wangmu5" country="6" x="65" y="206"/>
+		<dest name="wangmu5" country="6" x="66" y="206"/>
+		<dest name="wangmu5" country="6" x="67" y="206"/>
+		<dest name="wangmu5" country="6" x="68" y="206"/>
+		<dest name="wangmu5" country="6" x="69" y="206"/>
+		<dest name="wangmu5" country="6" x="70" y="206"/>
+		<dest name="wangmu5" country="6" x="71" y="206"/>
+		<dest name="wangmu5" country="6" x="72" y="206"/>
+		<dest name="wangmu5" country="6" x="64" y="206"/>
+		<dest name="wangmu5" country="6" x="65" y="206"/>
+		<dest name="wangmu5" country="6" x="66" y="206"/>
+		<dest name="wangmu5" country="6" x="67" y="206"/>
+		<dest name="wangmu5" country="6" x="68" y="206"/>
+		<dest name="wangmu5" country="6" x="69" y="206"/>
+		<dest name="wangmu5" country="6" x="70" y="206"/>
+		<dest name="wangmu5" country="6" x="71" y="206"/>
+		<dest name="wangmu5" country="6" x="72" y="206"/>
+		<dest name="wangmu5" country="6" x="64" y="206"/>
+		<dest name="wangmu5" country="6" x="65" y="206"/>
+		<dest name="wangmu5" country="6" x="66" y="206"/>
+		<dest name="wangmu5" country="6" x="67" y="206"/>
+		<dest name="wangmu5" country="6" x="68" y="206"/>
+		<dest name="wangmu5" country="6" x="69" y="206"/>
+		<dest name="wangmu5" country="6" x="70" y="206"/>
+		<dest name="wangmu5" country="6" x="71" y="206"/>
+		<dest name="wangmu5" country="6" x="72" y="206"/>
+		<dest name="wangmu5" country="6" x="64" y="206"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="81" y="205" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="14" y="236" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="147" y="237" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="53" y="168" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="25" y="146" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="60" y="128" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="25" y="146" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="155" y="117" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="195" y="213" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="144" y="150" num="35" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="185" y="56" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="144" y="150" num="35" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="106" y="77" num="65" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="218" y="108" num="65" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="214" y="183" num="65" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="77" y="168" num="65" interval="2" color="0,255,0,0"/>
+	<npc id="16520" name="犬戎狂巫" width="10" height="12" x="123" y="261" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="108" y="176" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16523" name="犬戎魔师" width="10" height="12" x="166" y="74" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16518" name="犬戎狂兵(魔)" width="10" height="10" x="107" y="211" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16519" name="犬戎狂卫" width="10" height="10" x="170" y="158" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16521" name="犬戎魔战(魔)" width="10" height="10" x="123" y="109" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16522" name="犬戎魔弓" width="10" height="10" x="194" y="87" num="1" interval="90" color="0,255,0,0"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="240" height="282" x="11" y="16" type="2" color="0,255,0,0"/>
+</map>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<root>
+	<item id="1" Gskill_1="1" Gskill_2="1" Gskill_3="2" Gskill_4="3" Gskill_5="4" first_map_id="10001" cin_x="10" cin_z="10" come_into_area="400" be_off_area="600" init_red="100" init_blue="100" attack_type="1" speed="20"/>
+	<item id="2" Gskill_1="1" Gskill_2="1" Gskill_3="2" Gskill_4="3" Gskill_5="4" first_map_id="10001" cin_x="10" cin_z="10" come_into_area="400" be_off_area="600" init_red="100" init_blue="100" attack_type="1" speed="20"/>
+	<item id="3" Gskill_1="1" Gskill_2="1" Gskill_3="2" Gskill_4="3" Gskill_5="4" first_map_id="10001" cin_x="10" cin_z="10" come_into_area="400" be_off_area="600" init_red="100" init_blue="100" attack_type="1" speed="20"/>
+	<item id="4" Gskill_1="1" Gskill_2="1" Gskill_3="2" Gskill_4="3" Gskill_5="4" first_map_id="10001" cin_x="10" cin_z="10" come_into_area="400" be_off_area="600" init_red="100" init_blue="100" attack_type="1" speed="20"/>
+</root>
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5112" name="武夷王墓十层-传送者(89,139)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960101">
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是死亡禁地的传送者，我可以带你去神秘的武夷王墓十一层，快去探险吧！")
+this:AddTaskCmdItem("死亡禁地-10两(0)", "v5112", 160101, 10)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="1000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是死亡禁地的传送者，我可以带你去神秘的死亡禁地，快去探险吧！")
+this:AddDialogItem("死亡禁地-10锭(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160101" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·死亡禁地" pos="147,126"/>
+				<notify content="你被带到了死亡禁地，用掉了10锭银子"/>
+				<gold type="Sub" value="100000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

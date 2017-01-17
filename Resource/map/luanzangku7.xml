@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<waypoint>
+		<point x="127" y="305"/>
+		<point x="127" y="306"/>
+		<point x="127" y="307"/>
+		<point x="126" y="304"/>
+		<point x="126" y="305"/>
+		<point x="126" y="306"/>
+		<point x="126" y="307"/>
+		<point x="125" y="304"/>
+		<point x="125" y="305"/>
+		<point x="127" y="305"/>
+		<point x="127" y="306"/>
+		<point x="127" y="307"/>
+		<point x="126" y="304"/>
+		<dest name="luanzangku6" country="0" x="15" y="200"/>
+		<dest name="luanzangku6" country="0" x="15" y="201"/>
+		<dest name="luanzangku6" country="0" x="15" y="202"/>
+		<dest name="luanzangku6" country="0" x="15" y="203"/>
+		<dest name="luanzangku6" country="0" x="15" y="204"/>
+		<dest name="luanzangku6" country="0" x="15" y="205"/>
+		<dest name="luanzangku6" country="0" x="15" y="206"/>
+		<dest name="luanzangku6" country="0" x="15" y="207"/>
+		<dest name="luanzangku6" country="0" x="15" y="208"/>
+		<dest name="luanzangku6" country="0" x="15" y="209"/>
+		<dest name="luanzangku6" country="0" x="15" y="210"/>
+		<dest name="luanzangku6" country="0" x="15" y="211"/>
+		<dest name="luanzangku6" country="0" x="15" y="212"/>
+	</waypoint>
+	<waypoint>
+		<point x="183" y="64"/>
+		<point x="183" y="65"/>
+		<point x="183" y="66"/>
+		<point x="183" y="67"/>
+		<point x="183" y="68"/>
+		<point x="182" y="66"/>
+		<point x="182" y="67"/>
+		<point x="182" y="68"/>
+		<point x="183" y="64"/>
+		<point x="183" y="65"/>
+		<point x="183" y="66"/>
+		<point x="183" y="67"/>
+		<point x="183" y="68"/>
+		<point x="182" y="66"/>
+		<dest name="luanzangku8" country="0" x="107" y="291"/>
+		<dest name="luanzangku8" country="0" x="108" y="291"/>
+		<dest name="luanzangku8" country="0" x="109" y="291"/>
+		<dest name="luanzangku8" country="0" x="110" y="291"/>
+		<dest name="luanzangku8" country="0" x="111" y="291"/>
+		<dest name="luanzangku8" country="0" x="112" y="291"/>
+		<dest name="luanzangku8" country="0" x="113" y="291"/>
+		<dest name="luanzangku8" country="0" x="107" y="291"/>
+		<dest name="luanzangku8" country="0" x="108" y="291"/>
+		<dest name="luanzangku8" country="0" x="109" y="291"/>
+		<dest name="luanzangku8" country="0" x="110" y="291"/>
+		<dest name="luanzangku8" country="0" x="111" y="291"/>
+		<dest name="luanzangku8" country="0" x="112" y="291"/>
+		<dest name="luanzangku8" country="0" x="113" y="291"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="20" height="20" x="114" y="290" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="176" y="61" type="1" color="0,0,255,0"/>
+	<npc id="16049" name="狂战僵尸" width="10" height="12" x="80" y="222" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16046" name="噬魂僵尸" width="10" height="12" x="141" y="166" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16038" name="白骨射手" width="10" height="12" x="56" y="219" num="20" interval="5" color="0,255,0,0"/>
+	<npc id="16054" name="厉怨僵尸(魔)" width="10" height="12" x="203" y="236" num="20" interval="5" color="0,255,0,0"/>
+	<npc id="16075" name="白骨邪妖(魔)" width="239" height="202" x="3" y="86" num="8" interval="5" color="0,255,0,0"/>
+	<npc id="16038" name="白骨射手" width="239" height="202" x="3" y="86" num="8" interval="5" color="0,255,0,0"/>
+	<npc id="16054" name="厉怨僵尸(魔)" width="239" height="202" x="3" y="86" num="8" interval="5" color="0,255,0,0"/>
+	<npc id="26221" name="劈头僵尸" width="239" height="202" x="3" y="86" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="21080" name="僵尸" width="239" height="202" x="3" y="86" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="55186" name="草" width="239" height="202" x="3" y="86" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="草" width="239" height="202" x="3" y="86" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55186" name="草" width="239" height="202" x="3" y="86" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55105" name="草" width="239" height="202" x="3" y="86" num="6" interval="1800" color="0,255,0,0"/>
+	<npc id="55221" name="草" width="239" height="202" x="3" y="86" num="4" interval="1800" color="0,255,0,0"/>
+	<npc id="16049" name="狂战僵尸" width="10" height="12" x="178" y="147" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16049" name="狂战僵尸" width="10" height="12" x="116" y="158" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16045" name="战斧白骨(魔)" width="10" height="12" x="14" y="167" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16046" name="噬魂僵尸" width="10" height="12" x="127" y="39" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16046" name="噬魂僵尸" width="10" height="12" x="148" y="250" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16046" name="噬魂僵尸" width="10" height="12" x="196" y="203" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16047" name="白骨先锋" width="10" height="12" x="48" y="116" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16047" name="白骨先锋" width="10" height="12" x="148" y="208" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16047" name="白骨先锋" width="10" height="12" x="94" y="64" num="40" interval="2" color="0,255,0,0"/>
+</map>

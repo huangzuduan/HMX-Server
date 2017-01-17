@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="115" name="95级">
+	<quest id="50031" new="1">
+		<embranchment id="11">
+			<conditions>
+	
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="111"/>
+				<var type="Less" name="woxinchangdankill" value="1000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="woxinchangdankill" value="1"/>
+				<refresh name="woxinchangdankill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+		
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="111"/>
+				<var type="Great" name="woxinchangdankill" value="999"/>
+			</conditions>
+			<actions>
+				<refresh name="woxinchangdankill"/>
+				<notify content="恭喜你完成了今天的卧薪尝胆任务，请回勾践处交任务"/>
+				<notify1 content="卧薪尝胆任务完成"/>
+				<notify1 content="回勾践处交任务"/>
+				<var type="Set" name="state" value="-3" id="50031"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21293" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="level" value="115"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="level" value="115"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify1 content="任务完成，找工具商人"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50001" new="1">
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="116"/>
+				<var type="Less" name="kill" value="100"/>
+				<var type="Differ" name="num" value="300"/>
+<var type="Differ" name="country_killl_num" value="300"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="116"/>
+				<var type="Great" name="kill" value="99"/>
+				<var type="Differ" name="num" value="300"/>
+<var type="Differ" name="country_killl_num" value="300"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的国家任务，请回国交任务"/>
+				<notify1 content="国家任务完成"/>
+				<var type="Set" name="state" value="-3" id="50001"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="21">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="116"/>
+				<var type="Less" name="kill" value="300"/>
+				<var type="Equal" name="num" value="300"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="116"/>
+				<var type="Great" name="kill" value="299"/>
+				<var type="Equal" name="num" value="300"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的国家任务，请回国交任务"/>
+				<notify1 content="国家任务完成"/>
+				<var type="Set" name="state" value="-3" id="50001"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="31">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="116"/>
+				<var type="Less" name="kill" value="300"/>
+				<var type="Equal" name="country_killl_num" value="300"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<selfcountry value="0"/>
+				<mapcountry id="150001" name="r_country"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="116"/>
+				<var type="Great" name="kill" value="299"/>
+				<var type="Equal" name="country_killl_num" value="300"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的国家任务，请回国交任务"/>
+				<notify1 content="国家任务完成"/>
+				<var type="Set" name="state" value="-3" id="50001"/>
+			</actions>
+		</embranchment>
+
+	</quest>
+	<quest id="50003" new="1">
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="96"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="96"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的家族任务，请回家族任务发布员处交任务"/>
+				<var type="Set" name="state" value="-3" id="50003"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50002" new="1">
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="0"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="96"/>
+				<var type="Less" name="kill" value="100"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<selfcountry value="0"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="96"/>
+				<var type="Great" name="kill" value="99"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的帮会任务，请回帮会任务发布员处交任务"/>
+				<notify1 content="帮会任务完成"/>
+				<notify1 content="回帮会任务发布员处交任务"/>
+				<var type="Set" name="state" value="-3" id="50002"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50022" new="1">
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="111"/>
+				<var type="Less" name="kill" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="111"/>
+				<var type="Great" name="kill" value="49"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的家族任务，请回家族任务发布员处交任务"/>
+				<var type="Set" name="state" value="-3" id="50022"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50021" new="1">
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="0"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="111"/>
+				<var type="Less" name="kill" value="100"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill" value="1"/>
+				<refresh name="kill"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<selfcountry value="0"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="level" value="111"/>
+				<var type="Great" name="kill" value="99"/>
+			</conditions>
+			<actions>
+				<refresh name="kill"/>
+				<notify content="恭喜你完成了今天的帮会任务，请回帮会任务发布员处交任务"/>
+				<notify1 content="帮会任务完成"/>
+				<notify1 content="回帮会任务发布员处交任务"/>
+				<var type="Set" name="state" value="-3" id="50021"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

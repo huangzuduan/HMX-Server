@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2052" name="小虫子">
+
+
+	<quest id="21209" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21209"/>
+				<var type="Less" name="get_小虫子" value="4"/>
+			</conditions>
+			<actions>
+				<notify1 content="抓住一条小虫子"/>
+				<var type="Add" name="get_小虫子" value="1"/>
+				<var type="Add" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<var type="Add" name="score" value="1" id="21211"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21209"/>
+				<var type="Great" name="get_小虫子" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<notify1 content="你已收集了5条小虫子,去交给种植童子"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	<quest id="21219" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21219"/>
+				<var type="Less" name="get_小虫子" value="4"/>
+			</conditions>
+			<actions>
+				<notify1 content="抓住一条小虫子"/>
+				<var type="Add" name="get_小虫子" value="1"/>
+				<var type="Add" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<var type="Add" name="score" value="1" id="21211"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21219"/>
+				<var type="Great" name="get_小虫子" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<notify1 content="你已收集了5条小虫子,去交给种植童子"/>
+			</actions>
+		</embranchment>
+	</quest>	
+	
+	
+	<quest id="21229" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21229"/>
+				<var type="Less" name="get_小虫子" value="4"/>
+			</conditions>
+			<actions>
+				<notify1 content="抓住一条小虫子"/>
+				<var type="Add" name="get_小虫子" value="1"/>
+								<var type="Add" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<var type="Add" name="score" value="1" id="21221"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21229"/>
+				<var type="Great" name="get_小虫子" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<notify1 content="你已收集了5条小虫子,去交给种植童子"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+	
+	
+	<quest id="21239" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21239"/>
+				<var type="Less" name="get_小虫子" value="4"/>
+			</conditions>
+			<actions>
+				<notify1 content="抓住一条小虫子"/>
+				<var type="Add" name="get_小虫子" value="1"/>
+								<var type="Add" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<var type="Add" name="score" value="1" id="21231"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21239"/>
+				<var type="Great" name="get_小虫子" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<notify1 content="你已收集了5条小虫子,去交给种植童子"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	<quest id="21249" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21249"/>
+				<var type="Less" name="get_小虫子" value="4"/>
+			</conditions>
+			<actions>
+				<notify1 content="抓住一条小虫子"/>
+				<var type="Add" name="get_小虫子" value="1"/>
+								<var type="Add" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<var type="Add" name="score" value="1" id="21241"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21249"/>
+				<var type="Great" name="get_小虫子" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<notify1 content="你已收集了5条小虫子,去交给种植童子"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21259" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21259"/>
+				<var type="Less" name="get_小虫子" value="4"/>
+			</conditions>
+			<actions>
+				<notify1 content="抓住一条小虫子"/>
+				<var type="Add" name="get_小虫子" value="1"/>
+								<var type="Add" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<var type="Add" name="score" value="1" id="21251"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21259"/>
+				<var type="Great" name="get_小虫子" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<notify1 content="你已收集了5条小虫子,去交给种植童子"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+	
+	
+	
+</event>

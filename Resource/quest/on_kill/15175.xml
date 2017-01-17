@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15175" name="千江镇:恶少(87 444)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20386" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_恶少" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_恶少" value="1"/>
+				<refresh name="kill_恶少"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_恶少" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2152"/>
+				<refresh name="state"/>
+				<refresh name="kill_恶少"/>
+				<notify content="恭喜你已经找到了火灵宝珠,回千江镇－花飞(111,421)处交任务吧"/>
+				<notify1 content="火灵宝珠:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

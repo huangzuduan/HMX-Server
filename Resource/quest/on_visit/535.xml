@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="535" name="千江镇－花飞(111,421)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30381">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2149"/>
+				<var type="Equal" name="state" value="-3" id="20381"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：美言(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;美言\n \n&lt;/n&gt;&lt;n&gt;    你怎么又来了，是不是来感谢我的啊，呵呵。\n    哦，你是说，我们世代侠盗的花家，出了一个受官府褒奖的后人？哦哦哦，这实在太难得了，实乃我花家之幸！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 72600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没错没错。{10002}", "v535", 20381, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20381" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2149"/>
+				<var type="Equal" name="state" value="-3" id="20381"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2149" log="交美言(20381)-删除“忠君爱国”令(2149)"/>
+				<exp value="72600"/>
+				<notify1 content="经验+72600"/>
+				<notify content="恭喜你完成了“美言”任务"/>
+				<var type="Set" name="state" value="-1" id="20381"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30382">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20381"/>
+				<var type="Differ" name="state" value="-1" id="20382"/>
+				<var type="Differ" name="state" value="1" id="20382"/>
+				<var type="Differ" name="state" value="-3" id="20382"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：火焰红石(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;火焰红石\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去北郊(169,270)击败火猪，并收集30颗火焰红石给千江镇－花飞(111,421)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    出了这么优秀的后辈，我们长辈理应奖励她一下对吧？奖励什么呢……哦，对了。北郊有一种“火猪”，体内有一种珍贵的火焰红石，帮我弄30颗好么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 400000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题{10001}", "v535", 20382, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2150"/>
+				<var type="Equal" name="state" value="-3" id="20382"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：火焰红石(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;火焰红石\n \n&lt;/n&gt;&lt;n&gt;    太好了，有了火焰红石，就能够制造火攻的密宝火灵宝珠了。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 400000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("太好了。{10002}", "v535", 20382, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20382" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20381"/>
+				<var type="Differ" name="state" value="-1" id="20382"/>
+				<var type="Differ" name="state" value="1" id="20382"/>
+				<var type="Differ" name="state" value="-3" id="20382"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去北郊(169,270)击败火猪，并收集30颗火焰红石给千江镇－花飞(111,421)"/>
+				<notify content="任务：去北郊(169,270)击败火猪，千江镇－花飞(111,421)需要30颗火焰红石"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2150"/>
+				<var type="Equal" name="state" value="-3" id="20382"/>
+			</conditions>
+			<actions>
+				<exp value="400000"/>
+				<notify1 content="经验+400000"/>
+				<notify content="恭喜你完成了“火焰红石”任务"/>
+				<var type="Set" name="state" value="-1" id="20382"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30383">
+		<embranchment id="5">
+			<conditions>
+				<item value="30" id="2150"/>
+				<var type="Equal" name="state" value="-1" id="20382"/>
+				<var type="Differ" name="state" value="-3" id="20383"/>
+				<var type="Differ" name="state" value="-1" id="20383"/>
+				<var type="Differ" name="state" value="1" id="20383"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：求助方士(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;求助方士\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把火焰红石带给王城里的玄火(288,393)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，请帮我将这些火焰红石拿给方士玄火炼成火灵宝珠好么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 74600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("放心吧。{10001}", "v535", 20383, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20383" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<item value="30" id="2150"/>
+				<var type="Equal" name="state" value="-1" id="20382"/>
+				<var type="Differ" name="state" value="-3" id="20383"/>
+				<var type="Differ" name="state" value="-1" id="20383"/>
+				<var type="Differ" name="state" value="1" id="20383"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把火焰红石带给王城-玄火(288,393)"/>
+				<notify1 content="把火焰红石带给王城里的玄火(288,393)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30385">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2152"/>
+				<var type="Equal" name="state" value="-3" id="20385"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：火灵宝珠(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;火灵宝珠\n \n&lt;/n&gt;&lt;n&gt;    呵呵太好了，送给我那侄女，真是般配啊！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 76600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那是自然。{10002}", "v535", 20385, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20385" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2152"/>
+				<var type="Equal" name="state" value="-3" id="20385"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2152" log="交火灵宝珠(20385)-删除火灵宝珠(2152)"/>
+				<exp value="76600"/>
+				<notify1 content="经验+76600"/>
+				<notify content="恭喜你完成了“火灵宝珠”任务"/>
+				<var type="Set" name="state" value="-1" id="20385"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30386">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20385"/>
+				<var type="Differ" name="state" value="-1" id="20386"/>
+				<var type="Differ" name="state" value="1" id="20386"/>
+				<var type="Differ" name="state" value="-3" id="20386"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：恶少夺宝(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;恶少夺宝\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去击败恶少(87 444)夺回火灵宝珠，然后还给花飞(111,421)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;这……这可怎么办啊！我派人把宝珠送去给我侄女时，被恶少发现，把火灵宝珠抢走了！我在花家一向做文书工作，没有多少武功，又不会抢又不会偷……对了，你帮我从恶少那里抢回来行不？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 398000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10001}", "v535", 20386, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2152"/>
+				<var type="Equal" name="state" value="-3" id="20386"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：恶少夺宝(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;恶少夺宝\n \n&lt;/n&gt;&lt;n&gt;    太好了，你将火灵宝珠夺回来了！实在感谢……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 398000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("下次小心点啊。{10002}", "v535", 20386, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20386" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20385"/>
+				<var type="Differ" name="state" value="-1" id="20386"/>
+				<var type="Differ" name="state" value="1" id="20386"/>
+				<var type="Differ" name="state" value="-3" id="20386"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="从恶少那里夺回火灵宝珠后交给花飞(111,421)"/>
+				<notify content="任务：从恶少那里夺回火灵宝珠后交给花飞(111,421)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2152"/>
+				<var type="Equal" name="state" value="-3" id="20386"/>
+			</conditions>
+			<actions>
+				<exp value="398000"/>
+				<removeitem value="1" id="2152" log="交恶少夺宝(20386)-删除火灵宝珠(2152)"/>
+				<notify1 content="经验+398000"/>
+				<notify content="恭喜你完成了“恶少夺宝”任务"/>
+				<var type="Set" name="state" value="-1" id="20386"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30387">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20386"/>
+				<var type="Differ" name="state" value="-3" id="20387"/>
+				<var type="Differ" name="state" value="-1" id="20387"/>
+				<var type="Differ" name="state" value="1" id="20387"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：推荐人才(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;推荐人才\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去问白善(268,200)为什么上次的药没有效果。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，若我派人送去的话，说不定又会被抢。可否请你帮我送去？我那侄女，可是这一代中最有希望继承“花盗幽狐”的了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 78600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10001}", "v535", 20387, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20387" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20386"/>
+				<var type="Differ" name="state" value="-3" id="20387"/>
+				<var type="Differ" name="state" value="-1" id="20387"/>
+				<var type="Differ" name="state" value="1" id="20387"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把火灵宝珠送给王城-花灵(241,354)"/>
+				<notify1 content="把火灵宝珠送给王城-花灵(241,354)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30392">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20392"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：为民造福(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;为民造福\n \n&lt;/n&gt;&lt;n&gt;    嗯，那些恶人确实可恶，你跟花灵能够想到为千江镇的百姓除害，实在难能可贵。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 414700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("过奖。{10002}", "v535", 20392, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20392" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20392"/>
+			</conditions>
+			<actions>
+				<exp value="414700"/>
+				<notify1 content="经验+414700"/>
+				<notify content="恭喜你完成了“为民造福”任务"/>
+				<var type="Set" name="state" value="-1" id="20392"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30393">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20392"/>
+				<var type="Differ" name="state" value="-1" id="20393"/>
+				<var type="Differ" name="state" value="1" id="20393"/>
+				<var type="Differ" name="state" value="-3" id="20393"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：为民除害(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;为民除害\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去千江镇右下消灭45个女恶霸，完成后去找千江镇的花飞。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，花灵都没安静一盏茶时分，就又去消灭那些女匪了。我做叔父的很担心她，你能去替她消灭45个女恶霸么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 424700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v535", 20393, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20393"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：为民除害(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;为民除害\n \n&lt;/n&gt;&lt;n&gt;    太好了，因为你替花灵消灭了大量女匪，她也轻松了不少。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 424700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("应该的。{10002}", "v535", 20393, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20393"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：为民除害(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("怎么又回来了，女恶霸还在到处破坏治安。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20393" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20392"/>
+				<var type="Differ" name="state" value="-1" id="20393"/>
+				<var type="Differ" name="state" value="1" id="20393"/>
+				<var type="Differ" name="state" value="-3" id="20393"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去千江镇右下消灭45个女恶霸，完成后去找千江镇的花飞"/>
+				<notify1 content="去千江镇右下消灭45个女恶霸，完成后向千江镇的花飞汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20393"/>
+			</conditions>
+			<actions>
+				<exp value="424700"/>
+				<notify1 content="经验+424700"/>
+				<notify content="恭喜你完成了“为民除害”任务"/>
+				<var type="Set" name="state" value="-1" id="20393"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30394">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20393"/>
+				<var type="Differ" name="state" value="-3" id="20394"/>
+				<var type="Differ" name="state" value="-1" id="20394"/>
+				<var type="Differ" name="state" value="1" id="20394"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：奖赏(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;奖赏\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找千江镇的蒙阔(222,338)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，前日从来没有过来往的千江镇守将蒙阔突然派人来找我，不知道因为什么事。我家代代为盗，不敢直面军官，你能替我去问问么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 86940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10001}", "v535", 20394, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20394" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20393"/>
+				<var type="Differ" name="state" value="-3" id="20394"/>
+				<var type="Differ" name="state" value="-1" id="20394"/>
+				<var type="Differ" name="state" value="1" id="20394"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找千江镇的蒙阔(222,338)"/>
+				<notify1 content="去找千江镇的蒙阔(222,338)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30396">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20396"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：赐匾(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;赐匾\n \n&lt;/n&gt;&lt;n&gt;    啊，原来蒙将军是要奖赏我花家啊！真是太好了，多亏了你跟花灵！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 96940&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("应该的嘛。{10002}", "v535", 20396, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20396" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20396"/>
+			</conditions>
+			<actions>
+				<exp value="96940"/>
+				<removeitem value="1" id="2157" log="交赐匾(20396)-删除“为民除害”匾(2157)"/>
+				<notify1 content="经验+96940"/>
+				<notify content="恭喜你完成了“赐匾”任务"/>
+				<var type="Set" name="state" value="-1" id="20396"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30499">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="81"/>
+				<level type="Less" value="89"/>
+				<var type="Differ" name="state" value="-3" id="20499"/>
+				<var type="Differ" name="state" value="-1" id="20499"/>
+				<var type="Differ" name="state" value="1" id="20499"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：慕名远来(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;慕名远来\n \n&lt;/n&gt;&lt;n  color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去王城找黄药师帮忙。\n \n&lt;/n&gt;&lt;n color =\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，自从我女儿服用了蛇胆，病情不但没见好转， 反而越发的严重了。听说你与王城的黄药师相熟，不知能否替我向他讨个灵验的方子？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n  color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 109995&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这有何难。{10001}", "v535", 20499, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20499" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="81"/>
+				<level type="Less" value="89"/>
+				<var type="Differ" name="state" value="-3" id="20499"/>
+				<var type="Differ" name="state" value="-1" id="20499"/>
+				<var type="Differ" name="state" value="1" id="20499"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去王城找黄药师(441,685)帮忙"/>
+				<notify1 content="去王城找黄药师(441,685)帮忙"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30500">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20500"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：护送名医(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;护送名医\n \n&lt;/n&gt;&lt;n&gt;    哎呀呀，居然让神医亲自出诊，过意不去过意不去，有劳少侠了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 338985&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不必多礼{10002}", "v535", 20500, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20500" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20500"/>
+			</conditions>
+			<actions>
+				<exp value="338985"/>
+				<notify1 content="经验+338985"/>
+				<notify content="恭喜你完成了“护送名医”任务"/>
+				<var type="Set" name="state" value="-1" id="20500"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30501">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="81"/>
+				<level type="Less" value="89"/>
+				<var type="Equal" name="state" value="-1" id="20500"/>
+				<var type="Differ" name="state" value="-3" id="20501"/>
+				<var type="Differ" name="state" value="-1" id="20501"/>
+				<var type="Differ" name="state" value="1" id="20501"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：相思成疾(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;相思成疾\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找千江镇的花非花(133,415)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，上次薛神医来时，曾提到女儿患了心病。我不论怎么问，她都不肯说。你能帮我去问问看么？。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 111495&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我试试看。{10001}", "v535", 20501, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20501" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="81"/>
+				<level type="Less" value="89"/>
+				<var type="Equal" name="state" value="-1" id="20500"/>
+				<var type="Differ" name="state" value="-3" id="20501"/>
+				<var type="Differ" name="state" value="-1" id="20501"/>
+				<var type="Differ" name="state" value="1" id="20501"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找千江镇的花非花(133,415)"/>
+				<notify1 content="去找千江镇的花非花(133,415)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30503">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20503"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：略有起色(2)", "Dialog37")
+end
+function Dialog37()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;略有起色\n \n&lt;/n&gt;&lt;n&gt;    呵呵，既然我女儿病已痊愈，我也没什么担心的了，在此花某代女儿谢过少侠了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 112995&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("言重了。{10002}", "v535", 20503, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20503" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20503"/>
+			</conditions>
+			<actions>
+				<exp value="112995"/>
+				<notify1 content="经验+112995"/>
+				<notify content="恭喜你完成了“略有起色”任务"/>
+				<var type="Set" name="state" value="-1" id="20503"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30509">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20509"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：未婚妻(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;未婚妻\n \n&lt;/n&gt;&lt;n&gt;    哎呀，原来非花是为了这件事闷闷不乐！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 132630&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不错。{10002}", "v535", 20509, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20509" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20509"/>
+			</conditions>
+			<actions>
+				<exp value="132630"/>
+				<notify1 content="经验+132630"/>
+				<notify content="恭喜你完成了“未婚妻”任务"/>
+				<var type="Set" name="state" value="-1" id="20509"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30510">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="89"/>
+				<level type="Less" value="97"/>
+				<var type="Equal" name="state" value="-1" id="20509"/>
+				<var type="Differ" name="state" value="-1" id="20510"/>
+				<var type="Differ" name="state" value="1" id="20510"/>
+				<var type="Differ" name="state" value="-3" id="20510"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：定情物(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;定情物\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去蛟龙洞一层(114,59)击败侏儒法师，收集10块琉璃盏碎片交给千江镇的花飞(111,421)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    不错，当初吕思远之父吕诗与我花家定盟之时，确是留下一件凭据，乃是个珍珠琉璃盏。但不久前蛟龙洞中的侏儒法师前来抢掠，我花家奋起抵抗，不意被他将琉璃盏打碎，连碎片一起抢去了。碎片一共有10个，现在去夺，说不定还夺得回来。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 765780&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我替你找回{10001}", "v535", 20510, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2198"/>
+				<var type="Equal" name="state" value="-3" id="20510"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：定情物(2)", "Dialog40")
+end
+function Dialog40()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;定情物\n \n&lt;/n&gt;&lt;n&gt;    不错，不错！这正是当初失落的琉璃盏碎片。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 765780&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去告诉吕思远。{10002}", "v535", 20510, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20510" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="89"/>
+				<level type="Less" value="97"/>
+				<var type="Equal" name="state" value="-1" id="20509"/>
+				<var type="Differ" name="state" value="-1" id="20510"/>
+				<var type="Differ" name="state" value="1" id="20510"/>
+				<var type="Differ" name="state" value="-3" id="20510"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去蛟龙洞一层(114,59)击败侏儒法师。"/>
+				<notify content="任务：去蛟龙洞一层(114,59)击败侏儒法师，收集10块琉璃盏碎片交给千江镇的花飞。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2198"/>
+				<var type="Equal" name="state" value="-3" id="20510"/>
+			</conditions>
+			<actions>
+				<exp value="765780"/>
+				<removeitem value="10" id="2198" log="交定情物(20510)-删除10个琉璃盏碎片(2198)"/>
+				<notify1 content="经验+765780"/>
+				<notify content="恭喜你完成了“定情物”任务"/>
+				<var type="Set" name="state" value="-1" id="20510"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30511">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="89"/>
+				<level type="Less" value="97"/>
+				<var type="Equal" name="state" value="-1" id="20510"/>
+				<var type="Differ" name="state" value="-3" id="20511"/>
+				<var type="Differ" name="state" value="-1" id="20511"/>
+				<var type="Differ" name="state" value="1" id="20511"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：碎片(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;碎片\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    带着琉璃盏碎片去找千江镇－鲁匠心(256,407)帮忙。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，不忙，不忙！还是先找鲁家专营精巧工艺的鲁匠心修复，然后再带去给吕思远看。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 135630&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("就这么办。{10001}", "v535", 20511, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20511" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="89"/>
+				<level type="Less" value="97"/>
+				<var type="Equal" name="state" value="-1" id="20510"/>
+				<var type="Differ" name="state" value="-3" id="20511"/>
+				<var type="Differ" name="state" value="-1" id="20511"/>
+				<var type="Differ" name="state" value="1" id="20511"/>
+			</conditions>
+			<actions>
+				<additem value="10" id="2198"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：带着琉璃盏碎片去找千江镇－鲁匠心(256,407)。"/>
+				<notify1 content="带着琉璃盏碎片去找千江镇－鲁匠心(256,407)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30512">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2201"/>
+				<var type="Equal" name="state" value="-3" id="20512"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：琉璃盏(2)", "Dialog42")
+end
+function Dialog42()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;琉璃盏\n \n&lt;/n&gt;&lt;n&gt;    真是好手艺！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 140130&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("手艺的确不错！{10002}", "v535", 20512, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20512" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2201"/>
+				<var type="Equal" name="state" value="-3" id="20512"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2201" log="交琉璃盏(20512)-删除琉璃盏(2201)"/>
+				<exp value="140130"/>
+				<notify1 content="经验+140130"/>
+				<notify content="恭喜你完成了“琉璃盏”任务"/>
+				<var type="Set" name="state" value="-1" id="20512"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512国占复活区  256国战传送区  1024去内景后的区域  4096 攻方集合区域帮会战争 2048 国家战争拉人区域 ZONE_DARE_SAFE 8192,      // 国战时为绝对安全区，平时为非安全区 16384帮会所属地第三方跳转区
+-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<zonedef width="17" height="22" x="577" y="405" type="2048" color="0,0,255,0"/>
+	<zonedef width="23" height="24" x="584" y="393" type="2048" color="0,0,255,0"/>
+	<zonedef width="60" height="60" x="321" y="620" type="2" color="0,0,255,0"/>
+	<zonedef width="60" height="60" x="281" y="292" type="1" color="0,0,255,0"/>
+	<zonedef width="60" height="60" x="629" y="317" type="2" color="0,0,255,0"/>
+	<zonedef width="60" height="60" x="634" y="647" type="2" color="0,0,255,0"/>
+	<zonedef width="88" height="72" x="903" y="6" type="1" color="0,0,255,0"/>
+	<zonedef width="101" height="89" x="892" y="897" type="1" color="0,0,255,0"/>
+	<zonedef width="43" height="64" x="2" y="757" type="1" color="0,0,255,0"/>
+	<zonedef width="34" height="72" x="2" y="75" type="1" color="0,0,255,0"/>
+	<zonedef width="36" height="52" x="502" y="117" type="1" color="0,0,255,0"/>
+	<zonedef width="91" height="32" x="25" y="496" type="1" color="0,0,255,0"/>
+	<zonedef width="98" height="22" x="33" y="485" type="1" color="0,0,255,0"/>
+	<zonedef width="33" height="111" x="103" y="499" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="106" y="493" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="108" y="492" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="111" y="488" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="115" y="485" type="1" color="0,0,255,0"/>
+	<zonedef width="27" height="143" x="121" y="480" type="1" color="0,0,255,0"/>
+	<zonedef width="29" height="175" x="133" y="458" type="1" color="0,0,255,0"/>
+	<zonedef width="84" height="22" x="52" y="465" type="1" color="0,0,255,0"/>
+	<zonedef width="84" height="18" x="61" y="457" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="69" y="447" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="78" y="440" type="1" color="0,0,255,0"/>
+	<zonedef width="79" height="42" x="87" y="434" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="40" y="523" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="49" y="530" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="56" y="522" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="57" y="539" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="70" y="523" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="83" y="524" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="89" y="516" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="95" y="520" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="65" x="95" y="532" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="71" y="543" type="1" color="0,0,255,0"/>
+	<zonedef width="34" height="42" x="73" y="537" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="83" y="571" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="43" x="146" y="602" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="48" x="158" y="606" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="70" x="179" y="604" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="167" y="648" type="1" color="0,0,255,0"/>
+	<zonedef width="114" height="92" x="189" y="594" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="203" y="581" type="1" color="0,0,255,0"/>
+	<zonedef width="126" height="45" x="201" y="661" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="218" y="704" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="229" y="714" type="1" color="0,0,255,0"/>
+	<zonedef width="482" height="51" x="239" y="689" type="1" color="0,0,255,0"/>
+	<zonedef width="35" height="164" x="155" y="454" type="1" color="0,0,255,0"/>
+	<zonedef width="92" height="194" x="186" y="459" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="187" y="461" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="202" y="475" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="210" y="483" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="82" x="238" y="449" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="241" y="514" type="1" color="0,0,255,0"/>
+	<zonedef width="55" height="24" x="261" y="512" type="1" color="0,0,255,0"/>
+	<zonedef width="645" height="30" x="243" y="530" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="239" y="546" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="235" y="548" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="225" y="559" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="46" x="718" y="687" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="736" y="690" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="726" y="707" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="707" y="720" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="697" y="732" type="1" color="0,0,255,0"/>
+	<zonedef width="404" height="32" x="262" y="738" type="1" color="0,0,255,0"/>
+	<zonedef width="397" height="23" x="272" y="754" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="53" x="663" y="732" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="35" x="680" y="737" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="687" y="740" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="671" y="759" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="857" y="564" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="855" y="575" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="867" y="558" type="1" color="0,0,255,0"/>
+	<zonedef width="14" height="35" x="886" y="531" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="285" y="772" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="293" y="780" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="305" y="775" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="304" y="789" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="310" y="793" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="314" y="800" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="50" x="322" y="776" type="1" color="0,0,255,0"/>
+	<zonedef width="31" height="60" x="328" y="776" type="1" color="0,0,255,0"/>
+	<zonedef width="27" height="69" x="340" y="779" type="1" color="0,0,255,0"/>
+	<zonedef width="248" height="92" x="349" y="767" type="1" color="0,0,255,0"/>
+	<zonedef width="70" height="34" x="594" y="768" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="652" y="777" type="1" color="0,0,255,0"/>
+	<zonedef width="18" height="59" x="590" y="800" type="1" color="0,0,255,0"/>
+	<zonedef width="48" height="18" x="604" y="799" type="1" color="0,0,255,0"/>
+	<zonedef width="18" height="28" x="605" y="816" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="595" y="832" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="615" y="813" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="608" y="820" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="622" y="806" type="1" color="0,0,255,0"/>
+	<zonedef width="234" height="23" x="364" y="849" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="374" y="865" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="386" y="870" type="1" color="0,0,255,0"/>
+	<zonedef width="183" height="21" x="390" y="871" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="559" y="868" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="566" y="863" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="395" y="884" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="403" y="890" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="409" y="897" type="1" color="0,0,255,0"/>
+	<zonedef width="128" height="35" x="414" y="888" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="538" y="891" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="545" y="884" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="528" y="903" type="1" color="0,0,255,0"/>
+	<zonedef width="109" height="21" x="426" y="916" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="436" y="929" type="1" color="0,0,255,0"/>
+	<zonedef width="73" height="17" x="446" y="937" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="503" y="928" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="453" y="945" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="470" y="951" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="483" y="949" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="488" y="943" type="1" color="0,0,255,0"/>
+	<zonedef width="31" height="22" x="465" y="957" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="890" y="534" type="1" color="0,0,255,0"/>
+	<zonedef width="32" height="62" x="886" y="421" type="1" color="0,0,255,0"/>
+	<zonedef width="28" height="109" x="895" y="426" type="1" color="0,0,255,0"/>
+	<zonedef width="17" height="110" x="910" y="433" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="913" y="437" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="918" y="441" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="923" y="446" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="77" x="925" y="450" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="930" y="454" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="912" y="515" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="55" x="938" y="460" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="945" y="467" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="951" y="474" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="947" y="483" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="939" y="491" type="1" color="0,0,255,0"/>
+	<zonedef width="30" height="162" x="200" y="320" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="193" y="325" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="187" y="335" type="1" color="0,0,255,0"/>
+	<zonedef width="30" height="145" x="178" y="339" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="168" y="349" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="102" x="162" y="358" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="96" x="149" y="368" type="1" color="0,0,255,0"/>
+	<zonedef width="34" height="88" x="141" y="377" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="134" y="384" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="63" x="126" y="391" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="115" y="403" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="122" y="397" type="1" color="0,0,255,0"/>
+	<zonedef width="22" height="43" x="107" y="412" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="207" y="310" type="1" color="0,0,255,0"/>
+	<zonedef width="92" height="179" x="221" y="311" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="223" y="295" type="1" color="0,0,255,0"/>
+	<zonedef width="551" height="136" x="231" y="288" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="769" y="294" type="1" color="0,0,255,0"/>
+	<zonedef width="27" height="135" x="771" y="302" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="784" y="306" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="149" x="788" y="312" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="794" y="317" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="116" x="799" y="323" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="118" x="809" y="332" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="83" x="815" y="343" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="828" y="349" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="834" y="356" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="78" x="836" y="362" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="847" y="371" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="58" x="851" y="376" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="859" y="382" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="76" x="863" y="386" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="867" y="391" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="872" y="394" type="1" color="0,0,255,0"/>
+	<zonedef width="17" height="79" x="877" y="399" type="1" color="0,0,255,0"/>
+	<zonedef width="28" height="67" x="873" y="404" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="886" y="410" type="1" color="0,0,255,0"/>
+	<zonedef width="29" height="65" x="882" y="413" type="1" color="0,0,255,0"/>
+	<zonedef width="431" height="96" x="294" y="224" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="240" y="280" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="246" y="272" type="1" color="0,0,255,0"/>
+	<zonedef width="48" height="47" x="254" y="261" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="264" y="254" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="274" y="243" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="281" y="235" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="288" y="229" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="304" y="213" type="1" color="0,0,255,0"/>
+	<zonedef width="394" height="21" x="311" y="207" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="691" y="211" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="695" y="215" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="78" x="719" y="233" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="731" y="249" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="736" y="261" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="743" y="269" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="747" y="270" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="754" y="276" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="756" y="279" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="731" y="274" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="137" x="430" y="85" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="140" x="415" y="102" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="423" y="96" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="102" x="401" y="115" type="1" color="0,0,255,0"/>
+	<zonedef width="50" height="64" x="360" y="156" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="374" y="143" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="380" y="136" type="1" color="0,0,255,0"/>
+	<zonedef width="22" height="34" x="386" y="128" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="320" y="197" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="328" y="193" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="333" y="187" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="342" y="195" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="339" y="178" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="346" y="170" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="351" y="183" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="355" y="162" type="1" color="0,0,255,0"/>
+	<zonedef width="38" height="84" x="439" y="83" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="443" y="76" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="451" y="69" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="21" x="458" y="62" type="1" color="0,0,255,0"/>
+	<zonedef width="55" height="97" x="465" y="58" type="1" color="0,0,255,0"/>
+	<zonedef width="82" height="24" x="467" y="47" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="480" y="37" type="1" color="0,0,255,0"/>
+	<zonedef width="37" height="86" x="489" y="28" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="494" y="23" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="37" x="499" y="16" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="506" y="24" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="108" x="511" y="30" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="516" y="34" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="87" x="521" y="39" type="1" color="0,0,255,0"/>
+	<zonedef width="54" height="94" x="509" y="60" type="1" color="0,0,255,0"/>
+	<zonedef width="86" height="83" x="451" y="128" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="473" y="123" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="475" y="116" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="491" y="108" type="1" color="0,0,255,0"/>
+	<zonedef width="53" height="117" x="499" y="101" type="1" color="0,0,255,0"/>
+	<zonedef width="37" height="134" x="548" y="83" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="552" y="70" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="557" y="75" type="1" color="0,0,255,0"/>
+	<zonedef width="15" height="126" x="579" y="90" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="582" y="101" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="590" y="109" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="597" y="116" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="602" y="122" type="1" color="0,0,255,0"/>
+	<zonedef width="52" height="103" x="577" y="127" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="616" y="135" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="622" y="141" type="1" color="0,0,255,0"/>
+	<zonedef width="25" height="90" x="623" y="147" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="638" y="156" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="643" y="162" type="1" color="0,0,255,0"/>
+	<zonedef width="27" height="89" x="640" y="166" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="653" y="173" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="658" y="177" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="661" y="190" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="663" y="182" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="668" y="187" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="673" y="192" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="678" y="196" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="683" y="201" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="763" y="668" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="778" y="652" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="12" y="497" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="18" y="506" type="1" color="0,0,255,0"/>
+	<zonedef width="41" height="52" x="811" y="388" type="1" color="0,0,255,0"/>
+	<zonedef width="27" height="33" x="481" y="808" type="1" color="0,0,255,0"/>
+	<zonedef width="24" height="32" x="96" y="454" type="1" color="0,0,255,0"/>
+	<zonedef width="50" height="50" x="637" y="646" type="1" color="0,0,255,0"/>
+	<zonedef width="96" height="165" x="276" y="565" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="373" y="674" type="1" color="0,0,255,0"/>
+	<zonedef width="279" height="228" x="364" y="561" type="1" color="0,0,255,0"/>
+	<zonedef width="83" height="169" x="633" y="559" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="25" x="798" y="579" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="835" y="592" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="845" y="580" type="1" color="0,0,255,0"/>
+	<zonedef width="516" height="105" x="272" y="455" type="1" color="0,0,255,0"/>
+	<zonedef width="496" height="54" x="305" y="419" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="23" x="850" y="428" type="1" color="0,0,255,0"/>
+	<zonedef width="32" height="46" x="868" y="421" type="1" color="0,0,255,0"/>
+	<zonedef width="27" height="18" x="854" y="438" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="20" x="880" y="462" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="888" y="467" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="891" y="470" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="869" y="527" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="874" y="523" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="879" y="519" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="883" y="514" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="887" y="510" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="892" y="505" type="1" color="0,0,255,0"/>
+	<zonedef width="23" height="31" x="822" y="85" type="1" color="0,0,255,0"/>
+	<zonedef width="16" height="23" x="914" y="633" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="749" y="687" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="756" y="677" type="1" color="0,0,255,0"/>
+	<zonedef width="8" height="20" x="790" y="602" type="16" color="0,0,255,0"/>
+	<zonedef width="5" height="38" x="766" y="591" type="16" color="0,0,255,0"/>
+	<zonedef width="6" height="12" x="757" y="601" type="16" color="0,0,255,0"/>
+	<zonedef width="7" height="56" x="777" y="580" type="16" color="0,0,255,0"/>
+	<zonedef width="7" height="9" x="795" y="610" type="16" color="0,0,255,0"/>
+	<zonedef width="6" height="9" x="796" y="562" type="16" color="0,0,255,0"/>
+	<zonedef width="6" height="49" x="771" y="586" type="16" color="0,0,255,0"/>
+	<zonedef width="8" height="8" x="774" y="633" type="16" color="0,0,255,0"/>
+	<zonedef width="5" height="57" x="788" y="571" type="16" color="0,0,255,0"/>
+	<zonedef width="5" height="17" x="817" y="583" type="16" color="0,0,255,0"/>
+	<zonedef width="10" height="29" x="786" y="597" type="16" color="0,0,255,0"/>
+	<zonedef width="11" height="51" x="793" y="566" type="16" color="0,0,255,0"/>
+	<zonedef width="6" height="56" x="783" y="576" type="16" color="0,0,255,0"/>
+	<zonedef width="8" height="41" x="802" y="571" type="16" color="0,0,255,0"/>
+	<zonedef width="27" height="26" x="789" y="579" type="16" color="0,0,255,0"/>
+	<zonedef width="8" height="15" x="808" y="577" type="16" color="0,0,255,0"/>
+	<zonedef width="4" height="22" x="816" y="581" type="16" color="0,0,255,0"/>
+	<zonedef width="30" height="26" x="761" y="597" type="16" color="0,0,255,0"/>
+	<zonedef width="9" height="10" x="749" y="607" type="16" color="0,0,255,0"/>
+	<zonedef width="10" height="46" x="797" y="569" type="16" color="0,0,255,0"/>
+	<zonedef width="11" height="38" x="801" y="573" type="16" color="0,0,255,0"/>
+	<zonedef width="8" height="33" x="805" y="576" type="16" color="0,0,255,0"/>
+	<zonedef width="4" height="9" x="822" y="588" type="16" color="0,0,255,0"/>
+	<zonedef width="4" height="12" x="821" y="586" type="16" color="0,0,255,0"/>
+	<zonedef width="8" height="17" x="815" y="584" type="16" color="0,0,255,0"/>
+	<zonedef width="2" height="6" x="826" y="590" type="16" color="0,0,255,0"/>
+	<zonedef width="8" height="15" x="754" y="606" type="16" color="0,0,255,0"/>
+	<zonedef width="34" height="142" x="715" y="558" type="1" color="0,0,255,0"/>
+	<zonedef width="21" height="51" x="736" y="555" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="734" y="617" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="741" y="621" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="746" y="622" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="751" y="629" type="1" color="0,0,255,0"/>
+	<zonedef width="33" height="58" x="741" y="635" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="766" y="640" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="765" y="652" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="741" y="581" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="746" y="577" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="751" y="571" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="41" x="757" y="545" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="763" y="560" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="768" y="556" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="773" y="551" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="776" y="546" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="787" y="542" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="802" y="546" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="804" y="549" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="806" y="551" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="810" y="553" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="812" y="556" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="812" y="557" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="815" y="559" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="818" y="561" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="820" y="563" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="822" y="564" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="823" y="565" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="823" y="566" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="824" y="568" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="823" y="566" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="825" y="570" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="827" y="580" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="824" y="596" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="823" y="598" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="820" y="601" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="817" y="602" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="815" y="603" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="813" y="604" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="811" y="608" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="807" y="611" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="803" y="614" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="801" y="617" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="798" y="618" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="796" y="621" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="781" y="636" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="783" y="631" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="789" y="628" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="793" y="626" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="796" y="621" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="798" y="618" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="22" x="773" y="465" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="24" x="769" y="482" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="773" y="505" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="780" y="511" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="786" y="516" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="790" y="520" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="802" y="523" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="829" y="424" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="840" y="432" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="858" y="442" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="863" y="446" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="867" y="451" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="870" y="454" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="881" y="466" type="1" color="0,0,255,0"/>
+	<zonedef width="13" height="23" x="832" y="529" type="513" color="0,0,255,0"/>
+	<zonedef width="12" height="21" x="841" y="522" type="513" color="0,0,255,0"/>
+	<zonedef width="15" height="19" x="845" y="516" type="513" color="0,0,255,0"/>
+	<zonedef width="12" height="22" x="850" y="514" type="513" color="0,0,255,0"/>
+	<zonedef width="12" height="23" x="854" y="509" type="513" color="0,0,255,0"/>
+	<zonedef width="11" height="19" x="859" y="505" type="513" color="0,0,255,0"/>
+	<zonedef width="10" height="21" x="863" y="500" type="513" color="0,0,255,0"/>
+	<zonedef width="11" height="23" x="867" y="496" type="513" color="0,0,255,0"/>
+	<zonedef width="9" height="21" x="871" y="493" type="513" color="0,0,255,0"/>
+	<zonedef width="13" height="18" x="875" y="490" type="513" color="0,0,255,0"/>
+	<zonedef width="10" height="24" x="878" y="486" type="513" color="0,0,255,0"/>
+	<zonedef width="18" height="23" x="872" y="485" type="5" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="865" y="523" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="22" x="869" y="518" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="878" y="514" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="887" y="484" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="887" y="494" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="879" y="507" type="1" color="0,0,255,0"/>
+	<zonedef width="20" height="20" x="870" y="514" type="1" color="0,0,255,0"/>
+	<zonedef width="106" height="151" x="786" y="391" type="1" color="0,0,255,0"/>
+	<waypoint>
+		<point x="975" y="14"/>
+		<point x="976" y="14"/>
+		<point x="977" y="14"/>
+		<point x="978" y="14"/>
+		<point x="979" y="14"/>
+		<point x="980" y="14"/>
+		<point x="981" y="14"/>
+		<point x="982" y="14"/>
+		<point x="983" y="14"/>
+		<point x="984" y="14"/>
+		<point x="985" y="14"/>
+		<point x="986" y="14"/>
+		<point x="975" y="15"/>
+		<point x="976" y="15"/>
+		<point x="977" y="15"/>
+		<point x="978" y="15"/>
+		<point x="979" y="15"/>
+		<point x="980" y="15"/>
+		<point x="981" y="15"/>
+		<point x="982" y="15"/>
+		<point x="983" y="15"/>
+		<point x="984" y="15"/>
+		<point x="985" y="15"/>
+		<point x="986" y="15"/>
+		<point x="975" y="16"/>
+		<point x="976" y="16"/>
+		<point x="977" y="16"/>
+		<point x="978" y="16"/>
+		<point x="979" y="16"/>
+		<point x="980" y="16"/>
+		<point x="981" y="16"/>
+		<point x="982" y="16"/>
+		<point x="983" y="16"/>
+		<point x="984" y="16"/>
+		<dest name="dongjiao" country="0" x="27" y="297"/>
+		<dest name="dongjiao" country="0" x="27" y="298"/>
+		<dest name="dongjiao" country="0" x="27" y="299"/>
+		<dest name="dongjiao" country="0" x="27" y="300"/>
+		<dest name="dongjiao" country="0" x="27" y="301"/>
+		<dest name="dongjiao" country="0" x="27" y="302"/>
+		<dest name="dongjiao" country="0" x="27" y="303"/>
+		<dest name="dongjiao" country="0" x="27" y="304"/>
+		<dest name="dongjiao" country="0" x="27" y="305"/>
+		<dest name="dongjiao" country="0" x="27" y="306"/>
+		<dest name="dongjiao" country="0" x="27" y="307"/>
+		<dest name="dongjiao" country="0" x="27" y="308"/>
+		<dest name="dongjiao" country="0" x="27" y="309"/>
+		<dest name="dongjiao" country="0" x="27" y="310"/>
+		<dest name="dongjiao" country="0" x="27" y="311"/>
+		<dest name="dongjiao" country="0" x="27" y="312"/>
+		<dest name="dongjiao" country="0" x="27" y="313"/>
+		<dest name="dongjiao" country="0" x="27" y="297"/>
+		<dest name="dongjiao" country="0" x="27" y="298"/>
+		<dest name="dongjiao" country="0" x="27" y="299"/>
+		<dest name="dongjiao" country="0" x="27" y="300"/>
+		<dest name="dongjiao" country="0" x="27" y="301"/>
+		<dest name="dongjiao" country="0" x="27" y="302"/>
+		<dest name="dongjiao" country="0" x="27" y="303"/>
+		<dest name="dongjiao" country="0" x="27" y="304"/>
+		<dest name="dongjiao" country="0" x="27" y="305"/>
+		<dest name="dongjiao" country="0" x="27" y="306"/>
+		<dest name="dongjiao" country="0" x="27" y="307"/>
+		<dest name="dongjiao" country="0" x="27" y="308"/>
+		<dest name="dongjiao" country="0" x="27" y="309"/>
+		<dest name="dongjiao" country="0" x="27" y="310"/>
+		<dest name="dongjiao" country="0" x="27" y="311"/>
+		<dest name="dongjiao" country="0" x="27" y="312"/>
+		<dest name="dongjiao" country="0" x="27" y="313"/>
+	</waypoint>
+	<waypoint>
+		<point x="985" y="960"/>
+		<point x="985" y="961"/>
+		<point x="985" y="962"/>
+		<point x="985" y="963"/>
+		<point x="985" y="964"/>
+		<point x="985" y="965"/>
+		<point x="985" y="966"/>
+		<point x="985" y="967"/>
+		<point x="985" y="968"/>
+		<point x="985" y="969"/>
+		<point x="985" y="970"/>
+		<point x="985" y="971"/>
+		<point x="985" y="972"/>
+		<point x="985" y="973"/>
+		<point x="984" y="960"/>
+		<point x="984" y="961"/>
+		<point x="984" y="962"/>
+		<point x="984" y="963"/>
+		<point x="984" y="964"/>
+		<point x="984" y="965"/>
+		<point x="984" y="966"/>
+		<point x="984" y="967"/>
+		<point x="984" y="968"/>
+		<point x="984" y="969"/>
+		<point x="984" y="970"/>
+		<point x="984" y="971"/>
+		<point x="984" y="972"/>
+		<point x="984" y="973"/>
+		<point x="983" y="960"/>
+		<point x="983" y="961"/>
+		<point x="983" y="962"/>
+		<point x="983" y="963"/>
+		<point x="983" y="964"/>
+		<point x="983" y="965"/>
+		<point x="983" y="966"/>
+		<point x="983" y="967"/>
+		<point x="983" y="968"/>
+		<point x="983" y="969"/>
+		<point x="983" y="970"/>
+		<point x="983" y="971"/>
+		<point x="983" y="972"/>
+		<point x="983" y="973"/>
+		<dest name="nanjiao" country="0" x="28" y="17"/>
+		<dest name="nanjiao" country="0" x="28" y="18"/>
+		<dest name="nanjiao" country="0" x="28" y="19"/>
+		<dest name="nanjiao" country="0" x="28" y="20"/>
+		<dest name="nanjiao" country="0" x="28" y="21"/>
+		<dest name="nanjiao" country="0" x="28" y="22"/>
+		<dest name="nanjiao" country="0" x="28" y="23"/>
+		<dest name="nanjiao" country="0" x="28" y="24"/>
+		<dest name="nanjiao" country="0" x="28" y="25"/>
+		<dest name="nanjiao" country="0" x="28" y="26"/>
+		<dest name="nanjiao" country="0" x="28" y="27"/>
+		<dest name="nanjiao" country="0" x="28" y="28"/>
+		<dest name="nanjiao" country="0" x="28" y="29"/>
+		<dest name="nanjiao" country="0" x="28" y="30"/>
+		<dest name="nanjiao" country="0" x="28" y="31"/>
+		<dest name="nanjiao" country="0" x="28" y="32"/>
+		<dest name="nanjiao" country="0" x="28" y="33"/>
+		<dest name="nanjiao" country="0" x="28" y="17"/>
+		<dest name="nanjiao" country="0" x="28" y="18"/>
+		<dest name="nanjiao" country="0" x="28" y="19"/>
+		<dest name="nanjiao" country="0" x="28" y="20"/>
+		<dest name="nanjiao" country="0" x="28" y="21"/>
+		<dest name="nanjiao" country="0" x="28" y="22"/>
+		<dest name="nanjiao" country="0" x="28" y="23"/>
+		<dest name="nanjiao" country="0" x="28" y="24"/>
+		<dest name="nanjiao" country="0" x="28" y="25"/>
+		<dest name="nanjiao" country="0" x="28" y="26"/>
+		<dest name="nanjiao" country="0" x="28" y="27"/>
+		<dest name="nanjiao" country="0" x="28" y="28"/>
+		<dest name="nanjiao" country="0" x="28" y="29"/>
+		<dest name="nanjiao" country="0" x="28" y="30"/>
+		<dest name="nanjiao" country="0" x="28" y="31"/>
+		<dest name="nanjiao" country="0" x="28" y="32"/>
+		<dest name="nanjiao" country="0" x="28" y="33"/>
+		<dest name="nanjiao" country="0" x="28" y="17"/>
+		<dest name="nanjiao" country="0" x="28" y="18"/>
+		<dest name="nanjiao" country="0" x="28" y="19"/>
+		<dest name="nanjiao" country="0" x="28" y="20"/>
+		<dest name="nanjiao" country="0" x="28" y="21"/>
+		<dest name="nanjiao" country="0" x="28" y="22"/>
+		<dest name="nanjiao" country="0" x="28" y="23"/>
+		<dest name="nanjiao" country="0" x="28" y="24"/>
+	</waypoint>
+	<waypoint>
+		<point x="14" y="106"/>
+		<point x="14" y="107"/>
+		<point x="14" y="108"/>
+		<point x="14" y="109"/>
+		<point x="14" y="110"/>
+		<point x="14" y="111"/>
+		<point x="14" y="112"/>
+		<point x="14" y="113"/>
+		<point x="14" y="114"/>
+		<point x="14" y="115"/>
+		<point x="14" y="116"/>
+		<point x="14" y="117"/>
+		<point x="14" y="118"/>
+		<point x="14" y="119"/>
+		<point x="14" y="120"/>
+		<point x="14" y="121"/>
+		<point x="14" y="122"/>
+		<point x="14" y="123"/>
+		<point x="14" y="124"/>
+		<point x="15" y="106"/>
+		<point x="15" y="107"/>
+		<point x="15" y="108"/>
+		<point x="15" y="109"/>
+		<point x="15" y="110"/>
+		<point x="15" y="111"/>
+		<point x="15" y="112"/>
+		<point x="15" y="113"/>
+		<point x="15" y="114"/>
+		<point x="15" y="115"/>
+		<point x="15" y="116"/>
+		<point x="15" y="117"/>
+		<point x="15" y="118"/>
+		<point x="15" y="119"/>
+		<point x="15" y="120"/>
+		<point x="15" y="121"/>
+		<point x="15" y="122"/>
+		<point x="15" y="123"/>
+		<point x="15" y="124"/>
+		<point x="16" y="106"/>
+		<point x="16" y="107"/>
+		<point x="16" y="108"/>
+		<point x="16" y="109"/>
+		<point x="16" y="110"/>
+		<point x="16" y="111"/>
+		<point x="16" y="112"/>
+		<point x="16" y="113"/>
+		<point x="16" y="114"/>
+		<point x="16" y="115"/>
+		<point x="16" y="116"/>
+		<point x="16" y="117"/>
+		<point x="16" y="118"/>
+		<point x="16" y="119"/>
+		<point x="16" y="120"/>
+		<point x="16" y="121"/>
+		<point x="16" y="122"/>
+		<point x="16" y="123"/>
+		<point x="16" y="124"/>
+		<dest name="fengzuiling" country="0" x="22" y="514"/>
+		<dest name="fengzuiling" country="0" x="22" y="515"/>
+		<dest name="fengzuiling" country="0" x="22" y="516"/>
+		<dest name="fengzuiling" country="0" x="22" y="517"/>
+		<dest name="fengzuiling" country="0" x="22" y="518"/>
+		<dest name="fengzuiling" country="0" x="22" y="519"/>
+		<dest name="fengzuiling" country="0" x="22" y="520"/>
+		<dest name="fengzuiling" country="0" x="22" y="521"/>
+		<dest name="fengzuiling" country="0" x="22" y="522"/>
+		<dest name="fengzuiling" country="0" x="22" y="523"/>
+		<dest name="fengzuiling" country="0" x="22" y="524"/>
+		<dest name="fengzuiling" country="0" x="22" y="525"/>
+		<dest name="fengzuiling" country="0" x="22" y="526"/>
+		<dest name="fengzuiling" country="0" x="22" y="527"/>
+		<dest name="fengzuiling" country="0" x="22" y="528"/>
+		<dest name="fengzuiling" country="0" x="22" y="529"/>
+		<dest name="fengzuiling" country="0" x="22" y="530"/>
+		<dest name="fengzuiling" country="0" x="22" y="531"/>
+		<dest name="fengzuiling" country="0" x="22" y="532"/>
+		<dest name="fengzuiling" country="0" x="22" y="533"/>
+		<dest name="fengzuiling" country="0" x="22" y="534"/>
+		<dest name="fengzuiling" country="0" x="22" y="535"/>
+		<dest name="fengzuiling" country="0" x="22" y="514"/>
+		<dest name="fengzuiling" country="0" x="22" y="515"/>
+		<dest name="fengzuiling" country="0" x="22" y="516"/>
+		<dest name="fengzuiling" country="0" x="22" y="517"/>
+		<dest name="fengzuiling" country="0" x="22" y="518"/>
+		<dest name="fengzuiling" country="0" x="22" y="519"/>
+		<dest name="fengzuiling" country="0" x="22" y="520"/>
+		<dest name="fengzuiling" country="0" x="22" y="521"/>
+		<dest name="fengzuiling" country="0" x="22" y="522"/>
+		<dest name="fengzuiling" country="0" x="22" y="523"/>
+		<dest name="fengzuiling" country="0" x="22" y="524"/>
+		<dest name="fengzuiling" country="0" x="22" y="525"/>
+		<dest name="fengzuiling" country="0" x="22" y="526"/>
+		<dest name="fengzuiling" country="0" x="22" y="527"/>
+		<dest name="fengzuiling" country="0" x="22" y="528"/>
+		<dest name="fengzuiling" country="0" x="22" y="529"/>
+		<dest name="fengzuiling" country="0" x="22" y="530"/>
+		<dest name="fengzuiling" country="0" x="22" y="531"/>
+		<dest name="fengzuiling" country="0" x="22" y="532"/>
+		<dest name="fengzuiling" country="0" x="22" y="533"/>
+		<dest name="fengzuiling" country="0" x="22" y="534"/>
+		<dest name="fengzuiling" country="0" x="22" y="535"/>
+		<dest name="fengzuiling" country="0" x="22" y="514"/>
+		<dest name="fengzuiling" country="0" x="22" y="515"/>
+		<dest name="fengzuiling" country="0" x="22" y="516"/>
+		<dest name="fengzuiling" country="0" x="22" y="517"/>
+		<dest name="fengzuiling" country="0" x="22" y="518"/>
+		<dest name="fengzuiling" country="0" x="22" y="519"/>
+		<dest name="fengzuiling" country="0" x="22" y="520"/>
+		<dest name="fengzuiling" country="0" x="22" y="521"/>
+		<dest name="fengzuiling" country="0" x="22" y="522"/>
+		<dest name="fengzuiling" country="0" x="22" y="523"/>
+		<dest name="fengzuiling" country="0" x="22" y="524"/>
+		<dest name="fengzuiling" country="0" x="22" y="525"/>
+		<dest name="fengzuiling" country="0" x="22" y="526"/>
+	</waypoint>
+	<waypoint>
+		<point x="921" y="644"/>
+		<point x="921" y="645"/>
+		<point x="921" y="646"/>
+		<point x="921" y="647"/>
+		<point x="921" y="648"/>
+		<point x="921" y="649"/>
+		<point x="922" y="646"/>
+		<point x="922" y="647"/>
+		<point x="921" y="644"/>
+		<point x="921" y="645"/>
+		<point x="921" y="646"/>
+		<point x="921" y="647"/>
+		<point x="921" y="648"/>
+		<point x="921" y="649"/>
+		<point x="922" y="646"/>
+		<point x="922" y="647"/>
+		<point x="921" y="644"/>
+		<point x="921" y="645"/>
+		<point x="921" y="646"/>
+		<point x="921" y="647"/>
+		<point x="921" y="648"/>
+		<point x="921" y="649"/>
+		<point x="922" y="646"/>
+		<point x="922" y="647"/>
+		<dest name="jingguai1" country="0" x="104" y="187"/>
+		<dest name="jingguai1" country="0" x="104" y="188"/>
+		<dest name="jingguai1" country="0" x="104" y="189"/>
+		<dest name="jingguai1" country="0" x="104" y="190"/>
+		<dest name="jingguai1" country="0" x="104" y="191"/>
+		<dest name="jingguai1" country="0" x="104" y="192"/>
+		<dest name="jingguai1" country="0" x="104" y="193"/>
+		<dest name="jingguai1" country="0" x="104" y="194"/>
+		<dest name="jingguai1" country="0" x="104" y="195"/>
+		<dest name="jingguai1" country="0" x="104" y="196"/>
+		<dest name="jingguai1" country="0" x="104" y="197"/>
+		<dest name="jingguai1" country="0" x="104" y="198"/>
+		<dest name="jingguai1" country="0" x="104" y="199"/>
+		<dest name="jingguai1" country="0" x="104" y="187"/>
+		<dest name="jingguai1" country="0" x="104" y="188"/>
+		<dest name="jingguai1" country="0" x="104" y="189"/>
+		<dest name="jingguai1" country="0" x="104" y="190"/>
+		<dest name="jingguai1" country="0" x="104" y="191"/>
+		<dest name="jingguai1" country="0" x="104" y="192"/>
+		<dest name="jingguai1" country="0" x="104" y="193"/>
+		<dest name="jingguai1" country="0" x="104" y="194"/>
+		<dest name="jingguai1" country="0" x="104" y="195"/>
+		<dest name="jingguai1" country="0" x="104" y="196"/>
+		<dest name="jingguai1" country="0" x="104" y="197"/>
+	</waypoint>
+	<waypoint>
+		<point x="832" y="96"/>
+		<point x="832" y="97"/>
+		<point x="832" y="98"/>
+		<point x="833" y="96"/>
+		<point x="833" y="97"/>
+		<point x="833" y="98"/>
+		<point x="833" y="99"/>
+		<point x="834" y="99"/>
+		<point x="834" y="100"/>
+		<point x="832" y="96"/>
+		<point x="832" y="97"/>
+		<point x="832" y="98"/>
+		<point x="833" y="96"/>
+		<point x="833" y="97"/>
+		<point x="833" y="98"/>
+		<point x="833" y="99"/>
+		<point x="834" y="99"/>
+		<point x="834" y="100"/>
+		<dest name="luanzangku1" country="0" x="38" y="228"/>
+		<dest name="luanzangku1" country="0" x="39" y="228"/>
+		<dest name="luanzangku1" country="0" x="40" y="228"/>
+		<dest name="luanzangku1" country="0" x="41" y="228"/>
+		<dest name="luanzangku1" country="0" x="42" y="228"/>
+		<dest name="luanzangku1" country="0" x="43" y="228"/>
+		<dest name="luanzangku1" country="0" x="44" y="228"/>
+		<dest name="luanzangku1" country="0" x="45" y="228"/>
+		<dest name="luanzangku1" country="0" x="38" y="227"/>
+		<dest name="luanzangku1" country="0" x="39" y="227"/>
+		<dest name="luanzangku1" country="0" x="40" y="227"/>
+		<dest name="luanzangku1" country="0" x="41" y="227"/>
+		<dest name="luanzangku1" country="0" x="42" y="227"/>
+		<dest name="luanzangku1" country="0" x="43" y="227"/>
+		<dest name="luanzangku1" country="0" x="44" y="227"/>
+		<dest name="luanzangku1" country="0" x="45" y="227"/>
+		<dest name="luanzangku1" country="0" x="38" y="228"/>
+		<dest name="luanzangku1" country="0" x="39" y="228"/>
+	</waypoint>
+	<waypoint>
+		<point x="767" y="524"/>
+		<point x="768" y="524"/>
+		<point x="767" y="525"/>
+		<point x="768" y="525"/>
+		<point x="767" y="524"/>
+		<point x="767" y="524"/>
+		<point x="767" y="524"/>
+		<point x="768" y="524"/>
+		<point x="767" y="525"/>
+		<point x="768" y="525"/>
+		<dest name="zahuodianxiuxi" country="0" x="13" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="14" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="15" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="17" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="13" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="14" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="15" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="17" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="16" y="20"/>
+		<dest name="zahuodianxiuxi" country="0" x="15" y="20"/>
+	</waypoint>
+	<waypoint>
+		<point x="731" y="641"/>
+		<point x="731" y="642"/>
+		<point x="731" y="643"/>
+		<point x="732" y="642"/>
+		<point x="732" y="643"/>
+		<point x="731" y="641"/>
+		<point x="731" y="642"/>
+		<point x="731" y="643"/>
+		<point x="732" y="642"/>
+		<dest name="wminzhai2" country="0" x="18" y="12"/>
+		<dest name="wminzhai2" country="0" x="18" y="13"/>
+		<dest name="wminzhai2" country="0" x="18" y="14"/>
+		<dest name="wminzhai2" country="0" x="18" y="15"/>
+		<dest name="wminzhai2" country="0" x="18" y="16"/>
+		<dest name="wminzhai2" country="0" x="18" y="13"/>
+		<dest name="wminzhai2" country="0" x="18" y="14"/>
+		<dest name="wminzhai2" country="0" x="18" y="15"/>
+		<dest name="wminzhai2" country="0" x="18" y="17"/>
+	</waypoint>
+	<waypoint>
+		<point x="762" y="637"/>
+		<point x="762" y="638"/>
+		<point x="762" y="639"/>
+		<point x="761" y="638"/>
+		<point x="761" y="639"/>
+		<point x="762" y="638"/>
+		<point x="762" y="639"/>
+		<point x="761" y="638"/>
+		<dest name="wminzhai1" country="0" x="18" y="13"/>
+		<dest name="wminzhai1" country="0" x="18" y="14"/>
+		<dest name="wminzhai1" country="0" x="18" y="15"/>
+		<dest name="wminzhai1" country="0" x="18" y="16"/>
+		<dest name="wminzhai1" country="0" x="18" y="17"/>
+		<dest name="wminzhai1" country="0" x="18" y="17"/>
+		<dest name="wminzhai1" country="0" x="18" y="17"/>
+		<dest name="wminzhai1" country="0" x="18" y="14"/>
+	</waypoint>
+	<waypoint>
+		<point x="829" y="405"/>
+		<point x="829" y="406"/>
+		<point x="829" y="407"/>
+		<point x="830" y="405"/>
+		<point x="830" y="406"/>
+		<point x="829" y="406"/>
+		<point x="829" y="407"/>
+		<point x="830" y="405"/>
+		<dest name="wminzhai3" country="0" x="18" y="13"/>
+		<dest name="wminzhai3" country="0" x="18" y="14"/>
+		<dest name="wminzhai3" country="0" x="18" y="15"/>
+		<dest name="wminzhai3" country="0" x="18" y="16"/>
+		<dest name="wminzhai3" country="0" x="18" y="17"/>
+		<dest name="wminzhai3" country="0" x="18" y="17"/>
+		<dest name="wminzhai3" country="0" x="18" y="17"/>
+		<dest name="wminzhai3" country="0" x="18" y="14"/>
+	</waypoint>
+	<zonedef width="14" height="12" x="831" y="441" type="129"/>
+	<zonedef width="18" height="64" x="821" y="452" type="129"/>
+	<zonedef width="23" height="56" x="811" y="461" type="129"/>
+	<zonedef width="20" height="61" x="826" y="446" type="129"/>
+	<zonedef width="10" height="11" x="849" y="457" type="129"/>
+	<zonedef width="13" height="52" x="838" y="449" type="129"/>
+	<zonedef width="9" height="25" x="792" y="476" type="129"/>
+	<zonedef width="20" height="47" x="807" y="466" type="129"/>
+	<zonedef width="22" height="33" x="799" y="473" type="129"/>
+	<zonedef width="10" height="16" x="795" y="482" type="129"/>
+	<zonedef width="20" height="29" x="843" y="465" type="129"/>
+	<zonedef width="19" height="26" x="849" y="468" type="129"/>
+	<zonedef width="19" height="21" x="855" y="473" type="129"/>
+	<zonedef width="14" height="17" x="817" y="505" type="129"/>
+	<fixedrush id="10" startTime="18:45" endTime="20:45" delay="3602"/>
+	<param leaderNpcID="227"/>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<npc id="931" name="不怕妹妹" width="1" height="1" x="833" y="490" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="932" name="大胆哥哥" width="1" height="1" x="536" y="736" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="902" name="孔圣人" width="1" height="1" x="831" y="418" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="867" name="托运官" width="1" height="1" x="848" y="548" num="1" interval="3600" color="0,255,0,0"/>
+	<npc id="864" name="改造宗师" width="1" height="1" x="885" y="446" num="1" interval="3600" color="0,255,0,0"/>
+	<npc id="860" name="龙镖头" width="1" height="1" x="795" y="488" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="858" name="竞技岛传送者" width="1" height="1" x="816" y="416" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="856" name="葫铁花" width="1" height="1" x="816" y="431" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="409" name="英雄千丘" width="1" height="1" x="909" y="655" num="1" interval="300" color="0,255,0,0"/>
+	<npc id="405" name="英雄逍遥" width="1" height="1" x="848" y="96" num="1" interval="300" color="0,255,0,0"/>
+	<npc id="851" name="勾践" width="1" height="1" x="795" y="435" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="848" name="礼官" width="1" height="1" x="791" y="491" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="841" name="媒婆" width="1" height="1" x="734" y="647" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="838" name="陈大班" width="1" height="1" x="805" y="414" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="545" name="北郊方向" width="1" height="1" x="23" y="113" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="540" name="吕思远" width="1" height="1" x="488" y="260" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="833" name="环式任务管理者" width="1" height="1" x="855" y="499" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="828" name="王城祭师" width="1" height="1" x="457" y="471" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="827" name="神偷" width="1" height="1" x="502" y="193" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="530" name="饲养大叔" width="1" height="1" x="889" y="524" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="537" name="饲料商人" width="1" height="1" x="526" y="198" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="529" name="伯乐" width="1" height="1" x="851" y="504" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="79" name="白骨洞方向" width="1" height="1" x="833" y="104" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="80" name="精怪洞穴方向" width="1" height="1" x="925" y="646" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="58005" name="国旗" width="1" height="1" x="501" y="506" num="1" interval="43200" color="0,255,0,0"/>
+	<npc id="58006" name="副旗" width="1" height="1" x="544" y="484" num="1" interval="21600" color="0,255,0,0"/>
+	<npc id="58006" name="副旗" width="1" height="1" x="393" y="471" num="1" interval="21600" color="0,255,0,0"/>
+	<npc id="58006" name="副旗" width="1" height="1" x="475" y="553" num="1" interval="21600" color="0,255,0,0"/>
+	<npc id="58006" name="副旗" width="1" height="1" x="463" y="399" num="1" interval="21600" color="0,255,0,0"/>
+	<npc id="532" name="花灵" width="1" height="1" x="241" y="354" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="533" name="花月" width="1" height="1" x="232" y="368" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="534" name="颜如玉" width="1" height="1" x="264" y="364" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="536" name="玄火" width="1" height="1" x="288" y="393" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56020" name="猎人" width="1" height="1" x="832" y="523" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="522" name="郑镖头" width="1" height="1" x="828" y="528" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="518" name="战马饲养员" width="1" height="1" x="531" y="136" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="10022" name="狗" width="30" height="15" x="532" y="444" num="12" interval="90" color="0,255,0,0"/>
+	<npc id="10022" name="狗" width="30" height="18" x="509" y="517" num="15" interval="90" color="0,255,0,0"/>
+	<npc id="517" name="王城导游" width="1" height="1" x="340" y="685" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="517" name="王城导游" width="1" height="1" x="652" y="313" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="517" name="王城导游" width="1" height="1" x="653" y="641" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="517" name="王城导游" width="1" height="1" x="306" y="337" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="15050" name="国管理员" width="1" height="1" x="103" y="469" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="514" name="羽林将军" width="1" height="1" x="516" y="507" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="515" name="闻广" width="1" height="1" x="725" y="378" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="509" name="科技" width="1" height="1" x="787" y="497" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="884" name="高级杂货" width="1" height="1" x="886" y="471" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="90" name="智者" width="1" height="1" x="801" y="471" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="90" name="智者" width="1" height="1" x="728" y="458" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="90" name="智者" width="1" height="1" x="747" y="477" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="90" name="智者" width="1" height="1" x="277" y="308" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="90" name="智者" width="1" height="1" x="647" y="707" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="90" name="智者" width="1" height="1" x="629" y="327" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="94" name="皇榜" width="1" height="1" x="293" y="290" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="94" name="皇榜" width="1" height="1" x="670" y="706" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="94" name="皇榜" width="1" height="1" x="639" y="316" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="94" name="皇榜" width="1" height="1" x="806" y="468" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="5100" name="传送师" width="1" height="1" x="831" y="412" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="96" name="任务王" width="1" height="1" x="763" y="499" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="364" name="兵部侍郎" width="1" height="1" x="496" y="477" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="361" name="高级钱庄老板点" width="1" height="1" x="881" y="463" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="362" name="税官" width="1" height="1" x="790" y="501" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="363" name="国库管理员" width="1" height="1" x="794" y="505" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="92" name="荣誉" width="1" height="1" x="798" y="509" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="77" name="东郊方向" width="1" height="1" x="969" y="22" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="78" name="南郊方向" width="1" height="1" x="980" y="957" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="66" name="摆摊" width="1" height="1" x="804" y="498" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="1068" name="家族管理员" width="1" height="1" x="802" y="513" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="1066" name="帮会管理员" width="1" height="1" x="806" y="517" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="337" name="国家任务发布官" width="1" height="1" x="810" y="521" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="336" name="史官" width="1" height="1" x="814" y="525" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="224" name="馆长" width="1" height="1" x="734" y="316" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="227" name="大臣" width="1" height="1" x="820" y="531" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="231" name="民政官" width="1" height="1" x="824" y="535" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="5088" name="看门" width="1" height="1" x="478" y="457" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="5088" name="看门" width="1" height="1" x="471" y="469" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="93" name="传递" width="1" height="1" x="911" y="470" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="93" name="传递" width="1" height="1" x="745" y="451" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="310" name="拍卖管理员" width="1" height="1" x="903" y="480" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="5099" name="车夫" width="1" height="1" x="825" y="412" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="303" name="绘画师" width="1" height="1" x="848" y="415" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="112" name="武器店老板" width="1" height="1" x="931" y="502" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="113" name="法器店老板" width="1" height="1" x="925" y="509" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="116" name="防具店老板" width="1" height="1" x="935" y="494" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="347" name="饲养员 " width="1" height="1" x="753" y="541" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="877" name="杂货店老板" width="1" height="1" x="919" y="511" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="880" name="服装师 " width="1" height="1" x="851" y="410" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="881" name="美发师 " width="1" height="1" x="853" y="408" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="209" name="钱庄老板 " width="1" height="1" x="879" y="461" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="819" name="异域商人" width="1" height="1" x="869" y="427" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="883" name="天机老人" width="1" height="1" x="881" y="442" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="1" name="储物箱" width="1" height="1" x="883" y="466" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="1" name="储物箱" width="1" height="1" x="877" y="459" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="879" name="易容师" width="1" height="1" x="850" y="412" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="878" name="秘籍收藏家" width="1" height="1" x="909" y="473" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="876" name="药店老板" width="1" height="1" x="913" y="507" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="882" name="炼药师" width="1" height="1" x="819" y="557" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56059" name="黄药师" width="1" height="1" x="441" y="685" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56060" name="慎篱" width="1" height="1" x="451" y="225" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56061" name="欧阳编修" width="1" height="1" x="502" y="802" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56058" name="情报商人" width="1" height="1" x="318" y="302" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56064" name="陈婆婆" width="1" height="1" x="428" y="860" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="820" name="环式任务使者（７０级）" width="1" height="1" x="837" y="519" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="821" name="环式任务使者（8０级）" width="1" height="1" x="847" y="519" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="822" name="环式任务使者（９０级）" width="1" height="1" x="842" y="513" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="823" name="环式任务使者（10０级）" width="1" height="1" x="847" y="508" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="825" name="环式任务使者（11０级）" width="1" height="1" x="851" y="514" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="497" name="环式任务使者（60级）" width="1" height="1" x="842" y="525" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="56065" name="衙役" width="1" height="1" x="392" y="197" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="211" name="锻造" width="1" height="1" x="891" y="454" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="213" name="锻造" width="1" height="1" x="896" y="460" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="214" name="锻造" width="1" height="1" x="894" y="458" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="217" name="锻造" width="1" height="1" x="893" y="456" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="803" name="杂货店伙计" width="1" height="1" x="858" y="441" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="805" name="武器店伙计" width="1" height="1" x="867" y="451" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="806" name="防具店伙计" width="1" height="1" x="870" y="453" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="807" name="药店伙计" width="1" height="1" x="863" y="446" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="58201" name="灵将" width="1" height="1" x="556" y="562" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="58201" name="灵将" width="1" height="1" x="430" y="568" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="58201" name="灵将" width="1" height="1" x="583" y="413" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="938" y="901" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="35" y="115" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="938" y="68" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="731" y="753" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="739" y="747" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="747" y="738" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="229" y="754" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="236" y="764" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="245" y="770" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="742" y="217" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="759" y="234" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="240" y="252" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="272" name="骑" width="3" height="3" x="256" y="228" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="183" name="舞妓" width="17" height="17" x="302" y="315" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="184" name="舞妓" width="17" height="17" x="302" y="315" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="185" name="琵琶女" width="17" height="17" x="302" y="315" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="186" name="杂耍者" width="17" height="17" x="302" y="315" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="183" name="舞妓" width="18" height="16" x="343" y="643" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="184" name="舞妓" width="18" height="16" x="343" y="643" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="185" name="琵琶女" width="18" height="16" x="343" y="643" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="186" name="杂耍者" width="18" height="16" x="343" y="643" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="183" name="舞妓" width="18" height="16" x="649" y="340" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="184" name="舞妓" width="18" height="16" x="649" y="340" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="185" name="琵琶女" width="18" height="16" x="649" y="340" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="186" name="杂耍者" width="18" height="16" x="649" y="340" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="183" name="舞妓" width="19" height="16" x="654" y="664" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="184" name="舞妓" width="19" height="16" x="654" y="664" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="185" name="琵琶女" width="19" height="16" x="654" y="664" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="186" name="杂耍者" width="19" height="16" x="654" y="664" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="183" name="舞妓" width="30" height="20" x="731" y="459" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="184" name="舞妓" width="30" height="20" x="731" y="459" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="185" name="琵琶女" width="30" height="20" x="731" y="459" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="186" name="杂耍者" width="30" height="20" x="731" y="459" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="183" name="舞妓" width="30" height="30" x="825" y="479" num="2" interval="500" color="0,255,0,0"/>
+	<npc id="184" name="舞妓" width="30" height="30" x="825" y="479" num="2" interval="500" color="0,255,0,0"/>
+	<npc id="185" name="琵琶女" width="30" height="30" x="825" y="479" num="2" interval="500" color="0,255,0,0"/>
+	<npc id="186" name="杂耍者" width="30" height="30" x="825" y="479" num="2" interval="500" color="0,255,0,0"/>
+	<npc id="98" name="股票" width="1" height="1" x="876" y="456" num="1" interval="500" color="0,255,0,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<npc id="5223" name="小金猪" width="1" height="1" x="793" y="493" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="915" name="国战防守者" width="1" height="1" x="582" y="410" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="915" name="国战防守者" width="1" height="1" x="590" y="418" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="915" name="国战防守者" width="1" height="1" x="598" y="410" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="915" name="国战防守者" width="1" height="1" x="590" y="402" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="277" name="王城守卫" width="3" height="2" x="877" y="498" num="1" interval="2" color="0,255,0,0"/>
+	<npc id="278" name="王城守卫(魔)" width="3" height="3" x="886" y="495" num="1" interval="2" color="0,255,0,0"/>
+	<npc id="906" name="善财童子" width="1" height="1" x="888" y="474" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="905" name="天工神匠" width="1" height="1" x="899" y="462" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="907" name="天工巧匠" width="1" height="1" x="901" y="464" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="900" name="战场" width="1" height="1" x="818" y="415" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="903" name="国运官" width="1" height="1" x="836" y="529" num="1" interval="1200" color="0,255,0,0"/>
+	<npc id="895" name="万事通" width="1" height="1" x="821" y="414" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="5105" name="东郊驿使" width="1" height="1" x="931" y="46" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="5106" name="南郊驿使" width="1" height="1" x="914" y="911" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="892" name="大元帅" width="1" height="1" x="832" y="441" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="888" name="环式任务使者(120级)" width="1" height="1" x="858" y="495" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="889" name="环式任务使者(130级)" width="1" height="1" x="861" y="493" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="890" name="环式任务使者(140级)" width="1" height="1" x="865" y="489" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="891" name="环式任务使者(150级)" width="1" height="1" x="869" y="485" num="1" interval="500" color="0,255,0,0"/>
+	<npc id="865" name="争霸赛联系员" width="1" height="1" x="824" y="424" num="1" interval="3600"/>
+	<septnpc id="112"/>
+	<septnpc id="113"/>
+	<septnpc id="116"/>
+	<septnpc id="876"/>
+	<septnpc id="877"/>
+	<septnpc id="878"/>
+	<septnpc id="879"/>
+	<septnpc id="880"/>
+	<septnpc id="881"/>
+	<septnpc id="882"/>
+	<septnpc id="883"/>
+	<septnpc id="884"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+</map>

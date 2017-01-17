@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="10097" name="山贼哨兵">
+	<quest id="294" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2099" odds="1000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20339" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2095" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20342" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_山贼哨兵" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_山贼哨兵" value="1"/>
+				<refresh name="kill_山贼哨兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_山贼哨兵" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_山贼哨兵"/>
+				<notify content="恭喜你完成了山贼哨兵的任务,回凤凰城富不仁处交任务吧"/>
+				<notify1 content="凤凰城富不仁"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

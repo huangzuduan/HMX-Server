@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512 -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区-->
+	<waypoint>
+		<point x="137" y="102"/>
+		<point x="137" y="103"/>
+		<point x="137" y="104"/>
+		<point x="137" y="105"/>
+		<point x="137" y="106"/>
+		<point x="137" y="107"/>
+		<point x="137" y="108"/>
+		<point x="138" y="103"/>
+		<point x="138" y="104"/>
+		<point x="138" y="105"/>
+		<point x="138" y="106"/>
+		<point x="138" y="107"/>
+		<point x="138" y="108"/>
+		<point x="138" y="109"/>
+		<point x="138" y="110"/>
+		<dest name="jingguai5" country="0" x="125" y="85"/>
+		<dest name="jingguai5" country="0" x="125" y="86"/>
+		<dest name="jingguai5" country="0" x="125" y="87"/>
+		<dest name="jingguai5" country="0" x="125" y="88"/>
+		<dest name="jingguai5" country="0" x="125" y="89"/>
+		<dest name="jingguai5" country="0" x="125" y="90"/>
+		<dest name="jingguai5" country="0" x="125" y="91"/>
+		<dest name="jingguai5" country="0" x="126" y="85"/>
+		<dest name="jingguai5" country="0" x="126" y="86"/>
+		<dest name="jingguai5" country="0" x="126" y="87"/>
+		<dest name="jingguai5" country="0" x="126" y="88"/>
+		<dest name="jingguai5" country="0" x="126" y="89"/>
+		<dest name="jingguai5" country="0" x="126" y="90"/>
+		<dest name="jingguai5" country="0" x="126" y="91"/>
+		<dest name="jingguai5" country="0" x="125" y="89"/>
+	</waypoint>
+	<waypoint>
+		<point x="13" y="123"/>
+		<point x="13" y="124"/>
+		<point x="13" y="125"/>
+		<point x="13" y="126"/>
+		<point x="12" y="123"/>
+		<point x="12" y="124"/>
+		<point x="12" y="125"/>
+		<point x="13" y="123"/>
+		<point x="13" y="124"/>
+		<point x="13" y="125"/>
+		<point x="13" y="126"/>
+		<point x="12" y="123"/>
+		<point x="12" y="124"/>
+		<point x="12" y="125"/>
+		<dest name="jingguai7" country="0" x="28" y="127"/>
+		<dest name="jingguai7" country="0" x="29" y="127"/>
+		<dest name="jingguai7" country="0" x="30" y="127"/>
+		<dest name="jingguai7" country="0" x="31" y="127"/>
+		<dest name="jingguai7" country="0" x="32" y="127"/>
+		<dest name="jingguai7" country="0" x="28" y="128"/>
+		<dest name="jingguai7" country="0" x="29" y="128"/>
+		<dest name="jingguai7" country="0" x="30" y="128"/>
+		<dest name="jingguai7" country="0" x="31" y="128"/>
+		<dest name="jingguai7" country="0" x="32" y="128"/>
+		<dest name="jingguai7" country="0" x="28" y="127"/>
+		<dest name="jingguai7" country="0" x="29" y="127"/>
+		<dest name="jingguai7" country="0" x="30" y="127"/>
+		<dest name="jingguai7" country="0" x="31" y="127"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="17" height="29" x="135" y="97" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="32" x="5" y="102" type="1" color="0,0,255,0"/>
+	<npc id="16250" name="狐狸精" width="10" height="12" x="27" y="160" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16251" name="蛇精(近魔）" width="10" height="12" x="125" y="68" num="20" interval="2" color="0,255,0,0"/>
+	<npc id="55188" name="毒果" width="104" height="212" x="29" y="9" num="6" interval="1000" color="0,255,0,0"/>
+	<npc id="55107" name="奇异果" width="104" height="213" x="29" y="8" num="6" interval="1000" color="0,255,0,0"/>
+	<npc id="55188" name="石头" width="103" height="213" x="30" y="8" num="6" interval="1000" color="0,255,0,0"/>
+	<npc id="55107" name="箱子" width="106" height="209" x="27" y="12" num="6" interval="1000" color="0,255,0,0"/>
+	<npc id="55221" name="破损箱子" width="105" height="211" x="28" y="10" num="3" interval="1000" color="0,255,0,0"/>
+	<npc id="55201" name="箱子" width="105" height="212" x="28" y="9" num="2" interval="1000" color="0,255,0,0"/>
+	<npc id="55221" name="破损箱子" width="105" height="212" x="28" y="9" num="2" interval="1000" color="0,255,0,0"/>
+	<npc id="26209" name="蝎子精" width="105" height="209" x="28" y="12" num="1" interval="7200" color="0,255,0,0"/>
+	<npc id="16250" name="狐狸精" width="10" height="12" x="71" y="193" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16250" name="狐狸精" width="10" height="12" x="90" y="18" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16250" name="狐狸精" width="10" height="12" x="102" y="199" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16250" name="狐狸精" width="10" height="12" x="94" y="73" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16251" name="蛇精(近魔）" width="10" height="12" x="59" y="119" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16252" name="鱼精" width="10" height="12" x="146" y="163" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16252" name="鱼精" width="10" height="12" x="96" y="159" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16252" name="鱼精" width="10" height="12" x="125" y="33" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16253" name="蝙蝠精(魔）" width="105" height="209" x="28" y="12" num="10" interval="5" color="0,255,0,0"/>
+</map>

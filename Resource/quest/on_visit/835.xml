@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="835" name="凤凰城-郎捕头(391,406)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30101">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20101"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：血案(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;血案\n \n&lt;/n&gt;&lt;n&gt;    凶手？我跑的那么快什么样的凶手逃的出我的手掌心？只是......\n      总是问不出个所以然来，郁闷。\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("此话怎讲{10002}", "v835", 20101, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20101" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20101"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20101" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<var type="Set" name="state" value="-1" id="20101"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30102">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20101"/>
+				<var type="Differ" name="state" value="-3" id="20102"/>
+				<var type="Differ" name="state" value="1" id="20102"/>
+				<var type="Differ" name="state" value="-1" id="20102"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：谈判专家(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;谈判专家\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将谈判专家陈满神带到小队长，劝说小队长说出幕后主使人。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    那个小队长真是粗俗，不管怎样就是撬不开他的嘴，还老用方言骂我。\n    还好我请出了谈判专家陈满神，在她的唠叨下没有人不精神崩溃的，哈哈哈。\n &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v835", 20102, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20102" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20101"/>
+				<var type="Differ" name="state" value="-3" id="20102"/>
+				<var type="Differ" name="state" value="-1" id="20102"/>
+				<var type="Differ" name="state" value="1" id="20102"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54059" map="凤凰城" ltpos="388,406" rbpos="390,413" gold="0" exp="0" dest="239,492"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="任务：把陈满神带到凤凰城小队长处"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="30"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30103">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20103"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：真凶(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;真凶\n \n&lt;/n&gt;&lt;n&gt;    什么？你问出谁是凶手了？果然厉害啊，快告诉我那个兔崽子是谁。\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("犯人是张昆仑{10002}", "v835", 20103, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20103"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20103" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<var type="Set" name="state" value="-1" id="20103"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30104">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20103"/>
+				<var type="Differ" name="state" value="-3" id="20104"/>
+				<var type="Differ" name="state" value="1" id="20104"/>
+				<var type="Differ" name="state" value="-1" id="20104"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：追凶(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;追凶\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    过段时间（5分钟）再来询问郎捕头案件情况。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    什么？是张昆仑？怎么会呢，我该怎么办？\n    你先去吧，我会去把犯人捉拿归案的。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，那我过段时间再来看看{10001}", "v835", 20104, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<timeouts long="300" id="20104" less="0"/>
+				<var type="Equal" name="state" value="-3" id="20104"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：追凶(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;追凶\n \n&lt;/n&gt;&lt;n&gt;    哎，我实在是没法抓他，他对我来说实在太重要了，怎么办呢？\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不要因私废公啊{10002}", "v835", 20104, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<timeouts long="300" id="20104" less="1"/>
+				<var type="Equal" name="state" value="-3" id="20104"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    人还没抓到，过段时间再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20104" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20103"/>
+				<var type="Differ" name="state" value="-3" id="20104"/>
+				<var type="Differ" name="state" value="-1" id="20104"/>
+				<var type="Differ" name="state" value="1" id="20104"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：过段时间再来找郎捕头"/>
+				<notify1 content="过段时间再来找郎捕头"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="10"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20104"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20104" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<notify content="恭喜你完成了“追凶”任务"/>
+				<var type="Set" name="state" value="-1" id="20104"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30105">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20104"/>
+				<var type="Differ" name="state" value="-3" id="20105"/>
+				<var type="Differ" name="state" value="1" id="20105"/>
+				<var type="Differ" name="state" value="-1" id="20105"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：辞官(2)", "Dialog55")
+end
+function Dialog55()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;辞官\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    由于郎捕头决定和张昆仑逃到断背山上去，去告诉谢无欢。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    的确，忠义难以两全，因此我决定，带着昆仑到断背山上去隐居，听说，那里是我们的乐土。\n    我实在无法当面向谢无欢大人辞官，麻烦你去帮我传个话吧。&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我可以帮你这个忙{10001}", "v835", 20105, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20105" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20104"/>
+				<var type="Differ" name="state" value="-3" id="20105"/>
+				<var type="Differ" name="state" value="-1" id="20105"/>
+				<var type="Differ" name="state" value="1" id="20105"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找凤凰城的谢无欢"/>
+				<notify1 content="凤凰城的谢无欢"/>
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2086" name="小箱子">
+	<quest id="227">
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="227"/>
+				<var type="Differ" name="state" value="-1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="227"/>
+				<notify content="掉下来个小箱子，给庞叔去看看"/>
+				<notify1 content="掉下来个小箱子，给庞叔去看看"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

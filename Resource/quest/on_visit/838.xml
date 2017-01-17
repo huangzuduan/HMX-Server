@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="838" name="王城-陈大班(805,414)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30107">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20107"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：真相(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;真相\n \n&lt;/n&gt;&lt;n&gt;    谢大爷想要定馒头，那可太好了，反正最近排的戏都不卖坐，我就让负责道具的人帮你做些馒头吧，真是太谢谢你了。\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不用客气{10002}", "v838", 20107, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20107" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20107"/>
+			</conditions>
+			<actions>
+				<exp1 value="100" id="20107" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<var type="Set" name="state" value="-1" id="20107"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30108">
+		<embranchment id="4">
+			<conditions>
+				<uservar type="Equal" name="makebread" value="2"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    今天不用做馒头了，明天再说吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="5">
+			<conditions>
+                                <level type="Great" value="109"/>
+				<uservar type="Equal" name="makebread" value="4"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    今天不用做馒头了，明天再说吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="11">
+			<conditions>
+                               <innation/>
+				<level type="Less" value="110"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+                               <innation/>
+				<level type="Less" value="110"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="13">
+			<conditions>
+                               <innation/>
+				<uservar type="Equal" name="makebread" value="2"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 3)
+end
+				</menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="14">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		
+			<embranchment id="24">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="34">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 34)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="35">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 35)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="44">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="139"/>
+				<level type="Less" value="150"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 44)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="45">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="139"/>
+				<level type="Less" value="150"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 45)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="54">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="149"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 54)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="55">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="149"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看你那么空闲，愿不愿意帮我做馒头啊？愿意的话帮我去找我的专署道具师，陈满神小姐。")
+this:AddTaskCmdItem("接受任务{10001}", "v838", 20108, 55)
+end
+				</menu>
+			</actions>
+		</embranchment>
+			
+		<embranchment id="140">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20108"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    馒头都好了啊，看来你和满神合作还是挺好的。")
+this:AddTaskCmdItem("完成任务{10001}", "v838", 20108, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20108" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Less" value="110"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="48"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Less" value="110"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="72"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="2"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<!--embranchment id="3" active="1">
+			<conditions>
+                               <innation/>
+				<uservar type="Equal" name="makebread" value="2"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="3"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment-->
+		<embranchment id="4" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="100"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="120"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="120"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		
+		
+		<embranchment id="24" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="110"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="130"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="34" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="120"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="35" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="140"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="44" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="139"/>
+				<level type="Less" value="150"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="130"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="45" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="139"/>
+				<level type="Less" value="150"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="150"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="54" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="149"/>
+				<uservar type="Less" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="140"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="55" active="1">
+			<conditions>
+                               <innation/>
+				<level type="Great" value="149"/>
+				<uservar type="Equal" name="makebread" value="1"/>
+				<var type="Equal" name="state" value="-1" id="20107"/>
+				<var type="Differ" name="state" value="-3" id="20108"/>
+				<var type="Differ" name="state" value="-1" id="20108"/>
+				<var type="Differ" name="state" value="1" id="20108"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找陈满神"/>
+				<notify1 content="陈满神"/>
+				<uservar type="Add" name="makebread" value="1"/>
+				<var type="GetP" name="bread_selflevel" value="1"/>
+				<vars type="Mul" name1="bread_selflevel" name2="bread_selflevel"/>
+				<var type="Set" name="baseexp" value="160"/>
+				<var type="Set" name="bread_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="bread_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="bread_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="bread_selflevel" name2="stupid"/>
+				<vars type="Div" name1="bread_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="bread_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="bread_selflevel2" name2="div"/>
+				<vars type="Add" name1="bread_selflevel" name2="bread_selflevel2"/>
+				<refresh name="bread_selflevel"/>
+			</actions>
+		</embranchment>
+	
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20108"/>
+			</conditions>
+			<actions>
+				<exp1 value="100" id="20108" name="selflevel"/>
+				<exp1 value="100" id="20108" name="bread_selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<notify content="恭喜你完成了“馒头”任务"/>
+				<var type="Set" name="state" value="-2" id="20108"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

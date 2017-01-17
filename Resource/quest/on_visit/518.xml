@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="518" name="王城-战马饲养员(531,136）">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30232">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Differ" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：战马(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("    谁能打败龙冈山的山大王，我就送谁一匹战马，谁想试试啊？")
+this:AddTaskCmdItem("接受任务{10001}", "v518", 20243, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Equal" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到你那么厉害，按约定就给你战马吧。")
+this:AddTaskCmdItem("接受奖励{10002}", "v518", 20243, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20243" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Differ" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：消灭山寨里的山大王"/>
+			</actions>
+		</embranchment>
+		<embranchment id="1" active="1">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-1" id="20243"/>
+				<var type="Differ" name="state" value="1" id="20243"/>
+				<var type="Equal" name="state" value="-3" id="20243"/>
+			</conditions>
+			<actions>
+				<horse value="3200"/>
+				<notify1 content="得到战马"/>
+				<var type="Set" name="state" value="-2" id="20243"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+
+
+
+
+
+
+</event>

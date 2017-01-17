@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="290" name="凤凰城-考官(215,346)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30335">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="27"/>
+				<var type="Equal" name="state" value="-1" id="20330"/>
+				<var type="Differ" name="state" value="-1" id="20335"/>
+				<var type="Differ" name="state" value="1" id="20335"/>
+				<var type="Differ" name="state" value="-3" id="20335"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：圆筒灰白间(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;圆筒灰白间\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    打败50只圆筒灰白间，然后再回到考官处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哦，来考秀才证书啊。\n    这个题目可不是我命题的，这可是我们主考官命题的。\n   打败50只圆筒灰白间，圆筒灰白间是什么，你猜得到吗？好了，快去吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 15000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去。{10001}", "v290", 20335, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20335"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：圆筒灰白间(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;圆筒灰白间\n \n&lt;/n&gt;&lt;n&gt;    嗯，你猜到啦？呵呵，你还是第一个猜到的人呢。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 15000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v290", 20335, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20335"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么又回来了，还不知道圆筒灰白间是什么吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20335" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="27"/>
+				<var type="Equal" name="state" value="-1" id="20330"/>
+				<var type="Differ" name="state" value="-1" id="20335"/>
+				<var type="Differ" name="state" value="1" id="20335"/>
+				<var type="Differ" name="state" value="-3" id="20335"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：打败50头圆筒灰白间"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20335"/>
+			</conditions>
+			<actions>
+				<exp value="15000"/>
+				<notify1 content="经验+15000"/>
+				<notify content="恭喜你完成了“圆筒灰白间”任务"/>
+				<var type="Set" name="state" value="-1" id="20335"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30336">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20335"/>
+				<var type="Differ" name="state" value="-1" id="20336"/>
+				<var type="Differ" name="state" value="1" id="20336"/>
+				<var type="Differ" name="state" value="-3" id="20336"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：类犬(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;类犬\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    打败50头类犬，然后再回到考官处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哦，来考秀才证书啊。\n    这个题目可不是我命题的，这可是我们主考官命题的。\n   打败50头凶残类犬，凶残的类犬是什么，你猜得到吗？好了，快去吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 15900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去。{10001}", "v290", 20336, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20336"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：类犬(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;类犬\n \n&lt;/n&gt;&lt;n&gt;    嗯，你猜到啦？类犬就是食人狼啊。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 15900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v290", 20336, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20336"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么又回来了，还不知道类犬是什么吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20336" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20335"/>
+				<var type="Differ" name="state" value="-1" id="20336"/>
+				<var type="Differ" name="state" value="1" id="20336"/>
+				<var type="Differ" name="state" value="-3" id="20336"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：打败50头类犬"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20336"/>
+			</conditions>
+			<actions>
+				<exp value="15900"/>
+				<notify1 content="经验+15900"/>
+				<notify content="恭喜你完成了“类犬”任务"/>
+				<var type="Set" name="state" value="-1" id="20336"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30337">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20336"/>
+				<var type="Differ" name="state" value="-1" id="20337"/>
+				<var type="Differ" name="state" value="1" id="20337"/>
+				<var type="Differ" name="state" value="-3" id="20337"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：无胆匪类(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;无胆匪类\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    打败50个无胆匪类，然后再回到考官处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哦，来考秀才证书啊。\n    这个题目可不是我命题的，这可是我们主考官命题的。\n   打败50个无胆匪类，无胆匪类是什么，你猜得到吗？好了，快去吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 16200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去。{10001}", "v290", 20337, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20337"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：无胆匪类(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;无胆匪类\n \n&lt;/n&gt;&lt;n&gt;    嗯，你猜到啦？无胆匪类就是土匪啊。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 16200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v290", 20337, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20337"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么又回来了，还不知道无胆匪类是什么吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20337"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹空间不足，请清理包裹。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="46">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20337"/>
+				<item value="1" id="2083"/>
+			</conditions>
+			<actions>
+				<menu>
+		function TaskDialog()
+		this:AddTalk("    朋友，你的秀才证书在你的包裹里了哦。")
+		this:AddCloseItem("离开")
+		end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="47">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="20337"/>
+				<var type="Differ" name="state" value="-1" id="20334"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    怎么了？证书掉了？那再给你一张吧。")
+this:AddTaskCmdItem("领取{10002}", "v290", 20337, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20337" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20335"/>
+				<var type="Differ" name="state" value="-1" id="20337"/>
+				<var type="Differ" name="state" value="1" id="20337"/>
+				<var type="Differ" name="state" value="-3" id="20337"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：打败50个无胆匪类(95,100)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20337"/>
+			</conditions>
+			<actions>
+				<exp value="16200"/>
+				<notify1 content="经验+16200"/>
+				<additem value="1" id="2083"/>
+				<notify1 content="得到秀才证书"/>
+				<notify content="恭喜你完成了“无胆匪类”任务"/>
+				<var type="Set" name="state" value="-1" id="20337"/>
+				<var type="Set" name="state" value="-3" id="20334"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="20337"/>
+				<var type="Differ" name="state" value="-1" id="20334"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2083"/>
+				<notify1 content="得到秀才证书"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

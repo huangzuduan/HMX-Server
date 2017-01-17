@@ -1,0 +1,16 @@
+服务器输出文件名	config_vip_new.xml	根名称	ability																											
+客户端输出文件名	config_vip_new.xml	项名称	vip																											
+等级	体力上限	竞技场次数	免费传送	折扣率	下一级升级所需成长	升星成功率增加	好友上限	小师妹暴击率	购买体力次数	金币购买次数	体力恢复时间减少	摆摊颜色	uint8普通奖励项数量	uint16普通奖励1类型	int32普通奖励1值	uint16普通奖励2类型	int32普通奖励2值	uint16普通奖励3类型	int32普通奖励3值	uint16普通奖励4类型	int32普通奖励4值	uint8物品奖励项数量	uint16物品奖励1类型	uint16物品奖励1值	uint16物品奖励2类型	uint16物品奖励2值	uint16物品奖励3类型	uint16物品奖励3值	uint16物品奖励4类型	uint16物品奖励4值
+3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3	3
+vip_level	body_limit	arena_times	delivery	sale_off	level_exp	equip_star	friend_num	sister_hit_rate	buy_body_times	buy_gold_times	body_resume	color	count_reward	reward_char_mod_type_0	reward_char_mod_value_0	reward_char_mod_type_1	reward_char_mod_value_1	reward_char_mod_type_2	reward_char_mod_value_2	reward_char_mod_type_3	reward_char_mod_value_3	count_reward_item	reward_item_item_type_idx_0	reward_item_item_count_0	reward_item_item_type_idx_1	reward_item_item_count_1	reward_item_item_type_idx_2	reward_item_item_count_2	reward_item_item_type_idx_3	reward_item_item_count_3
+0	0	0	0	100	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+1	5	1	0	95	150	5	2	2	1	1	30	2	1	16	10	0	0	0	0	0	0	2	100110101	1	220010001	1	0	0	0	0
+2	10	2	1	95	375	6	4	4	2	2	50	2	1	16	25	0	0	0	0	0	0	2	100110201	1	220010002	1	0	0	0	0
+3	15	3	1	95	563	7	6	6	3	3	70	3	2	16	30	12	5000	0	0	0	0	2	100110301	1	220010003	1	0	0	0	0
+4	20	4	1	90	845	8	8	8	4	4	90	3	2	16	35	12	7000	0	0	0	0	2	100110401	2	220010004	1	0	0	0	0
+5	25	5	1	90	1268	9	10	10	5	5	110	3	2	16	40	12	9000	0	0	0	0	2	100110501	1	220020001	1	0	0	0	0
+6	30	6	1	90	1902	10	12	12	6	6	130	3	2	16	45	12	11000	0	0	0	0	2	100110601	2	220020002	1	0	0	0	0
+7	35	7	1	85	2853	11	14	14	7	7	150	3	3	16	50	12	13000	11	2	0	0	2	100110701	1	220020003	1	0	0	0	0
+8	40	8	1	85	4280	12	16	16	8	8	170	3	3	16	55	12	15000	11	4	0	0	2	101110101	2	220020004	1	0	0	0	0
+9	45	9	1	85	6420	13	18	18	9	9	190	3	3	16	60	12	17000	11	6	0	0	2	101210101	1	220030001	1	0	0	0	0
+10	50	10	1	80	9630	15	20	20	10	10	210	3	3	16	65	12	19000	11	8	0	0	2	101310101	3	220030002	1	0	0	0	0

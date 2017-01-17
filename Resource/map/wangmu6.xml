@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<waypoint>
+		<point x="220" y="182"/>
+		<point x="220" y="183"/>
+		<point x="220" y="184"/>
+		<point x="220" y="185"/>
+		<point x="220" y="186"/>
+		<point x="221" y="182"/>
+		<point x="221" y="183"/>
+		<point x="221" y="184"/>
+		<point x="221" y="185"/>
+		<point x="221" y="186"/>
+		<point x="220" y="182"/>
+		<point x="220" y="183"/>
+		<point x="220" y="184"/>
+		<point x="220" y="185"/>
+		<point x="220" y="186"/>
+		<point x="221" y="182"/>
+		<point x="221" y="183"/>
+		<point x="221" y="184"/>
+		<point x="221" y="185"/>
+		<point x="221" y="186"/>
+		<point x="220" y="182"/>
+		<point x="220" y="183"/>
+		<point x="220" y="184"/>
+		<point x="220" y="185"/>
+		<point x="220" y="186"/>
+		<point x="221" y="182"/>
+		<point x="221" y="183"/>
+		<point x="221" y="184"/>
+		<point x="221" y="185"/>
+		<point x="221" y="186"/>
+		<dest name="wangmu5" country="6" x="208" y="50"/>
+		<dest name="wangmu5" country="6" x="209" y="50"/>
+		<dest name="wangmu5" country="6" x="210" y="50"/>
+		<dest name="wangmu5" country="6" x="211" y="50"/>
+		<dest name="wangmu5" country="6" x="212" y="50"/>
+		<dest name="wangmu5" country="6" x="213" y="50"/>
+		<dest name="wangmu5" country="6" x="214" y="50"/>
+		<dest name="wangmu5" country="6" x="215" y="50"/>
+		<dest name="wangmu5" country="6" x="216" y="50"/>
+		<dest name="wangmu5" country="6" x="217" y="50"/>
+		<dest name="wangmu5" country="6" x="208" y="50"/>
+		<dest name="wangmu5" country="6" x="209" y="50"/>
+		<dest name="wangmu5" country="6" x="210" y="50"/>
+		<dest name="wangmu5" country="6" x="211" y="50"/>
+		<dest name="wangmu5" country="6" x="212" y="50"/>
+		<dest name="wangmu5" country="6" x="213" y="50"/>
+		<dest name="wangmu5" country="6" x="214" y="50"/>
+		<dest name="wangmu5" country="6" x="215" y="50"/>
+		<dest name="wangmu5" country="6" x="216" y="50"/>
+		<dest name="wangmu5" country="6" x="217" y="50"/>
+		<dest name="wangmu5" country="6" x="208" y="50"/>
+		<dest name="wangmu5" country="6" x="209" y="50"/>
+		<dest name="wangmu5" country="6" x="210" y="50"/>
+		<dest name="wangmu5" country="6" x="211" y="50"/>
+		<dest name="wangmu5" country="6" x="212" y="50"/>
+		<dest name="wangmu5" country="6" x="213" y="50"/>
+		<dest name="wangmu5" country="6" x="214" y="50"/>
+		<dest name="wangmu5" country="6" x="215" y="50"/>
+		<dest name="wangmu5" country="6" x="216" y="50"/>
+		<dest name="wangmu5" country="6" x="217" y="50"/>
+	</waypoint>
+	<waypoint>
+		<point x="78" y="55"/>
+		<point x="78" y="56"/>
+		<point x="78" y="57"/>
+		<point x="78" y="58"/>
+		<point x="78" y="59"/>
+		<point x="78" y="60"/>
+		<point x="79" y="57"/>
+		<point x="79" y="58"/>
+		<point x="79" y="59"/>
+		<point x="79" y="60"/>
+		<point x="78" y="55"/>
+		<point x="78" y="56"/>
+		<point x="78" y="57"/>
+		<point x="78" y="58"/>
+		<point x="78" y="59"/>
+		<point x="78" y="60"/>
+		<point x="79" y="57"/>
+		<point x="79" y="58"/>
+		<point x="79" y="59"/>
+		<point x="79" y="60"/>
+		<dest name="wangmu7" country="6" x="238" y="173"/>
+		<dest name="wangmu7" country="6" x="238" y="174"/>
+		<dest name="wangmu7" country="6" x="238" y="175"/>
+		<dest name="wangmu7" country="6" x="238" y="176"/>
+		<dest name="wangmu7" country="6" x="238" y="177"/>
+		<dest name="wangmu7" country="6" x="238" y="178"/>
+		<dest name="wangmu7" country="6" x="238" y="179"/>
+		<dest name="wangmu7" country="6" x="238" y="180"/>
+		<dest name="wangmu7" country="6" x="238" y="181"/>
+		<dest name="wangmu7" country="6" x="238" y="182"/>
+		<dest name="wangmu7" country="6" x="238" y="173"/>
+		<dest name="wangmu7" country="6" x="238" y="174"/>
+		<dest name="wangmu7" country="6" x="238" y="175"/>
+		<dest name="wangmu7" country="6" x="238" y="176"/>
+		<dest name="wangmu7" country="6" x="238" y="177"/>
+		<dest name="wangmu7" country="6" x="238" y="178"/>
+		<dest name="wangmu7" country="6" x="238" y="179"/>
+		<dest name="wangmu7" country="6" x="238" y="180"/>
+		<dest name="wangmu7" country="6" x="238" y="181"/>
+		<dest name="wangmu7" country="6" x="238" y="182"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="102" y="114" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="205" y="218" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="148" y="267" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16608" name="宝箱" width="186" height="212" x="25" y="72" num="80" interval="10" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="156" y="111" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="180" y="68" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="84" y="197" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="200" y="78" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="157" y="234" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="157" y="234" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="249" y="139" num="65" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="40" y="140" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="157" y="147" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="125" y="107" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="87" y="63" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16532" name="骸骨祭师" width="10" height="12" x="61" y="162" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="129" y="143" num="55" interval="2" color="0,255,0,0"/>
+	<npc id="16535" name="骸骨战士" width="10" height="12" x="185" y="239" num="45" interval="2" color="0,255,0,0"/>
+	<npc id="16533" name="骸骨司祭(魔)" width="10" height="10" x="75" y="119" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16534" name="骸骨射手" width="10" height="10" x="118" y="217" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16530" name="骸骨卫兵(魔)" width="10" height="10" x="222" y="115" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16530" name="骸骨卫兵(魔)" width="10" height="10" x="146" y="79" num="1" interval="90" color="0,255,0,0"/>
+	<npc id="16534" name="骸骨射手" width="8" height="10" x="180" y="201" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="16533" name="骸骨司祭(魔)" width="10" height="12" x="161" y="39" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="16530" name="骸骨卫兵(魔)" width="10" height="12" x="115" y="175" num="15" interval="5" color="0,255,0,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="266" height="268" x="18" y="16" type="2" color="0,255,0,0"/>
+</map>

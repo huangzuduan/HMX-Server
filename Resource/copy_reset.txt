@@ -1,0 +1,12 @@
+服务器输出文件名	config_copy_reset.xml	根名称	root
+客户端输出文件名		项名称	item
+第几次购买	价格		
+2	2		
+time_id	cost_ingot		
+1	100		
+2	200		
+3	300		
+4	400		
+5	500		
+6	600		
+7	700		

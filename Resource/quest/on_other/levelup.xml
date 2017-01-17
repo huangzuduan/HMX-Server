@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v04 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<!--ggjgg整理修改,送银子数量多了点,自己玩不需要在修改,外网的话自己看着修改-->
+<!--关于送物品的绑定问题,可以自己修改为未绑定的物品语句[<additem value="1" id="X">]-->
+<event id="3" name="等级">
+	<!--new means new quest, default is quest on user-->
+	<quest id="15000">
+		<embranchment id="2">
+			<conditions>
+				<level type="Great" value="1"/>
+				<level type="Less" value="10"/>
+				<var type="Differ" name="state" value="-1" id="20"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升级了，请别忘记通过人物属性界面“C”和技能界面“V”来分配您的属性点和技能点，这对您将来练级和做任务会大有帮助的。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify content="请别忘记通过人物属性界面“C”和技能界面“V”来分配您的属性点和技能点"/>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<level type="Equal" value="8"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您到8级了，您可以在10级的时候离开清源村去凤凰城进行更多的探险。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Equal" value="10"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="100"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升级了，最后一次提醒您请别忘记通过人物属性界面“C”和技能界面“V”来分配您的属性点和技能点。\n\n    经过这段时间的锻炼，你已经可以离开清源村了，希望你在凤凰城里能过的愉快。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify content="你已经可以离开清源村了，希望你在凤凰城里能过的愉快。"/>
+				<notify1 content="可以离开清源村了"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<level type="Equal" value="11"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤凰城的颜梦梦（310，521）似乎有事情想找人帮忙。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="110"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<level type="Equal" value="12"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤凰城的李大壮（290，579）似乎有事情想找人帮忙。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="120"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<level type="Equal" value="13"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤凰城的齐飞（342，391）最近表现很不正常，似乎有什么心事。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="130"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<level type="Equal" value="14"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤凰城的牛二（422，301）最近很愤怒，走近他的时候千万要小心。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="140"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<level type="Equal" value="15"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="150"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了15级，在您20级以后，可以到凤凰城的风水先生处选择您的人物五行属性，这能大大提高您练级效率。\n\n 小道消息：听说凤凰城的李员外（415，473）儿子丢了，也不知是真是假。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n ")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<level type="Equal" value="16"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤凰城的齐飞（342，391）最近似乎特别兴奋，可能是吃错药了。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="160"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<level type="Equal" value="17"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="170"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    小道消息：听说凤凰城的炼药师洪老汉（409，499）又要开始炼什么奇怪的东西了。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<level type="Equal" value="18"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="180"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：听说凤凰城的渔夫当街大哭呢，大男人象什么样子。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<level type="Equal" value="19"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk(" 小道消息：听说凤凰城的李员外（415，473）儿子有消息了，不过好象对头挺难惹。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="level" value="190"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<level type="Equal" value="20"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>。
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了20级，你可以去风尾村游玩了。\n\n小道消息：听说雷老虎想到凤凰城里比武招亲呢。\n\n您可以到凤凰城的风水先生处选择您的五行属性。\n\n适合练级地点： 百兽谷。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify1 content="凤凰城-风水先生"/>
+				<notify content="请去凤凰城风水先生处选择人物五行"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<level type="Equal" value="22"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>。
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了22级，您到30级以后就可以通过边境的边防官跨国旅行了。\n    边境的路径是：凤凰城 - 东郊 - 边境。\n\n 小道消息：衙役那里似乎有了雷小姐的消息。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<level type="Equal" value="23"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>。
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了23级，您到25级以后就可以使用系统提供的国聊功能了。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<level type="Equal" value="24"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>。
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：听说城里那头黑豹偶尔会说人话，也不知是真是假。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<myround value="1"/>
+				<level type="Equal" value="25"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    恭喜您升到25级了，您现在可以使用国聊系统了。\n适合练级地点： 兽王谷 \n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：揭穿谣言\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找凤凰城-姜小鱼(439,470)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10755\"&gt;   冰鳞盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10756\"&gt;   黄金盔(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify content="您现在可以使用国聊系统了."/>
+				<notify1 content="可以使用国聊"/>
+				<notify1 content="可以跨国"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<level type="Equal" value="26"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>。
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：听说齐飞最近又准备干傻事了。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="28">
+			<conditions>
+				<level type="Equal" value="28"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>。
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：齐飞最近开始疯狂的读书，也不知能坚持几天。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="29">
+			<conditions>
+				<myround value="1"/>
+				<level type="Equal" value="29"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：消灭狼群\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找凤凰城-姜小鱼(439,470)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10905\"&gt;   铜牙靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10906\"&gt;   生铁靴(魔)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="30">
+			<conditions>
+				<level type="Equal" value="30"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了30级，你可以去王城和边境游玩了。王城的路径：凤凰城 - 东郊 - 王城。\n    如果您厌倦了步行，可以去找枣红马饲养员用20两购买一匹枣红马哦。\n\n小道消息：因为山贼的原因，凤尾村出现了大量的难民，真是可怜啊。\n\n适合练级地点： 山寨前哨。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify1 content="凤凰城-大臣申请帮会"/>
+				<notify content="可以到凤凰城的大臣处申请建立帮会了"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<level type="Equal" value="33"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：清除虎患\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找凤凰城-姜小鱼(439,470)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10857\"&gt;   白银护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10858\"&gt;   翡翠护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="35">
+			<conditions>
+				<level type="Equal" value="35"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了35级，您可以找民政官去申请成立家族了。\n\n适合练级地点： 龙冈山寨一层、龙冈山寨二层。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="36">
+			<conditions>
+				<level type="Equal" value="36"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤尾村的难民似乎想找人帮忙。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="37">
+			<conditions>
+				<level type="Equal" value="37"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：生态失衡\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找凤凰城-姜小鱼(439,470)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10857\"&gt;   白银护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10858\"&gt;   翡翠护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="39">
+			<conditions>
+				<level type="Equal" value="39"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：凤尾村的副官似乎在招募勇士。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="40">
+			<conditions>
+				<level type="Equal" value="40"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了40级，您可以到凤尾村的风水先生处继续升级您的五行属性。\n    您如果有意中人的话可以去找民政官申请结婚。\n\n适合练级地点： 龙冈山寨三层、龙冈山寨四层、东郊。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify1 content="凤尾村-风水先生"/>
+				<notify content="请去凤尾村风水先生处升级人物五行"/>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<level type="Equal" value="41"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：讨要公道\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找凤凰城-姜小鱼(439,470)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10809\"&gt;   冰鳞腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10810\"&gt;   黄金腰带(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="42">
+			<conditions>
+				<level type="Equal" value="42"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("  小道消息：凤尾村的副官似乎在招募勇士。\n\n   170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="45">
+			<conditions>
+				<level type="Equal" value="45"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    恭喜您升到了45级，您可以找大臣成立帮会了。\n  适合练级地点： 东郊、南郊、白骨洞。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：粉碎贼计\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找凤凰城-姜小鱼(439,470)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10759\"&gt;   龙鳞盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10760\"&gt;   百战盔(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<notify1 content="凤尾村-风水先生"/>
+				<notify content="请去凤尾村风水先生处升级人物五行"/>
+			</actions>
+		</embranchment>
+		<embranchment id="46">
+			<conditions>
+				<level type="Equal" value="46"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：王城的羽林将军似乎在招募勇士。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="49">
+			<conditions>
+				<level type="Equal" value="49"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：调查异军\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10909\"&gt;   冰鳞靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10910\"&gt;   破浪靴(魔)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="50">
+			<conditions>
+				<level type="Equal" value="50"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：王城的刘婆婆似乎在找儿子。\n\n适合练级地点： 东郊、南郊、白骨洞。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+				<level type="Equal" value="53"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：异军计划\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10861\"&gt;   琥珀护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10862\"&gt;   飞雪护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="54">
+			<conditions>
+				<level type="Equal" value="54"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("小道消息：王城的慎篱似乎在找帮手。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="55">
+			<conditions>
+				<level type="Equal" value="55"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("适合练级地点： 白骨洞四层，精怪洞穴。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="57">
+			<conditions>
+				<level type="Equal" value="57"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：异军之乱\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10861\"&gt;   琥珀护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10862\"&gt;   飞雪护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="60">
+			<conditions>
+				<level type="Equal" value="60"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    恭喜您升到了60级。\n\n适合练级地点：白骨洞六层，精怪洞穴、北郊、凤翔镇。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="61">
+			<conditions>
+				<level type="Equal" value="61"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：抢劫的异军\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10813\"&gt;   风神腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10814\"&gt;   风神腰带(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="65">
+			<conditions>
+				<level type="Equal" value="65"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：队长的企图\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10763\"&gt;   风神盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10764\"&gt;   风神盔(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="69">
+			<conditions>
+				<level type="Equal" value="69"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：千江地痞\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10913\"&gt;   水神靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10914\"&gt;   水神靴(魔)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="70">
+			<conditions>
+				<level type="Equal" value="70"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("适合练级地点：白骨洞八层，精怪洞穴六层、北郊、凤翔镇西郊。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="73">
+			<conditions>
+				<level type="Equal" value="73"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：狂乱钢犀\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10865\"&gt;   水神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10866\"&gt;   水神护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="75">
+			<conditions>
+				<level type="Equal" value="75"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("适合练级地点：精怪洞穴八层、凤翔镇西郊。\n\n    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="77">
+			<conditions>
+				<level type="Equal" value="77"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：打手之乱\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10865\"&gt;   水神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10866\"&gt;   水神护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="80">
+			<conditions>
+				<level type="Equal" value="80"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：搬救兵\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-羽林将军(516,507)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 87044&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 1锭&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="81">
+			<conditions>
+				<level type="Equal" value="81"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：无耻混混\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10817\"&gt;   雷神腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10818\"&gt;   雷神腰带(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="82">
+			<conditions>
+				<level type="Equal" value="82"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：慕名远来\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找千江镇－花飞(111,421)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 109995&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="84">
+			<conditions>
+				<level type="Equal" value="84"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：地保\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找千江镇-蒙阔(222,338)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 92392&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 1锭&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="85">
+			<conditions>
+				<level type="Equal" value="85"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：调查精怪\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10767\"&gt;   雷神盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10768\"&gt;   雷神盔(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="86">
+			<conditions>
+				<level type="Equal" value="86"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：心事重重\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找千江镇-花非花(133,415)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 738720&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="88">
+			<conditions>
+				<level type="Equal" value="88"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：避邪\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城－玄火(288,393)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 95600&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 2锭&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="89">
+			<conditions>
+				<level type="Equal" value="89"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：邪恶势力\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10917\"&gt;   火神靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10918\"&gt;   火神靴(魔)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="90">
+			<conditions>
+				<level type="Equal" value="90"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：千里送单衣\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找千江镇-花非花(133,415)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 128130&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="92">
+			<conditions>
+				<level type="Equal" value="92"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：禁术\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-羽林将军(516,507)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 85000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 2锭&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="93">
+			<conditions>
+				<level type="Equal" value="93"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：沼泽之险\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10869\"&gt;   火神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10870\"&gt;   火神护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="94">
+			<conditions>
+				<level type="Equal" value="94"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：左右逢源\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城－颜如玉(264,364)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 141565&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="96">
+			<conditions>
+				<level type="Equal" value="96"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：神秘的遗孤\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁建瓴(810,640)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 781980&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 4锭&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="97">
+			<conditions>
+				<level type="Equal" value="97"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：狡猾的鱼精\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10869\"&gt;   火神护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10870\"&gt;   火神护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="98">
+			<conditions>
+				<level type="Equal" value="98"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：踩点\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花傲剑(886,732)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 829380&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="100">
+			<conditions>
+				<level type="Equal" value="100"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：学徒的图册\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁建瓴(810,640)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 832590&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 4锭&lt;/n&gt;&lt;/p&gt;")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="101">
+			<conditions>
+				<level type="Equal" value="101"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：虎精之乱\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找王城-葫铁花(816,444)，他有绿装任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10821\"&gt;   夜魔腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10822\"&gt;   夜魔腰带(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<level type="Equal" value="102"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：求婚\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花傲剑(886,723)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 144555&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<level type="Equal" value="103"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：神奇风叶\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁怜心(817，622)，他有新的任务交给你。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;877590 &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<level type="Equal" value="104"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：劝解\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁建瓴(810,640)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 934500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 4锭 &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<level type="Equal" value="105"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：调查木人\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10771\"&gt;   夜魔盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10772\"&gt;   夜魔盔(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="106">
+			<conditions>
+				<level type="Equal" value="106"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：提问\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁睿(662,389)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 150945&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="108">
+			<conditions>
+				<level type="Equal" value="108"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：法轴的秘密\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁建瓴(810,640)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 967380&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 4锭 &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<level type="Equal" value="109"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：调查王墓\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10921\"&gt;   血魔靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10922\"&gt;   血魔靴(魔)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="110">
+			<conditions>
+				<level type="Equal" value="110"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：退亲\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁睿(662,389)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 162150&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="112">
+			<conditions>
+				<level type="Equal" value="112"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：神奇法器\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁建瓴(810,640)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1032480&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 4锭 &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="113">
+			<conditions>
+				<level type="Equal" value="113"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：工匠的研究\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10873\"&gt;   水神护腕&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10874\"&gt;   血魔护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="114">
+			<conditions>
+				<level type="Equal" value="114"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：吕家任务\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－吕思远(602,281)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1049220&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="116">
+			<conditions>
+				<level type="Equal" value="116"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：消灭工匠\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－鲁建瓴(810,640)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1099980&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="117">
+			<conditions>
+				<level type="Equal" value="117"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：灭魔\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;11500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10873\"&gt;   水神护腕&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10874\"&gt;   血魔护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="118">
+			<conditions>
+				<level type="Equal" value="118"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：讨好\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花傲剑(886,723)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1101990&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="120">
+			<conditions>
+				<level type="Equal" value="120"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：孤独的守墓人\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1365420&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="121">
+			<conditions>
+				<level type="Equal" value="121"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：疯狂骸骨\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10825\"&gt;   天魔腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10826\"&gt;   天魔腰带(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="122">
+			<conditions>
+				<level type="Equal" value="122"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：文物\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－吕隐(676,421)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1360100&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="124">
+			<conditions>
+				<level type="Equal" value="124"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：犬戎\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;158472&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="125">
+			<conditions>
+				<level type="Equal" value="125"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：祭师法咒\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;12500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10775\"&gt;   天魔盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10776\"&gt;   天魔盔(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="126">
+			<conditions>
+				<level type="Equal" value="126"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：挽救墓葬\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花傲剑(886,723)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1460020&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="128">
+			<conditions>
+				<level type="Equal" value="128"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：奇怪的图腾\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1342080&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="129">
+			<conditions>
+				<level type="Equal" value="129"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：邪恶傀儡\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10925\"&gt;   幽冥靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10926\"&gt;   幽冥靴(魔)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="130">
+			<conditions>
+				<level type="Equal" value="130"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：花盗的堂妹\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花情(779,665)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1542608&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="132">
+			<conditions>
+				<level type="Equal" value="132"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：借问\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;236400&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="133">
+			<conditions>
+				<level type="Equal" value="133"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：消灭总管\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;13500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10877\"&gt;   幽冥护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10878\"&gt;   幽冥护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="134">
+			<conditions>
+				<level type="Equal" value="134"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：百年老酒\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花情(779,665)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1573668&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="136">
+			<conditions>
+				<level type="Equal" value="136"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：复活的骸骨\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1561035&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="137">
+			<conditions>
+				<level type="Equal" value="137"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：凶恶骸骨\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13500&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10877\"&gt;   幽冥护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10878\"&gt;   幽冥护腕(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="138">
+			<conditions>
+				<level type="Equal" value="138"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：古琴\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－花傲剑(886,723)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1659204&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="140">
+			<conditions>
+				<level type="Equal" value="140"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：奇特的水晶\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1655640&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="141">
+			<conditions>
+				<level type="Equal" value="141"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;绿装任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：亡灵计划\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－燕北飞(867,706)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 14000&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;物品奖励：&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10829\"&gt;   玄武腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10830\"&gt;   玄武腰带(物)&lt;/object&gt; \n&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="142">
+			<conditions>
+				<level type="Equal" value="142"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：亡灵法师\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－吕隐(676,421)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1700000&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="144">
+			<conditions>
+				<level type="Equal" value="144"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：魔巫法杖\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1726635&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭  &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="146">
+			<conditions>
+				<level type="Equal" value="146"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：武夷王后人\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－风华郡主(805,703)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1765800&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="148">
+			<conditions>
+				<level type="Equal" value="148"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;主线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：歼灭\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－夏侯望(563,84)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;1761960&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt;4锭 &lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="150">
+			<conditions>
+				<level type="Equal" value="150"/>
+				<myround value="1"/>
+				<var type="Differ" name="state" value="-1" id="15000"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    170级之前到善财童子处购买增值保险，最高可获得五倍于投入额的丰厚回报！\n\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;支线任务：\n&lt;/n&gt;&lt;n color=\"255,0,255,0\"&gt;任务名：消灭亡灵\n&lt;/n&gt;&lt;n&gt;    (GetName)，恭喜你升级了！去找皇城－风华郡主(805,703)，他有新的任务交给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,255,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1823280&lt;/n&gt;&lt;/p&gt;")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150001" new="1">
+		<embranchment id="2">
+			<conditions>
+				<level type="Great" value="1"/>
+				<level type="Less" value="21"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="10000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+3"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<level type="Great" value="20"/>
+				<level type="Less" value="41"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+4"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<level type="Great" value="40"/>
+				<level type="Less" value="61"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="30000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+5"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="60"/>
+				<level type="Less" value="81"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+6"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="80"/>
+				<level type="Less" value="101"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+7"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="121"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+8"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<level type="Great" value="120"/>
+				<level type="Less" value="141"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+9"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<level type="Great" value="140"/>
+				<level type="Less" value="161"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+10"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<level type="Great" value="160"/>
+				<level type="Less" value="181"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+11"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<level type="Great" value="180"/>
+				<level type="Less" value="201"/>
+			</conditions>
+			<actions>
+                                <gold type="Add" value="15000"/>
+                                <addgreenbinditem value="1" id="964" />
+				<notify1 content="恭喜你升级了！"/>
+				<notify1 content="人物属性+12"/>
+				<notify1 content="技能点+1"/>
+				<notify1 content="生命上限+15"/>
+				<notify1 content="魔法上限+1"/>
+				<var type="Set" name="state" value="1" id="150001"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

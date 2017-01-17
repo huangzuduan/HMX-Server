@@ -1,0 +1,4606 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="530" name="王城-饲养大叔(889,524)">
+	<!--new means new quest, default is quest on user-->
+	<!--开始养鸡-->
+	<quest id="31411">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21411"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养鸡的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养鸡{10002}", "v530", 21411, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21411"/>
+				<var type="Equal" name="state" value="-3" id="21411"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21411" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21411"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养鸡任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21411"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31412">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21411"/>
+				<var type="Less" name="seed" value="1" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21412"/>
+				<var type="Differ" name="state" value="-1" id="21412"/>
+				<var type="Differ" name="state" value="-3" id="21412"/>
+				<var type="Differ" name="state" value="2" id="21412"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养鸡先得弄点小鸡来，帮我去找饲料商人买一只小鸡来。\n\n经验奖励： 12500")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21412, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21411"/>
+				<var type="Less" name="seed" value="1" id="21411"/>
+				<var type="Equal" name="state" value="-3" id="21412"/>
+				<var type="Differ" name="state" value="-1" id="21412"/>
+				<var type="Differ" name="state" value="2" id="21412"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小鸡带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21412, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21412" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21411"/>
+				<var type="Less" name="seed" value="1" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21412"/>
+				<var type="Differ" name="state" value="-1" id="21412"/>
+				<var type="Differ" name="state" value="-3" id="21412"/>
+				<var type="Differ" name="state" value="2" id="21412"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小鸡"/>
+				<notify content="任务：你接受了带小鸡的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21412"/>
+				<var type="Differ" name="state" value="-1" id="21412"/>
+				<var type="Differ" name="state" value="2" id="21412"/>
+			</conditions>
+			<actions>
+				<exp value="12500"/>
+				<notify1 content="经验+12500"/>
+				<notify content="恭喜你完成了“带小鸡”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21411"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31413">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21413"/>
+				<var type="Differ" name="state" value="-1" id="21413"/>
+				<var type="Differ" name="state" value="-3" id="21413"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小鸡吃那么多，你能不能帮再去找饲料商人再去买些饲料来呢？\n\n经验奖励： 5000")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21413, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1921"/>
+				<var type="Equal" name="state" value="-3" id="21413"/>
+				<var type="Differ" name="state" value="-1" id="21413"/>
+				<var type="Differ" name="state" value="2" id="21413"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21413, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21413" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21413"/>
+				<var type="Differ" name="state" value="-1" id="21413"/>
+				<var type="Differ" name="state" value="-3" id="21413"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1921"/>
+				<var type="Equal" name="state" value="-3" id="21413"/>
+				<var type="Differ" name="state" value="-1" id="21413"/>
+				<var type="Differ" name="state" value="2" id="21413"/>
+			</conditions>
+			<actions>
+				<exp value="5000"/>
+				<removeitem value="1" id="1921" log="交买饲料(21413)-删除饲料(1921)"/>
+				<notify content="恭喜你完成了“买饲料”任务"/>
+				<notify1 content="经验+5000"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21411"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31415">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21411"/>
+				<var type="Less" name="times" value="4" id="21415"/>
+				<var type="Differ" name="state" value="1" id="21415"/>
+				<var type="Differ" name="state" value="-1" id="21415"/>
+				<var type="Differ" name="state" value="-3" id="21415"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你怎么把我的水钟弄坏了，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟，一共还要喂五次肥哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 4000")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21415, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21415"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 4000")
+this:AddTaskCmdItem("还有什么事么", "v530", 21415, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21415" less="1"/>
+				<var type="Equal" name="state" value="1" id="21415"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21415, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21415" less="1"/>
+				<var type="Equal" name="state" value="1" id="21415"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21415, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21415" less="0"/>
+				<var type="Equal" name="state" value="1" id="21415"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21415, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21415" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21415"/>
+				<var type="Differ" name="state" value="-1" id="21415"/>
+				<var type="Differ" name="state" value="-3" id="21415"/>
+				<var type="Differ" name="jiao" value="1" id="21415"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21415"/>
+				<var type="Set" name="water" value="1" id="21415"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21415"/>
+			</conditions>
+			<actions>
+				<exp value="4000"/>
+				<notify1 content="经验+4000"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21411"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21415"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21415"/>
+				<var type="Add" name="water" value="1" id="21415"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21415"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小鸡似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21415"/>
+				<var type="Add" name="water" value="1" id="21415"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21411"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31416">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21416"/>
+				<var type="Differ" name="state" value="-1" id="21416"/>
+				<var type="Differ" name="state" value="-3" id="21416"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小鸡似乎生病了，你能不能帮我找饲料商人弄些家禽药过来？\n\n经验奖励： 4000")
+this:AddTaskCmdItem("我这就帮你去弄些家禽药{10001}", "v530", 21416, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1923"/>
+				<var type="Equal" name="state" value="2" id="21411"/>
+				<var type="Equal" name="state" value="-3" id="21416"/>
+				<var type="Differ" name="state" value="-1" id="21416"/>
+				<var type="Differ" name="state" value="2" id="21416"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到家禽药啦，真是太好了。\n\n经验奖励： 4000")
+this:AddTaskCmdItem("给他家禽药{10002}", "v530", 21416, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21416" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21416"/>
+				<var type="Differ" name="state" value="-1" id="21416"/>
+				<var type="Differ" name="state" value="-3" id="21416"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找家禽药的任务"/>
+				<notify1 content="找饲料商人要家禽药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1923"/>
+				<var type="Equal" name="state" value="2" id="21411"/>
+				<var type="Equal" name="state" value="-3" id="21416"/>
+				<var type="Differ" name="state" value="-1" id="21416"/>
+				<var type="Differ" name="state" value="2" id="21416"/>
+			</conditions>
+			<actions>
+				<exp value="4000"/>
+				<removeitem value="1" id="1923" log="交找家禽药(21416)-删除家禽药(1923)"/>
+				<notify content="恭喜你完成了“找家禽药”任务"/>
+				<var type="Set" name="seed" value="4" id="21411"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养鸡抓虫-->
+	<quest id="31418">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21418"/>
+				<var type="Differ" name="state" value="-1" id="21418"/>
+				<var type="Differ" name="state" value="-3" id="21418"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，小鸡还需要一些营养，帮我抓些虫给小鸡补补吧。只能抓10次哦，抓到的虫越多小鸡养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21418, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21418"/>
+				<var type="Differ" name="state" value="-1" id="21418"/>
+				<var type="Differ" name="state" value="-3" id="21418"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21418" less="0"/>
+				<var type="Equal" name="state" value="1" id="21418"/>
+				<var type="Less" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21418, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21418" less="1"/>
+				<var type="Equal" name="state" value="1" id="21418"/>
+				<var type="Less" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21418, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21418"/>
+				<var type="Equal" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21418, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21418"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21418, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21418" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21411"/>
+				<var type="Differ" name="state" value="1" id="21418"/>
+				<var type="Differ" name="state" value="-1" id="21418"/>
+				<var type="Differ" name="state" value="-3" id="21418"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21418"/>
+				<var type="Less" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="4000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21418"/>
+				<var type="Less" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21418"/>
+				<var type="Equal" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21418)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21411"/>
+				<var type="Set" name="state" value="-3" id="21411"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小鸡，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21418"/>
+				<var type="Equal" name="time" value="10" id="21418"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052"  log="交抓虫(21418)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21411"/>
+				<var type="Set" name="state" value="-3" id="21411"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小鸡，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31421">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21421"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养鸭的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养鸭{10002}", "v530", 21421, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21421"/>
+				<var type="Equal" name="state" value="-3" id="21421"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21421" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21421"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养鸭任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21421"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31422">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21421"/>
+				<var type="Less" name="seed" value="1" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21422"/>
+				<var type="Differ" name="state" value="-1" id="21422"/>
+				<var type="Differ" name="state" value="-3" id="21422"/>
+				<var type="Differ" name="state" value="2" id="21422"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养鸭先得弄点小鸭来，帮我去找饲料商人买一只小鸭来。\n\n经验奖励： 20500")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21422, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21421"/>
+				<var type="Less" name="seed" value="1" id="21421"/>
+				<var type="Equal" name="state" value="-3" id="21422"/>
+				<var type="Differ" name="state" value="-1" id="21422"/>
+				<var type="Differ" name="state" value="2" id="21422"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小鸭带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21422, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21422" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21421"/>
+				<var type="Less" name="seed" value="1" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21422"/>
+				<var type="Differ" name="state" value="-1" id="21422"/>
+				<var type="Differ" name="state" value="-3" id="21422"/>
+				<var type="Differ" name="state" value="2" id="21422"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小鸭"/>
+				<notify content="任务：你接受了带小鸭的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21422"/>
+				<var type="Differ" name="state" value="-1" id="21422"/>
+				<var type="Differ" name="state" value="2" id="21422"/>
+			</conditions>
+			<actions>
+				<exp value="20500"/>
+				<notify1 content="经验+20500"/>
+				<notify content="恭喜你完成了“带小鸭”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21421"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31423">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21423"/>
+				<var type="Differ" name="state" value="-1" id="21423"/>
+				<var type="Differ" name="state" value="-3" id="21423"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小鸭吃那么多，你能不能帮再去找饲料商人再去买些肉饲料来呢？\n\n经验奖励：  8000")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21423, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1928"/>
+				<var type="Equal" name="state" value="-3" id="21423"/>
+				<var type="Differ" name="state" value="-1" id="21423"/>
+				<var type="Differ" name="state" value="2" id="21423"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21423, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21423" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21423"/>
+				<var type="Differ" name="state" value="-1" id="21423"/>
+				<var type="Differ" name="state" value="-3" id="21423"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买肉饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1928"/>
+				<var type="Equal" name="state" value="-3" id="21423"/>
+				<var type="Differ" name="state" value="-1" id="21423"/>
+				<var type="Differ" name="state" value="2" id="21423"/>
+			</conditions>
+			<actions>
+				<exp value="8000"/>
+				<removeitem value="1" id="1928" log="交买肉饲料(21423)-删除肉饲料(1928)"/>
+				<notify content="恭喜你完成了“买肉饲料”任务"/>
+				<notify1 content="经验+8000"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21421"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31425">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21421"/>
+				<var type="Less" name="times" value="4" id="21425"/>
+				<var type="Differ" name="state" value="1" id="21425"/>
+				<var type="Differ" name="state" value="-1" id="21425"/>
+				<var type="Differ" name="state" value="-3" id="21425"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟 ，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 6000")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21425, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21425"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 6000")
+this:AddTaskCmdItem("还有什么事么", "v530", 21425, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21425" less="1"/>
+				<var type="Equal" name="state" value="1" id="21425"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21425, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21425" less="1"/>
+				<var type="Equal" name="state" value="1" id="21425"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21425, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21425" less="0"/>
+				<var type="Equal" name="state" value="1" id="21425"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21425, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21425" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21425"/>
+				<var type="Differ" name="state" value="-1" id="21425"/>
+				<var type="Differ" name="state" value="-3" id="21425"/>
+				<var type="Differ" name="jiao" value="1" id="21425"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21425"/>
+				<var type="Set" name="water" value="1" id="21425"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21425"/>
+			</conditions>
+			<actions>
+				<exp value="6000"/>
+				<notify1 content="经验+6000"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21421"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21425"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21425"/>
+				<var type="Add" name="water" value="1" id="21425"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21425"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小鸭似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21425"/>
+				<var type="Add" name="water" value="1" id="21425"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21421"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31426">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21426"/>
+				<var type="Differ" name="state" value="-1" id="21426"/>
+				<var type="Differ" name="state" value="-3" id="21426"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小鸭似乎生病了，你能不能帮我找饲料商人弄些家禽药过来？\n\n经验奖励：  6000")
+this:AddTaskCmdItem("我这就帮你去弄些家禽药{10001}", "v530", 21426, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1923"/>
+				<var type="Equal" name="state" value="2" id="21421"/>
+				<var type="Equal" name="state" value="-3" id="21426"/>
+				<var type="Differ" name="state" value="-1" id="21426"/>
+				<var type="Differ" name="state" value="2" id="21426"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到家禽药啦，真是太好了。\n\n经验奖励： 6000")
+this:AddTaskCmdItem("给他家禽药{10002}", "v530", 21426, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21426" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21426"/>
+				<var type="Differ" name="state" value="-1" id="21426"/>
+				<var type="Differ" name="state" value="-3" id="21426"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找家禽药的任务"/>
+				<notify1 content="找饲料商人要家禽药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1923"/>
+				<var type="Equal" name="state" value="2" id="21421"/>
+				<var type="Equal" name="state" value="-3" id="21426"/>
+				<var type="Differ" name="state" value="-1" id="21426"/>
+				<var type="Differ" name="state" value="2" id="21426"/>
+			</conditions>
+			<actions>
+				<exp value="6000"/>
+				<removeitem value="1" id="1923" log="交找家禽药(21426)-删除家禽药(1923)"/>
+				<notify content="恭喜你完成了“找家禽药”任务"/>
+				<var type="Set" name="seed" value="4" id="21421"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养鸭抓虫-->
+	<quest id="31428">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21428"/>
+				<var type="Differ" name="state" value="-1" id="21428"/>
+				<var type="Differ" name="state" value="-3" id="21428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，小鸭还需要一些营养，帮我抓些虫给小鸭补补吧。只能抓10次哦，抓到的虫越多小 鸡养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21428, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21428"/>
+				<var type="Differ" name="state" value="-1" id="21428"/>
+				<var type="Differ" name="state" value="-3" id="21428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21428" less="0"/>
+				<var type="Equal" name="state" value="1" id="21428"/>
+				<var type="Less" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21428, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21428" less="1"/>
+				<var type="Equal" name="state" value="1" id="21428"/>
+				<var type="Less" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21428, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21428"/>
+				<var type="Equal" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21428, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21428, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21428" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21421"/>
+				<var type="Differ" name="state" value="1" id="21428"/>
+				<var type="Differ" name="state" value="-1" id="21428"/>
+				<var type="Differ" name="state" value="-3" id="21428"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21428"/>
+				<var type="Less" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21428"/>
+				<var type="Less" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21428"/>
+				<var type="Equal" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21428)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21421"/>
+				<var type="Set" name="state" value="-3" id="21421"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小鸭，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21428"/>
+				<var type="Equal" name="time" value="10" id="21428"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21428)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21421"/>
+				<var type="Set" name="state" value="-3" id="21421"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小鸭，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31431">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21431"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养狗的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养狗{10002}", "v530", 21431, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21431"/>
+				<var type="Equal" name="state" value="-3" id="21431"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21431" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21431"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养狗任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21431"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31432">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21431"/>
+				<var type="Less" name="seed" value="1" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21432"/>
+				<var type="Differ" name="state" value="-1" id="21432"/>
+				<var type="Differ" name="state" value="-3" id="21432"/>
+				<var type="Differ" name="state" value="2" id="21432"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养狗先得弄点小狗来，帮我去找饲料商人买一只小狗来。\n\n经验奖励： 29500")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21432, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21431"/>
+				<var type="Less" name="seed" value="1" id="21431"/>
+				<var type="Equal" name="state" value="-3" id="21432"/>
+				<var type="Differ" name="state" value="-1" id="21432"/>
+				<var type="Differ" name="state" value="2" id="21432"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小狗带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21432, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21432" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21431"/>
+				<var type="Less" name="seed" value="1" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21432"/>
+				<var type="Differ" name="state" value="-1" id="21432"/>
+				<var type="Differ" name="state" value="-3" id="21432"/>
+				<var type="Differ" name="state" value="2" id="21432"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小狗"/>
+				<notify content="任务：你接受了带小狗的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21432"/>
+				<var type="Differ" name="state" value="-1" id="21432"/>
+				<var type="Differ" name="state" value="2" id="21432"/>
+			</conditions>
+			<actions>
+				<exp value="29500"/>
+				<notify1 content="经验+29500"/>
+				<notify content="恭喜你完成了“带小狗”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21431"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31433">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21433"/>
+				<var type="Differ" name="state" value="-1" id="21433"/>
+				<var type="Differ" name="state" value="-3" id="21433"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小狗吃那么多，你能不能帮再去找饲料商人再去买些肉饲料来呢？\n\n经验奖励：  10200")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21433, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1928"/>
+				<var type="Equal" name="state" value="-3" id="21433"/>
+				<var type="Differ" name="state" value="-1" id="21433"/>
+				<var type="Differ" name="state" value="2" id="21433"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21433, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21433" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21433"/>
+				<var type="Differ" name="state" value="-1" id="21433"/>
+				<var type="Differ" name="state" value="-3" id="21433"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买肉饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1928"/>
+				<var type="Equal" name="state" value="-3" id="21433"/>
+				<var type="Differ" name="state" value="-1" id="21433"/>
+				<var type="Differ" name="state" value="2" id="21433"/>
+			</conditions>
+			<actions>
+				<exp value="10200"/>
+				<removeitem value="1" id="1928" log="交买肉饲料(21433)-删除肉饲料(1928)"/>
+				<notify content="恭喜你完成了“买肉饲料”任务"/>
+				<notify1 content="经验+10200"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21431"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31435">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21431"/>
+				<var type="Less" name="times" value="4" id="21435"/>
+				<var type="Differ" name="state" value="1" id="21435"/>
+				<var type="Differ" name="state" value="-1" id="21435"/>
+				<var type="Differ" name="state" value="-3" id="21435"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5 分钟，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 8000")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21435, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21435"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 8000")
+this:AddTaskCmdItem("还有什么事么", "v530", 21435, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21435" less="1"/>
+				<var type="Equal" name="state" value="1" id="21435"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21435, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21435" less="1"/>
+				<var type="Equal" name="state" value="1" id="21435"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21435, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21435" less="0"/>
+				<var type="Equal" name="state" value="1" id="21435"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21435, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21435" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21435"/>
+				<var type="Differ" name="state" value="-1" id="21435"/>
+				<var type="Differ" name="state" value="-3" id="21435"/>
+				<var type="Differ" name="jiao" value="1" id="21435"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21435"/>
+				<var type="Set" name="water" value="1" id="21435"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21435"/>
+			</conditions>
+			<actions>
+				<exp value="8000"/>
+				<notify1 content="经验+8000"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21431"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21435"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21435"/>
+				<var type="Add" name="water" value="1" id="21435"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21435"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小狗似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21435"/>
+				<var type="Add" name="water" value="1" id="21435"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21431"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31436">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21436"/>
+				<var type="Differ" name="state" value="-1" id="21436"/>
+				<var type="Differ" name="state" value="-3" id="21436"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小狗似乎生病了，你能不能帮我找饲料商人弄些草药过来？\n\n经验奖励：  8000")
+this:AddTaskCmdItem("我这就帮你去弄些家禽药{10001}", "v530", 21436, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1958"/>
+				<var type="Equal" name="state" value="2" id="21431"/>
+				<var type="Equal" name="state" value="-3" id="21436"/>
+				<var type="Differ" name="state" value="-1" id="21436"/>
+				<var type="Differ" name="state" value="2" id="21436"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到草药啦，真是太好了。\n\n经验奖励： 8000")
+this:AddTaskCmdItem("给他草药{10002}", "v530", 21436, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21436" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21436"/>
+				<var type="Differ" name="state" value="-1" id="21436"/>
+				<var type="Differ" name="state" value="-3" id="21436"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找草药的任务"/>
+				<notify1 content="找饲料商人要草药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1958"/>
+				<var type="Equal" name="state" value="2" id="21431"/>
+				<var type="Equal" name="state" value="-3" id="21436"/>
+				<var type="Differ" name="state" value="-1" id="21436"/>
+				<var type="Differ" name="state" value="2" id="21436"/>
+			</conditions>
+			<actions>
+				<exp value="8000"/>
+				<removeitem value="1" id="1958" log="交找草药(21436)-删除草药(1958)"/>
+				<notify content="恭喜你完成了“找草药”任务"/>
+				<var type="Set" name="seed" value="4" id="21431"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养狗抓虫-->
+	<quest id="31438">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21438"/>
+				<var type="Differ" name="state" value="-1" id="21438"/>
+				<var type="Differ" name="state" value="-3" id="21438"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，狗窝里有好多小虫可能是狗生病的原因，你帮我一起抓一些吧。只能抓10次哦，抓 到的虫越多小狗养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21438, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21438"/>
+				<var type="Differ" name="state" value="-1" id="21438"/>
+				<var type="Differ" name="state" value="-3" id="21438"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21438" less="0"/>
+				<var type="Equal" name="state" value="1" id="21438"/>
+				<var type="Less" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21438, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21438" less="1"/>
+				<var type="Equal" name="state" value="1" id="21438"/>
+				<var type="Less" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21438, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21438"/>
+				<var type="Equal" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21438, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21438"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21438, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21438" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21431"/>
+				<var type="Differ" name="state" value="1" id="21438"/>
+				<var type="Differ" name="state" value="-1" id="21438"/>
+				<var type="Differ" name="state" value="-3" id="21438"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21438"/>
+				<var type="Less" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21438"/>
+				<var type="Less" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21438"/>
+				<var type="Equal" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21438)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21431"/>
+				<var type="Set" name="state" value="-3" id="21431"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小狗，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21438"/>
+				<var type="Equal" name="time" value="10" id="21438"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21438)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21431"/>
+				<var type="Set" name="state" value="-3" id="21431"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小狗，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31441">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21441"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养牛的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养牛{10002}", "v530", 21441, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21441"/>
+				<var type="Equal" name="state" value="-3" id="21441"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21441" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21441"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养牛任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21441"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31442">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21441"/>
+				<var type="Less" name="seed" value="1" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21442"/>
+				<var type="Differ" name="state" value="-1" id="21442"/>
+				<var type="Differ" name="state" value="-3" id="21442"/>
+				<var type="Differ" name="state" value="2" id="21442"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养牛先得弄点牛来，帮我去找饲料商人买一只牛来。\n\n经验奖励： 35100")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21442, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21441"/>
+				<var type="Less" name="seed" value="1" id="21441"/>
+				<var type="Equal" name="state" value="-3" id="21442"/>
+				<var type="Differ" name="state" value="-1" id="21442"/>
+				<var type="Differ" name="state" value="2" id="21442"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把牛带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21442, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21442" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21441"/>
+				<var type="Less" name="seed" value="1" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21442"/>
+				<var type="Differ" name="state" value="-1" id="21442"/>
+				<var type="Differ" name="state" value="-3" id="21442"/>
+				<var type="Differ" name="state" value="2" id="21442"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带牛"/>
+				<notify content="任务：你接受了带牛的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21442"/>
+				<var type="Differ" name="state" value="-1" id="21442"/>
+				<var type="Differ" name="state" value="2" id="21442"/>
+			</conditions>
+			<actions>
+				<exp value="35100"/>
+				<notify1 content="经验+35100"/>
+				<notify content="恭喜你完成了“带牛”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21441"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31443">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21443"/>
+				<var type="Differ" name="state" value="-1" id="21443"/>
+				<var type="Differ" name="state" value="-3" id="21443"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些牛吃那么多，你能不能帮再去找饲料商人再去买些精致饲料来呢？\n\n经验奖励：  19300")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21443, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1954"/>
+				<var type="Equal" name="state" value="-3" id="21443"/>
+				<var type="Differ" name="state" value="-1" id="21443"/>
+				<var type="Differ" name="state" value="2" id="21443"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21443, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21443" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21443"/>
+				<var type="Differ" name="state" value="-1" id="21443"/>
+				<var type="Differ" name="state" value="-3" id="21443"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买精致饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1954"/>
+				<var type="Equal" name="state" value="-3" id="21443"/>
+				<var type="Differ" name="state" value="-1" id="21443"/>
+				<var type="Differ" name="state" value="2" id="21443"/>
+			</conditions>
+			<actions>
+				<exp value="19300"/>
+				<removeitem value="1" id="1954" log="交买精致饲料(21443)-删除精致饲料(1954)"/>
+				<notify content="恭喜你完成了“买精致饲料”任务"/>
+				<notify1 content="经验+19300"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21441"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31445">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21441"/>
+				<var type="Less" name="times" value="4" id="21445"/>
+				<var type="Differ" name="state" value="1" id="21445"/>
+				<var type="Differ" name="state" value="-1" id="21445"/>
+				<var type="Differ" name="state" value="-3" id="21445"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟 ，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 11100")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21445, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21445"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 11100")
+this:AddTaskCmdItem("还有什么事么", "v530", 21445, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21445" less="1"/>
+				<var type="Equal" name="state" value="1" id="21445"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21445, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21445" less="1"/>
+				<var type="Equal" name="state" value="1" id="21445"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21445, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21445" less="0"/>
+				<var type="Equal" name="state" value="1" id="21445"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21445, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21445" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21445"/>
+				<var type="Differ" name="state" value="-1" id="21445"/>
+				<var type="Differ" name="state" value="-3" id="21445"/>
+				<var type="Differ" name="jiao" value="1" id="21445"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21445"/>
+				<var type="Set" name="water" value="1" id="21445"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21445"/>
+			</conditions>
+			<actions>
+				<exp value="11100"/>
+				<notify1 content="经验+11100"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21441"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21445"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21445"/>
+				<var type="Add" name="water" value="1" id="21445"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21445"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，牛似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21445"/>
+				<var type="Add" name="water" value="1" id="21445"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21441"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31446">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21446"/>
+				<var type="Differ" name="state" value="-1" id="21446"/>
+				<var type="Differ" name="state" value="-3" id="21446"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些牛似乎生病了，你能不能帮我找饲料商人弄些草药过来？\n\n经验奖励：  11100")
+this:AddTaskCmdItem("我这就帮你去弄些草药{10001}", "v530", 21446, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1958"/>
+				<var type="Equal" name="state" value="2" id="21441"/>
+				<var type="Equal" name="state" value="-3" id="21446"/>
+				<var type="Differ" name="state" value="-1" id="21446"/>
+				<var type="Differ" name="state" value="2" id="21446"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到草药啦，真是太好了。\n\n经验奖励： 11100")
+this:AddTaskCmdItem("给他草药{10002}", "v530", 21446, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21446" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21446"/>
+				<var type="Differ" name="state" value="-1" id="21446"/>
+				<var type="Differ" name="state" value="-3" id="21446"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找草药的任务"/>
+				<notify1 content="找饲料商人要草药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1958"/>
+				<var type="Equal" name="state" value="2" id="21441"/>
+				<var type="Equal" name="state" value="-3" id="21446"/>
+				<var type="Differ" name="state" value="-1" id="21446"/>
+				<var type="Differ" name="state" value="2" id="21446"/>
+			</conditions>
+			<actions>
+				<exp value="11100"/>
+				<removeitem value="1" id="1958" log="交找草药(21446)-删除草药(1958)"/>
+				<notify content="恭喜你完成了“找草药”任务"/>
+				<var type="Set" name="seed" value="4" id="21441"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养牛抓虫-->
+	<quest id="31448">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21448"/>
+				<var type="Differ" name="state" value="-1" id="21448"/>
+				<var type="Differ" name="state" value="-3" id="21448"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，牛棚里有好多小虫可能是牛生病的原因，你帮我一起抓一些吧。只能抓10次哦，抓 到的虫越多牛养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21448, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21448"/>
+				<var type="Differ" name="state" value="-1" id="21448"/>
+				<var type="Differ" name="state" value="-3" id="21448"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21448" less="0"/>
+				<var type="Equal" name="state" value="1" id="21448"/>
+				<var type="Less" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21448, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21448" less="1"/>
+				<var type="Equal" name="state" value="1" id="21448"/>
+				<var type="Less" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21448, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21448"/>
+				<var type="Equal" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21448, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21448"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21448, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21448" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21441"/>
+				<var type="Differ" name="state" value="1" id="21448"/>
+				<var type="Differ" name="state" value="-1" id="21448"/>
+				<var type="Differ" name="state" value="-3" id="21448"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21448"/>
+				<var type="Less" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21448"/>
+				<var type="Less" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21448"/>
+				<var type="Equal" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21448)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21441"/>
+				<var type="Set" name="state" value="-3" id="21441"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些牛，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21448"/>
+				<var type="Equal" name="time" value="10" id="21448"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21448)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21441"/>
+				<var type="Set" name="state" value="-3" id="21441"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些牛，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31451">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21451"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养猪的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养猪{10002}", "v530", 21451, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21451"/>
+				<var type="Equal" name="state" value="-3" id="21451"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21451" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21451"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养猪任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21451"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31452">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21451"/>
+				<var type="Less" name="seed" value="1" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21452"/>
+				<var type="Differ" name="state" value="-1" id="21452"/>
+				<var type="Differ" name="state" value="-3" id="21452"/>
+				<var type="Differ" name="state" value="2" id="21452"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养猪先得弄点小猪来，帮我去找饲料商人买一只小猪来。\n\n经验奖励： 44500")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21452, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21451"/>
+				<var type="Less" name="seed" value="1" id="21451"/>
+				<var type="Equal" name="state" value="-3" id="21452"/>
+				<var type="Differ" name="state" value="-1" id="21452"/>
+				<var type="Differ" name="state" value="2" id="21452"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小猪带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21452, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21452" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21451"/>
+				<var type="Less" name="seed" value="1" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21452"/>
+				<var type="Differ" name="state" value="-1" id="21452"/>
+				<var type="Differ" name="state" value="-3" id="21452"/>
+				<var type="Differ" name="state" value="2" id="21452"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小猪"/>
+				<notify content="任务：你接受了带小猪的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21452"/>
+				<var type="Differ" name="state" value="-1" id="21452"/>
+				<var type="Differ" name="state" value="2" id="21452"/>
+			</conditions>
+			<actions>
+				<exp value="44500"/>
+				<notify1 content="经验+44500"/>
+				<notify content="恭喜你完成了“带小猪”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21451"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31453">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21453"/>
+				<var type="Differ" name="state" value="-1" id="21453"/>
+				<var type="Differ" name="state" value="-3" id="21453"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小猪吃那么多，你能不能帮再去找饲料商人再去买些精致饲料来呢？\n\n经验奖励：  23100")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21453, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1954"/>
+				<var type="Equal" name="state" value="-3" id="21453"/>
+				<var type="Differ" name="state" value="-1" id="21453"/>
+				<var type="Differ" name="state" value="2" id="21453"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21453, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21453" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21453"/>
+				<var type="Differ" name="state" value="-1" id="21453"/>
+				<var type="Differ" name="state" value="-3" id="21453"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买精致饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1954"/>
+				<var type="Equal" name="state" value="-3" id="21453"/>
+				<var type="Differ" name="state" value="-1" id="21453"/>
+				<var type="Differ" name="state" value="2" id="21453"/>
+			</conditions>
+			<actions>
+				<exp value="23100"/>
+				<removeitem value="1" id="1954" log="交买精致饲料(21453)-删除精致饲料(1954)"/>
+				<notify content="恭喜你完成了“买精致饲料”任务"/>
+				<notify1 content="经验+23100"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21451"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31455">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21451"/>
+				<var type="Less" name="times" value="4" id="21455"/>
+				<var type="Differ" name="state" value="1" id="21455"/>
+				<var type="Differ" name="state" value="-1" id="21455"/>
+				<var type="Differ" name="state" value="-3" id="21455"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟 ，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 15000")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21455, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21455"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 15000")
+this:AddTaskCmdItem("还有什么事么", "v530", 21455, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21455" less="1"/>
+				<var type="Equal" name="state" value="1" id="21455"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21455, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21455" less="1"/>
+				<var type="Equal" name="state" value="1" id="21455"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21455, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21455" less="0"/>
+				<var type="Equal" name="state" value="1" id="21455"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21455, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21455" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21455"/>
+				<var type="Differ" name="state" value="-1" id="21455"/>
+				<var type="Differ" name="state" value="-3" id="21455"/>
+				<var type="Differ" name="jiao" value="1" id="21455"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21455"/>
+				<var type="Set" name="water" value="1" id="21455"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21455"/>
+			</conditions>
+			<actions>
+				<exp value="15000"/>
+				<notify1 content="经验+15000"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21451"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21455"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21455"/>
+				<var type="Add" name="water" value="1" id="21455"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21455"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小猪似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21455"/>
+				<var type="Add" name="water" value="1" id="21455"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21451"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31456">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21456"/>
+				<var type="Differ" name="state" value="-1" id="21456"/>
+				<var type="Differ" name="state" value="-3" id="21456"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小猪似乎生病了，你能不能帮我找饲料商人弄些精致草药过来？\n\n经验奖励：  15000")
+this:AddTaskCmdItem("我这就帮你去弄些精致草药{10001}", "v530", 21456, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1959"/>
+				<var type="Equal" name="state" value="2" id="21451"/>
+				<var type="Equal" name="state" value="-3" id="21456"/>
+				<var type="Differ" name="state" value="-1" id="21456"/>
+				<var type="Differ" name="state" value="2" id="21456"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到精致草药啦，真是太好了。\n\n经验奖励： 15000")
+this:AddTaskCmdItem("给他精致草药{10002}", "v530", 21456, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21456" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21456"/>
+				<var type="Differ" name="state" value="-1" id="21456"/>
+				<var type="Differ" name="state" value="-3" id="21456"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找精致草药的任务"/>
+				<notify1 content="找饲料商人要精致草药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1959"/>
+				<var type="Equal" name="state" value="2" id="21451"/>
+				<var type="Equal" name="state" value="-3" id="21456"/>
+				<var type="Differ" name="state" value="-1" id="21456"/>
+				<var type="Differ" name="state" value="2" id="21456"/>
+			</conditions>
+			<actions>
+				<exp value="15000"/>
+				<removeitem value="1" id="1959" log="交找精致草药(21456)-删除精致草药(1959)"/>
+				<notify content="恭喜你完成了“找精致草药”任务"/>
+				<var type="Set" name="seed" value="4" id="21451"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养猪抓虫-->
+	<quest id="31458">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21458"/>
+				<var type="Differ" name="state" value="-1" id="21458"/>
+				<var type="Differ" name="state" value="-3" id="21458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，猪窝里有好多小虫可能是猪生病的原因，你帮我一起抓一些吧。只能抓10次哦，抓 到的虫越多小猪养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21458, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21458"/>
+				<var type="Differ" name="state" value="-1" id="21458"/>
+				<var type="Differ" name="state" value="-3" id="21458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21458" less="0"/>
+				<var type="Equal" name="state" value="1" id="21458"/>
+				<var type="Less" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21458, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21458" less="1"/>
+				<var type="Equal" name="state" value="1" id="21458"/>
+				<var type="Less" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21458, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21458"/>
+				<var type="Equal" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21458, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21458"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21458, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21458" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21451"/>
+				<var type="Differ" name="state" value="1" id="21458"/>
+				<var type="Differ" name="state" value="-1" id="21458"/>
+				<var type="Differ" name="state" value="-3" id="21458"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21458"/>
+				<var type="Less" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21458"/>
+				<var type="Less" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21458"/>
+				<var type="Equal" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21458)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21451"/>
+				<var type="Set" name="state" value="-3" id="21451"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小猪，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21458"/>
+				<var type="Equal" name="time" value="10" id="21458"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21458)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21451"/>
+				<var type="Set" name="state" value="-3" id="21451"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小猪，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31461">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21461"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养青蛙的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养青蛙{10002}", "v530", 21461, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21461"/>
+				<var type="Equal" name="state" value="-3" id="21461"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21461" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21461"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养青蛙任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21461"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31462">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21461"/>
+				<var type="Less" name="seed" value="1" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21462"/>
+				<var type="Differ" name="state" value="-1" id="21462"/>
+				<var type="Differ" name="state" value="-3" id="21462"/>
+				<var type="Differ" name="state" value="2" id="21462"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养青蛙先得弄点小青蛙来，帮我去找饲料商人买一只小青蛙来。\n\n经验奖励： 49500")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21462, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21461"/>
+				<var type="Less" name="seed" value="1" id="21461"/>
+				<var type="Equal" name="state" value="-3" id="21462"/>
+				<var type="Differ" name="state" value="-1" id="21462"/>
+				<var type="Differ" name="state" value="2" id="21462"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小青蛙带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21462, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21462" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21461"/>
+				<var type="Less" name="seed" value="1" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21462"/>
+				<var type="Differ" name="state" value="-1" id="21462"/>
+				<var type="Differ" name="state" value="-3" id="21462"/>
+				<var type="Differ" name="state" value="2" id="21462"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小青蛙"/>
+				<notify content="任务：你接受了带小青蛙的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21462"/>
+				<var type="Differ" name="state" value="-1" id="21462"/>
+				<var type="Differ" name="state" value="2" id="21462"/>
+			</conditions>
+			<actions>
+				<exp value="49500"/>
+				<notify1 content="经验+49500"/>
+				<notify content="恭喜你完成了“带小青蛙”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21461"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31463">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21463"/>
+				<var type="Differ" name="state" value="-1" id="21463"/>
+				<var type="Differ" name="state" value="-3" id="21463"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小青蛙吃那么多，你能不能帮再去找饲料商人再去买些高级饲料来呢？\n\n经验奖励：  23100")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21463, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1955"/>
+				<var type="Equal" name="state" value="-3" id="21463"/>
+				<var type="Differ" name="state" value="-1" id="21463"/>
+				<var type="Differ" name="state" value="2" id="21463"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21463, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21463" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21463"/>
+				<var type="Differ" name="state" value="-1" id="21463"/>
+				<var type="Differ" name="state" value="-3" id="21463"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买高级饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1955"/>
+				<var type="Equal" name="state" value="-3" id="21463"/>
+				<var type="Differ" name="state" value="-1" id="21463"/>
+				<var type="Differ" name="state" value="2" id="21463"/>
+			</conditions>
+			<actions>
+				<exp value="23100"/>
+				<removeitem value="1" id="1955" log="交买高级饲料(21463)-删除高级饲料(1955)"/>
+				<notify content="恭喜你完成了“买高级饲料”任务"/>
+				<notify1 content="经验+23100"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21461"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31465">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21461"/>
+				<var type="Less" name="times" value="4" id="21465"/>
+				<var type="Differ" name="state" value="1" id="21465"/>
+				<var type="Differ" name="state" value="-1" id="21465"/>
+				<var type="Differ" name="state" value="-3" id="21465"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟 ，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 18000")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21465, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21465"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 18000")
+this:AddTaskCmdItem("还有什么事么", "v530", 21465, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21465" less="1"/>
+				<var type="Equal" name="state" value="1" id="21465"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21465, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21465" less="1"/>
+				<var type="Equal" name="state" value="1" id="21465"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21465, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21465" less="0"/>
+				<var type="Equal" name="state" value="1" id="21465"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21465, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21465" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21465"/>
+				<var type="Differ" name="state" value="-1" id="21465"/>
+				<var type="Differ" name="state" value="-3" id="21465"/>
+				<var type="Differ" name="jiao" value="1" id="21465"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21465"/>
+				<var type="Set" name="water" value="1" id="21465"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21465"/>
+			</conditions>
+			<actions>
+				<exp value="18000"/>
+				<notify1 content="经验+18000"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21461"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21465"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21465"/>
+				<var type="Add" name="water" value="1" id="21465"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21465"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小青蛙似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21465"/>
+				<var type="Add" name="water" value="1" id="21465"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21461"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31466">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21466"/>
+				<var type="Differ" name="state" value="-1" id="21466"/>
+				<var type="Differ" name="state" value="-3" id="21466"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小青蛙似乎生病了，你能不能帮我找饲料商人弄些精致草药过来？\n\n经验奖励：  18000")
+this:AddTaskCmdItem("我这就帮你去弄些精致草药{10001}", "v530", 21466, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1959"/>
+				<var type="Equal" name="state" value="2" id="21461"/>
+				<var type="Equal" name="state" value="-3" id="21466"/>
+				<var type="Differ" name="state" value="-1" id="21466"/>
+				<var type="Differ" name="state" value="2" id="21466"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到精致草药啦，真是太好了。\n\n经验奖励： 18000")
+this:AddTaskCmdItem("给他精致草药{10002}", "v530", 21466, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21466" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21466"/>
+				<var type="Differ" name="state" value="-1" id="21466"/>
+				<var type="Differ" name="state" value="-3" id="21466"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找精致草药的任务"/>
+				<notify1 content="找饲料商人要精致草药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1959"/>
+				<var type="Equal" name="state" value="2" id="21461"/>
+				<var type="Equal" name="state" value="-3" id="21466"/>
+				<var type="Differ" name="state" value="-1" id="21466"/>
+				<var type="Differ" name="state" value="2" id="21466"/>
+			</conditions>
+			<actions>
+				<exp value="18000"/>
+				<removeitem value="1" id="1959" log="交找精致草药(21466)-删除精致草药(1959)"/>
+				<notify content="恭喜你完成了“找精致草药”任务"/>
+				<var type="Set" name="seed" value="4" id="21461"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养青蛙抓虫-->
+	<quest id="31468">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21468"/>
+				<var type="Differ" name="state" value="-1" id="21468"/>
+				<var type="Differ" name="state" value="-3" id="21468"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，水池里有好多小虫可能是青蛙生病的原因，你帮我一起抓一些吧。只能抓10次哦，抓到的虫越多青蛙养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21468, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21468"/>
+				<var type="Differ" name="state" value="-1" id="21468"/>
+				<var type="Differ" name="state" value="-3" id="21468"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21468" less="0"/>
+				<var type="Equal" name="state" value="1" id="21468"/>
+				<var type="Less" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21468, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21468" less="1"/>
+				<var type="Equal" name="state" value="1" id="21468"/>
+				<var type="Less" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21468, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21468"/>
+				<var type="Equal" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21468, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21468"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21468, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21468" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21461"/>
+				<var type="Differ" name="state" value="1" id="21468"/>
+				<var type="Differ" name="state" value="-1" id="21468"/>
+				<var type="Differ" name="state" value="-3" id="21468"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21468"/>
+				<var type="Less" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21468"/>
+				<var type="Less" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21468"/>
+				<var type="Equal" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21468)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21461"/>
+				<var type="Set" name="state" value="-3" id="21461"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小青蛙，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21468"/>
+				<var type="Equal" name="time" value="10" id="21468"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21468)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21461"/>
+				<var type="Set" name="state" value="-3" id="21461"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小青蛙，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31471">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21471"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养蛇的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养蛇{10002}", "v530", 21471, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21471"/>
+				<var type="Equal" name="state" value="-3" id="21471"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21471" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21471"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养蛇任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21471"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31472">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21471"/>
+				<var type="Less" name="seed" value="1" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21472"/>
+				<var type="Differ" name="state" value="-1" id="21472"/>
+				<var type="Differ" name="state" value="-3" id="21472"/>
+				<var type="Differ" name="state" value="2" id="21472"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养蛇先得弄点小蛇来，帮我去找饲料商人买一只小蛇来。\n\n经验奖励： 56400")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21472, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21471"/>
+				<var type="Less" name="seed" value="1" id="21471"/>
+				<var type="Equal" name="state" value="-3" id="21472"/>
+				<var type="Differ" name="state" value="-1" id="21472"/>
+				<var type="Differ" name="state" value="2" id="21472"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小蛇带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21472, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21472" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21471"/>
+				<var type="Less" name="seed" value="1" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21472"/>
+				<var type="Differ" name="state" value="-1" id="21472"/>
+				<var type="Differ" name="state" value="-3" id="21472"/>
+				<var type="Differ" name="state" value="2" id="21472"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小蛇"/>
+				<notify content="任务：你接受了带小蛇的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21472"/>
+				<var type="Differ" name="state" value="-1" id="21472"/>
+				<var type="Differ" name="state" value="2" id="21472"/>
+			</conditions>
+			<actions>
+				<exp value="56400"/>
+				<notify1 content="经验+56400"/>
+				<notify content="恭喜你完成了“带小蛇”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21471"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31473">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21473"/>
+				<var type="Differ" name="state" value="-1" id="21473"/>
+				<var type="Differ" name="state" value="-3" id="21473"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小蛇吃那么多，你能不能帮再去找饲料商人再去买些高级饲料来呢？\n\n经验奖励：  36000")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21473, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1955"/>
+				<var type="Equal" name="state" value="-3" id="21473"/>
+				<var type="Differ" name="state" value="-1" id="21473"/>
+				<var type="Differ" name="state" value="2" id="21473"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21473, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21473" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21473"/>
+				<var type="Differ" name="state" value="-1" id="21473"/>
+				<var type="Differ" name="state" value="-3" id="21473"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买高级饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1955"/>
+				<var type="Equal" name="state" value="-3" id="21473"/>
+				<var type="Differ" name="state" value="-1" id="21473"/>
+				<var type="Differ" name="state" value="2" id="21473"/>
+			</conditions>
+			<actions>
+				<exp value="36000"/>
+				<removeitem value="1" id="1955" log="交买高级饲料(21473)-删除高级饲料(1955)"/>
+				<notify content="恭喜你完成了“买高级饲料”任务"/>
+				<notify1 content="经验+36000"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21471"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31475">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21471"/>
+				<var type="Less" name="times" value="4" id="21475"/>
+				<var type="Differ" name="state" value="1" id="21475"/>
+				<var type="Differ" name="state" value="-1" id="21475"/>
+				<var type="Differ" name="state" value="-3" id="21475"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟 ，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 21100")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21475, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21475"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 21100")
+this:AddTaskCmdItem("还有什么事么", "v530", 21475, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21475" less="1"/>
+				<var type="Equal" name="state" value="1" id="21475"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21475, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21475" less="1"/>
+				<var type="Equal" name="state" value="1" id="21475"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21475, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21475" less="0"/>
+				<var type="Equal" name="state" value="1" id="21475"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21475, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21475" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21475"/>
+				<var type="Differ" name="state" value="-1" id="21475"/>
+				<var type="Differ" name="state" value="-3" id="21475"/>
+				<var type="Differ" name="jiao" value="1" id="21475"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21475"/>
+				<var type="Set" name="water" value="1" id="21475"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21475"/>
+			</conditions>
+			<actions>
+				<exp value="21100"/>
+				<notify1 content="经验+21100"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21471"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21475"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21475"/>
+				<var type="Add" name="water" value="1" id="21475"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21475"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小蛇似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21475"/>
+				<var type="Add" name="water" value="1" id="21475"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21471"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31476">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21476"/>
+				<var type="Differ" name="state" value="-1" id="21476"/>
+				<var type="Differ" name="state" value="-3" id="21476"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小蛇似乎生病了，你能不能帮我找饲料商人弄些高级草药过来？\n\n经验奖励：  21100")
+this:AddTaskCmdItem("我这就帮你去弄些高级草药{10001}", "v530", 21476, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1960"/>
+				<var type="Equal" name="state" value="2" id="21471"/>
+				<var type="Equal" name="state" value="-3" id="21476"/>
+				<var type="Differ" name="state" value="-1" id="21476"/>
+				<var type="Differ" name="state" value="2" id="21476"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到高级草药啦，真是太好了。\n\n经验奖励： 21100")
+this:AddTaskCmdItem("给他高级草药{10002}", "v530", 21476, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21476" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21476"/>
+				<var type="Differ" name="state" value="-1" id="21476"/>
+				<var type="Differ" name="state" value="-3" id="21476"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找高级草药的任务"/>
+				<notify1 content="找饲料商人要高级草药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1960"/>
+				<var type="Equal" name="state" value="2" id="21471"/>
+				<var type="Equal" name="state" value="-3" id="21476"/>
+				<var type="Differ" name="state" value="-1" id="21476"/>
+				<var type="Differ" name="state" value="2" id="21476"/>
+			</conditions>
+			<actions>
+				<exp value="21100"/>
+				<removeitem value="1" id="1960" log="交找高级草药(21476)-删除高级草药(1960)"/>
+				<notify content="恭喜你完成了“找高级草药”任务"/>
+				<var type="Set" name="seed" value="4" id="21471"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养蛇抓虫-->
+	<quest id="31478">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21478"/>
+				<var type="Differ" name="state" value="-1" id="21478"/>
+				<var type="Differ" name="state" value="-3" id="21478"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，草从里有好多小虫可能是蛇生病的原因，你帮我一起抓一些吧。只能抓10次哦，抓到的虫越多蛇养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21478, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21478"/>
+				<var type="Differ" name="state" value="-1" id="21478"/>
+				<var type="Differ" name="state" value="-3" id="21478"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21478" less="0"/>
+				<var type="Equal" name="state" value="1" id="21478"/>
+				<var type="Less" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21478, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21478" less="1"/>
+				<var type="Equal" name="state" value="1" id="21478"/>
+				<var type="Less" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21478, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21478"/>
+				<var type="Equal" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21478, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21478"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21478, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21478" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21471"/>
+				<var type="Differ" name="state" value="1" id="21478"/>
+				<var type="Differ" name="state" value="-1" id="21478"/>
+				<var type="Differ" name="state" value="-3" id="21478"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21478"/>
+				<var type="Less" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21478"/>
+				<var type="Less" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21478"/>
+				<var type="Equal" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21478)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21471"/>
+				<var type="Set" name="state" value="-3" id="21471"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小蛇，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21478"/>
+				<var type="Equal" name="time" value="10" id="21478"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21478)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21471"/>
+				<var type="Set" name="state" value="-3" id="21471"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小蛇，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31481">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21481"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来帮我养马的啊，真是太好了，我正不知如何是好呢。")
+this:AddTaskCmdItem("帮忙养马{10002}", "v530", 21481, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21481"/>
+				<var type="Equal" name="state" value="-3" id="21481"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算有收获了，我已经把养出来的东西都交给伯乐了，到他那里领取你的奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21481" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21481"/>
+			</conditions>
+			<actions>
+				<notify content="你接受了养马任务"/>
+				<notify1 content="继续帮助饲养大叔"/>
+				<var type="Set" name="state" value="2" id="21481"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找鸡-->
+	<quest id="31482">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21481"/>
+				<var type="Less" name="seed" value="1" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21482"/>
+				<var type="Differ" name="state" value="-1" id="21482"/>
+				<var type="Differ" name="state" value="-3" id="21482"/>
+				<var type="Differ" name="state" value="2" id="21482"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要养马先得弄点小马来，帮我去找饲料商人买一只小马来。\n\n经验奖励： 68000")
+this:AddTaskCmdItem("我这就帮你买{10001}", "v530", 21482, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21481"/>
+				<var type="Less" name="seed" value="1" id="21481"/>
+				<var type="Equal" name="state" value="-3" id="21482"/>
+				<var type="Differ" name="state" value="-1" id="21482"/>
+				<var type="Differ" name="state" value="2" id="21482"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就把小马带来啦，真是太好了。")
+this:AddTaskCmdItem("小意思而已{10002}", "v530", 21482, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21482" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21481"/>
+				<var type="Less" name="seed" value="1" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21482"/>
+				<var type="Differ" name="state" value="-1" id="21482"/>
+				<var type="Differ" name="state" value="-3" id="21482"/>
+				<var type="Differ" name="state" value="2" id="21482"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="从饲料商人处带小马"/>
+				<notify content="任务：你接受了带小马的任务"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21482"/>
+				<var type="Differ" name="state" value="-1" id="21482"/>
+				<var type="Differ" name="state" value="2" id="21482"/>
+			</conditions>
+			<actions>
+				<exp value="68000"/>
+				<notify1 content="经验+68000"/>
+				<notify content="恭喜你完成了“带小马”任务"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="1" id="21481"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31483">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21483"/>
+				<var type="Differ" name="state" value="-1" id="21483"/>
+				<var type="Differ" name="state" value="-3" id="21483"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    没想到那些小马吃那么多，你能不能帮再去找饲料商人再去买些特级饲料来呢？\n\n经验奖励：  46000")
+this:AddTaskCmdItem("我帮你去买{10001}", "v530", 21483, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1956"/>
+				<var type="Equal" name="state" value="-3" id="21483"/>
+				<var type="Differ" name="state" value="-1" id="21483"/>
+				<var type="Differ" name="state" value="2" id="21483"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到啦，真是太好了。")
+this:AddTaskCmdItem("不用客气，还有什么需要做的{10002}", "v530", 21483, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21483" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="1" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21483"/>
+				<var type="Differ" name="state" value="-1" id="21483"/>
+				<var type="Differ" name="state" value="-3" id="21483"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="找饲料商人买特级饲料"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1956"/>
+				<var type="Equal" name="state" value="-3" id="21483"/>
+				<var type="Differ" name="state" value="-1" id="21483"/>
+				<var type="Differ" name="state" value="2" id="21483"/>
+			</conditions>
+			<actions>
+				<exp value="46000"/>
+				<removeitem value="1" id="1956" log="交买特级饲料(21483)-删除特级饲料(1956)"/>
+				<notify content="恭喜你完成了“买特级饲料”任务"/>
+				<notify1 content="经验+46000"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="2" id="21481"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--喂食-->
+	<quest id="31485">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21481"/>
+				<var type="Less" name="times" value="4" id="21485"/>
+				<var type="Differ" name="state" value="1" id="21485"/>
+				<var type="Differ" name="state" value="-1" id="21485"/>
+				<var type="Differ" name="state" value="-3" id="21485"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    借给种植童子的水钟他还没还，现在只好你提醒我喂养时间了？最好的喂养时间是每隔2分钟到5分钟 ，一共还要喂五次哦。\n    如果喂的不好会影响养殖成果的，千万不要搞错哦。\n\n经验奖励： 25000")
+this:AddTaskCmdItem("现在开始喂食吧", "v530", 21485, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21485"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    好象已经喂五次了，谢谢你啦，养的好不好要等会才能知道。\n\n经验奖励： 25000")
+this:AddTaskCmdItem("还有什么事么", "v530", 21485, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="120" id="21485" less="1"/>
+				<var type="Equal" name="state" value="1" id="21485"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21485, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timeouts long="300" id="21485" less="1"/>
+				<var type="Equal" name="state" value="1" id="21485"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21485, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timeouts long="300" id="21485" less="0"/>
+				<var type="Equal" name="state" value="1" id="21485"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    现在就喂食么？你确定？");
+this:AddTaskCmdItem("时间到了，没错的", "v530", 21485, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21485" new="1">
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="2" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21485"/>
+				<var type="Differ" name="state" value="-1" id="21485"/>
+				<var type="Differ" name="state" value="-3" id="21485"/>
+				<var type="Differ" name="jiao" value="1" id="21485"/>
+			</conditions>
+			<actions>
+				<notify1 content="每隔2分钟到5分钟提醒一次"/>
+				<notify1 content="提醒五次"/>
+				<var type="Set" name="state" value="1" id="21485"/>
+				<var type="Set" name="water" value="1" id="21485"/>
+				<refresh name="water"/>
+				<refresh name="state"/>
+				<timeouts/>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那我开始了哦，记得提醒我时间。");
+this:AddCloseItem("知道了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Great" name="times" value="3" id="21485"/>
+			</conditions>
+			<actions>
+				<exp value="25000"/>
+				<notify1 content="经验+25000"/>
+				<notify content="恭喜你完成了喂食"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="Set" name="seed" value="3" id="21481"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21485"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，效果不是很好"/>
+				<var type="Add" name="times" value="1" id="21485"/>
+				<var type="Add" name="water" value="1" id="21485"/>
+				<refresh name="water"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21485"/>
+			</conditions>
+			<actions>
+				<notify1 content="喂了一次，小马似乎很满足"/>
+				<var type="Add" name="times" value="1" id="21485"/>
+				<var type="Add" name="water" value="1" id="21485"/>
+				<refresh name="water"/>
+				<var type="Add" name="score" value="1" id="21481"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31486">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21486"/>
+				<var type="Differ" name="state" value="-1" id="21486"/>
+				<var type="Differ" name="state" value="-3" id="21486"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    不好了，那些小马似乎生病了，你能不能帮我找饲料商人弄些高级草药过来？\n\n经验奖励：  25000")
+this:AddTaskCmdItem("我这就帮你去弄些高级草药{10001}", "v530", 21486, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="1960"/>
+				<var type="Equal" name="state" value="2" id="21481"/>
+				<var type="Equal" name="state" value="-3" id="21486"/>
+				<var type="Differ" name="state" value="-1" id="21486"/>
+				<var type="Differ" name="state" value="2" id="21486"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这么快就弄到高级草药啦，真是太好了。\n\n经验奖励： 25000")
+this:AddTaskCmdItem("给他高级草药{10002}", "v530", 21486, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21486" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="3" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21486"/>
+				<var type="Differ" name="state" value="-1" id="21486"/>
+				<var type="Differ" name="state" value="-3" id="21486"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：你接受了找高级草药的任务"/>
+				<notify1 content="找饲料商人要高级草药"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="1960"/>
+				<var type="Equal" name="state" value="2" id="21481"/>
+				<var type="Equal" name="state" value="-3" id="21486"/>
+				<var type="Differ" name="state" value="-1" id="21486"/>
+				<var type="Differ" name="state" value="2" id="21486"/>
+			</conditions>
+			<actions>
+				<exp value="25000"/>
+				<removeitem value="1" id="1960" log="交找高级草药(21486)-删除高级草药(1960)"/>
+				<notify content="恭喜你完成了“找高级草药”任务"/>
+				<var type="Set" name="seed" value="4" id="21481"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--养马抓虫-->
+	<quest id="31488">
+		<embranchment id="25">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="seed" value="4" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21488"/>
+				<var type="Differ" name="state" value="-1" id="21488"/>
+				<var type="Differ" name="state" value="-3" id="21488"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    有药就好了，马棚里有好多小虫可能是马生病的原因，你帮我一起抓一些吧。只能抓10次哦，抓到的虫越多马养的越好。")
+this:AddTaskCmdItem("答应帮忙抓虫", "v530", 21488, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21488"/>
+				<var type="Differ" name="state" value="-1" id="21488"/>
+				<var type="Differ" name="state" value="-3" id="21488"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="15" id="21488" less="0"/>
+				<var type="Equal" name="state" value="1" id="21488"/>
+				<var type="Less" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21488, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timeouts long="15" id="21488" less="1"/>
+				<var type="Equal" name="state" value="1" id="21488"/>
+				<var type="Less" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你还愿意帮忙抓虫么？");
+this:AddTaskCmdItem("继续帮忙抓虫", "v530", 21488, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21488"/>
+				<var type="Equal" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你已经抓了10次虫了，抓到的不是很多嘛！");
+this:AddTaskCmdItem("我已经尽力了", "v530", 21488, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21488"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    真是太厉害了！一会就能抓那么多。");
+this:AddTaskCmdItem("多谢夸奖", "v530", 21488, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21488" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="seed" value="4" id="21481"/>
+				<var type="Differ" name="state" value="1" id="21488"/>
+				<var type="Differ" name="state" value="-1" id="21488"/>
+				<var type="Differ" name="state" value="-3" id="21488"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="time" value="1"/>
+				<refresh name="state"/>
+				<var type="Set" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<var type="Set" name="get_bugs" value="1"/>
+				<refresh name="get_bugs"/>
+				<timeouts/>
+				<notify1 content="抓了一次虫"/>
+				<notify1 content="抓住一条小虫子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21488"/>
+				<var type="Less" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="3900"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21488"/>
+				<var type="Less" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2052" odds="2000"/>
+				<var type="Add" name="time" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Add" name="bugs" value="1"/>
+				<refresh name="bugs"/>
+				<refresh name="state"/>
+				<notify1 content="抓了一次虫"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21488"/>
+				<var type="Equal" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21488)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<var type="Set" name="seed" value="6" id="21481"/>
+				<var type="Set" name="state" value="-3" id="21481"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小马，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21488"/>
+				<var type="Equal" name="time" value="10" id="21488"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2"/>
+				<removeitem value="10" id="2052" log="交抓虫(21488)-删除10个小虫子(2052)"/>
+				<refresh name="state"/>
+				<notify1 content="你完成了抓虫任务"/>
+				<notify1 content="找伯乐领取奖励"/>
+				<var type="Set" name="seed" value="4" id="21481"/>
+				<var type="Set" name="state" value="-3" id="21481"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("    谢谢你啦，总算养了些小马，多亏了你的帮忙，你去找伯乐领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

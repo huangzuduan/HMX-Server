@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10116" name="山贼工匠(魔)">
+	<quest id="20350" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<notify1 content="任务完成,回副官处交任务"/>
+				<notify content="恭喜你完成了击败任务,回副官处交任务"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

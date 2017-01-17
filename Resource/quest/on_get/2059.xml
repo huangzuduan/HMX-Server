@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2059" name="肉熊爪">
+	<quest id="20255" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20255"/>
+				<var type="Less" name="get_肉熊爪" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个肉熊爪"/>
+				<var type="Add" name="get_肉熊爪" value="1"/>
+				<refresh name="get_肉熊爪"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20255"/>
+				<var type="Great" name="get_肉熊爪" value="9"/>
+			</conditions>
+			<actions>
+				<refresh name="get_肉熊爪"/>
+				<var type="Set" name="state" value="-3" id="20255"/>
+				<notify content="恭喜你完成了收集肉熊爪的任务,去给酒馆伙计吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域     16384帮会所属地第三方跳转区   512国占复活区  256国战传送区  1024去内景后的区域  4096 攻方集合区域帮会战争 2048 国家战争拉人区域  8192 国战时为绝对安全区，平时为非安全区
+-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="17" y="104"/>
+		<point x="17" y="105"/>
+		<point x="17" y="106"/>
+		<point x="18" y="103"/>
+		<point x="18" y="104"/>
+		<point x="18" y="105"/>
+		<point x="19" y="102"/>
+		<point x="19" y="103"/>
+		<point x="19" y="104"/>
+		<point x="20" y="101"/>
+		<point x="20" y="102"/>
+		<point x="20" y="103"/>
+		<point x="17" y="104"/>
+		<point x="17" y="105"/>
+		<point x="17" y="106"/>
+		<point x="18" y="103"/>
+		<point x="18" y="104"/>
+		<point x="18" y="105"/>
+		<point x="19" y="102"/>
+		<point x="19" y="103"/>
+		<point x="17" y="104"/>
+		<point x="17" y="105"/>
+		<point x="17" y="106"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="145" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="146" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="145" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="146" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="108"/>
+	</waypoint>
+	<waypoint>
+		<point x="39" y="82"/>
+		<point x="39" y="83"/>
+		<point x="39" y="84"/>
+		<point x="40" y="81"/>
+		<point x="40" y="82"/>
+		<point x="40" y="83"/>
+		<point x="41" y="80"/>
+		<point x="41" y="81"/>
+		<point x="41" y="82"/>
+		<point x="42" y="79"/>
+		<point x="42" y="80"/>
+		<point x="42" y="81"/>
+		<point x="39" y="82"/>
+		<point x="39" y="83"/>
+		<point x="39" y="84"/>
+		<point x="40" y="81"/>
+		<point x="40" y="82"/>
+		<point x="40" y="83"/>
+		<point x="39" y="82"/>
+		<point x="39" y="83"/>
+		<point x="39" y="84"/>
+		<point x="40" y="81"/>
+		<point x="40" y="82"/>
+		<point x="40" y="83"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="145" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="146" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="145" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="146" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="108"/>
+	</waypoint>
+	<waypoint>
+		<point x="66" y="55"/>
+		<point x="66" y="56"/>
+		<point x="66" y="57"/>
+		<point x="67" y="54"/>
+		<point x="67" y="55"/>
+		<point x="67" y="56"/>
+		<point x="68" y="53"/>
+		<point x="68" y="54"/>
+		<point x="68" y="55"/>
+		<point x="69" y="52"/>
+		<point x="69" y="53"/>
+		<point x="69" y="54"/>
+		<point x="66" y="55"/>
+		<point x="66" y="56"/>
+		<point x="66" y="57"/>
+		<point x="67" y="54"/>
+		<point x="66" y="55"/>
+		<point x="66" y="56"/>
+		<point x="66" y="57"/>
+		<point x="67" y="54"/>
+		<point x="67" y="55"/>
+		<point x="67" y="56"/>
+		<point x="68" y="53"/>
+		<point x="68" y="54"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="145" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="146" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="145" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="146" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="147" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="148" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="141" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="142" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="107"/>
+		<dest name="haizeiyingdi" country="6" x="143" y="108"/>
+		<dest name="haizeiyingdi" country="6" x="144" y="108"/>
+	</waypoint>
+	<zonedef width="25" height="29" x="10" y="92" type="1026" color="0,0,255,0"/>
+	<zonedef width="25" height="29" x="65" y="40" type="4098" color="0,0,255,0"/>
+	<zonedef width="178" height="202" x="5" y="26" type="16" color="0,0,255,0"/>
+	<zonedef width="21" height="22" x="40" y="76" type="16386" color="0,0,255,0"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<npc id="58103" name="守" width="1" height="1" x="20" y="123" num="1" interval="10"/>
+	<npc id="58103" name="守" width="1" height="1" x="23" y="120" num="1" interval="10"/>
+	<npc id="58103" name="守" width="1" height="1" x="26" y="117" num="1" interval="10"/>
+	<npc id="58103" name="守" width="1" height="1" x="29" y="115" num="1" interval="10"/>
+	<npc id="58103" name="守" width="1" height="1" x="32" y="110" num="1" interval="10"/>
+	<npc id="58103" name="守" width="1" height="1" x="35" y="107" num="1" interval="10"/>
+	<npc id="58104" name="攻" width="1" height="1" x="71" y="70" num="1" interval="10"/>
+	<npc id="58104" name="攻" width="1" height="1" x="73" y="68" num="1" interval="10"/>
+	<npc id="58104" name="攻" width="1" height="1" x="75" y="65" num="1" interval="10"/>
+	<npc id="58104" name="攻" width="1" height="1" x="78" y="63" num="1" interval="10"/>
+	<npc id="58104" name="攻" width="1" height="1" x="79" y="62" num="1" interval="10"/>
+	<npc id="58104" name="攻" width="1" height="1" x="82" y="59" num="1" interval="10"/>
+	<npc id="58101" name="护" width="12" height="12" x="118" y="165" num="1" interval="4000" ai="374210560"/>
+	<npc id="58102" name="小护" width="2" height="2" x="75" y="120" num="1" interval="3600" die="402-85-143;;402-87-141;402-88-140;402-89-139;;402-91-137;402-92-137;402-93-136;402-95-133;402-96-132;402-96-133;"/>
+	<npc id="5057" name="钥匙" width="1" height="1" x="35" y="111" num="1" interval="1800"/>
+	<npc id="5058" name="钥匙" width="1" height="1" x="79" y="57" num="1" interval="1800"/>
+	<npc id="10098" name="山贼战士" width="40" height="57" x="29" y="93" num="49" interval="7200"/>
+	<npc id="21211" name="山贼战士" width="40" height="57" x="29" y="93" num="1" interval="7200"/>
+	<npc id="15042" name="异族哨兵" width="37" height="50" x="68" y="62" num="50" interval="7200"/>
+	<npc id="21212" name="异族哨兵" width="37" height="50" x="68" y="62" num="1" interval="7200"/>
+	<npc id="16218" name="异军驯兽师" width="39" height="49" x="39" y="148" num="50" interval="7200"/>
+	<npc id="21213" name="异军驯兽师" width="39" height="49" x="39" y="148" num="1" interval="7200"/>
+	<npc id="15171" name="打手" width="37" height="59" x="108" y="101" num="50" interval="7200"/>
+	<npc id="21214" name="打手" width="37" height="59" x="108" y="101" num="1" interval="7200"/>
+</map>

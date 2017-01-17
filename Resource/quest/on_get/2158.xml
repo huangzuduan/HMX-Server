@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2158" name="山贼武器">
+	<quest id="160101" new="1">
+		<embranchment id="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<notify1 content="矿石+1"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

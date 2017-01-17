@@ -1,0 +1,25 @@
+服务器输出文件名	config_system.xml	根名称	ability
+客户端输出文件名	config_system.xml	项名称	system
+类型key（uint16）	值(int)		
+3	1	3	
+key	key_str	value	
+1	faction_create_ingot	200	
+2	skill_reset_ingot	10	
+3	equip_wash_ingot	10	
+4	equip_star_ingot	10	
+5	max_sell_count	20	
+6	offline_time_exp	1800	
+7	offline_time_cost_ingot	10	
+8	offline_time_reward	2	
+9	offline_time_duringtime_ingot	1800	
+10	offline_time_pet_duringtime	1800	
+11	hunt_once	0	
+12	hunt_ten	50	
+13	hunt_twenty	100	
+14	hunt_once_advance	10	
+15	hunt_ten_advance	100	
+16	hunt_twenty_advance	200	
+17	hunt_level_range_base	40	
+18	max_arena_fight_times	10	
+19	largess_time	60	
+20	power_online_time	600	

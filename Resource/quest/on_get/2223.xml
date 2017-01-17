@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2223" name="2223-精通魔卫的法器">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20542" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20542"/>
+				<var type="Less" name="get_精通魔卫的法器" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个精通魔卫的法器"/>
+				<var type="Add" name="get_精通魔卫的法器" value="1"/>
+				<refresh name="get_精通魔卫的法器"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20542"/>
+				<var type="Great" name="get_精通魔卫的法器" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20542"/>
+				<refresh name="state"/>
+				<refresh name="get_精通魔卫的法器"/>
+				<notify content="你已经收集齐了精通魔卫的法器,回皇城－花傲剑(886,732)处交任务吧"/>
+				<notify1 content="去找皇城－花傲剑(886,732)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

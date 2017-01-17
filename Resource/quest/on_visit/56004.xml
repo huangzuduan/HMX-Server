@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56004" name="清源村-画师(197,122)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10218">
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="218"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：画师(2)", "Dialog3")
+end
+function Dialog3()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;画师\n \n&lt;/n&gt;&lt;n&gt;    (GetName)啊，真是稀客,我刚到家你就跟来了,是来迎接我的么?&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;4181\&quot;&gt;   鞋&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("图有没有帮我画啊{10002}", "v56004", 218, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="218"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空点再来领取奖励吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>		
+	</quest>
+	<quest id="218" new="1">
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="218"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="4181"/> 
+				<exp value="100"/>
+				<notify1 content="经验+100"/>
+				<notify content="恭喜你完成了“画师”任务"/>
+				<var type="Set" name="state" value="-1" id="218"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;天书\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找隐者(310,50)询问玉佩上的文字。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    那个图样？我找找……这个不是，这个也不是，这个……那个……啊，找到了，给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 120&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这上面花花的是什么字{10001}", "v56004", 219, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10219">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="218"/>
+				<var type="Differ" name="state" value="-1" id="219"/>
+				<var type="Differ" name="state" value="-3" id="219"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：天书(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;天书\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找隐者(180,69)询问玉佩上的文字。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    那个图样？我找找……这个不是，这个也不是，这个……那个……啊，找到了，给你。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 120&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这上面花花的是什么字{10001}", "v56004", 219, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="219" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="218"/>
+				<var type="Differ" name="state" value="-1" id="219"/>
+				<var type="Differ" name="state" value="-3" id="219"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    那是古体字，我也看不懂。隐者也许知道吧。")
+this:AddCloseItem("我这便去问他")
+end
+				</menu>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找隐者(180,69)"/>
+				<notify1 content="隐者"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

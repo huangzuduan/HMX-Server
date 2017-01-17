@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16465" name="精怪洞穴九层-通魔鱼精">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20818" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_通魔鱼精" value="4250"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_通魔鱼精" value="1"/>
+				<refresh name="kill_通魔鱼精"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_通魔鱼精" value="4249"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_通魔鱼精"/>
+				<notify content="恭喜你，你已经击败了4250个95级的通魔鱼精，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16542" name="武夷王墓八层以下－亡灵法师(魔">
+	<!--new means new quest, default is quest on user-->
+	<quest id="457" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2235" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20566" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_亡灵法师" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_亡灵法师" value="1"/>
+				<refresh name="kill_亡灵法师"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_亡灵法师" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_亡灵法师"/>
+				<notify content="你已经消灭了足够多的亡灵法师,回皇城－吕隐(676,421)处交任务吧"/>
+				<notify1 content="去找皇城－吕隐(676,421)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

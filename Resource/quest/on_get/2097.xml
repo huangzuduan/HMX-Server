@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2097" name="翼鸟肉">
+	<quest id="282" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="282"/>
+				<var type="Less" name="get_香囊" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个动物香囊"/>
+				<var type="Add" name="get_香囊" value="1"/>
+				<refresh name="get_香囊"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="282"/>
+				<var type="Great" name="get_香囊" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="282"/>
+				<refresh name="state"/>
+				<refresh name="get_香囊"/>
+				<notify content="恭喜你完成了收集香囊的任务,向棺材铺老板汇报"/>
+				<notify1 content="棺材铺老板"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

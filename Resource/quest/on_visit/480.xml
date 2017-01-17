@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="480" name="凤凰城-玄真道长(282,323)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10251">
+		<embranchment id="10">
+			<conditions>
+                                <space size="1"/>
+				<var type="Equal" name="state" value="-3" id="251"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：万藏道卷(2)", "Dialog49")
+end
+function Dialog49()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;万藏道卷\n \n&lt;/n&gt;&lt;n&gt;   （悠闲喝酒中）嗯，好酒，好酒！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"587\"&gt;   定心露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我是张真人弟子，特来请教{10002}", "v480", 251, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="251"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，请清理完包裹再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="251" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+                                <space size="1"/>
+				<var type="Equal" name="state" value="-3" id="251"/>
+			</conditions>
+			<actions>
+				<additem value="10" id= "587"/>
+				<notify1 content="得到定心露10个"/>
+				<exp value="1400"/>
+				<notify1 content="经验+1400"/>
+				<notify content="恭喜你完成了“万藏道卷”任务"/>
+				<var type="Set" name="state" value="-1" id="251"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	<quest id="106" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="19"/> 
+				<var type="Equal" name="state" value="-1" id="251"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，去修炼到19级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>	
+	
+	<quest id="10252">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="18"/>
+				<var type="Differ" name="state" value="-3" id="252"/>
+				<var type="Differ" name="state" value="-1" id="252"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：下酒菜(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;下酒菜\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去请大厨师沙红芋(322,392)做名菜三珍五行羹。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，哦，原来你是张师弟十分赞赏的徒孙啊……\n    嗯，下酒菜吃完了。若是有一碗大厨沙红芋亲手做的三珍五行羹，实是美味也。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去替你拿来{10001}", "v480", 252, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="252" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="18"/>
+				<var type="Differ" name="state" value="-3" id="252"/>
+				<var type="Differ" name="state" value="-1" id="252"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="state" value="-2" id="106"/>
+				<refresh name="state"/>
+				<notify content="任务：去找大厨师沙红芋(322,392)"/>
+				<notify1 content="大厨师沙红芋(322,392)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10256">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2089"/>
+				<var type="Equal" name="state" value="-3" id="256"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：三珍五行羹(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;三珍五行羹\n \n&lt;/n&gt;&lt;n&gt;    嗯，看来你很有诚意，果然是个可造之材。我多年来潜心研究道术，颇有心得。你想学哪门功夫，自己来选吧。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这个挺好，是我想学的。{10002}", "v480", 256, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="256" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2089"/>
+				<var type="Equal" name="state" value="-3" id="256"/>
+			</conditions>
+			<actions>
+				<exp value="1800"/>
+				<removeitem value="1" id="2089" log="交三珍五行羹(256)-删除三珍五行羹(2089)"/>
+				<notify1 content="经验+1800"/>
+				<notify content="恭喜你完成了“三珍五行羹”任务"/>
+				<var type="Set" name="state" value="-1" id="256"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10257">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="256"/>
+				<var type="Differ" name="state" value="-3" id="257"/>
+				<var type="Differ" name="state" value="-1" id="257"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    上次给你的秘籍练的如何，可否有何不解之处。")
+this:AddDialogItem("修炼无碍，已入二层境界", "Dialog66")
+end
+function Dialog66()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;出师\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去向闻广(393,397)汇报。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，真乃百年不遇的奇才也！如此艰深之功法，居然已经练成……我也没什么可教你的了，你已可出世修炼，切记，一切顺其自然。\n    去吧，勿丢我门之脸面。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"580\"&gt;   小还丹 20个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢道长的栽培。{10001}", "v480", 257, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="257" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="256"/>
+				<var type="Differ" name="state" value="-3" id="257"/>
+				<var type="Differ" name="state" value="-1" id="257"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找闻广(393,397)"/>
+				<notify1 content="闻广(393,397)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

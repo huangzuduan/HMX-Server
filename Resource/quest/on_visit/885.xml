@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="885" name="边境-闻阔(174,116)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30605">
+		<embranchment id="1">
+			<conditions>
+				<level type="Less" value="50"/>
+				<uservar type="Less" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog1")
+end
+function Dialog1()
+this:AddTalk("    (GetName)，你好！我是闻广的兄弟闻阔。\n   我受兄长闻广所托，帮清源村的长老招募乡勇来保护清源村。\n  边境群英荟萃，各路英雄云集于此。我想在各位英雄的帮助下完成兄长的重托。\n   但现在你的等级太低了，等你修炼到50级再来找我吧。")
+this:AddDialogItem("招募乡勇任务条件(2)", "Dialog100")
+this:AddCloseItem("离开")
+end
+function Dialog100()
+this:AddTalk("  1、达到50级的人才能接。\n\n  2、招募对象为本国人。\n\n  3、接任务后，按任务提示信息，找到对应等级的玩家。\n\n   4、找到人后，组队并一起到清源村长老处报道。\n\n  5、交任务时，请保持目标人员和自己在九屏范围内。")
+this:AddDialogItem("返回", "Dialog1")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="3"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    (GetName)，你好！今天你已经招募了足够多的人员，谢谢你的帮助。如果你想继续帮助我的话，请明天再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="49"/>
+				<uservar type="Less" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;招募乡勇 \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    帮边境的闻阔招募乡勇,然后给清源村的长老送去。 \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，你好！我是闻广的兄弟闻阔\n   我受兄长闻广所托，帮清源村的长老招募乡勇来保护清源村。\n  边境群英荟萃，各路英雄云集于此。我想在各位英雄的帮助下完成兄长的重托。\n   听我的兄长闻广说：清源村的乙镖头押运粮草去凤凰城，有数次被劫。被劫的地点从村南边的彩虹桥到凤凰城的清源河。这群贼寇十分隐蔽，而且善用幻术。他们为什么只抢粮草？他们的目的是什么？镖局的伙计也没见过这群贼寇的穿着，听口音也不是龙岗山的山贼\n   为了维护清源村的安定，村长下令让清源村的长老招募乡勇保护清源村。\n  我兄长闻广与清源村的长老交情莫逆。就嘱咐我赶紧招募人员。你愿意帮我吗？\n  本日第一次招募&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去帮你招募{10001}", "v885", 20605, 2)
+this:AddTaskCmdItem("找官府帮忙招募{10001}", "v885", 20606, 2)
+this:AddDialogItem("招募乡勇任务条件(2)", "Dialog100")
+this:AddCloseItem("我现在没空")
+end
+function Dialog100()
+this:AddTalk("  1、达到50级的人才能接。\n\n  2、招募对象为本国人。\n\n  3、接任务后，按任务提示信息，找到对应等级的玩家。\n\n   4、找到人后，组队并一起到清源村长老处报道。\n\n  5、交任务时，请保持目标人员和自己在九屏范围内。")
+this:AddDialogItem("返回", "Dialog14")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;招募乡勇 \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    帮边境的闻阔招募乡勇,然后给清源村的长老送去。 \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，你好！我是闻广的兄弟闻阔\n   我受兄长闻广所托，帮清源村的长老招募乡勇来保护清源村。\n  边境群英荟萃，各路英雄云集于此。我想在各位英雄的帮助下完成兄长的重托。\n   听我的兄长闻广说：清源村的乙镖头押运粮草去凤凰城，有数次被劫。被劫的地点从村南边的彩虹桥到凤凰城的清源河。这群贼寇十分隐蔽，而且善用幻术。他们为什么只抢粮草？他们的目的是什么？镖局的伙计也没见过这群贼寇的穿着，听口音也不是龙岗山的山贼\n   为了维护清源村的安定，村长下令让清源村的长老招募乡勇保护清源村。\n  我兄长闻广与清源村的长老交情莫逆。就嘱咐我赶紧招募人员。你愿意帮我吗？\n  本日第二次招募&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去帮你招募{10001}", "v885", 20605,12)
+this:AddTaskCmdItem("找官府帮忙招募{10001}", "v885", 20606, 12)
+this:AddDialogItem("招募乡勇任务条件(2)", "Dialog100")
+this:AddCloseItem("我现在没空")
+end
+function Dialog100()
+this:AddTalk("  1、达到50级的人才能接。\n\n  2、招募对象为本国人。\n\n  3、接任务后，按任务提示信息，找到对应等级的玩家。\n\n   4、找到人后，组队并一起到清源村长老处报道。\n\n  5、交任务时，请保持目标人员和自己在九屏范围内。")
+this:AddDialogItem("返回", "Dialog24")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="2"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：招募乡勇(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;招募乡勇 \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    帮边境的闻阔招募乡勇,然后给清源村的长老送去。 \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，你好！我是闻广的兄弟闻阔\n   我受兄长闻广所托，帮清源村的长老招募乡勇来保护清源村。\n  边境群英荟萃，各路英雄云集于此。我想在各位英雄的帮助下完成兄长的重托。\n   听我的兄长闻广说：清源村的乙镖头押运粮草去凤凰城，有数次被劫。被劫的地点从村南边的彩虹桥到凤凰城的清源河。这群贼寇十分隐蔽，而且善用幻术。他们为什么只抢粮草？他们的目的是什么？镖局的伙计也没见过这群贼寇的穿着，听口音也不是龙岗山的山贼\n   为了维护清源村的安定，村长下令让清源村的长老招募乡勇保护清源村。\n  我兄长闻广与清源村的长老交情莫逆。就嘱咐我赶紧招募人员。你愿意帮我吗？\n  本日第三次招募&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去帮你招募{10001}", "v885", 20605,22)
+this:AddTaskCmdItem("找官府帮忙招募{10001}", "v885", 20606, 22)
+this:AddDialogItem("招募乡勇任务条件(2)", "Dialog100")
+this:AddCloseItem("我现在没空")
+end
+function Dialog100()
+this:AddTalk("  1、达到50级的人才能接。\n\n  2、招募对象为本国人。\n\n  3、接任务后，按任务提示信息，找到对应等级的玩家。\n\n   4、找到人后，组队并一起到清源村长老处报道。\n\n  5、交任务时，请保持目标人员和自己在九屏范围内。")
+this:AddDialogItem("返回", "Dialog34")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Equal" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    (GetName)，你好！如果你已经找到合适的人选，请赶快带给清源村的长老吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Equal" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    (GetName)，你好！你选择了向官府寻求帮助，去找凤凰城的黄大人吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20605" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<uservar type="Less" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Random" name="recruit_level" value="30"/>
+				<refresh name="recruit_level"/>
+				<var type="Set" name="state" value="1" id="20605"/>
+				<refresh name="state"/>
+				<var type="GetP" name="catch_people_selflevel" value="1"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="catch_people_selflevel"/>
+				<var type="Set" name="baseexp" value="65"/>
+				<var type="Set" name="catch_people_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="catch_people_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="stupid"/>
+				<vars type="Div" name1="catch_people_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="catch_people_selflevel2" name2="div"/>
+				<vars type="Add" name1="catch_people_selflevel" name2="catch_people_selflevel2"/>
+				<refresh name="catch_people_selflevel"/>
+				<uservar type="Set" name="catch_people" value="1"/>
+				<varnotify1 content="找一个%u级的人，组队后向清源村的长老汇报" value="recruit_level" id="20605"/>
+				<varnotify2 content="找一个%u级的人，组队后向清源村的长老汇报" value="recruit_level" id="20605"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Random" name="recruit_level" value="30"/>
+				<refresh name="recruit_level"/>
+				<var type="Set" name="state" value="1" id="20605"/>
+				<refresh name="state"/>
+				<var type="GetP" name="catch_people_selflevel" value="1"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="catch_people_selflevel"/>
+				<var type="Set" name="baseexp" value="65"/>
+				<var type="Set" name="catch_people_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="catch_people_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="stupid"/>
+				<vars type="Div" name1="catch_people_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="catch_people_selflevel2" name2="div"/>
+				<vars type="Add" name1="catch_people_selflevel" name2="catch_people_selflevel2"/>
+				<refresh name="catch_people_selflevel"/>
+				<uservar type="Add" name="catch_people" value="1"/>
+				<varnotify1 content="找一个%u级的人，组队后向清源村的长老汇报" value="recruit_level" id="20605"/>
+				<varnotify2 content="找一个%u级的人，组队后向清源村的长老汇报" value="recruit_level" id="20605"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="2"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Random" name="recruit_level" value="30"/>
+				<refresh name="recruit_level"/>
+				<var type="Set" name="state" value="1" id="20605"/>
+				<refresh name="state"/>
+				<var type="GetP" name="catch_people_selflevel" value="1"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="catch_people_selflevel"/>
+				<var type="Set" name="baseexp" value="65"/>
+				<var type="Set" name="catch_people_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="catch_people_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="stupid"/>
+				<vars type="Div" name1="catch_people_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="catch_people_selflevel2" name2="div"/>
+				<vars type="Add" name1="catch_people_selflevel" name2="catch_people_selflevel2"/>
+				<refresh name="catch_people_selflevel"/>
+				<uservar type="Add" name="catch_people" value="1"/>
+				<varnotify1 content="找一个%u级的人，组队后向清源村的长老汇报" value="recruit_level" id="20605"/>
+				<varnotify2 content="找一个%u级的人，组队后向清源村的长老汇报" value="recruit_level" id="20605"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20606" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<uservar type="Less" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="20606"/>
+				<refresh name="state"/>
+				<var type="GetP" name="catch_people_selflevel" value="1"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="catch_people_selflevel"/>
+				<var type="Set" name="baseexp" value="65"/>
+				<var type="Set" name="catch_people_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="catch_people_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="stupid"/>
+				<vars type="Div" name1="catch_people_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="catch_people_selflevel2" name2="div"/>
+				<vars type="Add" name1="catch_people_selflevel" name2="catch_people_selflevel2"/>
+				<refresh name="catch_people_selflevel"/>
+				<uservar type="Set" name="catch_people" value="1"/>
+				<var type="Set" name="catch_people_num" value="1" id="20606"/>
+				<refresh name="catch_people_num"/>
+				<notify1 content="去找凤凰城的黄大人！"/>
+				<notify content="去找凤凰城的黄大人！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="1"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="20606"/>
+				<refresh name="state"/>
+				<var type="GetP" name="catch_people_selflevel" value="1"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="catch_people_selflevel"/>
+				<var type="Set" name="baseexp" value="65"/>
+				<var type="Set" name="catch_people_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="catch_people_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="stupid"/>
+				<vars type="Div" name1="catch_people_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="catch_people_selflevel2" name2="div"/>
+				<vars type="Add" name1="catch_people_selflevel" name2="catch_people_selflevel2"/>
+				<refresh name="catch_people_selflevel"/>
+				<uservar type="Add" name="catch_people" value="1"/>
+				<var type="Set" name="catch_people_num" value="2" id="20606"/>
+				<refresh name="catch_people_num"/>
+				<notify1 content="去找凤凰城的黄大人！"/>
+				<notify content="去找凤凰城的黄大人！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<innation/>
+				<level type="Great" value="49"/>
+				<uservar type="Equal" name="catch_people" value="2"/>
+				<var type="Differ" name="state" value="1" id="20605"/>
+				<var type="Differ" name="state" value="-3" id="20605"/>
+				<var type="Differ" name="state" value="1" id="20606"/>
+				<var type="Differ" name="state" value="-3" id="20606"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="20606"/>
+				<refresh name="state"/>
+				<var type="GetP" name="catch_people_selflevel" value="1"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="catch_people_selflevel"/>
+				<var type="Set" name="baseexp" value="65"/>
+				<var type="Set" name="catch_people_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="catch_people_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="catch_people_selflevel" name2="stupid"/>
+				<vars type="Div" name1="catch_people_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="catch_people_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="catch_people_selflevel2" name2="div"/>
+				<vars type="Add" name1="catch_people_selflevel" name2="catch_people_selflevel2"/>
+				<refresh name="catch_people_selflevel"/>
+				<uservar type="Add" name="catch_people" value="1"/>
+				<var type="Set" name="catch_people_num" value="3" id="20606"/>
+				<refresh name="catch_people_num"/>
+				<notify1 content="去找凤凰城的黄大人！"/>
+				<notify content="去找凤凰城的黄大人！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

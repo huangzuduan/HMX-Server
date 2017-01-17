@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2123" name="药方碎片">
+	<quest id="327" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="327"/>
+				<var type="Less" name="get_药方碎片" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一张药方碎片"/>
+				<var type="Add" name="get_药方碎片" value="1"/>
+				<refresh name="get_药方碎片"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="327"/>
+				<var type="Great" name="get_药方碎片" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="327"/>
+				<refresh name="state"/>
+				<refresh name="get_药方碎片"/>
+				<notify content="你已经收集了10张药方碎片，回王城羽林将军(516,507)处交任务吧"/>
+				<notify1 content="王城羽林将军(516,507)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

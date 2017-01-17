@@ -1,0 +1,8 @@
+服务器输出文件名	config_vip_shop.xml	根名称	ability	
+客户端输出文件名	config_vip_shop.xml	项名称	vip_shop	
+类型	每日获得成长	立即获得成长	有效期	元宝价格
+3	3	3	3	3
+type	daily_grow_point	instance_grow_point	valid_time	price
+1	10	50	604800	70
+2	20	300	2592000	260
+3	30	1000	7776000	800

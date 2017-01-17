@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="15071" name="凤祥镇西郊-叛军弓卒">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20376" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_叛军弓卒" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_叛军弓卒" value="1"/>
+				<refresh name="kill_叛军弓卒"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_叛军弓卒" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_叛军弓卒"/>
+				<notify content="你已经消灭了50个叛军弓卒,回凤祥镇－独孤战(79,86)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

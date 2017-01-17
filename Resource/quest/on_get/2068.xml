@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2068" name="密信">
+	<quest id="190" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="190"/>
+			</conditions>
+			<actions>
+			<notify1 content="得到密信"/>
+				<notify content="搜出了一封密信，拿去给丘成看看"/>
+				<var type="Set" name="state" value="-3" id="190"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

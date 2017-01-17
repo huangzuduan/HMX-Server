@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 、16(竞技区) -->
+	<septnpc id="106"/>
+	<septnpc id="107"/>
+	<septnpc id="110"/>
+	<septnpc id="869"/>
+	<septnpc id="870"/>
+	<septnpc id="871"/>
+	<septnpc id="872"/>
+	<septnpc id="873"/>
+	<septnpc id="874"/>
+	<septnpc id="875"/>
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<waypoint>
+		<point x="14" y="78"/>
+		<point x="14" y="79"/>
+		<point x="14" y="80"/>
+		<point x="14" y="81"/>
+		<point x="14" y="82"/>
+		<point x="14" y="83"/>
+		<point x="14" y="84"/>
+		<point x="14" y="85"/>
+		<point x="14" y="86"/>
+		<point x="14" y="87"/>
+		<point x="14" y="88"/>
+		<point x="14" y="89"/>
+		<point x="14" y="90"/>
+		<point x="14" y="91"/>
+		<point x="14" y="92"/>
+		<point x="14" y="93"/>
+		<point x="14" y="94"/>
+		<point x="15" y="78"/>
+		<point x="15" y="79"/>
+		<point x="15" y="80"/>
+		<point x="15" y="81"/>
+		<point x="15" y="82"/>
+		<point x="15" y="83"/>
+		<point x="15" y="84"/>
+		<point x="15" y="85"/>
+		<point x="15" y="86"/>
+		<point x="15" y="87"/>
+		<point x="15" y="88"/>
+		<point x="15" y="89"/>
+		<point x="15" y="90"/>
+		<point x="15" y="91"/>
+		<point x="15" y="92"/>
+		<point x="15" y="93"/>
+		<point x="15" y="94"/>
+		<point x="16" y="78"/>
+		<point x="16" y="79"/>
+		<point x="16" y="80"/>
+		<point x="16" y="81"/>
+		<point x="16" y="82"/>
+		<point x="16" y="83"/>
+		<point x="16" y="84"/>
+		<point x="16" y="85"/>
+		<point x="16" y="86"/>
+		<point x="16" y="87"/>
+		<point x="16" y="88"/>
+		<point x="16" y="89"/>
+		<point x="16" y="90"/>
+		<point x="16" y="91"/>
+		<point x="16" y="92"/>
+		<point x="16" y="93"/>
+		<point x="16" y="94"/>
+		<dest name="qianjiangzhen-main" country="0" x="192" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="193" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="194" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="195" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="196" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="197" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="198" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="199" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="200" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="201" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="192" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="193" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="194" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="195" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="196" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="197" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="198" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="199" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="200" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="192" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="193" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="194" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="195" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="196" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="197" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="198" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="199" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="200" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="201" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="192" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="193" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="194" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="195" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="196" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="197" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="198" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="199" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="200" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="192" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="193" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="194" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="195" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="196" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="197" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="198" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="199" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="200" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="201" y="26"/>
+		<dest name="qianjiangzhen-main" country="0" x="192" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="193" y="27"/>
+		<dest name="qianjiangzhen-main" country="0" x="194" y="27"/>
+	</waypoint>
+	<waypoint>
+		<point x="585" y="499"/>
+		<point x="585" y="500"/>
+		<point x="585" y="501"/>
+		<point x="585" y="502"/>
+		<point x="585" y="503"/>
+		<point x="585" y="504"/>
+		<point x="585" y="505"/>
+		<point x="585" y="506"/>
+		<point x="585" y="507"/>
+		<point x="585" y="508"/>
+		<point x="585" y="509"/>
+		<point x="585" y="510"/>
+		<point x="585" y="511"/>
+		<point x="585" y="512"/>
+		<point x="585" y="513"/>
+		<point x="585" y="514"/>
+		<point x="585" y="515"/>
+		<point x="585" y="516"/>
+		<point x="585" y="517"/>
+		<point x="585" y="518"/>
+		<point x="585" y="519"/>
+		<point x="585" y="520"/>
+		<point x="585" y="521"/>
+		<point x="584" y="499"/>
+		<point x="584" y="500"/>
+		<point x="584" y="501"/>
+		<point x="584" y="502"/>
+		<point x="584" y="503"/>
+		<point x="584" y="504"/>
+		<point x="584" y="505"/>
+		<point x="584" y="506"/>
+		<point x="584" y="507"/>
+		<point x="584" y="508"/>
+		<point x="584" y="509"/>
+		<point x="584" y="510"/>
+		<point x="584" y="511"/>
+		<point x="584" y="512"/>
+		<point x="584" y="513"/>
+		<point x="584" y="514"/>
+		<point x="584" y="515"/>
+		<point x="584" y="516"/>
+		<point x="584" y="517"/>
+		<point x="584" y="518"/>
+		<point x="584" y="519"/>
+		<point x="584" y="520"/>
+		<point x="584" y="521"/>
+		<point x="583" y="499"/>
+		<point x="583" y="500"/>
+		<point x="583" y="501"/>
+		<point x="583" y="502"/>
+		<point x="583" y="503"/>
+		<point x="583" y="504"/>
+		<point x="583" y="505"/>
+		<point x="583" y="506"/>
+		<point x="583" y="507"/>
+		<point x="583" y="508"/>
+		<point x="583" y="509"/>
+		<point x="583" y="510"/>
+		<point x="583" y="511"/>
+		<point x="583" y="512"/>
+		<point x="583" y="513"/>
+		<point x="583" y="514"/>
+		<point x="583" y="515"/>
+		<point x="583" y="516"/>
+		<point x="583" y="517"/>
+		<point x="583" y="518"/>
+		<point x="583" y="519"/>
+		<point x="583" y="520"/>
+		<point x="583" y="521"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="26" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="27" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="28" y="264"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="21" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="22" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="23" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="24" y="263"/>
+		<dest name="fengxiangzhenxijiao" country="0" x="25" y="263"/>
+	</waypoint>
+	<waypoint>
+		<point x="14" y="540"/>
+		<point x="14" y="541"/>
+		<point x="14" y="542"/>
+		<point x="14" y="543"/>
+		<point x="14" y="544"/>
+		<point x="14" y="545"/>
+		<point x="14" y="546"/>
+		<point x="14" y="547"/>
+		<point x="14" y="548"/>
+		<point x="14" y="549"/>
+		<point x="14" y="550"/>
+		<point x="14" y="551"/>
+		<point x="14" y="552"/>
+		<point x="14" y="553"/>
+		<point x="14" y="554"/>
+		<point x="14" y="555"/>
+		<point x="15" y="540"/>
+		<point x="15" y="541"/>
+		<point x="15" y="542"/>
+		<point x="15" y="543"/>
+		<point x="15" y="544"/>
+		<point x="15" y="545"/>
+		<point x="15" y="546"/>
+		<point x="15" y="547"/>
+		<point x="15" y="548"/>
+		<point x="15" y="549"/>
+		<point x="15" y="550"/>
+		<point x="15" y="551"/>
+		<point x="15" y="552"/>
+		<point x="15" y="553"/>
+		<point x="15" y="554"/>
+		<point x="15" y="555"/>
+		<point x="16" y="540"/>
+		<point x="16" y="541"/>
+		<point x="16" y="542"/>
+		<point x="16" y="543"/>
+		<point x="16" y="544"/>
+		<point x="16" y="545"/>
+		<point x="16" y="546"/>
+		<point x="16" y="547"/>
+		<point x="16" y="548"/>
+		<point x="16" y="549"/>
+		<point x="16" y="550"/>
+		<point x="16" y="551"/>
+		<point x="16" y="552"/>
+		<point x="16" y="553"/>
+		<point x="16" y="554"/>
+		<point x="16" y="555"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="112"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="113"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="114"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="115"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="116"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="117"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="118"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="119"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="120"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="121"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="122"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="123"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="124"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="125"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="126"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="127"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="128"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="129"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="112"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="113"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="114"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="115"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="116"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="117"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="118"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="119"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="120"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="121"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="122"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="123"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="124"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="125"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="126"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="127"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="128"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="129"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="112"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="113"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="114"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="115"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="116"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="117"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="118"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="119"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="120"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="121"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="122"/>
+		<dest name="wushuangcheng-main" country="0" x="21" y="123"/>
+	</waypoint>
+	<waypoint>
+		<point x="283" y="585"/>
+		<point x="284" y="585"/>
+		<point x="285" y="585"/>
+		<point x="286" y="585"/>
+		<point x="287" y="585"/>
+		<point x="288" y="585"/>
+		<point x="289" y="585"/>
+		<point x="290" y="585"/>
+		<point x="291" y="585"/>
+		<point x="292" y="585"/>
+		<point x="293" y="585"/>
+		<point x="283" y="584"/>
+		<point x="284" y="584"/>
+		<point x="285" y="584"/>
+		<point x="286" y="584"/>
+		<point x="287" y="584"/>
+		<point x="288" y="584"/>
+		<point x="289" y="584"/>
+		<point x="290" y="584"/>
+		<point x="291" y="584"/>
+		<point x="292" y="584"/>
+		<point x="293" y="584"/>
+		<point x="284" y="583"/>
+		<point x="285" y="583"/>
+		<point x="286" y="583"/>
+		<point x="287" y="583"/>
+		<point x="288" y="583"/>
+		<point x="289" y="583"/>
+		<point x="290" y="583"/>
+		<point x="291" y="583"/>
+		<point x="292" y="583"/>
+		<point x="293" y="583"/>
+		<dest name="zhaozeshidi" country="0" x="26" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="27" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="28" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="29" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="30" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="31" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="32" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="33" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="34" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="35" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="36" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="26" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="27" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="28" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="29" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="30" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="31" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="32" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="33" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="34" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="35" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="36" y="30"/>
+		<dest name="zhaozeshidi" country="0" x="26" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="27" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="28" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="29" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="30" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="31" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="32" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="33" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="34" y="29"/>
+		<dest name="zhaozeshidi" country="0" x="35" y="29"/>
+	</waypoint>
+	<waypoint>
+		<point x="585" y="141"/>
+		<point x="585" y="142"/>
+		<point x="585" y="143"/>
+		<point x="585" y="144"/>
+		<point x="585" y="145"/>
+		<point x="585" y="146"/>
+		<point x="585" y="147"/>
+		<point x="585" y="148"/>
+		<point x="585" y="149"/>
+		<point x="585" y="150"/>
+		<point x="585" y="151"/>
+		<point x="585" y="152"/>
+		<point x="585" y="153"/>
+		<point x="585" y="154"/>
+		<point x="585" y="155"/>
+		<point x="585" y="156"/>
+		<point x="585" y="157"/>
+		<point x="585" y="158"/>
+		<point x="585" y="159"/>
+		<point x="585" y="160"/>
+		<point x="585" y="161"/>
+		<point x="585" y="162"/>
+		<point x="585" y="163"/>
+		<point x="585" y="164"/>
+		<point x="585" y="165"/>
+		<point x="585" y="166"/>
+		<point x="585" y="167"/>
+		<point x="585" y="168"/>
+		<point x="585" y="169"/>
+		<point x="585" y="170"/>
+		<point x="585" y="171"/>
+		<point x="585" y="172"/>
+		<point x="585" y="173"/>
+		<point x="585" y="174"/>
+		<point x="585" y="175"/>
+		<point x="584" y="141"/>
+		<point x="584" y="142"/>
+		<point x="584" y="143"/>
+		<point x="584" y="144"/>
+		<point x="584" y="145"/>
+		<point x="584" y="146"/>
+		<point x="584" y="147"/>
+		<point x="584" y="148"/>
+		<point x="584" y="149"/>
+		<point x="584" y="150"/>
+		<point x="584" y="151"/>
+		<point x="584" y="152"/>
+		<point x="584" y="153"/>
+		<point x="584" y="154"/>
+		<point x="584" y="155"/>
+		<point x="584" y="156"/>
+		<point x="584" y="157"/>
+		<point x="584" y="158"/>
+		<point x="584" y="159"/>
+		<point x="584" y="160"/>
+		<point x="584" y="161"/>
+		<point x="584" y="162"/>
+		<point x="584" y="163"/>
+		<point x="584" y="164"/>
+		<point x="584" y="165"/>
+		<point x="584" y="166"/>
+		<point x="584" y="167"/>
+		<point x="584" y="168"/>
+		<point x="584" y="169"/>
+		<point x="583" y="170"/>
+		<point x="583" y="171"/>
+		<point x="583" y="172"/>
+		<point x="583" y="173"/>
+		<point x="583" y="174"/>
+		<point x="583" y="175"/>
+		<point x="583" y="141"/>
+		<point x="583" y="142"/>
+		<point x="583" y="143"/>
+		<point x="583" y="144"/>
+		<point x="583" y="145"/>
+		<point x="583" y="146"/>
+		<point x="583" y="147"/>
+		<point x="583" y="148"/>
+		<point x="583" y="149"/>
+		<point x="583" y="150"/>
+		<point x="583" y="151"/>
+		<point x="583" y="152"/>
+		<point x="583" y="153"/>
+		<point x="583" y="154"/>
+		<point x="583" y="155"/>
+		<point x="583" y="156"/>
+		<point x="583" y="157"/>
+		<point x="583" y="158"/>
+		<point x="583" y="159"/>
+		<point x="583" y="160"/>
+		<point x="583" y="161"/>
+		<point x="583" y="162"/>
+		<point x="583" y="163"/>
+		<point x="583" y="164"/>
+		<point x="583" y="165"/>
+		<point x="583" y="166"/>
+		<point x="583" y="167"/>
+		<point x="583" y="168"/>
+		<point x="583" y="169"/>
+		<point x="583" y="170"/>
+		<point x="583" y="171"/>
+		<point x="583" y="172"/>
+		<point x="583" y="173"/>
+		<point x="583" y="174"/>
+		<point x="583" y="175"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="165"/>
+		<dest name="fengxiangzhen-main" country="0" x="20" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="21" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="22" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="23" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="24" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="25" y="166"/>
+		<dest name="fengxiangzhen-main" country="0" x="26" y="166"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<param leaderNpcID="7004"/>
+	<zonedef width="28" height="55" x="328" y="2" type="1" color="0,0,255,0"/>
+	<zonedef width="28" height="55" x="568" y="480" type="1" color="0,0,255,0"/>
+	<zonedef width="33" height="93" x="4" y="479" type="1" color="0,0,255,0"/>
+	<zonedef width="28" height="55" x="568" y="129" type="1" color="0,0,255,0"/>
+	<zonedef width="43" height="68" x="115" y="162" type="1" color="0,0,255,0"/>
+	<zonedef width="119" height="149" x="61" y="127" type="1" color="0,0,255,0"/>
+	<npc id="410" name="英雄应雄" width="1" height="1" x="344" y="334" num="1" interval="300"/>
+	<npc id="552" name="王城方向" width="1" height="1" x="23" y="515" num="1" interval="3600"/>
+	<npc id="548" name="千江镇方向" width="1" height="1" x="30" y="90" num="1" interval="3600"/>
+	<npc id="547" name="凤祥镇西郊方向" width="1" height="1" x="578" y="509" num="1" interval="3600"/>
+	<npc id="549" name="凤祥镇方向" width="1" height="1" x="580" y="149" num="1" interval="3600"/>
+	<npc id="550" name="沼泽湿地方向" width="1" height="1" x="295" y="568" num="1" interval="3600"/>
+	<!--npc id="805" name="高武器" width="1" height="1" x="149" y="183" num="1" interval="3600"/>
+	<npc id="806" name="高防具" width="1" height="1" x="147" y="181" num="1" interval="3600"/>
+	<npc id="804" name="药" width="1" height="1" x="143" y="177" num="1" interval="3600"/>
+	<npc id="803" name="杂货" width="1" height="1" x="140" y="182" num="1" interval="3600"/-->
+	<npc id="7004" name="村长北郊" width="1" height="1" x="134" y="211" num="1" interval="5400"/>
+	<npc id="5088" name="密室传送者" width="1" height="1" x="133" y="203" num="1" interval="5400"/>
+	<!--npc id="361" name="高级钱庄老板" width="1" height="1" x="111" y="222" num="1" interval="5400"/-->
+	<npc id="315" name="异族间谍" width="1" height="1" x="506" y="169" num="1" interval="3600"/>
+	<npc id="316" name="异族外交官" width="1" height="1" x="353" y="378" num="1" interval="3600"/>
+	<npc id="317" name="我军间谍" width="1" height="1" x="387" y="414" num="1" interval="3600"/>
+	<npc id="318" name="参谋" width="1" height="1" x="498" y="168" num="1" interval="3600"/>
+	<npc id="319" name="副将" width="1" height="1" x="549" y="282" num="1" interval="3600"/>
+	<npc id="320" name="伤兵" width="1" height="1" x="486" y="272" num="1" interval="3600"/>
+	<npc id="321" name="白虫虫" width="1" height="1" x="118" y="157" num="1" interval="3600"/>
+	<npc id="188" name="秘箱子" width="1" height="1" x="354" y="433" num="1" interval="3600"/>
+	<npc id="309" name="美食家" width="1" height="1" x="105" y="195" num="1" interval="3600"/>
+	<npc id="300" name="风水" width="1" height="1" x="101" y="187" num="1" interval="3600"/>
+	<npc id="151" name="绘" width="1" height="1" x="125" y="247" num="1" interval="3600"/>
+	<npc id="293" name="屠怒" width="1" height="1" x="104" y="240" num="1" interval="3600"/>
+	<npc id="294" name="冯小小" width="1" height="1" x="107" y="178" num="1" interval="3600"/>
+	<npc id="295" name="冯老大" width="1" height="1" x="131" y="183" num="1" interval="3600"/>
+	<npc id="296" name="胡大" width="1" height="1" x="316" y="457" num="1" interval="3600"/>
+	<npc id="297" name="胡二 " width="1" height="1" x="77" y="523" num="1" interval="3600"/>
+	<npc id="267" name="凤嘴岭守卫" width="1" height="1" x="464" y="217" num="1" interval="1800"/>
+	<npc id="269" name="凤嘴岭守卫" width="1" height="1" x="461" y="242" num="1" interval="1800"/>
+	<npc id="267" name="凤嘴岭守卫" width="1" height="1" x="337" y="17" num="1" interval="1800"/>
+	<npc id="268" name="凤嘴岭守卫" width="1" height="1" x="582" y="177" num="1" interval="1800"/>
+	<npc id="269" name="凤嘴岭守卫" width="1" height="1" x="582" y="506" num="1" interval="1800"/>
+	<npc id="270" name="凤嘴岭守卫" width="1" height="1" x="19" y="536" num="1" interval="1800"/>
+	<npc id="106" name="武器老板" width="1" height="1" x="137" y="168" num="1" interval="5400"/>
+	<npc id="107" name="法器老板" width="1" height="1" x="139" y="171" num="1" interval="5400"/>
+	<npc id="110" name="防具老板" width="1" height="1" x="126" y="156" num="1" interval="5400"/>
+	<npc id="455" name="冯道" width="1" height="1" x="400" y="409" num="1" interval="3600"/>
+	<npc id="456" name="伍参" width="1" height="1" x="535" y="226" num="1" interval="3600"/>
+	<npc id="457" name="张松" width="1" height="1" x="43" y="196" num="1" interval="3600"/>
+	<npc id="219" name="饲养员" width="1" height="1" x="113" y="254" num="1" interval="3600"/>
+	<npc id="872" name="秘籍" width="1" height="1" x="88" y="251" num="1" interval="5400"/>
+	<npc id="5095" name="车夫" width="1" height="1" x="111" y="154" num="1" interval="3600"/>
+	<!--npc id="196" name="客栈老板" width="1" height="1" x="105" y="219" num="1" interval="3600"/-->
+	<npc id="869" name="杂货店老板" width="1" height="1" x="118" y="226" num="1" interval="5400"/>
+	<npc id="870" name="药店老板" width="1" height="1" x="84" y="218" num="1" interval="5400"/>
+	<npc id="871" name="炼药师" width="1" height="1" x="90" y="215" num="1" interval="5400"/>
+	<npc id="875" name="整容" width="1" height="1" x="164" y="196" num="1" interval="5400"/>
+	<npc id="873" name="美发" width="1" height="1" x="167" y="193" num="1" interval="5400"/>
+	<npc id="874" name="服美" width="1" height="1" x="171" y="197" num="1" interval="5400"/>
+	<!--npc id="209" name="钱庄老板" width="1" height="1" x="154" y="178" num="1" interval="3600"/>
+	<npc id="1" name="箱子" width="1" height="1" x="158" y="172" num="1" interval="3600"/-->
+	<npc id="15038" name="钢犀" width="43" height="25" x="185" y="546" num="120" ai="272629760" interval="2"/>
+	<npc id="15038" name="钢犀" width="21" height="27" x="235" y="540" num="50" ai="272629760" interval="2"/>
+	<npc id="15030" name="黑豹" width="15" height="20" x="350" y="148" num="30" interval="2"/>
+	<npc id="16265" name="弩弓" width="94" height="126" x="337" y="357" num="15" interval="200"/>
+	<npc id="15044" name="我军" width="107" height="63" x="421" y="277" num="5" interval="300"/>
+	<npc id="15045" name="我军" width="107" height="63" x="421" y="277" num="5" interval="300"/>
+	<npc id="15046" name="我军" width="88" height="106" x="469" y="176" num="8" interval="300"/>
+	<npc id="15047" name="我军" width="88" height="106" x="469" y="176" num="8" interval="300"/>
+	<npc id="30008" name="异族头目" width="68" height="104" x="367" y="351" num="1" interval="10800"/>
+	<npc id="21003" name="灵狐(魔)" width="86" height="232" x="231" y="35" num="1" interval="7200"/>
+	<npc id="21011" name="异族哨兵" width="132" height="163" x="344" y="349" num="1" interval="7200"/>
+	<npc id="26008" name="异族男巫(魔)" width="105" height="235" x="76" y="330" num="1" interval="7200"/>
+	<npc id="56058" name="桃" width="1" height="1" x="73" y="235" num="1" interval="200"/>
+	<npc id="10007" name="鸡" width="118" height="128" x="61" y="148" num="10" interval="20"/>
+	<npc id="10012" name="狗" width="118" height="128" x="61" y="148" num="6" interval="20"/>
+	<npc id="55187 " name="兔儿草" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55106 " name="狐狸草" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55187 " name="甘草" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55106 " name="天芯草" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55187 " name="枫丹草" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55106 " name="野果" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55121" name="蛇果" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55141" name="毒果" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55161" name="奇异果" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55181" name="石头" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55201" name="箱子" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="55221" name="破损箱子" width="474" height="388" x="45" y="93" num="8" interval="1200"/>
+	<npc id="15020" name="灰狼" width="88" height="130" x="41" y="383" num="20" interval="90"/>
+	<npc id="15021" name="灵狐(魔)" width="88" height="130" x="41" y="383" num="15" interval="90"/>
+	<npc id="15022" name="黑豹" width="88" height="130" x="41" y="383" num="20" interval="90"/>
+	<npc id="15023" name="灵猴(魔)" width="88" height="130" x="41" y="383" num="15" interval="90"/>
+	<npc id="15024" name="灰狼" width="88" height="130" x="41" y="383" num="20" interval="90"/>
+	<npc id="15025" name="灵狐(魔)" width="102" height="109" x="28" y="282" num="20" interval="90"/>
+	<npc id="15026" name="黑豹" width="102" height="109" x="28" y="282" num="15" interval="90"/>
+	<npc id="15027" name="灵猴(魔)" width="102" height="109" x="28" y="282" num="20" interval="90"/>
+	<npc id="15026" name="黑豹" width="102" height="109" x="129" y="395" num="10" interval="90"/>
+	<npc id="15027" name="灵猴(魔)" width="102" height="109" x="129" y="395" num="10" interval="90"/>
+	<npc id="15028" name="铁犀" width="102" height="109" x="129" y="395" num="45" interval="60"/>
+	<npc id="15025" name="灵狐(魔)" width="81" height="73" x="86" y="508" num="20" interval="90"/>
+	<npc id="15029" name="彩翼鸟(魔)" width="81" height="73" x="86" y="508" num="20" interval="90"/>
+	<npc id="15030" name="黑豹" width="40" height="155" x="18" y="123" num="20" interval="90"/>
+	<npc id="15031" name="火猪(魔)" width="40" height="155" x="18" y="123" num="15" interval="90"/>
+	<npc id="15032" name="异族偷猎者" width="40" height="155" x="18" y="123" num="5" interval="90"/>
+	<npc id="15033" name="火猪(魔)" width="40" height="155" x="18" y="123" num="10" interval="90"/>
+	<npc id="15030" name="黑豹" width="94" height="163" x="183" y="126" num="20" interval="90"/>
+	<npc id="15031" name="火猪(魔)" width="94" height="163" x="183" y="126" num="15" interval="90"/>
+	<npc id="15033" name="火猪(魔)" width="94" height="163" x="183" y="126" num="40" interval="60"/>
+	<npc id="15036" name="异族偷猎者" width="94" height="163" x="183" y="126" num="10" interval="90"/>
+	<npc id="15052" name="杨龙" width="28" height="40" x="130" y="286" num="1" interval="1800"/>
+	<npc id="15030" name="黑豹" width="98" height="110" x="130" y="286" num="20" interval="90"/>
+	<npc id="15031" name="火猪(魔)" width="98" height="110" x="130" y="286" num="15" interval="90"/>
+	<npc id="15032" name="异族偷猎者" width="98" height="110" x="130" y="286" num="5" interval="90"/>
+	<npc id="15033" name="火猪(魔)" width="98" height="110" x="130" y="286" num="10" interval="90"/>
+	<npc id="15034" name="异族哨兵" width="98" height="110" x="130" y="286" num="10" interval="90"/>
+	<npc id="15035" name="异族男巫(魔)" width="98" height="110" x="130" y="286" num="5" interval="90"/>
+	<npc id="15036" name="异族偷猎者" width="98" height="110" x="130" y="286" num="10" interval="90"/>
+	<npc id="15032" name="异族偷猎者" width="65" height="103" x="106" y="488" num="5" interval="90"/>
+	<npc id="15034" name="异族哨兵" width="65" height="103" x="106" y="488" num="22" interval="90"/>
+	<npc id="15035" name="异族男巫(魔)" width="65" height="103" x="106" y="488" num="5" interval="90"/>
+	<npc id="15036" name="异族偷猎者" width="65" height="103" x="106" y="488" num="10" interval="90"/>
+	<npc id="15035" name="异族男巫(魔)" width="20" height="20" x="124" y="433" num="15" interval="30"/>
+	<npc id="15036" name="异族偷猎者" width="20" height="20" x="124" y="433" num="25" interval="30"/>
+	<npc id="15035" name="异族男巫(魔)" width="20" height="20" x="148" y="484" num="15" interval="30"/>
+	<npc id="15036" name="异族偷猎者" width="20" height="20" x="148" y="484" num="25" interval="30"/>
+	<npc id="15030" name="黑豹" width="62" height="110" x="231" y="364" num="20" interval="90"/>
+	<npc id="15031" name="火猪(魔)" width="62" height="110" x="231" y="364" num="45" interval="60"/>
+	<npc id="15032" name="异族偷猎者" width="62" height="110" x="231" y="364" num="5" interval="90"/>
+	<npc id="15033" name="火猪(魔)" width="62" height="110" x="231" y="364" num="10" interval="90"/>
+	<npc id="15034" name="异族哨兵" width="62" height="110" x="231" y="364" num="10" interval="90"/>
+	<npc id="15035" name="异族男巫(魔)" width="62" height="110" x="231" y="364" num="5" interval="90"/>
+	<npc id="15036" name="异族偷猎者" width="62" height="110" x="231" y="364" num="10" interval="90"/>
+	<npc id="15030" name="黑豹" width="81" height="105" x="331" y="366" num="20" interval="90"/>
+	<npc id="15031" name="火猪(魔)" width="81" height="105" x="331" y="366" num="15" interval="90"/>
+	<npc id="15032" name="异族偷猎者" width="81" height="105" x="331" y="366" num="5" interval="90"/>
+	<npc id="15033" name="火猪(魔)" width="81" height="105" x="331" y="366" num="10" interval="90"/>
+	<npc id="15034" name="异族哨兵" width="81" height="105" x="331" y="366" num="10" interval="90"/>
+	<npc id="15034" name="异族哨兵" width="22" height="22" x="373" y="414" num="25" interval="30"/>
+	<npc id="15034" name="异族哨兵" width="22" height="22" x="445" y="398" num="25" interval="30"/>
+	<npc id="15035" name="异族男巫(魔)" width="81" height="105" x="331" y="366" num="5" interval="90"/>
+	<npc id="15036" name="异族偷猎者" width="81" height="105" x="331" y="366" num="10" interval="90"/>
+	<npc id="15040" name="黑豹" width="164" height="79" x="45" y="46" num="10" interval="90"/>
+	<npc id="15042" name="异族哨兵" width="164" height="79" x="45" y="46" num="40" interval="90"/>
+	<npc id="15043" name="异族男巫(魔)" width="164" height="79" x="45" y="46" num="10" interval="90"/>
+	<npc id="15037" name="火猪(魔)" width="201" height="104" x="210" y="47" num="10" interval="90"/>
+	<npc id="15038" name="铁犀" width="201" height="104" x="210" y="47" num="100" interval="90"/>
+	<npc id="15039" name="彩翼鸟(魔)" width="201" height="104" x="210" y="47" num="10" interval="90"/>
+	<npc id="15040" name="黑豹" width="201" height="104" x="210" y="47" num="10" interval="90"/>
+	<npc id="15041" name="火猪(魔)" width="201" height="104" x="210" y="47" num="10" interval="90"/>
+	<npc id="15042" name="异族哨兵" width="201" height="104" x="210" y="47" num="30" interval="90"/>
+	<npc id="15043" name="异族男巫(魔)" width="201" height="104" x="210" y="47" num="10" interval="90"/>
+	<npc id="15042" name="异族哨兵" width="86" height="80" x="231" y="467" num="20" interval="90"/>
+	<npc id="15043" name="异族男巫(魔)" width="86" height="80" x="231" y="467" num="10" interval="90"/>
+	<npc id="15037" name="火猪(魔)" width="87" height="86" x="229" y="282" num="10" interval="90"/>
+	<npc id="15038" name="铁犀" width="87" height="86" x="229" y="282" num="80" interval="90"/>
+	<npc id="15039" name="彩翼鸟(魔)" width="87" height="86" x="229" y="282" num="20" interval="90"/>
+	<npc id="15040" name="黑豹" width="87" height="86" x="229" y="282" num="10" interval="90"/>
+	<npc id="15041" name="火猪(魔)" width="87" height="86" x="229" y="282" num="10" interval="90"/>
+	<npc id="15042" name="异族哨兵" width="87" height="86" x="229" y="282" num="20" interval="90"/>
+	<npc id="15043" name="异族男巫(魔)" width="87" height="86" x="229" y="282" num="10" interval="90"/>
+	<npc id="15040" name="黑豹" width="145" height="103" x="279" y="151" num="10" interval="90"/>
+	<npc id="15041" name="火猪(魔)" width="145" height="103" x="279" y="151" num="10" interval="90"/>
+	<npc id="15042" name="异族哨兵" width="145" height="103" x="279" y="151" num="40" interval="90"/>
+	<npc id="15043" name="异族男巫(魔)" width="145" height="103" x="279" y="151" num="10" interval="90"/>
+	<npc id="15037" name="火猪(魔)" width="135" height="141" x="401" y="366" num="10" interval="90"/>
+	<npc id="15038" name="铁犀" width="135" height="141" x="401" y="366" num="100" interval="90"/>
+	<npc id="15039" name="彩翼鸟(魔)" width="135" height="141" x="401" y="366" num="10" interval="90"/>
+	<npc id="11001" name="赤灵豪熊" width="20" height="30" x="98" y="367" num="2" interval="1800"/>
+	<npc id="11003" name="暗灵夜鹰" width="30" height="30" x="69" y="91" num="2" interval="1800"/>
+	<npc id="11004" name="青灵旋龟" width="30" height="20" x="383" y="222" num="2" interval="1800"/>
+	<npc id="11006" name="墨灵玄豹" width="35" height="28" x="269" y="501" num="2" interval="1800"/>
+	<npc id="16601" name="异族狂兵" width="25" height="35" x="288" y="283" num="45" interval="10"/>
+	<npc id="16606" name="特种异军" width="30" height="35" x="199" y="195" num="45" interval="10"/>
+	<npc id="16607" name="异军高手" width="25" height="35" x="184" y="276" num="45" interval="10"/>
+	<npc id="16602" name="叛军高手" width="25" height="35" x="329" y="388" num="45" interval="10"/>
+	<zonedef width="28" height="45" x="12" y="65" type="1" color="0,0,255,0"/>
+	<zonedef width="28" height="40" x="276" y="559" type="1" color="0,0,255,0"/>
+</map>

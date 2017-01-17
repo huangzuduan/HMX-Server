@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="489" name="凤凰城-高俅(280,272)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10289">
+		<embranchment id="10">
+			<conditions>
+				<item value="10" id="2098"/>
+				<var type="Equal" name="state" value="1" id="289"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    什么？你肯把虎头给我？是真的吗？\n    哈哈哈。。。真是天上掉馅饼啊！\n    我马上就去领赏！")
+this:AddTaskCmdItem("你肯去就行{10002}", "v489", 289, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="289" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="10" id="2098"/>
+				<var type="Equal" name="state" value="1" id="289"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="2098" log="交民意(289)-删除10个虎头(2098)"/>
+				<notify1 content="回去报告黄大人"/>
+				<notify content="成功完成任务，回去报告黄大人(270,490)"/>
+				<var type="Set" name="state" value="-3" id="289"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

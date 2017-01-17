@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="10001" name="鸡">
+	<quest id="214" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_鸡" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_鸡" value="1"/>
+				<refresh name="kill_鸡"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_鸡" value="9"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_鸡"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了捉鸡的任务,向庞叔汇报"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

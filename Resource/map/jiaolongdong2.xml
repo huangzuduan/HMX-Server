@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 、16(竞技区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<waypoint>
+		<point x="14" y="80"/>
+		<point x="14" y="81"/>
+		<point x="14" y="82"/>
+		<point x="14" y="83"/>
+		<point x="14" y="84"/>
+		<point x="14" y="85"/>
+		<point x="14" y="86"/>
+		<point x="14" y="87"/>
+		<point x="14" y="88"/>
+		<point x="14" y="89"/>
+		<point x="14" y="90"/>
+		<point x="14" y="91"/>
+		<point x="14" y="92"/>
+		<point x="14" y="93"/>
+		<point x="14" y="94"/>
+		<point x="14" y="95"/>
+		<point x="14" y="96"/>
+		<point x="14" y="97"/>
+		<point x="14" y="98"/>
+		<point x="14" y="99"/>
+		<point x="14" y="100"/>
+		<point x="14" y="101"/>
+		<point x="14" y="102"/>
+		<point x="14" y="103"/>
+		<point x="14" y="104"/>
+		<point x="14" y="105"/>
+		<point x="14" y="107"/>
+		<point x="14" y="108"/>
+		<point x="14" y="109"/>
+		<point x="14" y="110"/>
+		<point x="14" y="111"/>
+		<point x="15" y="80"/>
+		<point x="15" y="81"/>
+		<point x="15" y="82"/>
+		<point x="15" y="83"/>
+		<point x="15" y="84"/>
+		<point x="15" y="85"/>
+		<point x="15" y="86"/>
+		<point x="15" y="87"/>
+		<point x="15" y="88"/>
+		<point x="15" y="89"/>
+		<point x="15" y="90"/>
+		<point x="15" y="91"/>
+		<point x="15" y="92"/>
+		<point x="15" y="93"/>
+		<point x="15" y="94"/>
+		<point x="15" y="95"/>
+		<point x="15" y="96"/>
+		<point x="15" y="97"/>
+		<point x="15" y="98"/>
+		<point x="15" y="99"/>
+		<point x="15" y="100"/>
+		<point x="15" y="101"/>
+		<point x="15" y="102"/>
+		<point x="15" y="103"/>
+		<point x="15" y="104"/>
+		<point x="15" y="105"/>
+		<point x="15" y="107"/>
+		<point x="15" y="108"/>
+		<point x="15" y="109"/>
+		<point x="15" y="110"/>
+		<point x="15" y="111"/>
+		<dest name="jiaolongdong1" x="207" y="51"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="52"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="53"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="54"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="55"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="56"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="57"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="58"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="59"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="60"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="61"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="62"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="63"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="64"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="65"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="51"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="52"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="53"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="54"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="55"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="56"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="57"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="58"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="59"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="60"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="61"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="62"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="63"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="51"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="52"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="53"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="54"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="55"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="56"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="57"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="58"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="59"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="60"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="61"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="62"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="63"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="64"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="65"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="51"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="52"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="53"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="54"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="55"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="56"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="57"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="58"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="59"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="60"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="61"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="62"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="63"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="59"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="60"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="61"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="62"/>
+		<dest name="jiaolongdong1" country="0" x="207" y="63"/>
+		<dest name="jiaolongdong1" country="0" x="206" y="54"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="27" height="48" x="0" y="69" type="1" color="0,0,255,0"/>
+	<npc id="30035" name="灵蛇" width="3" height="3" x="131" y="105" num="1" interval="10800" color="0,255,0,0"/>
+	<npc id="11008" name="青龙" width="60" height="151" x="26" y="21" num="2" interval="1800" color="0,255,0,0"/>
+	<npc id="16114" name="雌羽翼龙" width="125" height="140" x="27" y="22" num="2" interval="5" color="0,255,0,0"/>
+	<npc id="16115" name="矛刺侏儒" width="125" height="140" x="27" y="22" num="1" interval="5" color="0,255,0,0"/>
+	<npc id="16116" name="雄羽翼龙" width="125" height="140" x="27" y="22" num="1" interval="5" color="0,255,0,0"/>
+	<npc id="16117" name="魔蝙蝠" width="125" height="140" x="27" y="22" num="1" interval="5" color="0,255,0,0"/>
+	<npc id="16119" name="狂掷侏儒" width="125" height="140" x="27" y="22" num="2" interval="5" color="0,255,0,0"/>
+	<npc id="16120" name="暗魔侏儒" width="125" height="140" x="27" y="22" num="1" interval="5" color="0,255,0,0"/>
+	<npc id="16122" name="雌鹰羽龙" width="125" height="140" x="27" y="22" num="1" interval="5" color="0,255,0,0"/>
+	<npc id="16123" name="狂矛侏儒" width="125" height="140" x="27" y="22" num="2" interval="5" color="0,255,0,0"/>
+	<npc id="16124" name="雄鹰羽龙" width="125" height="140" x="27" y="22" num="1" interval="5" color="0,255,0,0"/>
+	<npc id="16605" name="特种侏儒（魔）" width="15" height="20" x="53" y="138" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16113" name="侏儒力士" width="15" height="20" x="68" y="52" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="16113" name="侏儒力士" width="15" height="20" x="100" y="35" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16118" name="暗战侏儒" width="14" height="20" x="35" y="113" num="40" interval="2" color="0,255,0,0"/>
+	<npc id="16121" name="狂战侏儒" width="14" height="20" x="85" y="76" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="16121" name="狂战侏儒" width="14" height="20" x="82" y="150" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="55101" name="野果" width="60" height="151" x="26" y="21" num="3" interval="1600" color="0,255,0,0"/>
+	<npc id="55121" name="蛇果" width="64" height="152" x="86" y="25" num="3" interval="1600" color="0,255,0,0"/>
+	<npc id="55141" name="毒果" width="64" height="152" x="86" y="25" num="3" interval="1600" color="0,255,0,0"/>
+	<npc id="55161" name="奇异果" width="64" height="152" x="86" y="25" num="2" interval="1600" color="0,255,0,0"/>
+	<npc id="55181" name="石头" width="64" height="152" x="86" y="25" num="3" interval="1600" color="0,255,0,0"/>
+	<npc id="55201" name="箱子" width="64" height="152" x="86" y="25" num="3" interval="1600" color="0,255,0,0"/>
+	<npc id="55221" name="破损箱子" width="64" height="152" x="86" y="25" num="3" interval="1600" color="0,255,0,0"/>
+	<npc id="21141" name="侏儒战士" width="64" height="152" x="86" y="25" num="3" interval="7200" color="0,255,0,0"/>
+</map>

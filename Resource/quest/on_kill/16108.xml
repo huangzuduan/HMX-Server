@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16108" name="蛟龙1层－巫咒侏儒（散）">
+	<!--new means new quest, default is quest on user-->
+	<quest id="383" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_巫咒侏儒" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_巫咒侏儒" value="1"/>
+				<refresh name="kill_巫咒侏儒"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_巫咒侏儒" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_巫咒侏儒"/>
+				<notify content="你已经消灭了40个巫咒侏儒,回千江镇－蒙阔(222,338)处交任务吧"/>
+				<notify1 content="去找千江镇－蒙阔(222,338)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

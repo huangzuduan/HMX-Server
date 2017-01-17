@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5073" name="汉国使者">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960108">
+		<embranchment id="8">
+			<conditions>
+				<nation value="8"/>
+				<level type="Great" value="9"/>
+				<var type="Differ" name="state" value="-1" id="20604"/>
+				<var type="Differ" name="state" value="1" id="20604"/>
+				<var type="Differ" name="state" value="-3" id="20604"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：比武(2)", "Dialog15")
+end
+function Dialog15()
+this:AddTalk("    年轻人！看你跃跃欲试的样子，你是刚来比武岛的吗？\n \n告诉你哦，在比武岛内每成功击败对手一次，计一次胜利！\n \n无论在什么时候，都可以向我汇报比武的结果，如果你比武的成绩很优秀，我会给你非常丰厚的经验奖励哦！")
+this:AddTaskCmdItem("接受比武{10001}", "v5073", 20604, 3)
+this:AddTaskCmdItem("回国(0)", "v5073", 160108, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<nation value="8"/>
+				<mapid id="20604" name="213"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Great" name="kill_player" value="0" id="20604"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：比武(2)", "Dialog8")
+end
+function Dialog8()
+this:AddTalk("   呵呵！年轻人，你是来向我汇报比武结果的吗？")
+this:AddTaskCmdItem("是的！{10002}", "v5073", 20604, 9)
+this:AddTaskCmdItem("回国(0)", "v5073", 160108, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<nation value="8"/>
+				<mapid id="20604" name="214"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Great" name="kill_player" value="0" id="20604"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：比武(2)", "Dialog9")
+end
+function Dialog9()
+this:AddTalk("   呵呵！年轻人，你是来向我汇报比武结果的吗？")
+this:AddTaskCmdItem("是的！{10002}", "v5073", 20604, 9)
+this:AddTaskCmdItem("回国(0)", "v5073", 160108, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<mapid id="20604" name="215"/>
+				<nation value="8"/>
+				<spacevar size="space_num" id="20604"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Great" name="kill_player" value="0" id="20604"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：比武(2)", "Dialog10")
+end
+function Dialog10()
+this:AddTalk("   呵呵！年轻人，你是来向我汇报比武结果的吗？")
+this:AddTaskCmdItem("是的！{10002}", "v5073", 20604, 9)
+this:AddTaskCmdItem("回国(0)", "v5073", 160108, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<mapid id="20604" name="215"/>
+				<nation value="8"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Great" name="kill_player" value="0" id="20604"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：比武(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("   你好！你的包裹空间不足，请清理好包裹再来找我！")
+this:AddTaskCmdItem("回国(0)", "v5073", 160108, 8)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<nation value="8"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Less" name="kill_player" value="1" id="20604"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：比武(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("   年轻人，做人要诚实！你比武连一次都没赢过！")
+this:AddTaskCmdItem("回国(0)", "v5073", 160108, 8)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20604" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<nation value="8"/>
+				<var type="Differ" name="state" value="-1" id="20604"/>
+				<var type="Differ" name="state" value="1" id="20604"/>
+				<var type="Differ" name="state" value="-3" id="20604"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去比武岛比武"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<nation value="8"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Great" name="kill_player" value="0" id="20604"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20604" name="selflevel"/>
+				<notify1 content="获得了经验奖励"/>
+				<notify content="完成了“比武”任务，获得了奖励"/>
+				<var type="Set" name="state" value="-2" id="20604"/>
+				<addvaritem value="item_num" itemid="701" id="20604"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160108" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="宋国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="魏国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="齐国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="燕国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="唐国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="汉国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="吴国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="赵国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="周国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+			</conditions>
+			<actions>
+				<goto name="楚国·王城" pos="812,419"/>
+				<notify content="你回到了王城"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

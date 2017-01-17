@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="30002" name="狼王">
+	<quest id="20243" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20243"/>
+				<refresh name="state"/>
+				<notify1 content="山大王：1/1"/>
+				<notify content="恭喜你完成了击败山大王的任务,回战马饲养员处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+</event>

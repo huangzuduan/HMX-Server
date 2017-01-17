@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2231" name="骸骨残片-2231">
+	<!--new means new quest, default is quest on user-->
+	<quest id="449" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="449"/>
+				<var type="Less" name="get_骸骨残片" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块骸骨残片"/>
+				<var type="Add" name="get_骸骨残片" value="1"/>
+				<refresh name="get_骸骨残片"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="449"/>
+				<var type="Great" name="get_骸骨残片" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="449"/>
+				<refresh name="state"/>
+				<refresh name="get_骸骨残片"/>
+				<notify content="你已经收集了足够的骸骨残片,回皇城－夏侯望(563,84)处交任务吧"/>
+				<notify1 content="去找皇城－夏侯望(563,84)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

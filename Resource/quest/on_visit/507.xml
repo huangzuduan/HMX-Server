@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="507" name="凤凰城-富不仁(343,412)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30342">
+		<embranchment id="1">
+			<conditions>
+				<level type="Less" value="33"/>
+				<var type="Differ" name="state" value="1" id="20347"/>
+				<var type="Differ" name="state" value="-3" id="20347"/>
+				<var type="Differ" name="state" value="-1" id="20342"/>
+				<var type="Differ" name="state" value="1" id="20342"/>
+				<var type="Differ" name="state" value="-3" id="20342"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    (GetName)，你好！我有件事想找你帮忙，可是你现在的能力还不够，去修炼到33级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="32"/>
+				<var type="Differ" name="state" value="1" id="20347"/>
+				<var type="Differ" name="state" value="-3" id="20347"/>
+				<var type="Differ" name="state" value="-1" id="20342"/>
+				<var type="Differ" name="state" value="1" id="20342"/>
+				<var type="Differ" name="state" value="-3" id="20342"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：商路(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;商路\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    打败50个山贼哨兵，然后再回到富不仁处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哼，最近山贼闹得太厉害了，害的老百姓都被抢了，我根本收不到租，也做不成生意！我决定要造福百姓，打败那些山贼！到时候我的名望……啊，咳咳，到时候老百姓就能过上平安的日子了。怎么样，帮我打败50个山贼，我有重谢。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 20800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("一言为定{10001}", "v507", 20342, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20342"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：商路(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;商路\n \n&lt;/n&gt;&lt;n&gt;    嗯，太好了，这么一来我的……咳咳，老百姓就平安了。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 20800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("山贼还有很多呢{10002}", "v507", 20342, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20342" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="32"/>
+				<var type="Differ" name="state" value="1" id="20347"/>
+				<var type="Differ" name="state" value="-3" id="20347"/>
+				<var type="Differ" name="state" value="-1" id="20342"/>
+				<var type="Differ" name="state" value="1" id="20342"/>
+				<var type="Differ" name="state" value="-3" id="20342"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：帮富不仁打败50个山贼哨兵(30,107)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20342"/>
+			</conditions>
+			<actions>
+				<exp value="20800"/>
+				<notify1 content="经验+20800"/>
+				<notify content="恭喜你完成了“山贼哨兵”任务"/>
+				<var type="Set" name="state" value="-1" id="20342"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30338">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20342"/>
+				<var type="Differ" name="state" value="-1" id="20343"/>
+				<var type="Differ" name="state" value="1" id="20343"/>
+				<var type="Differ" name="state" value="-3" id="20343"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：干粮(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;干粮\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    搜集10个牛肉干来交给富不仁吧。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    嗯，最近饥民实在是多啊……啊，对了，这是个好主意。\n    你帮我去弄些牛肉干好啦，我准备舍吃食给饥民。这么一来，花的钱虽然很少，可是我的名……咳咳，我的心意却尽到了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧……{10001}", "v507", 20343, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="1905"/>
+				<var type="Differ" name="state" value="-1" id="20343"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：干粮(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;干粮\n \n&lt;/n&gt;&lt;n&gt;    嗯嗯，这就是牛肉干么？嗯，这个肉又干又硬，很好很好。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("牛肉干拿去{10002}", "v507", 20343, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20343" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20342"/>
+				<var type="Differ" name="state" value="-1" id="20343"/>
+				<var type="Differ" name="state" value="1" id="20343"/>
+				<var type="Differ" name="state" value="-3" id="20343"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去收集10个牛肉干"/>
+				<notify content="任务：收集10个牛肉干交给富不仁"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="1905"/>
+				<var type="Differ" name="state" value="-1" id="20343"/>
+			</conditions>
+			<actions>
+				<exp value="5600"/>
+				<notify1 content="经验+5600"/>
+				<notify content="恭喜你完成了“干粮”任务"/>
+				<var type="Set" name="state" value="-1" id="20343"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30344">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20343"/>
+				<var type="Differ" name="state" value="-1" id="20344"/>
+				<var type="Differ" name="state" value="1" id="20344"/>
+				<var type="Differ" name="state" value="-3" id="20344"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：贩卖(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;贩卖\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将食物卖给困在山寨一层的犯人，得到的元宝交给富不仁。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    有个犯人被山贼关在山寨一层，山贼们整天不给他吃的，看上去很可怜。请你帮我将这些牛肉干拿去给犯人吃好吗？当然，千万别忘了收钱。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("……好吧{10001}", "v507", 20344, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2049"/>
+				<var type="Equal" name="state" value="-3" id="20344"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：贩卖(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;贩卖\n \n&lt;/n&gt;&lt;n&gt;    啊，元宝……喔～哈哈哈哈哈哈这就是我梦寐以求的元宝啊……咳咳，谢谢你……犯人吃到了食物，不至于饿死，真好啊！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("……汗{10002}", "v507", 20344, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20344" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20343"/>
+				<var type="Differ" name="state" value="-1" id="20344"/>
+				<var type="Differ" name="state" value="1" id="20344"/>
+				<var type="Differ" name="state" value="-3" id="20344"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="将牛肉干卖给犯人"/>
+				<notify1 content="牛肉干卖给犯人"/>
+				<notify content="任务：将牛肉干卖给犯人，拿回的银子交给富不仁。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2049"/>
+				<var type="Equal" name="state" value="-3" id="20344"/>
+			</conditions>
+			<actions>
+				<exp value="10400"/>
+				<removeitem value="1" id="2049" log="交贩卖(20344)-删除银两(2049)"/>
+				<notify1 content="经验+10400"/>
+				<notify content="恭喜你完成了“贩卖”任务"/>
+				<var type="Set" name="state" value="-1" id="20344"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30347">
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2111"/>
+				<var type="Equal" name="state" value="1" id="20347"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;商人\n \n&lt;/n&gt;&lt;n&gt;    宝盒？咦，这个宝盒不正是我一直想要买的宝盒么？我要了。来，这里面装着5000文的银票。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("银两收下了{10002}", "v507", 20347, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="20347"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("     什么？你身上竟然没带宝盒？是你丢了吧。真拿你没办法，送你一个吧！\n \n    告诉你，不要乱丢东西，万一任务不能完成怎么办？就算能完成任务，多走了弯路，影响了你的升级速度，也是不好的嘛！")
+this:AddTaskCmdItem("  我要盒子！{10002}", "v507", 20347, 7)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20347"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("     你的宝盒丢了，我可以送你一个宝盒，但是你身上的空间不足了！")
+this:AddCloseItem("清理包裹")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20347"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("     什么？你身上竟然没带宝盒？是你丢了吧。真拿你没办法，送你一个吧！\n \n    告诉你，不要乱丢东西，万一任务不能完成怎么办？就算能完成任务，多走了弯路，影响了你的升级速度，也是不好的嘛！")
+this:AddTaskCmdItem("  我要盒子！{10002}", "v507", 20347, 7)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20347" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2111"/>
+				<var type="Equal" name="state" value="1" id="20347"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2111" log="交商人(20347)-删除宝盒(2111)"/>
+				<additem value="1" id="2120"/>
+				<notify1 content="得到银票，可以去找难民了。"/>
+				<var type="Set" name="state" value="-3" id="20347"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20347"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2111"/>
+				<notify1 content="下次不要乱丢任务物品了哦。"/>
+				<notify content="得到宝盒一个。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16177" name="东郊-异军萨满">
+	<quest id="325" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_异军萨满" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_异军萨满" value="1"/>
+				<refresh name="kill_异军萨满"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_异军萨满" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2088"/>
+				<refresh name="state"/>
+				<refresh name="kill_异军萨满"/>
+				<notify content="恭喜你收集到了毒药,回王城羽林将军(516,507)处交任务吧"/>
+				<notify1 content="毒药:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="327" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2123" odds="2000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

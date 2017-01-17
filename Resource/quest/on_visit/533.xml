@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="533" name="王城-花月(232,368)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30369">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20369"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：花盗幽狐(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;花盗幽狐\n \n&lt;/n&gt;&lt;n&gt;    啊……继承花盗幽狐的名号已经二十年了，终于要退休了……\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 50000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("听说还要甄选继承人？{10002}", "v533", 20369, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20369" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20369"/>
+			</conditions>
+			<actions>
+				<exp value="50000"/>
+				<notify1 content="经验+50000"/>
+				<notify content="恭喜你完成了“花盗幽狐”任务"/>
+				<var type="Set" name="state" value="-1" id="20369"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30370">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20369"/>
+				<var type="Differ" name="state" value="-3" id="20370"/>
+				<var type="Differ" name="state" value="1" id="20370"/>
+				<var type="Differ" name="state" value="-1" id="20370"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：继承资格(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;继承资格\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把继承资格告知王城-花灵(241,354)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    不知道，这次哪个孩子能够继承名号呢？说起来，我家虽然是行走江湖，但代代都以侠义为准则。还是要传给能为百姓造福的人才行啊。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 54000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("果然是侠义所为！{10001}", "v533", 20370, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20370" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20369"/>
+				<var type="Differ" name="state" value="-3" id="20370"/>
+				<var type="Differ" name="state" value="1" id="20370"/>
+				<var type="Differ" name="state" value="-1" id="20370"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20370"/>
+				<refresh name="state"/>
+				<notify content="任务：把继承资格告之王城-花灵(241,354)"/>
+				<notify1 content="王城-花灵(241,354)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30556">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20556"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：领功(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;领功\n \n&lt;/n&gt;&lt;n&gt;     哟，这又是谁的呀？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 776304&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("是花情的。{10002}", "v533", 20556, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20556" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20556"/>
+			</conditions>
+			<actions>
+				<exp value="776304"/>
+				<notify1 content="经验+776304"/>
+				<notify content="恭喜你完成了“领功”任务"/>
+				<var type="Set" name="state" value="-1" id="20556"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30557">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="129"/>
+				<level type="Less" value="136"/>
+				<var type="Equal" name="state" value="-1" id="20556"/>
+				<var type="Differ" name="state" value="-3" id="20557"/>
+				<var type="Differ" name="state" value="-1" id="20557"/>
+				<var type="Differ" name="state" value="1" id="20557"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：再接再厉(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;再接再厉\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;   把花月的夸奖转告给皇城的花情(779,665)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;       呵呵呵，这小丫头也来掺和……嗯，还是鼓励她再接再厉吧！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 258768&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你转达。{10001}", "v533", 20557, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20557" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="129"/>
+				<level type="Less" value="136"/>
+				<var type="Equal" name="state" value="-1" id="20556"/>
+				<var type="Differ" name="state" value="-3" id="20557"/>
+				<var type="Differ" name="state" value="-1" id="20557"/>
+				<var type="Differ" name="state" value="1" id="20557"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把花月的夸奖转告给皇城-花情(779,665)。"/>
+				<notify1 content="把花月的夸奖转告给皇城-花情(779,665)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+
+
+
+
+
+
+
+
+<quest id="901610">
+		<embranchment id="1">
+			<conditions>
+                 <extentimer start="2006-10-13-17:01:01" end="2006-10-16-23:59:59"/>
+				<space size="1"/>
+				<item value="10" id="941"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  谢谢您为航天事业做了贡献，为了表示感谢每兑换10个太空陨石将给予一次丰厚经验奖励，注意：外太空资源出现的时间为在10月13日17：00-10月15日24：00兑换太空陨石的时间为10月13日17：00—10月16日24：00。，只要够10太空陨石，就可反复获得丰厚经验奖励哦！")
+this:AddTaskCmdItem("拿出10个太空陨石{10001}", "v533", 101610, 2)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<extentimer start="2006-10-13-17:01:01" end="2006-10-16-23:59:59"/>
+				<item value="10" id="941"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  您好，您参加安全采集活动了吗？在10月13日17：00-10月15日24：00将会有一批外太空资源出现在清源村，凤凰城，王城，为航天事业做贡献，采集到10个太空陨石，我将给你丰厚的经验奖励，注意：太空陨石兑换经验的时间为10月13日17：00—10月16日24：00。")
+this:AddCloseItem("你包裹满了")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<extentimer start="2006-10-13-17:01:01" end="2006-10-16-23:59:59"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  您好，您参加安全采集活动了吗？在10月13日17：00-10月15日24：00将会有一批外太空资源出现在清源村，凤凰城，王城，为航天事业做贡献，采集到10个太空陨石，我将给你丰厚的经验奖励，注意：太空陨石兑换经验的时间为10月13日17：00—10月16日24：00。")
+this:AddCloseItem("你没有10个太空陨石")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="101610" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<extentimer start="2006-10-13-17:01:01" end="2006-10-16-23:59:59"/>
+				<space size="1"/>
+				<item value="10" id="941"/>
+			</conditions>
+			<actions>
+				<removeitem value="10" id="941" log="交安全采集(101610)-删除10个太空陨石(941)"/>
+				<var type="Set" name="state" value="-2"/>
+				<var type="GetP" name="yuebing_selflevel" value="1"/>
+				<vars type="Mul" name1="yuebing_selflevel" name2="yuebing_selflevel"/>
+				<var type="Set" name="yuebing_num" value="10"/>
+				<vars type="Mul" name1="yuebing_selflevel" name2="yuebing_num"/>
+				<!--var type="Set" name="yuebing_num_max" value="5"/>
+				<vars type="Mul" name1="yuebing_selflevel" name2="yuebing_num_max"/>
+				<var type="Set" name="yuebing_num_min" value="2"/>
+				<vars type="Div" name1="yuebing_selflevel" name2="yuebing_num_min"/-->
+				<refresh name="yuebing_selflevel"/>
+				<exp1 value="100" id="101610" name="yuebing_selflevel"/>
+				<varnotify1 content="拿出10太空陨石，获得经验%u" value="yuebing_selflevel" id="101610"/>
+				<varnotify2 content="拿出10太空陨石，获得经验%u" value="yuebing_selflevel" id="101610"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+</event>

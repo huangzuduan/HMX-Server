@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="302" name="王城-车夫(825,412)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960103">
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的车夫，你有什么地方想去的么？")
+this:AddTaskCmdItem("凤凰城-2两(0)", "v302", 160103, 11)
+this:AddTaskCmdItem("北郊-2两(0)", "v302", 160103, 13)
+this:AddTaskCmdItem("跨国边防官-2两(0)", "v302", 160103, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的车夫，你有什么地方想去的么？");
+this:AddDialogItem("凤凰城-2两(0)", "Dialog98")
+this:AddDialogItem("北郊-2两(0)", "Dialog98")
+this:AddTaskCmdItem("跨国边防官-2两(0)", "v302", 160103, 12)
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="凤凰城" pos="422,379"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你被马车载到了凤凰城，付了2两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="边境" cpos="187,142" rlen="20"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你被马车载到了边境,付了2两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+                                 <gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="北郊" pos="111,154"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你被马车载到了北郊,付了2两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

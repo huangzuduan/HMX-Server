@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5044" name="机械工厂二层-箱子(150,181)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30521">
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="20521"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    这箱子看起来有点奇怪。")
+this:AddTaskCmdItem("打开。{10002}", "v5044", 20521, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20521" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="20521"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2208"/>
+				<notify content="回去找皇城－花傲剑(886,732)"/>
+				<notify1 content="回去找皇城－花傲剑(886,732)"/>
+				<var type="Set" name="state" value="-3" id="20521"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

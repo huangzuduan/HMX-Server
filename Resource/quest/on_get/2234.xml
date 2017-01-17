@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2234" name="亡灵头骨-2234">
+	<!--new means new quest, default is quest on user-->
+	<quest id="455" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="455"/>
+				<var type="Less" name="get_亡灵头骨" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个亡灵头骨"/>
+				<var type="Add" name="get_亡灵头骨" value="1"/>
+				<refresh name="get_亡灵头骨"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="455"/>
+				<var type="Great" name="get_亡灵头骨" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="455"/>
+				<refresh name="state"/>
+				<refresh name="get_亡灵头骨"/>
+				<notify content="你已经收集了足够多的亡灵头骨,回王城－祭师(457,471)处交任务吧"/>
+				<notify1 content="去找王城－祭师(457,471)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

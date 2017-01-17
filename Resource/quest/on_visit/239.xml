@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="239" name="龙冈山二寨-反抗者(179,52)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10304">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="304"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：彼敌我友(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;反抗者\n \n&lt;/n&gt;&lt;n&gt;  你是何人？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("来帮助你们的。{10002}", "v239", 304, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="304" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="304"/>
+			</conditions>
+			<actions>
+				<exp value="8000"/>
+				<notify1 content="经验+8000"/>
+				<notify content="恭喜你完成了“彼敌我友”任务"/>
+				<var type="Set" name="state" value="-1" id="304"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10305">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="304"/>
+				<var type="Differ" name="state" value="-3" id="305"/>
+				<var type="Differ" name="state" value="-1" id="305"/>
+				<var type="Differ" name="state" value="1" id="305"/>
+				<var type="Differ" name="state" value="2" id="305"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：营救(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;营救\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去龙冈山三寨找出反抗者的儿子(197,118)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    其实我并不想帮助山贼们，只是因为我儿子被他们抓了，无奈之下才不得不委屈就全。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去帮你救你儿子出来{10001}", "v239", 305, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="305"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：营救(2)", "Dialog65")
+end
+function Dialog65()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;营救\n \n&lt;/n&gt;&lt;n&gt;    儿子啊，你总算出来了。真是太谢谢你了，不然我们父子还不知何时能够重逢呢。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("定要装做不知道儿子已被救出{10001}", "v239", 305, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="305" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="304"/>
+				<var type="Differ" name="state" value="-3" id="305"/>
+				<var type="Differ" name="state" value="-1" id="305"/>
+				<var type="Differ" name="state" value="1" id="305"/>
+				<var type="Differ" name="state" value="2" id="305"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去龙冈山三寨找牢笼(197,118)"/>
+				<notify1 content="牢笼(197,118)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="305"/>
+			</conditions>
+			<actions>
+				<exp value="13300"/>
+				<notify1 content="经验+13300"/>
+				<notify content="恭喜你完成了“营救”任务"/>
+				<var type="Set" name="state" value="-1" id="305"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10306">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="305"/>
+				<var type="Differ" name="state" value="-1" id="306"/>
+				<var type="Differ" name="state" value="1" id="306"/>
+				<var type="Differ" name="state" value="-3" id="306"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：报复(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;报复\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去击败50个山贼(79,214)，然后再与反抗者(179,52)会合。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这些可恶的山贼，敢拿我儿子要挟我，现在我再也不用受他们要挟了，我一定要消灭龙冈山二层所有的山贼！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 17700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你去，你且忍耐{10001}", "v239", 306, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="306"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：报复(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;报复\n \n&lt;/n&gt;&lt;n&gt;   你的意思是让我继续潜伏在这里么，也好，只要能让那些山贼受到更大的损害，一切都没问题。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 17700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多行不义必自毙。{10002}", "v239", 306, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="306"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：报复(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("怎么又回来了，我们不是要分头去消灭二寨的山贼吗？快去吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="306" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="305"/>
+				<var type="Differ" name="state" value="-1" id="306"/>
+				<var type="Differ" name="state" value="1" id="306"/>
+				<var type="Differ" name="state" value="-3" id="306"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去消灭50个山贼(79,214)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="306"/>
+			</conditions>
+			<actions>
+				<exp value="17700"/>
+				<notify1 content="经验+17700"/>
+				<notify content="恭喜你完成了“报复”任务"/>
+				<var type="Set" name="state" value="-1" id="306"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10307">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="306"/>
+				<var type="Differ" name="state" value="-3" id="307"/>
+				<var type="Differ" name="state" value="-1" id="307"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：内应(2)", "Dialog66")
+end
+function Dialog66()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;内应\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去找凤尾村的密探(18,150) \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    跟你做事真是痛快！你放心，下次军队打过来，我一定做内应。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("如此多谢了。{10001}", "v239", 307, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="307" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="306"/>
+				<var type="Differ" name="state" value="-3" id="307"/>
+				<var type="Differ" name="state" value="-1" id="307"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找凤尾村的密探(18,150)"/>
+				<notify1 content="去找凤尾村的密探(18,150)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10308">
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="308"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("   挖石头？我知道了，放心吧！我会装作无意之中发现的样子，在山贼当中造谣的。")
+this:AddTaskCmdItem("交给你了{10002}", "v239", 308, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="308" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="308"/>
+			</conditions>
+			<actions>
+				<notify1 content="去向凤尾-密探(18,150)汇报"/>
+				<var type="Set" name="state" value="-3" id="308"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10310">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="310"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：利器(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;反抗者\n \n&lt;/n&gt;&lt;n&gt;  唉平乱进行得顺利吗？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("请问弩车是怎么回事{10002}", "v239", 310, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="310" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="310"/>
+			</conditions>
+			<actions>
+				<exp value="10700"/>
+				<notify1 content="经验+10700"/>
+				<notify content="恭喜你完成了“利器”任务"/>
+				<var type="Set" name="state" value="-1" id="310"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10311">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="310"/>
+				<var type="Differ" name="state" value="-3" id="311"/>
+				<var type="Differ" name="state" value="-1" id="311"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：巧手鲁家(2)", "Dialog67")
+end
+function Dialog67()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;巧手鲁家\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去找凤尾村的鲁群(74,195) \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    那些弩车啊！那只有巧手鲁家才懂，弩车就是他家的人造的。不过凤尾村正好有个鲁家的工匠，可以找他问问看。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("凤尾村的鲁家？我记住了。{10001}", "v239", 311, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="311" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="310"/>
+				<var type="Differ" name="state" value="-3" id="311"/>
+				<var type="Differ" name="state" value="-1" id="311"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找凤尾村的鲁群(74,195)"/>
+				<notify1 content="凤尾-鲁群(74,195)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2067" name="奇怪的刀">
+	<quest id="186" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="186"/>
+			</conditions>
+			<actions>
+				<notify content="这把刀有点古怪，是不是王廷要的那把，给他去看看"/>
+				<notify1 content="奇怪的刀：1/1"/>
+				<var type="Set" name="state" value="-3" id="186"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5094" name="凤凰-车夫(419,380)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960101">
+		<embranchment id="9">
+			<conditions>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是凤凰城里的车夫，你有什么地方想去的么？绝对经济快捷哦！\n 19级可以去凤尾村。\n 30级可以去王城。")
+this:AddTaskCmdItem("王城-2两(0)", "v5094", 160101, 10)
+this:AddTaskCmdItem("清源村-2两(0)", "v5094", 160101, 11)
+this:AddTaskCmdItem("凤尾村-2两(0)", "v5094", 160101, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<selfcountry value="1"/>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是凤凰城里的车夫，你有什么地方想去的么？绝对经济快捷哦！\n 19级可以去凤尾村。\n 30级可以去王城。")
+this:AddDialogItem("王城-2两(0)", "Dialog98")
+this:AddDialogItem("清源村-2两(0)", "Dialog98")
+this:AddDialogItem("凤尾村-2两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是凤凰城里的车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddTaskCmdItem("王城-40两(0)", "v5094", 160101, 110)
+this:AddTaskCmdItem("清源村-40两(0)", "v5094", 160101, 111)
+this:AddTaskCmdItem("凤尾村-40两(0)", "v5094", 160101, 112)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="112">
+			<conditions>
+				<selfcountry value="0"/>
+				<gold type="Less" value="4000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是凤凰城里的车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddDialogItem("王城-40两(0)", "Dialog99")
+this:AddDialogItem("清源村-40两(0)", "Dialog99")
+this:AddDialogItem("凤尾村-40两(0)", "Dialog99")
+this:AddCloseItem("离开")
+end
+function Dialog99()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160101" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+				<level type="Great" value="29"/>
+			</conditions>
+			<actions>
+				<goto name="王城" pos="827,412"/>
+				<notify content="你被马车载到了王城，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="清源村" pos="140,126"/>
+				<notify content="你被马车载到了清源村，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+				<level type="Great" value="18"/>
+			</conditions>
+			<actions>
+				<goto name="凤尾村" pos="86,189"/>
+				<notify content="你被马车载到了凤尾村，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="110" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+				<level type="Great" value="29"/>
+			</conditions>
+			<actions>
+				<goto name="王城" pos="827,412"/>
+				<notify content="你被马车载到了王城，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="111" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="清源村" pos="140,126"/>
+				<notify content="你被马车载到了清源村，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="112" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+				<level type="Great" value="18"/>
+			</conditions>
+			<actions>
+				<goto name="凤尾村" pos="86,189"/>
+				<notify content="你被马车载到了凤尾村，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

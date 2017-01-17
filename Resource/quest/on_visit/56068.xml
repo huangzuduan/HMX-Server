@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56068" name="凤祥镇西郊-独孤简(221,276)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10353">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="353"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：深入敌后(2)", "Dialog40")
+end
+function Dialog40()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;深入敌后\n \n&lt;/n&gt;&lt;n&gt;    太好了，这就是那一队人马吧？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 159370&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没错，你自己小心。{10002}", "v56068", 353, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="353" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="353"/>
+			</conditions>
+			<actions>
+				<exp value="159370"/>
+				<notify1 content="经验+159370"/>
+				<notify content="恭喜你完成了“深入敌后”任务"/>
+				<var type="Set" name="state" value="-1" id="353"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="119" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="72"/>
+				<var type="Equal" name="state" value="-1" id="353"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，去修炼到72级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10354">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="71"/>
+				<var type="Differ" name="state" value="-1" id="354"/>
+				<var type="Differ" name="state" value="1" id="354"/>
+				<var type="Differ" name="state" value="-3" id="354"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：灭敌耳目(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;灭敌耳目\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去凤祥镇西郊(240,270)杀40个叛军哨探，然后向独孤简(221,276)汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    那些叛军哨探不但武力高强，还十分机敏。我怕我们潜伏在此的事情会被叛军哨探发现，你帮我消灭40个叛军哨探好吗？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 389530&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("放心吧。{10001}", "v56068", 354, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="354"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：灭敌耳目(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;灭敌耳目\n \n&lt;/n&gt;&lt;n&gt;    唔，最近叛军为哨探大量减少的事情忙的团团转，一点也没注意到我们，你干得实在是好！&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 389530&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这没什么。{10002}", "v56068", 354, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="354"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：灭敌耳目(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("怎么又回来了，叛军哨探就在凤祥镇西郊(151,160)，快去消灭40个叛军哨探吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="354" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="71"/>
+				<var type="Differ" name="state" value="-1" id="354"/>
+				<var type="Differ" name="state" value="1" id="354"/>
+				<var type="Differ" name="state" value="-3" id="354"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="119"/>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去凤祥镇西郊(240,270)杀40个叛军哨探，然后向独孤简(221,276)汇报。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="354"/>
+			</conditions>
+			<actions>
+				<exp value="389530"/>
+				<notify1 content="经验+389530"/>
+				<notify content="恭喜你完成了“灭敌耳目”任务"/>
+				<var type="Set" name="state" value="-1" id="354"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10355">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="354"/>
+				<var type="Differ" name="state" value="-3" id="355"/>
+				<var type="Differ" name="state" value="-1" id="355"/>
+				<var type="Differ" name="state" value="1" id="355"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：重大军情(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;重大军情\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把军情告诉凤祥镇的独孤战(79,86)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我们埋伏在这里竟然意外得到了一条重大军情！那些叛军准备与异族人联合，不但从异族获得了邪门歪道的功夫，准备南北夹击进攻王城，而且，异军似乎已经培养了更加强大的军队！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 76348&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去告诉独孤战将军。{10001}", "v56068", 355, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="355" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="354"/>
+				<var type="Differ" name="state" value="-3" id="355"/>
+				<var type="Differ" name="state" value="-1" id="355"/>
+				<var type="Differ" name="state" value="1" id="355"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把军情告诉凤祥镇的独孤战(79,86)"/>
+				<notify1 content="把军情告诉凤祥镇的独孤战(79,86)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

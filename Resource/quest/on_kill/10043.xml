@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10043" name="野猪">
+	<quest id="20306" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_野猪" value="30"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_野猪" value="1"/>
+				<refresh name="kill_野猪"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_野猪" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_野猪"/>
+				<notify content="恭喜你完成了庄稼的任务,回牛二(422,301)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

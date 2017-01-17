@@ -1,0 +1,8 @@
+服务器输出文件名	config_scene_coordinate.xml	根名称	ability									
+客户端输出文件名	config_scene_coordinate.xml	项名称	scene_coordinate									
+场景id	总长度x	总长度y	区域字段列总数量Nx	区域数据行总数Ny	区域单个正方形长度Lx	区域单个正方形长度Ly	区域通知文件名	地图X轴格子数据nx	地图Z轴格子数据nz	地图X轴格子长度Lx	地图X轴格子长度Lz	区域移动文件名
+3	3	3	2	2	2	2	2	3	3	3	3	3
+scene_idx	total_length_x	total_length_z	zone_number_nx	zone_number_nz	zone_square_length_lx	zone_square_length_lz	notification_area	obstacle_number_nx	obstacle_number_nz	obstacle_square_length_lx	obstacle_square_length_lz	regional_mobile
+10101	44000	20000	55	25	800	800	world_view_10101.txt	110	50	400	400	world_move_10101.txt
+10103	40000	52000	50	65	800	800	world_view_10103.txt	100	130	400	400	world_move_10103.txt
+10110	24000	44000	30	55	800	800	world_view_10110.txt	60	110	400	400	world_move_10110.txt

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="247" name="家族使者">
+	<!--养鸭-->
+
+	<quest id="31007">
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21007"/>
+				<var type="Equal" name="time" value="2" id="21007"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    time~=1。")
+this:AddTaskCmdItem("接受奖励{10002}", "v520", 21007, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21007"/>
+				<var type="Equal" name="time" value="1" id="21007"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    time=1")
+this:AddTaskCmdItem("接受奖励{10002}", "v520", 21007, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21007"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    别急，我正忙着，等会再给你奖励。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21007" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21007"/>
+				<var type="Differ" name="time" value="1" id="21007"/>
+			</conditions>
+			<actions>
+				<notify content="1锭40两押金退还了"/>
+				<gold type="Add" value="14000"/>
+				<exp value="100" id="21007" name="selflevel"/>
+				<notify content="你完成了运镖，增加了经验"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21007"/>
+			</conditions>
+			<actions>
+				<notify content="由于你超过规定时间，所以只退给你70两押金"/>
+				<gold type="Add" value="7000"/>
+				<exp value="100" id="21007" name="selflevel"/>
+				<notify content="你完成了运镖，增加了经验"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+</event>

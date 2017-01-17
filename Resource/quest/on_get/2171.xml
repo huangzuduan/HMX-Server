@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2171" name="铜兵枢纽">
+	<!--new means new quest, default is quest on user-->
+	<quest id="397" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="397"/>
+				<var type="Less" name="get_铜兵枢纽" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个铜兵枢纽"/>
+				<var type="Add" name="get_铜兵枢纽" value="1"/>
+				<refresh name="get_铜兵枢纽"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="397"/>
+				<var type="Great" name="get_铜兵枢纽" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="397"/>
+				<refresh name="state"/>
+				<refresh name="get_铜兵枢纽"/>
+				<notify content="你已经收集到了10个铜兵枢纽,回皇城的鲁建瓴(810,640)处交任务吧"/>
+				<notify1 content="去找皇城的鲁建瓴(810,640)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

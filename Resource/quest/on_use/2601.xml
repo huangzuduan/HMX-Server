@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2601" name="猎人甲">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30001">
+		<embranchment id="2">
+			<conditions>
+				<var type="Differ" name="state" value="1" id="150000"/>
+				<var type="Differ" name="state" value="2" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="150000"/>
+				<var type="Less" name="today" value="1" id="150000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    这是一个培训计划，您接受这个培训计划后，可以通过右键猎人令牌来触发培训任务，每天你可以接5个培训任务，同等级的培训任务不能同时进行，您最多可以接比自己高4级的培训任务。\n    培训任务不能删除，必须5个任务全部完成或者找猎人注销今日任务后的第二天才能继续接培训任务。\n    您是否想开始今天的培训计划呢？")
+this:AddTaskCmdItem("接受{10001}", "u2601", 150000, 1)
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+            </mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timeouts long="72000" id="150000" less="0"/>
+				<var type="Differ" name="state" value="1" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="150000"/>
+				<var type="Less" name="today" value="1" id="150000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    这是一个培训计划，您接受这个培训计划后，可以通过右键猎人令牌来触发培训任务，每天你可以接5个培训任务，同等级的培训任务不能同时进行，您最多可以接比自己高4级的培训任务。\n    培训任务不能删除，必须5个任务全部完成或者找猎人注销今日任务后的第二天才能继续接培训任务。\n    您是否想开始今天的培训计划呢？")
+this:AddTaskCmdItem("接受{10001}", "u2601", 150000, 1)
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+            </mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<timeouts long="72000" id="150000" less="1"/>
+				<var type="Differ" name="state" value="1" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="150000"/>
+				<var type="Less" name="today" value="1" id="150000"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddTalk("    对不起，您现在还不能接培训计划，请等一段时间再试。")
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+            </mainmenu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150000" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Differ" name="state" value="1" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="150000"/>
+				<var type="Less" name="today" value="1" id="150000"/>
+			</conditions>
+			<actions>
+				<notify content="您接受了培训计划，现在可以右键猎人令牌来接培训任务了"/>
+				<notify content="今日任务完成数：0/5"/>
+				<notify1 content="接受了培训计划"/>
+				<notify1 content="今日任务完成数：0/5"/>
+				<notify1 content="右键猎人令牌来接培训任务"/>
+				<var type="Set" name="t1" value="25" id="150000"/>
+				<var type="Set" name="t2" value="50" id="150000"/>
+				<var type="Set" name="t3" value="75" id="150000"/>
+				<var type="Set" name="t4" value="100" id="150000"/>
+				<var type="Set" name="t5" value="200" id="150000"/>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30011">
+		<embranchment id="101">
+			<conditions>
+				<item value="1" id="2601"/>
+				<level type="Great" value="6"/>
+				<var type="Equal" name="state" value="1" id="150000"/>
+				<var type="Less" name="today" value="5" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="21111"/>
+				<var type="Differ" name="state" value="1" id="21111"/>
+				<var type="Differ" name="state" value="-3" id="21111"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddDialogItem("11级培训任务(2)", "Dialog111")
+end
+function Dialog111()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务要求：\n &lt;/n&gt;&lt;n&gt;    这个任务需要你击败50个11级怪物，你是否要现在接这个任务？\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;注意事项：&lt;/n&gt;&lt;n&gt;同等级的任务同一时间只能触发一个。培训任务不能删除，必须5个任务全部完成或者找猎人注销今日任务，第二天才能继续接任务。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt;根据你完成任务的难度和你一天完成任务的次数判断\n    第一次完成：450\n    第二次完成：900\n    第三次完成：1350\n    第四次完成：1800\n    第五次完成：3600\n&lt;/n&gt;&lt;/p&gt;");
+this:AddTaskCmdItem("接受任务{10001}", "u2601", 21111, 1)
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<level type="Great" value="6"/>
+				<var type="Equal" name="state" value="1" id="150000"/>
+				<var type="Equal" name="state" value="1" id="21111"/>
+				<var type="Differ" name="state" value="-1" id="21111"/>
+				<var type="Differ" name="state" value="-3" id="21111"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddDialogItem("11级培训任务(2)", "Dialog112")
+end
+function Dialog112()
+this:AddTalk("    对不起，你已经在执行同样等级的任务了，完成后才能再接同等级任务。");
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+			</actions>
+		</embranchment>
+		<embranchment id="200">
+			<conditions>
+				<level type="Great" value="6"/>
+				<var type="Equal" name="state" value="1" id="150000"/>
+				<var type="Equal" name="today" value="5" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="21111"/>
+				<var type="Differ" name="state" value="1" id="21111"/>
+				<var type="Differ" name="state" value="-3" id="21111"/>
+			</conditions>
+			<actions>
+				<mainmenu> 
+function MainDialog()
+this:AddDialogItem("11级培训任务(2)", "Dialog113")
+end
+function Dialog113()
+this:AddTalk("    对不起，您今天能接的任务数已满。");
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+				<embranchment id="2">
+					<conditions>
+						<level type="Less" value="7"/>
+						<var type="Equal" name="state" value="1" id="150000"/>
+						<var type="Differ" name="state" value="1" id="21111"/>
+						<var type="Differ" name="state" value="-1" id="21111"/>
+						<var type="Differ" name="state" value="-3" id="21111"/>
+					</conditions>
+					<actions>
+						<notify content="您不够等级触发此任务"/>
+						<notify1 content="您等级不够"/>
+						<mainmenu> 
+function MainDialog()
+this:AddTalk("    对不起，由于您等级太低无法接到此任务。");
+this:AddCloseItem("离开")
+end
+function MoveCanClose()
+	return false
+end
+this:AddDialog("MainDialog")
+				</mainmenu>
+					</actions>
+				</embranchment>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21111" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<item value="1" id="2601"/>
+				<level type="Great" value="6"/>
+				<var type="Equal" name="state" value="1" id="150000"/>
+				<var type="Less" name="today" value="5" id="150000"/>
+				<var type="Differ" name="state" value="-1" id="21111"/>
+				<var type="Differ" name="state" value="1" id="21111"/>
+				<var type="Differ" name="state" value="-3" id="21111"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2601"/>
+				<notify content="你接了一个11级培训任务，去击败50只11级的怪物"/>
+				<var type="Set" name="state" value="1" id="21111"/>
+				<var type="Add" name="today" value="1" id="150000"/>
+				<refresh name="today" id="150000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

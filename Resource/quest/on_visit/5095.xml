@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5095" name="北郊-车夫(111,154)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960101">
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="199"/>
+				<selfcountry value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是北郊车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddTaskCmdItem("王城-2两(0)", "v5095", 160101, 10)
+this:AddTaskCmdItem("千江镇-2两(0)", "v5095", 160101, 11)
+this:AddTaskCmdItem("凤祥镇-2两(0)", "v5095", 160101, 12)
+this:AddTaskCmdItem("凤祥镇西郊-2两(0)", "v5095", 160101, 13)
+this:AddTaskCmdItem("沼泽湿地-2两(0)", "v5095", 160101, 14)
+this:AddTaskCmdItem("蛟龙洞一层-2两(0)", "v5095", 160101, 15)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="200"/>
+				<selfcountry value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是北郊车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddDialogItem("王城-2两(0)", "Dialog98")
+this:AddDialogItem("千江镇-2两(0)", "Dialog98")
+this:AddDialogItem("凤祥镇-2两(0)", "Dialog98")
+this:AddDialogItem("凤祥镇西郊-2两(0)", "Dialog98")
+this:AddDialogItem("沼泽湿地-2两(0)", "Dialog98")
+this:AddDialogItem("蛟龙洞一层-2两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="91">
+			<conditions>
+				<gold type="Great" value="3999"/>
+				<selfcountry value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是北郊车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddTaskCmdItem("王城-40两(0)", "v5095", 160101, 110)
+this:AddTaskCmdItem("千江镇-40两(0)", "v5095", 160101, 111)
+this:AddTaskCmdItem("凤祥镇-40两(0)", "v5095", 160101, 112)
+this:AddTaskCmdItem("凤祥镇西郊-40两(0)", "v5095", 160101, 113)
+this:AddTaskCmdItem("沼泽湿地-40两(0)", "v5095", 160101, 114)
+this:AddTaskCmdItem("蛟龙洞一层-40两(0)", "v5095", 160101, 115)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="111">
+			<conditions>
+				<gold type="Less" value="4000"/>
+				<selfcountry value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是北郊车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddDialogItem("王城-40两(0)", "Dialog99")
+this:AddDialogItem("千江镇-40两(0)", "Dialog99")
+this:AddDialogItem("凤祥镇-40两(0)", "Dialog99")
+this:AddDialogItem("凤祥镇西郊-40两(0)", "Dialog99")
+this:AddDialogItem("沼泽湿地-40两(0)", "Dialog99")
+this:AddDialogItem("蛟龙洞一层-40两(0)", "Dialog99")
+this:AddCloseItem("离开")
+end
+function Dialog99()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160101" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="王城" pos="827,412"/>
+				<notify content="你被马车载到了王城，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="千江镇" pos="217,151"/>
+				<notify content="你被马车载到了千江镇，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="凤祥镇" pos="23,157"/>
+				<notify content="你被马车载到了凤祥镇，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="凤祥镇西郊" pos="35,250"/>
+				<notify content="你被马车载到了凤祥镇西郊，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="沼泽湿地" pos="39,43"/>
+				<notify content="你被马车载到了沼泽湿地，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="蛟龙洞一" pos="19,198"/>
+				<notify content="你被马车载到了蛟龙洞一层，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="110" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="王城" pos="827,412"/>
+				<notify content="你被马车载到了王城，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="111" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="千江镇" pos="217,151"/>
+				<notify content="你被马车载到了千江镇，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="112" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="凤祥镇" pos="23,157"/>
+				<notify content="你被马车载到了凤祥镇，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="113" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="凤祥镇西郊" pos="35,250"/>
+				<notify content="你被马车载到了凤祥镇西郊，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="114" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="沼泽湿地" pos="39,43"/>
+				<notify content="你被马车载到了沼泽湿地，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="115" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="蛟龙洞一" pos="19,198"/>
+				<notify content="你被马车载到了蛟龙洞一层，付了40两作为车费"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

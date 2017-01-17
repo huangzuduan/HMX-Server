@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="58206" name="东郊-粮草">
+	<quest id="20607" new="1">
+		<embranchment id="1">
+			<conditions>
+			   <selfcountry value="0" />
+			   <level type="Great" value="99"/>
+				<var type="Differ" name="userkillbug" value="1" id="20607"/>
+				<var type="Equal" name="state" value="1" id="20607"/>
+				<var type="Less" name="kill_粮草" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_粮草" value="1"/>
+				<refresh name="kill_粮草"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_粮草" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="userkillbug" value="1" id="20607"/>
+				<refresh name="userkillbug"/>
+				<refresh name="kill_粮草"/>
+				<notify1 content="成功破坏敌国屯粮地2个粮草"/>
+				<notify content="成功破坏敌国屯粮地2个粮草"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

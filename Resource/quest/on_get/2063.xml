@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2063" name="灵狐内丹">
+	<quest id="165" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="165"/>
+			</conditions>
+			<actions>
+				<notify1 content="灵狐内丹：1/1"/>
+				<notify content="你得到了一颗灵狐内丹，去交给白不同"/>
+				<var type="Set" name="state" value="-3" id="165"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	<quest id="20240" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20240"/>
+				<var type="Less" name="get_灵狐内丹" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个灵狐内丹"/>
+				<var type="Add" name="get_灵狐内丹" value="1"/>
+				<refresh name="get_灵狐内丹"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20240"/>
+				<var type="Great" name="get_灵狐内丹" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20240"/>
+				<refresh name="state"/>
+				<refresh name="get_灵狐内丹"/>
+				<notify content="恭喜你完成了收集灵狐内丹的任务"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	
+	
+	
+	
+</event>

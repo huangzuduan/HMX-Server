@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="516" name="东郊-秘箱(346,207)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30355">
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="20355"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    箱子里有一封信，可能有什么用。")
+this:AddTaskCmdItem("取出密信{10002}", "v516", 20355, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20355"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    箱子里有一封信，可包裹满了，清空一些吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20355" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="20355"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2068"/>
+				<notify content="恭喜你完成了“机密”任务"/>
+				<var type="Set" name="state" value="-3" id="20355"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

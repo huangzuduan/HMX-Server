@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5048" name="皇城-风华郡主(805,703)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30570">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="145"/>
+				<level type="Less" value="156"/>
+				<var type="Differ" name="state" value="-1" id="20570"/>
+				<var type="Differ" name="state" value="1" id="20570"/>
+				<var type="Differ" name="state" value="-3" id="20570"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：武夷王后人(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;武夷王后人\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓八层(32,142)以下消灭40个守墓巫师，完成后向皇城-风华郡主(805,703)汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    自从王城动乱以来，我家已许久未曾祭拜过武夷王墓了……武夷王正是我家祖先。如今天下大乱，先祖墓穴被乱贼骚扰，我孤身一人，也没有任何办法。你能帮我消灭40个守墓巫师吗？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1765800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("路见不平，拔刀相助。{10001}", "v5048", 20570, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20570"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：武夷王后人(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;武夷王后人\n \n&lt;/n&gt;&lt;n&gt;    果然是皇族后人，毕竟有担当，请受我一拜。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1765800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不必客气。{10002}", "v5048", 20570, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20570"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：武夷王后人(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("   请务必帮我消灭守墓巫师。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20570" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="145"/>
+				<level type="Less" value="156"/>
+				<var type="Differ" name="state" value="-1" id="20570"/>
+				<var type="Differ" name="state" value="1" id="20570"/>
+				<var type="Differ" name="state" value="-3" id="20570"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓八层以下消灭40个守墓巫师，完成后向皇城-风华郡主(805,703)汇报"/>
+				<notify1 content="任务：去武夷王墓八层以下消灭40个守墓巫师，完成后向皇城-风华郡主(805,703)汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20570"/>
+			</conditions>
+			<actions>
+				<exp value="1765800"/>
+				<notify1 content="经验+1765800"/>
+				<notify content="恭喜你完成了“武夷王后人”任务"/>
+				<var type="Set" name="state" value="-1" id="20570"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30571">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="145"/>
+				<level type="Less" value="156"/>
+				<var type="Equal" name="state" value="-1" id="20570"/>
+				<var type="Differ" name="state" value="-1" id="20571"/>
+				<var type="Differ" name="state" value="1" id="20571"/>
+				<var type="Differ" name="state" value="-3" id="20571"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：夺回先祖遗物(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;夺回先祖遗物\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓十层(96,188)消灭守墓巫灵，收集10个先祖遗物交给皇城-风华郡主(805,703)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    等等，给我回来，你是不是和上次那个人一样想求治病的药方呢，嘿嘿。\n    药方是可以给你，不过我现在急需兔草，当你拿着10棵兔草站在我面前的时候再来讨药方吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1776800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v5048", 20571, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2253"/>
+				<var type="Equal" name="state" value="-3" id="20571"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：夺回先祖遗物(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;夺回先祖遗物\n \n&lt;/n&gt;&lt;n&gt;    呵呵，那么快就收集到啦，果然这种粗活还是你们这些本地人干合适。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1776800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v5048", 20571, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20571" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="145"/>
+				<level type="Less" value="156"/>
+				<var type="Equal" name="state" value="-1" id="20570"/>
+				<var type="Differ" name="state" value="-1" id="20571"/>
+				<var type="Differ" name="state" value="1" id="20571"/>
+				<var type="Differ" name="state" value="-3" id="20571"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去武夷王墓十层消灭守墓巫灵，收集10个先祖遗物交给皇城-风华郡主(805,703)"/>
+				<notify content="任务：去武夷王墓十层消灭守墓巫灵，收集10个先祖遗物交给皇城-风华郡主(805,703)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2253"/>
+				<var type="Equal" name="state" value="-3" id="20571"/>
+			</conditions>
+			<actions>
+				<exp value="1776800"/>
+				<removeitem value="10" id="2253" log="交夺回先祖遗物(20571)-删除10个先祖遗物(2253)"/>
+				<notify1 content="经验+1776800"/>
+				<notify content="恭喜你完成了“夺回先祖遗物”任务"/>
+				<var type="Set" name="state" value="-1" id="20571"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30572">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="145"/>
+				<level type="Less" value="156"/>
+				<var type="Equal" name="state" value="-1" id="20571"/>
+				<var type="Differ" name="state" value="-3" id="20572"/>
+				<var type="Differ" name="state" value="-1" id="20572"/>
+				<var type="Differ" name="state" value="1" id="20572"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：寻找守墓英雄(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;寻找守墓英雄\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去请皇城－吕隐(676,421)帮忙招募一位守墓英雄。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     现在祖坟闹贼，我怎可安心？闻说吕家是开国英雄之后，必然能够相助，您能请吕家帮我招募勇士，为先祖守墓么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 304300&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("交给我吧。{10001}", "v5048", 20572, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20572" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="145"/>
+				<level type="Less" value="156"/>
+				<var type="Equal" name="state" value="-1" id="20571"/>
+				<var type="Differ" name="state" value="-3" id="20572"/>
+				<var type="Differ" name="state" value="-1" id="20572"/>
+				<var type="Differ" name="state" value="1" id="20572"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去请皇城－吕隐(676,421)帮忙招募一位守墓英雄。"/>
+				<notify1 content="去请皇城－吕隐(676,421)帮忙招募一位守墓英雄。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30573">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20573"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：护送兵丁(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;护送兵丁\n \n&lt;/n&gt;&lt;n&gt;    吕家真义薄云天也！不愧是开国英雄之后！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 882900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没错。{10002}", "v5048", 20573, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20573" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20573"/>
+			</conditions>
+			<actions>
+				<exp value="882900"/>
+				<notify1 content="经验+882900"/>
+				<notify content="恭喜你完成了“护送兵丁”任务"/>
+				<var type="Set" name="state" value="-1" id="20573"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30574">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Differ" name="state" value="-1" id="20574"/>
+				<var type="Differ" name="state" value="1" id="20574"/>
+				<var type="Differ" name="state" value="-3" id="20574"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：消灭亡灵(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;消灭亡灵\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓十层消灭守墓战灵，然后向皇城-风华郡主(805,703)汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    守墓战灵在先祖的墓穴中作乱，使得先祖的灵魂如何安息？请你帮我去武夷王墓十层消灭这些可恶的守墓战灵，以慰籍先祖的在天之灵。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1823280&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("义不容辞。{10001}", "v5048", 20574, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20574"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：消灭亡灵(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;消灭亡灵\n \n&lt;/n&gt;&lt;n&gt;    唉，先祖的墓地不知何时才能安宁？&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1823280&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("会安宁的。{10002}", "v5048", 20574, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20574"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：消灭亡灵(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("  你根本没有消灭守墓战灵。难道你见我是一个弱质女子，就想欺骗我吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20574" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Differ" name="state" value="-1" id="20574"/>
+				<var type="Differ" name="state" value="1" id="20574"/>
+				<var type="Differ" name="state" value="-3" id="20574"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓十层消灭守墓战灵，然后向皇城-风华郡主(805,703)汇报"/>
+				<notify content="任务：去武夷王墓十层消灭守墓战灵，然后向皇城-风华郡主(805,703)汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20574"/>
+			</conditions>
+			<actions>
+				<exp value="1823280"/>
+				<notify1 content="经验+1823280"/>
+				<notify content="恭喜你完成了“消灭亡灵”任务"/>
+				<var type="Set" name="state" value="-1" id="20574"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30575">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="state" value="-1" id="20574"/>
+				<var type="Differ" name="state" value="-1" id="20575"/>
+				<var type="Differ" name="state" value="1" id="20575"/>
+				<var type="Differ" name="state" value="-3" id="20575"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：灭绝亡灵(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;灭绝亡灵\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去武夷王墓十层消灭40个护墓战灵，然后向皇城-风华郡主(805,703)汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    护墓战灵是先祖墓穴中最强大的亡灵，你能深入武夷王墓十层，帮我去消灭他们么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1853280&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v5048", 20575, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20575"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：灭绝亡灵(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;灭绝亡灵\n \n&lt;/n&gt;&lt;n&gt;    长此以往可不是办法。该如何解决呢？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1853280&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("主角：是该想想办法了。{10002}", "v5048", 20575, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20575"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：灭绝亡灵(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("   你消灭护墓战灵了吗？")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20575" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="state" value="-1" id="20574"/>
+				<var type="Differ" name="state" value="-1" id="20575"/>
+				<var type="Differ" name="state" value="1" id="20575"/>
+				<var type="Differ" name="state" value="-3" id="20575"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓十层消灭40个护墓战灵，然后向皇城-风华郡主(805,703)汇报"/>
+				<notify content="任务：去武夷王墓十层消灭40个护墓战灵，然后向皇城-风华郡主(805,703)汇报"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20575"/>
+			</conditions>
+			<actions>
+				<exp value="1853280"/>
+				<notify1 content="经验+1853280"/>
+				<notify content="恭喜你完成了“灭绝亡灵”任务"/>
+				<var type="Set" name="state" value="-1" id="20575"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30576">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="state" value="-1" id="20575"/>
+				<var type="Differ" name="state" value="-3" id="20576"/>
+				<var type="Differ" name="state" value="-1" id="20576"/>
+				<var type="Differ" name="state" value="1" id="20576"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：祭师的帮助(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;祭师的帮助\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找王城－祭师(457,471)，向他请教让亡灵安宁的办法。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，说到让亡灵安宁，我倒想起王城的祭师。请你去问问他，能有什么办法？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 411840&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去。{10001}", "v5048", 20576, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20576"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：祭师的帮助(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;祭师的帮助\n \n&lt;/n&gt;&lt;n&gt;   法器？结界？我明白了，有劳阁下！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 411840&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("哪里哪里。{10001}", "v5048", 20576, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20576" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="state" value="-1" id="20575"/>
+				<var type="Differ" name="state" value="-3" id="20576"/>
+				<var type="Differ" name="state" value="-1" id="20576"/>
+				<var type="Differ" name="state" value="1" id="20576"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找王城－祭师(457,471)，向他请教让亡灵安宁的办法"/>
+				<notify1 content="去找王城－祭师(457,471)，向他请教让亡灵安宁的办法"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20576"/>
+			</conditions>
+			<actions>
+				<exp value="411840"/>
+				<removeitem value="1" id="2254" log="交祭师的帮助(20576)-删除结界法器(2254)"/>
+				<notify1 content="经验+411840"/>
+				<notify content="恭喜你完成了“祭师的帮助”任务"/>
+				<var type="Set" name="state" value="-1" id="20576"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30577">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="state" value="-1" id="20576"/>
+				<var type="Differ" name="state" value="-3" id="20577"/>
+				<var type="Differ" name="state" value="-1" id="20577"/>
+				<var type="Differ" name="state" value="1" id="20577"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：布置结界(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;布置结界\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找皇城-护墓术士(567,50)，然后在武夷王墓洞口施放结界，完成后回来向风华郡主(805,703)汇报。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这个结界要布在武夷王墓的门口.去找守墓人帮忙一起施法。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 501840&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧好吧{10001}", "v5048", 20577, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20577"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：布置结界(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;布置结界\n \n&lt;/n&gt;&lt;n&gt;    太好了，这样可以安心一阵子了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 501840&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不可掉以轻心。{10001}", "v5048", 20577, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20577" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="149"/>
+				<level type="Less" value="161"/>
+				<var type="Equal" name="state" value="-1" id="20576"/>
+				<var type="Differ" name="state" value="-3" id="20577"/>
+				<var type="Differ" name="state" value="-1" id="20577"/>
+				<var type="Differ" name="state" value="1" id="20577"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去找皇城-护墓术士(567,50)，然后在武夷王墓洞口施放结界"/>
+				<notify1 content="去找皇城-护墓术士(567,50)，然后在武夷王墓洞口施放结界"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20577"/>
+			</conditions>
+			<actions>
+				<exp value="501840"/>
+				<notify1 content="经验+501840"/>
+				<notify content="恭喜你完成了“布置结界”任务"/>
+				<var type="Set" name="state" value="-1" id="20577"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

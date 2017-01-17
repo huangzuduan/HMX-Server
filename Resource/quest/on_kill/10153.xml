@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="10153" name="兽王">
+	<quest id="314" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_弩车" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_弩车" value="1"/>
+				<refresh name="kill_弩车"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_弩车" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_弩车"/>
+				<notify content="你已经破坏了50个弩车,快去凤尾村跟密探(18,150)会合吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20352" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_弩车" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_弩车" value="1"/>
+				<refresh name="kill_弩车"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_弩车" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_弩车"/>
+				<notify content="恭喜你完成了强弩的任务,回副官处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

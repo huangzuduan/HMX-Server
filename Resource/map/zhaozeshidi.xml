@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 、16(竞技区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 -->
+	<waypoint>
+		<point x="28" y="14"/>
+		<point x="29" y="14"/>
+		<point x="30" y="14"/>
+		<point x="31" y="14"/>
+		<point x="32" y="14"/>
+		<point x="33" y="14"/>
+		<point x="34" y="14"/>
+		<point x="35" y="14"/>
+		<point x="36" y="14"/>
+		<point x="28" y="15"/>
+		<point x="29" y="15"/>
+		<point x="30" y="15"/>
+		<point x="31" y="15"/>
+		<point x="32" y="15"/>
+		<point x="33" y="15"/>
+		<point x="34" y="15"/>
+		<point x="35" y="15"/>
+		<point x="36" y="15"/>
+		<point x="28" y="16"/>
+		<point x="29" y="16"/>
+		<point x="30" y="16"/>
+		<point x="31" y="16"/>
+		<point x="32" y="16"/>
+		<point x="33" y="16"/>
+		<point x="34" y="16"/>
+		<point x="35" y="16"/>
+		<point x="36" y="16"/>
+		<point x="28" y="14"/>
+		<point x="29" y="14"/>
+		<point x="30" y="14"/>
+		<point x="31" y="14"/>
+		<point x="32" y="14"/>
+		<point x="33" y="14"/>
+		<point x="34" y="14"/>
+		<point x="35" y="14"/>
+		<point x="36" y="14"/>
+		<point x="28" y="15"/>
+		<point x="29" y="15"/>
+		<point x="30" y="15"/>
+		<point x="31" y="15"/>
+		<point x="32" y="15"/>
+		<point x="33" y="15"/>
+		<point x="34" y="15"/>
+		<point x="35" y="15"/>
+		<point x="36" y="15"/>
+		<point x="28" y="16"/>
+		<point x="29" y="16"/>
+		<point x="30" y="16"/>
+		<point x="31" y="16"/>
+		<point x="32" y="16"/>
+		<point x="33" y="16"/>
+		<point x="34" y="16"/>
+		<dest name="fengzuiling" country="0" x="284" y="566"/>
+		<dest name="fengzuiling" country="0" x="285" y="566"/>
+		<dest name="fengzuiling" country="0" x="286" y="566"/>
+		<dest name="fengzuiling" country="0" x="287" y="566"/>
+		<dest name="fengzuiling" country="0" x="288" y="566"/>
+		<dest name="fengzuiling" country="0" x="289" y="566"/>
+		<dest name="fengzuiling" country="0" x="290" y="566"/>
+		<dest name="fengzuiling" country="0" x="291" y="566"/>
+		<dest name="fengzuiling" country="0" x="292" y="566"/>
+		<dest name="fengzuiling" country="0" x="293" y="566"/>
+		<dest name="fengzuiling" country="0" x="294" y="566"/>
+		<dest name="fengzuiling" country="0" x="295" y="566"/>
+		<dest name="fengzuiling" country="0" x="296" y="566"/>
+		<dest name="fengzuiling" country="0" x="284" y="565"/>
+		<dest name="fengzuiling" country="0" x="285" y="565"/>
+		<dest name="fengzuiling" country="0" x="286" y="565"/>
+		<dest name="fengzuiling" country="0" x="287" y="565"/>
+		<dest name="fengzuiling" country="0" x="288" y="565"/>
+		<dest name="fengzuiling" country="0" x="289" y="565"/>
+		<dest name="fengzuiling" country="0" x="290" y="565"/>
+		<dest name="fengzuiling" country="0" x="291" y="565"/>
+		<dest name="fengzuiling" country="0" x="292" y="565"/>
+		<dest name="fengzuiling" country="0" x="293" y="565"/>
+		<dest name="fengzuiling" country="0" x="294" y="565"/>
+		<dest name="fengzuiling" country="0" x="295" y="565"/>
+		<dest name="fengzuiling" country="0" x="296" y="565"/>
+		<dest name="fengzuiling" country="0" x="284" y="566"/>
+		<dest name="fengzuiling" country="0" x="285" y="566"/>
+		<dest name="fengzuiling" country="0" x="286" y="566"/>
+		<dest name="fengzuiling" country="0" x="287" y="566"/>
+		<dest name="fengzuiling" country="0" x="288" y="566"/>
+		<dest name="fengzuiling" country="0" x="289" y="566"/>
+		<dest name="fengzuiling" country="0" x="290" y="566"/>
+		<dest name="fengzuiling" country="0" x="291" y="566"/>
+		<dest name="fengzuiling" country="0" x="292" y="566"/>
+		<dest name="fengzuiling" country="0" x="293" y="566"/>
+		<dest name="fengzuiling" country="0" x="294" y="566"/>
+		<dest name="fengzuiling" country="0" x="295" y="566"/>
+		<dest name="fengzuiling" country="0" x="296" y="566"/>
+		<dest name="fengzuiling" country="0" x="284" y="565"/>
+		<dest name="fengzuiling" country="0" x="285" y="565"/>
+		<dest name="fengzuiling" country="0" x="286" y="565"/>
+		<dest name="fengzuiling" country="0" x="287" y="565"/>
+		<dest name="fengzuiling" country="0" x="288" y="565"/>
+		<dest name="fengzuiling" country="0" x="289" y="565"/>
+		<dest name="fengzuiling" country="0" x="290" y="565"/>
+		<dest name="fengzuiling" country="0" x="291" y="565"/>
+		<dest name="fengzuiling" country="0" x="292" y="565"/>
+		<dest name="fengzuiling" country="0" x="293" y="565"/>
+		<dest name="fengzuiling" country="0" x="294" y="565"/>
+		<dest name="fengzuiling" country="0" x="295" y="565"/>
+		<dest name="fengzuiling" country="0" x="296" y="565"/>
+	</waypoint>
+	<waypoint>
+		<point x="125" y="38"/>
+		<point x="126" y="38"/>
+		<point x="127" y="38"/>
+		<point x="125" y="39"/>
+		<point x="126" y="39"/>
+		<point x="127" y="39"/>
+		<point x="125" y="40"/>
+		<point x="126" y="40"/>
+		<point x="127" y="40"/>
+		<point x="125" y="41"/>
+		<point x="126" y="41"/>
+		<point x="127" y="41"/>
+		<dest name="jiaolongdong1" country="0" x="21" y="198"/>
+		<dest name="jiaolongdong1" country="0" x="22" y="198"/>
+		<dest name="jiaolongdong1" country="0" x="23" y="198"/>
+		<dest name="jiaolongdong1" country="0" x="24" y="198"/>
+		<dest name="jiaolongdong1" country="0" x="25" y="198"/>
+		<dest name="jiaolongdong1" country="0" x="26" y="198"/>
+		<dest name="jiaolongdong1" country="0" x="18" y="197"/>
+		<dest name="jiaolongdong1" country="0" x="19" y="197"/>
+		<dest name="jiaolongdong1" country="0" x="20" y="197"/>
+		<dest name="jiaolongdong1" country="0" x="21" y="197"/>
+		<dest name="jiaolongdong1" country="0" x="22" y="197"/>
+		<dest name="jiaolongdong1" country="0" x="23" y="197"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<npc id="15146" name="碧蟒(魔)" width="14" height="20" x="19" y="300" num="20" interval="5" ai="272629760"/>
+	<npc id="15148" name="碧鳞蟒(魔)" width="14" height="20" x="215" y="115" num="20" interval="5" ai="272629760"/>
+	<npc id="15150" name="金鳞蟒(魔)" width="14" height="20" x="244" y="241" num="20" interval="5" ai="272629760"/>
+	<npc id="15144" name="翠蟒  (魔)" width="296" height="299" x="21" y="107" num="2" interval="5" ai="272629760"/>
+	<npc id="15142" name="绿蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15146" name="碧蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15148" name="碧鳞蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15150" name="金鳞蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15152" name="火磷蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15153" name="翡珠蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15155" name="狂噬蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="15157" name="暗戾蟒(魔)" width="300" height="300" x="32" y="52" num="2" interval="5" ai="272629760"/>
+	<npc id="16604" name="变异魔鳄" width="14" height="20" x="81" y="62" num="30" interval="2" ai="272629760"/>
+	<npc id="15141" name="沼泽鳄" width="15" height="20" x="178" y="76" num="40" interval="2" ai="272629760"/>
+	<npc id="15143" name="黑水鳄" width="14" height="20" x="83" y="168" num="30" interval="2" ai="272629760"/>
+	<npc id="15143" name="黑水鳄" width="14" height="20" x="246" y="172" num="40" interval="2" ai="272629760"/>
+	<npc id="15145" name="深水鳄" width="15" height="20" x="39" y="225" num="40" interval="2" ai="272629760"/>
+	<npc id="15147" name="水精鳄" width="15" height="20" x="183" y="326" num="40" interval="2" ai="272629760"/>
+	<npc id="15149" name="寒葬鳄" width="15" height="20" x="99" y="248" num="30" interval="2" ai="272629760"/>
+	<npc id="15149" name="寒葬鳄" width="15" height="20" x="184" y="200" num="40" interval="2" ai="272629760"/>
+	<npc id="15151" name="极冰鳄" width="15" height="20" x="78" y="325" num="40" interval="2" ai="272629760"/>
+	<npc id="15154" name="铁鳞鳄" width="15" height="20" x="46" y="134" num="40" interval="2" ai="272629760"/>
+	<npc id="15156" name="狂齿鳄" width="15" height="20" x="124" y="288" num="40" interval="2" ai="272629760"/>
+	<npc id="15158" name="暗魔鳄" width="15" height="20" x="122" y="129" num="50" interval="2" ai="272629760"/>
+	<npc id="414" name="郭靖" width="1" height="1" x="166" y="273" num="1" interval="300"/>
+	<npc id="5090" name="沼泽湿地传送者" width="1" height="1" x="39" y="43" num="1" interval="800"/>
+	<npc id="546" name="北郊方向" width="1" height="1" x="30" y="27" num="1" interval="800"/>
+	<npc id="558" name="蛟龙洞方向" width="1" height="1" x="130" y="45" num="1" interval="800"/>
+	<npc id="469" name="张仪" width="1" height="1" x="64" y="302" num="1" interval="800"/>
+	<npc id="470" name="田文" width="1" height="1" x="205" y="320" num="1" interval="800"/>
+	<npc id="471" name="鲁仲连" width="1" height="1" x="30" y="189" num="1" interval="800"/>
+	<npc id="55181" name="石头" width="210" height="237" x="21" y="113" num="3" interval="800"/>
+	<npc id="55101" name="石头" width="210" height="237" x="21" y="113" num="2" interval="800"/>
+	<npc id="55121" name="石头" width="210" height="237" x="21" y="113" num="3" interval="800"/>
+	<npc id="55141" name="石头" width="210" height="237" x="21" y="113" num="2" interval="800"/>
+	<npc id="55161" name="石头" width="210" height="237" x="21" y="113" num="2" interval="800"/>
+	<npc id="55181" name="石头" width="210" height="237" x="21" y="113" num="3" interval="800"/>
+	<npc id="55201" name="石头" width="210" height="237" x="21" y="113" num="2" interval="800"/>
+	<npc id="26123" name="沼泽鳄" width="210" height="237" x="21" y="113" num="1" interval="1000"/>
+	<npc id="21122" name="兰色怪物" width="210" height="237" x="21" y="113" num="1" interval="1000"/>
+	<npc id="30019" name="青眼蛟龙" width="210" height="237" x="21" y="113" num="1" interval="1000"/>
+	<npc id="11021" name="魔兽" width="210" height="237" x="21" y="113" num="3" interval="600"/>
+	<npc id="11010" name="朱雀" width="210" height="237" x="21" y="113" num="3" interval="600"/>
+	<npc id="11011" name="玄武" width="210" height="237" x="21" y="113" num="3" interval="600"/>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="25" height="41" x="19" y="6" type="1" color="0,0,255,0"/>
+	<zonedef width="25" height="41" x="120" y="23" type="1" color="0,0,255,0"/>
+</map>

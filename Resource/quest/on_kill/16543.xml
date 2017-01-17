@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16543" name="武夷王墓八层以下－亡灵护卫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="455" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2234" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="459" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2244" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

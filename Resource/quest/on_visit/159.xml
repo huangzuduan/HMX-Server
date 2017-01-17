@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="159" name="凤凰城-绘图师(425,377)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10131">
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2048"/>
+				<var type="Equal" name="state" value="-3" id="131"/>
+				<var type="Equal" name="car" value="3" id="131"/>
+				<var type="Differ" name="state" value="-1" id="131"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：出行(2)", "Dialog13")
+end
+function Dialog13()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;出行\n \n&lt;/n&gt;&lt;n&gt;    你来啦，我已经收到我爹的信了，真是要感谢你为村子里做那么多事，这个就是那个鼎吗？拿来我看看。\n    你稍微等一下，我查查书，我记得哪本书里记载过这种图案。\n    这个凤凰城地图就给你吧，以后你旅行会很方便的。如果你想要其他城市的地图，就要找那个城市的绘图师。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 200&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;运镖奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;");
+this:AddTaskCmdItem("接受奖励{10002}", "v159", 131, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2048"/>
+				<var type="Equal" name="state" value="-3" id="131"/>
+				<var type="Equal" name="car" value="2" id="131"/>
+				<var type="Differ" name="state" value="-1" id="131"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：出行(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;出行\n \n&lt;/n&gt;&lt;n&gt;    你来啦，我已经收到我爹的信了，真是要感谢你为村子里做那么多事，这个就是那个鼎吗？拿来我看看。\n    你稍微等一下，我查查书，我记得哪本书里记载过这种图案。\n    这个凤凰城地图就给你吧，以后你旅行会很方便的。如果你想要其他城市的地图，就要找那个城市的绘图师。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 200&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;运镖奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;");
+this:AddTaskCmdItem("接受奖励{10002}", "v159", 131, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<item value="1" id="2048"/>
+				<var type="Equal" name="state" value="-3" id="131"/>
+				<var type="Differ" name="state" value="-1" id="131"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：出行(2)", "Dialog3")
+end
+function Dialog3()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;出行\n \n&lt;/n&gt;&lt;n&gt;    你来啦，我已经收到我爹的信了，真是要感谢你为村子里做那么多事，这个就是那个鼎吗？拿来我看看。\n    你稍微等一下，我查查书，我记得哪本书里记载过这种图案。\n    这个凤凰城地图就给你吧，以后你旅行会很方便的。如果你想要其他城市的地图，就要找那个城市的绘图师。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 200&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;运镖奖励：&lt;/n&gt;&lt;n&gt; 未完成&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v159", 131, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="131" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2048"/>
+				<var type="Equal" name="state" value="-3" id="131"/>
+				<var type="Differ" name="state" value="-1" id="131"/>
+			</conditions>
+			<actions>
+				<exp value="200"/>
+				<notify1 content="经验+200"/>
+				<notify content="恭喜你完成了“出行”任务"/>
+				<var type="Set" name="state" value="-1" id="131"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("   为了感谢你帮清源村做的这些事情，这个凤凰城地图就给你吧，以后你就可以通过驿站的马车来这里了。如果你想要其他城市的地图，就要找那个城市的绘图师。");
+this:AddTaskCmdItem("收下(2)", "v159", 150101, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<item value="1" id="2048"/>
+				<var type="Equal" name="state" value="-3" id="131"/>
+				<var type="Differ" name="state" value="-1" id="131"/>
+			</conditions>
+			<actions>
+				<exp value="2200"/>
+				<notify1 content="完成运镖经验+2200"/>
+				<notify content="恭喜你完成了“出行”任务"/>
+				<notify content="恭喜你完成了运镖"/>
+				<var type="Set" name="state" value="-1" id="131"/>
+				<var type="Set" name="state" value="-2" id="21001"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("   为了感谢你帮清源村做的这些事情，这个凤凰城地图就给你吧，以后你就可以通过驿站的马车来这里了。如果你想要其他城市的地图，就要找那个城市的绘图师。");
+this:AddTaskCmdItem("收下(2)", "v159", 150101, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10132">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="131"/>
+				<var type="Differ" name="state" value="-3" id="132"/>
+				<var type="Differ" name="state" value="-1" id="132"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：宋家铁铺(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;宋家铁铺\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;宋家铁铺：\n&lt;/n&gt;&lt;n&gt;    去城里找宋铜川询问鼎的事情。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我找到那个鼎的出处了，宋家在几个月前曾经铸造过类似的鼎，这个鼎还被收录在这本《宋家名器大全》中。\n    你去找宋家的人去问问吧，凤凰城内就有一个宋家开的铁铺，那里的负责人叫宋铜川，他应该知道些详情。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 200&lt;/n&gt;&lt;/p&gt;");
+this:AddTaskCmdItem("接受任务{10001}", "v159", 132, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="132" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="131"/>
+				<var type="Differ" name="state" value="-3" id="132"/>
+				<var type="Differ" name="state" value="-1" id="132"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去凤凰城找宋铜川"/>
+				<notify1 content="找宋铜川"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="950101">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="131"/>
+				<var type="Differ" name="state" value="5" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("   为了感谢你帮清源村做的这些事情，这个凤凰城地图就给你吧，以后你就可以通过驿站的马车来这里了。如果你想要其他城市的地图，就要找那个城市的绘图师。");
+this:AddTaskCmdItem("收下(2)", "v159", 150101, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="199"/>
+				<var type="Differ" name="state" value="5" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("想要伟大的凤凰城地图么？你只需要付出2两就能得到，多便宜啊，考虑一下吧。");
+this:AddTaskCmdItem("购买(0)", "v159", 150101, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="200"/>
+				<var type="Differ" name="state" value="5" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("想要伟大的凤凰城地图么？你只需要付出2两就能得到，多便宜啊，考虑一下吧。")
+this:AddDialogItem("购买(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够买地图。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150101" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+				<var type="Differ" name="state" value="5" id="150101"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了“凤凰城”地图"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="5"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="131"/>
+				<var type="Differ" name="state" value="5" id="150101"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了“凤凰城”地图"/>
+				<var type="Set" name="state" value="5"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

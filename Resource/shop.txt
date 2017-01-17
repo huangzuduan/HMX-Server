@@ -1,0 +1,10 @@
+服务器输出文件名	config_shop.xml	根名称	ability
+客户端输出文件名	config_shop.xml	项名称	shop
+商店id	商店类型		
+2	2		
+shop_idx	shop_type		
+3000	0		
+3001	1		
+3002	2		
+3003	3		
+3004	4		

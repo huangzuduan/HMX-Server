@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="534" name="王城-颜如玉(264,364)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30373">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20373"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    皮甲？好啊，既然是捐到军队去的，那么也算我一份，我免费为你服务吧。告诉花灵，皮甲做好了的话，我会找人送去的。")
+this:AddTaskCmdItem("多谢。{10002}", "v534", 20373, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20373" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20373"/>
+			</conditions>
+			<actions>
+				<removeitem value="50" id="2146" log="交巧手制皮(20373)-删除50个铁犀皮(2146)"/>
+				<notify content="皮甲已经做好，去找王城-花灵(241,354)"/>
+				<var type="Set" name="state" value="-3" id="20373"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30513">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="93"/>
+				<level type="Less" value="101"/>
+				<var type="Differ" name="state" value="-3" id="20513"/>
+				<var type="Differ" name="state" value="-1" id="20513"/>
+				<var type="Differ" name="state" value="1" id="20513"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：左右逢源(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;左右逢源\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把密信送给千江镇-花非花(133, 415)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这可怎么是好呢……一边是匠心独具，一边是慧眼英雄，叫我怎么决定呢？咦，你怎么在这里偷听人家讲话？！也罢，你既然已经听见了，我就罚你替我送信。送给我的好姐妹，千江镇的花非花。可不许偷看哦！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 141565&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v534", 20513, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20513" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="93"/>
+				<level type="Less" value="101"/>
+				<var type="Differ" name="state" value="-3" id="20513"/>
+				<var type="Differ" name="state" value="-1" id="20513"/>
+				<var type="Differ" name="state" value="1" id="20513"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2202"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：把密信送给千江镇-花非花(133,415)"/>
+				<notify1 content="把密信送给千江镇-花非花(133,415)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

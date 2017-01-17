@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 country:0表示本国 非0表示指定国家-->
+	<waypoint>
+		<point x="183" y="14"/>
+		<point x="184" y="14"/>
+		<point x="185" y="14"/>
+		<point x="186" y="14"/>
+		<point x="189" y="14"/>
+		<point x="188" y="14"/>
+		<point x="189" y="14"/>
+		<point x="190" y="14"/>
+		<point x="191" y="14"/>
+		<point x="192" y="14"/>
+		<point x="193" y="14"/>
+		<point x="183" y="15"/>
+		<point x="184" y="15"/>
+		<point x="185" y="15"/>
+		<point x="186" y="15"/>
+		<point x="189" y="15"/>
+		<point x="188" y="15"/>
+		<point x="189" y="15"/>
+		<point x="190" y="15"/>
+		<point x="191" y="15"/>
+		<point x="192" y="15"/>
+		<point x="193" y="15"/>
+		<dest name="baishougu" country="0" x="17" y="252"/>
+		<dest name="baishougu" country="0" x="17" y="253"/>
+		<dest name="baishougu" country="0" x="17" y="254"/>
+		<dest name="baishougu" country="0" x="17" y="255"/>
+		<dest name="baishougu" country="0" x="17" y="256"/>
+		<dest name="baishougu" country="0" x="17" y="257"/>
+		<dest name="baishougu" country="0" x="17" y="258"/>
+		<dest name="baishougu" country="0" x="17" y="259"/>
+		<dest name="baishougu" country="0" x="17" y="260"/>
+		<dest name="baishougu" country="0" x="17" y="261"/>
+		<dest name="baishougu" country="0" x="17" y="262"/>
+		<dest name="baishougu" country="0" x="17" y="263"/>
+		<dest name="baishougu" country="0" x="17" y="264"/>
+		<dest name="baishougu" country="0" x="17" y="265"/>
+		<dest name="baishougu" country="0" x="17" y="266"/>
+		<dest name="baishougu" country="0" x="17" y="267"/>
+		<dest name="baishougu" country="0" x="17" y="268"/>
+		<dest name="baishougu" country="0" x="17" y="269"/>
+		<dest name="baishougu" country="0" x="17" y="270"/>
+		<dest name="baishougu" country="0" x="17" y="271"/>
+		<dest name="baishougu" country="0" x="17" y="272"/>
+		<dest name="baishougu" country="0" x="17" y="260"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="25" height="34" x="262" y="199" type="1"/>
+	<zonedef width="23" height="37" x="175" y="7" type="1"/>
+	<npc id="3008" name="兽王" width="224" height="199" x="27" y="61" num="1" interval="10800" ai="272629760"/>
+	<npc id="15007" name="血翼鸟（魔）" width="224" height="199" x="27" y="61" num="3" interval="5" ai="272629760"/>
+	<npc id="15009" name="巨蛇（魔）" width="224" height="199" x="27" y="61" num="3" interval="5" ai="272629760"/>
+	<npc id="15011" name="血翼鸟（魔）" width="224" height="199" x="27" y="61" num="3" interval="5" ai="272629760"/>
+	<npc id="543" name="百兽谷方向" width="1" height="1" x="180" y="22" num="1" interval="1800"/>
+	<npc id="55183" name="兔儿草" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55103" name="狐狸草" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55183" name="甘草" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55103" name="天芯草" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55183" name="枫丹草" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55183" name="野果" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55103" name="蛇果" width="202" height="209" x="22" y="43" num="3" interval="1500"/>
+	<npc id="55183" name="毒果" width="202" height="209" x="22" y="43" num="6" interval="1500"/>
+	<npc id="55103" name="奇异果" width="202" height="209" x="22" y="43" num="4" interval="1500"/>
+	<npc id="55183" name="石头" width="202" height="209" x="22" y="43" num="4" interval="1500"/>
+	<npc id="55103" name="破损箱子" width="202" height="209" x="22" y="43" num="6" interval="1500"/>
+	<npc id="543" name="百兽谷方向" width="1" height="1" x="180" y="22" num="1" interval="1800"/>
+	<npc id="15007" name="血翼鸟（魔）" width="12" height="15" x="246" y="70" num="10" interval="5" ai="272629760"/>
+	<npc id="15011" name="血翼鸟（魔）" width="12" height="15" x="238" y="28" num="15" interval="5" ai="272629760"/>
+	<npc id="15009" name="巨蛇（魔）" width="12" height="15" x="27" y="55" num="15" interval="5" ai="272629760"/>
+	<npc id="15009" name="巨蛇（魔）" width="12" height="15" x="236" y="151" num="15" interval="5" ai="272629760"/>
+	<npc id="15007" name="血翼鸟（魔）" width="12" height="15" x="71" y="21" num="10" interval="5" ai="272629760"/>
+	<npc id="15011" name="血翼鸟（魔）" width="12" height="15" x="242" y="209" num="25" interval="5" ai="272629760"/>
+	<npc id="15011" name="血翼鸟（魔）" width="9" height="15" x="108" y="68" num="15" interval="5" ai="272629760"/>
+	<npc id="15010" name="食人狼" width="10" height="16" x="82" y="84" num="20" interval="2" ai="272629760"/>
+	<npc id="15010" name="食人狼" width="12" height="15" x="108" y="236" num="20" interval="2" ai="272629760"/>
+	<npc id="15010" name="食人狼" width="12" height="15" x="198" y="186" num="20" interval="2" ai="272629760"/>
+	<npc id="15010" name="食人狼" width="12" height="15" x="211" y="34" num="20" interval="2" ai="272629760"/>
+	<npc id="15010" name="食人狼" width="12" height="15" x="137" y="27" num="20" interval="2" ai="272629760"/>
+	<npc id="15013" name="狂熊(魔)" width="12" height="15" x="183" y="68" num="20" interval="2" ai="272629760"/>
+	<npc id="15013" name="狂熊(魔)" width="12" height="15" x="215" y="86" num="20" interval="2" ai="272629760"/>
+	<npc id="15014" name="老虎" width="12" height="15" x="65" y="131" num="20" interval="2" ai="272629760"/>
+	<npc id="15014" name="老虎" width="12" height="15" x="186" y="122" num="20" interval="2" ai="272629760"/>
+	<npc id="15014" name="老虎" width="12" height="15" x="158" y="174" num="20" interval="2" ai="272629760"/>
+	<npc id="15014" name="老虎" width="12" height="15" x="33" y="232" num="25" interval="2" ai="272629760"/>
+	<npc id="15014" name="老虎" width="12" height="15" x="211" y="146" num="20" interval="2" ai="272629760"/>
+	<npc id="15016" name="豹子" width="12" height="15" x="46" y="197" num="25" interval="2" ai="272629760"/>
+	<npc id="15016" name="豹子" width="12" height="15" x="57" y="252" num="20" interval="2" ai="272629760"/>
+	<npc id="15016" name="豹子" width="12" height="15" x="201" y="215" num="20" interval="2" ai="272629760"/>
+	<npc id="15016" name="豹子" width="12" height="15" x="127" y="167" num="20" interval="2" ai="272629760"/>
+	<npc id="15017" name="黄蟒" width="12" height="15" x="98" y="140" num="20" interval="2" ai="272629760"/>
+	<npc id="15017" name="黄蟒" width="12" height="15" x="155" y="80" num="20" interval="2" ai="272629760"/>
+	<npc id="15017" name="黄蟒" width="12" height="15" x="140" y="235" num="20" interval="2" ai="272629760"/>
+	<!-- rush="1" rushrate="6" delay="1800"/-->
+</map>

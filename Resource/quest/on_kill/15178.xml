@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15178" name="千江镇-狂生千江镇左下">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20395" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_狂生" value="45"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_狂生" value="1"/>
+				<refresh name="kill_狂生"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_狂生" value="44"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_狂生"/>
+				<notify content="你已经消灭了45个狂生,回千江镇的蒙阔(222,338)处交任务吧。"/>
+				<notify content="狂生已经消灭，去找千江镇的蒙阔(222,338)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

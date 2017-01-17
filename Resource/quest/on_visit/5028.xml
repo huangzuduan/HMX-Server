@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5028" name="">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960101">
+		<embranchment id="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：劳务", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("到了这里也并非什么都不能做,这里原来是乱石岗,现在有时候还是可以找到一些挺有价值的矿石.带50个矿石给我,给你一个洗心革面的机会如何?好好表现吧！")
+this:AddTaskCmdItem("矿石赎罪-50个(0)", "v5028", 160101, 10)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160101" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<item value="50" id="2158"/>
+			</conditions>
+			<actions>
+				<notify content="你进入洗心革面状态"/>
+				<removeitem value="50" id="2158" log="做劳务(160101)-删除50个矿石(2158)"/>
+				<useskill id="9001" level="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="58290" name="山贼刺客">
+	<quest id="20608" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20608"/>
+				<var type="Less" name="kill_大将军王" value="1" id="20608"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_大将军王" value="1" id="20608"/>
+				<refresh name="kill_大将军王"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20608"/>
+				<var type="Great" name="kill_大将军王" value="0" id="20608"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="20608"/>
+				<refresh name="state"/>
+				<refresh name="kill_大将军王"/>
+				<notify1 content="大将军王死亡，保卫王城任务失败"/>
+                                <notify content="大将军王死亡，保卫王城任务失败"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="521" name="龙冈山一寨-丙镖头(70,161)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="31002">
+		<embranchment id="2">
+			<conditions>
+				<timeouts long="600" id="21004" less="0"/>
+				<var type="Equal" name="state" value="-3" id="21004"/>
+				<var type="Differ" name="time" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成运镖", "Dialog17")
+end
+function Dialog17()
+this:AddTalk("    我们收到你的镖车了，谢谢你，这些奖励你就收下吧。")
+this:AddTaskCmdItem("接受奖励{10002}", "v521", 21004, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<timeouts long="600" id="21004" less="0"/>
+				<var type="Equal" name="state" value="-3" id="21004"/>
+				<var type="Equal" name="time" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成运镖", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("    我们收到你的镖车了，但由于你超过了运镖时间，所以押金我们只能还你一部分。")
+this:AddTaskCmdItem("接受奖励{10002}", "v521", 21004, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<timeouts long="600" id="21004" less="1"/>
+				<var type="Equal" name="state" value="-3" id="21004"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    别急，我正忙着，等会再给你奖励。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21004" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21004"/>
+				<var type="Differ" name="time" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<notify content="40两押金退还了"/>
+				<gold type="Add" value="4000"/>
+				<exp value="40000"/>
+				<notify content="你完成了运镖，增加了经验"/>
+				<notify1 content="经验+40000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21004"/>
+			</conditions>
+			<actions>
+				<notify content="由于你超过规定时间，所以只退给你20两押金"/>
+				<gold type="Add" value="2000"/>
+				<exp value="40000"/>
+				<notify content="你完成了运镖，增加了经验"/>
+				<notify1 content="经验+40000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

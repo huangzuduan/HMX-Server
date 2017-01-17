@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="347" name="马匹宠物饲养员(753,541)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="130243">
+		<embranchment id="28">
+			<conditions>
+				<level type="Great" value="29"/>
+				<var type="Differ" name="state" value="-1" id="150101"/>
+				<var type="Differ" name="state" value="1" id="150101"/>
+				<var type="Differ" name="state" value="-3" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("购买枣红马-20两(0)", "Dialog46")
+end
+function Dialog46()
+this:AddTalk("    是否想购买一匹枣红马代步呢？只要20两哦，是否要现在购买呢。")
+this:AddTaskCmdItem("购买枣红马{10002}", "v347", 150101, 1)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<horse value="3000"/>
+				<var type="Differ" name="state" value="-1" id="150101"/>
+				<var type="Differ" name="state" value="1" id="150101"/>
+				<var type="Differ" name="state" value="-3" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你已经有马匹了，请先卖掉再来买吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<gold type="Less" value="2000"/>
+				<var type="Differ" name="state" value="-1" id="150101"/>
+				<var type="Differ" name="state" value="1" id="150101"/>
+				<var type="Differ" name="state" value="-3" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    枣红马20两一匹，等你有钱了再考虑吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<level type="Less" value="30"/>
+				<var type="Differ" name="state" value="-1" id="150101"/>
+				<var type="Differ" name="state" value="1" id="150101"/>
+				<var type="Differ" name="state" value="-3" id="150101"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想骑枣红马？但是你等级似乎不够，枣红马只会驯服于30级以上的人。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150101" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="29"/>
+				<var type="Differ" name="state" value="-1" id="150101"/>
+				<var type="Differ" name="state" value="1" id="150101"/>
+			</conditions>
+			<actions>
+				<horse value="3000"/>
+				<gold type="Sub" value="2000"/>
+				<notify1 content="得到枣红马"/>
+				<var type="Set" name="state" value="-2" id="150101"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

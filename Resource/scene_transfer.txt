@@ -1,0 +1,13 @@
+服务器输出文件名	config_scene_transfer.xml	根名称	ability	
+客户端输出文件名		项名称	scene_transfer	
+来源场景id(int)	目标场景id(int)	目标坐标x（float）	目标坐标y（float）	目标坐标z(float)
+2	2	2	2	2
+from_scene_idx	to_scene_idx	to_pos_x	to_pos_y	to_pos_z
+10001	10002	-343	1	-119
+10002	10003	2	0	13
+10003	10004	3	0	14
+10004	10005	4	0	15
+10005	10006	1	0	16
+10006	10007	2	0	17
+10001	20001	-343	1	-119
+20001	10001	-343	1	-119

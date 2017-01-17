@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5202" name="世外桃源-赛车发令员(194,248)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10472">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="472"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：越野大赛(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;越野大赛\n \n&lt;/n&gt;&lt;n&gt;    你好！你是来找我询问有关越野大赛的事吗？请仔细浏览我写给你们的自行车大赛详细信息吧！\n \n&lt;/n&gt;&lt;/p&gt; ")
+this:AddTaskCmdItem("接受奖励{10002}", "v5202", 472, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="472" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="472"/>
+			</conditions>
+			<actions>
+				<exp1 value="100" id="472" name="yueye_selflevel"/>
+				<refresh name="yueye_selflevel"/>
+				<varnotify2 content="经验+%u" value="yueye_selflevel" id="472"/>
+				<notify content="完成了“越野大赛”任务"/>
+				<notify1 content="请仔细浏览自行车大赛详细信息"/>
+				<var type="Set" name="state" value="-1" id="472"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10473">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="473"/>
+				<var type="Differ" name="state" value="-1" id="473"/>
+				<var type="Differ" name="state" value="1" id="473"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：世外温泉(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;世外温泉\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找世外桃源的温泉老板娘。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，如果你感到身心疲惫，那我给你推荐个好去处－温泉！在温泉里既可以泡澡又可以得经验!两全齐美哦！\n &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v5202", 473, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="473"/>
+				<var type="Differ" name="state" value="-1" id="473"/>
+				<var type="Differ" name="state" value="1" id="473"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：世外温泉(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;世外温泉\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找世外桃源的温泉老板娘。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，如果你感到身心疲惫，那我给你推荐个好去处－温泉！在温泉里既可以泡澡又可以得经验!两全齐美哦！\n &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v5202", 473, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="473" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="473"/>
+				<var type="Differ" name="state" value="-1" id="473"/>
+				<var type="Differ" name="state" value="1" id="473"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<var type="GetP" name="wenquan_selflevel" value="1"/>
+				<vars type="Mul" name1="wenquan_selflevel" name2="wenquan_selflevel"/>
+				<var type="Set" name="wenquan_num" value="25"/>
+				<vars type="Mul" name1="wenquan_selflevel" name2="wenquan_num"/>
+				<refresh name="wenquan_selflevel"/>
+				<notify content="任务:去世外桃源找温泉老板娘(117,364)"/>
+				<notify1 content="任务:去世外桃源找温泉老板娘(117,364)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="473"/>
+				<var type="Differ" name="state" value="-1" id="473"/>
+				<var type="Differ" name="state" value="1" id="473"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<var type="GetP" name="wenquan_selflevel" value="1"/>
+				<vars type="Mul" name1="wenquan_selflevel" name2="wenquan_selflevel"/>
+				<var type="Set" name="wenquan_num" value="50"/>
+				<vars type="Mul" name1="wenquan_selflevel" name2="wenquan_num"/>
+				<refresh name="wenquan_selflevel"/>
+				<notify content="任务:去世外桃源找温泉老板娘(117,364)"/>
+				<notify1 content="任务:去世外桃源找温泉老板娘(117,364)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

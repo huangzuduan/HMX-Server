@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="2100" name="定情物">
+	<!--new means new quest, default is quest on user-->
+	<quest id="296" new="1">
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="296"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="296"/>
+				<notify content="你得到了定情物"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了收集定情物的任务,将定情物给石从(125,154)吧"/>
+				<notify1 content="石从(125,154)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

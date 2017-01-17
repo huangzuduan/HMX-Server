@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2230" name="奇怪的图腾-2230">
+	<!--new means new quest, default is quest on user-->
+	<quest id="446" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="446"/>
+				<var type="Less" name="get_奇怪的图腾" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个奇怪的图腾"/>
+				<var type="Add" name="get_奇怪的图腾" value="1"/>
+				<refresh name="get_奇怪的图腾"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="446"/>
+				<var type="Great" name="get_奇怪的图腾" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="446"/>
+				<refresh name="state"/>
+				<refresh name="get_奇怪的图腾"/>
+				<notify content="你已经收集了足够的奇怪的图腾,回王城－祭师(457,471)处交任务吧"/>
+				<notify1 content="去找王城－祭师(457,471)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="448" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="448"/>
+				<var type="Less" name="get_奇怪的图腾" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个奇怪的图腾"/>
+				<var type="Add" name="get_奇怪的图腾" value="1"/>
+				<refresh name="get_奇怪的图腾"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="448"/>
+				<var type="Great" name="get_奇怪的图腾" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="448"/>
+				<refresh name="state"/>
+				<refresh name="get_奇怪的图腾"/>
+				<notify content="你已经收集了足够的奇怪的图腾,回皇城－夏侯望(563,84)处交任务吧"/>
+				<notify1 content="去找皇城－夏侯望(563,84)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+</event>

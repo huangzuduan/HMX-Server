@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512 -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="136" y="68"/>
+		<point x="137" y="68"/>
+		<point x="138" y="68"/>
+		<point x="139" y="68"/>
+		<point x="136" y="69"/>
+		<point x="137" y="69"/>
+		<point x="138" y="69"/>
+		<point x="139" y="69"/>
+		<point x="134" y="70"/>
+		<point x="135" y="70"/>
+		<point x="136" y="70"/>
+		<point x="137" y="70"/>
+		<point x="138" y="70"/>
+		<point x="139" y="70"/>
+		<dest name="jixie2" country="6" x="154" y="169"/>
+		<dest name="jixie2" country="6" x="155" y="169"/>
+		<dest name="jixie2" country="6" x="156" y="169"/>
+		<dest name="jixie2" country="6" x="157" y="169"/>
+		<dest name="jixie2" country="6" x="153" y="170"/>
+		<dest name="jixie2" country="6" x="154" y="170"/>
+		<dest name="jixie2" country="6" x="155" y="170"/>
+		<dest name="jixie2" country="6" x="156" y="170"/>
+		<dest name="jixie2" country="6" x="157" y="170"/>
+		<dest name="jixie2" country="6" x="153" y="171"/>
+		<dest name="jixie2" country="6" x="154" y="171"/>
+		<dest name="jixie2" country="6" x="155" y="171"/>
+		<dest name="jixie2" country="6" x="156" y="171"/>
+		<dest name="jixie2" country="6" x="157" y="171"/>
+	</waypoint>
+	<waypoint>
+		<point x="46" y="96"/>
+		<point x="47" y="96"/>
+		<point x="48" y="96"/>
+		<point x="49" y="96"/>
+		<point x="46" y="97"/>
+		<point x="47" y="97"/>
+		<point x="48" y="97"/>
+		<point x="49" y="97"/>
+		<point x="45" y="98"/>
+		<point x="46" y="98"/>
+		<point x="47" y="98"/>
+		<point x="48" y="98"/>
+		<dest name="jixie4" country="6" x="31" y="80"/>
+		<dest name="jixie4" country="6" x="32" y="80"/>
+		<dest name="jixie4" country="6" x="33" y="80"/>
+		<dest name="jixie4" country="6" x="34" y="80"/>
+		<dest name="jixie4" country="6" x="31" y="81"/>
+		<dest name="jixie4" country="6" x="32" y="81"/>
+		<dest name="jixie4" country="6" x="33" y="81"/>
+		<dest name="jixie4" country="6" x="34" y="81"/>
+		<dest name="jixie4" country="6" x="30" y="82"/>
+		<dest name="jixie4" country="6" x="31" y="82"/>
+		<dest name="jixie4" country="6" x="32" y="82"/>
+		<dest name="jixie4" country="6" x="33" y="82"/>
+	</waypoint>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="21" height="21" x="35" y="85" type="1" color="0,0,255,0"/>
+	<zonedef width="18" height="39" x="126" y="46" type="1" color="0,0,255,0"/>
+	<npc id="10209" name="粗铜魔卫" width="13" height="19" x="78" y="61" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="10208" name="工厂秘探" width="13" height="19" x="61" y="125" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="10208" name="工厂秘探" width="169" height="180" x="17" y="37" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="10209" name="粗铜魔卫" width="169" height="180" x="17" y="37" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="5036" name="令狐奔龙" width="1" height="1" x="95" y="102" num="1" interval="1800"/>
+	<npc id="5037" name="技师督造" width="1" height="1" x="165" y="110" num="1" interval="1800"/>
+	<npc id="26213" name="石兵" width="169" height="180" x="17" y="37" num="1" interval="7200"/>
+	<npc id="10207" name="工厂打手" width="15" height="20" x="157" y="189" num="30" interval="2" color="0,255,0,0"/>
+	<npc id="10211" name="破损石兵" width="15" height="20" x="169" y="116" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10210" name="破损木人" width="15" height="20" x="169" y="116" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10207" name="工厂打手" width="15" height="20" x="18" y="144" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="10210" name="破损木人" width="15" height="20" x="35" y="22" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10211" name="破损石兵" width="15" height="20" x="35" y="22" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10212" name="破损铜兵" width="15" height="20" x="50" y="183" num="50" interval="2" color="0,255,0,0"/>
+</map>

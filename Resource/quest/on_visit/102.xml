@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="102" name="清源村-武器商王仁(145,90)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10211">
+		<embranchment id="97">
+			<conditions>
+				<space size="6"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：乡勇团(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;乡勇团：\n&lt;/n&gt;&lt;n&gt;    少年人就该练功学武，施展抱负！(GetName)，我看你根骨奇佳，将来出人头地，还需提携兄弟一番呀！\n\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;武器介绍：\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;短刀：&lt;/n&gt;&lt;n&gt;增加持有者物理攻击力的近身类武器，武术系技能必须持有刀、剑、斧、锤类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;柳木杖：&lt;/n&gt;&lt;n&gt;主要增加魔法攻击力，法术系技能必须持有杖类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;短弓：&lt;/n&gt;&lt;n&gt;主要增加持有者物理攻击力的武器，配合箭支能够远程杀伤敌人，射术系技能必须持有弓类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;纸扇：&lt;/n&gt;&lt;n&gt;主要增加魔法攻击力，仙术系技能必须持有扇类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;木棍：&lt;/n&gt;&lt;n&gt;主要增加魔法攻击力，召唤系技能必须持有棍类武器才能够施展。\n \n&lt;/n&gt;&lt;n color=\&quot;255,0,0,240\&quot;&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;690\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject1\&quot;&gt;   短刀-战士武器&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;&lt;object id=\&quot;691\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject2\&quot;&gt;   柳木杖-法师武器&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;692\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject3\&quot;&gt;   短弓-弓手武器&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;       &lt;object id=\&quot;693\&quot; group=\&quot;0 \&quot; OnClick=\&quot;SelectObject4\&quot;&gt;   纸扇-仙术师武器&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;&lt;object id=\&quot;694\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject5\&quot;&gt;   木棍-召唤师武器&lt;/object&gt;&lt;n&gt;\n\n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\&quot;255,0,0,0\&quot;&gt;以上武器单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("多承照顾{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function SelectObject3()
+	SelectObject = 3
+end
+function SelectObject4()
+	SelectObject = 4
+end
+function SelectObject5()
+	SelectObject = 5
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v102",211,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="98">
+			<conditions>
+				<space size="2"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：乡勇团(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;乡勇团：\n&lt;/n&gt;&lt;n&gt;    少年人就该练功学武，施展抱负！(GetName)，我看你根骨奇佳，将来出人头地，还需提携兄弟一番呀！\n\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;武器介绍：\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;短刀：&lt;/n&gt;&lt;n&gt;增加持有者物理攻击力的近身类武器，武术系技能必须持有刀、剑、斧、锤类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;柳木杖：&lt;/n&gt;&lt;n&gt;主要增加魔法攻击力，法术系技能必须持有杖类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;短弓：&lt;/n&gt;&lt;n&gt;主要增加持有者物理攻击力的武器，配合箭支能够远程杀伤敌人，射术系技能必须持有弓类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;纸扇：&lt;/n&gt;&lt;n&gt;主要增加魔法攻击力，仙术系技能必须持有扇类武器才能够施展。\n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;木棍：&lt;/n&gt;&lt;n&gt;主要增加魔法攻击力，召唤系技能必须持有棍类武器才能够施展。\n \n&lt;/n&gt;&lt;n color=\&quot;255,0,0,240\&quot;&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;690\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject1\&quot;&gt;   短刀-战士武器&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;&lt;object id=\&quot;691\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject2\&quot;&gt;   柳木杖-法师武器&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;692\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject3\&quot;&gt;   短弓-弓手武器&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;       &lt;object id=\&quot;693\&quot; group=\&quot;0 \&quot; OnClick=\&quot;SelectObject4\&quot;&gt;   纸扇-仙术师武器&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;&lt;object id=\&quot;694\&quot; group=\&quot;0\&quot; OnClick=\&quot;SelectObject5\&quot;&gt;   木棍-召唤师武器&lt;/object&gt;&lt;n&gt;\n\n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\&quot;255,0,0,0\&quot;&gt;以上武器单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("多承照顾{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function SelectObject3()
+	SelectObject = 6
+end
+function SelectObject4()
+	SelectObject = 4
+end
+function SelectObject5()
+	SelectObject = 5
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v102",211,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="211" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<space size="2"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<exp value="5"/>
+				<notify1 content="经验+5"/>
+				<additem value="1" id="690"/>
+				<notify content="任务：你得到一把短刀"/>
+				<additem value="1" id="6000"/>
+				<notify content="得到一本落叶斩秘籍，右键学习"/>
+				<notify1 content="得到短刀"/>
+				<notify1 content="得到一本落叶斩秘籍，右键学习"/>
+				<var type="Set" name="state" value="-1"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;技能学习\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍收藏家(126,70)了解技能学习。\n \n&lt;/n&gt;           &lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武器不是这样拿的，你以为那是筷子么......\n    你还是去秘籍收藏家那里学习一下怎么使用武器吧，以你的天赋，很快就能学会了。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v102", 212, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<space size="2"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<exp value="5"/>
+				<notify1 content="经验+5"/>
+				<additem value="1" id="691"/>
+				<notify content="任务：你得到一把柳木杖"/>
+				<additem value="1" id="7000"/>
+				<notify content="你得到一本火球术秘籍，右键学习"/>
+				<notify1 content="得到柳木杖"/>
+				<notify1 content="你得到一本火球术秘籍，右键学习"/>
+				<var type="Set" name="state" value="-1"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;技能学习\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍收藏家(126,70)了解技能学习。\n \n&lt;/n&gt;           &lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武器不是这样拿的，你以为那是筷子么......\n    你还是去秘籍收藏家那里学习一下怎么使用武器吧，以你的天赋，很快就能学会了。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v102", 212, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="6"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<exp value="5"/>
+				<notify1 content="经验+5"/>
+				<additem value="1" id="692"/>
+				<additem value="4" id="800"/>
+				<notify content="任务：你得到一把短弓和四筒箭"/>
+				<additem value="1" id="6500"/>
+				<notify content="你得到一本追星箭秘籍，右键学习"/>
+				<notify1 content="得到短弓和箭支"/>
+				<notify1 content="你得到一本追星箭秘籍，右键学习"/>
+				<var type="Set" name="state" value="-1"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;技能学习\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍收藏家(126,70)了解技能学习。\n \n&lt;/n&gt;           &lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武器不是这样拿的，你以为那是筷子么......\n    你还是去秘籍收藏家那里学习一下怎么使用武器吧，以你的天赋，很快就能学会了。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v102", 212, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<space size="2"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<exp value="5"/>
+				<notify1 content="经验+5"/>
+				<additem value="1" id="693"/>
+				<notify content="任务：你得到一把纸扇"/>
+				<additem value="1" id="8000"/>
+				<notify content="你得到一本毒咒秘籍，右键学习"/>
+				<notify1 content="得到纸扇"/>
+				<notify1 content="你得到一本毒咒秘籍，右键学习"/>
+				<var type="Set" name="state" value="-1"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;技能学习\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍收藏家(126,70)了解技能学习。\n \n&lt;/n&gt;           &lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武器不是这样拿的，你以为那是筷子么......\n    你还是去秘籍收藏家那里学习一下怎么使用武器吧，以你的天赋，很快就能学会了。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v102", 212, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<space size="2"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<exp value="5"/>
+				<notify1 content="经验+5"/>
+				<additem value="1" id="694"/>
+				<notify content="任务：你得到一把木棍"/>
+				<additem value="1" id="7500"/>
+				<notify content="你得到一本棍击秘籍，右键学习"/>
+				<notify1 content="得到木棍"/>
+				<notify1 content="你得到一本棍击秘籍，右键学习"/>
+				<var type="Set" name="state" value="-1"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;技能学习\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍收藏家(126,70)了解技能学习。\n \n&lt;/n&gt;           &lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武器不是这样拿的，你以为那是筷子么......\n    你还是去秘籍收藏家那里学习一下怎么使用武器吧，以你的天赋，很快就能学会了。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v102", 212, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="2"/>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Equal" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要有6个包裹空格才能放箭哦")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10212">
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="211"/>
+				<var type="Differ" name="state" value="-1" id="212"/>
+				<var type="Differ" name="state" value="1" id="212"/>
+				<var type="Differ" name="state" value="-3" id="212"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;技能学习\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找秘籍收藏家(126,70)了解技能学习。\n \n&lt;/n&gt;           &lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武器不是这样拿的，你以为那是筷子么......\n    你还是去秘籍收藏家那里学习一下怎么使用武器吧，以你的天赋，很快就能学会了。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去{10001}", "v102", 212, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="212" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="211"/>
+				<var type="Differ" name="state" value="-1" id="212"/>
+				<var type="Differ" name="state" value="1" id="212"/>
+				<var type="Differ" name="state" value="-3" id="212"/>
+			</conditions>
+			<actions>
+				<notify content="找秘籍收藏家(126,70)了解技能学习"/>
+				<notify1 content="秘籍收藏家"/>
+				<var type="Set" name="state" value="-3"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

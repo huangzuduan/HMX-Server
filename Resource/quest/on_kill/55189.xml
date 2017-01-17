@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="55189" name="矿石">
+	<quest id="160101" new="1">
+		<embranchment id="1">
+			<conditions>
+			</conditions>
+			<actions>
+				<additem value="1" id="2158" odds="5000"/> 
+			</actions>
+		</embranchment>
+	</quest>
+</event>

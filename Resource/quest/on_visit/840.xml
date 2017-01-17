@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="840" name="凤尾村-张倾城(63,190)">
+	<!--new means new quest, default is quest on user-->
+
+
+
+
+	<quest id="30106">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20106"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    终于还是找来了，好吧，去告诉谢无欢我会去做证的。")
+this:AddTaskCmdItem("我这就去{10002}", "v840", 20106, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20106"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    我说了会去的，你去告诉谢无欢吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>		
+		
+	</quest>
+	<quest id="20106" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="20106"/>
+			</conditions>
+			<actions>
+				<notify1 content="去告诉凤凰城的谢无欢"/>
+				<var type="Set" name="state" value="-3" id="20106"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+	
+
+
+</event>

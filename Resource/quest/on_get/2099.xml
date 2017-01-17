@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="2099" name="腰牌">
+	<!--new means new quest, default is quest on user-->
+	<quest id="294" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="294"/>
+			</conditions>
+			<actions>
+				<notify1 content="你得到了一块腰牌"/>
+				<var type="Set" name="state" value="-3"/>
+
+			</actions>
+		</embranchment>
+	</quest>
+</event>

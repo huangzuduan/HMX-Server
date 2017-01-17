@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2029" name="狗肉">
+	<quest id="201" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="201"/>
+				<var type="Less" name="get_狗肉" value="50"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块狗肉"/>
+				<var type="Add" name="get_狗肉" value="1"/>
+				<refresh name="get_狗肉"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="201"/>
+				<var type="Great" name="get_狗肉" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="201"/>
+				<refresh name="state"/>
+				<refresh name="get_狗肉"/>
+				<notify content="恭喜你完成了收集狗肉的任务,回凤嘴岭美食家处交任务吧"/>
+				<notify1 content="凤嘴岭美食家"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="50021" name="狗">
+	<quest id="225" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_狗" value="20"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_狗" value="1"/>
+				<refresh name="kill_狗"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_狗" value="19"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_狗"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了打败野狗的任务,向闻广汇报"/>
+				<notify1 content="向闻广汇报"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

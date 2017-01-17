@@ -1,0 +1,4757 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="531" name="凤凰城-工具商(438,327)">
+	<!--找苹果-->
+	<quest id="10001">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21007"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21008"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21009"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21007"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21008"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21009"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21007"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21008"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21009"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="35">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="43">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="44">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="45">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    护送任务没有结束，完成后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="46">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有家族运镖任务没有结束，请结束后再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+	<quest id="31202">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="26"/>
+				<var type="Equal" name="state" value="1" id="21202"/>
+				<var type="Differ" name="state" value="-1" id="21203"/>
+				<var type="Differ" name="state" value="-3" id="21203"/>
+				<var type="Differ" name="state" value="1" id="21203"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你想要苹果种子，那个嘛，要么付钱，要么帮我去消灭30只25级的怪物。怎么样？你选吧。\n\n杀怪经验奖励： 1200")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21203, 3)
+this:AddTaskCmdItem("购买苹果种子 - 1两{10001}", "v531", 21203, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="25"/>
+				<var type="Equal" name="state" value="1" id="21202"/>
+				<var type="Differ" name="state" value="-1" id="21203"/>
+				<var type="Differ" name="state" value="-3" id="21203"/>
+				<var type="Differ" name="state" value="1" id="21203"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你想要苹果种子，那个嘛，要么付钱，要么帮我去消灭30只30级的怪物。怎么样？你选吧。\n\n杀怪经验奖励： 2000")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21203, 5)
+this:AddTaskCmdItem("购买苹果种子 - 1两{10001}", "v531", 21203, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="25" id="21203"/>
+				<var type="Equal" name="state" value="-3" id="21203"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21203, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="30" id="21203"/>
+				<var type="Equal" name="state" value="-3" id="21203"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21203, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<level type="Great" value="19"/>
+				<var type="Differ" name="state" value="1" id="21203"/>
+				<var type="Equal" name="state" value="-3" id="21203"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="21">
+			<conditions>
+				<level type="Great" value="19"/>
+				<var type="Equal" name="state" value="1" id="21203"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="21203" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21202"/>
+				<var type="Differ" name="state" value="-1" id="21203"/>
+				<var type="Differ" name="state" value="-3" id="21203"/>
+				<var type="Differ" name="state" value="1" id="21203"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="25"/>
+				<var type="Set" name="exp" value="1200"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀25级怪物30只"/>
+				<notify content="任务：击杀25级怪物30只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21202"/>
+				<var type="Differ" name="state" value="-1" id="21203"/>
+				<var type="Differ" name="state" value="-3" id="21203"/>
+				<var type="Differ" name="state" value="1" id="21203"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="30"/>
+				<var type="Set" name="exp" value="2000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀30级怪物30只"/>
+				<notify content="任务：击杀30级怪物30只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21203"/>
+			</conditions>
+			<actions>
+				<exp value="1200"/>
+				<notify1 content="经验+1200"/>
+				<notify1 content="得到苹果种子"/>
+				<additem value="1" id="1840"/>
+				<var type="Set" name="state" value="-2" id="21203"/>
+				<var type="Set" name="state" value="-3" id="21202"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21203"/>
+			</conditions>
+			<actions>
+				<exp value="2000"/>
+				<notify1 content="经验+2000"/>
+				<notify1 content="得到苹果种子"/>
+				<additem value="1" id="1840"/>
+				<var type="Set" name="state" value="-2" id="21203"/>
+				<var type="Set" name="state" value="-3" id="21202"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到苹果种子"/>
+				<gold type="Sub" value="100"/>
+				<additem value="1" id="1840"/>
+				<var type="Set" name="state" value="-2" id="21203"/>
+				<var type="Set" name="state" value="-3" id="21202"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31205">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21204"/>
+				<var type="Differ" name="state" value="-1" id="21205"/>
+				<var type="Differ" name="state" value="-3" id="21205"/>
+				<var type="Differ" name="state" value="1" id="21205"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要木锄啦，那个嘛，要么付钱，要么帮我去弄2个大石块来。怎么样？你选吧。\n\n石块经验奖励： 600")
+this:AddTaskCmdItem("2个大石块换取{10001}", "v531", 21205, 3)
+this:AddTaskCmdItem("购买木锄 - 1两{10001}", "v531", 21205, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21204"/>
+				<var type="Equal" name="state" value="1" id="21205"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    两个大石块弄来了么？还是决定要买了？")
+this:AddTaskCmdItem("2个大石块换取{10001}", "v531", 21205, 3)
+this:AddTaskCmdItem("购买木锄 - 1两{10001}", "v531", 21205, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="2" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21205"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，那么大的石块都给你找到了，正好拿来压咸菜。")
+this:AddTaskCmdItem("收下木锄{10002}", "v531", 21205, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="2" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21205"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21205" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21204"/>
+				<var type="Differ" name="state" value="-1" id="21205"/>
+				<var type="Differ" name="state" value="-3" id="21205"/>
+				<var type="Differ" name="state" value="1" id="21205"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找两个大石块"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="2" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21205"/>
+			</conditions>
+			<actions>
+				<exp value="600"/>
+				<notify1 content="经验+600"/>
+				<notify1 content="得到木锄"/>
+				<removeitem value="2" id="1826" log="换木锄(21205:1851)-删除2个大石块(1826)"/>
+				<additem value="1" id="1851"/>
+				<var type="Set" name="state" value="-2" id="21205"/>
+				<var type="Set" name="state" value="-3" id="21204"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到木锄"/>
+				<gold type="Sub" value="100"/>
+				<additem value="1" id="1851"/>
+				<var type="Set" name="state" value="-2" id="21205"/>
+				<var type="Set" name="state" value="-3" id="21204"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31206">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21206"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。或者你花点钱,我请人帮你运?")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21206, 11)
+this:AddTaskCmdItem("付钱请人运-5两{10002}", "v531", 21206, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21206" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21206"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21206"/>
+				<addguard id="54022" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="499"/>
+				<var type="Equal" name="state" value="1" id="21206"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="500"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21206"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--买抓虫手套-->
+	<quest id="31208">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21208"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买抓虫手套么？那可很贵哦，2两一个。")
+this:AddTaskCmdItem("买下抓虫手套-2两{10002}", "v531", 21208, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21208"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21208" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="199"/>
+				<var type="Equal" name="state" value="1" id="21208"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<notify1 content="得到抓虫手套，交给种植童子"/>
+				<additem value="1" id="1860"/>
+				<var type="Set" name="state" value="-3" id="21208"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找梨-->
+	<quest id="31212">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="36"/>
+				<var type="Equal" name="state" value="1" id="21212"/>
+				<var type="Differ" name="state" value="-1" id="21213"/>
+				<var type="Differ" name="state" value="-3" id="21213"/>
+				<var type="Differ" name="state" value="1" id="21213"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    梨种子2两一个，要不帮我消灭35级怪物40个。\n\n杀怪经验奖励： 5000")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21213, 3)
+this:AddTaskCmdItem("买梨种子-2两{10001}", "v531", 21213, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="35"/>
+				<var type="Equal" name="state" value="1" id="21212"/>
+				<var type="Differ" name="state" value="-1" id="21213"/>
+				<var type="Differ" name="state" value="-3" id="21213"/>
+				<var type="Differ" name="state" value="1" id="21213"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    梨种子2两一个，要不帮我消灭40级怪物40个。\n\n杀怪经验奖励： 8000")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21213, 5)
+this:AddTaskCmdItem("买梨种子-2两{10001}", "v531", 21213, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="35" id="21213"/>
+				<var type="Equal" name="state" value="-3" id="21213"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21213, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="40" id="21213"/>
+				<var type="Equal" name="state" value="-3" id="21213"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21213, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			  <var type="Differ" name="state" value="1" id="21213"/>
+				<var type="Equal" name="state" value="-3" id="21213"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21213"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21213" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21212"/>
+				<var type="Differ" name="state" value="-1" id="21213"/>
+				<var type="Differ" name="state" value="-3" id="21213"/>
+				<var type="Differ" name="state" value="1" id="21213"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="35"/>
+				<var type="Set" name="exp" value="5000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀35级怪物40只"/>
+				<notify content="任务：击杀35级怪物40只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21212"/>
+				<var type="Differ" name="state" value="-1" id="21213"/>
+				<var type="Differ" name="state" value="-3" id="21213"/>
+				<var type="Differ" name="state" value="1" id="21213"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="40"/>
+				<var type="Set" name="exp" value="8000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀40级怪物40只"/>
+				<notify content="任务：击杀40级怪物40只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21213"/>
+			</conditions>
+			<actions>
+				<exp value="5000"/>
+				<notify1 content="经验+5000"/>
+				<notify1 content="得到梨种子"/>
+				<additem value="1" id="1841"/>
+				<var type="Set" name="state" value="-2" id="21213"/>
+				<var type="Set" name="state" value="-3" id="21212"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21213"/>
+			</conditions>
+			<actions>
+				<exp value="8000"/>
+				<notify1 content="经验+8000"/>
+				<notify1 content="得到梨种子"/>
+				<additem value="1" id="1841"/>
+				<var type="Set" name="state" value="-2" id="21213"/>
+				<var type="Set" name="state" value="-3" id="21212"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到梨种子"/>
+				<gold type="Sub" value="200"/>
+				<additem value="1" id="1841"/>
+				<var type="Set" name="state" value="-2" id="21213"/>
+				<var type="Set" name="state" value="-3" id="21212"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31215">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21214"/>
+				<var type="Differ" name="state" value="-1" id="21215"/>
+				<var type="Differ" name="state" value="-3" id="21215"/>
+				<var type="Differ" name="state" value="1" id="21215"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要铜锄啦，那个嘛，要么付钱，要么帮我去弄4个大石块来。怎么样？你选吧。\n\n石块经验奖励： 2000")
+this:AddTaskCmdItem("4个大石块换取{10001}", "v531", 21215, 3)
+this:AddTaskCmdItem("购买铜锄 - 2两{10001}", "v531", 21215, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21215"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，那么大的石块都给你找到了，正好拿来压咸菜。")
+this:AddTaskCmdItem("收下铜锄{10002}", "v531", 21215, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21214"/>
+				<var type="Equal" name="state" value="1" id="21215"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    石块弄来了么？还是决定要花钱买了？")
+this:AddTaskCmdItem("4个大石块换取{10001}", "v531", 21215, 3)
+this:AddTaskCmdItem("购买铜锄 - 2两{10001}", "v531", 21215, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="4" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21215"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21215" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21214"/>
+				<var type="Differ" name="state" value="-1" id="21215"/>
+				<var type="Differ" name="state" value="-3" id="21215"/>
+				<var type="Differ" name="state" value="1" id="21215"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找4个大石块"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21215"/>
+			</conditions>
+			<actions>
+				<exp value="2000"/>
+				<notify1 content="经验+2000"/>
+				<notify1 content="得到铜锄"/>
+				<removeitem value="4" id="1826" log="换铜锄(21215:1852)-删除4个大石块(1826)"/>
+				<additem value="1" id="1852"/>
+				<var type="Set" name="state" value="-2" id="21215"/>
+				<var type="Set" name="state" value="-3" id="21214"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到铜锄"/>
+				<gold type="Sub" value="200"/>
+				<additem value="1" id="1852"/>
+				<var type="Set" name="state" value="-2" id="21215"/>
+				<var type="Set" name="state" value="-3" id="21214"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31216">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21216"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21216, 11)
+this:AddTaskCmdItem("付钱请人运-10两{10002}", "v531", 21216, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21216" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21216"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21216"/>
+				<addguard id="54022" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="999"/>
+				<var type="Equal" name="state" value="1" id="21216"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21216"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<!--买抓虫手套-->
+	<quest id="31218">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21218"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买抓虫手套么？那可很贵哦，2两一个。")
+this:AddTaskCmdItem("买下抓虫手套-2两{10002}", "v531", 21218, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21218"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21218" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="199"/>
+				<var type="Equal" name="state" value="1" id="21218"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<notify1 content="得到抓虫手套，交给种植童子"/>
+				<additem value="1" id="1860"/>
+				<var type="Set" name="state" value="-3" id="21218"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找桃-->
+	<quest id="31222">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="46"/>
+				<var type="Equal" name="state" value="1" id="21222"/>
+				<var type="Differ" name="state" value="-1" id="21223"/>
+				<var type="Differ" name="state" value="-3" id="21223"/>
+				<var type="Differ" name="state" value="1" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    桃种子4两一个，要不帮我消灭45级怪物50个。\n\n杀怪经验奖励： 11200")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21223, 3)
+this:AddTaskCmdItem("买桃种子-4两{10001}", "v531", 21223, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="45"/>
+				<var type="Equal" name="state" value="1" id="21222"/>
+				<var type="Differ" name="state" value="-1" id="21223"/>
+				<var type="Differ" name="state" value="-3" id="21223"/>
+				<var type="Differ" name="state" value="1" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    桃种子4两一个，要不帮我消灭50级怪物50个。\n\n杀怪经验奖励： 16800")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21223, 5)
+this:AddTaskCmdItem("买桃种子-4两{10001}", "v531", 21223, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="45" id="21223"/>
+				<var type="Equal" name="state" value="-3" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21223, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="50" id="21223"/>
+				<var type="Equal" name="state" value="-3" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21223, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			  <var type="Differ" name="state" value="1" id="21223"/>
+				<var type="Equal" name="state" value="-3" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21223" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21222"/>
+				<var type="Differ" name="state" value="-1" id="21223"/>
+				<var type="Differ" name="state" value="-3" id="21223"/>
+				<var type="Differ" name="state" value="1" id="21223"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="45"/>
+				<var type="Set" name="exp" value="11200"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀45级怪物50只"/>
+				<notify content="任务：击杀45级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21222"/>
+				<var type="Differ" name="state" value="-1" id="21223"/>
+				<var type="Differ" name="state" value="-3" id="21223"/>
+				<var type="Differ" name="state" value="1" id="21223"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="50"/>
+				<var type="Set" name="exp" value="16800"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀50级怪物50只"/>
+				<notify content="任务：击杀50级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21223"/>
+			</conditions>
+			<actions>
+				<exp value="11200"/>
+				<notify1 content="经验+11200"/>
+				<notify1 content="得到桃种子"/>
+				<additem value="1" id="1842"/>
+				<var type="Set" name="state" value="-2" id="21223"/>
+				<var type="Set" name="state" value="-3" id="21222"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21223"/>
+			</conditions>
+			<actions>
+				<exp value="16800"/>
+				<notify1 content="经验+16800"/>
+				<notify1 content="得到桃种子"/>
+				<additem value="1" id="1842"/>
+				<var type="Set" name="state" value="-2" id="21223"/>
+				<var type="Set" name="state" value="-3" id="21222"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="399"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到桃种子"/>
+				<gold type="Sub" value="400"/>
+				<additem value="1" id="1842"/>
+				<var type="Set" name="state" value="-2" id="21223"/>
+				<var type="Set" name="state" value="-3" id="21222"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31225">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21224"/>
+				<var type="Differ" name="state" value="-1" id="21225"/>
+				<var type="Differ" name="state" value="-3" id="21225"/>
+				<var type="Differ" name="state" value="1" id="21225"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要铜锄啦，那个嘛，要么付钱，要么帮我去弄4个大石块来。怎么样？你选吧。\n\n石块经验奖励： 5600")
+this:AddTaskCmdItem("4个大石块换取{10001}", "v531", 21225, 3)
+this:AddTaskCmdItem("购买铜锄 - 2两{10001}", "v531", 21225, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21224"/>
+				<var type="Equal" name="state" value="1" id="21225"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    石块弄来了么？还是决定购买了？")
+this:AddTaskCmdItem("4个大石块换取{10001}", "v531", 21225, 3)
+this:AddTaskCmdItem("购买铜锄 - 2两{10001}", "v531", 21225, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21225"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，那么大的石块都给你找到了，正好拿来压咸菜。\n\n石块经验奖励： 5600")
+this:AddTaskCmdItem("收下铜锄{10002}", "v531", 21225, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="4" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21223"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21225" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21224"/>
+				<var type="Differ" name="state" value="-1" id="21225"/>
+				<var type="Differ" name="state" value="-3" id="21225"/>
+				<var type="Differ" name="state" value="1" id="21225"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找4个大石块"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1826"/>
+				<var type="Equal" name="state" value="1" id="21225"/>
+			</conditions>
+			<actions>
+				<exp value="5600"/>
+				<notify1 content="经验+5600"/>
+				<notify1 content="得到铜锄"/>
+				<removeitem value="4" id="1826" log="换铜锄(21225:1852)-删除4个大石块(1826)"/>
+				<additem value="1" id="1852"/>
+				<var type="Set" name="state" value="-2" id="21225"/>
+				<var type="Set" name="state" value="-3" id="21224"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到铜锄"/>
+				<gold type="Sub" value="200"/>
+				<additem value="1" id="1852"/>
+				<var type="Set" name="state" value="-2" id="21225"/>
+				<var type="Set" name="state" value="-3" id="21224"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31226">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21226"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21226, 11)
+this:AddTaskCmdItem("付钱请人运-15两{10002}", "v531", 21226, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21226" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21226"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21226"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="1499"/>
+				<var type="Equal" name="state" value="1" id="21226"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1500"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21226"/>
+			</actions>
+		</embranchment>		
+		
+	</quest>
+	<!--买灭虫水-->
+	<quest id="31228">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21228"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买灭虫水么？那可很贵哦，8两一个。")
+this:AddTaskCmdItem("买下灭虫水-8两{10002}", "v531", 21228, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21228"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21228" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="799"/>
+				<var type="Equal" name="state" value="1" id="21228"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="800"/>
+				<notify1 content="得到灭虫水，交给种植童子"/>
+				<additem value="1" id="1861"/>
+				<var type="Set" name="state" value="-3" id="21228"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找荔枝-->
+	<quest id="31232">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="56"/>
+				<var type="Equal" name="state" value="1" id="21232"/>
+				<var type="Differ" name="state" value="-1" id="21233"/>
+				<var type="Differ" name="state" value="-3" id="21233"/>
+				<var type="Differ" name="state" value="1" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    荔枝种子8两一个，要不帮我消灭55级怪物50个。\n\n杀怪经验奖励： 21200")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21233, 3)
+this:AddTaskCmdItem("买荔枝种子-8两{10001}", "v531", 21233, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="55"/>
+				<var type="Equal" name="state" value="1" id="21232"/>
+				<var type="Differ" name="state" value="-1" id="21233"/>
+				<var type="Differ" name="state" value="-3" id="21233"/>
+				<var type="Differ" name="state" value="1" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    荔枝种子8两一个，要不帮我消灭60级怪物50个。\n\n杀怪经验奖励： 29800")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21233, 5)
+this:AddTaskCmdItem("买荔枝种子-8两{10001}", "v531", 21233, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				
+				<var type="Equal" name="level" value="55" id="21233"/>
+				<var type="Equal" name="state" value="-3" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21233, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="60" id="21233"/>
+				<var type="Equal" name="state" value="-3" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21233, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21233" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21232"/>
+				<var type="Differ" name="state" value="-1" id="21233"/>
+				<var type="Differ" name="state" value="-3" id="21233"/>
+				<var type="Differ" name="state" value="1" id="21233"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="55"/>
+				<var type="Set" name="exp" value="21200"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀55级怪物50只"/>
+				<notify content="任务：击杀55级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21232"/>
+				<var type="Differ" name="state" value="-1" id="21233"/>
+				<var type="Differ" name="state" value="-3" id="21233"/>
+				<var type="Differ" name="state" value="1" id="21233"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="60"/>
+				<var type="Set" name="exp" value="29800"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀60级怪物50只"/>
+				<notify content="任务：击杀60级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21233"/>
+			</conditions>
+			<actions>
+				<exp value="21200"/>
+				<notify1 content="经验+21200"/>
+				<notify1 content="得到荔枝种子"/>
+				<additem value="1" id="1843"/>
+				<var type="Set" name="state" value="-2" id="21233"/>
+				<var type="Set" name="state" value="-3" id="21232"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21233"/>
+			</conditions>
+			<actions>
+				<exp value="29800"/>
+				<notify1 content="经验+29800"/>
+				<notify1 content="得到荔枝种子"/>
+				<additem value="1" id="1843"/>
+				<var type="Set" name="state" value="-2" id="21233"/>
+				<var type="Set" name="state" value="-3" id="21232"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="799"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到荔枝种子"/>
+				<gold type="Sub" value="800"/>
+				<additem value="1" id="1843"/>
+				<var type="Set" name="state" value="-2" id="21233"/>
+				<var type="Set" name="state" value="-3" id="21232"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31235">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21234"/>
+				<var type="Differ" name="state" value="-1" id="21235"/>
+				<var type="Differ" name="state" value="-3" id="21235"/>
+				<var type="Differ" name="state" value="1" id="21235"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要铁锄啦，那个嘛，要么付钱，要么帮我去弄5个精致的鹅卵石来。怎么样？你选吧。\n\n石块经验奖励： 15600")
+this:AddTaskCmdItem("5个精致的鹅卵石换取{10001}", "v531", 21235, 3)
+this:AddTaskCmdItem("购买铁锄 - 8两{10001}", "v531", 21235, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21234"/>
+				<var type="Equal" name="state" value="1" id="21235"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    鹅卵石找来了么？还是改主意了要用钱来买？")
+this:AddTaskCmdItem("5个精致的鹅卵石换取{10001}", "v531", 21235, 3)
+this:AddTaskCmdItem("购买铁锄 - 8两{10001}", "v531", 21235, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="5" id="1909"/>
+				<var type="Equal" name="state" value="1" id="21235"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好漂亮的石头，正好拿来收藏。\n\n石块经验奖励： 15600")
+this:AddTaskCmdItem("收下铁锄{10002}", "v531", 21235, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="5" id="1909"/>
+				<var type="Equal" name="state" value="1" id="21233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21235" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21234"/>
+				<var type="Differ" name="state" value="-1" id="21235"/>
+				<var type="Differ" name="state" value="-3" id="21235"/>
+				<var type="Differ" name="state" value="1" id="21235"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找五个精致的鹅卵石"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="5" id="1909"/>
+				<var type="Equal" name="state" value="1" id="21235"/>
+			</conditions>
+			<actions>
+				<exp value="15600"/>
+				<notify1 content="经验+15600"/>
+				<notify1 content="得到铁锄"/>
+				<removeitem value="5" id="1909" log="换铁锄(21235:1853)-删除5个精致的鹅卵石(1909)"/>
+				<additem value="1" id="1853"/>
+				<var type="Set" name="state" value="-2" id="21235"/>
+				<var type="Set" name="state" value="-3" id="21234"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="799"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到铁锄"/>
+				<gold type="Sub" value="800"/>
+				<additem value="1" id="1853"/>
+				<var type="Set" name="state" value="-2" id="21235"/>
+				<var type="Set" name="state" value="-3" id="21234"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31236">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21236"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21236, 11)
+this:AddTaskCmdItem("付钱请人运-20两{10002}", "v531", 21236, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21236" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21236"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21236"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+				<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="1999"/>
+				<var type="Equal" name="state" value="1" id="21236"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="2000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21236"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--买灭虫水-->
+	<quest id="31238">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21238"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买灭虫水么？那可很贵哦，8两一个。")
+this:AddTaskCmdItem("买下灭虫水-8两{10002}", "v531", 21238, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21238"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21238" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="799"/>
+				<var type="Equal" name="state" value="1" id="21238"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="800"/>
+				<notify1 content="得到灭虫水，交给种植童子"/>
+				<additem value="1" id="1861"/>
+				<var type="Set" name="state" value="-3" id="21238"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找桂圆-->
+	<quest id="31242">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="66"/>
+				<var type="Equal" name="state" value="1" id="21242"/>
+				<var type="Differ" name="state" value="-1" id="21243"/>
+				<var type="Differ" name="state" value="-3" id="21243"/>
+				<var type="Differ" name="state" value="1" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    桂圆种子8两一个，要不帮我消灭65级怪物50个。\n\n杀怪经验奖励： 34200")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21243, 3)
+this:AddTaskCmdItem("买桂圆种子-8两{10001}", "v531", 21243, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="65"/>
+				<var type="Equal" name="state" value="1" id="21242"/>
+				<var type="Differ" name="state" value="-1" id="21243"/>
+				<var type="Differ" name="state" value="-3" id="21243"/>
+				<var type="Differ" name="state" value="1" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    桂圆种子8两一个，要不帮我消灭70级怪物50个。\n\n杀怪经验奖励： 44500")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21243, 5)
+this:AddTaskCmdItem("买桂圆种子-8两{10001}", "v531", 21243, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="65" id="21243"/>
+				<var type="Equal" name="state" value="-3" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21243, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="70" id="21243"/>
+				<var type="Equal" name="state" value="-3" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21243, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21243" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21242"/>
+				<var type="Differ" name="state" value="-1" id="21243"/>
+				<var type="Differ" name="state" value="-3" id="21243"/>
+				<var type="Differ" name="state" value="1" id="21243"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="65"/>
+				<var type="Set" name="exp" value="34200"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀65级怪物50只"/>
+				<notify content="任务：击杀65级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21242"/>
+				<var type="Differ" name="state" value="-1" id="21243"/>
+				<var type="Differ" name="state" value="-3" id="21243"/>
+				<var type="Differ" name="state" value="1" id="21243"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="70"/>
+				<var type="Set" name="exp" value="44500"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀70级怪物50只"/>
+				<notify content="任务：击杀70级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21243"/>
+			</conditions>
+			<actions>
+				<exp value="34200"/>
+				<notify1 content="经验+34200"/>
+				<notify1 content="得到桂圆种子"/>
+				<additem value="1" id="1844"/>
+				<var type="Set" name="state" value="-2" id="21243"/>
+				<var type="Set" name="state" value="-3" id="21242"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21243"/>
+			</conditions>
+			<actions>
+				<exp value="44500"/>
+				<notify1 content="经验+44500"/>
+				<notify1 content="得到桂圆种子"/>
+				<additem value="1" id="1844"/>
+				<var type="Set" name="state" value="-2" id="21243"/>
+				<var type="Set" name="state" value="-3" id="21242"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="799"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到桂圆种子"/>
+				<gold type="Sub" value="800"/>
+				<additem value="1" id="1844"/>
+				<var type="Set" name="state" value="-2" id="21243"/>
+				<var type="Set" name="state" value="-3" id="21242"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31245">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21244"/>
+				<var type="Differ" name="state" value="-1" id="21245"/>
+				<var type="Differ" name="state" value="-3" id="21245"/>
+				<var type="Differ" name="state" value="1" id="21245"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要铁锄啦，那个嘛，要么付钱，要么帮我去弄5个精致的鹅卵石来。怎么样？你选吧。\n\n石块经验奖励： 27600")
+this:AddTaskCmdItem("5个精致的鹅卵石换取{10001}", "v531", 21245, 3)
+this:AddTaskCmdItem("购买铁锄 - 8两{10001}", "v531", 21245, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21244"/>
+				<var type="Equal" name="state" value="1" id="21245"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    5个精致的鹅卵石弄来了么？还是准备买购买了？")
+this:AddTaskCmdItem("5个精致的鹅卵石换取{10001}", "v531", 21245, 3)
+this:AddTaskCmdItem("购买铁锄 - 8两{10001}", "v531", 21245, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="5" id="1909"/>
+				<var type="Equal" name="state" value="1" id="21245"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好漂亮的石头，正好拿来收藏。\n\n石块经验奖励： 27600")
+this:AddTaskCmdItem("收下铁锄{10002}", "v531", 21245, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="5" id="1909"/>
+				<var type="Equal" name="state" value="1" id="21243"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21245" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21244"/>
+				<var type="Differ" name="state" value="-1" id="21245"/>
+				<var type="Differ" name="state" value="-3" id="21245"/>
+				<var type="Differ" name="state" value="1" id="21245"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找五个精致的鹅卵石"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="5" id="1909"/>
+				<var type="Equal" name="state" value="1" id="21245"/>
+			</conditions>
+			<actions>
+				<exp value="27600"/>
+				<notify1 content="经验+27600"/>
+				<notify1 content="得到铁锄"/>
+				<removeitem value="5" id="1909" log="换铁锄(21245:1853)-删除5个精致的鹅卵石(1909)"/>
+				<additem value="1" id="1853"/>
+				<var type="Set" name="state" value="-2" id="21245"/>
+				<var type="Set" name="state" value="-3" id="21244"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="799"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到铁锄"/>
+				<gold type="Sub" value="800"/>
+				<additem value="1" id="1853"/>
+				<var type="Set" name="state" value="-2" id="21245"/>
+				<var type="Set" name="state" value="-3" id="21244"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31246">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21246"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21246, 11)
+this:AddTaskCmdItem("付钱请人运-25两{10002}", "v531", 21246, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21246" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21246"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21246"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="2499"/>
+				<var type="Equal" name="state" value="1" id="21246"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="2500"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21246"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<!--买啄木鸟-->
+	<quest id="31248">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21248"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买啄木鸟么？那可很贵哦，32两一个。")
+this:AddTaskCmdItem("买下啄木鸟-32两{10002}", "v531", 21248, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21248"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21248" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="3199"/>
+				<var type="Equal" name="state" value="1" id="21248"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="3200"/>
+				<notify1 content="得到啄木鸟，交给种植童子"/>
+				<additem value="1" id="1862"/>
+				<var type="Set" name="state" value="-3" id="21248"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找猕猴桃-->
+	<quest id="31252">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="76"/>
+				<var type="Equal" name="state" value="1" id="21252"/>
+				<var type="Differ" name="state" value="-1" id="21253"/>
+				<var type="Differ" name="state" value="-3" id="21253"/>
+				<var type="Differ" name="state" value="1" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    猕猴桃种子16两一个，要不帮我消灭75级怪物50个。\n\n杀怪经验奖励： 34200")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21253, 3)
+this:AddTaskCmdItem("买猕猴桃种子-16两{10001}", "v531", 21253, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="75"/>
+				<var type="Equal" name="state" value="1" id="21252"/>
+				<var type="Differ" name="state" value="-1" id="21253"/>
+				<var type="Differ" name="state" value="-3" id="21253"/>
+				<var type="Differ" name="state" value="1" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    猕猴桃种子16两一个，要不帮我消灭80级怪物50个。\n\n杀怪经验奖励： 44500")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21253, 5)
+this:AddTaskCmdItem("买猕猴桃种子-16两{10001}", "v531", 21253, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="75" id="21253"/>
+				<var type="Equal" name="state" value="-3" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21253, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="80" id="21253"/>
+				<var type="Equal" name="state" value="-3" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21253, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21253" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21252"/>
+				<var type="Differ" name="state" value="-1" id="21253"/>
+				<var type="Differ" name="state" value="-3" id="21253"/>
+				<var type="Differ" name="state" value="1" id="21253"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="75"/>
+				<var type="Set" name="exp" value="34200"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀75级怪物50只"/>
+				<notify content="任务：击杀75级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21252"/>
+				<var type="Differ" name="state" value="-1" id="21253"/>
+				<var type="Differ" name="state" value="-3" id="21253"/>
+				<var type="Differ" name="state" value="1" id="21253"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="80"/>
+				<var type="Set" name="exp" value="44500"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀80级怪物50只"/>
+				<notify content="任务：击杀80级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21253"/>
+			</conditions>
+			<actions>
+				<exp value="34200"/>
+				<notify1 content="经验+34200"/>
+				<notify1 content="得到猕猴桃种子"/>
+				<additem value="1" id="1845"/>
+				<var type="Set" name="state" value="-2" id="21253"/>
+				<var type="Set" name="state" value="-3" id="21252"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21253"/>
+			</conditions>
+			<actions>
+				<exp value="44500"/>
+				<notify1 content="经验+44500"/>
+				<notify1 content="得到猕猴桃种子"/>
+				<additem value="1" id="1845"/>
+				<var type="Set" name="state" value="-2" id="21253"/>
+				<var type="Set" name="state" value="-3" id="21252"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1599"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到猕猴桃种子"/>
+				<gold type="Sub" value="1600"/>
+				<additem value="1" id="1845"/>
+				<var type="Set" name="state" value="-2" id="21253"/>
+				<var type="Set" name="state" value="-3" id="21252"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31255">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21254"/>
+				<var type="Differ" name="state" value="-1" id="21255"/>
+				<var type="Differ" name="state" value="-3" id="21255"/>
+				<var type="Differ" name="state" value="1" id="21255"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要钢锄啦，那个嘛，要么付钱，要么帮我去弄3个天空梨来，听说异域商人那里有的买哦。怎么样？你选吧。\n\n天空梨经验奖励： 30600")
+this:AddTaskCmdItem("3个天空梨换取{10001}", "v531", 21255, 3)
+this:AddTaskCmdItem("购买钢锄 - 14两{10001}", "v531", 21255, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21254"/>
+				<var type="Equal" name="state" value="1" id="21255"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    3个天空梨弄来了么？还是准备买购买了？")
+this:AddTaskCmdItem("3个天空梨换取{10001}", "v531", 21255, 3)
+this:AddTaskCmdItem("购买钢锄 - 14两{10001}", "v531", 21255, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="3" id="1865"/>
+				<var type="Equal" name="state" value="1" id="21255"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好甜的梨啊，果然名不虚传。\n\n天空梨经验奖励： 30600")
+this:AddTaskCmdItem("收下钢锄{10002}", "v531", 21255, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="3" id="1865"/>
+				<var type="Equal" name="state" value="1" id="21253"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21255" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21254"/>
+				<var type="Differ" name="state" value="-1" id="21255"/>
+				<var type="Differ" name="state" value="-3" id="21255"/>
+				<var type="Differ" name="state" value="1" id="21255"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找3个天空梨"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="3" id="1865"/>
+				<var type="Equal" name="state" value="1" id="21255"/>
+			</conditions>
+			<actions>
+				<exp value="30600"/>
+				<notify1 content="经验+30600"/>
+				<notify1 content="得到钢锄"/>
+				<removeitem value="3" id="1865" log="换钢锄(21255:1854)-删除3个天空梨(1865)"/>
+				<additem value="1" id="1854"/>
+				<var type="Set" name="state" value="-2" id="21255"/>
+				<var type="Set" name="state" value="-3" id="21254"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1399"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到钢锄"/>
+				<gold type="Sub" value="1400"/>
+				<additem value="1" id="1854"/>
+				<var type="Set" name="state" value="-2" id="21255"/>
+				<var type="Set" name="state" value="-3" id="21254"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31256">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21256"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21256, 11)
+this:AddTaskCmdItem("付钱请人运-30两{10002}", "v531", 21256, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21256" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21256"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21256"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+				<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="2999"/>
+				<var type="Equal" name="state" value="1" id="21256"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="3000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21256"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<!--买啄木鸟-->
+	<quest id="31258">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21258"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买啄木鸟么？那可很贵哦，32两一个。")
+this:AddTaskCmdItem("买下啄木鸟-32两{10002}", "v531", 21258, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21258"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21258" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="3199"/>
+				<var type="Equal" name="state" value="1" id="21258"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="3200"/>
+				<notify1 content="得到啄木鸟，交给种植童子"/>
+				<additem value="1" id="1862"/>
+				<var type="Set" name="state" value="-3" id="21258"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找龙鳞果-->
+	<quest id="31262">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="86"/>
+				<var type="Equal" name="state" value="1" id="21262"/>
+				<var type="Differ" name="state" value="-1" id="21263"/>
+				<var type="Differ" name="state" value="-3" id="21263"/>
+				<var type="Differ" name="state" value="1" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    龙鳞果种子16两一个，要不帮我消灭85级怪物50个。\n\n杀怪经验奖励： 54700")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21263, 3)
+this:AddTaskCmdItem("买龙鳞果种子-16两{10001}", "v531", 21263, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="85"/>
+				<var type="Equal" name="state" value="1" id="21262"/>
+				<var type="Differ" name="state" value="-1" id="21263"/>
+				<var type="Differ" name="state" value="-3" id="21263"/>
+				<var type="Differ" name="state" value="1" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    龙鳞果种子16两一个，要不帮我消灭90级怪物50个。\n\n杀怪经验奖励： 64400")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21263, 5)
+this:AddTaskCmdItem("买龙鳞果种子-16两{10001}", "v531", 21263, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="85" id="21263"/>
+				<var type="Equal" name="state" value="-3" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21263, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="90" id="21263"/>
+				<var type="Equal" name="state" value="-3" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21263, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21263" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21262"/>
+				<var type="Differ" name="state" value="-1" id="21263"/>
+				<var type="Differ" name="state" value="-3" id="21263"/>
+				<var type="Differ" name="state" value="1" id="21263"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="85"/>
+				<var type="Set" name="exp" value="54700"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀85级怪物50只"/>
+				<notify content="任务：击杀85级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21262"/>
+				<var type="Differ" name="state" value="-1" id="21263"/>
+				<var type="Differ" name="state" value="-3" id="21263"/>
+				<var type="Differ" name="state" value="1" id="21263"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="90"/>
+				<var type="Set" name="exp" value="64400"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀90级怪物50只"/>
+				<notify content="任务：击杀90级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21263"/>
+			</conditions>
+			<actions>
+				<exp value="54700"/>
+				<notify1 content="经验+54700"/>
+				<notify1 content="得到龙鳞果种子"/>
+				<additem value="1" id="1846"/>
+				<var type="Set" name="state" value="-2" id="21263"/>
+				<var type="Set" name="state" value="-3" id="21262"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21263"/>
+			</conditions>
+			<actions>
+				<exp value="64400"/>
+				<notify1 content="经验+64400"/>
+				<notify1 content="得到龙鳞果种子"/>
+				<additem value="1" id="1846"/>
+				<var type="Set" name="state" value="-2" id="21263"/>
+				<var type="Set" name="state" value="-3" id="21262"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1599"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到龙鳞果种子"/>
+				<gold type="Sub" value="1600"/>
+				<additem value="1" id="1846"/>
+				<var type="Set" name="state" value="-2" id="21263"/>
+				<var type="Set" name="state" value="-3" id="21262"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31265">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21264"/>
+				<var type="Differ" name="state" value="-1" id="21265"/>
+				<var type="Differ" name="state" value="-3" id="21265"/>
+				<var type="Differ" name="state" value="1" id="21265"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要钢锄啦，那个嘛，要么付钱，要么帮我去弄3个天空梨来，听说异域商人那里有的买哦。怎么样？你选吧。\n\n天空梨经验奖励： 30600")
+this:AddTaskCmdItem("3个天空梨换取{10001}", "v531", 21265, 3)
+this:AddTaskCmdItem("购买钢锄 - 14两{10001}", "v531", 21265, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21264"/>
+				<var type="Equal" name="state" value="1" id="21265"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    3个天空梨弄来了么？还是准备购买钢锄了？")
+this:AddTaskCmdItem("3个天空梨换取{10001}", "v531", 21265, 3)
+this:AddTaskCmdItem("购买钢锄 - 14两{10001}", "v531", 21265, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="3" id="1865"/>
+				<var type="Equal" name="state" value="1" id="21265"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好甜的梨啊，果然名不虚传。\n\n天空梨经验奖励： 30600")
+this:AddTaskCmdItem("收下钢锄{10002}", "v531", 21265, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="3" id="1865"/>
+				<var type="Equal" name="state" value="1" id="21263"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21265" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21264"/>
+				<var type="Differ" name="state" value="-1" id="21265"/>
+				<var type="Differ" name="state" value="-3" id="21265"/>
+				<var type="Differ" name="state" value="1" id="21265"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找3个天空梨"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="3" id="1865"/>
+				<var type="Equal" name="state" value="1" id="21265"/>
+			</conditions>
+			<actions>
+				<exp value="30600"/>
+				<notify1 content="经验+30600"/>
+				<notify1 content="得到钢锄"/>
+				<removeitem value="3" id="1865" log="换钢锄(21265)-删除3个天空梨(1865)"/>
+				<additem value="1" id="1854"/>
+				<var type="Set" name="state" value="-2" id="21265"/>
+				<var type="Set" name="state" value="-3" id="21264"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1399"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到钢锄"/>
+				<gold type="Sub" value="1400"/>
+				<additem value="1" id="1854"/>
+				<var type="Set" name="state" value="-2" id="21265"/>
+				<var type="Set" name="state" value="-3" id="21264"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31266">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21266"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21266, 11)
+this:AddTaskCmdItem("付钱请人运-40两{10002}", "v531", 21266, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21266" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21266"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21266"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+				<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="3999"/>
+				<var type="Equal" name="state" value="1" id="21266"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21266"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<!--买啄木鸟-->
+	<quest id="31268">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21268"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买啄木鸟么？那可很贵哦，32两一个。")
+this:AddTaskCmdItem("买下啄木鸟-32两{10002}", "v531", 21268, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21268"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21268" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="3199"/>
+				<var type="Equal" name="state" value="1" id="21268"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="3200"/>
+				<notify1 content="得到啄木鸟，交给种植童子"/>
+				<additem value="1" id="1862"/>
+				<var type="Set" name="state" value="-3" id="21268"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找人参-->
+	<quest id="31272">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="96"/>
+				<var type="Equal" name="state" value="1" id="21272"/>
+				<var type="Differ" name="state" value="-1" id="21273"/>
+				<var type="Differ" name="state" value="-3" id="21273"/>
+				<var type="Differ" name="state" value="1" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    人参种子20两一个，要不帮我消灭95级怪物50个。\n\n杀怪经验奖励： 64200")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21273, 3)
+this:AddTaskCmdItem("买人参种子-20两{10001}", "v531", 21273, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="95"/>
+				<var type="Equal" name="state" value="1" id="21272"/>
+				<var type="Differ" name="state" value="-1" id="21273"/>
+				<var type="Differ" name="state" value="-3" id="21273"/>
+				<var type="Differ" name="state" value="1" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    人参种子20两一个，要不帮我消灭100级怪物50个。\n\n杀怪经验奖励： 74500")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21273, 5)
+this:AddTaskCmdItem("买人参种子-20两{10001}", "v531", 21273, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="95" id="21273"/>
+				<var type="Equal" name="state" value="-3" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21273, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="100" id="21273"/>
+				<var type="Equal" name="state" value="-3" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21273, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21273" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21272"/>
+				<var type="Differ" name="state" value="-1" id="21273"/>
+				<var type="Differ" name="state" value="-3" id="21273"/>
+				<var type="Differ" name="state" value="1" id="21273"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="95"/>
+				<var type="Set" name="exp" value="64200"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀95级怪物50只"/>
+				<notify content="任务：击杀95级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21272"/>
+				<var type="Differ" name="state" value="-1" id="21273"/>
+				<var type="Differ" name="state" value="-3" id="21273"/>
+				<var type="Differ" name="state" value="1" id="21273"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="100"/>
+				<var type="Set" name="exp" value="74500"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀100级怪物50只"/>
+				<notify content="任务：击杀100级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21273"/>
+			</conditions>
+			<actions>
+				<exp value="64200"/>
+				<notify1 content="经验+64200"/>
+				<notify1 content="得到人参种子"/>
+				<additem value="1" id="1847"/>
+				<var type="Set" name="state" value="-2" id="21273"/>
+				<var type="Set" name="state" value="-3" id="21272"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21273"/>
+			</conditions>
+			<actions>
+				<exp value="74500"/>
+				<notify1 content="经验+74500"/>
+				<notify1 content="得到人参种子"/>
+				<additem value="1" id="1847"/>
+				<var type="Set" name="state" value="-2" id="21273"/>
+				<var type="Set" name="state" value="-3" id="21272"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到人参种子"/>
+				<gold type="Sub" value="2000"/>
+				<additem value="1" id="1847"/>
+				<var type="Set" name="state" value="-2" id="21273"/>
+				<var type="Set" name="state" value="-3" id="21272"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31275">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21274"/>
+				<var type="Differ" name="state" value="-1" id="21275"/>
+				<var type="Differ" name="state" value="-3" id="21275"/>
+				<var type="Differ" name="state" value="1" id="21275"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要仙锄啦，那个嘛，要么付钱，要么帮我去弄3个蟠桃来，听说异域商人那里有的买哦。怎么样？你选吧。\n\n蟠桃经验奖励： 50600")
+this:AddTaskCmdItem("3个蟠桃换取{10001}", "v531", 21275, 3)
+this:AddTaskCmdItem("购买仙锄 - 20两{10001}", "v531", 21275, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21274"/>
+				<var type="Equal" name="state" value="1" id="21275"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    3个蟠桃弄来了么？还是准备购买仙锄了？")
+this:AddTaskCmdItem("3个蟠桃换取{10001}", "v531", 21275, 3)
+this:AddTaskCmdItem("购买仙锄 - 20两{10001}", "v531", 21275, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="3" id="1866"/>
+				<var type="Equal" name="state" value="1" id="21275"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好甜的桃啊，果然名不虚传。\n\n蟠桃经验奖励： 50600")
+this:AddTaskCmdItem("收下仙锄{10002}", "v531", 21275, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="3" id="1866"/>
+				<var type="Equal" name="state" value="1" id="21273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21275" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21274"/>
+				<var type="Differ" name="state" value="-1" id="21275"/>
+				<var type="Differ" name="state" value="-3" id="21275"/>
+				<var type="Differ" name="state" value="1" id="21275"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找3个蟠桃"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="3" id="1866"/>
+				<var type="Equal" name="state" value="1" id="21275"/>
+			</conditions>
+			<actions>
+				<exp value="50600"/>
+				<notify1 content="经验+50600"/>
+				<notify1 content="得到仙锄"/>
+				<removeitem value="3" id="1866" log="换仙锄(21275:1855)-删除3个蟠桃(1866)"/>
+				<additem value="1" id="1855"/>
+				<var type="Set" name="state" value="-2" id="21275"/>
+				<var type="Set" name="state" value="-3" id="21274"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1999"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到仙锄"/>
+				<gold type="Sub" value="2000"/>
+				<additem value="1" id="1855"/>
+				<var type="Set" name="state" value="-2" id="21275"/>
+				<var type="Set" name="state" value="-3" id="21274"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31276">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21276"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21276, 11)
+this:AddTaskCmdItem("付钱请人运-50两{10002}", "v531", 21276, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21276" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21276"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21276"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="4999"/>
+				<var type="Equal" name="state" value="1" id="21276"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="5000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21276"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--买防虫水-->
+	<quest id="31278">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21278"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买防虫水么？那可很贵哦，40两一个。")
+this:AddTaskCmdItem("买下防虫水-40两{10002}", "v531", 21278, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21278"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21278" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="3999"/>
+				<var type="Equal" name="state" value="1" id="21278"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<notify1 content="得到防虫水，交给种植童子"/>
+				<additem value="1" id="1863"/>
+				<var type="Set" name="state" value="-3" id="21278"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找灵芝-->
+	<quest id="31282">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="1" id="21282"/>
+				<var type="Differ" name="state" value="-1" id="21283"/>
+				<var type="Differ" name="state" value="-3" id="21283"/>
+				<var type="Differ" name="state" value="1" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    灵芝种子25两一个，要不帮我消灭105级怪物50个。\n\n杀怪经验奖励： 85500")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21283, 3)
+this:AddTaskCmdItem("买灵芝种子-25两{10001}", "v531", 21283, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="105"/>
+				<var type="Equal" name="state" value="1" id="21282"/>
+				<var type="Differ" name="state" value="-1" id="21283"/>
+				<var type="Differ" name="state" value="-3" id="21283"/>
+				<var type="Differ" name="state" value="1" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    灵芝种子25两一个，要不帮我消灭110级怪物50个。\n\n杀怪经验奖励： 95500")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21283, 5)
+this:AddTaskCmdItem("买灵芝种子-25两{10001}", "v531", 21283, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="105" id="21283"/>
+				<var type="Equal" name="state" value="-3" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21283, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="110" id="21283"/>
+				<var type="Equal" name="state" value="-3" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21283, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+				<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21283" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21282"/>
+				<var type="Differ" name="state" value="-1" id="21283"/>
+				<var type="Differ" name="state" value="-3" id="21283"/>
+				<var type="Differ" name="state" value="1" id="21283"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="105"/>
+				<var type="Set" name="exp" value="85500"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀105级怪物50只"/>
+				<notify content="任务：击杀105级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21282"/>
+				<var type="Differ" name="state" value="-1" id="21283"/>
+				<var type="Differ" name="state" value="-3" id="21283"/>
+				<var type="Differ" name="state" value="1" id="21283"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="110"/>
+				<var type="Set" name="exp" value="95500"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀110级怪物50只"/>
+				<notify content="任务：击杀110级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21283"/>
+			</conditions>
+			<actions>
+				<exp value="85500"/>
+				<notify1 content="经验+85500"/>
+				<notify1 content="得到灵芝种子"/>
+				<additem value="1" id="1848"/>
+				<var type="Set" name="state" value="-2" id="21283"/>
+				<var type="Set" name="state" value="-3" id="21282"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21283"/>
+			</conditions>
+			<actions>
+				<exp value="95500"/>
+				<notify1 content="经验+95500"/>
+				<notify1 content="得到灵芝种子"/>
+				<additem value="1" id="1848"/>
+				<var type="Set" name="state" value="-2" id="21283"/>
+				<var type="Set" name="state" value="-3" id="21282"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="2499"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到灵芝种子"/>
+				<gold type="Sub" value="2500"/>
+				<additem value="1" id="1848"/>
+				<var type="Set" name="state" value="-2" id="21283"/>
+				<var type="Set" name="state" value="-3" id="21282"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31285">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21284"/>
+				<var type="Differ" name="state" value="-1" id="21285"/>
+				<var type="Differ" name="state" value="-3" id="21285"/>
+				<var type="Differ" name="state" value="1" id="21285"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要仙锄啦，那个嘛，要么付钱，要么帮我去弄4个蓬莱荔枝来，听说异域商人那里有的买哦。怎么样？你选吧。\n\n蓬莱荔枝经验奖励： 57600")
+this:AddTaskCmdItem("4个蓬莱荔枝换取{10001}", "v531", 21285, 3)
+this:AddTaskCmdItem("购买仙锄 - 25两{10001}", "v531", 21285, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21284"/>
+				<var type="Equal" name="state" value="1" id="21285"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    4个蓬莱荔枝弄来了么？还是准备购买仙锄了？")
+this:AddTaskCmdItem("4个蓬莱荔枝换取{10001}", "v531", 21285, 3)
+this:AddTaskCmdItem("购买仙锄 - 25两{10001}", "v531", 21285, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1867"/>
+				<var type="Equal" name="state" value="1" id="21285"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好甜的桃啊，果然名不虚传。\n\n蓬莱荔枝经验奖励： 57600")
+this:AddTaskCmdItem("收下仙锄{10002}", "v531", 21285, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="4" id="1867"/>
+				<var type="Equal" name="state" value="1" id="21283"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21285" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21284"/>
+				<var type="Differ" name="state" value="-1" id="21285"/>
+				<var type="Differ" name="state" value="-3" id="21285"/>
+				<var type="Differ" name="state" value="1" id="21285"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找4个蓬莱荔枝"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1867"/>
+				<var type="Equal" name="state" value="1" id="21285"/>
+			</conditions>
+			<actions>
+				<exp value="57600"/>
+				<notify1 content="经验+57600"/>
+				<notify1 content="得到仙锄"/>
+				<removeitem value="4" id="1867" log="换仙锄(21285:1855)-删除4个蓬莱荔枝(1867)"/>
+				<additem value="1" id="1855"/>
+				<var type="Set" name="state" value="-2" id="21285"/>
+				<var type="Set" name="state" value="-3" id="21284"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="2499"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到仙锄"/>
+				<gold type="Sub" value="2500"/>
+				<additem value="1" id="1855"/>
+				<var type="Set" name="state" value="-2" id="21285"/>
+				<var type="Set" name="state" value="-3" id="21284"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31286">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21286"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21286, 11)
+this:AddTaskCmdItem("付钱请人运-60两{10002}", "v531", 21286, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21286" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21286"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21286"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+			<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="5999"/>
+				<var type="Equal" name="state" value="1" id="21286"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="6000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21286"/>
+			</actions>
+		</embranchment>	
+		
+	</quest>
+	<!--买防虫水-->
+	<quest id="31288">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21288"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买防虫水么？那可很贵哦，40两一个。")
+this:AddTaskCmdItem("买下防虫水-40两{10002}", "v531", 21288, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21288"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21288" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="3999"/>
+				<var type="Equal" name="state" value="1" id="21288"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<notify1 content="得到防虫水，交给种植童子"/>
+				<additem value="1" id="1863"/>
+				<var type="Set" name="state" value="-3" id="21288"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找雪莲-->
+	<quest id="31292">
+		<embranchment id="5">
+			<conditions>
+				<level type="Less" value="116"/>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    雪莲种子30两一个，要不帮我消灭115级怪物50个。")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21293, 3)
+this:AddTaskCmdItem("买雪莲种子-30两{10001}", "v531", 21293, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<level type="Great" value="115"/>
+				<level type="Less" value="120"/>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    雪莲种子30两一个，要不帮我消灭120级怪物50个。")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21293, 5)
+this:AddTaskCmdItem("买雪莲种子-30两{10001}", "v531", 21293, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    雪莲种子30两一个，要不帮我消灭130级怪物50个。\n\n经验奖励： 158000")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21293, 15)
+this:AddTaskCmdItem("买雪莲种子-30两{10001}", "v531", 21293, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    雪莲种子30两一个，要不帮我消灭140级怪物50个。\n\n经验奖励： 208000")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21293, 17)
+this:AddTaskCmdItem("买雪莲种子-30两{10001}", "v531", 21293, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<level type="Great" value="139"/>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    雪莲种子30两一个，要不帮我消灭150级怪物50个。\n\n经验奖励： 288000")
+this:AddTaskCmdItem("杀怪换取{10001}", "v531", 21293, 19)
+this:AddTaskCmdItem("买雪莲种子-30两{10001}", "v531", 21293, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="115" id="21293"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21293, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+
+				<var type="Equal" name="level" value="120" id="21293"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21293, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="level" value="130" id="21293"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21293, 25)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<!--	<embranchment id="25">
+			<conditions>
+				<var type="Equal" name="level" value="130" id="21293"/>	
+					<var type="Equal" name="state" value="-3" id="21293"/> 
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21293, 25)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment> -->
+		<embranchment id="26">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="level" value="140" id="21293"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21293, 26)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="level" value="150" id="21293"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，看来你的功夫不错嘛，那么一会就干完了，好，按约定把种子给你吧。")
+this:AddTaskCmdItem("收下种子{10002}", "v531", 21293, 27)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="221">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你还没有消灭完怪物。等你消灭完怪物后再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<!--	<embranchment id="599">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>  -->
+	</quest>
+	<quest id="21293" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="115"/>
+				<var type="Set" name="exp" value="99300"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀115级怪物50只"/>
+				<notify content="任务：击杀115级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="120"/>
+				<var type="Set" name="exp" value="108000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀120级怪物50只"/>
+				<notify content="任务：击杀120级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="130"/>
+				<var type="Set" name="exp" value="158000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀130级怪物50只"/>
+				<notify content="任务：击杀130级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="140"/>
+				<var type="Set" name="exp" value="208000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀140级怪物50只"/>
+				<notify content="任务：击杀140级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21292"/>
+				<var type="Differ" name="state" value="-1" id="21293"/>
+				<var type="Differ" name="state" value="-3" id="21293"/>
+				<var type="Differ" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="level" value="150"/>
+				<var type="Set" name="exp" value="288000"/>
+				<refresh name="exp"/>
+				<refresh name="level"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去击杀150级怪物50只"/>
+				<notify content="任务：击杀150级怪物50只"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<exp value="99300"/>
+				<notify1 content="经验+99300"/>
+				<notify1 content="得到雪莲种子"/>
+				<additem value="1" id="1849"/>
+				<var type="Set" name="state" value="-2" id="21293"/>
+				<var type="Set" name="state" value="-3" id="21292"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<exp value="108000"/>
+				<notify1 content="经验+108000"/>
+				<notify1 content="得到雪莲种子"/>
+				<additem value="1" id="1849"/>
+				<var type="Set" name="state" value="-2" id="21293"/>
+				<var type="Set" name="state" value="-3" id="21292"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<exp value="158000"/>
+				<notify1 content="经验+158000"/>
+				<notify1 content="得到雪莲种子"/>
+				<additem value="1" id="1849"/>
+				<var type="Set" name="state" value="-2" id="21293"/>
+				<var type="Set" name="state" value="-3" id="21292"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<exp value="208000"/>
+				<notify1 content="经验+208000"/>
+				<notify1 content="得到雪莲种子"/>
+				<additem value="1" id="1849"/>
+				<var type="Set" name="state" value="-2" id="21293"/>
+				<var type="Set" name="state" value="-3" id="21292"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="21293"/>
+			</conditions>
+			<actions>
+				<exp value="288000"/>
+				<notify1 content="经验+288000"/>
+				<notify1 content="得到雪莲种子"/>
+				<additem value="1" id="1849"/>
+				<var type="Set" name="state" value="-2" id="21293"/>
+				<var type="Set" name="state" value="-3" id="21292"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="2999"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到雪莲种子"/>
+				<gold type="Sub" value="3000"/>
+				<additem value="1" id="1849"/>
+				<var type="Set" name="state" value="-2" id="21293"/>
+				<var type="Set" name="state" value="-3" id="21292"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--找木锄-->
+	<quest id="31295">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21294"/>
+				<var type="Differ" name="state" value="-1" id="21295"/>
+				<var type="Differ" name="state" value="-3" id="21295"/>
+				<var type="Differ" name="state" value="1" id="21295"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    什么？你又想要仙锄啦，那个嘛，要么付钱，要么帮我去弄4个青龙桂圆来，听说异域商人那里有的买哦。怎么样？你选吧。\n\n青龙桂圆经验奖励： 57600")
+this:AddTaskCmdItem("4个青龙桂圆换取{10001}", "v531", 21295, 3)
+this:AddTaskCmdItem("购买仙锄 - 30两{10001}", "v531", 21295, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21294"/>
+				<var type="Equal" name="state" value="1" id="21295"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    4个青龙桂圆弄来了么？还是准备购买仙锄了？")
+this:AddTaskCmdItem("4个青龙桂圆换取{10001}", "v531", 21295, 3)
+this:AddTaskCmdItem("购买仙锄 - 30两{10001}", "v531", 21295, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1868"/>
+				<var type="Equal" name="state" value="1" id="21295"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    呵呵，好甜的桂圆啊，果然名不虚传。\n\n青龙桂圆经验奖励： 57600")
+this:AddTaskCmdItem("收下仙锄{10002}", "v531", 21295, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<item value="4" id="1868"/>
+				<var type="Equal" name="state" value="1" id="21293"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21295" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21294"/>
+				<var type="Differ" name="state" value="-1" id="21295"/>
+				<var type="Differ" name="state" value="-3" id="21295"/>
+				<var type="Differ" name="state" value="1" id="21295"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去找4个青龙桂圆"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<item value="4" id="1868"/>
+				<var type="Equal" name="state" value="1" id="21295"/>
+			</conditions>
+			<actions>
+				<exp value="57600"/>
+				<notify1 content="经验+57600"/>
+				<notify1 content="得到仙锄"/>
+				<removeitem value="4" id="1868" log="换仙锄(21295:1855)-删除4个青龙桂圆(1868)"/>
+				<additem value="1" id="1855"/>
+				<var type="Set" name="state" value="-2" id="21295"/>
+				<var type="Set" name="state" value="-3" id="21294"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="2999"/>
+			</conditions>
+			<actions>
+				<notify1 content="得到仙锄"/>
+				<gold type="Sub" value="3000"/>
+				<additem value="1" id="1855"/>
+				<var type="Set" name="state" value="-2" id="21295"/>
+				<var type="Set" name="state" value="-3" id="21294"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--运肥料-->
+	<quest id="31296">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21296"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    总算有人来来运肥啦，真是太好了，快点运走吧。")
+this:AddTaskCmdItem("开始运肥{10002}", "v531", 21296, 11)
+this:AddTaskCmdItem("付钱请人运-60两{10002}", "v531", 21296, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21296" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21296"/>
+			</conditions>
+			<actions>
+				<notify1 content="把肥料车运到种植童子处"/>
+				<var type="Set" name="state" value="2" id="21296"/>
+				<addguard id="54006" map="凤凰城" ltpos="438,327" rbpos="443,335" gold="0" exp="0" dest="187,590"/>
+			</actions>
+		</embranchment>
+		
+			<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="5999"/>
+				<var type="Equal" name="state" value="1" id="21296"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="6000"/>
+				<notify1 content="回去找种植童子"/>
+				<var type="Set" name="state" value="-3" id="21296"/>
+			</actions>
+		</embranchment>	
+		
+	</quest>
+	<!--买防虫水-->
+	<quest id="31298">
+		<embranchment id="9">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="1" id="21298"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    要买防虫水么？那可很贵哦，60两一个。")
+this:AddTaskCmdItem("买下防虫水-60两{10002}", "v531", 21298, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21298"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你身上包裹满了，清空了再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21298" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="5999"/>
+				<var type="Equal" name="state" value="1" id="21298"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="6000"/>
+				<notify1 content="得到防虫水，交给种植童子"/>
+				<additem value="1" id="1863"/>
+				<var type="Set" name="state" value="-3" id="21298"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

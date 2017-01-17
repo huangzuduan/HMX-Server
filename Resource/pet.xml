@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<root>
+	<item id="10001" name="小火龙" mother_id="100" zizhi="1" attribute="1" feature="1" zone="1" personality="1" evolution_level="16" description ="会喷火0" upgrade_goods="110040001"/>
+	<item id="10002" name="火恐龙" mother_id="100" zizhi="1" attribute="1" feature="1" zone="1" personality="1" evolution_level="16" description ="会喷火1" upgrade_goods="110040002"/>
+	<item id="10003" name="喷火龙" mother_id="100" zizhi="1" attribute="1" feature="1" zone="1" personality="1" evolution_level="16" description ="会喷火2" upgrade_goods="0"/>
+	<item id="10011" name="皮卡丘" mother_id="101" zizhi="1" attribute="1" feature="1" zone="1" personality="1" evolution_level="16" description ="变化1" upgrade_goods="110040002"/>
+	<item id="10012" name="雷丘" mother_id="101" zizhi="1" attribute="1" feature="1" zone="1" personality="1" evolution_level="16" description ="变化2" upgrade_goods="0"/>
+</root>
+

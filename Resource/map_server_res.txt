@@ -1,0 +1,8 @@
+服务器输出文件名	config_map_server_res.xml	根名称	ability
+客户端输出文件名		项名称	map_server
+地图ID	场景服ID		
+2	2		
+map_id	server_id		
+10101	5001		
+10103	5001		
+10110	5001		

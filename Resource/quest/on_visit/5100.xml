@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5100" name="王城-传送师(831,412)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960103">
+		<embranchment id="9">
+			<conditions>
+				<selfcountry value="1"/>
+                                <gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去哪里啊，我可以带你去，但我可不能保证你能活着回来哦。");
+this:AddTaskCmdItem("去白骨洞-10文(0)", "v5100", 160103, 11)
+this:AddTaskCmdItem("去精怪洞穴-10文(0)", "v5100", 160103, 12)
+this:AddTaskCmdItem("东郊驿站-5两(0)", "v5100", 160103, 13)
+this:AddTaskCmdItem("南郊驿站-5两(0)", "v5100", 160103, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="10">
+			<conditions>
+				<selfcountry value="1"/>
+                                <gold type="Great" value="9"/>
+                                <gold type="Less" value="500"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去哪里啊，我可以带你去，但我可不能保证你能活着回来哦。");
+this:AddTaskCmdItem("去白骨洞-10文(0)", "v5100", 160103, 11)
+this:AddTaskCmdItem("去精怪洞穴-10文(0)", "v5100", 160103, 12)
+this:AddDialogItem("东郊驿站-5两(0)", "Dialog98")
+this:AddDialogItem("南郊驿站-5两(0)", "Dialog98")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<selfcountry value="1"/>
+                                <gold type="Less" value="10"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去哪里啊，我可以带你去，但我可不能保证你能活着回来哦。");
+this:AddDialogItem("去白骨洞-10文(0)", "Dialog98")
+this:AddDialogItem("去精怪洞穴-10文(0)", "Dialog98")
+this:AddDialogItem("东郊驿站-5两(0)", "Dialog98")
+this:AddDialogItem("南郊驿站-5两(0)", "Dialog98")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+
+
+		<embranchment id="19">
+			<conditions>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去哪里啊，我可以带你去，但我可不能保证你能活着回来哦。");
+this:AddTaskCmdItem("去白骨洞-40两(0)", "v5100", 160103, 111)
+this:AddTaskCmdItem("去精怪洞穴-40两(0)", "v5100", 160103, 112)
+this:AddTaskCmdItem("东郊驿站-40两(0)", "v5100", 160103, 113)
+this:AddTaskCmdItem("南郊驿站-40两(0)", "v5100", 160103, 114)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="119">
+			<conditions>
+				<selfcountry value="0"/>
+				<gold type="Less" value="4000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去哪里啊，我可以带你去，但我可不能保证你能活着回来哦。");
+this:AddDialogItem("去白骨洞-40两(0)", "Dialog98")
+this:AddDialogItem("去精怪洞穴-40两(0)", "Dialog98")
+this:AddDialogItem("东郊驿站-40两(0)", "Dialog98")
+this:AddDialogItem("南郊驿站-40两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="9"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="10"/>
+				<goto name="王城" pos="837,104"/>
+				<notify content="你被带到了白骨洞口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="9"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="10"/>
+				<goto name="王城" pos="924,650"/>
+				<notify content="你被带到了精怪洞穴"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="500"/>
+				<goto name="王城" pos="932,44"/>
+				<notify content="你被马车带到了东郊驿站，花了5两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="500"/>
+				<goto name="王城" pos="913,910"/>
+				<notify content="你被马车带到了南郊驿站，花了5两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="111" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="王城" pos="837,104"/>
+				<notify content="你被带到了白骨洞口"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="112" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="王城" pos="924,650"/>
+				<notify content="你被带到了精怪洞穴"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="113" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="王城" pos="932,44"/>
+				<notify content="你被马车带到了东郊驿站，花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="114" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="王城" pos="913,910"/>
+				<notify content="你被马车带到了南郊驿站，花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

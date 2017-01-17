@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56057" name="凤凰城-李员外(429,450)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30308">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="14"/>
+				<var type="Differ" name="state" value="-3" id="20308"/>
+				<var type="Differ" name="state" value="-1" id="20308"/>
+				<var type="Differ" name="state" value="1" id="20308"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：行踪成谜(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;行踪成谜\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    李员外的儿子不见了，去找衙役(276,303)报案 \n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，怎么会发生这种事情，我儿子居然不见了。不知道他走到那里去了？你能不能帮我向衙役报案，我再去找找看儿子。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1100&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的，举手之劳{10001}", "v56057", 20308, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20308" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="14"/>
+				<var type="Differ" name="state" value="-3" id="20308"/>
+				<var type="Differ" name="state" value="-1" id="20308"/>
+				<var type="Differ" name="state" value="1" id="20308"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找衙役(276,303)报案"/>
+				<notify1 content="衙役(276,303)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30318">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="18"/>
+				<var type="Equal" name="state" value="-1" id="20308"/>
+				<var type="Differ" name="state" value="-1" id="20318"/>
+				<var type="Differ" name="state" value="1" id="20318"/>
+				<var type="Differ" name="state" value="-3" id="20318"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：失子之痛(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;失子之痛\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败40个海贼，救出李员外的儿子。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，衙役已经查出我儿子被海贼绑架了。请你救救我儿子好吗？唉，我的儿子现在生死不明，你一定要救救他呀！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你吧{10001}", "v56057", 20318, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20318"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：失子之痛(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;失子之痛\n \n&lt;/n&gt;&lt;n&gt;    啊，信上说我儿子被转移到了百兽谷，你能不能帮我去救他！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧{10002}", "v56057", 20318, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20318" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="18"/>
+				<var type="Equal" name="state" value="-1" id="20308"/>
+				<var type="Differ" name="state" value="-1" id="20318"/>
+				<var type="Differ" name="state" value="1" id="20318"/>
+				<var type="Differ" name="state" value="-3" id="20318"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="打败40个海贼"/>
+				<notify1 content="去打败40个海贼"/>
+				<notify content="任务：去打败40个海贼救李员外的儿子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20318"/>
+			</conditions>
+			<actions>
+				<exp value="7200"/>
+				<notify1 content="经验+7200"/>
+				<notify content="恭喜你完成了“失子之痛”任务"/>
+				<var type="Set" name="state" value="-1" id="20318"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30319">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20318"/>
+				<var type="Differ" name="state" value="-1" id="20319"/>
+				<var type="Differ" name="state" value="1" id="20319"/>
+				<var type="Differ" name="state" value="-3" id="20319"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：营救(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;营救\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去百兽谷的牢笼(231,233)救出李员外的儿子，送回李员外身边。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    怎么办，他们把我儿子锁在百兽谷的牢笼里！我儿子陷入险境，我心急如焚！请你救救我的儿子吧！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去救他{10001}", "v56057", 20319, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20319"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：营救(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;营救\n \n&lt;/n&gt;&lt;n&gt;   啊，儿子！你吃苦了啊，儿子！还不快谢谢恩公！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不必客气{10002}", "v56057", 20319, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20319" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20318"/>
+				<var type="Differ" name="state" value="-1" id="20319"/>
+				<var type="Differ" name="state" value="1" id="20319"/>
+				<var type="Differ" name="state" value="-3" id="20319"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="救出李员外的儿子"/>
+				<notify1 content="去救出李员外的儿子"/>
+				<notify content="任务：去百兽谷的牢笼(231,233)救出李员外的儿子，送回李员外身边。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20319"/>
+			</conditions>
+			<actions>
+				<exp value="1500"/>
+				<notify1 content="经验+1500"/>
+				<notify content="恭喜你完成了“营救”任务"/>
+				<var type="Set" name="state" value="-1" id="20319"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

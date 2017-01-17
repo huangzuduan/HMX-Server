@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="201" name="杂货商">
+	<!--new means new quest, default is quest on user-->
+	<quest id="900011">
+		<embranchment id="1">
+			<conditions>
+				<gold type="Great" value="99"/>
+				<timeouts long="86400" id="100901" less="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您现在可以花一两买一颗荣誉之星，但每天只能购买一次哦，您要现在购买么？？")
+this:AddDialogItem("购买荣誉之星-1两(0)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("    荣誉之星需要1两哦，你确定要买么？")
+this:AddTaskCmdItem("确定购买-1两(0)", "v201", 100901, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<gold type="Great" value="99"/>
+				<timeouts long="86400" id="100901" less="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，荣誉之星现在缺货，请过段时间再来。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<gold type="Less" value="100"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("购买荣誉之星-1两(2)", "Dialog75")
+end
+function Dialog75()
+this:AddTalk("对不起，您钱不够，需要1两。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="100901" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<space size="1"/>
+				<timeouts long="86400" id="100901" less="0"/>
+				<gold type="Great" value="99"/>
+			</conditions>
+			<actions>
+				<notify content="你购买了荣誉之星"/>
+				<notify1 content="获得荣誉之星"/>
+				<notify1 content="金钱-1两"/>
+				<gold type="Sub" value="100"/>
+				<additem value="1" id="820"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

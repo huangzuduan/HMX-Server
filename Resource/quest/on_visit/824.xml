@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="824" name="凤凰城-家族升级使者(273,405)">
+	<!--家族升级-->
+	<quest id="31202">
+		<embranchment id="15">
+			<conditions>
+				<repute type="Great" value="199"/>
+				<familylevel type="Equal" value="1"/>
+				<var type="Differ" name="state" value="-3" id="50011"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看来你们家族已经有一定的声望了，如果你们家族中有人能够击败龙冈山四寨的山贼隐士，我就能想办法帮你们家族升到2级。")
+this:AddTaskCmdItem("接受任务{10001}", "v824", 50011, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="50011"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你真厉害啊，没想到那么快就把山贼隐士消灭了，是否要现在把家族升级呢？")
+this:AddTaskCmdItem("升级家族{10002}", "v824", 50011, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<repute type="Great" value="499"/>
+				<familylevel type="Equal" value="2"/>
+				<var type="Differ" name="state" value="-3" id="50012"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看来你们家族已经有一定的声望了，如果你们家族中有人能够击败东郊的异族王子，我就能想办法帮你们家族升到3级。")
+this:AddTaskCmdItem("接受任务{10001}", "v824", 50012, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<repute type="Great" value="499"/>
+				<var type="Equal" name="state" value="-3" id="50012"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你真厉害啊，没想到那么快就把异族王子消灭了，是否要现在把家族升级呢？")
+this:AddTaskCmdItem("升级家族{10002}", "v824", 50012, 12)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<repute type="Great" value="999"/>
+				<familylevel type="Equal" value="3"/>
+								<var type="Equal" name="state" value="-3" id="50013"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    看来你们家族已经有一定的声望了，如果你们家族中有人能够击败南郊的异族国师，我就能想办法帮你们家族升到4级。")
+this:AddTaskCmdItem("接受任务{10001}", "v824", 50013, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<repute type="Great" value="999"/>
+				<var type="Equal" name="state" value="-3" id="50013"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你真厉害啊，没想到那么快就把异族王子消灭了，是否要现在把家族升级呢？")
+this:AddTaskCmdItem("升级家族{10002}", "v824", 50013, 13)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("家族升级条件(0)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("    当家族的声望到达以下需求时，家族中人可以来接家族升级任务，如果任务完成，家族会自动升级哦。\n\n  2级家族      需要200声望\n  3级家族      需要500声望\n  4级家族    需要1000声望")
+end
+			</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50011" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<repute type="Great" value="199"/>
+				<familylevel type="Equal" value="1"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="去击败龙冈山四寨的山贼隐士"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<repute type="Great" value="199"/>
+				<familylevel type="Equal" value="1"/>
+				<var type="Equal" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<familylevel type="Add" value="1"/>
+				<bulletin content="有族人完成了击败山贼隐士的任务，家族成功升到2级" kind="2"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50012" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<repute type="Great" value="499"/>
+				<familylevel type="Equal" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<bulletin content="击败异族王子能让家族升到3级" kind="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<repute type="Great" value="499"/>
+				<familylevel type="Equal" value="2"/>
+				<var type="Equal" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<familylevel type="Add" value="1"/>
+				<bulletin content="有族人完成了击败异族王子的任务，家族成功升到3级" kind="2"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50013" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<repute type="Great" value="999"/>
+				<familylevel type="Equal" value="3"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<bulletin content="击败异族国师能让家族升到4级" kind="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<repute type="Great" value="999"/>
+				<familylevel type="Equal" value="3"/>
+				<var type="Equal" name="state" value="-3"/>
+			</conditions>
+			<actions>
+				<familylevel type="Add" value="1"/>
+				<bulletin content="有族人完成了击败异族国师的任务，家族成功升到4级" kind="2"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="487" name="凤凰城-韩非(336,419)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10277">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="277"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：乱世之术(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;乱世之术\n \n&lt;/n&gt;&lt;n&gt;  人性本恶，光凭仁德礼教是无法治国平天下的。现今之时，人口众而财物寡，百姓不能不争，礼义难讲。国君若能重赏重罚，依法治国，国家焉能不强？！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("现今治法需要如此严格吗？{10002}", "v487", 277, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="277" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="277"/>
+			</conditions>
+			<actions>
+				<exp value="3000"/>
+				<notify1 content="经验+3000"/>
+				<notify content="恭喜你完成了“乱世之术”任务"/>
+				<var type="Set" name="state" value="-1" id="277"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10278">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="277"/>
+				<var type="Differ" name="state" value="-3" id="278"/>
+				<var type="Differ" name="state" value="-1" id="278"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：风调雨顺(2)", "Dialog50")
+end
+function Dialog50()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;风调雨顺\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找牛二(422,301).\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你问的很好。若想知道，不如亲自去问吧。问问牛二，他既不务农，为何总去庙里进香祈求风调雨顺，难道真是因为仁义道德么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去找他。{10001}", "v487", 278, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="278" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="277"/>
+				<var type="Differ" name="state" value="-3" id="278"/>
+				<var type="Differ" name="state" value="-1" id="278"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找牛二(422,301)"/>
+				<notify1 content="牛二(422,301)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10280">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="280"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：人利我利(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;人利我利\n \n&lt;/n&gt;&lt;n&gt;    如何？可从车夫的行为上认识到什么。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("似乎有点了解，但又不甚明白{10002}", "v487", 280, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="280" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="280"/>
+			</conditions>
+			<actions>
+				<exp value="3200"/>
+				<notify1 content="经验+3200"/>
+				<notify content="恭喜你完成了“人利我利”任务"/>
+				<var type="Set" name="state" value="-1" id="280"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt; 祈死\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去找棺材铺老板(197,562)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你可以再去找棺材店老板，问他为何总在瘟疫过后去庙里还愿。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去问问{10001}", "v487", 281, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10281">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="280"/>
+				<var type="Differ" name="state" value="-3" id="281"/>
+				<var type="Differ" name="state" value="-1" id="281"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：祈死(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt; 祈死\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找棺材铺老板(197,562)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你可以再去找棺材店老板，问他为何总在瘟疫过后去庙里还愿。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去问问。{10001}", "v487", 281, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="281" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="280"/>
+				<var type="Differ" name="state" value="-3" id="281"/>
+				<var type="Differ" name="state" value="-1" id="281"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找棺材铺老板(197,562)"/>
+				<notify1 content="棺材铺老板(197,562)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10283">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="283"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：利之所驱(2)", "Dialog51")
+end
+function Dialog51()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;利之所驱\n \n&lt;/n&gt;&lt;n&gt;  如何？亲耳听到了吧。人们为了一己私利，会祈求他人死亡呢。仁义礼教，如何能成就霸业呢？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那么如何用“法”呢？{10002}", "v487", 283, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="283" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="283"/>
+			</conditions>
+			<actions>
+				<exp value="3000"/>
+				<notify1 content="经验+3000"/>
+				<notify content="恭喜你完成了“利之所驱”任务"/>
+				<var type="Set" name="state" value="-1" id="283"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10284">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="283"/>
+				<var type="Differ" name="state" value="-3" id="284"/>
+				<var type="Differ" name="state" value="-1" id="284"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：乱世重典(2)", "Dialog53")
+end
+function Dialog53()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;乱世重典\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找黄大人(184,364)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    乱世之中，当用重典，重赏重罚。以律法为教材，让官员作教员，使天下是非一个标准，人人言谈归于法，行为合乎律。耕者只知用力刨土；战者只懂英勇砍头。国君若能如此依法治国，国家焉能不强？霸业指日可待。我国要是重整法纪就好了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去面见黄大人，谏以变法。{10001}", "v487", 284, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="284" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="283"/>
+				<var type="Differ" name="state" value="-3" id="284"/>
+				<var type="Differ" name="state" value="-1" id="284"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找黄大人(184,364)"/>
+				<notify1 content="黄大人(184,364)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10290">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="290"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：感谢(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;感谢\n \n&lt;/n&gt;&lt;n&gt;  没想到你知道用辕门立木之策推行变法，实在出乎意料。看来你已将“法”的精髓融会贯通了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("“法”果然是治国必须的。{10002}", "v487", 290, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="290" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="290"/>
+			</conditions>
+			<actions>
+				<exp value="3400"/>
+				<notify1 content="经验+3400"/>
+				<notify content="恭喜你完成了“感谢”任务"/>
+				<var type="Set" name="state" value="-1" id="290"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10291">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="290"/>
+				<var type="Differ" name="state" value="-3" id="291"/>
+				<var type="Differ" name="state" value="-1" id="291"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：法家精神(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;法家精神\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去找闻广(393,397)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你已经掌握到“法”的精髓，我也没什么好教你的了。以后多加思考，定能光复皇朝，治国平天下。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多谢教导{10001}", "v487", 291, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="291" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="290"/>
+				<var type="Differ" name="state" value="-3" id="291"/>
+				<var type="Differ" name="state" value="-1" id="291"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去回报闻广(393,397)"/>
+				<notify1 content="闻广(393,397)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

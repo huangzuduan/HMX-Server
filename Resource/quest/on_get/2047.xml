@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2047" name="狐草">
+	<quest id="194" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="194"/>
+				<var type="Less" name="get_狐草" value="30"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一根狐草"/>
+				<var type="Add" name="get_狐草" value="1"/>
+				<refresh name="get_狐草"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="194"/>
+				<var type="Great" name="get_狐草" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="get_狐草" value="30"/>
+				<var type="Set" name="state" value="-3" id="194"/>
+<refresh name="state"/>
+				<refresh name="get_狐草"/>
+				<notify content="你已收集了30根狐草,去交给凤嘴岭美食家"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

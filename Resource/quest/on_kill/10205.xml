@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10205" name="机械工厂二层－老旧石兵(34,71)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="390" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2167" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

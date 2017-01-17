@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="55326" name="矿">
+	<quest id="50015" new="1">
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_矿" value="300"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_矿" value="1"/>
+				<refresh name="kill_矿"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_矿" value="299"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_矿"/>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="恭喜你完成了采集的任务,向帮会管理员汇报"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

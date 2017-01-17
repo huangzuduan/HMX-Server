@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="923" name="玉皇大帝">
+	<quest id="90629">
+		<embranchment id="17">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20629"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：不速之客(2)", "Dialog111")
+end
+function Dialog111()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;不速之客\n \n&lt;/n&gt;&lt;n&gt;    年青人不简单呀,这么快就探得对方的实力了赶快领取你的奖励吧！\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"964\"&gt;   精金之匙 10把&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000000&lt;/n&gt;&lt;/p&gt;n color=\"255,239,196,0\"&gt;银子奖励：&lt;/n&gt;&lt;n&gt; 50锭&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("小意思。{10002}", "v923", 20629, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20629"/>
+				<var type="Equal" name="state" value="-4" id="20629"/>
+				<var type="Equal" name="state" value="10" id="20629"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("你还没探得对方的实力？我已经等的不耐烦了!")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20629"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("   对不起！你包裹满了，请清理完包裹再来找我。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20629" new="1">
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20629"/>
+			</conditions>
+			<actions>
+		                <gold type="Add" value="500000"/>
+                                <notify content="银子+50锭"/>
+				<addbinditem value="10" id="964"/>
+				<notify content="得到精金之匙10把"/>
+				<exp value="5000000"/>
+				<notify content="经验+5000000"/>
+				<notify content="完成了“不速之客”任务"/>
+				<notify1 content="恭喜你完成了“不速之客”任务,得到银子奖励50锭,得到精金之匙10把,经验值增加5000000"/>
+				<var type="Set" name="state" value="-1" id="20629"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

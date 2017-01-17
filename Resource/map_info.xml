@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<root>
+	<item id="10000" scene_type="1" zonefile="10000.xml" scenefile="10000.xml"/>
+	<item id="10001" scene_type="1" zonefile="10001.xml" scenefile="10001.xml"/>
+	<item id="10002" scene_type="1" zonefile="10002.xml" scenefile="10002.xml"/>
+	<item id="10003" scene_type="1" zonefile="10003.xml" scenefile="10003.xml"/>
+	<item id="10004" scene_type="1" zonefile="10004.xml" scenefile="10004.xml"/>
+	<item id="10005" scene_type="1" zonefile="10005.xml" scenefile="10005.xml"/>
+	<item id="20001" scene_type="2" zonefile="20001.xml" scenefile="20001.xml"/>
+	<item id="20002" scene_type="2" zonefile="20002.xml" scenefile="20002.xml"/>
+	<item id="20003" scene_type="2" zonefile="20003.xml" scenefile="20003.xml"/>
+	<item id="20004" scene_type="2" zonefile="20004.xml" scenefile="20004.xml"/>
+	<item id="20005" scene_type="2" zonefile="20005.xml" scenefile="20005.xml"/>
+</root>
+

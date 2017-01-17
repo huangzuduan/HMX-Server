@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="852" name="边境-守护者(165,123)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="260032">
+		<embranchment id="1">
+			<conditions>
+				<gold type="Great" value="4999"/>
+				<timeouts long="900" id="50032" less="0"/>
+				<var type="Less" name="times" value="12" id="50032"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你巡逻到哪里去了？对于你这种不付责任的行为我们无法给你奖励。")
+this:AddTaskCmdItem("继续保家卫国-50两{10001}", "v852", 50032, 14)
+this:AddTaskCmdItem("放弃保家卫国{10001}", "v852", 50032, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<gold type="Less" value="5000"/>
+				<timeouts long="900" id="50032" less="0"/>
+				<var type="Less" name="times" value="12" id="50032"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你巡逻到哪里去了？对于你这种不付责任的行为我们无法给你奖励。")
+this:AddDialogItem("继续保家卫国-50两{10001}", "Dialog1")
+this:AddTaskCmdItem("放弃保家卫国{10001}", "v852", 50032, 15)
+end
+function Dialog1()
+this:AddTalk("    别骗我了，你身上根本没50两银子。")
+this:AddDialogItem("离开","TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<grade value="1"/>
+				<global type="Differ" name="protect_king" value="1" id="50032"/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50032"/>
+				<var type="Differ" name="state" value="1" id="50032"/>
+				<var type="Differ" name="state" value="-3" id="50032"/>
+				<var type="Differ" name="state" value="1" id="50033"/>
+				<var type="Differ" name="state" value="-3" id="50033"/>
+				<var type="Differ" name="state" value="1" id="50034"/>
+				<var type="Differ" name="state" value="-3" id="50034"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的国王，如今边境流寇横行，人民需要您的保护，您是否愿意加入保卫家园的行列呢？")
+this:AddTaskCmdItem("接受保家卫国{10001}", "v852", 50032, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Less" name="times" value="12" id="50032"/>
+				<timeouts long="600" id="50032" less="1"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么那么快就回来了，还是再巡逻一下再来汇报吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timeouts long="600" id="50032" less="0"/>
+				<var type="Less" name="times" value="12" id="50032"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近有什么敌情么？");
+this:AddTaskCmdItem("一切正常", "v852", 50032, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="11" id="50032"/>
+				<timeouts long="600" id="50032" less="0"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    由于您的驻守，国家保持了安定，请接受我们对您的谢意。");
+this:AddTaskCmdItem("接受奖励", "v852", 50032, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="100">
+			<conditions>
+				<uservar type="Equal" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50032"/>
+				<var type="Differ" name="state" value="1" id="50032"/>
+				<var type="Differ" name="state" value="-3" id="50032"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,今天的保家卫国任务已经完成，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment-->
+	</quest>
+	<quest id="50032" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="protect_king" value="1" id="50032"/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50032"/>
+				<var type="Differ" name="state" value="1" id="50032"/>
+				<var type="Differ" name="state" value="-3" id="50032"/>
+			</conditions>
+			<actions>
+				<notify1 content="请保卫边境不受外敌入侵"/>
+				<uservar type="Set" name="protect_today" value="1"/>
+				<global type="Set" name="protect_king" value="1" id="50032"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="GetP" name="baowei_selflevel" value="1"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="baowei_selflevel"/>
+				<var type="Set" name="baseexp" value="800"/>
+				<var type="Set" name="baowei_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="baowei_selflevel2" name2="baowei_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="stupid"/>
+				<vars type="Div" name1="baowei_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="baowei_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="baowei_selflevel2" name2="div"/>
+				<vars type="Add" name1="baowei_selflevel" name2="baowei_selflevel2"/>
+				<refresh name="baowei_selflevel"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="12"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<notify1 content="请继续巡逻"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<gold type="Great" value="4999"/>
+				<var type="Less" name="times" value="12"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="5000"/>
+				<notify1 content="继续保家卫国，扣除银子50两"/>
+				<notify1 content="扣除银子50两"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="12"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<notify1 content="保家卫国任务失败"/>
+				<var type="Set" name="state" value="-2" id="50032"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<var type="Great" name="times" value="11" id="50032"/>
+				<timeouts long="600" id="50032" less="0"/>
+				<var type="Equal" name="state" value="1" id="50032"/>
+			</conditions>
+			<actions>
+				<notify1 content="完成任务，经验增加"/>
+				<exp value="100" id="50032" name="baowei_selflevel"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="260033">
+		<embranchment id="10">
+			<conditions>
+				<caption/>
+				<tongvar type="Differ" name="protect_king" value="1" id="50033"/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50033"/>
+				<var type="Differ" name="state" value="1" id="50032"/>
+				<var type="Differ" name="state" value="-3" id="50032"/>
+				<var type="Differ" name="state" value="1" id="50033"/>
+				<var type="Differ" name="state" value="-3" id="50033"/>
+				<var type="Differ" name="state" value="1" id="50034"/>
+				<var type="Differ" name="state" value="-3" id="50034"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的城主，如今边境流寇横行，人民需要您的保护，您是否愿意加入保卫家园的行列呢？")
+this:AddTaskCmdItem("接受保家卫国{10001}", "v852", 50033, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		
+		
+		
+		
+		<embranchment id="3">
+			<conditions>
+				<gold type="Great" value="4999"/>
+				<timeouts long="900" id="50033" less="0"/>
+				<var type="Less" name="times" value="9" id="50033"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你巡逻到哪里去了？对于你这种不付责任的行为我们无法给你奖励。")
+this:AddTaskCmdItem("继续保家卫国-50两{10001}", "v852", 50033, 14)
+this:AddTaskCmdItem("放弃保家卫国{10001}", "v852", 50033, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<gold type="Less" value="5000"/>
+				<timeouts long="900" id="50033" less="0"/>
+				<var type="Less" name="times" value="9" id="50033"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你巡逻到哪里去了？对于你这种不付责任的行为我们无法给你奖励。")
+this:AddDialogItem("继续保家卫国-50两{10001}", "Dialog2")
+this:AddTaskCmdItem("放弃保家卫国{10001}", "v852", 50033, 15)
+end
+function Dialog2()
+this:AddTalk("    别骗我了，你身上根本没50两银子。")
+this:AddDialogItem("离开","TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="12">
+			<conditions>
+				<var type="Less" name="times" value="9" id="50033"/>
+				<timeouts long="600" id="50033" less="1"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么那么快就回来了，还是再巡逻一下再来汇报吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Less" name="times" value="9" id="50033"/>
+				<timeouts long="600" id="50033" less="0"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近有什么敌情么？");
+this:AddTaskCmdItem("一切正常", "v852", 50033, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Great" name="times" value="8" id="50033"/>
+				<timeouts long="600" id="50033" less="0"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    由于您的驻守，国家保持了安定，请接受我们对您的谢意。");
+this:AddTaskCmdItem("接受奖励", "v852", 50033, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="100">
+			<conditions>
+				<uservar type="Equal" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50033"/>
+				<var type="Differ" name="state" value="1" id="50033"/>
+				<var type="Differ" name="state" value="-3" id="50033"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起,今天的保家卫国任务已经完成，请明天再来。")
+this:AddCloseItem("离开")
+end
+             </menu>
+			</actions>
+		</embranchment-->
+	</quest>
+	<quest id="50033" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<tongvar type="Differ" name="protect_king" value="1" id="50033"/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50033"/>
+				<var type="Differ" name="state" value="1" id="50033"/>
+				<var type="Differ" name="state" value="-3" id="50033"/>
+			</conditions>
+			<actions>
+				<notify1 content="请保卫边境不受外敌入侵"/>
+				<uservar type="Set" name="protect_today" value="1"/>
+				<tongvar type="Set" name="protect_king" value="1" id="50033"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="GetP" name="baowei_selflevel" value="1"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="baowei_selflevel"/>
+				<var type="Set" name="baseexp" value="500"/>
+				<var type="Set" name="baowei_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="baowei_selflevel2" name2="baowei_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="stupid"/>
+				<vars type="Div" name1="baowei_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="baowei_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="baowei_selflevel2" name2="div"/>
+				<vars type="Add" name1="baowei_selflevel" name2="baowei_selflevel2"/>
+				<refresh name="baowei_selflevel"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="9"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<notify1 content="请继续巡逻"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<gold type="Great" value="4999"/>
+				<var type="Less" name="times" value="9"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="5000"/>
+				<notify1 content="继续保家卫国，扣除银子50两"/>
+				<notify1 content="扣除银子50两"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="9"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<notify1 content="保家卫国任务失败"/>
+				<var type="Set" name="state" value="-2" id="50033"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<var type="Great" name="times" value="8" id="50033"/>
+				<var type="Equal" name="state" value="1" id="50033"/>
+			</conditions>
+			<actions>
+				<notify1 content="完成任务，经验增加"/>
+				<exp value="100" id="50033" name="baowei_selflevel"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<quest id="260034">
+		<embranchment id="10">
+			<conditions>
+				<innation/>
+				<level type="Great" value="89"/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50034"/>
+				<var type="Differ" name="state" value="1" id="50032"/>
+				<var type="Differ" name="state" value="-3" id="50032"/>
+				<var type="Differ" name="state" value="1" id="50033"/>
+				<var type="Differ" name="state" value="-3" id="50033"/>
+				<var type="Differ" name="state" value="1" id="50034"/>
+				<var type="Differ" name="state" value="-3" id="50034"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    如今边境流寇横行，人民需要您的保护，您是否愿意加入保卫家园的行列呢？")
+this:AddTaskCmdItem("接受保家卫国{10001}", "v852", 50034, 11)
+end
+             </menu>
+			</actions>
+		</embranchment>
+		
+		
+		
+		<embranchment id="5">
+			<conditions>
+				<innation/>
+				<gold type="Great" value="4999"/>
+				<timeouts long="900" id="50034" less="0"/>
+				<var type="Less" name="times" value="9" id="50034"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你巡逻到哪里去了？对于你这种不付责任的行为我们无法给你奖励。")
+this:AddTaskCmdItem("继续保家卫国-50两{10001}", "v852", 50034, 14)
+this:AddTaskCmdItem("放弃保家卫国{10001}", "v852", 50034, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<gold type="Less" value="5000"/>
+				<timeouts long="900" id="50034" less="0"/>
+				<var type="Less" name="times" value="9" id="50034"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你巡逻到哪里去了？对于你这种不付责任的行为我们无法给你奖励。")
+this:AddDialogItem("继续保家卫国-50两{10001}", "Dialog3")
+this:AddTaskCmdItem("放弃保家卫国{10001}", "v852", 50034, 15)
+end
+function Dialog3()
+this:AddTalk("    别骗我了，你身上根本没50两银子。")
+this:AddDialogItem("离开","TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+						
+		<embranchment id="12">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="9" id="50034"/>
+				<timeouts long="600" id="50034" less="1"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    怎么那么快就回来了，还是再巡逻一下再来汇报吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="9" id="50034"/>
+				<timeouts long="600" id="50034" less="0"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近有什么敌情么？");
+this:AddTaskCmdItem("一切正常", "v852", 50034, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<innation/>
+				<var type="Great" name="times" value="8" id="50034"/>
+				<timeouts long="600" id="50034" less="0"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    由于您的驻守，国家保持了安定，请接受我们对您的谢意。");
+this:AddTaskCmdItem("接受奖励", "v852", 50034, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="100">
+			<conditions>
+				<level type="Less" value="90"/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50034"/>
+				<var type="Differ" name="state" value="1" id="50034"/>
+				<var type="Differ" name="state" value="-3" id="50034"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起！你的等级太低，还不能担当此任。\n守卫边境任务说明：\n  1、如果你是国王或者城主，你的职位让我放心的把守卫边境的重担交给你。\n  2、如果你是平民，在你不满90级的情况下，我是不能把这么重要的事情交给你去做的")
+this:AddCloseItem("离开")
+end
+                 </menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="50034" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<innation/>
+				<uservar type="Differ" name="protect_today" value="1"/>
+				<var type="Differ" name="state" value="-1" id="50034"/>
+				<var type="Differ" name="state" value="1" id="50034"/>
+				<var type="Differ" name="state" value="-3" id="50034"/>
+			</conditions>
+			<actions>
+				<notify1 content="请保卫边境不受外敌入侵"/>
+				<uservar type="Set" name="protect_today" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="GetP" name="baowei_selflevel" value="1"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="baowei_selflevel"/>
+				<var type="Set" name="baseexp" value="120"/>
+				<var type="Set" name="baowei_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="baowei_selflevel2" name2="baowei_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="baowei_selflevel" name2="stupid"/>
+				<vars type="Div" name1="baowei_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="baowei_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="baowei_selflevel2" name2="div"/>
+				<vars type="Add" name1="baowei_selflevel" name2="baowei_selflevel2"/>
+				<refresh name="baowei_selflevel"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="9"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<notify1 content="请继续巡逻"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<innation/>
+				<gold type="Great" value="4999"/>
+				<var type="Less" name="times" value="9"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="5000"/>
+				<notify1 content="继续保家卫国，扣除银子50两"/>
+				<notify1 content="扣除银子50两"/>
+				<var type="Add" name="times" value="1"/>
+				<refresh name="times"/>
+				<timeouts/>
+				<var type="Set" name="clock" value="600"/>
+				<refresh name="clock"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<innation/>
+				<var type="Less" name="times" value="9"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<notify1 content="保家卫国任务失败"/>
+				<var type="Set" name="state" value="-2" id="50034"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<innation/>
+				<var type="Great" name="times" value="8" id="50034"/>
+				<timeouts long="600" id="50034" less="0"/>
+				<var type="Equal" name="state" value="1" id="50034"/>
+			</conditions>
+			<actions>
+				<notify1 content="完成任务，经验增加"/>
+				<exp value="100" id="50034" name="baowei_selflevel"/>
+				<var type="Set" name="state" value="-2"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

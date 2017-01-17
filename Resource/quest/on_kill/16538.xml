@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16538" name="武夷王墓七层-骸骨枪兵">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20558" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2249" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20828" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_骸骨枪兵" value="6750"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨枪兵" value="1"/>
+				<refresh name="kill_骸骨枪兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_骸骨枪兵" value="6749"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_骸骨枪兵"/>
+				<notify content="恭喜你，你已经击败了6750个135级的骸骨枪兵，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+
+			</actions>
+		</embranchment>
+	</quest>
+</event>

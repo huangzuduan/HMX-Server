@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2188" name="碧鳞蟒皮">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20502" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20502"/>
+				<var type="Less" name="get_碧鳞蟒皮" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块碧鳞蟒皮"/>
+				<var type="Add" name="get_碧鳞蟒皮" value="1"/>
+				<refresh name="get_碧鳞蟒皮"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20502"/>
+				<var type="Great" name="get_碧鳞蟒皮" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20502"/>
+				<refresh name="state"/>
+				<refresh name="get_碧鳞蟒皮"/>
+				<notify content="你已经收集了足够的碧鳞蟒皮,回千江镇的花非花(133, 415)处交任务吧"/>
+				<notify1 content="去找千江镇的花非花(133, 415)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

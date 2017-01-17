@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5067" name="皇城-燕北飞(867,706)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30820">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="104"/>
+				<level type="Less" value="116"/>
+				<var type="Differ" name="state" value="-1" id="20820"/>
+				<var type="Differ" name="state" value="1" id="20820"/>
+				<var type="Differ" name="state" value="-3" id="20820"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：调查木人(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;调查木人\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去机械工厂四层(127,34)消灭4750个105级的粗糙木人，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，也许你还不知道，机械工厂四层的粗糙木人现在的数量已经可以有庞大来形容了，出现这么多的木人，一定有人在幕后操控，我想请你帮我去机械工厂四层查探一下，这幕后主使到底是谁？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10771\"&gt;   夜魔盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10772\"&gt;   夜魔盔(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去。{10001}", "v5067", 20820, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20820"/>
+				<var type="Differ" name="state" value="-3" id="20820"/>
+				<var type="Differ" name="state" value="-1" id="20820"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭4750个105级的粗糙木人，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20820" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="104"/>
+				<level type="Less" value="116"/>
+				<var type="Differ" name="state" value="-1" id="20820"/>
+				<var type="Differ" name="state" value="1" id="20820"/>
+				<var type="Differ" name="state" value="-3" id="20820"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去机械工厂四层消灭4750个105级的粗糙木人,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去机械工厂四层消灭4750个105级的粗糙木人,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30821">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="108"/>
+				<level type="Less" value="120"/>
+				<var type="Differ" name="state" value="-1" id="20821"/>
+				<var type="Differ" name="state" value="1" id="20821"/>
+				<var type="Differ" name="state" value="-3" id="20821"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：调查王墓(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;调查王墓\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓四层消灭5000只110级的犬戎狂巫，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    就在我去武夷王墓祭奠英雄时，听守墓者说，最近墓穴里经常传出诡异恐怖的声音，他们很担心，怕有怪物破坏墓穴里的珍贵物品，他请我帮忙，我想先查探武夷王墓四层的情况，你可敢去？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10921\"&gt;   血魔靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10922\"&gt;   血魔靴(魔)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("当然敢去。{10001}", "v5067", 20821, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20821"/>
+				<var type="Differ" name="state" value="-3" id="20821"/>
+				<var type="Differ" name="state" value="-1" id="20821"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5000只110级的犬戎狂巫，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20821" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Less" value="120"/>
+				<level type="Great" value="108"/>
+				<var type="Differ" name="state" value="-1" id="20821"/>
+				<var type="Differ" name="state" value="1" id="20821"/>
+				<var type="Differ" name="state" value="-3" id="20821"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓四层消灭5000只110级的犬戎狂巫,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓四层消灭5000只110级的犬戎狂巫,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>		
+	</quest>
+<quest id="30822">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="112"/>
+				<level type="Less" value="125"/>
+				<var type="Differ" name="state" value="-1" id="20822"/>
+				<var type="Differ" name="state" value="1" id="20822"/>
+				<var type="Differ" name="state" value="-3" id="20822"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：工匠的研究(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;工匠的研究\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去机械工厂八层消灭5250个115级的高级工匠，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    据我所知道，机械工厂里的高级工匠正在汇集在八层(111,89)，研究一种新型号的机械人，这种机械人破坏能力极强。一担研制成功，用来攻打皇城，那后果真是不堪设想。为了阻止这项计划的进行，我需要一个人去消灭那些高级工匠，你愿意接受这项任务吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10873\"&gt;   血魔护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10874\"&gt;   血魔护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我同意。{10001}", "v5067", 20822, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20822"/>
+				<var type="Differ" name="state" value="-3" id="20822"/>
+				<var type="Differ" name="state" value="-1" id="20822"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5250个115级的高级工匠，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20822" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="112"/>
+				<level type="Less" value="125"/>
+				<var type="Differ" name="state" value="-1" id="20822"/>
+				<var type="Differ" name="state" value="1" id="20822"/>
+				<var type="Differ" name="state" value="-3" id="20822"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去机械工厂八层消灭5250个115级的高级工匠,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去机械工厂八层消灭5250个115级的高级工匠,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30823">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="116"/>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="state" value="-1" id="20823"/>
+				<var type="Differ" name="state" value="1" id="20823"/>
+				<var type="Differ" name="state" value="-3" id="20823"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：灭魔(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;灭魔\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓四层消灭5500个115级的犬戎魔师，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    最近武夷王墓四层的犬戎魔师正秘密集合，不知道他们有什么意图，不过肯定不会干出什么好事。我正想找个能干的人，乘他们集合的机会，把他们一网打尽。你敢接受这个艰巨的任务吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10873\"&gt;   血魔护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10874\"&gt;   血魔护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("当然敢，我立刻就去。{10001}", "v5067", 20823, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20823"/>
+				<var type="Differ" name="state" value="-3" id="20823"/>
+				<var type="Differ" name="state" value="-1" id="20823"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5500个115级的犬戎魔师，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20823" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="116"/>
+				<level type="Less" value="130"/>
+				<var type="Differ" name="state" value="-1" id="20823"/>
+				<var type="Differ" name="state" value="1" id="20823"/>
+				<var type="Differ" name="state" value="-3" id="20823"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓四层消灭5500个115级的犬戎魔师,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓四层消灭5500个115级的犬戎魔师,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30824">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="120"/>
+				<level type="Less" value="135"/>
+				<var type="Differ" name="state" value="-1" id="20824"/>
+				<var type="Differ" name="state" value="1" id="20824"/>
+				<var type="Differ" name="state" value="-3" id="20824"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：疯狂骸骨(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;疯狂骸骨\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓五层消灭5750个120级的骸骨士兵，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我在查探武夷王墓五层的时候，发现里面的骸骨士兵几近疯狂，我查点被他们所伤，由于骸骨士兵数量众多，我想组织一批人消灭这些可怕的怪物。你愿意帮我这个忙吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10825\"&gt;   天魔腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10826\"&gt;   天魔腰带(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我去。{10001}", "v5067", 20824, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20824"/>
+				<var type="Differ" name="state" value="-3" id="20824"/>
+				<var type="Differ" name="state" value="-1" id="20824"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5750个120级的骸骨士兵，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20824" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="120"/>
+				<level type="Less" value="135"/>
+				<var type="Differ" name="state" value="-1" id="20824"/>
+				<var type="Differ" name="state" value="1" id="20824"/>
+				<var type="Differ" name="state" value="-3" id="20824"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓五层消灭5750个120级的骸骨士兵,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓五层消灭5750个120级的骸骨士兵,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30825">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="124"/>
+				<level type="Less" value="140"/>
+				<var type="Differ" name="state" value="-1" id="20825"/>
+				<var type="Differ" name="state" value="1" id="20825"/>
+				<var type="Differ" name="state" value="-3" id="20825"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：祭师法咒(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;祭师法咒\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓六层消灭6000个125级的骸骨祭师，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    王城的慎离云游到皇城，发觉这里笼罩者一股邪气，而慎离占卜的结果却发现：武夷王墓六层的骸骨祭师正在作法，如果不立刻制止骸骨祭师作法，皇城的人就会受到伤害！我想请你去帮我消灭他们，不知道你是否有这个能力。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10775\"&gt;   天魔盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10776\"&gt;   天魔盔(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("当然有，我马上就去。{10001}", "v5067", 20825, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20825"/>
+				<var type="Differ" name="state" value="-3" id="20825"/>
+				<var type="Differ" name="state" value="-1" id="20825"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6000个125级的骸骨祭师，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20825" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="124"/>
+				<level type="Less" value="140"/>
+				<var type="Differ" name="state" value="-1" id="20825"/>
+				<var type="Differ" name="state" value="1" id="20825"/>
+				<var type="Differ" name="state" value="-3" id="20825"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓六层消灭6000个125级的骸骨祭师,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓六层消灭6000个125级的骸骨祭师,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30826">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="128"/>
+				<level type="Less" value="145"/>
+				<var type="Differ" name="state" value="-1" id="20826"/>
+				<var type="Differ" name="state" value="1" id="20826"/>
+				<var type="Differ" name="state" value="-3" id="20826"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：邪恶傀儡(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;邪恶傀儡\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓六层消灭6250个130级的骸骨战士，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武夷王墓六层的骸骨战士最近比较活跃，他们本是王墓中沉睡的灵魂，最近被邪恶唤醒，他们成了邪恶的傀儡。你能去消灭他们吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10925\"&gt;   幽冥靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10926\"&gt;   幽冥靴(魔)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我同意。{10001}", "v5067", 20826, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20826"/>
+				<var type="Differ" name="state" value="-3" id="20826"/>
+				<var type="Differ" name="state" value="-1" id="20826"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6250个130级的骸骨战士，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		
+		
+	</quest>
+	<quest id="20826" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="128"/>
+				<level type="Less" value="145"/>
+				<var type="Differ" name="state" value="-1" id="20826"/>
+				<var type="Differ" name="state" value="1" id="20826"/>
+				<var type="Differ" name="state" value="-3" id="20826"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓六层消灭6250个130级的骸骨战士,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓六层消灭6250个130级的骸骨战士,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+
+	</quest>
+<quest id="30827">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="132"/>
+				<level type="Less" value="150"/>
+				<var type="Differ" name="state" value="-1" id="20827"/>
+				<var type="Differ" name="state" value="1" id="20827"/>
+				<var type="Differ" name="state" value="-3" id="20827"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：消灭总管(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;消灭总管\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去机械工厂十层(170,80)消灭6500个135级的机关总管，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    经过我细致周密的调查，我发现机械工厂里的一切机关运转，都是机关总管所控制。因此，只要消灭了机关总管，那机械工厂的危险就不存在了，我想请你去机械工厂十层消灭机关总管，你可否愿意？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10877\"&gt;   幽冥护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10878\"&gt;   幽冥护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我同意。{10001}", "v5067", 20827, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20827"/>
+				<var type="Differ" name="state" value="-3" id="20827"/>
+				<var type="Differ" name="state" value="-1" id="20827"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6500个135级的机关总管，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+	</quest>
+	<quest id="20827" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="132"/>
+				<level type="Less" value="150"/>
+				<var type="Differ" name="state" value="-1" id="20827"/>
+				<var type="Differ" name="state" value="1" id="20827"/>
+				<var type="Differ" name="state" value="-3" id="20827"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去机械工厂十层消灭6500个135级的机关总管,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去机械工厂十层消灭6500个135级的机关总管,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	
+	</quest>
+<quest id="30828">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="136"/>
+				<level type="Less" value="155"/>
+				<var type="Differ" name="state" value="-1" id="20828"/>
+				<var type="Differ" name="state" value="1" id="20828"/>
+				<var type="Differ" name="state" value="-3" id="20828"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：凶恶骸骨(2)", "Dialog44")
+end
+function Dialog44()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;凶恶骸骨\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓七层消灭6750个135级的骸骨枪兵，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    武夷王墓真是个令人担心的地方，王墓的7层出现了骸骨枪兵，他们外表就是一具骷髅，样子非常吓人。这种枪兵不知疼痛，凶恶无比。我想找一个武艺十分高强的人去消灭他们，我看你一身侠气，能帮我这个忙吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10877\"&gt;   幽冥护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10878\"&gt;   幽冥护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的，我马上去办。{10001}", "v5067", 20828, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20828"/>
+				<var type="Differ" name="state" value="-3" id="20828"/>
+				<var type="Differ" name="state" value="-1" id="20828"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6750个135级的骸骨枪兵，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	
+	
+	</quest>
+	<quest id="20828" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="136"/>
+				<level type="Less" value="155"/>
+				<var type="Differ" name="state" value="-1" id="20828"/>
+				<var type="Differ" name="state" value="1" id="20828"/>
+				<var type="Differ" name="state" value="-3" id="20828"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓七层消灭6750个135级的骸骨枪兵,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓七层消灭6750个135级的骸骨枪兵,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+<quest id="30829">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="140"/>
+				<level type="Less" value="161"/>
+				<var type="Differ" name="state" value="-1" id="20829"/>
+				<var type="Differ" name="state" value="1" id="20829"/>
+				<var type="Differ" name="state" value="-3" id="20829"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：亡灵计划(2)", "Dialog47")
+end
+function Dialog47()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;亡灵计划\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去武夷王墓七层消灭7000个140级的亡灵战士，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;   也不知道是什么时候，武夷王墓七层突然多出了一批亡灵战士，而且越聚越多，一定是有什么阴谋，你帮我去打探打探。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10829\"&gt;   玄武腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10830\"&gt;   玄武腰带(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 14000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的，我立刻行动。{10001}", "v5067", 20829, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20829"/>
+				<var type="Differ" name="state" value="-3" id="20829"/>
+				<var type="Differ" name="state" value="-1" id="20829"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败7000个140级的亡灵战士，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	
+	
+	</quest>
+	<quest id="20829" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="140"/>
+				<level type="Less" value="161"/>
+				<var type="Differ" name="state" value="-1" id="20829"/>
+				<var type="Differ" name="state" value="1" id="20829"/>
+				<var type="Differ" name="state" value="-3" id="20829"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去武夷王墓七层消灭7000个140级的亡灵战士,完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去武夷王墓七层消灭7000个140级的亡灵战士,完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+		
+	</quest>
+</event>

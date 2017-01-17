@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5244" name="世外桃源-采集管理员(44,170)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="60115">
+	<embranchment id="5">
+		<conditions>
+				<level type="Great" value="39"/>
+				<level type="Less" value="120"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：桃源采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    去旁边采点宝石碎片吧，可以打造家具哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5244", 50115, 5)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+	<embranchment id="6">
+		<conditions>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：桃源采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    去旁边采点宝石碎片吧，可以打造家具哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5244", 50115, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+	<embranchment id="7">
+		<conditions>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：桃源采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    去旁边采点宝石碎片吧，可以打造家具哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5244", 50115, 7)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+	<embranchment id="8">
+		<conditions>
+				<level type="Great" value="139"/>
+				<level type="Less" value="150"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：桃源采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    去旁边采点宝石碎片吧，可以打造家具哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5244", 50115, 8)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+	<embranchment id="9">
+		<conditions>
+				<level type="Great" value="149"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：桃源采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    去旁边采点宝石碎片吧，可以打造家具哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5244", 50115, 9)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+	<embranchment id="15">
+		<conditions>
+				<var type="Equal" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：桃源采集(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("    不错。相信你应该获得一点材料了吧。有了材料可以去家具制造商打造家具哦。")
+this:AddTaskCmdItem("接受奖励{10002}", "v5244", 50115, 15)
+end
+				</menu>
+			</actions>
+	</embranchment>
+	</quest>	
+	<quest id="50115" new="1">
+	<embranchment id="5" active="1">
+		<conditions>
+				<level type="Great" value="39"/>
+				<level type="Less" value="120"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<uservar type="Set" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Set" name="state" value="1" id="50115"/>
+				<var type="GetP" name="tycj_selflevel" value="1"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_selflevel"/>
+				<var type="Set" name="tycj_num" value="40"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_num"/>
+				<refresh name="tycj_selflevel"/>
+				<notify content="去采集80个宝石树(33,155)。"/>
+				<notify1 content="去采集80个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="6" active="1">
+		<conditions>
+				<level type="Great" value="119"/>
+				<level type="Less" value="130"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<uservar type="Set" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Set" name="state" value="1" id="50115"/>
+				<var type="GetP" name="tycj_selflevel" value="1"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_selflevel"/>
+				<var type="Set" name="tycj_num" value="60"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_num"/>
+				<refresh name="tycj_selflevel"/>
+				<notify content="去采集80个宝石树(33,155)。"/>
+				<notify1 content="去采集80个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="7" active="1">
+		<conditions>
+				<level type="Great" value="129"/>
+				<level type="Less" value="140"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<uservar type="Set" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Set" name="state" value="1" id="50115"/>
+				<var type="GetP" name="tycj_selflevel" value="1"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_selflevel"/>
+				<var type="Set" name="tycj_num" value="70"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_num"/>
+				<refresh name="tycj_selflevel"/>
+				<notify content="去采集80个宝石树(33,155)。"/>
+				<notify1 content="去采集80个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="8" active="1">
+		<conditions>
+				<level type="Great" value="139"/>
+				<level type="Less" value="150"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<uservar type="Set" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Set" name="state" value="1" id="50115"/>
+				<var type="GetP" name="tycj_selflevel" value="1"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_selflevel"/>
+				<var type="Set" name="tycj_num" value="90"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_num"/>
+				<refresh name="tycj_selflevel"/>
+				<notify content="去采集80个宝石树(33,155)。"/>
+				<notify1 content="去采集80个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="9" active="1">
+		<conditions>
+				<level type="Great" value="149"/>
+				<uservar type="Differ" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Differ" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<uservar type="Set" name="taoyuan_caiji" value="1" id="50115"/>
+				<var type="Set" name="state" value="1" id="50115"/>
+				<var type="GetP" name="tycj_selflevel" value="1"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_selflevel"/>
+				<var type="Set" name="tycj_num" value="110"/>
+				<vars type="Mul" name1="tycj_selflevel" name2="tycj_num"/>
+				<refresh name="tycj_selflevel"/>
+				<notify content="去采集80个宝石树(33,155)。"/>
+				<notify1 content="去采集80个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="15" active="1">
+		<conditions>
+				<var type="Equal" name="state" value="-3" id="50115"/>
+				<var type="Differ" name="state" value="-1" id="50115"/>
+				<var type="Differ" name="state" value="1" id="50115"/>
+		</conditions>
+			<actions>
+				<var type="Set" name="state" value="-2" id="50115"/>
+				<exp1 value="100" id="50115" name="tycj_selflevel"/>
+				<varnotify2 content="经验+%u" value="tycj_selflevel" id="50115"/>
+				<notify content="恭喜你完成了“桃源采集”的任务"/>
+			</actions>
+	</embranchment>
+	</quest>
+</event>

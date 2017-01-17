@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="15010" name="食人狼">
+	<quest id="279" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_食人狼" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_食人狼" value="1"/>
+				<refresh name="kill_食人狼"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_食人狼" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_食人狼"/>
+				<notify content="恭喜你完成了路障的任务,回牛二(422,301)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20332" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_食人狼" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_食人狼" value="1"/>
+				<refresh name="kill_食人狼"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_食人狼" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_食人狼"/>
+				<notify content="恭喜你完成了消灭食人狼的任务,回衙役交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20336" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_类犬" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_类犬" value="1"/>
+				<refresh name="kill_类犬"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_类犬" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_类犬"/>
+				<notify content="恭喜你完成了类犬的任务,回考官处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+<quest id="20801" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_食人狼" value="350"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_食人狼" value="1"/>
+				<refresh name="kill_食人狼"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_食人狼" value="349"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_食人狼"/>
+				<notify content="恭喜你，你已经打败了350只30级的食人狼，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

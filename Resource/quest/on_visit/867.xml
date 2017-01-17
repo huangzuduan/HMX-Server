@@ -1,0 +1,2400 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="867" name="王城-托运官(848,548)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960104">
+         <!--以下是50级镖车托运情况判断-->
+		<embranchment id="1">
+			<conditions>
+				<canjump value="1"/>
+				<var type="Equal" name="gold" value="60" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-60两(0)", "v867", 160104, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<canjump value="1"/>
+				<var type="Equal" name="gold" value="60" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-60两(0)", "v867", 160104, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="gold" value="75" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-75两(0)", "v867", 160104, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="gold" value="75" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-75两(0)", "v867", 160104, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="gold" value="90" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-90两(0)", "v867", 160104, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="gold" value="90" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-90两(0)", "v867", 160104, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="gold" value="105" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭5两(0)", "v867", 160104, 14)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="gold" value="105" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭5两(0)", "v867", 160104, 14)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="gold" value="120" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭20两(0)", "v867", 160104, 15)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="gold" value="120" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭20两(0)", "v867", 160104, 15)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="gold" value="135" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭35两(0)", "v867", 160104, 16)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="gold" value="135" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭35两(0)", "v867", 160104, 16)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Equal" name="gold" value="150" id="21005"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭50两(0)", "v867", 160104, 17)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="gold" value="150" id="21005"/>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭50两(0)", "v867", 160104, 17)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+         <!--以下是70级镖车托运情况判断-->
+		<embranchment id="101">
+			<conditions>
+				<var type="Equal" name="gold" value="100" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭(0)", "v867", 160104, 101)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<var type="Equal" name="gold" value="100" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭(0)", "v867", 160104, 101)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<var type="Equal" name="gold" value="125" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭25两(0)", "v867", 160104, 102)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<var type="Equal" name="gold" value="125" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭25两(0)", "v867", 160104, 102)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<var type="Equal" name="gold" value="150" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭50两(0)", "v867", 160104, 103)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="106">
+			<conditions>
+				<var type="Equal" name="gold" value="150" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭50两(0)", "v867", 160104, 103)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<var type="Equal" name="gold" value="175" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭75两(0)", "v867", 160104, 104)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="108">
+			<conditions>
+				<var type="Equal" name="gold" value="175" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭75两(0)", "v867", 160104, 104)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<var type="Equal" name="gold" value="200" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭(0)", "v867", 160104, 105)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="110">
+			<conditions>
+				<var type="Equal" name="gold" value="200" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭(0)", "v867", 160104, 105)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="111">
+			<conditions>
+				<var type="Equal" name="gold" value="225" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭25两(0)", "v867", 160104, 106)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="112">
+			<conditions>
+				<var type="Equal" name="gold" value="225" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭25两(0)", "v867", 160104, 106)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="113">
+			<conditions>
+				<var type="Equal" name="gold" value="250" id="21006"/>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭50两(0)", "v867", 160104, 107)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="114">
+			<conditions>
+				<var type="Equal" name="gold" value="250" id="21006"/>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭50两(0)", "v867", 160104, 107)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+         <!--以下是90级镖车托运情况判断-->
+		<embranchment id="201">
+			<conditions>
+				<var type="Equal" name="gold" value="140" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭40两(0)", "v867", 160104, 111)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="202">
+			<conditions>
+				<var type="Equal" name="gold" value="140" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭40两(0)", "v867", 160104, 111)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="203">
+			<conditions>
+				<var type="Equal" name="gold" value="175" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭75两(0)", "v867", 160104, 112)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="204">
+			<conditions>
+				<var type="Equal" name="gold" value="175" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭75两(0)", "v867", 160104, 112)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="205">
+			<conditions>
+				<var type="Equal" name="gold" value="210" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭10两(0)", "v867", 160104, 113)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="206">
+			<conditions>
+				<var type="Equal" name="gold" value="210" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭10两(0)", "v867", 160104, 113)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<var type="Equal" name="gold" value="245" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭45两(0)", "v867", 160104, 114)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<var type="Equal" name="gold" value="245" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭45两(0)", "v867", 160104, 114)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<var type="Equal" name="gold" value="280" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭80两(0)", "v867", 160104, 115)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<var type="Equal" name="gold" value="280" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭80两(0)", "v867", 160104, 115)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="211">
+			<conditions>
+				<var type="Equal" name="gold" value="315" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭15两(0)", "v867", 160104, 116)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="212">
+			<conditions>
+				<var type="Equal" name="gold" value="315" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭15两(0)", "v867", 160104, 116)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="213">
+			<conditions>
+				<var type="Equal" name="gold" value="350" id="21007"/>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭50两(0)", "v867", 160104, 117)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="214">
+			<conditions>
+				<var type="Equal" name="gold" value="350" id="21007"/>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭50两(0)", "v867", 160104, 117)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+         <!--以下是110级镖车托运情况判断-->
+		<embranchment id="301">
+			<conditions>
+				<var type="Equal" name="gold" value="180" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭80两(0)", "v867", 160104, 121)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="302">
+			<conditions>
+				<var type="Equal" name="gold" value="180" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-1锭80两(0)", "v867", 160104, 121)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="303">
+			<conditions>
+				<var type="Equal" name="gold" value="225" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭25两(0)", "v867", 160104, 122)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="304">
+			<conditions>
+				<var type="Equal" name="gold" value="225" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭25两(0)", "v867", 160104, 122)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="305">
+			<conditions>
+				<var type="Equal" name="gold" value="270" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭70两(0)", "v867", 160104, 123)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="306">
+			<conditions>
+				<var type="Equal" name="gold" value="270" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭70两(0)", "v867", 160104, 123)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="307">
+			<conditions>
+				<var type="Equal" name="gold" value="315" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭15两(0)", "v867", 160104, 124)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="308">
+			<conditions>
+				<var type="Equal" name="gold" value="315" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭15两(0)", "v867", 160104, 124)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="309">
+			<conditions>
+				<var type="Equal" name="gold" value="360" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭60两(0)", "v867", 160104, 125)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="310">
+			<conditions>
+				<var type="Equal" name="gold" value="360" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭60两(0)", "v867", 160104, 125)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="311">
+			<conditions>
+				<var type="Equal" name="gold" value="405" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭5两(0)", "v867", 160104, 126)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="312">
+			<conditions>
+				<var type="Equal" name="gold" value="405" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭5两(0)", "v867", 160104, 126)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="313">
+			<conditions>
+				<var type="Equal" name="gold" value="450" id="21008"/>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭50两(0)", "v867", 160104, 127)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="314">
+			<conditions>
+				<var type="Equal" name="gold" value="450" id="21008"/>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭50两(0)", "v867", 160104, 127)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+         <!--以下是130级镖车托运情况判断-->
+
+
+		<embranchment id="401">
+			<conditions>
+				<var type="Equal" name="gold" value="220" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭20两(0)", "v867", 160104, 131)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="402">
+			<conditions>
+				<var type="Equal" name="gold" value="220" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭20两(0)", "v867", 160104, 131)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="403">
+			<conditions>
+				<var type="Equal" name="gold" value="275" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭75两(0)", "v867", 160104, 132)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="404">
+			<conditions>
+				<var type="Equal" name="gold" value="275" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭75两(0)", "v867", 160104, 132)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="405">
+			<conditions>
+				<var type="Equal" name="gold" value="330" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭30两(0)", "v867", 160104, 133)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="406">
+			<conditions>
+				<var type="Equal" name="gold" value="330" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭30两(0)", "v867", 160104, 133)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="407">
+			<conditions>
+				<var type="Equal" name="gold" value="385" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭85两(0)", "v867", 160104, 134)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="408">
+			<conditions>
+				<var type="Equal" name="gold" value="385" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭85两(0)", "v867", 160104, 134)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="409">
+			<conditions>
+				<var type="Equal" name="gold" value="440" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭40两(0)", "v867", 160104, 135)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="410">
+			<conditions>
+				<var type="Equal" name="gold" value="440" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭40两(0)", "v867", 160104, 135)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="411">
+			<conditions>
+				<var type="Equal" name="gold" value="495" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭95两(0)", "v867", 160104, 136)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="412">
+			<conditions>
+				<var type="Equal" name="gold" value="495" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭95两(0)", "v867", 160104, 136)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="413">
+			<conditions>
+				<var type="Equal" name="gold" value="550" id="21009"/>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-5锭50两(0)", "v867", 160104, 137)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="414">
+			<conditions>
+				<var type="Equal" name="gold" value="550" id="21009"/>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-5锭50两(0)", "v867", 160104, 137)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+         <!--以下是140级镖车托运情况判断-->
+
+		<embranchment id="421">
+			<conditions>
+				<var type="Equal" name="gold" value="250" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭50两(0)", "v867", 160104, 141)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="422">
+			<conditions>
+				<var type="Equal" name="gold" value="250" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭50两(0)", "v867", 160104, 141)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="423">
+			<conditions>
+				<var type="Equal" name="gold" value="310" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭10两(0)", "v867", 160104, 142)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="424">
+			<conditions>
+				<var type="Equal" name="gold" value="310" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭10两(0)", "v867", 160104, 142)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="425">
+			<conditions>
+				<var type="Equal" name="gold" value="370" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭70两(0)", "v867", 160104, 143)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="426">
+			<conditions>
+				<var type="Equal" name="gold" value="370" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭70两(0)", "v867", 160104, 143)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="427">
+			<conditions>
+				<var type="Equal" name="gold" value="430" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭30两(0)", "v867", 160104, 144)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="428">
+			<conditions>
+				<var type="Equal" name="gold" value="430" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭30两(0)", "v867", 160104, 144)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="429">
+			<conditions>
+				<var type="Equal" name="gold" value="490" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭90两(0)", "v867", 160104, 145)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="430">
+			<conditions>
+				<var type="Equal" name="gold" value="490" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭90两(0)", "v867", 160104, 145)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="431">
+			<conditions>
+				<var type="Equal" name="gold" value="550" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-5锭50两(0)", "v867", 160104, 146)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="432">
+			<conditions>
+				<var type="Equal" name="gold" value="550" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-5锭50两(0)", "v867", 160104, 146)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="433">
+			<conditions>
+				<var type="Equal" name="gold" value="615" id="22005"/>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-6锭15两(0)", "v867", 160104, 147)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="434">
+			<conditions>
+				<var type="Equal" name="gold" value="615" id="22005"/>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-6锭15两(0)", "v867", 160104, 147)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+         <!--以下是150级镖车托运情况判断-->
+
+
+		<embranchment id="441">
+			<conditions>
+				<var type="Equal" name="gold" value="275" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭75两(0)", "v867", 160104, 151)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="442">
+			<conditions>
+				<var type="Equal" name="gold" value="275" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-2锭75两(0)", "v867", 160104, 151)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="443">
+			<conditions>
+				<var type="Equal" name="gold" value="340" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭40两(0)", "v867", 160104, 152)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="444">
+			<conditions>
+				<var type="Equal" name="gold" value="340" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-3锭40两(0)", "v867", 160104, 152)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="445">
+			<conditions>
+				<var type="Equal" name="gold" value="405" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭5两(0)", "v867", 160104, 153)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="446">
+			<conditions>
+				<var type="Equal" name="gold" value="405" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭5两(0)", "v867", 160104, 153)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="447">
+			<conditions>
+				<var type="Equal" name="gold" value="470" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭70两(0)", "v867", 160104, 154)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="448">
+			<conditions>
+				<var type="Equal" name="gold" value="470" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-4锭70两(0)", "v867", 160104, 154)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="449">
+			<conditions>
+				<var type="Equal" name="gold" value="535" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-5锭35两(0)", "v867", 160104, 155)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="450">
+			<conditions>
+				<var type="Equal" name="gold" value="535" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-5锭35两(0)", "v867", 160104, 155)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="451">
+			<conditions>
+				<var type="Equal" name="gold" value="600" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-6锭(0)", "v867", 160104, 156)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="452">
+			<conditions>
+				<var type="Equal" name="gold" value="600" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-6锭(0)", "v867", 160104, 156)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="453">
+			<conditions>
+				<var type="Equal" name="gold" value="665" id="22006"/>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-6锭65两(0)", "v867", 160104, 157)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="454">
+			<conditions>
+				<var type="Equal" name="gold" value="665" id="22006"/>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  你好，你是来找我托运货物的吗？如果你出足够的资金的话，我就会把你的货物安全运到边境。");
+this:AddTaskCmdItem("托运到边境-6锭65两(0)", "v867", 160104, 157)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+         <!--以下是镖车不在身边的提示判断-->
+
+		<embranchment id="500">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21005"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="501">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="502">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="503">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="504">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="505">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="506">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="507">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="508">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="509">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+
+		<embranchment id="510">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="511">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+
+		<embranchment id="512">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="513">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<canjump value="0"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("  对不起，你的镖车不在你身边。我无法帮你托运。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160104" new="1">
+
+		<embranchment id="11" active="1">
+			<conditions>
+				<gold type="Great" value="5999"/>
+				<var type="Equal" name="gold" value="60" id="21005"/>
+				<canjump  value="1"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了60两托运费"/>
+				<gold type="Sub" value="6000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<gold type="Great" value="7499"/>
+				<var type="Equal" name="gold" value="75" id="21005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了75两托运费"/>
+				<gold type="Sub" value="7500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<gold type="Great" value="8999"/>
+				<var type="Equal" name="gold" value="90" id="21005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了90两托运费"/>
+				<gold type="Sub" value="9000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<gold type="Great" value="10499"/>
+				<var type="Equal" name="gold" value="105" id="21005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭5两托运费"/>
+				<gold type="Sub" value="10500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<gold type="Great" value="11999"/>
+				<var type="Equal" name="gold" value="120" id="21005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭20两托运费"/>
+				<gold type="Sub" value="12000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<gold type="Great" value="13499"/>
+				<var type="Equal" name="gold" value="135" id="21005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭35两托运费"/>
+				<gold type="Sub" value="13500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<gold type="Great" value="14999"/>
+				<var type="Equal" name="gold" value="150" id="21005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭50两托运费"/>
+				<gold type="Sub" value="15000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+
+
+
+		<embranchment id="101" active="1">
+			<conditions>
+				<gold type="Great" value="9999"/>
+				<var type="Equal" name="gold" value="100" id="21006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭托运费"/>
+				<gold type="Sub" value="10000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="102" active="1">
+			<conditions>
+				<gold type="Great" value="12499"/>
+				<var type="Equal" name="gold" value="125" id="21006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭25两托运费"/>
+				<gold type="Sub" value="12500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="103" active="1">
+			<conditions>
+				<gold type="Great" value="14999"/>
+				<var type="Equal" name="gold" value="150" id="21006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭50两托运费"/>
+				<gold type="Sub" value="15000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="104" active="1">
+			<conditions>
+				<gold type="Great" value="17499"/>
+				<var type="Equal" name="gold" value="175" id="21006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭75两托运费"/>
+				<gold type="Sub" value="17500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="105" active="1">
+			<conditions>
+				<gold type="Great" value="19999"/>
+				<var type="Equal" name="gold" value="200" id="21006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭托运费"/>
+				<gold type="Sub" value="20000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="106" active="1">
+			<conditions>
+				<gold type="Great" value="22499"/>
+				<var type="Equal" name="gold" value="225" id="21006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭25两托运费"/>
+				<gold type="Sub" value="22500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="107" active="1">
+			<conditions>
+				<gold type="Great" value="24999"/>
+				<var type="Equal" name="gold" value="250" id="21006"/>			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭50两托运费"/>
+				<gold type="Sub" value="25000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="111" active="1">
+			<conditions>
+				<gold type="Great" value="13999"/>
+				<var type="Equal" name="gold" value="140" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭40两托运费"/>
+				<gold type="Sub" value="14000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="112" active="1">
+			<conditions>
+				<gold type="Great" value="17499"/>
+				<var type="Equal" name="gold" value="175" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭75两托运费"/>
+				<gold type="Sub" value="17500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="113" active="1">
+			<conditions>
+				<gold type="Great" value="20999"/>
+				<var type="Equal" name="gold" value="210" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭10两托运费"/>
+				<gold type="Sub" value="21000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="114" active="1">
+			<conditions>
+				<gold type="Great" value="24499"/>
+				<var type="Equal" name="gold" value="245" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭45两托运费"/>
+				<gold type="Sub" value="24500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="115" active="1">
+			<conditions>
+				<gold type="Great" value="27999"/>
+				<var type="Equal" name="gold" value="280" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭80两托运费"/>
+				<gold type="Sub" value="28000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="116" active="1">
+			<conditions>
+				<gold type="Great" value="31499"/>
+				<var type="Equal" name="gold" value="315" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭15两托运费"/>
+				<gold type="Sub" value="31500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="117" active="1">
+			<conditions>
+				<gold type="Great" value="34999"/>
+				<var type="Equal" name="gold" value="350" id="21007"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭50两托运费"/>
+				<gold type="Sub" value="35000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="121" active="1">
+			<conditions>
+				<gold type="Great" value="17999"/>
+				<var type="Equal" name="gold" value="180" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了1锭80两托运费"/>
+				<gold type="Sub" value="18000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="122" active="1">
+			<conditions>
+				<gold type="Great" value="22499"/>
+				<var type="Equal" name="gold" value="225" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭25两托运费"/>
+				<gold type="Sub" value="22500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="123" active="1">
+			<conditions>
+				<gold type="Great" value="26999"/>
+				<var type="Equal" name="gold" value="270" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭70两托运费"/>
+				<gold type="Sub" value="27000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="124" active="1">
+			<conditions>
+				<gold type="Great" value="31499"/>
+				<var type="Equal" name="gold" value="315" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭15两托运费"/>
+				<gold type="Sub" value="31500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="125" active="1">
+			<conditions>
+				<gold type="Great" value="35999"/>
+				<var type="Equal" name="gold" value="360" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭60两托运费"/>
+				<gold type="Sub" value="36000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="126" active="1">
+			<conditions>
+				<gold type="Great" value="40499"/>
+				<var type="Equal" name="gold" value="405" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭5两托运费"/>
+				<gold type="Sub" value="40500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="127" active="1">
+			<conditions>
+				<gold type="Great" value="44999"/>
+				<var type="Equal" name="gold" value="450" id="21008"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭50两托运费"/>
+				<gold type="Sub" value="45000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="131" active="1">
+			<conditions>
+				<gold type="Great" value="21999"/>
+				<var type="Equal" name="gold" value="220" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭20两托运费"/>
+				<gold type="Sub" value="22000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="132" active="1">
+			<conditions>
+				<gold type="Great" value="27499"/>
+				<var type="Equal" name="gold" value="275" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭75两托运费"/>
+				<gold type="Sub" value="27500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="133" active="1">
+			<conditions>
+				<gold type="Great" value="32999"/>
+				<var type="Equal" name="gold" value="330" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭30两托运费"/>
+				<gold type="Sub" value="33000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="134" active="1">
+			<conditions>
+				<gold type="Great" value="38499"/>
+				<var type="Equal" name="gold" value="385" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭85两托运费"/>
+				<gold type="Sub" value="38500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="135" active="1">
+			<conditions>
+				<gold type="Great" value="43999"/>
+				<var type="Equal" name="gold" value="440" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭40两托运费"/>
+				<gold type="Sub" value="44000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="136" active="1">
+			<conditions>
+				<gold type="Great" value="49499"/>
+				<var type="Equal" name="gold" value="495" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭95两托运费"/>
+				<gold type="Sub" value="49500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="137" active="1">
+			<conditions>
+				<gold type="Great" value="54999"/>
+				<var type="Equal" name="gold" value="550" id="21009"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了5锭50两托运费"/>
+				<gold type="Sub" value="55000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+
+
+
+		<embranchment id="141" active="1">
+			<conditions>
+				<gold type="Great" value="24999"/>
+				<var type="Equal" name="gold" value="250" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭50两托运费"/>
+				<gold type="Sub" value="25000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="142" active="1">
+			<conditions>
+				<gold type="Great" value="30999"/>
+				<var type="Equal" name="gold" value="310" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭10两托运费"/>
+				<gold type="Sub" value="31000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="143" active="1">
+			<conditions>
+				<gold type="Great" value="36999"/>
+				<var type="Equal" name="gold" value="370" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭70两托运费"/>
+				<gold type="Sub" value="37000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="144" active="1">
+			<conditions>
+				<gold type="Great" value="42999"/>
+				<var type="Equal" name="gold" value="430" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭30两托运费"/>
+				<gold type="Sub" value="43000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="145" active="1">
+			<conditions>
+				<gold type="Great" value="48999"/>
+				<var type="Equal" name="gold" value="490" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭90两托运费"/>
+				<gold type="Sub" value="49000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="146" active="1">
+			<conditions>
+				<gold type="Great" value="54999"/>
+				<var type="Equal" name="gold" value="550" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了5锭50两托运费"/>
+				<gold type="Sub" value="55000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="147" active="1">
+			<conditions>
+				<gold type="Great" value="61499"/>
+				<var type="Equal" name="gold" value="615" id="22005"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了6锭15两托运费"/>
+				<gold type="Sub" value="61500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+
+
+		<embranchment id="151" active="1">
+			<conditions>
+				<gold type="Great" value="27499"/>
+				<var type="Equal" name="gold" value="275" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了2锭75两托运费"/>
+				<gold type="Sub" value="27500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="152" active="1">
+			<conditions>
+				<gold type="Great" value="33999"/>
+				<var type="Equal" name="gold" value="340" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了3锭40两托运费"/>
+				<gold type="Sub" value="34000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="153" active="1">
+			<conditions>
+				<gold type="Great" value="40499"/>
+				<var type="Equal" name="gold" value="405" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭5两托运费"/>
+				<gold type="Sub" value="40500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="154" active="1">
+			<conditions>
+				<gold type="Great" value="46999"/>
+				<var type="Equal" name="gold" value="470" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了4锭70两托运费"/>
+				<gold type="Sub" value="47000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="155" active="1">
+			<conditions>
+				<gold type="Great" value="53499"/>
+				<var type="Equal" name="gold" value="535" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了5锭35两托运费"/>
+				<gold type="Sub" value="53500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="156" active="1">
+			<conditions>
+				<gold type="Great" value="59999"/>
+				<var type="Equal" name="gold" value="600" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了6锭托运费"/>
+				<gold type="Sub" value="60000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="157" active="1">
+			<conditions>
+				<gold type="Great" value="66499"/>
+				<var type="Equal" name="gold" value="665" id="22006"/>
+			</conditions>
+			<actions>
+				<goto name="边境" pos="373,246"/>
+				<notify content="你的货物安全运到边境，付了6锭65两托运费"/>
+				<gold type="Sub" value="66500"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+
+	</quest>
+</event>

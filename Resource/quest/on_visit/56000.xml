@@ -1,0 +1,3017 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56000" name="清源村-村长(114,93)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10211">
+		<embranchment id="10">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Differ" name="state" value="1" id="211"/>
+				<var type="Differ" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：乡勇团(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n color=\&quot;255,255,255,255\&quot;&gt;乡勇团\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标： \n&lt;/n&gt;&lt;n&gt;    如果想加入乡勇团，可以找武器商王仁(145,90)选择武器。\n(可以使用“L”打开任务栏)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    哟，是(GetName)啊，几天不见，又长高不少嘛！\n    村里新近组了个乡勇团。想加入的话，可以找武器商王仁免费领一样兵器。你想加入么？\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,0,196,0\&quot;&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;690\&quot;&gt;   短刀-战士武器 &lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;691\&quot;&gt;   柳木杖-法师武器&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;692\&quot;&gt;   短弓-弓手武器&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;693\&quot;&gt;    纸扇-仙术师武器&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\&quot;694\&quot;&gt;   木棍-召唤师武器&lt;/object&gt;&lt;n&gt;\n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v56000", 211, 3)
+end
+</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="211" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="211"/>
+				<var type="Differ" name="state" value="1" id="211"/>
+				<var type="Differ" name="state" value="-3" id="211"/>
+			</conditions>
+			<actions>
+				<notify content="任务：去找武器商王仁(145,90)"/>
+				<notify1 content="武器商王仁"/>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="state" value="-1" id="2"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10215">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="215"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：身世(2)", "Dialog12")
+end
+function Dialog12()
+this:AddTalk("&lt;p&gt;&lt;n&gt;    玉佩......你小时候确实有块玉佩。\n    可是...去年村子遭水灾的时候，为了重建村子，就把你那个玉佩......卖了......\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 5个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 50&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("什么？卖了？卖到哪里？ {10001}", "v56000", 215, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="215"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="215" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="215"/>
+			</conditions>
+			<actions>
+				<additem value="5" id="585"/>
+				<notify1 content="得到甘草露 5个"/>
+				<var type="Set" name="state" value="-1"/>
+				<exp value="50"/>
+				<notify1 content="经验+50"/>
+				<notify1 content="那么重要的物品都卖掉，服了"/>
+				<notify content="恭喜你完成了“身世”任务"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;售出\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去询问马叔(180,184)关于玉佩的情况。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    卖到凤凰城了,前几天马叔还说在凤凰城里看到了呢\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 60&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去找马叔问问{10001}", "v56000", 216, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10216">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="215"/>
+				<var type="Differ" name="state" value="-3" id="216"/>
+				<var type="Differ" name="state" value="-1" id="216"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：售出(2)", "Dialog13")
+end
+function Dialog13()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;售出\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去询问马叔(180,184)关于玉佩的情况。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    卖到凤凰城了,前几天马叔还说在凤凰城里看到了呢.\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"585\"&gt;   甘草露 10个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 60&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去找马叔问问{10001}", "v56000", 216, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="216" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="215"/>
+				<var type="Differ" name="state" value="1" id="216"/>
+				<var type="Differ" name="state" value="-1" id="216"/>
+				<var type="Differ" name="state" value="-3" id="216"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找马叔(180,184)"/>
+				<notify1 content="找马叔"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30317">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20317"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：订单(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;订单\n \n&lt;/n&gt;&lt;n&gt;    哎呀，真是好久不见啊，难得回来一次！哦，这是渔夫托你送来的鱼啊。辛苦你了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("您也要多珍重{10002}", "v56000", 20317, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20317" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20317"/>
+			</conditions>
+			<actions>
+				<exp value="2600"/>
+				<notify1 content="经验+2600"/>
+				<notify content="恭喜你完成了“订单”任务"/>
+				<var type="Set" name="state" value="-1" id="20317"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30800">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20800"/>
+				<var type="Differ" name="state" value="-3" id="20800"/>
+				<var type="Differ" name="state" value="-1" id="20800"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败200只25级的血狐，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20800"/>
+				<var type="Differ" name="state" value="-1" id="20800"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：揭穿谣言(2)", "Dialog15")
+end
+function Dialog15()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;揭穿谣言\n \n&lt;/n&gt;&lt;n&gt;    是凤凰城的姜小鱼(382,433)叫你来找我的吗？呵呵！原来你在外面做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10755\" group=\"0\" OnClick=\"SelectObject1\"&gt;   冰鳞盔(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10756\" group=\"0\" OnClick=\"SelectObject2\"&gt;   黄金盔(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20800,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20800"/>
+				<var type="Differ" name="state" value="-1" id="20800"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：揭穿谣言(2)", "Dialog16")
+end
+function Dialog16()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20800" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20800"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10755"/>
+				<exp value="1500"/>
+				<notify content="恭喜你完成了“揭穿谣言”任务"/>
+				<notify content="你得到了一顶冰鳞盔(魔)"/>
+				<notify1 content="冰鳞盔(魔)"/>
+				<notify1 content="经验+1500"/>
+				<var type="Set" name="state" value="-1" id="20800"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20800"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10756"/>
+				<exp value="1500"/>
+				<notify content="恭喜你完成了“揭穿谣言”任务"/>
+				<notify content="你得到了一顶黄金盔(物)"/>
+				<notify1 content="黄金盔(物)"/>
+				<notify1 content="经验+1500"/>
+				<var type="Set" name="state" value="-1" id="20800"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30801">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20801"/>
+				<var type="Differ" name="state" value="-3" id="20801"/>
+				<var type="Differ" name="state" value="-1" id="20801"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败350只30级的食人狼，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20801"/>
+				<var type="Differ" name="state" value="-1" id="20801"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：消灭狼群(2)", "Dialog17")
+end
+function Dialog17()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;消灭狼群\n \n&lt;/n&gt;&lt;n&gt;    是凤凰城的姜小鱼(382,433)叫你来找我的吗？呵呵！原来你在外面做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10905\" group=\"0\" OnClick=\"SelectObject1\"&gt;   铜牙靴(物)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10906\" group=\"0\" OnClick=\"SelectObject2\"&gt;   生铁靴(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20801,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20801"/>
+				<var type="Differ" name="state" value="-1" id="20801"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：消灭狼群(2)", "Dialog18")
+end
+function Dialog18()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20801" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20801"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10905"/>
+				<exp value="2000"/>
+				<notify content="恭喜你完成了“消灭狼群”任务"/>
+				<notify content="你得到了一双铜牙靴(物)"/>
+				<notify1 content="铜牙靴(物)"/>
+				<notify1 content="经验+2000"/>
+				<var type="Set" name="state" value="-1" id="20801"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20801"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10906"/>
+				<exp value="2000"/>
+				<notify content="恭喜你完成了“消灭狼群”任务"/>
+				<notify content="你得到了一双生铁靴(魔)"/>
+				<notify1 content="生铁靴(魔)"/>
+				<notify1 content="经验+2000"/>
+				<var type="Set" name="state" value="-1" id="20801"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30802">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20802"/>
+				<var type="Differ" name="state" value="-3" id="20802"/>
+				<var type="Differ" name="state" value="-1" id="20802"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭500只35级的老虎，我已经等的有点不耐烦了");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20802"/>
+				<var type="Differ" name="state" value="-1" id="20802"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：清除虎患(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;清除虎患\n \n&lt;/n&gt;&lt;n&gt;    (GetName)，是凤凰城的姜小鱼(382,433)叫你来找我的吗？呵呵！原来你在外面做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10857\" group=\"0\" OnClick=\"SelectObject1\"&gt;   白银护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10858\" group=\"0\" OnClick=\"SelectObject2\"&gt;   翡翠护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20802,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20802"/>
+				<var type="Differ" name="state" value="-1" id="20802"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：清除虎患(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20802" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20802"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10857"/>
+				<exp value="2500"/>
+				<notify content="恭喜你完成了“清除虎患”任务"/>
+				<notify content="你得到了一只白银护腕(魔)"/>
+				<notify1 content="白银护腕(魔)"/>
+				<notify1 content="经验+2500"/>
+				<var type="Set" name="state" value="-1" id="20802"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20802"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10858"/>
+				<exp value="2500"/>
+				<notify content="恭喜你完成了“清除虎患”任务"/>
+				<notify content="你得到了一只翡翠护腕(物)"/>
+				<notify1 content="翡翠护腕(物)"/>
+				<notify1 content="经验+2500"/>
+				<var type="Set" name="state" value="-1" id="20802"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30803">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20803"/>
+				<var type="Differ" name="state" value="-3" id="20803"/>
+				<var type="Differ" name="state" value="-1" id="20803"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭650只35级的黑豹，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20803"/>
+				<var type="Differ" name="state" value="-1" id="20803"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：生态失衡(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;生态失衡\n \n&lt;/n&gt;&lt;n&gt;    是凤凰城的姜小鱼(382,433)叫你来找我的吗？呵呵！原来你在外面做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10857\" group=\"0\" OnClick=\"SelectObject1\"&gt;   白银护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10858\" group=\"0\" OnClick=\"SelectObject2\"&gt;   翡翠护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20803,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20803"/>
+				<var type="Differ" name="state" value="-1" id="20803"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：生态失衡(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20803" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20803"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10857"/>
+				<exp value="3500"/>
+				<notify content="恭喜你完成了“生态失衡”任务"/>
+				<notify content="你得到了一只白银护腕(魔)"/>
+				<notify1 content="白银护腕(魔)"/>
+				<notify1 content="经验+3500"/>
+				<var type="Set" name="state" value="-1" id="20803"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20803"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10858"/>
+				<exp value="3500"/>
+				<notify content="恭喜你完成了“生态失衡”任务"/>
+				<notify content="你得到了一只翡翠护腕(物)"/>
+				<notify1 content="翡翠护腕(物)"/>
+				<notify1 content="经验+3500"/>
+				<var type="Set" name="state" value="-1" id="20803"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30804">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20804"/>
+				<var type="Differ" name="state" value="-3" id="20804"/>
+				<var type="Differ" name="state" value="-1" id="20804"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭800个40级的山贼守卫，我已经等的有点不耐烦了");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20804"/>
+				<var type="Differ" name="state" value="-1" id="20804"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：讨要公道(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;讨要公道\n \n&lt;/n&gt;&lt;n&gt;    (GetName)，是凤凰城的姜小鱼(382,433)叫你来找我的吗？呵呵！原来你在外面做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10809\" group=\"0\" OnClick=\"SelectObject1\"&gt;   冰鳞腰带(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10810\" group=\"0\" OnClick=\"SelectObject2\"&gt;   黄金腰带(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20804,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20804"/>
+				<var type="Differ" name="state" value="-1" id="20804"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：讨要公道(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20804" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20804"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10809"/>
+				<exp value="4000"/>
+				<notify content="恭喜你完成了“讨要公道”任务"/>
+				<notify content="你得到了一个冰鳞腰带(魔)"/>
+				<notify1 content="冰鳞腰带(魔)"/>
+				<notify1 content="经验+4000"/>
+				<var type="Set" name="state" value="-1" id="20804"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20804"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10810"/>
+				<exp value="4000"/>
+				<notify content="恭喜你完成了“讨要公道”任务"/>
+				<notify content="你得到了一个黄金腰带(物)"/>
+				<notify1 content="黄金腰带(物)"/>
+				<notify1 content="经验+4000"/>
+				<var type="Set" name="state" value="-1" id="20804"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30805">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20805"/>
+				<var type="Differ" name="state" value="-3" id="20805"/>
+				<var type="Differ" name="state" value="-1" id="20805"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1000个45级的特级山贼，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20805"/>
+				<var type="Differ" name="state" value="-1" id="20805"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：粉碎贼计(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;粉碎贼计\n \n&lt;/n&gt;&lt;n&gt;    是凤凰城的姜小鱼(382,433)叫你来找我的吗？呵呵！原来你在外面做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10759\" group=\"0\" OnClick=\"SelectObject1\"&gt;   龙鳞盔(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10760\" group=\"0\" OnClick=\"SelectObject2\"&gt;   百战盔(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20805,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20805"/>
+				<var type="Differ" name="state" value="-1" id="20805"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：粉碎贼计(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20805" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20805"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10759"/>
+				<exp value="4500"/>
+				<notify content="恭喜你完成了“粉碎贼计”任务"/>
+				<notify content="你得到了一顶龙鳞盔(魔)"/>
+				<notify1 content="龙鳞盔(魔)"/>
+				<notify1 content="经验+4500"/>
+				<var type="Set" name="state" value="-1" id="20805"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20805"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10760"/>
+				<exp value="4500"/>
+				<notify content="恭喜你完成了“粉碎贼计”任务"/>
+				<notify content="你得到了一顶百战盔(物)"/>
+				<notify1 content="百战盔(物)"/>
+				<notify1 content="经验+4500"/>
+				<var type="Set" name="state" value="-1" id="20805"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30806">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20806"/>
+				<var type="Differ" name="state" value="-3" id="20806"/>
+				<var type="Differ" name="state" value="-1" id="20806"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1250个50级的异军驯兽师，我已经等的有点不耐烦了.");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20806"/>
+				<var type="Differ" name="state" value="-1" id="20806"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查异军(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;调查异军\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10909\" group=\"0\" OnClick=\"SelectObject1\"&gt;   冰鳞靴(物)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10910\" group=\"0\" OnClick=\"SelectObject2\"&gt;   破浪靴(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20806,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20806"/>
+				<var type="Differ" name="state" value="-1" id="20806"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查异军(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20806" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20806"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10909"/>
+				<exp value="5000"/>
+				<notify content="恭喜你完成了“调查异军”任务"/>
+				<notify content="你得到了一双冰鳞靴(物)"/>
+				<notify1 content="冰鳞靴(物)"/>
+				<notify1 content="经验+5000"/>
+				<var type="Set" name="state" value="-1" id="20806"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20806"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10910"/>
+				<exp value="5000"/>
+				<notify content="恭喜你完成了“调查异军”任务"/>
+				<notify content="你得到了一双破浪靴(魔)"/>
+				<notify1 content="破浪靴(魔)"/>
+				<notify1 content="经验+5000"/>
+				<var type="Set" name="state" value="-1" id="20806"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30807">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20807"/>
+				<var type="Differ" name="state" value="-3" id="20807"/>
+				<var type="Differ" name="state" value="-1" id="20807"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1500个55级的异军操兽师。我已经等的有点不耐烦了.");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20807"/>
+				<var type="Differ" name="state" value="-1" id="20807"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：异军计划(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;异军计划\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10861\" group=\"0\" OnClick=\"SelectObject1\"&gt;   琥珀护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10862\" group=\"0\" OnClick=\"SelectObject2\"&gt;   飞雪护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20807,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20807"/>
+				<var type="Differ" name="state" value="-1" id="20807"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：异军计划(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20807" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20807"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10861"/>
+				<exp value="5500"/>
+				<notify content="恭喜你完成了“异军计划”任务"/>
+				<notify content="你得到了一个琥珀护腕(魔)"/>
+				<notify1 content="琥珀护腕(魔)"/>
+				<notify1 content="经验+5500"/>
+				<var type="Set" name="state" value="-1" id="20807"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20807"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10862"/>
+				<exp value="5500"/>
+				<notify content="恭喜你完成了“异军计划”任务"/>
+				<notify content="你得到了一个飞雪护腕(物)"/>
+				<notify1 content="飞雪护腕(物)"/>
+				<notify1 content="经验+5500"/>
+				<var type="Set" name="state" value="-1" id="20807"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30808">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20808"/>
+				<var type="Differ" name="state" value="-3" id="20808"/>
+				<var type="Differ" name="state" value="-1" id="20808"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1750个55级的异军弓兵，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20808"/>
+				<var type="Differ" name="state" value="-1" id="20808"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：异军之乱(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;异军之乱\n \n&lt;/n&gt;&lt;n&gt;    (GetName)，是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10861\" group=\"0\" OnClick=\"SelectObject1\"&gt;   琥珀护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10862\" group=\"0\" OnClick=\"SelectObject2\"&gt;   飞雪护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 5500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20808,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20808"/>
+				<var type="Differ" name="state" value="-1" id="20808"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：异军之乱(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20808" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20808"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10861"/>
+				<exp value="5500"/>
+				<notify content="恭喜你完成了“异军之乱”任务"/>
+				<notify content="你得到了一个琥珀护腕(魔)"/>
+				<notify1 content="琥珀护腕(魔)"/>
+				<notify1 content="经验+5500"/>
+				<var type="Set" name="state" value="-1" id="20808"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20808"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10862"/>
+				<exp value="5500"/>
+				<notify content="恭喜你完成了“异军之乱”任务"/>
+				<notify content="你得到了一个飞雪护腕(物)"/>
+				<notify1 content="飞雪护腕(物)"/>
+				<notify1 content="经验+5500"/>
+				<var type="Set" name="state" value="-1" id="20808"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30809">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20809"/>
+				<var type="Differ" name="state" value="-3" id="20809"/>
+				<var type="Differ" name="state" value="-1" id="20809"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2000个60级的异军枪兵，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20809"/>
+				<var type="Differ" name="state" value="-1" id="20809"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：抢劫的异军(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;抢劫的异军\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10813\" group=\"0\" OnClick=\"SelectObject1\"&gt;   风神腰带(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10814\" group=\"0\" OnClick=\"SelectObject2\"&gt;   风神腰带(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20809,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20809"/>
+				<var type="Differ" name="state" value="-1" id="20809"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：抢劫的异军(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20809" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20809"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10813"/>
+				<exp value="6000"/>
+				<notify content="恭喜你完成了“抢劫的异军”任务"/>
+				<notify content="你得到了一跟风神腰带(魔)"/>
+				<notify1 content="风神腰带(魔)"/>
+				<notify1 content="经验+6000"/>
+				<var type="Set" name="state" value="-1" id="20809"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20809"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10814"/>
+				<exp value="6000"/>
+				<notify content="恭喜你完成了“抢劫的异军”任务"/>
+				<notify content="你得到了一跟风神腰带(物)"/>
+				<notify1 content="风神腰带(物)"/>
+				<notify1 content="经验+6000"/>
+				<var type="Set" name="state" value="-1" id="20809"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30810">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20810"/>
+				<var type="Differ" name="state" value="-3" id="20810"/>
+				<var type="Differ" name="state" value="-1" id="20810"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2250个65级的异军队长，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20810"/>
+				<var type="Differ" name="state" value="-1" id="20810"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：队长的企图(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;队长的企图\n \n&lt;/n&gt;&lt;n&gt;    (GetName)，是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10763\" group=\"0\" OnClick=\"SelectObject1\"&gt;   风神盔(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10764\" group=\"0\" OnClick=\"SelectObject2\"&gt;   风神盔(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20810,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20810"/>
+				<var type="Differ" name="state" value="-1" id="20810"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：队长的企图(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20810" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20810"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10763"/>
+				<exp value="6500"/>
+				<notify content="恭喜你完成了“队长的企图”任务"/>
+				<notify content="你得到了一件风神盔(魔)"/>
+				<notify1 content="风神盔(魔)"/>
+				<notify1 content="经验+6500"/>
+				<var type="Set" name="state" value="-1" id="20810"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20810"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10764"/>
+				<exp value="6500"/>
+				<notify content="恭喜你完成了“队长的企图”任务"/>
+				<notify content="你得到了一件风神盔(物)"/>
+				<notify1 content="风神盔(物)"/>
+				<notify1 content="经验+6500"/>
+				<var type="Set" name="state" value="-1" id="20810"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30811">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20811"/>
+				<var type="Differ" name="state" value="-3" id="20811"/>
+				<var type="Differ" name="state" value="-1" id="20811"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2500个70级的地痞，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20811"/>
+				<var type="Differ" name="state" value="-1" id="20811"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：千江地痞(2)", "Dialog37")
+end
+function Dialog37()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;千江地痞\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10913\" group=\"0\" OnClick=\"SelectObject1\"&gt;   水神靴(物)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10914\" group=\"0\" OnClick=\"SelectObject2\"&gt;   水神靴(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20811,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20811"/>
+				<var type="Differ" name="state" value="-1" id="20811"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：千江地痞(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20811" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20811"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10913"/>
+				<exp value="7000"/>
+				<notify content="恭喜你完成了“千江地痞”任务"/>
+				<notify content="你得到了一双水神靴(物)"/>
+				<notify1 content="水神靴(物)"/>
+				<notify1 content="经验+7000"/>
+				<var type="Set" name="state" value="-1" id="20811"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20811"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10914"/>
+				<exp value="7000"/>
+				<notify content="恭喜你完成了“千江地痞”任务"/>
+				<notify content="你得到了一双水神靴(魔)"/>
+				<notify1 content="水神靴(魔)"/>
+				<notify1 content="经验+7000"/>
+				<var type="Set" name="state" value="-1" id="20811"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30812">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20812"/>
+				<var type="Differ" name="state" value="-3" id="20812"/>
+				<var type="Differ" name="state" value="-1" id="20812"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭2750个75级的钢犀，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20812"/>
+				<var type="Differ" name="state" value="-1" id="20812"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狂乱钢犀(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;狂乱钢犀\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10865\" group=\"0\" OnClick=\"SelectObject1\"&gt;   水神护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10866\" group=\"0\" OnClick=\"SelectObject2\"&gt;   水神护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20812,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20812"/>
+				<var type="Differ" name="state" value="-1" id="20812"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狂乱钢犀(2)", "Dialog40")
+end
+function Dialog40()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20812" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20812"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10865"/>
+				<exp value="7500"/>
+				<notify content="恭喜你完成了“狂乱钢犀”任务"/>
+				<notify content="你得到了一只水神护腕(魔)"/>
+				<notify1 content="水神护腕(魔)"/>
+				<notify1 content="经验+7500"/>
+				<var type="Set" name="state" value="-1" id="20812"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20812"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10866"/>
+				<exp value="7500"/>
+				<notify content="恭喜你完成了“狂乱钢犀”任务"/>
+				<notify content="你得到了一只水神护腕(物)"/>
+				<notify1 content="水神护腕(物)"/>
+				<notify1 content="经验+7500"/>
+				<var type="Set" name="state" value="-1" id="20812"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30813">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20813"/>
+				<var type="Differ" name="state" value="-3" id="20813"/>
+				<var type="Differ" name="state" value="-1" id="20813"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭3000个75级的打手，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20813"/>
+				<var type="Differ" name="state" value="-1" id="20813"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：打手之乱(2)", "Dialog42")
+end
+function Dialog42()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;打手之乱\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10865\" group=\"0\" OnClick=\"SelectObject1\"&gt;   水神护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10866\" group=\"0\" OnClick=\"SelectObject2\"&gt;   水神护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 7500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20813,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20813"/>
+				<var type="Differ" name="state" value="-1" id="20813"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：打手之乱(2)", "Dialog43")
+end
+function Dialog43()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20813" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20813"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10865"/>
+				<exp value="7500"/>
+				<notify content="恭喜你完成了“打手之乱”任务"/>
+				<notify content="你得到了一只水神护腕(魔)"/>
+				<notify1 content="水神护腕(魔)"/>
+				<notify1 content="经验+7500"/>
+				<var type="Set" name="state" value="-1" id="20813"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20813"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10866"/>
+				<exp value="7500"/>
+				<notify content="恭喜你完成了“打手之乱”任务"/>
+				<notify content="你得到了一只水神护腕(物)"/>
+				<notify1 content="水神护腕(物)"/>
+				<notify1 content="经验+7500"/>
+				<var type="Set" name="state" value="-1" id="20813"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30814">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20814"/>
+				<var type="Differ" name="state" value="-3" id="20814"/>
+				<var type="Differ" name="state" value="-1" id="20814"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭3250个80级的混混，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20814"/>
+				<var type="Differ" name="state" value="-1" id="20814"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：无耻混混(2)", "Dialog45")
+end
+function Dialog45()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;无耻混混\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10817\" group=\"0\" OnClick=\"SelectObject1\"&gt;   雷神腰带(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10818\" group=\"0\" OnClick=\"SelectObject2\"&gt;   雷神腰带(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20814,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20814"/>
+				<var type="Differ" name="state" value="-1" id="20814"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：无耻混混(2)", "Dialog46")
+end
+function Dialog46()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20814" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20814"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10817"/>
+				<exp value="8000"/>
+				<notify content="恭喜你完成了“无耻混混”任务"/>
+				<notify content="你得到了一跟雷神腰带(魔)"/>
+				<notify1 content="雷神腰带(魔)"/>
+				<notify1 content="经验+8000"/>
+				<var type="Set" name="state" value="-1" id="20814"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20814"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10818"/>
+				<exp value="8000"/>
+				<notify content="恭喜你完成了“无耻混混”任务"/>
+				<notify content="你得到了一跟雷神腰带(物)"/>
+				<notify1 content="雷神腰带(物)"/>
+				<notify1 content="经验+8000"/>
+				<var type="Set" name="state" value="-1" id="20814"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30815">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20815"/>
+				<var type="Differ" name="state" value="-3" id="20815"/>
+				<var type="Differ" name="state" value="-1" id="20815"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败3500只85级的暗虎精，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20815"/>
+				<var type="Differ" name="state" value="-1" id="20815"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查精怪(2)", "Dialog48")
+end
+function Dialog48()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;调查精怪\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10767\" group=\"0\" OnClick=\"SelectObject1\"&gt;   雷神盔(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10768\" group=\"0\" OnClick=\"SelectObject2\"&gt;   雷神盔(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 8500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20815,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20815"/>
+				<var type="Differ" name="state" value="-1" id="20815"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查精怪(2)", "Dialog49")
+end
+function Dialog49()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20815" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20815"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10767"/>
+				<exp value="8500"/>
+				<notify content="恭喜你完成了“调查精怪”任务"/>
+				<notify content="你得到了一件雷神盔(魔)"/>
+				<notify1 content="雷神盔(魔)"/>
+				<notify1 content="经验+8500"/>
+				<var type="Set" name="state" value="-1" id="20815"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20815"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10768"/>
+				<exp value="8500"/>
+				<notify content="恭喜你完成了“调查精怪”任务"/>
+				<notify content="你得到了一件雷神盔(物)"/>
+				<notify1 content="雷神盔(物)"/>
+				<notify1 content="经验+8500"/>
+				<var type="Set" name="state" value="-1" id="20815"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30816">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20816"/>
+				<var type="Differ" name="state" value="-3" id="20816"/>
+				<var type="Differ" name="state" value="-1" id="20816"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败3750只90级的吸魂僵尸，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20816"/>
+				<var type="Differ" name="state" value="-1" id="20816"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：邪恶势力(2)", "Dialog51")
+end
+function Dialog51()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;邪恶势力\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10917\" group=\"0\" OnClick=\"SelectObject1\"&gt;   火神靴(物)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10918\" group=\"0\" OnClick=\"SelectObject2\"&gt;   火神靴(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20816,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20816"/>
+				<var type="Differ" name="state" value="-1" id="20816"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：邪恶势力(2)", "Dialog52")
+end
+function Dialog52()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20816" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20816"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10917"/>
+				<exp value="9000"/>
+				<notify content="恭喜你完成了“邪恶势力”任务"/>
+				<notify content="你得到了一双火神靴(物)"/>
+				<notify1 content="火神靴(物)"/>
+				<notify1 content="经验+9000"/>
+				<var type="Set" name="state" value="-1" id="20816"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20816"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10918"/>
+				<exp value="9000"/>
+				<notify content="恭喜你完成了“邪恶势力”任务"/>
+				<notify content="你得到了一双火神靴(魔)"/>
+				<notify1 content="火神靴(魔)"/>
+				<notify1 content="经验+9000"/>
+				<var type="Set" name="state" value="-1" id="20816"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30817">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20817"/>
+				<var type="Differ" name="state" value="-3" id="20817"/>
+				<var type="Differ" name="state" value="-1" id="20817"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败4000只95级的狂齿鳄，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20817"/>
+				<var type="Differ" name="state" value="-1" id="20817"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：沼泽之险(2)", "Dialog54")
+end
+function Dialog54()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;沼泽之险\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10869\" group=\"0\" OnClick=\"SelectObject1\"&gt;   火神护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10870\" group=\"0\" OnClick=\"SelectObject2\"&gt;   火神护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20817,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20817"/>
+				<var type="Differ" name="state" value="-1" id="20817"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：沼泽之险(2)", "Dialog55")
+end
+function Dialog55()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20817" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20817"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10869"/>
+				<exp value="9500"/>
+				<notify content="恭喜你完成了“沼泽之险”任务"/>
+				<notify content="你得到了一只火神护腕(魔)"/>
+				<notify1 content="火神护腕(魔)"/>
+				<notify1 content="经验+9500"/>
+				<var type="Set" name="state" value="-1" id="20817"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20817"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10870"/>
+				<exp value="9500"/>
+				<notify content="恭喜你完成了“沼泽之险”任务"/>
+				<notify content="你得到了一只火神护腕(物)"/>
+				<notify1 content="火神护腕(物)"/>
+				<notify1 content="经验+9500"/>
+				<var type="Set" name="state" value="-1" id="20817"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30818">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20818"/>
+				<var type="Differ" name="state" value="-3" id="20818"/>
+				<var type="Differ" name="state" value="-1" id="20818"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败4250个95级的通魔鱼精，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20818"/>
+				<var type="Differ" name="state" value="-1" id="20818"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狡猾的鱼精(2)", "Dialog57")
+end
+function Dialog57()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;狡猾的鱼精\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10869\" group=\"0\" OnClick=\"SelectObject1\"&gt;   火神护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10870\" group=\"0\" OnClick=\"SelectObject2\"&gt;   火神护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 9500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20818,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20818"/>
+				<var type="Differ" name="state" value="-1" id="20818"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狡猾的鱼精(2)", "Dialog58")
+end
+function Dialog58()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20818" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20818"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10869"/>
+				<exp value="9500"/>
+				<notify content="恭喜你完成了“狡猾的鱼精”任务"/>
+				<notify content="你得到了一只火神护腕(魔)"/>
+				<notify1 content="火神护腕(魔)"/>
+				<notify1 content="经验+9500"/>
+				<var type="Set" name="state" value="-1" id="20818"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20818"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10870"/>
+				<exp value="9500"/>
+				<notify content="恭喜你完成了“狡猾的鱼精”任务"/>
+				<notify content="你得到了一只火神护腕(物)"/>
+				<notify1 content="火神护腕(物)"/>
+				<notify1 content="经验+9500"/>
+				<var type="Set" name="state" value="-1" id="20818"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30819">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20819"/>
+				<var type="Differ" name="state" value="-3" id="20819"/>
+				<var type="Differ" name="state" value="-1" id="20819"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败4500只100级的赤虎精，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20819"/>
+				<var type="Differ" name="state" value="-1" id="20819"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：虎精之乱(2)", "Dialog60")
+end
+function Dialog60()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;虎精之乱\n \n&lt;/n&gt;&lt;n&gt;    是王城的葫铁花(816,431)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10821\" group=\"0\" OnClick=\"SelectObject1\"&gt;   夜魔腰带(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10822\" group=\"0\" OnClick=\"SelectObject2\"&gt;   夜魔腰带(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20819,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20819"/>
+				<var type="Differ" name="state" value="-1" id="20819"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：虎精之乱(2)", "Dialog61")
+end
+function Dialog61()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20819" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20819"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10821"/>
+				<exp value="10000"/>
+				<notify content="恭喜你完成了“虎精之乱”任务"/>
+				<notify content="你得到了一件夜魔腰带(魔)"/>
+				<notify1 content="夜魔腰带(魔)"/>
+				<notify1 content="经验+10000"/>
+				<var type="Set" name="state" value="-1" id="20819"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20819"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10822"/>
+				<exp value="10000"/>
+				<notify content="恭喜你完成了“虎精之乱”任务"/>
+				<notify content="你得到了一件夜魔腰带(物)"/>
+				<notify1 content="夜魔腰带(物)"/>
+				<notify1 content="经验+10000"/>
+				<var type="Set" name="state" value="-1" id="20819"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30820">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20820"/>
+				<var type="Differ" name="state" value="-3" id="20820"/>
+				<var type="Differ" name="state" value="-1" id="20820"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭4750个105级的粗糙木人，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20820"/>
+				<var type="Differ" name="state" value="-1" id="20820"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查木人(2)", "Dialog62")
+end
+function Dialog62()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;调查木人\n \n&lt;/n&gt;&lt;n&gt;     是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10771\" group=\"0\" OnClick=\"SelectObject1\"&gt;   夜魔盔(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10772\" group=\"0\" OnClick=\"SelectObject2\"&gt;   夜魔盔(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 10500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的！{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20820,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20820"/>
+				<var type="Differ" name="state" value="-1" id="20820"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查木人(2)", "Dialog63")
+end
+function Dialog63()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20820" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20820"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10771"/>
+				<exp value="10500"/>
+				<notify content="恭喜你完成了“调查木人”任务"/>
+				<notify content="你得到了一顶夜魔盔(魔)"/>
+				<notify1 content="夜魔盔(魔)"/>
+				<notify1 content="经验+10500"/>
+				<var type="Set" name="state" value="-1" id="20820"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20820"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10772"/>
+				<exp value="10500"/>
+				<notify content="恭喜你完成了“调查木人”任务"/>
+				<notify content="你得到了一顶夜魔盔(物)"/>
+				<notify1 content="夜魔盔(物)"/>
+				<notify1 content="经验+10500"/>
+				<var type="Set" name="state" value="-1" id="20820"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30821">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20821"/>
+				<var type="Differ" name="state" value="-3" id="20821"/>
+				<var type="Differ" name="state" value="-1" id="20821"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5000只110级的犬戎狂巫，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20821"/>
+				<var type="Differ" name="state" value="-1" id="20821"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查王墓(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;调查王墓\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10921\" group=\"0\" OnClick=\"SelectObject1\"&gt;   血魔靴(物)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10922\" group=\"0\" OnClick=\"SelectObject2\"&gt;   血魔靴(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20821,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20821"/>
+				<var type="Differ" name="state" value="-1" id="20821"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：调查王墓(2)", "Dialog65")
+end
+function Dialog65()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20821" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20821"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10921"/>
+				<exp value="11000"/>
+				<notify content="恭喜你完成了“调查王墓”任务"/>
+				<notify content="你得到了一双血魔靴(物)"/>
+				<notify1 content="血魔靴(物)"/>
+				<notify1 content="经验+11000"/>
+				<var type="Set" name="state" value="-1" id="20821"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20821"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10922"/>
+				<exp value="11000"/>
+				<notify content="恭喜你完成了“调查王墓”任务"/>
+				<notify content="你得到了一双血魔靴(魔)"/>
+				<notify1 content="血魔靴(魔)"/>
+				<notify1 content="经验+11000"/>
+				<var type="Set" name="state" value="-1" id="20821"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30822">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20822"/>
+				<var type="Differ" name="state" value="-3" id="20822"/>
+				<var type="Differ" name="state" value="-1" id="20822"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5250个115级的高级工匠，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20822"/>
+				<var type="Differ" name="state" value="-1" id="20822"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：工匠的研究(2)", "Dialog66")
+end
+function Dialog66()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;工匠的研究\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10873\" group=\"0\" OnClick=\"SelectObject1\"&gt;   血魔护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10874\" group=\"0\" OnClick=\"SelectObject2\"&gt;   血魔护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20822,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20822"/>
+				<var type="Differ" name="state" value="-1" id="20822"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：工匠的研究(2)", "Dialog67")
+end
+function Dialog67()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20822" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20822"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10873"/>
+				<exp value="11500"/>
+				<notify content="恭喜你完成了“工匠的研究”任务"/>
+				<notify content="你得到了一只血魔护腕(魔)"/>
+				<notify1 content="血魔护腕(魔)"/>
+				<notify1 content="经验+11500"/>
+				<var type="Set" name="state" value="-1" id="20822"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20822"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10874"/>
+				<exp value="11500"/>
+				<notify content="恭喜你完成了“工匠的研究”任务"/>
+				<notify content="你得到了一只血魔护腕(物)"/>
+				<notify1 content="血魔护腕(物)"/>
+				<notify1 content="经验+11500"/>
+				<var type="Set" name="state" value="-1" id="20822"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30823">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20823"/>
+				<var type="Differ" name="state" value="-3" id="20823"/>
+				<var type="Differ" name="state" value="-1" id="20823"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5500个115级的犬戎魔师，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20823"/>
+				<var type="Differ" name="state" value="-1" id="20823"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：灭魔(2)", "Dialog68")
+end
+function Dialog68()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;灭魔\n \n&lt;/n&gt;&lt;n&gt;    (GetName)，是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10873\" group=\"0\" OnClick=\"SelectObject1\"&gt;   血魔护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10874\" group=\"0\" OnClick=\"SelectObject2\"&gt;   血魔护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20823,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20823"/>
+				<var type="Differ" name="state" value="-1" id="20823"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：灭魔(2)", "Dialog69")
+end
+function Dialog69()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20823" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20823"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10873"/>
+				<exp value="11500"/>
+				<notify content="恭喜你完成了“灭魔”任务"/>
+				<notify content="你得到了一只血魔护腕(魔)"/>
+				<notify1 content="血魔护腕(魔)"/>
+				<notify1 content="经验+11500"/>
+				<var type="Set" name="state" value="-1" id="20823"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20823"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10874"/>
+				<exp value="11500"/>
+				<notify content="恭喜你完成了“灭魔”任务"/>
+				<notify content="你得到了一只血魔护腕(物)"/>
+				<notify1 content="血魔护腕(物)"/>
+				<notify1 content="经验+11500"/>
+				<var type="Set" name="state" value="-1" id="20823"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30824">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20824"/>
+				<var type="Differ" name="state" value="-3" id="20824"/>
+				<var type="Differ" name="state" value="-1" id="20824"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败5750个120级的骸骨士兵，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20824"/>
+				<var type="Differ" name="state" value="-1" id="20824"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：疯狂骸骨(2)", "Dialog70")
+end
+function Dialog70()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;疯狂骸骨\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10825\" group=\"0\" OnClick=\"SelectObject1\"&gt;   天魔腰带(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10826\" group=\"0\" OnClick=\"SelectObject2\"&gt;   天魔腰带(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20824,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20824"/>
+				<var type="Differ" name="state" value="-1" id="20824"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：疯狂骸骨(2)", "Dialog71")
+end
+function Dialog71()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20824" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20824"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10825"/>
+				<exp value="12000"/>
+				<notify content="恭喜你完成了“疯狂骸骨”任务"/>
+				<notify content="你得到了一跟天魔腰带(魔)"/>
+				<notify1 content="天魔腰带(魔)"/>
+				<notify1 content="经验+12000"/>
+				<var type="Set" name="state" value="-1" id="20824"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20824"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10826"/>
+				<exp value="12000"/>
+				<notify content="恭喜你完成了“疯狂骸骨”任务"/>
+				<notify content="你得到了一跟天魔腰带(物)"/>
+				<notify1 content="天魔腰带(物)"/>
+				<notify1 content="经验+12000"/>
+				<var type="Set" name="state" value="-1" id="20824"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30825">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20825"/>
+				<var type="Differ" name="state" value="-3" id="20825"/>
+				<var type="Differ" name="state" value="-1" id="20825"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6000个125级的骸骨祭师，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20825"/>
+				<var type="Differ" name="state" value="-1" id="20825"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：祭师法咒(2)", "Dialog72")
+end
+function Dialog72()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;祭师法咒\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10775\" group=\"0\" OnClick=\"SelectObject1\"&gt;   天魔盔(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10776\" group=\"0\" OnClick=\"SelectObject2\"&gt;   天魔盔(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 12500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20825,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20825"/>
+				<var type="Differ" name="state" value="-1" id="20825"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：祭师法咒(2)", "Dialog73")
+end
+function Dialog73()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20825" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20825"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10775"/>
+				<exp value="12500"/>
+				<notify content="恭喜你完成了“祭师法咒”任务"/>
+				<notify content="你得到了一顶天魔盔(魔)"/>
+				<notify1 content="天魔盔(魔)"/>
+				<notify1 content="经验+12500"/>
+				<var type="Set" name="state" value="-1" id="20825"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20825"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10776"/>
+				<exp value="12500"/>
+				<notify content="恭喜你完成了“祭师法咒”任务"/>
+				<notify content="你得到了一顶天魔盔(物)"/>
+				<notify1 content="天魔盔(物)"/>
+				<notify1 content="经验+12500"/>
+				<var type="Set" name="state" value="-1" id="20825"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30826">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20826"/>
+				<var type="Differ" name="state" value="-3" id="20826"/>
+				<var type="Differ" name="state" value="-1" id="20826"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6250个130级的骸骨战士，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20826"/>
+				<var type="Differ" name="state" value="-1" id="20826"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：邪恶傀儡(2)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;邪恶傀儡\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10925\" group=\"0\" OnClick=\"SelectObject1\"&gt;   火神靴（物防）&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10926\" group=\"0\" OnClick=\"SelectObject2\"&gt;   幽冥靴(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20826,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20826"/>
+				<var type="Differ" name="state" value="-1" id="20826"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：邪恶傀儡(2)", "Dialog75")
+end
+function Dialog75()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20826" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20826"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10925"/>
+				<exp value="13000"/>
+				<notify content="恭喜你完成了“邪恶傀儡”任务"/>
+				<notify content="你得到了一双幽冥靴(物)"/>
+				<notify1 content="幽冥靴(物)"/>
+				<notify1 content="经验+13000"/>
+				<var type="Set" name="state" value="-1" id="20826"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20826"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10926"/>
+				<exp value="13000"/>
+				<notify content="恭喜你完成了“邪恶傀儡”任务"/>
+				<notify content="你得到了一双幽冥靴(魔)"/>
+				<notify1 content="幽冥靴(魔)"/>
+				<notify1 content="经验+13000"/>
+				<var type="Set" name="state" value="-1" id="20826"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30827">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20827"/>
+				<var type="Differ" name="state" value="-3" id="20827"/>
+				<var type="Differ" name="state" value="-1" id="20827"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6500个135级的机关总管，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20827"/>
+				<var type="Differ" name="state" value="-1" id="20827"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：消灭总管(2)", "Dialog76")
+end
+function Dialog76()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;消灭总管\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10877\" group=\"0\" OnClick=\"SelectObject1\"&gt;   幽冥护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10878\" group=\"0\" OnClick=\"SelectObject2\"&gt;   幽冥护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20827,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20827"/>
+				<var type="Differ" name="state" value="-1" id="20827"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：消灭总管(2)", "Dialog77")
+end
+function Dialog77()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20827" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20827"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10877"/>
+				<exp value="13500"/>
+				<notify content="恭喜你完成了“消灭总管”任务"/>
+				<notify content="你得到了一只幽冥护腕(魔)"/>
+				<notify1 content="幽冥护腕(魔)"/>
+				<notify1 content="经验+13500"/>
+				<var type="Set" name="state" value="-1" id="20827"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20827"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10878"/>
+				<exp value="13500"/>
+				<notify content="恭喜你完成了“消灭总管”任务"/>
+				<notify content="你得到了一只幽冥护腕(物)"/>
+				<notify1 content="幽冥护腕(物)"/>
+				<notify1 content="经验+13500"/>
+				<var type="Set" name="state" value="-1" id="20827"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30828">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20828"/>
+				<var type="Differ" name="state" value="-3" id="20828"/>
+				<var type="Differ" name="state" value="-1" id="20828"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败6750个135级的骸骨枪兵，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20828"/>
+				<var type="Differ" name="state" value="-1" id="20828"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：凶恶骸骨(2)", "Dialog78")
+end
+function Dialog78()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;凶恶骸骨\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10877\" group=\"0\" OnClick=\"SelectObject1\"&gt;   幽冥护腕(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10878\" group=\"0\" OnClick=\"SelectObject2\"&gt;   幽冥护腕(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 13500&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20828,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20828"/>
+				<var type="Differ" name="state" value="-1" id="20828"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：凶恶骸骨(2)", "Dialog79")
+end
+function Dialog79()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20828" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20828"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10877"/>
+				<exp value="13500"/>
+				<notify content="恭喜你完成了“凶恶骸骨”任务"/>
+				<notify content="你得到了一只幽冥护腕(魔)"/>
+				<notify1 content="幽冥护腕(魔)"/>
+				<notify1 content="经验+13500"/>
+				<var type="Set" name="state" value="-1" id="20828"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20828"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10878"/>
+				<exp value="13500"/>
+				<notify content="恭喜你完成了“凶恶骸骨”任务"/>
+				<notify content="你得到了一只幽冥护腕(物)"/>
+				<notify1 content="幽冥护腕(物)"/>
+				<notify1 content="经验+13500"/>
+				<var type="Set" name="state" value="-1" id="20828"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30829">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20829"/>
+				<var type="Differ" name="state" value="-3" id="20829"/>
+				<var type="Differ" name="state" value="-1" id="20829"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有击败7000个140级的亡灵战士，我已经等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20829"/>
+				<var type="Differ" name="state" value="-1" id="20829"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：亡灵计划(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;亡灵计划\n \n&lt;/n&gt;&lt;n&gt;    是皇城的燕北飞(867,706)叫你来找我的吗？呵呵！原来你做了这么多了不起的事！自从你离开清源村，已经好久没来看我了。\n\n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10829\" group=\"0\" OnClick=\"SelectObject1\"&gt;   玄武腰带(魔)&lt;/object&gt;&lt;n&gt;   &lt;/n&gt;&lt;object id=\"10830\" group=\"0\" OnClick=\"SelectObject2\"&gt;   玄武腰带(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,0\"&gt; \n以上物品单击选择，每人只能选一种&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 14000&lt;/n&gt;&lt;/p&gt;")
+this:AddScriptButton("我今天就是来看您的。{10002}","FinalTask")
+end
+SelectObject = -1
+function SelectObject1()
+	SelectObject = 1
+end
+function SelectObject2()
+	SelectObject = 2
+end
+function FinalTask()
+	if(SelectObject ~= -1) then
+		this:SendTaskCmd("v56000",20829,SelectObject)
+		this:CloseNpcDialog()
+	end
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20829"/>
+				<var type="Differ" name="state" value="-1" id="20829"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：亡灵计划(2)", "Dialog81")
+end
+function Dialog81()
+this:AddTalk("    对不起，你的包裹满了，请清空一些再来吧。");
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20829" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20829"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10829"/>
+				<exp value="14000"/>
+				<notify content="恭喜你完成了“亡灵计划”任务"/>
+				<notify content="你得到了一跟玄武腰带(魔)"/>
+				<notify1 content="玄武腰带(魔)"/>
+				<notify1 content="经验+14000"/>
+				<var type="Set" name="state" value="-1" id="20829"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20829"/>
+			</conditions>
+			<actions>
+				<addgreenbinditem value="1" id="10830"/>
+				<exp value="14000"/>
+				<notify content="恭喜你完成了“亡灵计划”任务"/>
+				<notify content="你得到了一跟玄武腰带(物)"/>
+				<notify1 content="玄武腰带(物)"/>
+				<notify1 content="经验+14000"/>
+				<var type="Set" name="state" value="-1" id="20829"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

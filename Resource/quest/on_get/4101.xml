@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="4101" name="犀角杖">
+	<quest id="133" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="133"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个犀角杖，去交给宋铜川"/>
+				<var type="Set" name="state" value="-3" id="133"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

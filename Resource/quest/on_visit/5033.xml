@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5033" name="">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960100">
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("想出去么？我可以带你去栖息地。");
+this:AddTaskCmdItem("请带路-2两(0)", "v5033", 160100, 11)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160100" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+                                <gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·栖息地" pos="30,180"/>
+                                <gold type="Sub" value="200"/>
+				<notify content="你被带到栖息地"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10227" name="机械工厂八层-精铜法卫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20539" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_精铜法卫" value="35"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_精铜法卫" value="1"/>
+				<refresh name="kill_精铜法卫"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_精铜法卫" value="34"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_精铜法卫"/>
+				<notify content="你已经消灭了很多精铜法卫,回皇城－吕思远(602,281)处交任务吧"/>
+				<notify1 content="去找皇城－吕思远(602,281)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="425" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2181" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

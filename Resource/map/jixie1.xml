@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512 -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="14" y="165"/>
+		<point x="14" y="166"/>
+		<point x="14" y="167"/>
+		<point x="14" y="168"/>
+		<point x="14" y="169"/>
+		<point x="14" y="170"/>
+		<point x="14" y="170"/>
+		<point x="14" y="171"/>
+		<point x="14" y="172"/>
+		<point x="14" y="173"/>
+		<point x="14" y="174"/>
+		<point x="14" y="175"/>
+		<point x="14" y="175"/>
+		<point x="14" y="176"/>
+		<point x="15" y="164"/>
+		<point x="15" y="165"/>
+		<point x="14" y="175"/>
+		<point x="14" y="176"/>
+		<point x="15" y="164"/>
+		<point x="15" y="165"/>
+		<point x="15" y="166"/>
+		<point x="15" y="166"/>
+		<point x="15" y="167"/>
+		<point x="15" y="168"/>
+		<point x="15" y="169"/>
+		<point x="15" y="170"/>
+		<point x="15" y="171"/>
+		<point x="15" y="172"/>
+		<point x="15" y="173"/>
+		<point x="15" y="174"/>
+		<point x="15" y="175"/>
+		<point x="15" y="176"/>
+		<dest name="huangcheng" country="6" x="875" y="497"/>
+		<dest name="huangcheng" country="6" x="875" y="498"/>
+		<dest name="huangcheng" country="6" x="875" y="499"/>
+		<dest name="huangcheng" country="6" x="875" y="500"/>
+		<dest name="huangcheng" country="6" x="875" y="501"/>
+		<dest name="huangcheng" country="6" x="875" y="502"/>
+		<dest name="huangcheng" country="6" x="875" y="503"/>
+		<dest name="huangcheng" country="6" x="875" y="504"/>
+		<dest name="huangcheng" country="6" x="875" y="505"/>
+		<dest name="huangcheng" country="6" x="875" y="506"/>
+		<dest name="huangcheng" country="6" x="875" y="507"/>
+		<dest name="huangcheng" country="6" x="875" y="508"/>
+		<dest name="huangcheng" country="6" x="875" y="509"/>
+		<dest name="huangcheng" country="6" x="875" y="510"/>
+		<dest name="huangcheng" country="6" x="875" y="511"/>
+		<dest name="huangcheng" country="6" x="875" y="512"/>
+		<dest name="huangcheng" country="6" x="876" y="497"/>
+		<dest name="huangcheng" country="6" x="876" y="498"/>
+		<dest name="huangcheng" country="6" x="876" y="499"/>
+		<dest name="huangcheng" country="6" x="876" y="500"/>
+		<dest name="huangcheng" country="6" x="876" y="501"/>
+		<dest name="huangcheng" country="6" x="876" y="502"/>
+		<dest name="huangcheng" country="6" x="876" y="503"/>
+		<dest name="huangcheng" country="6" x="876" y="504"/>
+		<dest name="huangcheng" country="6" x="876" y="505"/>
+		<dest name="huangcheng" country="6" x="876" y="506"/>
+		<dest name="huangcheng" country="6" x="876" y="507"/>
+		<dest name="huangcheng" country="6" x="876" y="508"/>
+		<dest name="huangcheng" country="6" x="876" y="509"/>
+		<dest name="huangcheng" country="6" x="876" y="510"/>
+		<dest name="huangcheng" country="6" x="876" y="511"/>
+		<dest name="huangcheng" country="6" x="876" y="512"/>
+	</waypoint>
+	<waypoint>
+		<point x="136" y="25"/>
+		<point x="137" y="25"/>
+		<point x="138" y="25"/>
+		<point x="136" y="26"/>
+		<point x="137" y="26"/>
+		<point x="138" y="26"/>
+		<point x="135" y="27"/>
+		<point x="136" y="27"/>
+		<dest name="jixie2" country="6" x="84" y="63"/>
+		<dest name="jixie2" country="6" x="85" y="63"/>
+		<dest name="jixie2" country="6" x="86" y="63"/>
+		<dest name="jixie2" country="6" x="87" y="63"/>
+		<dest name="jixie2" country="6" x="84" y="64"/>
+		<dest name="jixie2" country="6" x="85" y="64"/>
+		<dest name="jixie2" country="6" x="86" y="64"/>
+		<dest name="jixie2" country="6" x="87" y="64"/>
+	</waypoint>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="26" height="33" x="8" y="142" type="1" color="0,0,255,0"/>
+	<zonedef width="18" height="31" x="126" y="4" type="1" color="0,0,255,0"/>
+	<npc id="10202" name="工厂哨兵" width="13" height="19" x="14" y="56" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="10202" name="工厂哨兵" width="152" height="142" x="34" y="35" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="10203" name="粗铜法卫" width="151" height="142" x="34" y="36" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="5062" name="机械厂事务者" width="1" height="1" x="178" y="80" num="1" interval="1800"/>
+	<npc id="5054" name="密室传送者" width="1" height="1" x="183" y="76" num="1" interval="1800"/>
+	<npc id="10201" name="工厂苦力" width="15" height="20" x="97" y="70" num="15" interval="2" color="0,255,0,0"/>
+	<npc id="10204" name="老旧木人" width="15" height="20" x="97" y="70" num="15" interval="2" color="0,255,0,0"/>
+	<npc id="10201" name="工厂苦力" width="15" height="20" x="80" y="140" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="10204" name="老旧木人" width="15" height="20" x="176" y="66" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="10201" name="工厂苦力" width="15" height="20" x="52" y="10" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10204" name="老旧木人" width="15" height="20" x="52" y="10" num="25" interval="2" color="0,255,0,0"/>
+</map>

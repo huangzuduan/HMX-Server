@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="421" name="凤尾村-李斯(103,95)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10243">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="243"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：解难(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;解难\n \n&lt;/n&gt;&lt;n&gt;    你能来真是太好了。我这边闹鼠灾，粮仓里面全都是老鼠，杀都杀不完。粮食遭到重大损失，这可是用来赈灾的屯粮啊！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1850&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("难道不能用老鼠药吗？{10002}", "v421", 243, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="243" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="243"/>
+			</conditions>
+			<actions>
+				<exp value="1850"/>
+				<notify1 content="经验+1850"/>
+				<notify content="恭喜你完成了“解难”任务"/>
+				<var type="Set" name="state" value="-1" id="243"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10244">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="243"/>
+				<var type="Differ" name="state" value="-3" id="244"/>
+				<var type="Differ" name="state" value="-1" id="244"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：鼠灾(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;鼠灾\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找炼药师洪老汉(409,499)要一些老鼠药。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;      哎呀，你真聪明，我怎么就没想到呢？我要看守仓库走不开，请你帮我从药师那里拿一些老鼠药来。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这有何难{10001}", "v421", 244, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="244" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="243"/>
+				<var type="Differ" name="state" value="-3" id="244"/>
+				<var type="Differ" name="state" value="-1" id="244"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找炼药师洪老汉(409,499)"/>
+				<notify1 content="炼药师洪老汉(409,499)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10246">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2088"/>
+				<var type="Equal" name="state" value="-3" id="246"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：下药(2)", "Dialog37")
+end
+function Dialog37()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;下药\n \n&lt;/n&gt;&lt;n&gt;    啊，老鼠药。这下我的粮仓有救了。多谢多谢啊！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不客气{10002}", "v421", 246, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="246" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2088"/>
+				<var type="Equal" name="state" value="-3" id="246"/>
+			</conditions>
+			<actions>
+				<exp value="2000"/>
+				<removeitem value="1" id="2088" log="交下药(246)-删除毒药(2088)"/>
+				<notify1 content="经验+2000"/>
+				<notify content="恭喜你完成了“下药”任务"/>
+				<var type="Set" name="state" value="-1" id="246"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10247">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="246"/>
+				<var type="Differ" name="state" value="-3" id="247"/>
+				<var type="Differ" name="state" value="-1" id="247"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：得不偿失(2)", "Dialog123")
+end
+function Dialog123()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;得不偿失\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    想办法向饲养员(403,495)要些猫。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，糟了，用了老鼠药之后，毒死的老鼠到处都是，把粮食全都糟蹋了！损失的粮食比老鼠吃掉的还多，这可怎么办啊。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("有了！我替你弄些猫来{10001}", "v421", 247, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="247" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="246"/>
+				<var type="Differ" name="state" value="-3" id="247"/>
+				<var type="Differ" name="state" value="-1" id="247"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找饲养员(403,495)"/>
+				<notify1 content="饲养员(403,495)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10249">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="249"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：天敌(2)", "Dialog55")
+end
+function Dialog55()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;天敌\n \n&lt;/n&gt;&lt;n&gt;    不知道用猫能行么？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这次保证没问题{10002}", "v421", 249, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="249" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="249"/>
+			</conditions>
+			<actions>
+				<exp value="1200"/>
+				<notify1 content="经验+1200"/>
+				<notify content="恭喜你完成了“天敌”任务"/>
+				<var type="Set" name="state" value="-1" id="249"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10250">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="249"/>
+				<var type="Differ" name="state" value="-3" id="250"/>
+				<var type="Differ" name="state" value="-1" id="250"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：谢礼(2)", "Dialog65")
+end
+function Dialog65()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;谢礼\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    回去向张真人(270,490)汇报这次的成果。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，自从你给了猫之后，老鼠再也没有出现过，粮食保住了，多亏了你！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"4072\"&gt;   霸王之剑&lt;/object&gt;&lt;n&gt;  &lt;/n&gt;&lt;object id=\"4102\"&gt;   智者之杖&lt;/object&gt;&lt;/p&gt;       &lt;p&gt;&lt;object id=\"4112\"&gt;   羿王神弓&lt;/object&gt;&lt;n&gt;  &lt;/n&gt;&lt;object id=\"4122\"&gt;   凤凰羽扇&lt;/object&gt;&lt;/p&gt;      &lt;p&gt;&lt;object id=\"4132\"&gt;   灵魂之棒&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("日后有事尽管找我{10001}", "v421", 250, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="250" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="249"/>
+				<var type="Differ" name="state" value="-3" id="250"/>
+				<var type="Differ" name="state" value="-1" id="250"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找张真人(270,490)"/>
+				<notify1 content="张真人(270,490)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

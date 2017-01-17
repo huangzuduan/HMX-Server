@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="855" name="凤凰城-姜小鱼(440,472)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30800">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="24"/>
+				<level type="Less" value="31"/>
+				<var type="Differ" name="state" value="-1" id="20800"/>
+				<var type="Differ" name="state" value="1" id="20800"/>
+				<var type="Differ" name="state" value="-3" id="20800"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：揭穿谣言(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;揭穿谣言\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去百兽谷(117,193)消灭200只25级的血狐，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    听说百兽谷的血狐幻化成美丽女子，专门迷惑心志不坚的男人，为了调查这件事是否属实，姜小鱼费了不少心思，你能帮他去百兽谷查探一下吗？\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10755\"&gt;   冰鳞盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10756\"&gt;   黄金盔(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v855", 20800, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20800"/>
+				<var type="Differ" name="state" value="-3" id="20800"/>
+				<var type="Differ" name="state" value="-1" id="20800"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完200只25级的血狐，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20800" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="24"/>
+				<level type="Less" value="31"/>
+				<var type="Differ" name="state" value="-1" id="20800"/>
+				<var type="Differ" name="state" value="1" id="20800"/>
+				<var type="Differ" name="state" value="-3" id="20800"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+                                <notify1 content="任务：去百兽谷(117,193)消灭200只25级的血狐，完成后去找清源村的村长(114,93)"/>
+				<notify content="任务：去百兽谷(117,193)消灭200只25级的血狐，完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30801">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="28"/>
+				<level type="Less" value="40"/>
+				<var type="Differ" name="state" value="-1" id="20801"/>
+				<var type="Differ" name="state" value="1" id="20801"/>
+				<var type="Differ" name="state" value="-3" id="20801"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：消灭狼群(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;消灭狼群\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去百兽谷和兽王谷消灭350只30级的食人狼，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    百兽谷里的食人狼数量众多，他们经常成群结队跑出来，咬伤咬死农民的牲畜不算，有时候还袭击落单的行路人。这实在是太可恶了，你去帮我消灭他们吧。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10905\"&gt;    铜牙靴(物)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10906\"&gt;   生铁靴(魔)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v855", 20801, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20801"/>
+				<var type="Differ" name="state" value="-3" id="20801"/>
+				<var type="Differ" name="state" value="-1" id="20801"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭完350只30级的食人狼，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20801" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="28"/>
+				<level type="Less" value="40"/>
+				<var type="Differ" name="state" value="-1" id="20801"/>
+				<var type="Differ" name="state" value="1" id="20801"/>
+				<var type="Differ" name="state" value="-3" id="20801"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去百兽谷和兽王谷消灭350只30级的食人狼，完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去百兽谷和兽王谷消灭350只30级的食人狼，完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30802">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="32"/>
+				<level type="Less" value="44"/>
+				<var type="Differ" name="state" value="-1" id="20802"/>
+				<var type="Differ" name="state" value="1" id="20802"/>
+				<var type="Differ" name="state" value="-3" id="20802"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：清除虎患(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;清除虎患\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去兽王谷消灭500只35级的老虎，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    前些时候，凤凰城的炼药师洪老汉去百兽谷里采药，却被兽王谷里窜出的老虎所伤，差点丢了性命。你去一趟兽王谷，帮我查一下兽王谷里老虎的情况，顺便消灭500只老虎，好让他们不再出来害人。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10857\"&gt;   白银护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10858\"&gt;   翡翠护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10001}", "v855", 20802, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20802"/>
+				<var type="Differ" name="state" value="-3" id="20802"/>
+				<var type="Differ" name="state" value="-1" id="20802"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭500只35级的老虎，清源村的村长(114,93)也许等的有点不耐烦了");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20802" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="32"/>
+				<level type="Less" value="44"/>
+				<var type="Differ" name="state" value="-1" id="20802"/>
+				<var type="Differ" name="state" value="1" id="20802"/>
+				<var type="Differ" name="state" value="-3" id="20802"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去兽王谷消灭500只35级的老虎，完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去兽王谷消灭500只35级的老虎，完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30803">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="36"/>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-1" id="20803"/>
+				<var type="Differ" name="state" value="1" id="20803"/>
+				<var type="Differ" name="state" value="-3" id="20803"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：生态失衡(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;生态失衡\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去兽王谷(56,201)消灭650只35级的黑豹，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    事情变的糟糕了！自从上次消灭了兽王谷里的很多老虎以后，黑豹的数量与日剧增，现在黑豹不仅仅会窜到百兽谷，而且有时候还跑到凤凰城外游荡，吓的村民都不敢出来耕种。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10857\"&gt;   白银护腕(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10858\"&gt;   翡翠护腕(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我立刻去{10001}", "v855", 20803, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20803"/>
+				<var type="Differ" name="state" value="-3" id="20803"/>
+				<var type="Differ" name="state" value="-1" id="20803"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭650只35级的黑豹，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20803" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="36"/>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-1" id="20803"/>
+				<var type="Differ" name="state" value="1" id="20803"/>
+				<var type="Differ" name="state" value="-3" id="20803"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去兽王谷(56,201)消灭650只35级的黑豹，完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去兽王谷(56,201)消灭650只35级的黑豹，完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30804">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="40"/>
+				<level type="Less" value="51"/>
+				<var type="Differ" name="state" value="-1" id="20804"/>
+				<var type="Differ" name="state" value="1" id="20804"/>
+				<var type="Differ" name="state" value="-3" id="20804"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：讨要公道(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;讨要公道\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去山寨二层消灭800个40级的山贼守卫，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    山寨里的山贼实在是太可恶了，上次算命先生应风尾村张倾城的邀请，去那里给大家算命，辛辛苦苦挣了几十两银子，谁知道在回凤凰城的路上，涅磐坡的土匪窜通了山寨上的山贼守卫，把算命先生的银子给抢了。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10809\"&gt;   冰鳞腰带(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10810\"&gt;   黄金腰带(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我这就去{10001}", "v855", 20804, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20804"/>
+				<var type="Differ" name="state" value="-3" id="20804"/>
+				<var type="Differ" name="state" value="-1" id="20804"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭800个40级的山贼守卫，清源村的村长(114,93)也许等的有点不耐烦了");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20804" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="40"/>
+				<level type="Less" value="51"/>
+				<var type="Differ" name="state" value="-1" id="20804"/>
+				<var type="Differ" name="state" value="1" id="20804"/>
+				<var type="Differ" name="state" value="-3" id="20804"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去山寨二层消灭800个40级的山贼守卫，完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去山寨二层消灭800个40级的山贼守卫，完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30805">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="44"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-1" id="20805"/>
+				<var type="Differ" name="state" value="1" id="20805"/>
+				<var type="Differ" name="state" value="-3" id="20805"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：粉碎贼计(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;粉碎贼计\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n &lt;/n&gt;&lt;n&gt;   去山寨三层消灭1000个45级的特级山贼 ，完成后去找清源村的村长(114,93)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    听说，山寨上的特级山贼正准备组织一次大规模的抢劫，抢劫的对象正是远离凤凰城的风尾村，可怜的风尾村人民又要受苦了。如果你能粉碎这场浩劫，凤尾村的人民会永远记住你的大恩。\n     完成后去找清源村的村长(114,93)领取奖赏。\n \n&lt;/n&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10759\"&gt;   龙鳞盔(魔)&lt;/object&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"10760\"&gt;   百战盔(物)&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 4500&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，我马上去办。{10001}", "v855", 20805, 3)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20805"/>
+				<var type="Differ" name="state" value="-3" id="20805"/>
+				<var type="Differ" name="state" value="-1" id="20805"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你还没有消灭1000个45级的特级山贼，清源村的村长(114,93)也许等的有点不耐烦了。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20805" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="44"/>
+				<level type="Less" value="70"/>
+				<var type="Differ" name="state" value="-1" id="20805"/>
+				<var type="Differ" name="state" value="1" id="20805"/>
+				<var type="Differ" name="state" value="-3" id="20805"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：去山寨三层消灭1000个45级的特级山贼，完成后去找清源村的村长(114,93)"/>
+				<notify1 content="任务：去山寨三层消灭1000个45级的特级山贼，完成后去找清源村的村长(114,93)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

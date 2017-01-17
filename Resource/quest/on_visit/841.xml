@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="841" name="王城-媒婆(734,647)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="31001">
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20110"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那么快就把彩礼送来啦，果然是个有信用的人，这里是你的奖励，拿去吧。愿有情人终成眷属。")
+this:AddTaskCmdItem("收下钻戒{10002}", "v841", 20110, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20110" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20110"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2226"/> 
+				<notify content="你完成了送彩礼任务，得到钻戒"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	
+	
+	
+	<quest id="31111">
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20111"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    那么快就把花轿送来啦，果然是个有信用的人，这里是你的奖励，拿去吧。愿有情人终成眷属。")
+this:AddTaskCmdItem("收下嫁妆{10002}", "v841", 20111, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20111" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20111"/>
+			</conditions>
+			<actions>
+			<additem value="1" id="2227"/>
+				<notify content="你完成了送彩礼任务，得到嫁妆"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</event>

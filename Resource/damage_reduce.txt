@@ -1,0 +1,25 @@
+服务器输出文件名	config_damage_reduce.xml	根名称	ability
+客户端输出文件名	config_damage_reduce.xml	项名称	root
+衰减人数	衰减系数		
+3	3		
+player_num	damage_value_		
+1	100		
+2	95		
+3	90		
+4	85		
+5	80		
+6	76		
+7	74		
+8	72		
+9	70		
+10	68		
+11	66		
+12	64		
+13	62		
+14	60		
+15	58		
+16	56		
+17	54		
+18	52		
+19	50		
+20	48		

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16732" name="皇城-大懒熊">
+	<quest id="20620" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_大懒熊" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_大懒熊" value="1"/>
+				<refresh name="kill_大懒熊"/>
+								<var type="Add" name="kill_good_ideas" value="1"/>
+				<refresh name="kill_good_ideas"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_大懒熊" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="num_大懒熊" value="10" id="20620"/>
+				<refresh name="state"/>
+				<refresh name="kill_大懒熊"/>
+				<notify1 content="你已经打败了10个大懒熊"/>
+				<notify  content="你已经打败了10个大懒熊"/>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+					<var type="Great" name="kill_good_ideas" value="59"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_good_ideas"/>
+				<notify1 content="你完成了“怪物总动员”，快去交任务吧"/>
+				<notify  content="你完成了“怪物总动员”，快去交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+		<quest id="20621" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_大懒熊" value="10"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_大懒熊" value="1"/>
+				<refresh name="kill_大懒熊"/>
+								<var type="Add" name="kill_good_ideas" value="1"/>
+				<refresh name="kill_good_ideas"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_大懒熊" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="num_大懒熊" value="10" id="20621"/>
+				<refresh name="state"/>
+				<refresh name="kill_大懒熊"/>
+				<notify1 content="你已经打败了10个大懒熊"/>
+				<notify  content="你已经打败了10个大懒熊"/>
+			</actions>
+		</embranchment>
+		
+				<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+					<var type="Great" name="kill_good_ideas" value="59"/>
+			</conditions>
+			<actions>
+				<refresh name="kill_good_ideas"/>
+				<notify1 content="你完成了“怪物总动员”，快去交任务吧"/>
+				<notify  content="你完成了“怪物总动员”，快去交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

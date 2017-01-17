@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="16443" name="异族国师">
+	<quest id="50013" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify1 content="异族国师：1/1"/>
+				<var type="Set" name="state" value="-3"/>
+				<notify content="恭喜你完成了家族击败异族国师的任务,回家族升级使者处交任务"/>
+				<notify1 content="恭喜你完成了家族击败异族国师的任务"/>
+				<notify1 content="回家族升级使者处交任务"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

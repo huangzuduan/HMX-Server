@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56070" name="精怪洞穴三层-牢笼(200,140)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10359">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="359"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：精怪洞穴(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;精怪洞穴\n \n&lt;/n&gt;&lt;n&gt;    这不是(GetName)吗？你一定是来救我们的吧！自从我们来这精怪洞查探虚实，便被这些精怪抓起来，每日吸食阳气，苦不堪言! \n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 80980&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就救你们出去。{10002}", "v56070", 359, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="359" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="359"/>
+			</conditions>
+			<actions>
+				<exp value="80980"/>
+				<notify1 content="经验+80980"/>
+				<notify content="恭喜你完成了“精怪洞穴”任务"/>
+				<var type="Set" name="state" value="-1" id="359"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10360">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="359"/>
+				<var type="Differ" name="state" value="-1" id="360"/>
+				<var type="Differ" name="state" value="1" id="360"/>
+				<var type="Differ" name="state" value="-3" id="360"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：怒焰蜘蛛精(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;怒焰蜘蛛精\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    杀死精怪洞七层(66,84)的45个怒焰蜘蛛精后解救被困士兵。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    上次是一只叫做怒焰蜘蛛精的妖怪把我们关在这里的，如果杀光这里的怒焰蜘蛛精，我们应该就能够出去了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 444050&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("看我的！{10001}", "v56070", 360, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="360"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：怒焰蜘蛛精(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;怒焰蜘蛛精\n \n&lt;/n&gt;&lt;n&gt;    杀了怒焰蜘蛛精么？怎么……怎么这牢笼还是无法打开……&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 444050&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("为何如此，你们是否忘了什么？{10002}", "v56070", 360, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="360"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：怒焰蜘蛛精(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("不会吧！你是想耍我们吗？你根本没杀完45个怒焰蜘蛛精。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="360" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="359"/>
+				<var type="Differ" name="state" value="-1" id="360"/>
+				<var type="Differ" name="state" value="1" id="360"/>
+				<var type="Differ" name="state" value="-3" id="360"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：杀死精怪洞七层(66,84)的45个怒焰蜘蛛精后去三层解救被困士兵"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="360"/>
+			</conditions>
+			<actions>
+				<exp value="444050"/>
+				<notify1 content="经验+444050"/>
+				<notify content="恭喜你完成了“怒焰蜘蛛精”任务"/>
+				<var type="Set" name="state" value="-1" id="360"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10361">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="360"/>
+				<var type="Differ" name="state" value="-3" id="361"/>
+				<var type="Differ" name="state" value="-1" id="361"/>
+				<var type="Differ" name="state" value="1" id="361"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：法术(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;法术\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去王城找慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我想起来了，上次， 那些蜘蛛精在这牢笼上面施过法术。这可怎么办啊！我们每天被妖怪吸食阳气精元，再撑几天就要死啦! \n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 82980&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("放心，我一定救你们出去。{10001}", "v56070", 361, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="361" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="360"/>
+				<var type="Differ" name="state" value="-3" id="361"/>
+				<var type="Differ" name="state" value="-1" id="361"/>
+				<var type="Differ" name="state" value="1" id="361"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去王城找慎篱(451,225)"/>
+				<notify1 content="去王城找慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10363">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="363"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：蛛涎丹(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;蛛涎丹\n \n&lt;/n&gt;&lt;n&gt;    哇，(GetName)恩人，你终于来啦！你看，我们都变成这个人不人鬼不鬼的样子！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 83980&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("现在救你们出去！{10002}", "v56070", 363, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="363" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="363"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2142" log="交蛛涎丹(363)-删除蛛涎丹(2142)"/>
+				<exp value="83980"/>
+				<notify1 content="经验+83980"/>
+				<notify content="恭喜你完成了“蛛涎丹”任务"/>
+				<var type="Set" name="state" value="-1" id="363"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10364">
+		<embranchment id="5">
+			<conditions>
+				<var type="Differ" name="state" value="2" id="364"/>
+				<var type="Equal" name="state" value="-1" id="363"/>
+				<var type="Differ" name="state" value="-3" id="364"/>
+				<var type="Differ" name="state" value="-1" id="364"/>
+				<var type="Differ" name="state" value="1" id="364"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：虎口夺人(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;虎口夺人\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把救出的士兵护送到王城-羽林将军 (516,507)处\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName) 大侠，这是什么怪东西？啊，门……门开了！菩萨保佑，谢天谢地，给恩人磕头！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n  color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 217450&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("快跟我走吧。{10001}", "v56070", 364, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="364" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Differ" name="state" value="2" id="364"/>
+				<var type="Equal" name="state" value="-1" id="363"/>
+				<var type="Differ" name="state" value="-3" id="364"/>
+				<var type="Differ" name="state" value="-1" id="364"/>
+				<var type="Differ" name="state" value="1" id="364"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2"/>
+				<addguard id="54018" map="王城" ltpos="200,130" rbpos="204,141" gold="0" exp="0" dest="516,507"/>
+				<refresh name="state"/>
+				<notify content="任务：把救出的士兵护送到王城-羽林将军(516,507)处"/>
+				<notify1 content="把救出的士兵护送到王城-羽林将军(516,507)处"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30389">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20389"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：灵丹妙药(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;灵丹妙药\n \n&lt;/n&gt;&lt;n&gt;    丹药？护体？太好了，我们在这里被关了几天，已经快不行了，有补的正好…….\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 79092&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("保重身体……{10002}", "v56070", 20389, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20389" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20389"/>
+			</conditions>
+			<actions>
+				<exp value="79092"/>
+				<removeitem value="1" id="2154" log="交灵丹妙药(20389)-删除水华丹(2154)"/>
+				<notify1 content="经验+79092"/>
+				<notify content="恭喜你完成了“灵丹妙药”任务"/>
+				<var type="Set" name="state" value="-1" id="20389"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30390">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20389"/>
+				<var type="Differ" name="state" value="-3" id="20390"/>
+				<var type="Differ" name="state" value="-1" id="20390"/>
+				<var type="Differ" name="state" value="1" id="20390"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：百年虎骨(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;百年虎骨\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去精怪洞七层(164,66)杀灵虎妖，收集30根灵虎妖骨给王城玄火(288,393)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，太神奇了，炼这丹药的人简直太神奇了！我们在这里多日，知道这洞中有一种灵虎妖，这妖怪的虎骨比普通的虎骨珍贵几百倍！不如趁此机会夺取30个虎骨，送去炼丹。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 395460&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好主意。{10001}", "v56070", 20390, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20390" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20389"/>
+				<var type="Differ" name="state" value="-3" id="20390"/>
+				<var type="Differ" name="state" value="-1" id="20390"/>
+				<var type="Differ" name="state" value="1" id="20390"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去精怪洞七层(164,66)杀灵虎妖，收集30根灵虎妖骨给王城玄火(288,393)"/>
+				<notify1 content="去精怪洞七层(164,66)杀灵虎妖，收集30根灵虎妖骨给王城的玄火"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

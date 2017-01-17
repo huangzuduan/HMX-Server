@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="10032" name="幼狐">
+	<quest id="233" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_幼狐" value="30"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_幼狐" value="1"/>
+				<refresh name="kill_幼狐"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_幼狐" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_幼狐"/>
+				<notify content="恭喜你完成了猎狐的任务,回吕思凌(227,405)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20302" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Differ" name="num" value="1" id="20302"/>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2112" odds="4000"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="num" value="1" id="20302"/>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<notify1 content="已得到幼狐,去找李大壮(290,579)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20305" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_幼狐" value="30"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_幼狐" value="1"/>
+				<refresh name="kill_幼狐"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_幼狐" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_幼狐"/>
+				<notify content="恭喜你完成了猎狐的任务,回算命先生(433,394)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

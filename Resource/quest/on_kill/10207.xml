@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="10207" name="机械工厂三层-工厂打手(94,161)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="394" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_工厂打手" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_工厂打手" value="1"/>
+				<refresh name="kill_工厂打手"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_工厂打手" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_工厂打手"/>
+				<notify content="你已经消灭了40个工厂打手,回皇城－鲁建瓴(810,640)处交任务吧"/>
+				<notify1 content="去找皇城的鲁建瓴(810,640)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

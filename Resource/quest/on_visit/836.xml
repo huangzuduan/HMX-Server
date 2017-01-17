@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="836" name="凤凰城-小队长(239,492)">
+	<!--new means new quest, default is quest on user-->
+
+
+	<quest id="30102">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20102"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：谈判专家(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;谈判专家\n \n&lt;/n&gt;&lt;n&gt;    你怎么把她带来了，真服了你了，求求你带她走吧。\n \n&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("自首才是你的唯一出路{10002}", "v836", 20102, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20102" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20102"/>
+			</conditions>
+			<actions>
+				<exp value="100" id="20102" name="selflevel"/>
+				<notify1 content="任务完成，增加经验"/>
+				<notify content="恭喜你完成了“谈判专家”任务"/>
+				<var type="Set" name="state" value="-1" id="20102"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+
+	<quest id="30103">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20102"/>
+				<var type="Differ" name="state" value="-3" id="20103"/>
+<var type="Differ" name="state" value="1" id="20103"/>
+				<var type="Differ" name="state" value="-1" id="20103"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：真凶(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;真凶\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去告诉郎捕头凶手是谁。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    只要你能把这个唠叨的女人赶走，我什么都说。\n    那天，我的副手张昆仑借了我的衣服穿，凶手应该是他。\n &lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去帮你争取宽大处理{10001}", "v836", 20103, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20103" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20102"/>
+				<var type="Differ" name="state" value="-3" id="20103"/>
+				<var type="Differ" name="state" value="-1" id="20103"/>
+				<var type="Differ" name="state" value="1" id="20103"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去告诉郎捕头凶手名字"/>
+				<notify1 content="去告诉郎捕头凶手名字"/>
+				
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="20"/>
+				<var type="Set" name="selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="selflevel2" name2="selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="selflevel" name2="stupid"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="selflevel2" name2="div"/>
+				<vars type="Add" name1="selflevel" name2="selflevel2"/>
+				<refresh name="selflevel"/>					
+				
+			</actions>
+		</embranchment>
+	</quest>
+
+
+
+
+
+</event>

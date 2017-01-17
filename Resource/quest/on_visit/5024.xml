@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5024" name="皇城-鲁怜心(817,622)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10407">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="407"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：妹妹(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;妹妹\n \n&lt;/n&gt;&lt;n&gt;    嗯，哥哥已经跟我说过这件事呢。要我帮你也容易，但你需替我做件事。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 92510&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("什么事？{10002}", "v5024", 407, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="407" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="407"/>
+			</conditions>
+			<actions>
+				<exp value="92510"/>
+				<notify1 content="经验+92510"/>
+				<notify content="恭喜你完成了“妹妹”任务"/>
+				<var type="Set" name="state" value="-1" id="407"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10408">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="99"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="407"/>
+				<var type="Differ" name="state" value="-3" id="408"/>
+				<var type="Differ" name="state" value="-1" id="408"/>
+				<var type="Differ" name="state" value="2" id="408"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：倾心(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;倾心\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找边境的吕思远(353,136)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，闻说你与猎户吕家关系密切，想请你帮我送一个机甲木人给吕家的吕思远。这可是我亲手做的呢。听说最近吕思远因家族任务来到边境，你可去边境找他。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 401295&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧。{10001}", "v5024", 408, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="408" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="407"/>
+				<var type="Differ" name="state" value="-3" id="408"/>
+				<var type="Differ" name="state" value="-1" id="408"/>
+				<var type="Differ" name="state" value="2" id="408"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<addguard id="54051" map="边境" ltpos="818,610" rbpos="816,620" gold="0" exp="0" dest="353,136"/>
+				<var type="Set" name="state" value="2"/>
+				<refresh name="state"/>
+				<notify content="任务：去找边境的吕思远(353,136)。"/>
+				<notify1 content="去找边境的吕思远(353,136)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10409">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2177"/>
+				<var type="Equal" name="state" value="-3" id="409"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：清心(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;清心\n \n&lt;/n&gt;&lt;n&gt;    哎 呀，这是他送我的么？呵呵呵真是太高兴了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励： &lt;/n&gt;&lt;n&gt; 94510&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("答应我的事怎么样了？{10002}", "v5024", 409, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="409" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2177"/>
+				<var type="Equal" name="state" value="-3" id="409"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2177" log="交清心(409)-删除清心石(2177)"/>
+				<exp value="94510"/>
+				<notify1 content="经验+94510"/>
+				<notify content="恭喜你完成了“清心”任务"/>
+				<var type="Set" name="state" value="-1" id="409"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10410">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="99"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="409"/>
+				<var type="Differ" name="state" value="-3" id="410"/>
+				<var type="Differ" name="state" value="-1" id="410"/>
+				<var type="Differ" name="state" value="1" id="410"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：遗孤所在(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;遗孤所在\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去机械工厂三层找令狐奔龙(95,102)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    《天机卷》中记载的机械工厂平面图我已看过了。按九宫八卦，令狐家的后人若在机械工厂中，定然在三层95,102位置。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 95510&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去找找看。{10001}", "v5024", 410, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="410" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="99"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="409"/>
+				<var type="Differ" name="state" value="-3" id="410"/>
+				<var type="Differ" name="state" value="-1" id="410"/>
+				<var type="Differ" name="state" value="1" id="410"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去机械工厂三层找令狐奔龙(95,102)。"/>
+				<notify1 content="去机械工厂三层找令狐奔龙(95,102)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10411">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="106"/>
+				<var type="Differ" name="state" value="-1" id="411"/>
+				<var type="Differ" name="state" value="1" id="411"/>
+				<var type="Differ" name="state" value="-3" id="411"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：神奇风叶(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;神奇风叶\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去机械工厂五层击败粗糙石兵(92,182)去找10个石人风叶。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这可是我心上人……啊，不不！你……你听着！要借给你不是不行，你要给我拿来粗糙石兵感应空气流动，辨别方向用的石人风叶！拿来10个石人风叶，我就借你清心石。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 877590&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去了！{10001}", "v5024", 411, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2176"/>
+				<var type="Equal" name="state" value="-3" id="411"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：神奇风叶(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;神奇风叶\n \n&lt;/n&gt;&lt;n&gt;    嗯，居然将石人风叶拿到了……那……这个……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 877590&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("你不会反悔吧？{10002}", "v5024", 411, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="411" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="106"/>
+				<var type="Differ" name="state" value="-1" id="411"/>
+				<var type="Differ" name="state" value="1" id="411"/>
+				<var type="Differ" name="state" value="-3" id="411"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去机械工厂五层击败粗糙石兵(92,182)去找10个石人风叶。"/>
+				<notify content="任务：去机械工厂五层击败粗糙石兵(92,182)去找10个石人风叶。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2176"/>
+				<var type="Equal" name="state" value="-3" id="411"/>
+			</conditions>
+			<actions>
+				<exp value="877590"/>
+				<removeitem value="10" id="2176" log="交神奇风叶(411)-删除10个石人风叶(2176)"/>
+				<notify1 content="经验+877590"/>
+				<notify content="恭喜你完成了“神奇风叶”任务"/>
+				<var type="Set" name="state" value="-1" id="411"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10412">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="411"/>
+				<var type="Differ" name="state" value="-3" id="412"/>
+				<var type="Differ" name="state" value="-1" id="412"/>
+				<var type="Differ" name="state" value="1" id="412"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：碰壁(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;碰壁\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找机械工厂三层－令狐奔龙(95,102)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    你这是说什么话！那，清心石拿去！你可不许给我弄坏了、弄脏了，若是稍有不妥，我再也不饶你！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 96510&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("知道了。我再去找令狐家后人。{10001}", "v5024", 412, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="412" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="411"/>
+				<var type="Differ" name="state" value="-3" id="412"/>
+				<var type="Differ" name="state" value="-1" id="412"/>
+				<var type="Differ" name="state" value="1" id="412"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找机械工厂三层－令狐奔龙(95,102)"/>
+				<notify1 content="去找机械工厂三层－令狐奔龙(95,102)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10414">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="414"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：送还(2)", "Dialog27")
+end
+function Dialog27()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;送还\n \n&lt;/n&gt;&lt;n&gt;    是吗，令狐家的后人真的在那里？好了，找到了令狐家后人，就赶快把清心石还给我！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 97510&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好啦，还给你！{10002}", "v5024", 414, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="414" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="414"/>
+			</conditions>
+			<actions>
+				<exp value="97510"/>
+				<notify1 content="经验+97510"/>
+				<notify content="恭喜你完成了“送还”任务"/>
+				<var type="Set" name="state" value="-1" id="414"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10415">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="414"/>
+				<var type="Differ" name="state" value="-3" id="415"/>
+				<var type="Differ" name="state" value="-1" id="415"/>
+				<var type="Differ" name="state" value="1" id="415"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：转告(2)", "Dialog28")
+end
+function Dialog28()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;转告\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去皇城找鲁建瓴(810,640)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这件事情我可不能做主，你还是去问我哥哥吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 98510&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧。{10001}", "v5024", 415, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="415" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="100"/>
+				<level type="Less" value="106"/>
+				<var type="Equal" name="state" value="-1" id="414"/>
+				<var type="Differ" name="state" value="-3" id="415"/>
+				<var type="Differ" name="state" value="-1" id="415"/>
+				<var type="Differ" name="state" value="1" id="415"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去皇城找鲁建瓴(810,640)。"/>
+				<notify1 content="去皇城找鲁建瓴(810,640)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="913" name="迷宫传送师(416，382)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960119">
+		<embranchment id="9">
+			<conditions>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    想泡我吗!想就进迷宫吧!")
+this:AddTaskCmdItem("迷宫一层(0)", "v913", 160119, 10)
+this:AddTaskCmdItem("迷宫二层(0)", "v913", 160119, 11)
+this:AddTaskCmdItem("迷宫三层(0)", "v913", 160119, 12)
+this:AddTaskCmdItem("迷宫四层(0)", "v913", 160119, 13)
+this:AddTaskCmdItem("迷宫五层(0)", "v913", 160119, 14)
+this:AddTaskCmdItem("迷宫六层(0)", "v913", 160119, 15)
+this:AddTaskCmdItem("迷宫七层(0)", "v913", 160119, 16)
+this:AddTaskCmdItem("迷宫八层(0)", "v913", 160119, 17)
+this:AddTaskCmdItem("迷宫九层(0)", "v913", 160119, 18)
+this:AddTaskCmdItem("迷宫十层(0)", "v913", 160119, 19)
+this:AddTaskCmdItem("迷宫十一层(0)", "v913", 160119, 20)
+this:AddTaskCmdItem("迷宫十二层(0)", "v913", 160119, 21)
+this:AddTaskCmdItem("迷宫十三层(0)", "v913", 160119, 22)
+this:AddTaskCmdItem("迷宫十四层(0)", "v913", 160119, 23)
+this:AddTaskCmdItem("迷宫十五层(0)", "v913", 160119, 24)
+this:AddTaskCmdItem("迷宫十六层(0)", "v913", 160119, 25)
+this:AddTaskCmdItem("迷宫十七层(0)", "v913", 160119, 26)
+this:AddTaskCmdItem("迷宫十八层(0)", "v913", 160119, 27)
+this:AddTaskCmdItem("迷宫十九层(0)", "v913", 160119, 28)
+this:AddTaskCmdItem("迷宫二十层(0)", "v913", 160119, 29)
+this:AddTaskCmdItem("迷宫二十一层(0)", "v913", 160119, 30)
+this:AddTaskCmdItem("迷宫二十二层(0)", "v913", 160119, 31)
+this:AddTaskCmdItem("迷宫二十三层(0)", "v913", 160119, 32)
+this:AddTaskCmdItem("迷宫二十四层(0)", "v913", 160119, 33)
+this:AddTaskCmdItem("迷宫二十五层(0)", "v913", 160119, 34)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<gold type="Less" value="1000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    想泡我吗!想就进迷宫吧!")
+this:AddDialogItem("迷宫一层(0)", "Dialog98")
+this:AddDialogItem("迷宫二层(0)", "Dialog98")
+this:AddDialogItem("迷宫三层(0)", "Dialog98")
+this:AddDialogItem("迷宫四层(0)", "Dialog98")
+this:AddDialogItem("迷宫五层(0)", "Dialog98")
+this:AddDialogItem("迷宫六层(0)", "Dialog98")
+this:AddDialogItem("迷宫七层(0)", "Dialog98")
+this:AddDialogItem("迷宫八层(0)", "Dialog98")
+this:AddDialogItem("迷宫九层(0)", "Dialog98")
+this:AddDialogItem("迷宫十层(0)", "Dialog98")
+this:AddDialogItem("迷宫十一层(0)", "Dialog98")
+this:AddDialogItem("迷宫十二层(0)", "Dialog98")
+this:AddDialogItem("迷宫十三层(0)", "Dialog98")
+this:AddDialogItem("迷宫十四层(0)", "Dialog98")
+this:AddDialogItem("迷宫十五层(0)", "Dialog98")
+this:AddDialogItem("迷宫十六层(0)", "Dialog98")
+this:AddDialogItem("迷宫十七层(0)", "Dialog98")
+this:AddDialogItem("迷宫十八层(0)", "Dialog98")
+this:AddDialogItem("迷宫十九层(0)", "Dialog98")
+this:AddDialogItem("迷宫二十层(0)", "Dialog98")
+this:AddDialogItem("迷宫二十一层(0)", "Dialog98")
+this:AddDialogItem("迷宫二十二层(0)", "Dialog98")
+this:AddDialogItem("迷宫二十三层(0)", "Dialog98")
+this:AddDialogItem("迷宫二十四层(0)", "Dialog98")
+this:AddDialogItem("迷宫二十五层(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("我草!没钱还想泡我!当我是公交啊!");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160119" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫一层" pos="53,80"/>
+				<notify content="你被带到了迷宫一层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二层" pos="53,80"/>
+				<notify content="你被带到了迷宫二层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫三层" pos="53,80"/>
+				<notify content="你被带到了迷宫三层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫四层" pos="53,80"/>
+				<notify content="你被带到了迷宫四层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫五层" pos="53,80"/>
+				<notify content="你被带到了迷宫五层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫六层" pos="53,80"/>
+				<notify content="你被带到了迷宫六层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫七层" pos="53,80"/>
+				<notify content="你被带到了迷宫七层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫八层" pos="53,80"/>
+				<notify content="你被带到了迷宫八层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫九层" pos="53,80"/>
+				<notify content="你被带到了迷宫九层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十层" pos="53,80"/>
+				<notify content="你被带到了迷宫十层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十一层" pos="53,80"/>
+				<notify content="你被带到了迷宫十一层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十二层" pos="53,80"/>
+				<notify content="你被带到了迷宫十二层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十三层" pos="53,80"/>
+				<notify content="你被带到了迷宫十三层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十四层" pos="53,80"/>
+				<notify content="你被带到了迷宫十四层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="24" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十五层" pos="53,80"/>
+				<notify content="你被带到了迷宫十五层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十六层" pos="53,80"/>
+				<notify content="你被带到了迷宫十六层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十七层" pos="53,80"/>
+				<notify content="你被带到了迷宫十七层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十八层" pos="53,80"/>
+				<notify content="你被带到了迷宫十八层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="28" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫十九层" pos="53,80"/>
+				<notify content="你被带到了迷宫十九层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="29" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二十层" pos="53,80"/>
+				<notify content="你被带到了迷宫二十层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="30" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二十一层" pos="53,80"/>
+				<notify content="你被带到了迷宫二十一层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二十二层" pos="53,80"/>
+				<notify content="你被带到了迷宫二十二层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二十三层" pos="53,80"/>
+				<notify content="你被带到了迷宫二十三层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="33" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二十四层" pos="53,80"/>
+				<notify content="你被带到了迷宫二十四层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="34" active="1">
+			<conditions>
+				<isguard/>
+                                <selfcountry value="1"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="迷宫二十五层" pos="53,80"/>
+				<notify content="你被带到了迷宫二十五层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

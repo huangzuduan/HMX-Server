@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="10038" name="幼狐">
+	<quest id="234" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_豹子" value="30"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_豹子" value="1"/>
+				<refresh name="kill_豹子"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_豹子" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_豹子"/>
+				<notify content="恭喜你完成了猎豹的任务,回吕思凌(227,405)处交任务"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="236" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_闪豹" value="30"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_闪豹" value="1"/>
+				<refresh name="kill_闪豹"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_闪豹" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_闪豹"/>
+				<notify content="恭喜你完成了偷猎的任务,回吕飞烟(273,371)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20307" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_闪豹" value="30"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_闪豹" value="1"/>
+				<refresh name="kill_闪豹"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_闪豹" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_闪豹"/>
+				<notify content="恭喜你完成了豹走的任务,回牛二(422,301)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56060" name="王城-慎篱(451,225)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10333">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="333"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：求助(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;求助\n \n&lt;/n&gt;&lt;n&gt;    我常常去白骨洞修炼召唤骷髅，对阴阳法术略知一二。普通人，只要佩戴一种符咒，便可防卫僵尸与骷髅、鬼魅这一类怪物了。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 41558&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这符咒要怎么做呢？{10002}", "v56060", 333, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="333" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="333"/>
+			</conditions>
+			<actions>
+				<exp value="41558"/>
+				<notify1 content="经验+41558"/>
+				<notify content="恭喜你完成了“求助”任务"/>
+				<var type="Set" name="state" value="-1" id="333"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10334">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="333"/>
+				<var type="Differ" name="state" value="-1" id="334"/>
+				<var type="Differ" name="state" value="1" id="334"/>
+				<var type="Differ" name="state" value="-3" id="334"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：符咒(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;符咒\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞5层(132,14)收集20块僵尸肉块，然后交给王城-慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    做符咒不难，但是需要20个僵尸肉块。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 220000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v56060", 334, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="334"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：符咒(2)", "Dialog31")
+end
+function Dialog31()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;符咒\n \n&lt;/n&gt;&lt;n&gt;    呵呵，那么快就收集到啦，确实是艺高胆大。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 220000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("现在要怎么做呢？{10002}", "v56060", 334, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="334" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="333"/>
+				<var type="Differ" name="state" value="-1" id="334"/>
+				<var type="Differ" name="state" value="1" id="334"/>
+				<var type="Differ" name="state" value="-3" id="334"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞收集20块僵尸肉块"/>
+				<notify content="任务：收集20块僵尸肉块交给王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="334"/>
+			</conditions>
+			<actions>
+				<exp value="220000"/>
+				<removeitem value="20" id="2126" log="交符咒(334)-删除20个僵尸肉块(2126)"/>
+				<notify1 content="经验+220000"/>
+				<notify content="恭喜你完成了“符咒”任务"/>
+				<var type="Set" name="state" value="-1" id="334"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10335">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="334"/>
+				<var type="Differ" name="state" value="-1" id="335"/>
+				<var type="Differ" name="state" value="1" id="335"/>
+				<var type="Differ" name="state" value="-3" id="335"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：骨灰(2)", "Dialog32")
+end
+function Dialog32()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;骨灰\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞4层和5层收集20瓶骷髅骨灰，交给王城-慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    还需要骷髅骨灰，但我手头现有的已不够用了。\n    为了成功制造符咒，请帮我去白骨洞找20瓶骷髅骨灰。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 230000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你去弄。{10001}", "v56060", 335, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="335"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：骨灰(2)", "Dialog33")
+end
+function Dialog33()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;骨灰\n \n&lt;/n&gt;&lt;n&gt;    唔，足够了，我这就帮你做符咒。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 230000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("如此多谢了。{10002}", "v56060", 335, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="335" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="334"/>
+				<var type="Differ" name="state" value="-1" id="335"/>
+				<var type="Differ" name="state" value="1" id="335"/>
+				<var type="Differ" name="state" value="-3" id="335"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞4层和5层击败白骨士兵，收集20瓶骷髅骨灰"/>
+				<notify content="任务：收集20瓶骷髅骨灰交给王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="335"/>
+			</conditions>
+			<actions>
+				<exp value="230000"/>
+				<removeitem value="20" id="2127" log="交骨灰(335)-删除20个骷髅骨灰(2127)"/>
+				<additem value="1" id="2133"/>
+				<notify1 content="经验+230000"/>
+				<notify1 content="得到符咒"/>
+				<notify content="恭喜你完成了“骨灰”任务"/>
+				<var type="Set" name="state" value="-1" id="335"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10336">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="335"/>
+				<var type="Differ" name="state" value="-1" id="336"/>
+				<var type="Differ" name="state" value="1" id="336"/>
+				<var type="Differ" name="state" value="-3" id="336"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：线索(2)", "Dialog35")
+end
+function Dialog35()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;线索\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  去白骨洞4层和5层，收集20只小虫子，然后交给王城-慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    符咒做成了，你可以带着去打白骨洞的僵尸与骷髅，看看有何效果。若这些尸骸真的是有人捣鬼才复活的，尸体里一定会有一种小虫。带着这些符咒，可能会现出小虫的原形。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 240000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去试试看{10001}", "v56060", 336, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="336"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：线索(2)", "Dialog34")
+end
+function Dialog34()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;线索\n \n&lt;/n&gt;&lt;n&gt;    果然不出我所料，这是一种神秘的蛊术，能操纵僵尸和骷髅的，是一种操尸术。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 240000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("真是骇人听闻。{10002}", "v56060", 336, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="336" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="335"/>
+				<var type="Differ" name="state" value="-1" id="336"/>
+				<var type="Differ" name="state" value="1" id="336"/>
+				<var type="Differ" name="state" value="-3" id="336"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞4层和5层击败白骨士兵或食怨僵尸，收集20只小虫子"/>
+				<notify content="任务：收集20只小虫子交给王城-慎篱(451,225)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="336"/>
+			</conditions>
+			<actions>
+				<exp value="240000"/>
+				<removeitem value="20" id="2258" log="交线索(336)-删除20个小虫子(2258)"/>
+				<removeitem value="1" id="2133" log="交线索(336)-删除符咒(2133)"/>
+				<notify1 content="经验+240000"/>
+				<notify content="恭喜你完成了“线索”任务"/>
+				<var type="Set" name="state" value="-1" id="336"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10337">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="336"/>
+				<var type="Differ" name="state" value="-3" id="337"/>
+				<var type="Differ" name="state" value="-1" id="337"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：结果(2)", "Dialog36")
+end
+function Dialog36()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;结果\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去告诉羽林将军(516,507)慎篱的调查结果。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;     目前只能知道这些了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 45000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去转告羽林将军。{10001}", "v56060", 337, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="337" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="336"/>
+				<var type="Differ" name="state" value="-3" id="337"/>
+				<var type="Differ" name="state" value="-1" id="337"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找羽林将军(516,507)"/>
+				<notify1 content="羽林将军(516,507)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10339">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="339"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：查询(2)", "Dialog37")
+end
+function Dialog37()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;查询\n \n&lt;/n&gt;&lt;n&gt;    这个鼎正是施放蛊术所必须的，那些小虫都听这个鼎的吩咐。但是到底是谁通过这个鼎操控着这些小虫呢？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 48585&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("难道不能查到吗？{10002}", "v56060", 339, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="339" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="339"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2128" log="交查询(339)-删除鼎(2128)"/>
+				<exp value="48585"/>
+				<notify1 content="经验+48585"/>
+				<notify content="恭喜你完成了“查询”任务"/>
+				<var type="Set" name="state" value="-1" id="339"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10340">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="339"/>
+				<var type="Differ" name="state" value="-1" id="340"/>
+				<var type="Differ" name="state" value="1" id="340"/>
+				<var type="Differ" name="state" value="-3" id="340"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：施法(2)", "Dialog38")
+end
+function Dialog38()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;施法\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞六层和七层击败噬魂僵尸收集20个血囊，然后交给慎篱。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    虽然能查，但需要20个僵尸的血囊。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 250000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("交给我吧。{10001}", "v56060", 340, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="20" id="2129"/>
+				<var type="Equal" name="state" value="-3" id="340"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：施法(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;施法\n \n&lt;/n&gt;&lt;n&gt;    唔，是僵尸的血囊！但只有僵尸的血囊还是不够。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 250000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("还需要什么？{10002}", "v56060", 340, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="340" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="339"/>
+				<var type="Differ" name="state" value="-1" id="340"/>
+				<var type="Differ" name="state" value="1" id="340"/>
+				<var type="Differ" name="state" value="-3" id="340"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞六层和七层击败噬魂僵尸收集20个血囊"/>
+				<notify content="任务：去白骨洞六层和七层收集20个血囊，然后交给慎篱。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="20" id="2129"/>
+				<var type="Equal" name="state" value="-3" id="340"/>
+			</conditions>
+			<actions>
+				<exp value="250000"/>
+				<removeitem value="20" id="2129" log="交施法(340)-删除20个血囊(2129)"/>
+				<notify1 content="经验+250000"/>
+				<notify content="恭喜你完成了“施法”任务"/>
+				<var type="Set" name="state" value="-1" id="340"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10341">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="340"/>
+				<var type="Differ" name="state" value="-1" id="341"/>
+				<var type="Differ" name="state" value="1" id="341"/>
+				<var type="Differ" name="state" value="-3" id="341"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：采集(2)", "Dialog41")
+end
+function Dialog41()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;采集\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞六层和七层消灭战斧白骨收集20个碎骨片，然后交给慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    洞中还有骷髅，因此还要20个骷髅的碎骨片。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 260000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这就去弄。{10001}", "v56060", 341, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="20" id="2130"/>
+				<var type="Equal" name="state" value="-3" id="341"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：采集(2)", "Dialog42")
+end
+function Dialog42()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;采集\n \n&lt;/n&gt;&lt;n&gt;    这次应该没有问题了……\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 260000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("希望如此。{10002}", "v56060", 341, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="341" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="340"/>
+				<var type="Differ" name="state" value="-1" id="341"/>
+				<var type="Differ" name="state" value="1" id="341"/>
+				<var type="Differ" name="state" value="-3" id="341"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞六层和七层击败战斧白骨收集20个碎骨片"/>
+				<notify content="任务：去白骨洞六层和七层收集20个碎骨片交给慎篱。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="20" id="2130"/>
+				<var type="Equal" name="state" value="-3" id="341"/>
+			</conditions>
+			<actions>
+				<exp value="260000"/>
+				<removeitem value="20" id="2130" log="交采集(341)-删除20个碎骨片(2130)"/>
+				<notify1 content="经验+260000"/>
+				<notify content="恭喜你完成了“采集”任务"/>
+				<var type="Set" name="state" value="-1" id="341"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10342">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="341"/>
+				<var type="Differ" name="state" value="-1" id="342"/>
+				<var type="Differ" name="state" value="1" id="342"/>
+				<var type="Differ" name="state" value="-3" id="342"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：采集(2)", "Dialog43")
+end
+function Dialog43()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;采集\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞六层和七层收集20个妖气结晶，然后交给慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    奇怪了，为什么不成功呢？对了！洞中还有白骨妖精，我竟忘了。请帮我弄来20个白骨邪妖的妖气结晶。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 260000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v56060", 342, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="20" id="2131"/>
+				<var type="Equal" name="state" value="-3" id="342"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：采集(2)", "Dialog44")
+end
+function Dialog44()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;采集\n \n&lt;/n&gt;&lt;n&gt;    这次没问题了，我立刻施法。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 260000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受奖励{10002}", "v56060", 342, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="342" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="341"/>
+				<var type="Differ" name="state" value="-1" id="342"/>
+				<var type="Differ" name="state" value="1" id="342"/>
+				<var type="Differ" name="state" value="-3" id="342"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞六层和七层收集20个妖气结晶"/>
+				<notify content="任务:去白骨洞六层和七层收集20个妖气结晶交给慎篱。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="20" id="2131"/>
+				<var type="Equal" name="state" value="-3" id="342"/>
+			</conditions>
+			<actions>
+				<exp value="260000"/>
+				<removeitem value="20" id="2131" log="交采集(342)-删除20个妖气结晶(2131)"/>
+				<notify1 content="经验+260000"/>
+				<notify content="恭喜你完成了“采集”任务"/>
+				<var type="Set" name="state" value="-1" id="342"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10343">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="342"/>
+				<var type="Differ" name="state" value="-3" id="343"/>
+				<var type="Differ" name="state" value="-1" id="343"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：蛊咒(2)", "Dialog45")
+end
+function Dialog45()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;蛊咒\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    找羽林将军(516,507)报告。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，呼……施这种法术果然消耗体力。但蛊术的来源已经追踪到了，果然是异族军队在搞鬼！\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 51000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("是可忍孰不可忍！{10001}", "v56060", 343, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="343" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="342"/>
+				<var type="Differ" name="state" value="-3" id="343"/>
+				<var type="Differ" name="state" value="-1" id="343"/>(516,507)
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找王城的羽林将军(516,507)"/>
+				<notify1 content="去找羽林将军(516,507)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30363">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="53"/>
+				<var type="Differ" name="state" value="-1" id="20363"/>
+				<var type="Differ" name="state" value="1" id="20363"/>
+				<var type="Differ" name="state" value="-3" id="20363"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：死灵召唤(2)", "Dialog46")
+end
+function Dialog46()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;死灵召唤\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞3层击败碎骨骷髅，并收集30根枯骨交给慎篱(451,225)\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我最近在修炼死魂召唤，需要30根枯骨，你能帮我弄些来么?\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 175000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v56060", 20363, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2134"/>
+				<var type="Equal" name="state" value="-3" id="20363"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：死灵召唤(2)", "Dialog47")
+end
+function Dialog47()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;死灵召唤\n \n&lt;/n&gt;&lt;n&gt;    太好了，我正等着用呢。多谢多谢。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 175000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不客气。{10002}", "v56060", 20363, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20363" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="53"/>
+				<var type="Differ" name="state" value="-1" id="20363"/>
+				<var type="Differ" name="state" value="1" id="20363"/>
+				<var type="Differ" name="state" value="-3" id="20363"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞3层击败碎骨骷髅，并收集30根枯骨交给慎篱"/>
+				<notify content="任务：去白骨洞3层收集30根枯骨交给慎篱"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2134"/>
+				<var type="Equal" name="state" value="-3" id="20363"/>
+			</conditions>
+			<actions>
+				<exp value="175000"/>
+				<removeitem value="30" id="2134" log="交死灵召唤(20363)-删除30个枯骨(2134)"/>
+				<notify1 content="经验+175000"/>
+				<notify content="恭喜你完成了“死灵召唤”任务"/>
+				<var type="Set" name="state" value="-1" id="20363"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30364">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20363"/>
+				<var type="Differ" name="state" value="-1" id="20364"/>
+				<var type="Differ" name="state" value="1" id="20364"/>
+				<var type="Differ" name="state" value="-3" id="20364"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：亡灵沟通(2)", "Dialog48")
+end
+function Dialog48()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;亡灵沟通\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞3层和4层击败破骨僵尸，收集30个僵尸心脏，然后交给慎篱(268,200)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    修炼又遇到瓶颈了。要修炼必须先能够跟死魂沟通，需要30个僵尸的心来作为修炼材料。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 195000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我帮你去弄。{10001}", "v56060", 20364, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2135"/>
+				<var type="Equal" name="state" value="-3" id="20364"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：亡灵沟通(2)", "Dialog49")
+end
+function Dialog49()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;亡灵沟通\n \n&lt;/n&gt;&lt;n&gt;    太好了，这下我的修炼没问题了。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 195000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("太好了。{10002}", "v56060", 20364, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20364" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20363"/>
+				<var type="Differ" name="state" value="-1" id="20364"/>
+				<var type="Differ" name="state" value="1" id="20364"/>
+				<var type="Differ" name="state" value="-3" id="20364"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞3层和4层击败破骨僵尸，并收集30个僵尸心脏交给慎篱"/>
+				<notify content="任务：去白骨洞3层和4层收集30个僵尸心脏交给慎篱！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2135"/>
+				<var type="Equal" name="state" value="-3" id="20364"/>
+			</conditions>
+			<actions>
+				<exp value="195000"/>
+				<removeitem value="30" id="2135" log="交亡灵沟通(20364)-删除30个僵尸心脏(2135)"/>
+				<notify1 content="经验+195000"/>
+				<notify content="恭喜你完成了“亡灵沟通”任务"/>
+				<var type="Set" name="state" value="-1" id="20364"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30365">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20364"/>
+				<var type="Differ" name="state" value="-1" id="20365"/>
+				<var type="Differ" name="state" value="1" id="20365"/>
+				<var type="Differ" name="state" value="-3" id="20365"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：活捉(2)", "Dialog50")
+end
+function Dialog50()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;活捉\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞4层和5层击败50个白骨斧手，捉到1个小骷髅，然后交给慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    修炼成功了！多亏了你拔刀相助！为了验证我的修练成果，你能不能帮我弄一具骷髅来呢？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 227000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没问题。{10001}", "v56060", 20365, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2136"/>
+				<var type="Equal" name="state" value="-3" id="20365"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：活捉(2)", "Dialog51")
+end
+function Dialog51()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;活捉\n \n&lt;/n&gt;&lt;n&gt;    唔，我的召唤术若练成了，少不了你的功劳。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 227000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那当然。{10002}", "v56060", 20365, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20365" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20364"/>
+				<var type="Differ" name="state" value="-1" id="20365"/>
+				<var type="Differ" name="state" value="1" id="20365"/>
+				<var type="Differ" name="state" value="-3" id="20365"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞4层和5层捉一个小骷髅交给慎篱！"/>
+				<notify content="任务：去白骨洞4层和5层击败白骨斧手，捉1个小骷髅给慎篱"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2136"/>
+				<var type="Equal" name="state" value="-3" id="20365"/>
+			</conditions>
+			<actions>
+				<exp value="227000"/>
+				<removeitem value="1" id="2136" log="交活捉(20365)-删除小骷髅(2136)"/>
+				<notify1 content="经验+227000"/>
+				<notify content="恭喜你完成了“活捉”任务"/>
+				<var type="Set" name="state" value="-1" id="20365"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30366">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="57"/>
+				<var type="Differ" name="state" value="-1" id="20366"/>
+				<var type="Differ" name="state" value="1" id="20366"/>
+				<var type="Differ" name="state" value="-3" id="20366"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：批量生产(2)", "Dialog52")
+end
+function Dialog52()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;批量生产\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞4层(239,354)以下击败食怨僵尸，收集20个僵尸肉块，然后交给慎篱(268,200)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    羽林将军说要批量生产对付白骨怪物的符咒供军队用，但是僵尸的肉块不够用了，你能帮我弄20个来么？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 240000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("接受任务{10001}", "v56060", 20366, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20366"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：批量生产(2)", "Dialog53")
+end
+function Dialog53()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;批量生产\n \n&lt;/n&gt;&lt;n&gt;    呵呵多谢多谢，总是让你帮我，我自己都不好意思了。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 240000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("大家都是为了国家。{10002}", "v56060", 20366, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20366" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="57"/>
+				<var type="Differ" name="state" value="-1" id="20366"/>
+				<var type="Differ" name="state" value="1" id="20366"/>
+				<var type="Differ" name="state" value="-3" id="20366"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞4层以下击败食怨僵尸收集20个僵尸肉块交给慎篱"/>
+				<notify content="任务：去白骨洞4层以下击败食怨僵尸，收集20个僵尸肉块给慎篱。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20366"/>
+			</conditions>
+			<actions>
+				<exp value="240000"/>
+				<removeitem value="20" id="2126" log="批量生产(20366)-删除20个僵尸肉块(2126)"/>
+				<notify1 content="经验+240000"/>
+				<notify content="恭喜你完成了“批量生产”任务"/>
+				<var type="Set" name="state" value="-1" id="20366"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30367">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20366"/>
+				<var type="Differ" name="state" value="-1" id="20367"/>
+				<var type="Differ" name="state" value="1" id="20367"/>
+				<var type="Differ" name="state" value="-3" id="20367"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：批量生产(2)", "Dialog54")
+end
+function Dialog54()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;批量生产\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞4层和5层击败白骨士兵，收集50个骷髅骨灰，然后交给阴阳师慎篱(451,225)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    糟了糟了，骷髅骨灰又不够了，还要麻烦你……咳咳，多谢你啦～\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 254700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("……你是吃定我了。{10001}", "v56060", 20367, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20367"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：批量生产(2)", "Dialog55")
+end
+function Dialog55()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;批量生产\n \n&lt;/n&gt;&lt;n&gt;    哈哈，多谢你啦，你真是我最好的朋友。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 254700&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("朋友嘛，不必客气。{10002}", "v56060", 20367, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20367" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20366"/>
+				<var type="Differ" name="state" value="-1" id="20367"/>
+				<var type="Differ" name="state" value="1" id="20367"/>
+				<var type="Differ" name="state" value="-3" id="20367"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞4层和5层击败收集50个骷髅骨灰交给慎篱"/>
+				<notify content="任务：去白骨洞4层和5层击败白骨士兵，收集50个骷髅骨灰给慎篱。"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20367"/>
+			</conditions>
+			<actions>
+				<exp value="254700"/>
+				<removeitem value="50" id="2127" log="交批量生产(20367)-删除50个骷髅骨灰(2127)"/>
+				<notify1 content="经验+254700"/>
+				<notify content="恭喜你完成了“批量生产”任务"/>
+				<var type="Set" name="state" value="-1" id="20367"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30368">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20367"/>
+				<var type="Differ" name="state" value="-3" id="20368"/>
+				<var type="Differ" name="state" value="1" id="20368"/>
+				<var type="Differ" name="state" value="-1" id="20368"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：买纸(2)", "Dialog56")
+end
+function Dialog56()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;买纸\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去皇城杂货店伙计(838,687)那里替慎篱运一车纸回来。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，嘿嘿，嘿嘿……这次是画符的纸又不够了，只有皇城有卖的，只有请你替我跑一趟了……呵呵\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 45734&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("皇城啊，好远！{10001}", "v56060", 20368, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20368"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：买纸(2)", "Dialog57")
+end
+function Dialog57()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;买纸\n \n&lt;/n&gt;&lt;n&gt;    啊，回来啦！你真是我心目中的英雄。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 45734&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("漂亮话就不要说了……{10001}", "v56060", 20368, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20368" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20367"/>
+				<var type="Differ" name="state" value="-3" id="20368"/>
+				<var type="Differ" name="state" value="1" id="20368"/>
+				<var type="Differ" name="state" value="-1" id="20368"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<refresh name="state"/>
+				<notify content="任务：去皇城杂货店伙计那里,运一车纸回来给王城-慎篱(451,225)"/>
+				<notify1 content="去找皇城杂货店伙计(838,687)！"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20368"/>
+			</conditions>
+			<actions>
+				<exp value="45734"/>
+				<notify1 content="经验+45734"/>
+				<notify content="恭喜你完成了“买纸”任务"/>
+				<var type="Set" name="state" value="-1" id="20368"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10344">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="344"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：对策(2)", "Dialog58")
+end
+function Dialog58()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,258,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;对策\n \n&lt;/n&gt;&lt;n&gt;    嗯，异族的侵犯竟已迫在眉睫吗……那么，最可疑的是，他们明明已经掌握了白骨洞，为何不发起进攻呢？他们到底在等待什么呢？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,258,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 52000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("异族对这件事情非常保密{10002}", "v56060", 344, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="344" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="344"/>
+			</conditions>
+			<actions>
+				<exp value="52000"/>
+				<notify1 content="经验+52000"/>
+				<notify content="恭喜你完成了“对策”任务"/>
+				<var type="Set" name="state" value="-1" id="344"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10345">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="344"/>
+				<var type="Differ" name="state" value="-1" id="345"/>
+				<var type="Differ" name="state" value="1" id="345"/>
+				<var type="Differ" name="state" value="-3" id="345"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：白骨精魄(2)", "Dialog59")
+end
+function Dialog59()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;白骨精魄\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;   去白骨洞5层到7层收集10个白骨精魄交给慎篱。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    从异族那里打听不到什么，这件事情他们一定是直接从高层采取的秘密行动，我们所能接触到的都是底层士兵而已。\n    我看，还是要从白骨洞想办法。从白骨洞七层的骷髅那里能弄到白骨精魄，我能用它探查到白骨精的记忆。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 300000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去找。{10001}", "v56060", 345, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2137"/>
+				<var type="Equal" name="state" value="-3" id="345"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：白骨精魄(2)", "Dialog60")
+end
+function Dialog60()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;白骨精魄\n \n&lt;/n&gt;&lt;n&gt;    没错，正是这个！我现在设坛做法，你为我护法。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 300000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的{10002}", "v56060", 345, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="345" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="344"/>
+				<var type="Differ" name="state" value="-1" id="345"/>
+				<var type="Differ" name="state" value="1" id="345"/>
+				<var type="Differ" name="state" value="-3" id="345"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞5层到7层收集10个白骨精魄"/>
+				<notify content="任务：去白骨洞5层到7层击败骷髅（白骨射手，战斧白骨，白骨先锋），慎篱需要10个白骨精魄"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2137"/>
+				<var type="Equal" name="state" value="-3" id="345"/>
+			</conditions>
+			<actions>
+				<exp value="300000"/>
+				<removeitem value="10" id="2137" log="交白骨精魄(345)-删除10个白骨精魄(2137)"/>
+				<notify1 content="经验+300000"/>
+				<notify content="恭喜你完成了“白骨精魄”任务"/>
+				<var type="Set" name="state" value="-1" id="345"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10346">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="345"/>
+				<var type="Differ" name="state" value="-1" id="346"/>
+				<var type="Differ" name="state" value="1" id="346"/>
+				<var type="Differ" name="state" value="-3" id="346"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：亡灵记忆(2)", "Dialog61")
+end
+function Dialog61()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;亡灵记忆\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    收集30个僵尸之心交给慎篱。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    终于知道了……洞里的白骨都是前代战死的军士，千百年来在洞中深得地底灵气，但缺乏天空及日月星辰的精华，因此始终无法修炼成精。但从几十年前开始，异族用秘法促使洞中白骨修炼，在洞中引入了僵尸。这秘法的缺陷，就是修练成的白骨与僵尸阴气太重，不能被太阳晒，一旦出了白骨洞，就不堪一击。异族人下一步怎么做呢？看来只有从僵尸这里下手了。\n    你帮我去七层搜集30个僵尸之心，我准备召出亡魂来探问事实。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 310000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("交给我吧。{10001}", "v56060", 346, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2138"/>
+				<var type="Equal" name="state" value="-3" id="346"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：亡灵记忆(2)", "Dialog62")
+end
+function Dialog62()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;亡灵记忆\n \n&lt;/n&gt;&lt;n&gt;    太好了。我这边已经准备好了法事，现在就开始施法。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 310000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好，开始吧。{10002}", "v56060", 346, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="346" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="345"/>
+				<var type="Differ" name="state" value="-1" id="346"/>
+				<var type="Differ" name="state" value="1" id="346"/>
+				<var type="Differ" name="state" value="-3" id="346"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去白骨洞6层以下收集30个僵尸之心"/>
+				<notify content="任务：去白骨洞6层以下击败噬魂僵尸或厉怨僵尸，慎篱需要30个僵尸之心"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2138"/>
+				<var type="Equal" name="state" value="-3" id="346"/>
+			</conditions>
+			<actions>
+				<exp value="310000"/>
+				<removeitem value="30" id="2138" log="交亡灵记忆(346)-删除30个僵尸之心(2138)"/>
+				<notify1 content="经验+310000"/>
+				<notify content="恭喜你完成了“亡灵记忆”任务"/>
+				<var type="Set" name="state" value="-1" id="346"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10347">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="346"/>
+				<var type="Differ" name="state" value="-3" id="347"/>
+				<var type="Differ" name="state" value="-1" id="347"/>
+				<var type="Differ" name="state" value="1" id="347"/>
+				<var type="Differ" name="state" value="2" id="347"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：假冒僵尸(2)", "Dialog63")
+end
+function Dialog63()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;假冒僵尸\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去白骨洞三层找守魂僵尸。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我已施法召唤出一只鬼魂，能跟亡灵对话。带着它到白骨洞去找一只守魂僵尸，就能假扮僵尸的同伴。看看这样能否打听到什么消息。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 140740&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("听起来好奇怪。{10001}", "v56060", 347, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="347" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="346"/>
+				<var type="Differ" name="state" value="-3" id="347"/>
+				<var type="Differ" name="state" value="-1" id="347"/>
+				<var type="Differ" name="state" value="1" id="347"/>
+				<var type="Differ" name="state" value="2" id="347"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2" id="347"/>
+				<addguard id="54020" map="白骨洞三层" ltpos="454,225" rbpos="456,232" gold="0" exp="0" dest="167,22"/>
+				<refresh name="state"/>
+				<notify content="任务：带着鬼魂到白骨洞三层找守魂僵尸(114,195)"/>
+				<notify1 content="去白骨洞三层找守魂僵尸"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10361">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="361"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：法术(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;法术\n \n&lt;/n&gt;&lt;n&gt;    什么，竟是精怪吗……传说中的东西竟然真的存在……\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 60&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("有何办法呢？{10002}", "v56060", 361, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="361" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="361"/>
+			</conditions>
+			<actions>
+				<exp value="82980"/>
+				<notify1 content="经验+82980"/>
+				<notify content="恭喜你完成了“法术”任务"/>
+				<var type="Set" name="state" value="-1" id="361"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10362">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="361"/>
+				<var type="Differ" name="state" value="-1" id="362"/>
+				<var type="Differ" name="state" value="1" id="362"/>
+				<var type="Differ" name="state" value="-3" id="362"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：破魔之道(2)", "Dialog65")
+end
+function Dialog65()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;破魔之道\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去精怪洞七层(172,168)以下击败通魔蜘蛛精，收集30根魔蛛丝给王城慎篱。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    以前曾经在书中看过一种破解之法，但是由于是传说中的事情，也从没用过，为今之计，只有一试了。请帮我弄来30捆通魔蜘蛛精的丝。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 418900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去想办法务{10001}", "v56060", 362, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2141"/>
+				<var type="Equal" name="state" value="-3" id="362"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：破魔之道(2)", "Dialog66")
+end
+function Dialog66()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;破魔之道\n \n&lt;/n&gt;&lt;n&gt;    唔，不错，这果然是通魔蜘蛛精的丝。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 418900&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那当然。{10002}", "v56060", 362, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="362" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="361"/>
+				<var type="Differ" name="state" value="-1" id="362"/>
+				<var type="Differ" name="state" value="1" id="362"/>
+				<var type="Differ" name="state" value="-3" id="362"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去精怪洞七层(172,168)以下击败通魔蜘蛛精，收集30根魔蛛丝给王城慎篱"/>
+				<notify content="任务：去精怪洞七层(172,168)以下击败通魔蜘蛛精，收集30根魔蛛丝给王城慎篱"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2141"/>
+				<var type="Equal" name="state" value="-3" id="362"/>
+			</conditions>
+			<actions>
+				<exp value="418900"/>
+				<removeitem value="30" id="2141" log="交破魔之道(362)-删除30个魔蛛丝(2141)"/>
+				<notify1 content="经验+418900"/>
+				<notify content="恭喜你完成了“破魔之道”任务"/>
+				<var type="Set" name="state" value="-1" id="362"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10363">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="362"/>
+				<var type="Differ" name="state" value="-3" id="363"/>
+				<var type="Differ" name="state" value="-1" id="363"/>
+				<var type="Differ" name="state" value="1" id="363"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：蛛涎丹(2)", "Dialog67")
+end
+function Dialog67()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;蛛涎丹\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去精怪三层(200,140)解救被困士兵\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我以炼丹之术，制成了具有通魔蜘蛛精法力的蛛涎丹，用这蛛涎丹去开牢笼，应该就能打开了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 83980&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("明白了。{10001}", "v56060", 363, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="363" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="362"/>
+				<var type="Differ" name="state" value="-3" id="363"/>
+				<var type="Differ" name="state" value="-1" id="363"/>
+				<var type="Differ" name="state" value="1" id="363"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<additem value="1" id="2142"/>
+				<refresh name="state"/>
+				<notify content="任务：去精怪三层(20,140)解救被困士兵"/>
+				<notify1 content="去精怪三层(200,140)解救被困士兵"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10365">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="365"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：搬救兵(2)", "Dialog68")
+end
+function Dialog68()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;搬救兵\n \n&lt;/n&gt;&lt;n&gt;    我虽粗通阴阳之道，但精怪之类还从未遇过……我也并无把握。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 87044&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("为今之计只有试试看了。{10002}", "v56060", 365, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="365" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="365"/>
+			</conditions>
+			<actions>
+				<exp value="87044"/>
+				<gold type="Add" value="10000"/>
+				<notify1 content="经验+87044；银子+1锭"/>
+				<notify content="恭喜你完成了“搬救兵”任务"/>
+				<var type="Set" name="state" value="-1" id="365"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10366">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="365"/>
+				<var type="Differ" name="state" value="-1" id="366"/>
+				<var type="Differ" name="state" value="1" id="366"/>
+				<var type="Differ" name="state" value="-3" id="366"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：特别的猪毛(2)", "Dialog69")
+end
+function Dialog69()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;特别的猪毛\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去精怪洞八层(77,196)击败通魔猪精，收集30个猪精的毛给慎篱。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    以前从未遇到过精怪，万万不可莽撞。还是先寻到精怪的弱点为妙。听说精怪中最有力量的是猪精，帮我弄30撮猪精的毛来吧。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 652830&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("猪毛？真奇怪。{10001}", "v56060", 366, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2143"/>
+				<var type="Equal" name="state" value="-3" id="366"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：特别的猪毛(2)", "Dialog70")
+end
+function Dialog70()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;特别的猪毛\n \n&lt;/n&gt;&lt;n&gt;    好了，有了这个猪毛，我能施法复原那只猪精，查探猪精的底细。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 652830&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("要小心啊。{10002}", "v56060", 366, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="366" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="365"/>
+				<var type="Differ" name="state" value="-1" id="366"/>
+				<var type="Differ" name="state" value="1" id="366"/>
+				<var type="Differ" name="state" value="-3" id="366"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去精怪洞八层(77,196)击败通魔猪精，收集30个猪精的毛给慎篱"/>
+				<notify content="任务：去精怪洞八层(77,196)击败通魔猪精，收集30个猪精的毛给慎篱"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2143"/>
+				<var type="Equal" name="state" value="-3" id="366"/>
+			</conditions>
+			<actions>
+				<exp value="652830"/>
+				<removeitem value="30" id="2143" log="交特别的猪毛(366)-删除30个猪精的毛(2143)"/>
+				<notify1 content="经验+652830"/>
+				<notify content="恭喜你完成了“特别的猪毛”任务"/>
+				<var type="Set" name="state" value="-1" id="366"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10367">
+		<embranchment id="5">
+			<conditions>
+                                <var type="Equal" name="state" value="-1" id="366"/>
+				<var type="Differ" name="state" value="-1" id="367"/>
+				<var type="Differ" name="state" value="1" id="367"/>
+				<var type="Differ" name="state" value="-3" id="367"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：虎精的毛(2)", "Dialog71")
+end
+function Dialog71()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;虎精的毛\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去精怪洞八层(70,69)击败暗虎精，收集30个虎精的毛给慎篱。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    原来精怪洞穴内的精怪都来自百兽谷与兽王谷。由于谷内的百兽多具灵性，异族用迷魅之术将那些已有了些道行的抓入精怪洞中，使奇法使得灵兽修炼的速度提高十倍，但精怪都被异族人操纵了。\n    他们用什么方法让灵兽这么快修炼的呢？看来，还要用精怪洞中最勇猛的老虎精的毛才行。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 667830&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这次又是虎毛？{10001}", "v56060", 367, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2144"/>
+				<var type="Equal" name="state" value="-3" id="367"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：虎精的毛(2)", "Dialog72")
+end
+function Dialog72()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;虎精的毛\n \n&lt;/n&gt;&lt;n&gt;    嗯，有了虎毛，看我来施法！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 667830&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("快点吧。{10002}", "v56060", 367, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="367" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+                                <var type="Equal" name="state" value="-1" id="366"/>
+				<var type="Differ" name="state" value="-1" id="367"/>
+				<var type="Differ" name="state" value="1" id="367"/>
+				<var type="Differ" name="state" value="-3" id="367"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去精怪洞八层(70,69)击败暗虎精，收集30个虎精的毛给慎篱"/>
+				<notify content="任务：去精怪洞八层(70,69)击败暗虎精，收集30个虎精的毛给慎篱"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2144"/>
+				<var type="Equal" name="state" value="-3" id="367"/>
+			</conditions>
+			<actions>
+				<exp value="667830"/>
+				<removeitem value="30" id="2144" log="交虎精的毛(367)-删除30个虎精的毛(2144)"/>
+				<notify1 content="经验+667830"/>
+				<notify content="恭喜你完成了“虎精的毛”任务"/>
+				<var type="Set" name="state" value="-1" id="367"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10368">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="367"/>
+				<var type="Differ" name="state" value="-1" id="368"/>
+				<var type="Differ" name="state" value="1" id="368"/>
+				<var type="Differ" name="state" value="-3" id="368"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：猴子的别用(2)", "Dialog73")
+end
+function Dialog73()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;猴子的别用\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去精怪洞八层(188,116)击败猴精，收集30个猴精内丹给慎篱\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    在这老虎精的记忆中，异族人将灵兽抓到洞中，每日抓活人供他们吸食精元，又拿来一种内丹供灵兽修炼，这样灵兽修炼的速度是正常的十倍以上，但却完全被异族人控制了。但大量内丹是哪里来的呢？看来，要搜集精怪洞中最有灵气的猴精的内丹，来查找修炼所用的内丹来源。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 682830&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("还好这次不是毛……{10001}", "v56060", 368, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="30" id="2145"/>
+				<var type="Equal" name="state" value="-3" id="368"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：猴子的别用(2)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;猴子的别用\n \n&lt;/n&gt;&lt;n&gt;    哦，这就是那猴精的内丹么？\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 682830&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没错{10002}", "v56060", 368, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="368" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="367"/>
+				<var type="Differ" name="state" value="-1" id="368"/>
+				<var type="Differ" name="state" value="1" id="368"/>
+				<var type="Differ" name="state" value="-3" id="368"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去精怪洞八层(188,116)击败猴精，收集30个猴精内丹给慎篱"/>
+				<notify content="任务：去精怪洞八层(188,116)击败猴精，收集30个猴精内丹给慎篱"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="30" id="2145"/>
+				<var type="Equal" name="state" value="-3" id="368"/>
+			</conditions>
+			<actions>
+				<exp value="682830"/>
+				<removeitem value="30" id="2145" log="交猴子的别用(368)-删除30个猴精内丹(2145)"/>
+				<notify1 content="经验+682830"/>
+				<notify content="恭喜你完成了“猴子的别用”任务"/>
+				<var type="Set" name="state" value="-1" id="368"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10369">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="368"/>
+				<var type="Differ" name="state" value="-3" id="369"/>
+				<var type="Differ" name="state" value="-1" id="369"/>
+				<var type="Differ" name="state" value="1" id="369"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：北边的水泽(2)", "Dialog75")
+end
+function Dialog75()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;北边的水泽\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找王城-羽林将军(516,507)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，这内丹所放出的气息一点也不像在山洞中所修炼的，反倒像是在水泽之中所修炼的。而从内丹的色彩来看，更应当接近北边才对。我想这猴精修炼时所吸食的内丹，应当是来源于北边的水泽之地。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 91044&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去告诉羽林将军。{10001}", "v56060", 369, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="369" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="368"/>
+				<var type="Differ" name="state" value="-3" id="369"/>
+				<var type="Differ" name="state" value="-1" id="369"/>
+				<var type="Differ" name="state" value="1" id="369"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找王城-羽林将军(516,507)"/>
+				<notify1 content="去找王城-羽林将军(516,507)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10428">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2185"/>
+				<var type="Equal" name="state" value="-3" id="428"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：神秘“诸怀”(2)", "Dialog76")
+end
+function Dialog76()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;神秘“诸怀”\n \n&lt;/n&gt;&lt;n&gt;     这水晶丸竟像是魔物传递消息所用……待我探查其中内容……这东西是一个叫“诸怀”的魔物给一个叫“令狐奔龙”的家伙，大约是说他给令狐奔龙提供帮助，让令狐奔龙发展力量，帮他征服整个皇朝。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 120020&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("竟有此事！{10002}", "v56060", 428, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="428" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2185"/>
+				<var type="Equal" name="state" value="-3" id="428"/>
+			</conditions>
+			<actions>
+				<exp value="120020"/>
+				<notify1 content="经验+120020"/>
+				<removeitem value="1" id="2185" log="交神秘“诸怀”(428)-删除奇怪的水晶丸(2185)"/>
+				<notify content="恭喜你完成了“神秘“诸怀””任务"/>
+				<var type="Set" name="state" value="-1" id="428"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="15048" name="杜周">
+	<quest id="50006" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<selfcountry value="0" />
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<notify1 content="杜周：1/1"/>
+				<notify content="恭喜你完成了家族击败叛逃的杜周任务,回家族管理员处交任务"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

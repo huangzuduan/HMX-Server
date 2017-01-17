@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2137" name="白骨精魄">
+	<!--new means new quest, default is quest on user-->
+	<quest id="345" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="345"/>
+				<var type="Less" name="get_白骨精魄" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个白骨精魄"/>
+				<var type="Add" name="get_白骨精魄" value="1"/>
+				<refresh name="get_白骨精魄"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="345"/>
+				<var type="Great" name="get_白骨精魄" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="345"/>
+				<refresh name="state"/>
+				<refresh name="get_白骨精魄"/>
+				<notify content="你已经收集齐了白骨精魄,回王城-慎篱(451,225)处交任务吧"/>
+				<notify1 content="去向王城-慎篱(451,225)汇报吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

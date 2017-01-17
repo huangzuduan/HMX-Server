@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<!--ggjgg-这里定义了怪物和NPC随机说话的内容，大家可以修改为自己想要的语句，改时注意语法-->
+<root>
+		<chat type="1" rate="1">
+		<!--发现敌人时说的话-->	
+		<content str="哈哈来了个NB人物啊，好怕怕哦"/>
+		<content str="哇!老大你的装备太NB了啊,可以送我吗?哈哈"/>
+		<content str="欢迎光临XXX征途,我们将帮助大侠你快速提高登记哦"/>
+		<content str="2月17日—2月24日财神，福神将在凤凰城为大家送上新年礼物"/>
+		<content str="2月17日—2月20日年兽活动+双倍经验+新年烟火晚会大家千万不要错过"/>
+		<content str="2月17日—2月20日年兽活动，新活动新玩法你心动了吗"/>
+		<content str="2月17日—2月20日年兽活动，所使用的鞭炮在杂货商处有卖"/>
+		<content str="2月17日—2月20日年兽活动，在不怕妹妹处接，把年兽赶至同一地图大胆哥哥处即完成"/>
+		<content str="2月17日—2月20日清源村，凤凰城，王城有不同等级的年兽活动可以参加"/>
+		<content str="2月21日—2月22日魔幻迷宫活动将登场春节活动套餐"/>
+		<content str="2月21日—2月22日魔幻迷宫活动你参加吗"/>
+		<content str="2月23日—2月24日铁人六项活动要刺激就来参加"/>
+		<content str="2月23日—2月24日铁人六项活动+双倍经验将登陆春节活动套餐"/>
+		<content str="2月18日—2月20日春节大礼包活动升级拿宝两不误"/>
+		<content str="2月18日—2月20日春节大礼包我也要去参加"/>
+
+
+
+	</chat>
+	<chat type="2" rate="1">
+		<!--攻击时说的话-->
+<content str="2月17日—2月24日魔幻迷宫+双倍经验怎能不去"/>
+		<content str="2月17日—2月24日春节大型活动套餐怎能错过"/>
+		<content str="2月17日—2月24日春节大型活动套餐真是太精彩了"/>
+		<content str="2月17日—2月24日春节N多活动等待你的参与"/>
+		<content str="2月17日—2月24日财神，福神将在凤凰城为大家送上新年礼物"/>
+		<content str="2月17日—2月20日年兽活动+双倍经验+新年烟火晚会大家千万不要错过"/>
+		<content str="2月17日—2月20日年兽活动，新活动新玩法你心动了吗"/>
+		<content str="2月17日—2月20日年兽活动，所使用的鞭炮在杂货商处有卖"/>
+		<content str="2月17日—2月20日年兽活动，在不怕妹妹处接，把年兽赶至同一地图大胆哥哥处即完成"/>
+		<content str="2月17日—2月20日清源村，凤凰城，王城有不同等级的年兽活动可以参加"/>
+		<content str="2月21日—2月22日魔幻迷宫活动将登场春节活动套餐"/>
+		<content str="2月21日—2月22日魔幻迷宫活动你参加吗"/>
+		<content str="2月23日—2月24日铁人六项活动要刺激就来参加"/>
+		<content str="2月23日—2月24日铁人六项活动+双倍经验将登陆春节活动套餐"/>
+		<content str="2月18日—2月20日春节大礼包活动升级拿宝两不误"/>
+		<content str="2月18日—2月20日春节大礼包我也要去参加"/>
+        <!--content npcID="15076" str="15076攻击"/-->
+	</chat>
+	<chat type="3" rate="1">
+		<!--撤退时说的话-->
+		<content str="老子今天心情好，放你一马。"/>
+		<content str="你还是回家卖红薯去吧！"/>
+		<content str="你回去再练十年八年吧。"/>
+		<content str="有性格，跑都跑那么帅。"/>
+		<content str="小样，你应该补点钙了。"/>
+		<content str="叫你打我脸。"/>
+	</chat>
+	<chat type="4" rate="1">
+		<!--死亡时说的话-->
+		<content str="老子十八年后又是一条好汉。"/>
+		<content str="我做鬼也不会放过你的。"/>
+		<content str="我不想死啊！"/>
+		<content str="出来混，迟早要还的。"/>
+		<content str="早知道，我就多补点钙。"/>
+		<content str="不鞭尸，留我个全尸吧！"/>
+		<content str="我去见观音姐姐了。"/>
+		<content str="郁闷……"/>
+		<content str="都是出来混的，干嘛这么绝啊……"/>
+		<content str="轻轻地我走了！！！"/>
+		<content str="其实，我是个捕头。"/>
+		<content str="其实，我是皇帝的奶娘的二姨他外甥的大小子！"/>
+		<content str="谁无虎落平阳日,待我风云再起时,后会有期"/>
+	</chat>
+	<chat type="5" rate="10">
+		<!--逃跑时说的话-->
+		<content str="放我一条生路吧！"/>
+		<content str="英雄，饶了我吧！"/>
+		<content str="我叫上几个兄弟来帮忙"/>
+		<content str="等等，我肚子疼……"/>
+		<content str="风紧！扯乎！"/>
+		<content str="这下装大了，早知道不装了"/>
+		<content str="都是出来混的，干嘛这么绝啊……"/>
+		<content str="高！真高！实在是高！"/>
+		<content str="说好不打脸的，呜呜呜……"/>
+		<content str="打不赢我还躲不起吗我，我躲我躲我躲躲躲！"/>
+		<content npcID="30101" str="打不赢我还躲不起吗我，我躲我躲我躲躲躲！"/>
+	</chat>
+	<chat type="9" rate="0">
+                <!--买卖npc随机说的话-->
+                <content str="大家好啊~"/>
+                <content str="新年好~"/>
+                <content str="07年也要加油升级啊~"/>
+        </chat>
+    <chat type="10" rate="1000">
+		<!--HP30%时说的话-->
+		<content npcID="16800" str="别欺负我呀，好疼哦！"/>
+		<content npcID="16800" str="你们欺负了我，警察叔叔可要抓你咯。"/>
+		<content npcID="16800" str="哎呀，我的PP好象肿了。"/>
+		<content npcID="16800" str="警察叔叔，快来呀，有人欺负我。"/>
+		<content npcID="16800" str="熊猫急了也会咬人的哦。"/>
+		<content npcID="16800" str="你敢打我，我是熊猫耶，我跟你拼了。"/>
+		<content npcID="16800" str="再打我，再打我的话，我让你也变熊猫眼。"/>
+		<content npcID="16800" str="再打我，再打我~就把你吃掉。"/>
+        <content npcID="16800" str="你们都不爱我，就知道欺负我！"/>
+        <content npcID="16800" str="欺负我，再欺负我我就拨110了。"/>
+          
+	</chat>
+</root>

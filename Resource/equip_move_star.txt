@@ -1,0 +1,17 @@
+服务器输出文件名	config_equip_move_star.xml	根名称	ability
+客户端输出文件名	config_equip_move_star.xml	项名称	equip_move_star
+增加星的数量	需要的元宝		
+3	3		
+type_num	need_ingot		
+1	10		
+2	20		
+3	40		
+4	80		
+5	160		
+6	320		
+7	640		
+8	1280		
+9	2560		
+10	5120		
+11	10240		
+12	20480		

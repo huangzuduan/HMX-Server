@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15078" name="凤祥镇西郊-叛军护卫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="357" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_叛军护卫" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_叛军护卫" value="1"/>
+				<refresh name="kill_叛军护卫"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_叛军护卫" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2068"/>
+				<refresh name="state"/>
+				<refresh name="kill_叛军护卫"/>
+				<notify content="恭喜你已经找到了密信,回凤祥镇－独孤战(79,86)交任务吧"/>
+				<notify1 content="密信:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="2072" name="情定终生">
+	<quest id="20273" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20273"/>
+			</conditions>
+			<actions>
+				<notify content="这上面刻了情定终生四个字，应该就是韩林要的东西了"/>
+				<notify1 content="情定终生：1/1"/>
+				<var type="Set" name="state" value="-3" id="20273"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

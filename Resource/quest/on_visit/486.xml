@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="486" name="凤凰城-红露(327,386)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10269">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="269"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：河东狮吼(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;河东狮吼\n \n&lt;/n&gt;&lt;n&gt;    哦，是陈季常让你来的啊。他老婆柳月娥吃醋啦？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("请向陈夫人解释一下。{10002}", "v486", 269, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="269" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="269"/>
+			</conditions>
+			<actions>
+				<exp value="2400"/>
+				<notify1 content="经验+2400"/>
+				<notify content="恭喜你完成了“河东狮吼”任务"/>
+				<var type="Set" name="state" value="-1" id="269"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10272">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="269"/>
+				<var type="Differ" name="state" value="-1" id="272"/>
+				<var type="Differ" name="state" value="1" id="272"/>
+				<var type="Differ" name="state" value="-3" id="272"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：狐衣(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;狐皮\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去百兽谷捕捉血狐(117,193)收集10块狐皮，然后交给颜梦梦(310,521)来换取狐皮大衣，再拿回来给红露(327,386)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    这个女人若是吃起醋来，那可是……咳咳，狐皮大衣真好啊～又漂亮，又暖和，若是有一件穿在身上就好了。现在这么冷，我实在不能出门去。\n   嗯嗯，怎么办呢～狐皮大衣跟柳月娥……\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("明白了，我帮你去弄狐皮大衣{10001}", "v486", 272, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2076"/>
+				<var type="Equal" name="state" value="-3" id="272"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：狐衣(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;狐皮\n \n&lt;/n&gt;&lt;n&gt;   大衣拿来啦，真好看，呵呵呵呵……真好看，真暖和！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 11600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("那，解释的事？{10002}", "v486", 272, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="272" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="269"/>
+				<var type="Differ" name="state" value="-1" id="272"/>
+				<var type="Differ" name="state" value="1" id="272"/>
+				<var type="Differ" name="state" value="-3" id="272"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去百兽谷(117,193)收集10块狐皮"/>
+				<notify content="任务：去百兽谷(117,193)捕捉血狐，把收集的10块狐皮给颜梦梦(310,521)制作狐皮衣"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2076"/>
+				<var type="Equal" name="state" value="-3" id="272"/>
+			</conditions>
+			<actions>
+				<exp value="11600"/>
+				<removeitem value="1" id="2076" log="交狐衣(272)-删除狐皮衣(2076)"/>
+				<notify1 content="经验+11600"/>
+				<notify content="恭喜你完成了“狐衣”任务"/>
+				<var type="Set" name="state" value="-1" id="272"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10273">
+		<embranchment id="5">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="272"/>
+				<var type="Differ" name="state" value="-3" id="273"/>
+				<var type="Differ" name="state" value="-1" id="273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：战书(2)", "Dialog74")
+end
+function Dialog74()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;战书\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    将红露的战书转交给陈季常的夫人柳月娥(294,396)\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，解释就是掩饰！若是向柳月娥解释，恐怕越描越黑，她不会相信。我写一封挑战书，你替我交给柳月娥。这样事情一定会解决的。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好的。{10001}", "v486", 273, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="272"/>
+				<var type="Differ" name="state" value="-3" id="273"/>
+				<var type="Differ" name="state" value="-1" id="273"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空点再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="273" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="272"/>
+				<var type="Differ" name="state" value="-3" id="273"/>
+				<var type="Differ" name="state" value="-1" id="273"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<additem value="1" id="2096"/>
+				<notify content="任务：去找柳月娥(294,396)"/>
+				<notify1 content="柳月娥(294,396)"/>
+				<notify1 content="得到战书"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

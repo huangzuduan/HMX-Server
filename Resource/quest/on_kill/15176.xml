@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15176" name="千江镇-混混(315 480)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20392" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_混混" value="45"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_混混" value="1"/>
+				<refresh name="kill_混混"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_混混" value="44"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_混混"/>
+				<notify content="你已经消灭了45个混混,快向千江镇的花飞(111,421)报告吧。"/>
+			</actions>
+		</embranchment>
+	</quest>
+<quest id="20814" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_混混" value="3250"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_混混" value="1"/>
+				<refresh name="kill_混混"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_混混" value="3249"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_混混"/>
+				<notify content="恭喜你，你已经消灭了3250个80级的混混，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

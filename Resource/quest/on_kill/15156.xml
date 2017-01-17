@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="15156" name="沼泽湿地-狂齿鳄(170,150)">
+	<!--new means new quest, default is quest on user-->
+		<quest id="386" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_狂齿鳄" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_狂齿鳄" value="1"/>
+				<refresh name="kill_狂齿鳄"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_狂齿鳄" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_狂齿鳄"/>
+				<notify content="恭喜你完成了击败狂齿鳄的任务,回王城的欧阳编修(502,802)处交任务吧。"/>
+				<notify1 content="去王城找欧阳编修(502,802)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20817" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_狂齿鳄" value="4000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_狂齿鳄" value="1"/>
+				<refresh name="kill_狂齿鳄"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_狂齿鳄" value="3999"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_狂齿鳄"/>
+				<notify content="恭喜你，你已经击败了4000只95级的狂齿鳄，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+
+</event>

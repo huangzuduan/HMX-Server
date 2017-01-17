@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的 country:0表示本国 非0表示指定国家-->
+	<waypoint>
+		<point x="168" y="194"/>
+		<point x="169" y="194"/>
+		<point x="170" y="194"/>
+		<point x="171" y="194"/>
+		<dest name="shanzhai3" country="0" x="146" y="20"/>
+		<dest name="shanzhai3" country="0" x="147" y="20"/>
+		<dest name="shanzhai3" country="0" x="148" y="20"/>
+		<dest name="shanzhai3" country="0" x="149" y="20"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="29" height="45" x="160" y="153" type="1" color="0,0,255,0"/>
+	<npc id="16441" name="山贼隐" width="1" height="1" x="181" y="43" num="1" interval="300"/>
+	<npc id="40" name="山3方向" width="1" height="1" x="165" y="183" num="1" interval="600"/>
+	<npc id="50033" name="头目" width="40" height="40" x="58" y="80" num="1" interval="1800"/>
+	<npc id="30002" name="山贼王" width="35" height="27" x="58" y="82" num="1" interval="3600"/><!-- deathsummon="" die="50034-47-90;50034-64-72;50034-85-105;" rush="3" rushrate="3" delay="1800"/-->
+	<npc id="55221" name="破箱子" width="179" height="116" x="12" y="49" num="6" interval="1800"/>
+	<npc id="55201" name="破箱子" width="179" height="116" x="12" y="49" num="6" interval="1800"/>
+	<npc id="20106" name="山贼工匠" width="179" height="116" x="12" y="49" num="1" interval="7200"/>
+	<npc id="10153" name="弩车" width="61" height="45" x="17" y="129" num="10" interval="90"/>
+	<npc id="10111" name="特级山贼" width="65" height="65" x="79" y="93" num="30" interval="90"/>
+	<npc id="10153" name="弩车" width="31" height="103" x="15" y="29" num="10" interval="90"/>
+	<npc id="10153" name="弩车" width="134" height="67" x="49" y="11" num="20" interval="90"/>
+	<npc id="10104" name="山贼高手" width="33" height="121" x="20" y="18" num="30" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="113" height="63" x="76" y="23" num="10" interval="90"/>
+	<npc id="10111" name="特级山贼" width="27" height="32" x="154" y="118" num="15" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="5" height="5" x="108" y="151" num="2" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="5" height="5" x="174" y="79" num="2" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="5" height="5" x="127" y="55" num="2" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="5" height="5" x="60" y="99" num="2" interval="90"/>
+	<npc id="10104" name="山贼高手" width="5" height="5" x="59" y="98" num="3" interval="90"/>
+	<npc id="10104" name="山贼高手" width="5" height="5" x="173" y="81" num="3" interval="90"/>
+	<npc id="10104" name="山贼高手" width="5" height="5" x="108" y="154" num="3" interval="90"/>
+	<npc id="10104" name="山贼高手" width="5" height="5" x="127" y="57" num="3" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="26" height="45" x="48" y="61" num="8" interval="40"/>
+	<npc id="10104" name="山贼高手" width="18" height="35" x="58" y="78" num="15" interval="40"/>
+	<npc id="10114" name="女山贼" width="70" height="74" x="35" y="112" num="20" interval="90"/>
+	<npc id="10105" name="山贼高手（魔）" width="44" height="48" x="125" y="46" num="10" interval="40"/>
+	<npc id="10104" name="山贼高手" width="17" height="64" x="85" y="123" num="30" interval="90"/>
+	<npc id="10104" name="山贼高手" width="17" height="64" x="54" y="118" num="30" interval="90"/>
+	<npc id="10104" name="山贼高手" width="17" height="64" x="129" y="62" num="30" interval="90"/>
+	<npc id="10104" name="山贼高手" width="17" height="64" x="153" y="42" num="30" interval="90"/>
+	<npc id="10104" name="山贼高手" width="17" height="64" x="94" y="43" num="30" interval="90"/>
+	<npc id="10114" name="女山贼" width="39" height="19" x="110" y="154" num="20" interval="90"/>
+	<npc id="10114" name="女山贼" width="39" height="19" x="58" y="28" num="20" interval="90"/>
+	<npc id="10114" name="女山贼" width="39" height="19" x="114" y="41" num="20" interval="90"/>
+	<npc id="10104" name="山贼高手" width="17" height="64" x="110" y="87" num="10" interval="90"/>
+</map>

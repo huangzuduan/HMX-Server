@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="0" name="player">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20604" new="1">
+		<embranchment id="1">
+			<conditions>
+				<mapid id="20604" name="213"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+                                <var type="Less" name="kill_player" value="1000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_player" value="1"/>
+				<refresh name="kill_player"/>
+				<!-- 奖励经验值=int(杀人个数*0.5*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<vars type="Mul" name1="selflevel" name2="kill_player"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<refresh name="selflevel"/>
+                                <!--countrysvar type="Add" name="r_kill_num" value="1"/-->
+                                <pkadd/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<mapid id="20604" name="214"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+                                <var type="Less" name="kill_player" value="1000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_player" value="1"/>
+				<refresh name="kill_player"/>
+				<!-- 奖励经验值=int(杀人个数*0.5*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<vars type="Mul" name1="selflevel" name2="kill_player"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<refresh name="selflevel"/>
+                                <!--countrysvar type="Add" name="r_kill_num" value="1"/-->
+                                <pkadd/>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<mapid id="20604" name="215"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+                                <var type="Less" name="kill_player" value="1000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_player" value="1"/>
+				<refresh name="kill_player"/>
+				<!-- 奖励经验值=int(杀人个数*0.5*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<vars type="Mul" name1="selflevel" name2="kill_player"/>
+				<var type="Set" name="baseexp" value="50"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Div" name1="selflevel" name2="div"/>
+				<refresh name="selflevel"/>
+                                <!--countrysvar type="Add" name="r_kill_num" value="1"/-->
+                                <pkadd/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="4">
+			<conditions>
+				<mapid id="20604" name="215"/>
+				<var type="Equal" name="state" value="1" id="20604"/>
+                                <var type="Less" name="item_num" value="100000"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="item_num" value="100"/>
+				<refresh name="item_num"/>
+                                <var type="Set" name="space_num" value="1"/>
+                                <vars type="Mul" name1="space_num" name2="item_num"/>
+                                <var type="Set" name="div" value="10000"/>
+                                <vars type="Div" name1="space_num" name2="div"/>
+                                <var type="Set" name="extspace_num" value="1"/>
+                                <vars type="Add" name1="space_num" name2="extspace_num"/>
+                                <refresh name="space_num"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20604"/>
+				<var type="Great" name="kill_player" value="999"/>
+			</conditions>
+			<actions>
+			<notify content="你的比武胜利次数达到了上限，快去交任务吧。"/>
+			<notify1 content="你的比武胜利次数达到了上限，快去交任务吧。"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

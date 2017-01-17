@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2140" name="叛军战袍">
+	<!--new means new quest, default is quest on user-->
+	<quest id="352" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="352"/>
+				<var type="Less" name="get_叛军战袍" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一件叛军战袍"/>
+				<var type="Add" name="get_叛军战袍" value="1"/>
+				<refresh name="get_叛军战袍"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="352"/>
+				<var type="Great" name="get_叛军战袍" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="352"/>
+				<refresh name="state"/>
+				<refresh name="get_叛军战袍"/>
+				<notify content="恭喜你完成了收集叛军战袍,回独孤战(79,86)处交任务吧"/>
+				<notify1 content="去找独孤战(79,86)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<info>
+	<script id="3" name="村长" npcid="56000" repeat="-1" shared="1">
+		<phase action="say" str="你好，欢迎来到清源村，我是这里的村长贾仁。希望大家在这玩得尽兴。天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="4" name="新手辅导员" npcid="247" repeat="-1" shared="1">
+		<phase action="say" str="你好，我是新手辅导员，有什么需要帮忙的话就来找我。天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="5" name="高级防具商" npcid="104" repeat="-1" shared="1">
+		<phase action="say" str="来来来，我这里卖的高级防具可是很抢手的啊！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="53" name="高级防具商" npcid="110" repeat="-1" shared="1">
+		<phase action="say" str="有事没事，进来瞧瞧呀！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="6" name="高级物理武器商" npcid="100" repeat="-1" shared="1">
+		<phase action="say" str="各位请来我这里看看咯，买点高档武器回去吧！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="54" name="高级物理武器商" npcid="106" repeat="-1" shared="1">
+		<phase action="say" str="有事没事，进来瞧瞧呀。保证有您喜欢的。天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="7" name="高级法术武器商" npcid="101" repeat="-1" shared="1">
+		<phase action="say" str="哈哈，大家别错过好机会，我卖的武器可是大有用处！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="55" name="高级法术武器商" npcid="107" repeat="-1" shared="1">
+		<phase action="say" str="祝福所有不开心的事都远离你，所有快乐的事都围绕着你。天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="8" name="低级防具商" npcid="105" repeat="-1" shared="1">
+		<phase action="say" str="我这里卖的防具可是很实用，很耐用的哦！天山明月刀欢迎您" lasttime="210"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="9" name="低级物理武器商" npcid="102" repeat="-1" shared="1">
+		<phase action="say" str="进来看看咯，我卖的武器价廉物美，大家别错过咯！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="10" name="低级法术武器商" npcid="103" repeat="-1" shared="1">
+		<phase action="say" str="你好，不过来看看吗？我卖的武器保证你满意。天山明月刀欢迎您" lasttime="220"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="11" name="高级客栈掌柜" npcid="195" repeat="-1" shared="1">
+		<phase action="say" str="想要尝遍天下美味佳肴吗？那就进来享受一下吧！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="12" name="低级客栈掌柜" npcid="196" repeat="-1" shared="1">
+		<phase action="say" str="里面请，里面请！我这里可是有名的客栈。人间山珍海味我这里应有尽有，保管你吃得开心；舒适的客房保证让您住得舒心。天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="13" name="高级药店老板" npcid="251" repeat="-1" shared="1">
+		<phase action="say" str="祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="14" name="低级药店老板" npcid="253" repeat="-1" shared="1">
+		<phase action="say" str="各位买点常用的药防防身吧！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="58" name="低级药店老板" npcid="242" repeat="-1" shared="1">
+		<phase action="say" str="征途祝您身体健康，万事如意！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="59" name="低级药店老板" npcid="243" repeat="-1" shared="1">
+		<phase action="say" str="征途祝您身体健康，万事如意！天山明月刀欢迎您" lasttime="240"/>
+		<phase action="randomchat" lasttime="10"/>
+	</script>
+	<script id="15" name="高级物理武器锻造师" npcid="213" repeat="-1" shared="1">
+		<phase action="say" str="想锻造好点的武器吗？那就来找我吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="16" name="高级法术武器锻造师" npcid="214" repeat="-1" shared="1">
+		<phase action="say" str="我是有名的武器锻造师，大家相信我吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="17" name="高级防具锻造师" npcid="211" repeat="-1" shared="1">
+		<phase action="say" str="呵呵，我是高级防具锻造师！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="18" name="低级物理武器锻造师" npcid="215" repeat="-1" shared="1">
+		<phase action="say" str="给自己量身定造一把好武器吗？找我来帮你吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="19" name="低级法术武器锻造师" npcid="216" repeat="-1" shared="1">
+		<phase action="say" str="不需要我帮你锻造一把实用的武器吗？找我就对了！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="20" name="低级防具锻造师" npcid="212" repeat="-1" shared="1">
+		<phase action="say" str="我是防具锻造师，大家有需要帮忙吗？天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="21" name="高级首饰锻造师" npcid="217" repeat="-1" shared="1">
+		<phase action="say" str="璀璨的首饰可是很夺人眼球的哦，不想给自己定一件吗？天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="22" name="低级首饰锻造师" npcid="218" repeat="-1" shared="1">
+		<phase action="say" str="给自己制作一件好的首饰吗？我可以帮你。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="23" name="高级炼药师" npcid="252" repeat="-1" shared="1">
+		<phase action="say" str="你好，我是炼药师。大家可在我这里学习学习。" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="56" name="低级炼药师" npcid="238" repeat="-1" shared="1">
+		<phase action="say" str="事事难料，所以学会基本的炼药技术的很有必要的。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="57" name="低级炼药师" npcid="252" repeat="-1" shared="1">
+		<phase action="say" str="事事难料，所以学会基本的炼药技术的很有必要的。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="24" name="低级炼药师" npcid="254" repeat="-1" shared="1">
+		<phase action="say" str="事事难料，所以学会基本的炼药技术的很有必要的。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="25" name="高级劳具商" npcid="198" repeat="-1" shared="1">
+		<phase action="say" str="来我这里吧！我这里有神秘的东西卖哦！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="26" name="低级劳具商" npcid="201" repeat="-1" shared="1">
+		<phase action="say" str="祝福所有不开心的事都远离你，所有快乐的事都围绕着你。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="27" name="流浪小贩" npcid="285" repeat="-1" shared="1">
+		<phase action="say" str="大家行行好吧！帮我买点东西，让我赚几个小钱吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="28" name="饲养员" npcid="219" repeat="-1" shared="1">
+		<phase action="say" str="我是美丽、善良的饲养员。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="29" name="红娘" npcid="162" repeat="-1" shared="1">
+		<phase action="say" str="愿天下有情人终成眷属，百年好合！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="30" name="高级钱庄老板 " npcid="207" repeat="-1" shared="1">
+		<phase action="say" str="希望大家多多发财，财源滚滚哦！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="31" name="低级钱庄老板 " npcid="209" repeat="-1" shared="1">
+		<phase action="say" str="恭喜发财，财源广进！年年有余！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="32" name="高级服装师 " npcid="203" repeat="-1" shared="1">
+		<phase action="say" str="我是闻名的服装师，我可以让你的服装焕然一新！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="33" name="高级美发师 " npcid="204" repeat="-1" shared="1">
+		<phase action="say" str="一切从头开始，一个好的发型会有不一样的感觉！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="34" name="低级服装师 " npcid="205" repeat="-1" shared="1">
+		<phase action="say" str="给自己换一下衣服的颜色，也换一下自己的心情嘛！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="35" name="低级美发师 " npcid="206" repeat="-1" shared="1">
+		<phase action="say" str="美丽的发型可以改变一个人的气质哦。不信啊，那试试啊！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="36" name="馆长" npcid="224" repeat="-1" shared="1">
+		<phase action="say" str="我是武斗馆的馆长，我这里可以进行武术比赛！！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="37" name="帮会管理员" npcid="1066" repeat="-1" shared="1">
+		<phase action="say" str="我是帮会管理员！帮会的事情可以来找我商量！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="38" name="师门管理员" npcid="1067" repeat="-1" shared="1">
+		<phase action="say" str="我是师门管理员！帮会的事情可以来找我商量！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="39" name="家族管理员" npcid="1068" repeat="-1" shared="1">
+		<phase action="say" str="我是家族管理员！家族的事情可以来找我商量！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="40" name="大臣" npcid="227" repeat="-1" shared="1">
+		<phase action="say" str="在我这可以帮你们成立帮会！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="41" name="民政官" npcid="231" repeat="-1" shared="1">
+		<phase action="say" str="在我这里可以帮你们成立家族，当然你们想要结婚的话也可以来找我公证。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="42" name="低级物理武器商" npcid="108" repeat="-1" shared="1">
+		<phase action="say" str="有事没事，进来瞧瞧呀。保证有您喜欢的。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="43" name="低级物理武器商" npcid="114" repeat="-1" shared="1">
+		<phase action="say" str="快来看看咯，我这里的武器可是很实用。别错过机会了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="44" name="低级物理武器商" npcid="120" repeat="-1" shared="1">
+		<phase action="say" str="进来瞧瞧呀，保证有您喜欢的。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="45" name="低级法术武器商" npcid="109" repeat="-1" shared="1">
+		<phase action="say" str="进来瞧瞧呀，保证有您喜欢的。别错过机会了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="46" name="低级法术武器商" npcid="115" repeat="-1" shared="1">
+		<phase action="say" str="我这里出售的武器可是很神气的，不信过来看看。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="47" name="低级法术武器商" npcid="121" repeat="-1" shared="1">
+		<phase action="say" str="进来瞧瞧呀，保证有您喜欢的。别错过机会了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="48" name="低级防具商" npcid="111" repeat="-1" shared="1">
+		<phase action="say" str="进来瞧瞧呀，保证有您喜欢的。别错过机会了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="49" name="低级防具商" npcid="117" repeat="-1" shared="1">
+		<phase action="say" str="我想给自己弄款新的防具吗？天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="50" name="低级防具商" npcid="123" repeat="-1" shared="1">
+		<phase action="say" str="进来瞧瞧呀，别错过机会了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="51" name="原料加工商" npcid="145" repeat="-1" shared="1">
+		<phase action="say" str="欢迎，有什么材料是你需要加工打造的吗？天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="52" name="天机老人" npcid="146" repeat="-1" shared="1">
+		<phase action="say" str="我就是神秘的天机老人，我这里专门给你们加工一些特殊的道具。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="60" name="边防官" npcid="221" repeat="-1" shared="1">
+		<phase action="say" str="我可以帮你们带到你们想去的地方。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="61" name="秘籍收藏家" npcid="236" repeat="-1" shared="1">
+		<phase action="say" str="我这里收藏着各种武林秘籍，您不妨来看看。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="62" name="秘籍收藏家" npcid="237" repeat="-1" shared="1">
+		<phase action="say" str="我这里收藏着各种武林秘籍，您不妨来看看。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="63" name="秘籍收藏家" npcid="241" repeat="-1" shared="1">
+		<phase action="say" str="我这里收藏着各种武林秘籍，您不妨来看看。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="64" name="钱庄老板" npcid="209" repeat="-1" shared="1">
+		<phase action="say" str="恭喜发财呀，多多捧场啊。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="65" name="物理武器" npcid="112" repeat="-1" shared="1">
+		<phase action="say" str="来来来呀，别错过机会了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="66" name="法术武器" npcid="113" repeat="-1" shared="1">
+		<phase action="say" str="祝福所有不开心的事都远离你，所有快乐的事都围绕着你。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="67" name="拍卖" npcid="310" repeat="-1" shared="1">
+		<phase action="say" str="在我这里保证您拍得好价格，相信我。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="68" name="传递" npcid="93" repeat="-1" shared="1">
+		<phase action="say" str="需要我帮你邮寄东西吗？天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="69" name="整容" npcid="91" repeat="-1" shared="1">
+		<phase action="say" str="瞧你那么丑，进来整整吧。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="70" name="饲养" npcid="347" repeat="-1" shared="1">
+		<phase action="say" str="弄匹马回去吧。我这里还有可爱的宠物体哦。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="71" name="智" npcid="90" repeat="-1" shared="1">
+		<phase action="say" str="动动小脑筋，你会有不少的收获。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="72" name="天机" npcid="146" repeat="-1" shared="1">
+		<phase action="say" str="天机不可泄露啊，进来看看就知道了。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="73" name="武器" npcid="116" repeat="-1" shared="1">
+		<phase action="say" str="祝福所有不开心的事都远离你，所有快乐的事都围绕着你。天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="74" name="杂货店老板(中立)" npcid="5015" repeat="-1" shared="1">
+		<phase action="say" str="来我这里吧！我这里有神秘的东西卖哦！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="75" name="药店掌柜(中立)" npcid="5016" repeat="-1" shared="1">
+		<phase action="say" str="各位买点常用的药防防身吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="76" name="高级武器商(中立)" npcid="5017" repeat="-1" shared="1">
+		<phase action="say" str="来来来，我这里卖的装备可是很抢手的啊！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="77" name="高级防具商(中立)" npcid="5018" repeat="-1" shared="1">
+		<phase action="say" str="各位请来我这里看看咯，买点装备回去吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="78" name="杂货店老板" npcid="803" repeat="-1" shared="1">
+		<phase action="say" str="来我这里吧！我这里有神秘的东西卖哦！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="79" name="药店掌柜" npcid="804" repeat="-1" shared="1">
+		<phase action="say" str="各位买点常用的药防防身吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="80" name="高级武器商" npcid="805" repeat="-1" shared="1">
+		<phase action="say" str="来来来，我这里卖的装备可是很抢手的啊！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="81" name="高级防具商" npcid="806" repeat="-1" shared="1">
+		<phase action="say" str="各位请来我这里看看咯，买点装备回去吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="82" name="低级武器商" npcid="801" repeat="-1" shared="1">
+		<phase action="say" str="来来来，我这里卖的装备可是很抢手的啊！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<script id="83" name="低级防具商" npcid="802" repeat="-1" shared="1">
+		<phase action="say" str="各位请来我这里看看咯，买点装备回去吧！天山明月刀欢迎您" lasttime="200"/>
+		<phase action="randomchat" lasttime="40"/>
+	</script>
+	<!-- 500 开始 任务用脚本-->
+	<script id="501" npcid="10140" repeat="-1" shared="0">
+		<phase action="moveto" x="86" y="98" region="2" lasttime="30"/>
+		<phase action="moveto" x="100" y="84" region="2" lasttime="30"/>
+		<phase action="moveto" x="113" y="100" region="2" lasttime="30"/>
+		<phase action="moveto" x="99" y="113" region="2" lasttime="30"/>
+		<phase action="moveto" x="86" y="98" region="2" lasttime="30"/>
+		<phase action="changemap" str="凤首村" x="86" y="98" region="2" lasttime="30"/>
+		<phase action="moveto" x="100" y="84" region="2" lasttime="30"/>
+		<phase action="moveto" x="113" y="100" region="2" lasttime="30"/>
+		<phase action="moveto" x="99" y="113" region="2" lasttime="30"/>
+		<phase action="moveto" x="86" y="98" region="2" lasttime="30"/>
+		<phase action="changemap" str="凤尾村" x="86" y="98" region="2" lasttime="30"/>
+	</script>
+	<script id="502" npcid="10019" repeat="-1" shared="0">
+		<phase action="moveto" x="257" y="253" region="2" lasttime="30"/>
+		<phase action="moveto" x="249" y="243" region="2" lasttime="30"/>
+		<phase action="moveto" x="242" y="251" region="2" lasttime="30"/>
+		<phase action="moveto" x="252" y="263" region="2" lasttime="30"/>
+		<phase action="moveto" x="257" y="253" region="2" lasttime="30"/>
+		<!--phase action="changemap" str="尧·颖上村" x="257" y="253" lasttime="1"/>
+	<phase action="moveto" x="257" y="253" region="2" lasttime="30"/>
+	<phase action="moveto" x="249" y="243" region="2" lasttime="30"/>
+	<phase action="moveto" x="242" y="251" region="2" lasttime="30"/>
+	<phase action="moveto" x="252" y="263" region="2" lasttime="30"/>
+	<phase action="moveto" x="257" y="253" region="2" lasttime="30"/>
+	<phase action="changemap" str="舜·颖上村" x="257" y="253" lasttime="1"/-->
+	</script>
+	<script id="503" npcid="56025" repeat="1" shared="0">
+		<phase action="moveto" x="257" y="253" region="2" lasttime="30"/>
+		<phase action="moveto" x="249" y="243" region="2" lasttime="30"/>
+		<phase action="moveto" x="242" y="251" region="2" lasttime="30"/>
+		<phase action="moveto" x="252" y="263" region="2" lasttime="30"/>
+		<phase action="moveto" x="257" y="253" region="2" lasttime="30"/>
+	</script>
+	<!-- 1000 开始 攻城用脚本-->
+	<!-- 山贼 攻城用脚本-->
+	<script id="1001" repeat="1" shared="1">
+		<phase action="patrol" x="468" y="342" region="5" lasttime="60"/>
+		<phase action="patrol" x="446" y="328" region="5" lasttime="60"/>
+		<phase action="patrol" x="432" y="315" region="5" lasttime="60"/>
+		<phase action="patrol" x="424" y="330" region="5" lasttime="60"/>
+		<phase action="patrol" x="420" y="349" region="5" lasttime="60"/>
+		<phase action="patrol" x="402" y="363" region="5" lasttime="60"/>
+		<phase action="patrol" x="390" y="380" region="5" lasttime="60"/>
+		<phase action="patrol" x="360" y="410" region="5" lasttime="60"/>
+		<phase action="patrol" x="331" y="436" region="5" lasttime="60"/>
+	</script>
+	<script id="1002" repeat="1" shared="1">
+		<phase action="patrol" x="458" y="553" region="5" lasttime="60"/>
+		<phase action="patrol" x="440" y="552" region="5" lasttime="60"/>
+		<phase action="patrol" x="421" y="532" region="2" lasttime="60"/>
+		<phase action="patrol" x="400" y="510" region="2" lasttime="60"/>
+		<phase action="patrol" x="374" y="484" region="5" lasttime="60"/>
+		<phase action="patrol" x="345" y="455" region="5" lasttime="60"/>
+	</script>
+	<script id="1003" repeat="1" shared="1">
+		<phase action="patrol" x="251" y="629" region="5" lasttime="60"/>
+		<phase action="patrol" x="235" y="597" region="5" lasttime="60"/>
+		<phase action="patrol" x="204" y="571" region="5" lasttime="60"/>
+		<phase action="patrol" x="220" y="549" region="2" lasttime="60"/>
+		<phase action="patrol" x="245" y="522" region="5" lasttime="60"/>
+		<phase action="patrol" x="263" y="506" region="5" lasttime="60"/>
+		<phase action="patrol" x="294" y="476" region="5" lasttime="60"/>
+		<phase action="patrol" x="325" y="447" region="5" lasttime="60"/>
+	</script>
+	<!-- 僵尸 攻城用脚本-->
+	<script id="1004" repeat="1" shared="1">
+		<phase action="patrol" x="432" y="315" region="5" lasttime="60"/>
+		<phase action="patrol" x="424" y="330" region="5" lasttime="60"/>
+		<phase action="patrol" x="420" y="349" region="5" lasttime="60"/>
+		<phase action="patrol" x="402" y="363" region="5" lasttime="60"/>
+		<phase action="patrol" x="390" y="380" region="5" lasttime="60"/>
+		<phase action="patrol" x="360" y="410" region="5" lasttime="60"/>
+		<phase action="patrol" x="331" y="436" region="5" lasttime="60"/>
+	</script>
+	<script id="1005" repeat="1" shared="1">
+		<phase action="patrol" x="440" y="552" region="5" lasttime="60"/>
+		<phase action="patrol" x="421" y="532" region="2" lasttime="60"/>
+		<phase action="patrol" x="400" y="510" region="2" lasttime="60"/>
+		<phase action="patrol" x="374" y="484" region="5" lasttime="60"/>
+		<phase action="patrol" x="345" y="455" region="5" lasttime="60"/>
+	</script>
+	<script id="1006" repeat="1" shared="1">
+		<phase action="patrol" x="204" y="571" region="5" lasttime="60"/>
+		<phase action="patrol" x="220" y="549" region="2" lasttime="60"/>
+		<phase action="patrol" x="245" y="522" region="5" lasttime="60"/>
+		<phase action="patrol" x="263" y="506" region="5" lasttime="60"/>
+		<phase action="patrol" x="294" y="476" region="5" lasttime="60"/>
+		<phase action="patrol" x="325" y="447" region="5" lasttime="60"/>
+	</script>
+	<!-- 王城 攻城用脚本-->
+	<script id="1007" repeat="1" shared="1">
+		<phase action="patrol" x="833" y="216" region="5" lasttime="60"/>
+		<phase action="patrol" x="809" y="248" region="5" lasttime="60"/>
+		<phase action="patrol" x="782" y="253" region="5" lasttime="60"/>
+		<phase action="patrol" x="753" y="232" region="5" lasttime="60"/>
+		<phase action="patrol" x="725" y="274" region="5" lasttime="60"/>
+		<phase action="patrol" x="700" y="300" region="5" lasttime="60"/>
+		<phase action="patrol" x="658" y="347" region="5" lasttime="60"/>
+		<phase action="patrol" x="614" y="386" region="5" lasttime="60"/>
+		<phase action="patrol" x="582" y="418" region="5" lasttime="60"/>
+		<phase action="patrol" x="520" y="470" region="5" lasttime="60"/>
+		<phase action="patrol" x="495" y="501" region="5" lasttime="60"/>
+	</script>
+	<!-- 凤凰城城 福神用脚本-->
+	<script id="1008" repeat="-1" shared="0">
+		<phase action="moveto" x="400" y="500" region="2" lasttime="60"/>
+		<phase action="say" str="大家新年好~~福神来给大家拜年咯~" lasttime="10"/>
+		<phase action="moveto" x="350" y="500" region="2" lasttime="60"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了~2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="300" y="500" region="2" lasttime="60"/>
+		<phase action="moveto" x="283" y="481" region="2" lasttime="60"/>
+		<phase action="say" str="雷老板，一年没见啦，新年好啊~~" lasttime="10"/>
+		<phase action="moveto" x="293" y="472" region="2" lasttime="60"/>
+		<phase action="moveto" x="272" y="449" region="2" lasttime="60"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="say" str="闻老兄，辛苦啦，新年好啊~~新年到了，除旧迎新，帮主、城主、国王似乎也该换一换了，难道你就没点想法？" lasttime="10"/>
+		<phase action="moveto" x="290" y="450" region="2" lasttime="60"/>
+		<phase action="moveto" x="290" y="427" region="2" lasttime="60"/>
+		<phase action="say" str="拍卖妹妹，站了一年累不累啊，新年好啊~~" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="277" y="427" region="2" lasttime="60"/>
+		<phase action="say" str="黑木黑木，来吃块肉吧，新年好啊，黑木黑木~~" lasttime="10"/>
+		<phase action="moveto" x="258" y="416" region="2" lasttime="60"/>
+		<phase action="say" str="拍卖妹妹，新年好哇，你们姐妹仨可是一个比一个漂亮啊哈~~" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="273" y="359" region="2" lasttime="60"/>
+		<phase action="say" str="飞烟老弟，祝你天天打到野兔子~别忘了送几只给我啊，我最喜欢吃兔子了" lasttime="10"/>
+		<phase action="moveto" x="242" y="394" region="2" lasttime="60"/>
+		<phase action="say" str="小林子，过年好啊，你家的辟邪剑法练到7级了没有？" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="258" y="395" region="2" lasttime="60"/>
+		<phase action="say" str="大家过年好啊~我在这祝大家新春快乐，万事如意，身体健康，心想事成，吉星高照，财源滚滚来咯！~" lasttime="10"/>
+		<phase action="moveto" x="281" y="383" region="2" lasttime="60"/>
+		<phase action="say" str="张嫂过年好~我想死你啦~我有东西送给你" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="300" y="370" region="2" lasttime="60"/>
+		<phase action="moveto" x="322" y="356" region="2" lasttime="60"/>
+		<phase action="moveto" x="339" y="312" region="2" lasttime="60"/>
+		<phase action="say" str="哦~饲养员小姐还是那么漂亮~" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="345" y="333" region="2" lasttime="60"/>
+		<phase action="moveto" x="364" y="354" region="2" lasttime="60"/>
+		<phase action="moveto" x="371" y="358" region="2" lasttime="60"/>
+		<phase action="moveto" x="379" y="352" region="2" lasttime="60"/>
+		<phase action="say" str="钱老板新年好~今年还是财大气粗啊~~" lasttime="10"/>
+		<phase action="moveto" x="397" y="367" region="2" lasttime="60"/>
+		<phase action="say" str="算命先生新年好，生意兴旺啊！2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你~" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="317" y="332" region="2" lasttime="60"/>
+		<phase action="say" str="神农老哥，保佑今年农民都发财呀" lasttime="10"/>
+		<phase action="moveto" x="417" y="387" region="2" lasttime="60"/>
+		<phase action="say" str="老板娘过年好~生意好~" lasttime="10"/>
+		<phase action="moveto" x="411" y="401" region="2" lasttime="60"/>
+		<phase action="say" str="摆摊区的兄弟们新年好~我给大家送福来了~2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="430" y="404" region="2" lasttime="60"/>
+		<phase action="moveto" x="442" y="425" region="2" lasttime="60"/>
+		<phase action="moveto" x="424" y="444" region="2" lasttime="60"/>
+		<phase action="say" str="摆摊区的兄弟们新年好~我给大家送福来了~2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="10"/>
+		<phase action="moveto" x="400" y="465" region="2" lasttime="60"/>
+		<phase action="moveto" x="390" y="451" region="2" lasttime="60"/>
+		<phase action="say" str="冰淋MM过年好，有爱情滋润了吗~" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="390" y="420" region="2" lasttime="60"/>
+		<phase action="moveto" x="360" y="400" region="2" lasttime="60"/>
+		<phase action="moveto" x="330" y="440" region="2" lasttime="60"/>
+		<phase action="moveto" x="333" y="459" region="2" lasttime="60"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了~征途祝您新年快乐，身体健康，吉星高照，万事如意！" lasttime="10"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="moveto" x="310" y="480" region="2" lasttime="60"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了~征途祝您新年快乐，身体健康，吉星高照，万事如意！" lasttime="10"/>
+		<phase action="moveto" x="330" y="505" region="2" lasttime="60"/>
+		<phase action="moveto" x="357" y="531" region="2" lasttime="60"/>
+		<phase action="dropitem" x="875" y="2" region="2" lasttime="1" str="玫瑰花"/>
+		<phase action="dropitem" x="1723" y="15" region="2" lasttime="10" str="玫瑰烟花"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了，祝愿大家身体健康，幸福安康啊~" lasttime="10"/>
+		<phase action="moveto" x="380" y="507" region="2" lasttime="60"/>
+		<phase action="moveto" x="380" y="500" region="2" lasttime="60"/>
+	</script>
+	<!-- 凤凰城城 财神用脚本-->
+	<script id="1009" repeat="-1" shared="0">
+		<phase action="moveto" x="400" y="500" region="2" lasttime="60"/>
+		<phase action="say" str="大家新年好~~财神来给大家拜年咯~" lasttime="10"/>
+		<phase action="moveto" x="350" y="500" region="2" lasttime="60"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了~2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="300" y="500" region="2" lasttime="60"/>
+		<phase action="moveto" x="283" y="481" region="2" lasttime="60"/>
+		<phase action="say" str="雷老板，一年没见啦，新年好啊~~" lasttime="10"/>
+		<phase action="moveto" x="293" y="472" region="2" lasttime="60"/>
+		<phase action="moveto" x="272" y="449" region="2" lasttime="60"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="say" str="闻老兄，辛苦啦，新年好啊~~新年到了，除旧迎新，帮主、城主、国王似乎也该换一换了，难道你就没点想法？" lasttime="10"/>
+		<phase action="moveto" x="290" y="450" region="2" lasttime="60"/>
+		<phase action="moveto" x="290" y="427" region="2" lasttime="60"/>
+		<phase action="say" str="拍卖妹妹，站了一年累不累啊，新年好啊~~" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="277" y="427" region="2" lasttime="60"/>
+		<phase action="say" str="黑木黑木，来吃块肉吧，新年好啊，黑木黑木~~" lasttime="10"/>
+		<phase action="moveto" x="258" y="416" region="2" lasttime="60"/>
+		<phase action="say" str="拍卖妹妹，新年好哇，你们姐妹仨可是一个比一个漂亮啊哈~~" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="273" y="359" region="2" lasttime="60"/>
+		<phase action="say" str="飞烟老弟，祝你天天打到野兔子~别忘了送几只给我啊，我最喜欢吃兔子了" lasttime="10"/>
+		<phase action="moveto" x="242" y="394" region="2" lasttime="60"/>
+		<phase action="say" str="小林子，过年好啊，你家的辟邪剑法练到7级了没有？" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="258" y="395" region="2" lasttime="60"/>
+		<phase action="say" str="大家过年好啊~我在这祝大家新春快乐，万事如意，身体健康，心想事成，吉星高照，财源滚滚来咯！~" lasttime="10"/>
+		<phase action="moveto" x="281" y="383" region="2" lasttime="60"/>
+		<phase action="say" str="张嫂过年好~我想死你啦~我有东西送给你" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="300" y="370" region="2" lasttime="60"/>
+		<phase action="moveto" x="322" y="356" region="2" lasttime="60"/>
+		<phase action="moveto" x="339" y="312" region="2" lasttime="60"/>
+		<phase action="say" str="哦~饲养员小姐还是那么漂亮~" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="345" y="333" region="2" lasttime="60"/>
+		<phase action="moveto" x="364" y="354" region="2" lasttime="60"/>
+		<phase action="moveto" x="371" y="358" region="2" lasttime="60"/>
+		<phase action="moveto" x="379" y="352" region="2" lasttime="60"/>
+		<phase action="say" str="钱老板新年好~今年还是财大气粗啊~~" lasttime="10"/>
+		<phase action="moveto" x="397" y="367" region="2" lasttime="60"/>
+		<phase action="say" str="算命先生新年好，生意兴旺啊！2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你~" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="317" y="332" region="2" lasttime="60"/>
+		<phase action="say" str="神农老哥，保佑今年农民都发财呀" lasttime="10"/>
+		<phase action="moveto" x="417" y="387" region="2" lasttime="60"/>
+		<phase action="say" str="老板娘过年好~生意好~" lasttime="10"/>
+		<phase action="moveto" x="411" y="401" region="2" lasttime="60"/>
+		<phase action="say" str="摆摊区的兄弟们新年好~我给大家送福来了~2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="430" y="404" region="2" lasttime="60"/>
+		<phase action="moveto" x="442" y="425" region="2" lasttime="60"/>
+		<phase action="moveto" x="424" y="444" region="2" lasttime="60"/>
+		<phase action="say" str="摆摊区的兄弟们新年好~我给大家送福来了~2006年，祝福所有不开心的事都远离你，所有快乐的事都围绕着你" lasttime="10"/>
+		<phase action="moveto" x="400" y="465" region="2" lasttime="60"/>
+		<phase action="moveto" x="390" y="451" region="2" lasttime="60"/>
+		<phase action="say" str="冰淋MM过年好，有爱情滋润了吗~" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="390" y="420" region="2" lasttime="60"/>
+		<phase action="moveto" x="360" y="400" region="2" lasttime="60"/>
+		<phase action="moveto" x="330" y="440" region="2" lasttime="60"/>
+		<phase action="moveto" x="333" y="459" region="2" lasttime="60"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了~征途祝您新年快乐，身体健康，吉星高照，万事如意！" lasttime="10"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="moveto" x="310" y="480" region="2" lasttime="60"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了~征途祝您新年快乐，身体健康，吉星高照，万事如意！" lasttime="10"/>
+		<phase action="moveto" x="330" y="505" region="2" lasttime="60"/>
+		<phase action="moveto" x="357" y="531" region="2" lasttime="60"/>
+		<phase action="dropitem" x="1709" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1710" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1711" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1712" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1713" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1714" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1715" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1716" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1717" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1718" y="1" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1719" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1720" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1721" y="2" region="2" lasttime="1" str="烟花"/>
+		<phase action="dropitem" x="1722" y="2" region="2" lasttime="10" str="烟花"/>
+		<phase action="say" str="竞技区的兄弟们新年好~我给大家送福来了，祝愿大家身体健康，幸福安康啊~" lasttime="10"/>
+		<phase action="moveto" x="380" y="507" region="2" lasttime="60"/>
+		<phase action="moveto" x="380" y="500" region="2" lasttime="60"/>
+	</script>
+	<script id="9001" npcid="54001" repeat="1" shared="0">
+		<phase action="moveto" x="472" y="474" region="2" lasttime="120"/>
+		<phase action="moveto" x="508" y="513" region="2" lasttime="120"/>
+		<phase action="moveto" x="542" y="543" region="2" lasttime="120"/>
+		<phase action="moveto" x="553" y="559" region="2" lasttime="120"/>
+		<phase action="moveto" x="624" y="630" region="2" lasttime="120"/>
+		<phase action="moveto" x="624" y="650" region="2" lasttime="120"/>
+		<phase action="moveto" x="683" y="707" region="2" lasttime="120"/>
+		<phase action="moveto" x="716" y="735" region="2" lasttime="120"/>
+		<phase action="moveto" x="729" y="750" region="2" lasttime="120"/>
+		<phase action="moveto" x="777" y="777" region="2" lasttime="120"/>
+		<phase action="moveto" x="830" y="777" region="2" lasttime="120"/>
+		<phase action="moveto" x="862" y="744" region="2" lasttime="120"/>
+		<phase action="moveto" x="900" y="744" region="2" lasttime="120"/>
+		<phase action="moveto" x="900" y="795" region="2" lasttime="120"/>
+		<phase action="moveto" x="919" y="814" region="2" lasttime="120"/>
+		<phase action="moveto" x="919" y="891" region="2" lasttime="120"/>
+		<phase action="moveto" x="940" y="912" region="2" lasttime="120"/>
+		<phase action="moveto" x="940" y="943" region="2" lasttime="120"/>
+		<phase action="moveto" x="952" y="955" region="2" lasttime="120"/>
+		<phase action="moveto" x="971" y="955" region="2" lasttime="120"/>
+		<phase action="moveto" x="982" y="964" region="2" lasttime="120"/>
+		<phase action="changemap" str="南郊" x="33" y="22" lasttime="3"/>
+		<phase action="moveto" x="49" y="38" region="2" lasttime="120"/>
+		<phase action="moveto" x="72" y="58" region="2" lasttime="120"/>
+		<phase action="moveto" x="77" y="57" region="2" lasttime="120"/>
+		<phase action="moveto" x="82" y="47" region="2" lasttime="120"/>
+		<phase action="moveto" x="86" y="52" region="2" lasttime="120"/>
+		<phase action="moveto" x="82" y="59" region="2" lasttime="120"/>
+		<phase action="moveto" x="86" y="69" region="2" lasttime="120"/>
+		<phase action="moveto" x="90" y="83" region="2" lasttime="120"/>
+		<phase action="moveto" x="99" y="95" region="2" lasttime="120"/>
+		<phase action="moveto" x="111" y="108" region="2" lasttime="120"/>
+		<phase action="moveto" x="111" y="167" region="2" lasttime="120"/>
+		<phase action="moveto" x="118" y="177" region="2" lasttime="120"/>
+		<phase action="moveto" x="114" y="220" region="2" lasttime="120"/>
+		<phase action="moveto" x="105" y="234" region="2" lasttime="120"/>
+		<phase action="moveto" x="105" y="271" region="2" lasttime="120"/>
+		<phase action="moveto" x="117" y="285" region="2" lasttime="120"/>
+		<phase action="moveto" x="133" y="284" region="2" lasttime="120"/>
+		<phase action="moveto" x="256" y="284" region="2" lasttime="120"/>
+		<phase action="moveto" x="355" y="178" region="2" lasttime="120"/>
+		<phase action="moveto" x="361" y="118" region="2" lasttime="120"/>
+		<phase action="moveto" x="383" y="114" region="2" lasttime="120"/>
+		<phase action="changemap" str="边境" x="39" y="268" lasttime="3"/>
+		<phase action="moveto" x="46" y="260" region="2" lasttime="120"/>
+		<phase action="moveto" x="72" y="256" region="2" lasttime="120"/>
+		<phase action="moveto" x="72" y="231" region="2" lasttime="120"/>
+		<phase action="moveto" x="117" y="193" region="2" lasttime="120"/>
+		<phase action="moveto" x="121" y="184" region="2" lasttime="120"/>
+		<phase action="moveto" x="134" y="186" region="2" lasttime="120"/>
+		<phase action="moveto" x="166" y="186" region="2" lasttime="120"/>
+		<phase action="moveto" x="180" y="167" region="2" lasttime="120"/>
+		<phase action="moveto" x="194" y="156" region="2" lasttime="120"/>
+		<phase action="moveto" x="189" y="142" region="2" lasttime="120"/>
+		<phase action="clear" x="189" y="142" region="2" lasttime="5"/>
+	</script>
+	<!-- 精怪联军一队袭击凤凰城用脚本皇宫出发-->
+	<script id="1010" repeat="1" shared="0">
+		<phase action="patrol" x="226" y="331" region="5" lasttime="100"/>
+		<phase action="patrol" x="257" y="368" region="5" lasttime="40"/>
+		<phase action="patrol" x="282" y="394" region="5" lasttime="60"/>
+		<phase action="attack" x="282" y="394" region="20" lasttime="300"/>
+		<phase action="patrol" x="299" y="453" region="5" lasttime="60"/>
+		<phase action="attack" x="299" y="453" region="20" lasttime="300"/>
+		<phase action="patrol" x="341" y="492" region="5" lasttime="60"/>
+		<phase action="attack" x="341" y="483" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军一队袭击凤凰城用脚本拍卖区出发-->
+	<script id="1016" repeat="1" shared="0">
+		<phase action="patrol" x="247" y="405" region="5" lasttime="100"/>
+		<phase action="patrol" x="262" y="399" region="5" lasttime="60"/>
+		<phase action="attack" x="262" y="399" region="20" lasttime="300"/>
+		<phase action="patrol" x="273" y="422" region="5" lasttime="60"/>
+		<phase action="attack" x="273" y="422" region="20" lasttime="300"/>
+		<phase action="patrol" x="297" y="440" region="5" lasttime="60"/>
+		<phase action="attack" x="297" y="440" region="20" lasttime="300"/>
+		<phase action="patrol" x="289" y="457" region="5" lasttime="60"/>
+		<phase action="attack" x="289" y="457" region="20" lasttime="300"/>
+		<phase action="patrol" x="353" y="515" region="5" lasttime="60"/>
+		<phase action="attack" x="353" y="515" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军一队袭击凤凰城用脚本西门-->
+	<script id="1012" repeat="1" shared="0">
+		<phase action="patrol" x="247" y="521" region="5" lasttime="100"/>
+		<phase action="patrol" x="286" y="491" region="5" lasttime="60"/>
+		<phase action="attack" x="286" y="491" region="20" lasttime="300"/>
+		<phase action="patrol" x="313" y="469" region="5" lasttime="60"/>
+		<phase action="attack" x="313" y="469" region="20" lasttime="300"/>
+		<phase action="patrol" x="348" y="509" region="5" lasttime="60"/>
+		<phase action="attack" x="348" y="509" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军一队袭击凤凰城用脚本西门口-->
+	<script id="1018" repeat="1" shared="0">
+		<phase action="patrol" x="196" y="584" region="5" lasttime="100"/>
+		<phase action="patrol" x="218" y="550" region="5" lasttime="40"/>
+		<phase action="patrol" x="254" y="511" region="5" lasttime="60"/>
+		<phase action="attack" x="254" y="511" region="20" lasttime="300"/>
+		<phase action="patrol" x="286" y="458" region="5" lasttime="60"/>
+		<phase action="attack" x="286" y="458" region="20" lasttime="300"/>
+		<phase action="patrol" x="313" y="469" region="5" lasttime="60"/>
+		<phase action="attack" x="313" y="469" region="20" lasttime="300"/>
+		<phase action="patrol" x="349" y="509" region="5" lasttime="60"/>
+		<phase action="attack" x="349" y="509" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军一队袭击凤凰城用脚本南门-->
+	<script id="1014" repeat="1" shared="0">
+		<phase action="patrol" x="398" y="509" region="5" lasttime="100"/>
+		<phase action="patrol" x="374" y="523" region="5" lasttime="60"/>
+		<phase action="attack" x="374" y="523" region="20" lasttime="300"/>
+		<phase action="patrol" x="320" y="516" region="5" lasttime="60"/>
+		<phase action="attack" x="320" y="216" region="20" lasttime="300"/>
+		<phase action="patrol" x="333" y="496" region="5" lasttime="60"/>
+		<phase action="attack" x="333" y="496" region="20" lasttime="7000"/>
+	</script>
+		<!-- 精怪联军一队袭击凤凰城用脚本南门口-->
+	<script id="1020" repeat="1" shared="0">
+		<phase action="patrol" x="440" y="551" region="5" lasttime="100"/>
+		<phase action="patrol" x="421" y="533" region="5" lasttime="60"/>
+		<phase action="patrol" x="395" y="500" region="5" lasttime="60"/>
+		<phase action="attack" x="395" y="500" region="20" lasttime="300"/>
+		<phase action="patrol" x="367" y="473" region="5" lasttime="60"/>
+		<phase action="attack" x="367" y="473" region="20" lasttime="300"/>
+		<phase action="patrol" x="320" y="516" region="5" lasttime="60"/>
+		<phase action="attack" x="320" y="216" region="20" lasttime="300"/>
+		<phase action="patrol" x="333" y="496" region="5" lasttime="60"/>
+		<phase action="attack" x="333" y="496" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军一队袭击凤凰城用脚本探子-->
+	<script id="1022" repeat="1" shared="0">
+		<phase action="patrol" x="411" y="356" region="5" lasttime="30"/>
+		<phase action="patrol" x="348" y="418" region="5" lasttime="30"/>
+		<phase action="patrol" x="342" y="492" region="5" lasttime="30"/>
+		<phase action="attack" x="342" y="492" region="20" lasttime="7100"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本东门-->
+	<script id="1011" repeat="1" shared="0">
+		<phase action="patrol" x="657" y="347" region="3" lasttime="100"/>
+		<phase action="patrol" x="601" y="398" region="3" lasttime="60"/>
+		<phase action="attack" x="601" y="398" region="20" lasttime="300"/>
+		<phase action="patrol" x="522" y="468" region="3" lasttime="60"/>
+		<phase action="attack" x="522" y="468" region="20" lasttime="300"/>
+		<phase action="patrol" x="476" y="478" region="3" lasttime="60"/>
+		<phase action="attack" x="476" y="478" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本东门口-->
+	<script id="1017" repeat="1" shared="0">
+		<phase action="patrol" x="764" y="232" region="3" lasttime="100"/>
+		<phase action="patrol" x="737" y="295" region="3" lasttime="60"/>
+		<phase action="patrol" x="715" y="282" region="3" lasttime="60"/>
+		<phase action="attack" x="715" y="282" region="20" lasttime="300"/>
+		<phase action="patrol" x="675" y="325" region="3" lasttime="60"/>
+		<phase action="attack" x="675" y="325" region="20" lasttime="300"/>
+		<phase action="patrol" x="610" y="388" region="3" lasttime="60"/>
+		<phase action="attack" x="610" y="388" region="20" lasttime="300"/>
+		<phase action="patrol" x="522" y="468" region="3" lasttime="60"/>
+		<phase action="attack" x="522" y="468" region="20" lasttime="300"/>
+		<phase action="patrol" x="476" y="478" region="3" lasttime="60"/>
+		<phase action="attack" x="476" y="478" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本西门-->
+	<script id="1013" repeat="1" shared="0">
+		<phase action="patrol" x="351" y="652" region="3" lasttime="100"/>
+		<phase action="patrol" x="407" y="591" region="3" lasttime="60"/>
+		<phase action="attack" x="407" y="591" region="20" lasttime="300"/>
+		<phase action="patrol" x="465" y="525" region="3" lasttime="60"/>
+		<phase action="attack" x="465" y="525" region="20" lasttime="300"/>
+		<phase action="patrol" x="477" y="481" region="3" lasttime="60"/>
+		<phase action="attack" x="477" y="481" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本西门口-->
+	<script id="1019" repeat="1" shared="0">
+		<phase action="patrol" x="223" y="777" region="3" lasttime="100"/>
+		<phase action="patrol" x="239" y="760" region="3" lasttime="60"/>
+		<phase action="patrol" x="275" y="721" region="3" lasttime="60"/>
+		<phase action="attack" x="275" y="721" region="20" lasttime="300"/>
+		<phase action="patrol" x="331" y="673" region="3" lasttime="60"/>
+		<phase action="attack" x="331" y="673" region="20" lasttime="300"/>
+		<phase action="patrol" x="372" y="599" region="3" lasttime="60"/>
+		<phase action="attack" x="372" y="599" region="20" lasttime="300"/>
+		<phase action="patrol" x="465" y="525" region="3" lasttime="60"/>
+		<phase action="attack" x="465" y="525" region="20" lasttime="300"/>
+		<phase action="patrol" x="477" y="481" region="3" lasttime="60"/>
+		<phase action="attack" x="477" y="481" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本南门-->
+	<script id="1015" repeat="1" shared="0">
+		<phase action="patrol" x="663" y="673" region="3" lasttime="100"/>
+		<phase action="patrol" x="578" y="587" region="3" lasttime="60"/>
+		<phase action="attack" x="578" y="587" region="20" lasttime="300"/>
+		<phase action="patrol" x="509" y="513" region="3" lasttime="60"/>
+		<phase action="attack" x="509" y="513" region="20" lasttime="300"/>
+		<phase action="patrol" x="482" y="479" region="3" lasttime="60"/>
+		<phase action="attack" x="482" y="479" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本南门口-->
+	<script id="1021" repeat="1" shared="0">
+		<phase action="patrol" x="757" y="758" region="3" lasttime="100"/>
+		<phase action="patrol" x="737" y="741" region="3" lasttime="60"/>
+		<phase action="patrol" x="685" y="696" region="3" lasttime="60"/>
+		<phase action="attack" x="685" y="696" region="20" lasttime="300"/>
+		<phase action="patrol" x="617" y="654" region="3" lasttime="60"/>
+		<phase action="attack" x="617" y="654" region="20" lasttime="300"/>
+		<phase action="patrol" x="582" y="591" region="3" lasttime="60"/>
+		<phase action="attack" x="582" y="591" region="20" lasttime="300"/>
+		<phase action="patrol" x="509" y="513" region="3" lasttime="60"/>
+		<phase action="attack" x="509" y="513" region="20" lasttime="300"/>
+		<phase action="patrol" x="482" y="479" region="3" lasttime="60"/>
+		<phase action="attack" x="482" y="479" region="20" lasttime="7000"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本探子-->
+	<script id="1023" repeat="1" shared="0">
+		<phase action="patrol" x="792" y="481" region="3" lasttime="30"/>
+		<phase action="patrol" x="762" y="593" region="3" lasttime="40"/>
+		<phase action="patrol" x="579" y="587" region="3" lasttime="40"/>
+		<phase action="patrol" x="476" y="478" region="3" lasttime="40"/>
+	    <phase action="attack" x="476" y="478" region="20" lasttime="7100"/>
+	</script>
+	<!-- 精怪联军二队袭击王城用脚本探子-->
+	<script id="1030" repeat="1" shared="0">
+		<phase action="patrol" x="792" y="481" region="3" lasttime="30"/>
+		<phase action="patrol" x="762" y="593" region="3" lasttime="40"/>
+		<phase action="patrol" x="579" y="587" region="3" lasttime="40"/>
+		<phase action="patrol" x="476" y="478" region="3" lasttime="40"/>
+	    <phase action="attack" x="476" y="478" region="20" lasttime="3600"/>
+	</script>
+</info>
+<!-- Npc脚本说明 -->
+<!-- id         脚本id，配置地图npc时填上脚本id，该npc即激活此脚本 -->
+<!-- npcid      执行该脚本的npcid -->
+<!-- repeat     脚本重复次数 -2：乱序执行       -1：无限循环    n>0:循环n次 -->
+<!-- shared     是否为共享脚本，如果为"1"则所有该类npc都拥有此脚本 -->
+<!-- action     动作 npc要执行的动作，有移动、攻击、跳转等 -->
+<!-- x,y        坐标，动作的目的地或发生地，根据动作不同意义不同 -->
+
+<!-- region     npc的活动范围 -->
+<!-- lasttime   持续时间，时间之后执行下一动作 -->

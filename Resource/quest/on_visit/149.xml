@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="149" name="千江镇车夫">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960101">
+		<embranchment id="1">
+			<conditions>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是千江镇车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddTaskCmdItem("北郊-2两(0)", "v149", 160101, 10)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是北郊车夫，你有什么地方想去的么？绝对经济快捷哦！")
+this:AddDialogItem("北郊-2两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160101" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="北郊" pos="111,154"/>
+				<notify content="你被马车载到了北郊，付了2两作为车费"/>
+				<gold type="Sub" value="200"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

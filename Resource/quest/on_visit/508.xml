@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="508" name="龙冈山二寨-路牌(211,155)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10308">
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2103"/> 
+				<var type="Equal" name="state" value="1" id="308"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    这块路牌下的土似乎有些松了。")
+this:AddTaskCmdItem(" 将石头埋下去 {10002}", "v508", 308, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="308" new="1">
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2103"/> 
+				<var type="Equal" name="state" value="1" id="308"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2103" log="交攻心为上(308)-删除天命石(2103)"/>
+				<notify1 content="告诉反抗者，将石头挖出来。"/>
+				<var type="Set" name="state" value="2" id="308"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

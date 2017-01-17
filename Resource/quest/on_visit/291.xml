@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="291" name="凤凰城-风水先生(449,443)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="300002">
+		<embranchment id="98">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="200001"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("五行属性选择(0)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    天下万物无不是由金木水火土这五个基本元素所构成，就连你我也不例外，如果能将五行融合入武术之中，克敌时能发挥更大作用。\n    你是否要选择一种五行属性呢？不同的五行属性还能让你获得不同称号。\n   金-麒麟称号    木-青龙称号\n   水-白虎称号    火-朱雀称号\n   土-玄武称号\n五行属性之间相克的关系分别是：\n   金克木   木克土   土克水\n   水克火   火克金\n当你的属性攻击你相克属性的怪物或玩家时能获得额外的攻击加成。你想选 的属性是？")
+this:AddTaskCmdItem("金{10002}", "v291", 200001, 10)
+this:AddTaskCmdItem("木{10002}", "v291", 200001, 11)
+this:AddTaskCmdItem("土{10002}", "v291", 200001, 12)
+this:AddTaskCmdItem("水{10002}", "v291", 200001, 13)
+this:AddTaskCmdItem("火{10002}", "v291", 200001, 14)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="198">
+			<conditions>
+			<var type="Equal" name="state" value="-1" id="200001"/>
+
+				<var type="Differ" name="state" value="-1" id="20223"/>
+				<var type="Differ" name="state" value="-3" id="20223"/>
+				<var type="Differ" name="state" value="1" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("五行属性更换(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("    什么？你又想换自己的五行属性啦，你以为是儿戏么？如果你实在想换也不是没有办法，去帮我去把狼王消灭掉，它经常在百兽谷里徘徊。\n\n任务奖励： 五行属性更换")
+this:AddTaskCmdItem("接受任务{10001}", "v291", 20223, 9)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="128">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("五行属性更换(2)", "Dialog26")
+end
+function Dialog26()
+this:AddTalk("    看来你已经做到了我的要求嘛，那么你想更换成哪种五行属性呢？\n\n不同的五行属性还能让你获得不同称号。\n   金-麒麟称号    木-青龙称号\n   水-白虎称号    火-朱雀称号\n   土-玄武称号\n五行属性之间相克的关系分别是：\n   金克木   木克土   土克水\n   水克火   火克金\n当你的属性攻击你相克属性的怪物或玩家时能获得额外的攻击加成。你想选 的属性是？")
+this:AddTaskCmdItem("金{10002}", "v291", 20223, 10)
+this:AddTaskCmdItem("木{10002}", "v291", 20223, 11)
+this:AddTaskCmdItem("土{10002}", "v291", 20223, 12)
+this:AddTaskCmdItem("水{10002}", "v291", 20223, 13)
+this:AddTaskCmdItem("火{10002}", "v291", 20223, 14)
+end
+</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="200001" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="0"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了金属性,获得了麒麟称号"/>
+				<notify1 content="金-麒麟称号"/>
+				<var type="Set" name="state" value="-1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="1"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了木属性,获得了青龙称号"/>
+				<notify1 content="木-青龙称号"/>
+				<var type="Set" name="state" value="-1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="2"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了土属性,获得了玄武称号"/>
+				<notify1 content="土-玄武称号"/>
+				<var type="Set" name="state" value="-1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="3"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了水属性,获得了白虎称号"/>
+				<notif1y content="水-白虎称号"/>
+				<var type="Set" name="state" value="-1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="4"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了火属性,获得了朱雀称号"/>
+				<notify1 content="火-朱雀称号"/>
+				<var type="Set" name="state" value="-1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20223" new="1">
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Differ" name="state" value="-1" id="20223"/>
+				<var type="Differ" name="state" value="-3" id="20223"/>
+				<var type="Differ" name="state" value="1" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<notify content="你为了更换五行属性，接受了消灭狼王的任务"/>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="0"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了金属性,获得了麒麟称号"/>
+				<notify1 content="金-麒麟称号"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="1"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了木属性,获得了青龙称号"/>
+				<notify1 content="木-青龙称号"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="2"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了土属性,获得了玄武称号"/>
+				<notify1 content="土-玄武称号"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="3"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了水属性,获得了白虎称号"/>
+				<notif1y content="水-白虎称号"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20223"/>
+				<level type="Great" value="19"/>
+			</conditions>
+			<actions>
+				<fivetype value="4"/>
+				<fivelevel type="Set" value="1"/>
+				<notify content="你选择了火属性,获得了朱雀称号"/>
+				<notify1 content="火-朱雀称号"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

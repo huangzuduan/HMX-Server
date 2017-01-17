@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="830" name="千江镇-地保(234,380)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10371">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="371"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：地保(2)", "Dialog29")
+end
+function Dialog29()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;地保\n \n&lt;/n&gt;&lt;n&gt;    内丹？我出生到现在，在千江镇已经住了三十七年，只是小时候外婆讲狐狸精故事的时候才听过内丹。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 92392&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这里不产内丹？{10002}", "v830", 371, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="371" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="371"/>
+			</conditions>
+			<actions>
+				<exp value="92392"/>
+                                <gold type="Add" value="10000"/>
+				<notify1 content="经验+92392；银子+1锭"/>
+				<notify content="恭喜你完成了“地保”任务"/>
+				<var type="Set" name="state" value="-1" id="371"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10372">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="371"/>
+				<var type="Differ" name="state" value="-3" id="372"/>
+				<var type="Differ" name="state" value="-1" id="372"/>
+				<var type="Differ" name="state" value="1" id="372"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：长老(2)", "Dialog30")
+end
+function Dialog30()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;长老\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    在千江镇找长老(138,470)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，你莫不是外婆的故事听多了？你看我像是狐狸精？\n    算了，你还是去问问镇子里的长老吧，就算没得到回答，治治疯病也是好的。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 93000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("长老？听起来懂得很多。{10001}", "v830", 372, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="372" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="83"/>
+				<level type="Less" value="91"/>
+				<var type="Equal" name="state" value="-1" id="371"/>
+				<var type="Differ" name="state" value="-3" id="372"/>
+				<var type="Differ" name="state" value="-1" id="372"/>
+				<var type="Differ" name="state" value="1" id="372"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：在千江镇找长老(138,470)"/>
+				<notify1 content="千江镇－长老(138,470)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

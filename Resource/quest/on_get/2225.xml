@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2225" name="2225-陪葬品">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20543" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20543"/>
+				<var type="Less" name="get_陪葬品" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个陪葬品"/>
+				<var type="Add" name="get_陪葬品" value="1"/>
+				<refresh name="get_陪葬品"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20543"/>
+				<var type="Great" name="get_陪葬品" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20543"/>
+				<refresh name="state"/>
+				<refresh name="get_陪葬品"/>
+				<notify content="你已经收集齐了陪葬品,回皇城－花傲剑(886,732)处交任务吧"/>
+				<notify1 content="去找皇城－花傲剑(886,732)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

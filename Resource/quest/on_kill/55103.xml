@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GB2312"?>
+<event id="55103" name="天芯草">
+	<quest id="20311" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2081"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

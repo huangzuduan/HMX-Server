@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="251" name="杂货商">
+	<!--new means new quest, default is quest on user-->
+	<quest id="900011">
+		<embranchment id="1">
+			<conditions>
+				<level type="Great" value="24"/>
+				<var type="Differ" name="state" value="-1" id="100903"/>
+				<var type="Differ" name="state" value="-1" id="100904"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("现在你可以领取一本洗髓经和一本易筋经，但是只能领取一次，你是否想现在领取呢？")
+this:AddTaskCmdItem("领取洗髓经(0)", "v251", 100903, 11)
+this:AddTaskCmdItem("领取易筋经(0)", "v251", 100904, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<level type="Great" value="24"/>
+				<var type="Differ" name="state" value="-1" id="100903"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("现在你可以领取一本洗髓经，但是只能领一次，你是否想现在领取呢？")
+this:AddTaskCmdItem("领取洗髓经(0)", "v251", 100903, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<level type="Great" value="24"/>
+				<var type="Differ" name="state" value="-1" id="100904"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("现在你可以领取一本易筋经，但是只能领一次，你是否想现在领取呢？")
+this:AddTaskCmdItem("领取易筋经(0)", "v251", 100904, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="100903" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<space size="1"/>
+				<level type="Great" value="24"/>
+				<var type="Differ" name="state" value="-1" id="100903"/>
+			</conditions>
+			<actions>
+				<notify content="你领取了洗髓经"/>
+				<additem value="1" id="752"/>
+				<var type="Set" name="state" value="-1" id="100903"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="100904" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<space size="1"/>
+				<level type="Great" value="24"/>
+				<var type="Differ" name="state" value="-1" id="100904"/>
+			</conditions>
+			<actions>
+				<notify content="你领取了易筋经"/>
+				<additem value="1" id="753"/>
+				<var type="Set" name="state" value="-1" id="100904"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

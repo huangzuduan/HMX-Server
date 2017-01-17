@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="744" name="木人零件">
+	<quest id="20201" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20201"/>
+			</conditions>
+			<actions>
+				<notify content="得到木人零件，回工头处交任务吧"/>
+				<var type="Set" name="state" value="-3" id="20201"/>
+				<notify1 content="木人零件：1/1"/>
+				<refresh name="state"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

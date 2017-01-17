@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="227" name="王城-大臣(265,413)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="250004">
+		<embranchment id="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="0:00:10" end="11:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog501")
+end
+function Dialog501()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国或其他国家的怪物。\n    攻击国必须是其他国家，攻击本国或盟国怪物无效!")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "TaskDialog")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="0:00:10" end="11:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog502")
+end
+function Dialog502()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请过段时间再更改国策吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="23:00:10" end="23:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog510")
+end
+function Dialog510()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n   C、国家任务发布后，去王城-郑镖头(828,528)处接任务.\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog70")
+this:AddDialogItem("国家运镖(0)",  "Dialog77")
+this:AddCloseItem("离开")
+end
+function Dialog70()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+function Dialog77()
+this:AddTalk("    尊敬的国王陛下，您好！近来东郊、边境一带匪盗猖獗，时有商旅被劫。肯定国王下令，由大小商旅结成商队，相伴而行，以抵御贼寇袭击。\n")
+this:AddTaskCmdItem("开始国家运镖(0)", "v227", 150015, 1)
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="23:00:10" end="23:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog510")
+end
+function Dialog510()
+this:AddTalk("     尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n   C、国家任务发布后，去王城-郑镖头(828,528)处接任务.\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog90")
+this:AddDialogItem("国家运镖(0)",  "Dialog77")
+this:AddCloseItem("离开")
+end
+function Dialog77()
+this:AddTalk("    尊敬的国王陛下，您好！近来东郊、边境一带匪盗猖獗，时有商旅被劫。肯定国王下令，由大小商旅结成商队，相伴而行，以抵御贼寇袭击。")
+this:AddTaskCmdItem("开始国家运镖(0)", "v227", 150015, 1)
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+function Dialog90()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请明天再来更改国策吧。")
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="23:00:10" end="23:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+				<global type="Equal" name="king_country_guard" value="1" id="150015"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog510")
+end
+function Dialog510()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog70")
+this:AddDialogItem("国家运镖(0)",  "Dialog91")
+this:AddCloseItem("离开")
+end
+function Dialog70()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+function Dialog91()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过“国家运镖”的指令啦。")
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="23:00:10" end="23:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+				<global type="Equal" name="king_country_guard" value="1" id="150015"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog510")
+end
+function Dialog510()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog90")
+this:AddDialogItem("国家运镖(0)",  "Dialog91")
+this:AddCloseItem("离开")
+end
+function Dialog90()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请明天再来更改国策吧。")
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+function Dialog91()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过国家运镖的指令啦。")
+this:AddDialogItem("返回", "Dialog510")
+this:AddCloseItem("离开")
+end
+
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+				<global type="Differ" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog70")
+this:AddDialogItem("国家运镖(0)",  "Dialog77")
+this:AddDialogItem("国家刺探(0)",  "Dialog71")
+this:AddCloseItem("离开")
+end
+function Dialog70()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+
+function Dialog71()
+this:AddTalk("    尊敬的国王陛下，您好！您是想发动国家规模的刺探别国情报的任务吧。国探期间的刺探任务经验将上升30%哦！\n")
+this:AddTaskCmdItem("开始国探(0)", "v227", 150016, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog77()
+this:AddTalk("    尊敬的国王陛下，您好！近来东郊、边境一带匪盗猖獗，时有商旅被劫。肯定国王下令，由大小商旅结成商队，相伴而行，以抵御贼寇袭击。\n")
+this:AddTaskCmdItem("开始国家运镖(0)", "v227", 150015, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+				<global type="Differ" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog90")
+this:AddDialogItem("国家运镖(0)",  "Dialog77")
+this:AddDialogItem("国家刺探(0)",  "Dialog71")
+this:AddCloseItem("离开")
+end
+function Dialog90()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请明天再来更改国策吧。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog71()
+this:AddTalk("    尊敬的国王陛下，您好！您是想发动国家规模的刺探别国情报的任务吧。国探期间的刺探任务经验将上升30%哦！\n")
+this:AddTaskCmdItem("开始国探(0)", "v227", 150016, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog77()
+this:AddTalk("    尊敬的国王陛下，您好！近来东郊、边境一带匪盗猖獗，时有商旅被劫。肯定国王下令，由大小商旅结成商队，相伴而行，以抵御贼寇袭击。\n")
+this:AddTaskCmdItem("开始国家运镖(0)", "v227", 150015, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+				<global type="Equal" name="king_country_guard" value="1" id="150015"/>
+				<global type="Differ" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog70")
+this:AddDialogItem("国家运镖(0)",  "Dialog91")
+this:AddDialogItem("国家刺探(0)",  "Dialog71")
+this:AddCloseItem("离开")
+end
+function Dialog70()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+
+function Dialog71()
+this:AddTalk("    尊敬的国王陛下，您好！您是想发动国家规模的刺探别国情报的任务吧。国探期间的刺探任务经验将上升30%哦！\n")
+this:AddTaskCmdItem("开始国探(0)", "v227", 150016, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog91()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过国家运镖的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+				<global type="Equal" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog70")
+this:AddDialogItem("国家运镖(0)",  "Dialog77")
+this:AddDialogItem("国家刺探(0)",  "Dialog92")
+this:AddCloseItem("离开")
+end
+function Dialog70()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog92()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过”国探任务“的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog77()
+this:AddTalk("    尊敬的国王陛下，您好！近来东郊、边境一带匪盗猖獗，时有商旅被劫。肯定国王下令，由大小商旅结成商队，相伴而行，以抵御贼寇袭击。\n")
+this:AddTaskCmdItem("开始国家运镖(0)", "v227", 150015, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+				<global type="Equal" name="king_country_guard" value="1" id="150015"/>
+				<global type="Differ" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog90")
+this:AddDialogItem("国家运镖(0)",  "Dialog91")
+this:AddDialogItem("国家刺探(0)",  "Dialog71")
+this:AddCloseItem("离开")
+end
+function Dialog90()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请明天再来更改国策吧。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog91()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过国家运镖的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog71()
+this:AddTalk("    尊敬的国王陛下，您好！您是想发动国家规模的刺探别国情报的任务吧。国探期间的刺探任务经验将上升30%哦！\n")
+this:AddTaskCmdItem("开始国探(0)", "v227", 150016, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+				<global type="Equal" name="king_country_guard" value="1" id="150015"/>
+				<global type="Equal" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog70")
+this:AddDialogItem("国家运镖(0)",  "Dialog91")
+this:AddDialogItem("国家刺探(0)",  "Dialog92")
+this:AddCloseItem("离开")
+end
+function Dialog70()
+this:AddTalk("    尊敬的国王陛下，您好，请问您今天想对哪个国家的怪物进行讨伐呢。\n    国策制定的目标国家可以影响国家任务的执行地点，比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。您可以选择进攻本国的怪物，也可以选择进攻其他国家的怪物。\n\n    攻击国必须是其他国家，攻击本国或盟国怪物无效！！")
+this:AddCountryStrategy("宋国(0)", "v227", 150004, 1)
+this:AddCountryStrategy("魏国(0)", "v227", 150004, 2)
+this:AddCountryStrategy("齐国(0)", "v227", 150004, 3)
+this:AddCountryStrategy("燕国(0)", "v227", 150004, 4)
+this:AddCountryStrategy("唐国(0)", "v227", 150004, 5)
+this:AddCountryStrategy("汉国(0)", "v227", 150004, 6)
+this:AddCountryStrategy("吴国(0)", "v227", 150004, 7)
+this:AddCountryStrategy("赵国(0)", "v227", 150004, 8)
+this:AddCountryStrategy("周国(0)", "v227", 150004, 9)
+this:AddCountryStrategy("楚国(0)", "v227", 150004, 10)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog92()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过”国探任务“的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog91()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过国家运镖的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+				<global type="Equal" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog90")
+this:AddDialogItem("国家运镖(0)",  "Dialog77")
+this:AddDialogItem("国家刺探(0)",  "Dialog92")
+this:AddCloseItem("离开")
+end
+function Dialog90()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请明天再来更改国策吧。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog92()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过”国探任务“的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog77()
+this:AddTalk("    尊敬的国王陛下，您好！近来东郊、边境一带匪盗猖獗，时有商旅被劫。肯定国王下令，由大小商旅结成商队，相伴而行，以抵御贼寇袭击。\n")
+this:AddTaskCmdItem("开始国家运镖(0)", "v227", 150015, 1)
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<timer start="12:00:01" end="22:59:56"/>
+				<global type="Equal" name="king" value="1" id="150004"/>
+				<global type="Equal" name="king_country_guard" value="1" id="150015"/>
+				<global type="Equal" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("国策制定(0)", "Dialog509")
+end
+function Dialog509()
+this:AddTalk("    尊敬的国王陛下，您好，现在您可以制定两种国策：\n   1、讨伐怪物 \n   A、制定的目标国家影响国家任务：比如国策制定地点为“宋国”，那么本国当天所有玩家接的国家任务必须击败宋国的怪物才有效。\n   B、目标国家必须是其他国家，攻击本国或盟国怪物无效！\n  C、国家任务发布后，去王城-国家任务发布官(810,521)处接任务。\n\n   2、国家运镖 \n   A、国家运镖任务在12：00至24点之间开放，所以国王只能在这段时间内发布任务\n   B、国家运镖任务发布后持续2小时，2小时内国内达到50级的人均可以接受国家运镖任务。\n    C、国家任务发布后，去王城-郑镖头(828,528)处接任务。\n   D、每次发布国运任务，将重新开始计算给国王和城主的国运奖励！要注意哦！\n\n   3、国家刺探 \n   A、国家刺探任务在12：00至23点之间开放，所以国王只能在这段时间内发布任务\n   B、国家刺探任务发布后持续3小时，3小时内去王城-兵马大元帅(832,441)处接任务，经验将上升30%。\n   C、每次发布国探任务，将重新开始计算给国王的奖励！要注意哦！")
+this:AddDialogItem("讨伐怪物(0)",  "Dialog90")
+this:AddDialogItem("国家运镖(0)",  "Dialog91")
+this:AddDialogItem("国家刺探(0)",  "Dialog92")
+this:AddCloseItem("离开")
+end
+function Dialog90()
+this:AddTalk("    对不起，朝令夕改是为政者的大忌，请明天再来更改国策吧。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog92()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过”国探任务“的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+function Dialog91()
+this:AddTalk("    尊敬的国王陛下，您好！您今天已经下达过国家运镖的指令啦。")
+this:AddDialogItem("返回", "Dialog509")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150004" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为宋国"/>
+				<global type="Set" name="r_country" value="2" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为魏国"/>
+				<global type="Set" name="r_country" value="3" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为齐国"/>
+				<global type="Set" name="r_country" value="4" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为燕国"/>
+				<global type="Set" name="r_country" value="5" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为唐国"/>
+				<global type="Set" name="r_country" value="7" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为汉国"/>
+				<global type="Set" name="r_country" value="8" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为吴国"/>
+				<global type="Set" name="r_country" value="9" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为赵国"/>
+				<global type="Set" name="r_country" value="10" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为周国"/>
+				<global type="Set" name="r_country" value="11" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<innation/>
+				<grade value="1"/>
+				<global type="Differ" name="king" value="1" id="150004"/>
+			</conditions>
+			<actions>
+				<notify content="目标国家为楚国"/>
+				<global type="Set" name="r_country" value="12" id="150001"/>
+				<refresh name="r_country"/>
+				<global type="Set" name="king" value="1" id="150004"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150015" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+				<timer start="12:00:01" end="23:59:56"/>
+				<grade value="1"/>
+				<global type="Differ" name="king_country_guard" value="1" id="150015"/>
+			</conditions>
+			<actions>
+				<countryguard lasttime="7200" interval="1800"/>
+				<global type="Set" name="king_country_guard" value="1" id="150015"/>
+				<!--给出国王和城主国运可领取标志，并把国运计数变量清空-->
+				<countrysvar type="Set" name="r_king_get_travel" value="1"/>
+				<countrysvar type="Set" name="r_caption_get_travel" value="1"/>
+				<countrysvar type="Set" name="r_king_c_travel" value="0"/>
+				<var type="GetP" name="country_guard_selflevel" value="1"/>
+				<vars type="Mul" name1="country_guard_selflevel" name2="country_guard_selflevel"/>
+				<var type="Set" name="baseexp" value="240"/>
+				<var type="Set" name="country_guard_selflevel2" value="1"/>
+				<var type="Set" name="div" value="100"/>
+				<vars type="Mul" name1="country_guard_selflevel" name2="baseexp"/>
+				<vars type="Mul" name1="country_guard_selflevel2" name2="country_guard_selflevel"/>
+				<var type="Set" name="stupid" value="75"/>
+				<vars type="Mul" name1="country_guard_selflevel" name2="stupid"/>
+				<vars type="Div" name1="country_guard_selflevel" name2="div"/>
+				<var type="Set" name="time" value="1"/>
+				<var type="Set" name="verystupid" value="25"/>
+				<vars type="Mul" name1="verystupid" name2="time"/>
+				<vars type="Mul" name1="country_guard_selflevel2" name2="verystupid"/>
+				<vars type="Div" name1="country_guard_selflevel2" name2="div"/>
+				<vars type="Add" name1="country_guard_selflevel" name2="country_guard_selflevel2"/>
+				<refresh name="country_guard_selflevel"/>
+				<exp1 value="100" id="150015" name="country_guard_selflevel"/>
+				<getname name="begin_king_name1" id="150015"/>
+				<countryname name="begin_country_name1" id="150015"/>
+				<varbulletin kind="4" count="3" content="%s的国王%s发布了国运任务,%s的国民找王城-郑镖头运镖,经验上升50%!" var1="begin_country_name1" var2="begin_king_name1" var3="begin_country_name1"/>
+				<varnotify1 content="成功发布国运任务，获得经验%u" value="country_guard_selflevel" id="150015"/>
+				<!--bulletin content="当天国运结束后,国王和城主获得一次经验奖励!去王城-国务官处领取" kind="3"/-->
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="150016" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+				<timer start="10:00:01" end="22:59:58"/>
+				<grade value="1"/>
+				<global type="Differ" name="king_country_walk" value="1" id="150016"/>
+			</conditions>
+			<actions>
+				<countryspy r_spy_last_time="10800" r_spy_interval="1800"/>
+				<global type="Set" name="king_country_walk" value="1" id="150016"/>
+				<!--给出国王国探可领取标志，并把国探计数变量清空-->
+				<countrysvar type="Set" name="r_king_get_walk" value="1"/>
+				<countrysvar type="Set" name="r_king_c_walk" value="0"/>
+				<notify content="成功发布国探任务"/>
+				<getname name="begin_king_name" id="150016"/>
+				<countryname name="begin_country_name" id="150016"/>
+				<varbulletin kind="4" count="3" content="%s的国王%s发布了国探任务,%s的国民找王城-兵马大元帅接刺探任务,经验上升30%!" var1="begin_country_name" var2="begin_king_name" var3="begin_country_name"/>
+				<!--bulletin content="当天国探结束后,国王获得一次经验奖励!去王城-国务官处领取" kind="3"/-->
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56050" name="凤凰城-李大壮(290,579)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30302">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="11"/>
+				<var type="Differ" name="state" value="-1" id="20302"/>
+				<var type="Differ" name="state" value="1" id="20302"/>
+				<var type="Differ" name="state" value="-3" id="20302"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：捉狐(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;捉狐\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去幼狐活动的地方(363,133)捉10只幼狐，然后交给李大壮(290,579)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    唉，谁能抓10只幼狐给我啊，我实在没办法了，谁抓幼狐给我，简直就是救了我一条命。什么，你说你愿意去？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("没错，我帮你去抓幼狐。{10001}", "v56050", 20302, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="10" id="2112"/>
+				<var type="Equal" name="state" value="-3" id="20302"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：捉狐(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;幼狐\n \n&lt;/n&gt;&lt;n&gt;   啊，好多幼狐啊！多谢多谢！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不用谢。{10002}", "v56050", 20302, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20302" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="11"/>
+				<var type="Differ" name="state" value="-1" id="20302"/>
+				<var type="Differ" name="state" value="1" id="20302"/>
+				<var type="Differ" name="state" value="-3" id="20302"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="去捉10只幼狐(363,133)"/>
+				<notify1 content="去捉10只幼狐(363,133)"/>
+				<notify content="任务：去凤凰城(363,133)捉幼狐，把捉到的10只幼狐给李大壮(290,579)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="10" id="2112"/>
+				<var type="Equal" name="state" value="-3" id="20302"/>
+			</conditions>
+			<actions>
+				<exp value="2800"/>
+				<removeitem value="10" id="2112" log="交捉狐(20302)-删除10个幼狐(2112)"/>
+				<notify1 content="经验+2800"/>
+				<notify content="恭喜你完成了“捉狐”任务"/>
+				<var type="Set" name="state" value="-1" id="20302"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30303">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20302"/>
+				<var type="Differ" name="state" value="-3" id="20303"/>
+				<var type="Differ" name="state" value="-1" id="20303"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：养狐(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;养狐\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;  将狐狸送给林虎头(241,393)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    总算有存货了，林虎头早就预约了一匹小狐，你顺便帮我送过去吧，谢谢啦。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我这便送去，你放心{10001}", "v56050", 20303, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20303" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20302"/>
+				<var type="Differ" name="state" value="-3" id="20303"/>
+				<var type="Differ" name="state" value="-1" id="20303"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<addguard id="54012" map="凤凰城" ltpos="287,575" rbpos="293,583" gold="0" exp="0" dest="241,393"/>
+				<refresh name="state"/>
+				<notify content="任务：将狐狸送给林虎头(241,393)"/>
+				<notify1 content="林虎头(241,393)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

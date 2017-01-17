@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5093" name="边境-传送者(120,140)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="970100">
+		<embranchment id="9">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你怎么在这里徘徊啊，很危险的，我带你回王城吧？");
+this:AddTaskCmdItem("王城-2两(0)", "v5093", 170100, 11)
+this:AddTaskCmdItem("边境托运伙计-2两(0)", "v5093", 170100, 14)
+this:AddTaskCmdItem("南郊旅行者-2两(0)", "v5093", 170100, 15)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Less" value="200"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你怎么在这里徘徊啊，很危险的，我带你回王城吧？");
+this:AddDialogItem("王城-2两(0)", "Dialog98")
+this:AddDialogItem("边境托运伙计-2两(0)", "Dialog98")
+this:AddDialogItem("南郊旅行者-2两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去这个国家的王城吗，很危险的，可要当心哦。");
+this:AddTaskCmdItem("王城-40两(0)", "v5093", 170100, 111)
+this:AddTaskCmdItem("边境托运伙计-40两(0)", "v5093", 170100, 114)
+this:AddTaskCmdItem("南郊旅行者-40两(0)", "v5093", 170100, 115)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Less" value="4000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你想去这个国家的王城吗，很危险的，可要当心哦。");
+this:AddDialogItem("王城-40两(0)", "Dialog98")
+this:AddDialogItem("边境托运伙计-40两(0)", "Dialog98")
+this:AddDialogItem("南郊旅行者-40两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="170100" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<goto name="王城" pos="827,412"/>
+				<gold type="Sub" value="200"/>
+				<notify content="你被马车带到了王城,花了2两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="500"/>
+				<goto name="王城" pos="932,44"/>
+				<notify content="你被马车带到了东郊驿站，花了5两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="499"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="500"/>
+				<goto name="王城" pos="913,910"/>
+				<notify content="你被马车带到了南郊驿站，花了5两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="边境" pos="369,250"/>
+				<notify content="你被马车带到了边境的托运官伙计处，花了2两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+
+		<embranchment id="15" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="1"/>
+				<gold type="Great" value="199"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="200"/>
+				<goto name="南郊" pos="376,107"/>
+				<notify content="你被马车带到了南郊的旅行者处，花了2两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="111" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<goto name="王城" pos="827,412"/>
+				<gold type="Sub" value="4000"/>
+				<notify content="你被马车带到了王城,花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="112" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="王城" pos="932,44"/>
+				<notify content="你被马车带到了东郊驿站，花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="113" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="王城" pos="913,910"/>
+				<notify content="你被马车带到了南郊驿站，花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="114" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="边境" pos="369,250"/>
+				<notify content="你被马车带到了边境的托运官伙计处，花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+
+		<embranchment id="115" active="1">
+			<conditions>
+				<isguard/>
+				<selfcountry value="0"/>
+				<gold type="Great" value="3999"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="4000"/>
+				<goto name="南郊" pos="376,107"/>
+				<notify content="你被马车带到了南郊的旅行者处，花了40两作为车费"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2245" name="文物-2245">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20546" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20546"/>
+				<var type="Less" name="get_文物" value="10"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个文物"/>
+				<var type="Add" name="get_文物" value="1"/>
+				<refresh name="get_文物"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20546"/>
+				<var type="Great" name="get_文物" value="9"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20546"/>
+				<refresh name="state"/>
+				<refresh name="get_文物"/>
+				<notify content="你已经收集了很多的文物,回皇城－吕隐(676,421)处交任务吧"/>
+				<notify1 content="去找皇城－吕隐(676,421)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

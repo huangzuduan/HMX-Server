@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="5050" name="皇城-护墓术士(567,50)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30577">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20577"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    哦!你是风华郡主派来的啊,我们立刻行动吧。")
+this:AddTaskCmdItem("布置结界{10002}", "v5050", 20577, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20577" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20577"/>
+			</conditions>
+			<actions>
+				<notify content="去告诉皇城-风华郡主(805,703)，结界已经布置完成。"/>
+				<notify1 content="去告诉皇城-风华郡主(805,703)，结界已经布置完成。"/>
+				<var type="Set" name="state" value="-3" id="20577"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>
+

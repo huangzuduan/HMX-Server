@@ -1,0 +1,3456 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="858" name="比武岛传送者">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960109">
+		<embranchment id="2">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="399"/>
+				<level type="Great" value="40"/>
+				<level type="Less" value="80"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="16">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 17)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 20)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="26">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 26)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="28">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 28)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="29">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 29)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="30">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 30)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<timer start="00:00:00" end="02:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 31)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="103">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="104">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="105">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="106">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="107">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="108">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="109">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="110">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="111">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="112">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="113">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="114">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="115">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="116">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="117">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 17)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="118">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="119">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="120">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 20)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="121">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="122">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="123">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="124">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="125">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="126">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 26)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="127">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="128">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 28)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="129">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 29)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="130">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 30)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="131">
+			<conditions>
+				<timer start="06:00:00" end="08:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 31)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!-- <embranchment id="202">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="203">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="204">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="205">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="206">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="207">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="208">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="209">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="210">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="211">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="212">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="213">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="214">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="215">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="216">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="217">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 17)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="218">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="219">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="220">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 20)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="221">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="222">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="223">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="224">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="225">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="226">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 26)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="227">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="228">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 28)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="229">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 29)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="230">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 30)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="231">
+			<conditions>
+				<timer start="08:00:00" end="10:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 31)
+end
+				</menu>
+			</actions>
+		</embranchment> -->
+		<embranchment id="302">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="303">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="304">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="305">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="306">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="307">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="308">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="309">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="310">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="311">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="312">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="313">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="314">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="315">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="316">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="317">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 17)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="318">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="319">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="320">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 20)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="321">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="322">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="323">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="324">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="325">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="326">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 26)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="327">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="328">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 28)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="329">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 29)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="330">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 30)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="331">
+			<conditions>
+				<timer start="12:00:00" end="14:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 31)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="402">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="403">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="404">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="405">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="406">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="407">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="408">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="409">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="410">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="411">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="412">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="413">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="414">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="415">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="416">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="417">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 17)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="418">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="419">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="420">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 20)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="421">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="422">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="423">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="424">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="425">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="426">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 26)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="427">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="428">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 28)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="429">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 29)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="430">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 30)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="431">
+			<conditions>
+				<timer start="18:00:00" end="20:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 31)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--<embranchment id="502">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="503">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="504">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="2"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 4)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="505">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 5)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="506">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 6)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="507">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="3"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 7)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="508">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 8)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="509">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="510">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="4"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="511">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="512">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 12)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="513">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="5"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 13)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="514">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 14)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="515">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 15)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="516">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="7"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 16)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="517">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 17)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="518">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 18)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="519">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="8"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="520">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 20)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="521">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 21)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="522">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="9"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 22)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="523">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 23)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="524">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 24)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="525">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="10"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 25)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="526">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 26)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="527">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 27)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="528">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="11"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 28)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="529">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/><level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-4两(0)", "v858", 160109, 29)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="530">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="999"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-10两(0)", "v858", 160109, 30)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="531">
+			<conditions>
+				<timer start="20:00:00" end="22:00:00"/>
+				<nation value="12"/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddTaskCmdItem("比武岛-20两(0)", "v858", 160109, 31)
+end
+				</menu>
+			</actions>
+		</embranchment>  -->
+		<embranchment id="32">
+			<conditions>
+				<gold type="Less" value="400"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？         为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddDialogItem("比武岛-4两(0)", "Dialog97")
+end
+function Dialog97()
+this:AddTalk("对不起，你的钱不够，请凑够4两再来。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="33">
+			<conditions>
+				<gold type="Less" value="1000"/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddDialogItem("比武岛-10两(0)", "Dialog98")
+end
+function Dialog98()
+this:AddTalk("对不起，你的钱不够，请凑够10两再来。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="34">
+			<conditions>
+				<gold type="Less" value="2000"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是王城的比武岛传送者，你已经准备好去传说中的比武岛了么？        为了比武的公平性，我会把80级以下的人传送到初级比武岛；80级到119级的人传送到中级比武岛;120级以上的人传送到高级比武岛。\n    比武岛开放时间：0点-2点；6点-8点；12点-14点；18点-20点。")
+this:AddDialogItem("比武岛-20两(0)", "Dialog99")
+end
+function Dialog99()
+this:AddTalk("对不起，你的钱不够，请凑够20两再来。");
+this:AddCloseItem("离开")
+end
+
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160109" new="1">
+		<embranchment id="2" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="52,100"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="52,100"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="4" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="52,100"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="51,162"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="51,162"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="51,162"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="55,209"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="55,209"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="55,209"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="83,55"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="83,55"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="83,55"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="14" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="125,53"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="15" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="125,53"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="16" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="125,53"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="17" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="86,261"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="86,261"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="86,261"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="110,265"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="110,265"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="110,265"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="23" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="149,97"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="24" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="149,97"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="25" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="149,97"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="26" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="151,134"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="27" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="151,134"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="28" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="151,134"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="29" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="399"/>
+				<level type="Less" value="80"/>
+				<level type="Great" value="40"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·初级比武岛" pos="153,174"/>
+				<notify content="你被马车载到了比武岛，付了4两作为路费"/>
+				<gold type="Sub" value="400"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="30" active="1">
+			<conditions>
+				<isguard/>
+				<level type="Less" value="120"/>
+				<level type="Great" value="79"/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·中级比武岛" pos="153,174"/>
+				<notify content="你被马车载到了比武岛，付了10两作为路费"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="1999"/>
+				<level type="Great" value="119"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·高级比武岛" pos="153,174"/>
+				<notify content="你被马车载到了比武岛，付了20两作为路费"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5113" name="武夷王墓十一层-传送者(148,128)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960101">
+		<embranchment id="9">
+			<conditions>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是武夷王墓十一层的传送者，我可以把你带回武夷王墓十层！你准备好了吗？")
+this:AddTaskCmdItem("武夷王墓十层-10两(0)", "v5113", 160101, 10)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<gold type="Less" value="1000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我是武夷王墓十一层的传送者，我可以把你带回武夷王墓十层！你准备好了吗？")
+this:AddDialogItem("武夷王墓十层-10两(0)", "Dialog98")
+this:AddCloseItem("离开")
+end
+function Dialog98()
+this:AddTalk("对不起，您的钱不够。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160101" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+				<isguard/>
+				<gold type="Great" value="999"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·武夷王墓十层" pos="89,125"/>
+				<notify content="你被带到了武夷王墓十层，用掉了10两银子"/>
+				<gold type="Sub" value="1000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

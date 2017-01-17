@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt -->
+<event id="2104" name="鲁工秘录">
+	<!--new means new quest, default is quest on user-->
+	<quest id="312" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2104" odds="1000"/>
+				<notify1 content="恭喜你找到了了鲁工秘录"/>
+				<var type="Set" name="state" value="-3" id="312"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

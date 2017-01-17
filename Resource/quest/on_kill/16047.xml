@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16047" name="白骨洞七-白骨先锋">
+	<quest id="345" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2137" odds="3000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20371" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_白骨" value="50"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_白骨" value="1"/>
+				<refresh name="kill_白骨"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_白骨" value="49"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_白骨"/>
+				<notify content="你已经完成了消灭白骨的任务,回王城-花灵(241,354)处交任务吧"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

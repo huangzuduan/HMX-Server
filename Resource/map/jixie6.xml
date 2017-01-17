@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512 -->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区-->
+	<waypoint>
+		<point x="37" y="139"/>
+		<point x="38" y="139"/>
+		<point x="39" y="139"/>
+		<point x="40" y="139"/>
+		<point x="37" y="140"/>
+		<point x="38" y="140"/>
+		<point x="39" y="140"/>
+		<point x="40" y="140"/>
+		<point x="36" y="141"/>
+		<point x="37" y="141"/>
+		<point x="38" y="141"/>
+		<point x="39" y="141"/>
+		<dest name="jixie5" country="6" x="158" y="53"/>
+		<dest name="jixie5" country="6" x="159" y="53"/>
+		<dest name="jixie5" country="6" x="160" y="53"/>
+		<dest name="jixie5" country="6" x="161" y="53"/>
+		<dest name="jixie5" country="6" x="158" y="54"/>
+		<dest name="jixie5" country="6" x="159" y="54"/>
+		<dest name="jixie5" country="6" x="160" y="54"/>
+		<dest name="jixie5" country="6" x="161" y="54"/>
+		<dest name="jixie5" country="6" x="157" y="55"/>
+		<dest name="jixie5" country="6" x="158" y="55"/>
+		<dest name="jixie5" country="6" x="159" y="55"/>
+		<dest name="jixie5" country="6" x="160" y="55"/>
+	</waypoint>
+	<waypoint>
+		<point x="131" y="31"/>
+		<point x="131" y="32"/>
+		<point x="130" y="30"/>
+		<point x="130" y="31"/>
+		<point x="130" y="32"/>
+		<point x="130" y="33"/>
+		<point x="129" y="30"/>
+		<point x="129" y="31"/>
+		<point x="137" y="22"/>
+		<point x="137" y="23"/>
+		<point x="138" y="22"/>
+		<point x="138" y="23"/>
+		<point x="138" y="24"/>
+		<point x="138" y="25"/>
+		<point x="139" y="23"/>
+		<point x="139" y="24"/>
+		<dest name="jixie7" country="6" x="51" y="176"/>
+		<dest name="jixie7" country="6" x="52" y="176"/>
+		<dest name="jixie7" country="6" x="53" y="176"/>
+		<dest name="jixie7" country="6" x="54" y="176"/>
+		<dest name="jixie7" country="6" x="51" y="177"/>
+		<dest name="jixie7" country="6" x="52" y="177"/>
+		<dest name="jixie7" country="6" x="53" y="177"/>
+		<dest name="jixie7" country="6" x="54" y="177"/>
+		<dest name="jixie7" country="6" x="50" y="178"/>
+		<dest name="jixie7" country="6" x="51" y="177"/>
+		<dest name="jixie7" country="6" x="52" y="177"/>
+		<dest name="jixie7" country="6" x="53" y="177"/>
+		<dest name="jixie7" country="6" x="54" y="177"/>
+		<dest name="jixie7" country="6" x="50" y="178"/>
+		<dest name="jixie7" country="6" x="51" y="178"/>
+		<dest name="jixie7" country="6" x="51" y="178"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="17" height="29" x="124" y="9" type="1" color="0,0,255,0"/>
+	<zonedef width="19" height="32" x="28" y="121" type="1" color="0,0,255,0"/>
+	<npc id="10221" name="黄铜魔卫" width="13" height="19" x="167" y="62" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="10220" name="初级技师" width="13" height="19" x="46" y="82" num="15" interval="5" color="0,255,0,0"/>
+	<npc id="10220" name="初级技师" width="178" height="174" x="17" y="5" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="10221" name="黄铜魔卫" width="178" height="174" x="17" y="5" num="10" interval="5" color="0,255,0,0"/>
+	<npc id="16595" name="施法铜兵（魔）" width="178" height="174" x="17" y="5" num="5" interval="600" color="0,255,0,0"/>
+	<npc id="10222" name="精致木人" width="15" height="20" x="96" y="65" num="15" interval="2" color="0,255,0,0"/>
+	<npc id="10219" name="初级工匠" width="15" height="20" x="96" y="65" num="15" interval="2" color="0,255,0,0"/>
+	<npc id="10219" name="初级工匠" width="15" height="20" x="30" y="30" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="10222" name="精致木人" width="15" height="20" x="52" y="155" num="50" interval="2" color="0,255,0,0"/>
+	<npc id="10219" name="初级工匠" width="15" height="20" x="140" y="140" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10222" name="精致木人" width="15" height="20" x="140" y="140" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="30027" name="精铁走兽" width="76" height="91" x="60" y="53" num="1" interval="10800" color="0,255,0,0"/>
+	<npc id="30040" name="恶魔统领(魔)" width="76" height="91" x="60" y="53" num="1" interval="43200" color="0,255,0,0"/>
+</map>

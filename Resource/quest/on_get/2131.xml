@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2131" name="妖气结晶">
+	<!--new means new quest, default is quest on user-->
+	<quest id="342" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="342"/>
+				<var type="Less" name="get_妖气结晶" value="20"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一个妖气结晶"/>
+				<var type="Add" name="get_妖气结晶" value="1"/>
+				<refresh name="get_妖气结晶"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="342"/>
+				<var type="Great" name="get_妖气结晶" value="19"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="342"/>
+				<refresh name="state"/>
+				<refresh name="get_妖气结晶"/>
+				<notify content="恭喜你完成了收集妖气结晶的任务,回王城-慎篱(451,225)处交任务吧"/>
+				<notify1 content="去向王城-慎篱(451,225)汇报吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

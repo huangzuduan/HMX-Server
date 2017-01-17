@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域-->
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家-->
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<zonedef width="266" height="268" x="18" y="16" type="1" color="0,255,0,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<waypoint>
+		<point x="0" y="0"/>
+		<dest name="wangmu10" country="6" x="182" y="38"/>
+	</waypoint>
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<npc id="30071" name="铁兽" width="48" height="69" x="100" y="114" num="1" interval="3600" color="0,255,0,0"/>
+	<npc id="30072" name="大将灵王(魔)" width="68" height="100" x="218" y="202" num="1" interval="7200"/>
+        <npc id="30038" name="铁爪鬼王(魔)" width="20" height="26" x="68" y="79" num="1" interval="4800" color="0,255,0,0"/>
+        <npc id="30040" name="恶魔统领(魔)" width="68" height="100" x="245" y="143" num="1" interval="7200" color="0,255,0,0"/>
+        <npc id="30037" name="魔徒(魔)" width="69" height="100" x="137" y="250" num="1" interval="1200" color="0,255,0,0"/> 
+        <npc id="30039" name="恶魔尊主(魔)" width="69" height="100" x="207" y="91" num="1" interval="3600" color="0,255,0,0"/> 
+        <npc id="30031" name="武夷王" width="69" height="100" x="117" y="91" num="1" interval="3600" color="0,255,0,0"/> 
+</map>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="56063" name="南郊-牢笼(165,210)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30361">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20361"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/><var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    你是来救我的吗？")
+this:AddTaskCmdItem("打开牢门！{10002}", "v56063", 20361, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20361" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20361"/>
+			</conditions>
+			<actions>
+				<addguard id="54011" map="王城" ltpos="160,208" rbpos="162,220" gold="0" exp="0" dest="392,197"/>
+				<notify content="回到王城找衙役(392,197)"/>
+				<var type="Set" name="state" value="2" id="20361"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

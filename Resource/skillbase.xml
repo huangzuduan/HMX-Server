@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<root>
+	<item field0="1" field1="天劫之雷" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="2" field1="三昧真火" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="3" field1="虎啸九天" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="4" field1="九转元功" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="6" field1="含沙射影" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="7" field1="火凤怒魂" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="8" field1="风卷残云" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="9" field1="破冰惩戒" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="11" field1="降妖伏魔" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="13" field1="紫青剑法" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="14" field1="太极玄天阵" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="15" field1="定身咒" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="16" field1="如来神掌" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="17" field1="五毒咒" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="18" field1="雾炎舞龙" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="19" field1="冰狐蚀心" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="20" field1="回天术" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="21" field1="妙音天玄" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="22" field1="龙吟怒涛" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="23" field1="众生皆灭" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="24" field1="五雷天心法" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="25" field1="天罡火" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="26" field1="地煞功" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="27" field1="月影飞舞" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="28" field1="凤凰涅槃" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="29" field1="炼狱火海" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="30" field1="凝神术" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="31" field1="移花接木" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="32" field1="返魂禁咒" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="33" field1="黄泉追命" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="34" field1="刀枪不入" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="35" field1="仙灵护体" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="36" field1="弥患无形" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="37" field1="百毒不侵" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="38" field1="千杯不倒" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="39" field1="此时有声" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="40" field1="逆天之棒" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="41" field1="天神霸体" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="42" field1="横扫千军" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="43" field1="无法无天" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="44" field1="神龙突击" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="45" field1="灭世矛击" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="46" field1="冥龙怒吼" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="47" field1="卸甲迫击" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="48" field1="见龙卸甲" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="49" field1="润物无声" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="50" field1="天旋地转" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="51" field1="土龙裂地" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="52" field1="毁天灭地" field2="1" field3="2" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="53" field1="金钟罩" field2="1" field3="3" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="54" field1="星宿之盾" field2="1" field3="4" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="55" field1="极乐境界" field2="1" field3="5" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+	<item field0="56" field1="幻影迷踪" field2="1" field3="1" field4="1,1,10,2,100,0" field5="0,0,0,0,0,0" field6="1,1001001,1,0" field7="10,1000,1" field8="xx"/>
+</root>
+

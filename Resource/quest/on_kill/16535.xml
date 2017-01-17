@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16535" name="武夷王墓六层－骸骨战士">
+	<!--new means new quest, default is quest on user-->
+	<quest id="444" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_骸骨战士" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨战士" value="1"/>
+				<refresh name="kill_骸骨战士"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_骸骨战士" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_骸骨战士"/>
+				<notify content="你已经消灭了很多骸骨战士,回皇城－夏侯望(563,84)处交任务吧"/>
+				<notify1 content="去找皇城－夏侯望(563,84)"/>
+			</actions>
+		</embranchment>
+	</quest>
+			<quest id="20554" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_骸骨战士" value="40"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨战士" value="1"/>
+				<refresh name="kill_骸骨战士"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<space size="1"/>
+				<var type="Differ" name="num" value="1"/>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_骸骨战士" value="39"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<var type="Set" name="num" value="1"/>
+				<additem value="1" id="2256"/>
+				<refresh name="state"/>
+				<refresh name="kill_骸骨战士"/>
+				<notify content="你已经找到了王墓图,回皇城-花情(779,665)处交任务吧"/>
+				<notify1 content="王墓图:1/1"/>
+			</actions>
+		</embranchment>
+	</quest>
+		<quest id="20826" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_骸骨战士" value="6250"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_骸骨战士" value="1"/>
+				<refresh name="kill_骸骨战士"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_骸骨战士" value="6249"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_骸骨战士"/>
+				<notify content="恭喜你，你已经击败了6250个130级的骸骨战士，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+
+			</actions>
+		</embranchment>
+	</quest>
+</event>

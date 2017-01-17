@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="477" name="凤凰城-吕思凌(227,405)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="10231">
+		<embranchment id="10">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="231"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：学艺(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;学艺\n \n&lt;/n&gt;&lt;n&gt;    来者何人？\n       \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"666\"&gt;   记忆蝴蝶&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("闻先生叫我来的{10002}", "v477", 231, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="231"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你包裹满了，清空些再来找我吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="231" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="231"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="666"/>
+				<notify1 content="获得记忆蝴蝶一个"/>
+				<notify content="获得记忆蝴蝶一个"/>
+				<exp value="1000"/>
+				<notify1 content="经验+1000"/>
+				<notify content="恭喜你完成了“学艺”任务"/>
+				<var type="Set" name="state" value="-1" id="231"/>
+				<var type="Set" name="state" value="-2" id="100"/>
+				<var type="Set" name="state" value="-2" id="101"/>
+				<var type="Set" name="state" value="-2" id="102"/>
+				<var type="Set" name="state" value="-2" id="103"/>
+				<var type="Set" name="state" value="-2" id="104"/>
+				<var type="Set" name="state" value="-2" id="105"/>
+				<var type="Set" name="state" value="-2" id="106"/>
+				<var type="Set" name="state" value="-2" id="107"/>
+				<var type="Set" name="state" value="-2" id="108"/>
+				<var type="Set" name="state" value="-2" id="109"/>
+				<var type="Set" name="state" value="-2" id="110"/>
+				<var type="Set" name="state" value="-2" id="111"/>
+				<var type="Set" name="state" value="-2" id="112"/>
+				<var type="Set" name="state" value="-2" id="113"/>
+				<var type="Set" name="state" value="-2" id="114"/>
+				<var type="Set" name="state" value="-2" id="115"/>
+				<var type="Set" name="state" value="-2" id="116"/>
+				<var type="Set" name="state" value="-2" id="117"/>
+				<var type="Set" name="state" value="-2" id="118"/>
+				<var type="Set" name="state" value="-2" id="119"/>
+				<var type="Set" name="state" value="-2" id="120"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;入门试\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败水犀(465,262)，收集5根犀角，然后找武器锻造师司徒(350,370)打造犀角杖，将犀角杖拿给吕思凌(227,405)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    给我一柄犀角杖，我就收你为徒。\n    在清源河边有很多水犀。打5只犀角，武器锻造师司徒会帮你打造犀角杖的。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这难不倒我{10001}", "v477", 232, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10232">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="231"/>
+				<var type="Differ" name="state" value="-1" id="232"/>
+				<var type="Differ" name="state" value="1" id="232"/>
+				<var type="Differ" name="state" value="-3" id="232"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：入门试(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;入门试\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去打败水犀(465,262)，收集5根犀角，然后找武器锻造师司徒(350,370)打造犀角杖，将犀角杖拿给吕思凌(227,405)。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    给我一柄犀角杖，我就收你为徒。\n    在清源河边有很多水犀。打5只犀角，武器锻造师司徒会帮你打造犀角杖的。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这难不倒我{10001}", "v477", 232, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="4101"/>
+				<var type="Equal" name="state" value="-1" id="231"/>
+				<var type="Differ" name="state" value="-1" id="232"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：入门试(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;入门试\n \n&lt;/n&gt;&lt;n&gt;   犀角杖拿来啦？呵呵看来你身手不错。\n    让你去弄犀角杖，其实只是想测试一下你是否有做我徒弟的资格，现在你已经是我的弟子了！\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1400&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("师父在上，请受弟子一拜{10002}", "v477", 232, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="232" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="231"/>
+				<var type="Differ" name="state" value="-1" id="232"/>
+				<var type="Differ" name="state" value="1" id="232"/>
+				<var type="Differ" name="state" value="-3" id="232"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去收集5个犀角"/>
+				<notify content="任务：去凤凰城右上的清源河打水犀(465,262)收集犀角"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="4101"/>
+				<var type="Equal" name="state" value="-1" id="231"/>
+				<var type="Differ" name="state" value="-1" id="232"/>
+			</conditions>
+			<actions>
+				<exp value="1400"/>
+				<removeitem value="1" id="4101" log="交入门试(232)-删除犀角杖(4101)"/>
+				<notify1 content="经验+1400"/>
+				<notify content="恭喜你完成了“入门试”任务"/>
+				<var type="Set" name="state" value="-1" id="232"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="100" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="12"/>
+				<var type="Equal" name="state" value="-1" id="232"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，去修炼到12级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10233">
+		<embranchment id="8">
+			<conditions>
+				<level type="Great" value="11"/>
+				<var type="Differ" name="state" value="-1" id="233"/>
+				<var type="Differ" name="state" value="1" id="233"/>
+				<var type="Differ" name="state" value="-3" id="233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：猎狐(2)", "Dialog110")
+end
+function Dialog110()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;猎狐\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    到焦土林捉30只幼狐(363,133)，然后再回到吕思凌(227,405)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    在焦土林有很多幼狐，我们今天正好要去猎幼狐，你去么？去的话，只能捉30只，不可多捉。\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"579\"&gt;   铜仙丹 20个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我与你同去{10001}", "v477", 233, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="233"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：猎狐(2)", "Dialog111")
+end
+function Dialog111()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;猎狐\n \n&lt;/n&gt;&lt;n&gt;    只经短短的修炼，武艺便有如此长进，真乃奇才，深得我心！\n \n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,0,0,240\"&gt;任务奖励：\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;object id=\"579\"&gt;   铜仙丹 20个&lt;/object&gt; \n&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2600&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("多亏师父教导。{10002}", "v477", 233, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="233"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("怎么又回来了，我们马上就要出发了，快点走吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="233"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("   对不起！你包裹满了，请清理完包裹再来找我。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="233" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="11"/>
+				<var type="Differ" name="state" value="-1" id="233"/>
+				<var type="Differ" name="state" value="1" id="233"/>
+				<var type="Differ" name="state" value="-3" id="233"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="state" value="-2" id="100"/>
+				<notify content="任务：去捉30只幼狐(363,133)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="233"/>
+			</conditions>
+			<actions>
+				<additem value="20" id="579"/>
+				<notify1 content="得到铜仙丹20个"/>
+				<exp value="2600"/>
+				<notify1 content="经验+2600"/>
+				<notify content="恭喜你完成了“猎狐”任务"/>
+				<var type="Set" name="state" value="-1" id="233"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10234">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="233"/>
+				<var type="Differ" name="state" value="-1" id="234"/>
+				<var type="Differ" name="state" value="1" id="234"/>
+				<var type="Differ" name="state" value="-3" id="234"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：猎豹(2)", "Dialog120")
+end
+function Dialog120()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;猎豹\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    到官道附近(268,180)打败30只闪豹，然后再回到吕思凌(227,405)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;   在焦土林西面官道附近，有许多的闪豹。闪豹比狐狸速度快很多，作为修炼需打败30只闪豹。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("徒儿立刻就去。{10001}", "v477", 234, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="234"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：猎豹(2)", "Dialog121")
+end
+function Dialog121()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;猎豹\n \n&lt;/n&gt;&lt;n&gt;    经过猎豹修炼，你的修为又提高了不少，实为不易&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("师父过奖。{10002}", "v477", 234, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="234"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("怎么又回来了，不知道地点吗？就在焦土林西面，官道附近。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="234" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="233"/>
+				<var type="Differ" name="state" value="-1" id="234"/>
+				<var type="Differ" name="state" value="1" id="234"/>
+				<var type="Differ" name="state" value="-3" id="234"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：打败30只闪豹(268,180)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="234"/>
+			</conditions>
+			<actions>
+				<exp value="3000"/>
+				<notify1 content="经验+3000"/>
+				<notify content="恭喜你完成了“猎豹”任务"/>
+				<var type="Set" name="state" value="-1" id="234"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="101" new="1">
+		<embranchment id="8">
+			<conditions>
+				<level type="Less" value="13"/>
+				<var type="Equal" name="state" value="-1" id="234"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你等级不够，去修炼到13级再来吧。")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="1"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10235">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="12"/>
+				<var type="Equal" name="state" value="-1" id="234"/>
+				<var type="Differ" name="state" value="-3" id="235"/>
+				<var type="Differ" name="state" value="-1" id="235"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：同伴(2)", "Dialog123")
+end
+function Dialog123()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;同伴\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找吕飞烟(273,371)一起练功。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，我马上要出门，你与我儿子吕飞烟年纪相仿，且与他共同修炼，我回来要查验。但记得，不可随便捕猎。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("徒儿一定努力练功绝不懈怠。{10001}", "v477", 235, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="235" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="12"/>
+				<var type="Equal" name="state" value="-1" id="234"/>
+				<var type="Differ" name="state" value="-3" id="235"/>
+				<var type="Differ" name="state" value="-1" id="235"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找吕飞烟(273,371)"/>
+				<notify1 content="吕飞烟(273,371)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10237">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="237"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：训斥(2)", "Dialog79")
+end
+function Dialog79()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;训斥\n \n&lt;/n&gt;&lt;n&gt;    不是我不许你们捕猎。只是若随便捕捉豹子，会导致村人饲养的鸡大量减少。  \n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("这是何道理?{10002}", "v477", 237, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="237" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="237"/>
+			</conditions>
+			<actions>
+				<exp value="1000"/>
+				<notify1 content="经验+1000"/>
+				<notify content="恭喜你完成了“训斥”任务"/>
+				<var type="Set" name="state" value="-1" id="237"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10239">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="237"/>
+				<var type="Differ" name="state" value="-3" id="239"/>
+				<var type="Differ" name="state" value="-1" id="239"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：真言(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;真言\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找张真人(270,490)问为什么鸡的数量会减少。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，是我的师父张真人说的，我也不知是何道理。你可以去请教他。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我现在就去。{10001}", "v477", 239, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="239" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="237"/>
+				<var type="Differ" name="state" value="-3" id="239"/>
+				<var type="Differ" name="state" value="-1" id="239"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找张真人(270,490)"/>
+				<notify1 content="张真人(270,490)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="10242">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="242"/>
+				<var type="Differ" name="state" value="-3" id="242"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;道家\n \n&lt;/n&gt;&lt;n&gt;    你能从我师父学道，也是你的机缘。我也没什么能教你的了，好好跟我的师父学习吧！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 1200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("是，徒儿去了。多谢师父的教导。{10002}", "v477", 242, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="242" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="242"/>
+				<var type="Differ" name="state" value="-3" id="242"/>
+			</conditions>
+			<actions>
+				<notify content="回去找张真人"/>
+				<var type="Set" name="state" value="-3" id="242"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

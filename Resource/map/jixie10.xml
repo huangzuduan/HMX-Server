@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- Edited with XMLSPY C.+ v2007 rel. 2 U  by QQ 49636010 -->
+
+<map>
+	<!-- 区域类型定义，x和y分别指定区域左上角的坐标，width和height分别指定区域宽和高 -->
+	<!-- type指定区域的类型，类型包括1(pk安全区)、2(绝对安全区)、4(死亡重生区)、8(新手出生区) 16(竞技区) 128摆摊区域 512 -->
+	<npc id="30037" name="魔徒(魔)" width="189" height="206" x="2" y="6" num="1" interval="43200" color="0,255,0,0"/>
+	<npc id="10256" name="机关宗师" width="189" height="206" x="2" y="6" num="4" interval="5" color="0,255,0,0"/>
+	<npc id="10257" name="铜魂法魔" width="189" height="206" x="2" y="6" num="4" interval="5" color="0,255,0,0"/>
+	<npc id="30028" name="钢化巨灵" width="20" height="34" x="129" y="45" num="1" interval="10800" color="0,255,0,0"/>
+	<npc id="10251" name="魔铜法将" width="189" height="206" x="2" y="6" num="3" interval="5" color="0,255,0,0"/>
+	<npc id="10250" name="机关总管" width="189" height="206" x="2" y="6" num="4" interval="5" color="0,255,0,0"/>
+	<npc id="10250" name="机关总管" width="13" height="19" x="160" y="70" num="15" interval="5" color="0,255,0,0"/>
+	<!-- initstate表示区域初始属性是否是隐藏的，如果是隐藏状态区域是暂时无效的  country:0表示本国 非0表示指定国家  512国战传送区-->
+	<waypoint>
+		<point x="43" y="167"/>
+		<point x="44" y="167"/>
+		<point x="45" y="167"/>
+		<point x="46" y="167"/>
+		<point x="43" y="168"/>
+		<point x="44" y="168"/>
+		<point x="45" y="168"/>
+		<point x="46" y="168"/>
+		<point x="42" y="169"/>
+		<point x="43" y="169"/>
+		<point x="44" y="169"/>
+		<point x="45" y="169"/>
+		<dest name="jixie9" country="6" x="130" y="186"/>
+		<dest name="jixie9" country="6" x="131" y="186"/>
+		<dest name="jixie9" country="6" x="132" y="186"/>
+		<dest name="jixie9" country="6" x="133" y="186"/>
+		<dest name="jixie9" country="6" x="130" y="187"/>
+		<dest name="jixie9" country="6" x="131" y="187"/>
+		<dest name="jixie9" country="6" x="132" y="187"/>
+		<dest name="jixie9" country="6" x="133" y="187"/>
+		<dest name="jixie9" country="6" x="129" y="188"/>
+		<dest name="jixie9" country="6" x="130" y="188"/>
+		<dest name="jixie9" country="6" x="131" y="188"/>
+		<dest name="jixie9" country="6" x="132" y="188"/>
+	</waypoint>
+	<!-- Npc定义，x和y分别指定Npc区域左上角的坐标，width和height分别指定Npc区域宽和高 -->
+	<npc id="10255" name="工匠宗师" width="15" height="20" x="156" y="120" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10258" name="木魄之精" width="15" height="20" x="156" y="120" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10259" name="石尊地灵" width="15" height="20" x="74" y="31" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10260" name="青铜兵怪" width="15" height="20" x="74" y="31" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10249" name="工匠总管" width="15" height="20" x="113" y="47" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10254" name="妖铜护将" width="15" height="20" x="113" y="47" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10253" name="圣石兵将" width="15" height="20" x="95" y="93" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10252" name="神木大将" width="15" height="20" x="95" y="93" num="25" interval="2" color="0,255,0,0"/>
+	<npc id="10253" name="圣石兵将" width="15" height="20" x="73" y="152" num="15" interval="2" color="0,255,0,0"/>
+	<npc id="10255" name="工匠宗师" width="15" height="20" x="73" y="152" num="15" interval="2" color="0,255,0,0"/>
+	<!-- num指定这个区域内包含的Npc数量，interval指定Npc死亡重生间隔时间 -->
+	<!-- initstate表示Npc初始属性是否是隐藏的 -->
+	<zonedef width="21" height="40" x="35" y="147" type="1" color="0,0,255,0"/>
+</map>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5224" name="中立区·皇城-帮会资源管理者(165,687)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960112">
+		<embranchment id="9">
+			<conditions>
+				<timer start="12:00:01" end="23:59:56"/>
+				<tongcollection value="0"/>
+				<grade value="2"/>
+				<tongvar type="Differ" name="union_caiji_begin" value="1"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("     尊敬的帮主，您好！你是想发布帮会采集的指令吗？我可以帮你把消息通知给帮众！\n   1、帮主每天只能发布一次帮会采集任务,发布时间：12点至24点。\n   2、帮主发布采集任务后，在持续的2小时内，帮众去完成采集任务，获得经验上升25%。\n   3、帮会采集任务结束后，帮主可以获得一次特殊的经验奖励，奖励经验的数值与采集完成次数成正比。\n   4、每次发布帮会采集任务，将重新开始计算给帮主的帮会采集奖励！要注意哦！\n")
+this:AddTaskCmdItem("开始帮会采集(0)", "v5224", 160112, 11)
+this:AddCloseItem("离开")
+end
+			</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<grade value="2"/>
+				<tongcollection value="0"/>
+				<tongvar type="Less" name="r_union_master_caiji" value="1000" id="160112"/>
+				<tongvar type="Equal" name="r_union_caiji_get" value="1"/>
+				<tongvar type="Differ" name="union_caiji_over" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，帮会采集已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddTaskCmdItem("领取帮会采集奖励(0)", "v5224", 160112, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+				<grade value="2"/>
+				<tongcollection value="0"/>
+				<tongvar type="Great" name="r_union_master_caiji" value="999" id="160112"/>
+				<tongvar type="Equal" name="r_union_caiji_get" value="1"/>
+				<tongvar type="Differ" name="union_caiji_over" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，帮会采集已经结束，您可以领取经验奖励了！")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddTaskCmdItem("领取帮会采集奖励(0)", "v5224", 160112, 13)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="21">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1099"/>
+				<grade value="2"/>
+				<tongvar type="Equal" name="union_caiji_over" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，您已经领取过帮会采集的奖励了，请明天再来找我吧！")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddTaskCmdItem("购买采集手套-11两(0)", "v5224", 160112, 22)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="20">
+			<conditions>
+				<space size="1"/>
+				<gold type="Less" value="1100"/>
+				<grade value="2"/>
+				<tongvar type="Equal" name="union_caiji_over" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，您已经领取过帮会采集的奖励了，请明天再来找我吧！")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddDialogItem("购买采集手套-11两(0)",  "Dialog12")
+this:AddCloseItem("离开")
+end
+function Dialog12()
+this:AddTalk("    对不起！你银子不足12两！")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<gold type="Great" value="1099"/>
+				<grade value="2"/>
+				<tongvar type="Equal" name="union_caiji_over" value="1"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("     (GetName)，您已经领取过帮会采集的奖励了，请明天再来找我吧！")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddDialogItem("购买采集手套-11两(0)",  "Dialog13")
+this:AddCloseItem("离开")
+end
+function Dialog13()
+this:AddTalk("    对不起！你包裹满了！请清理完包裹再来找我吧！")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="30">
+			<conditions>
+				<space size="1"/>
+				<gold type="Less" value="1100"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你来找我有什么事？")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddDialogItem("购买采集手套-11两(0)",  "Dialog12")
+this:AddCloseItem("离开")
+end
+function Dialog12()
+this:AddTalk("    对不起！你银子不足12两！")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="31">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1099"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你来找我有什么事？")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddTaskCmdItem("购买采集手套-11两(0)", "v5224", 160112, 22)
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="32">
+			<conditions>
+				<gold type="Great" value="1099"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    (GetName)，你来找我有什么事？")
+this:AddTaskCmdItem("查询帮会采集完成次数(0)", "v5224", 160113, 1)
+this:AddDialogItem("购买采集手套-11两(0)",  "Dialog13")
+this:AddCloseItem("离开")
+end
+function Dialog13()
+this:AddTalk("    对不起！你包裹满了！")
+this:AddCloseItem("离开")
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160112" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<tongcollection value="0"/>
+				<grade value="2"/>
+				<timer start="12:00:01" end="23:59:56"/>
+				<tongvar type="Differ" name="union_caiji_begin" value="1"/>
+			</conditions>
+			<actions>
+				<tongvar type="Set" name="union_caiji_begin" value="1"/>
+				<!--给出帮主帮采可领取标志，并把帮采计数变量清空-->
+				<tongvar type="Set" name="r_union_caiji_get" value="1"/>
+				<tongvar type="Set" name="r_union_master_caiji" value="0"/>
+				<tongcollection interval="7200"/>
+				<getname name="begin_union_name" id="160112"/>
+				<countryname name="begin_country_name" id="160112"/>
+				<varbulletin kind="3" count="2" content="%s的帮主%s发布了帮会采集任务,帮众接采集任务,经验上升25%!" var1="begin_country_name" var2="begin_union_name"/>
+				<!--bulletin content="当天帮会采集结束后，帮主获得一次经验奖励!去皇城-帮会资源管理者处领取" kind="1"/-->
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+				<grade value="2"/>
+				<tongcollection value="0"/>
+				<tongvar type="Less" name="r_union_master_caiji" value="1000" id="160112"/>
+				<tongvar type="Differ" name="union_caiji_over" value="1"/>
+				<tongvar type="Equal" name="r_union_caiji_get" value="1"/>
+			</conditions>
+			<actions>
+				<tongvar type="Set" name="union_caiji_over" value="1"/>
+				<!--把帮主可领取奖励标志清空-->
+				<tongvar type="Set" name="r_union_caiji_get" value="0"/>
+				<usetongvar name="r_union_master_caiji" id="160112"/>
+				<var type="GetP" name="union_caiji_selflevel" value="1"/>
+				<vars type="Mul" name1="union_caiji_selflevel" name2="union_caiji_selflevel"/>
+				<vars type="Mul" name1="union_caiji_selflevel" name2="r_union_master_caiji"/>
+				<refresh name="union_caiji_selflevel"/>
+				<exp1 value="100" id="160112" name="union_caiji_selflevel"/>
+				<varnotify1 content="成功领取帮会采集奖励，获得经验%u" value="union_caiji_selflevel" id="160112"/>
+				<getname name="over_union_name" id="160112"/>
+				<varbulletin kind="3" count="2" content="帮主%s领取了帮会采集任务奖励,经验:%s" var1="over_union_name" var2="union_caiji_selflevel"/>
+			</actions>
+		</embranchment>
+		<embranchment id="13" active="1">
+			<conditions>
+				<grade value="2"/>
+				<tongcollection value="0"/>
+				<tongvar type="Great" name="r_union_master_caiji" value="999" id="160112"/>
+				<tongvar type="Differ" name="union_caiji_over" value="1"/>
+				<tongvar type="Equal" name="r_union_caiji_get" value="1"/>
+			</conditions>
+			<actions>
+				<tongvar type="Set" name="union_caiji_over" value="1"/>
+				<!--把帮主可领取奖励标志清空-->
+				<tongvar type="Set" name="r_union_caiji_get" value="0"/>
+				<var type="Set" name="baseexp" value="1000"/>
+				<var type="GetP" name="union_caiji_selflevel" value="1"/>
+				<vars type="Mul" name1="union_caiji_selflevel" name2="union_caiji_selflevel"/>
+				<vars type="Mul" name1="union_caiji_selflevel" name2="baseexp"/>
+				<refresh name="union_caiji_selflevel"/>
+				<exp1 value="100" id="160112" name="union_caiji_selflevel"/>
+				<getname name="over_union_name" id="160112"/>
+				<varbulletin kind="3" count="2" content="帮主%s领取了帮会采集任务奖励,经验:%s" var1="over_union_name" var2="union_caiji_selflevel"/>
+				<varnotify1 content="成功领取帮会采集奖励，获得经验%u" value="union_caiji_selflevel" id="160112"/>
+			</actions>
+		</embranchment>
+		<embranchment id="22" active="1">
+			<conditions>
+				<space size="1"/>
+				<gold type="Great" value="1099"/>
+			</conditions>
+			<actions>
+				<gold type="Sub" value="1100"/>
+				<additem value="1" id="876"/>
+				<notify1 content="扣除11两银子，获得采集手套一个！"/>
+				<notify content="扣除11两银子，获得采集手套一个！"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160113" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				
+			</conditions>
+			<actions>
+				<usetongvar name="r_union_master_caiji" id="160113"/>
+				<flexmenu content="帮会采集完成次数:%s" value="r_union_master_caiji"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

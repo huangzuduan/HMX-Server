@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="2146" name="铁犀皮">
+	<!--new means new quest, default is quest on user-->
+	<quest id="20372" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20372"/>
+				<var type="Less" name="get_铁犀皮" value="30"/>
+			</conditions>
+			<actions>
+				<notify content="你得到了一块铁犀皮"/>
+				<var type="Add" name="get_铁犀皮" value="1"/>
+				<refresh name="get_铁犀皮"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20372"/>
+				<var type="Great" name="get_铁犀皮" value="29"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3" id="20372"/>
+				<refresh name="state"/>
+				<refresh name="get_铁犀皮"/>
+				<notify content="恭喜你完成了收集铁犀皮的任务,回王城-花灵(241,354)处交任务吧"/>
+				<notify1 content="去找王城-花灵(241,354)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

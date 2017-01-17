@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="505" name="百兽谷-方大玉(268,280)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30322">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20322"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：失踪人口(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;失踪人口\n \n&lt;/n&gt;&lt;n&gt;    你，你是谁，你怎么知道我们跑到这里来的。\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("雷先生很生气{10002}", "v505", 20322, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20322" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20322"/>
+			</conditions>
+			<actions>
+				<exp value="3000"/>
+				<notify1 content="经验+3000"/>
+				<notify content="恭喜你完成了“失踪人口”任务"/>
+				<var type="Set" name="state" value="-1" id="20322"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30323">
+		<embranchment id="5">
+			<conditions>
+			<isguard/>
+				<var type="Equal" name="state" value="-1" id="20322"/>
+				<var type="Differ" name="state" value="1" id="20323"/>
+				<var type="Differ" name="state" value="-1" id="20323"/>
+				<var type="Differ" name="state" value="-3" id="20323"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    我和雷小姐是真心相爱的，不信你问她。")
+this:AddDialogItem("让雷小姐回去，我帮你求亲(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;父母之命\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去百兽谷(268,280)找到方大玉和雷小姐,将雷小姐带回雷老虎身边。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    的确，这里太危险了，实在不该让雷小姐陪我一起吃苦。那就照你说的做，你可一定要帮我哦。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6000&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我将她送回去后就帮你求亲{10001}", "v505", 20323, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20322"/>
+				<var type="Differ" name="state" value="1" id="20323"/>
+				<var type="Differ" name="state" value="-1" id="20323"/>
+				<var type="Differ" name="state" value="-3" id="20323"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    对不起，你在运镖状态下，无法做此任务")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20323" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+			<isguard/>
+				<var type="Equal" name="state" value="-1" id="20322"/>
+				<var type="Differ" name="state" value="1" id="20323"/>
+				<var type="Differ" name="state" value="-1" id="20323"/>
+				<var type="Differ" name="state" value="-3" id="20323"/>
+                <var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<addguard id="54014" map="凤凰城" ltpos="266,272" rbpos="270,279" gold="0" exp="0" dest="281,478"/>
+				<refresh name="state"/>
+				<notify content="任务：将雷小姐带回凤凰城的雷老虎(281,478)身边"/>
+				<notify1 content="凤凰城-雷老虎(281,478)"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30324">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20324"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：传家宝(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;传家宝\n \n&lt;/n&gt;&lt;n&gt;  啊，这么说，雷老爷是同意我与雷小姐的事了？虽然还有障碍，但总比以前毫无希望强，多亏了您那！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 2800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("愿天下有情人终成眷属{10002}", "v505", 20324, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20324" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20324"/>
+			</conditions>
+			<actions>
+				<exp value="2800"/>
+				<notify1 content="经验+2800"/>
+				<notify content="恭喜你完成了“传家宝”任务"/>
+				<var type="Set" name="state" value="-1" id="20324"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30325">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20324"/>
+				<var type="Differ" name="state" value="-1" id="20325"/>
+				<var type="Differ" name="state" value="1" id="20325"/>
+				<var type="Differ" name="state" value="-3" id="20325"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：夺宝(2)", "Dialog11")
+end
+function Dialog11()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;血玲珑\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去百兽谷打败血狐狸(117,193)夺取血玲珑，然后交给方大玉(268,280)。\n\n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我似乎在血狐狸身上看到过很像血玲珑的东西。你能不能帮我一起找？\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧。{10001}", "v505", 20325, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="9">
+			<conditions>
+				<item value="1" id="2114"/>
+				<var type="Equal" name="state" value="-3" id="20325"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：夺宝(2)", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;夺宝\n \n&lt;/n&gt;&lt;n&gt;   这不就是血玲珑么……我终于能娶雷小姐为妻了！拜谢恩公。\n&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 6800&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("不用谢。{10002}", "v505", 20325, 6)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20325" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20324"/>
+				<var type="Differ" name="state" value="-1" id="20325"/>
+				<var type="Differ" name="state" value="1" id="20325"/>
+				<var type="Differ" name="state" value="-3" id="20325"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="去打败血狐狸(117,193)夺取血玲珑"/>
+				<notify content="任务：去打败血狐狸(117,193)夺取血玲珑给方大玉(268,280)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="6" active="1">
+			<conditions>
+				<item value="1" id="2114"/>
+				<var type="Equal" name="state" value="-3" id="20325"/>
+			</conditions>
+			<actions>
+				<exp value="6800"/>
+				<removeitem value="1" id="2114" log="交夺宝(20325)-删除血玲珑(2114)"/>
+				<notify1 content="经验+6800"/>
+				<notify content="恭喜你完成了“夺宝”任务"/>
+				<var type="Set" name="state" value="-1" id="20325"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

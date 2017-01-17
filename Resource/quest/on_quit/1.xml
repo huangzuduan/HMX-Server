@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="1" name="甲镖头">
+	<!--new means new quest, default is quest on user-->
+	<quest id="21001" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="time" value="2" id="21001"/>
+				<var type="Set" name="state" value="-2" id="21001"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21002" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21002"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="time" value="2" id="21002"/>
+				<var type="Set" name="state" value="-2" id="21002"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21003" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21003"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="state" value="-2" id="21003"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21004" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21004"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运镖失败了"/>
+				<var type="Set" name="state" value="-2" id="21004"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21005" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21005"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2" id="21005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21006" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21007" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21008" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21009" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21035" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2" id="21035"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21036" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21037" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21038" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21039" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="22005" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22005"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2" id="22005"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="22006" new="1">
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22006"/>
+			</conditions>
+			<actions>
+				<!--var type="Set" name="clock" value="0"/>
+				<refresh name="clock"/-->
+				<var type="Set" name="state" value="2" id="22006"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21030" new="1">
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="2" id="21030"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21206" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<notify content="对不起，你运肥失败了"/>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21216" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21226" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21236" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21246" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21256" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21266" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21276" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21286" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21296" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21412" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21422" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21432" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21442" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21452" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21462" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21472" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21482" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="2"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="3"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<!--<quest id="50006" new="1">
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="50006"/>
+			</conditions>
+			<actions>
+				<bulletin content="一辆镖车弃权，请重新接一辆" kind="2"/>
+				<familyvar type="Add" name="family_total_car" value="1"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest> -->
+</event>

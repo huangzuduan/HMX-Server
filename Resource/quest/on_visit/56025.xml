@@ -1,0 +1,4016 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="56025" name="凤凰城-甲镖头(382,401)">
+	<quest id="10001">
+		<embranchment id="1">
+			<conditions>
+				<var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Equal" name="state" value="1" id="21005"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="3">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="13">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="14">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="15">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="21">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="22">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="23">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="24">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="25">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+		<embranchment id="16">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="6">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="7">
+			<conditions>
+				<var type="Equal" name="state" value="10" id="22006"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<var type="Equal" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你有运镖任务没有结束，请结束后再来，或者找王城郑镖头取消运镖。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		
+	</quest>
+	<quest id="31035">
+		<embranchment id="55">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="-3" id="21025"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 40两  \n\n本日第1次护送")
+this:AddTaskCmdItem("接商队-40两-10荣誉点{10001}", "v56025", 21035, 1)
+this:AddCloseItem("离开")
+end
+			</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="56">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="-3" id="21025"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 40两  \n\n本日第2次护送")
+this:AddTaskCmdItem("接商队-40两-10荣誉点{10001}", "v56025", 21035, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="58">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="-3" id="21025"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 40两  \n\n本日第3次护送")
+this:AddTaskCmdItem("接商队-40两-10荣誉点{10001}", "v56025", 21035, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="59">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="-3" id="21025"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 40两  \n\n本日第4次护送")
+this:AddTaskCmdItem("接商队-40两-10荣誉点{10001}", "v56025", 21035, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="60">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="-3" id="21025"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 40两  \n\n本日第5次护送")
+this:AddTaskCmdItem("接商队-40两-10荣誉点{10001}", "v56025", 21035, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<level type="Less" value="50"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我护送。50级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("{10001}", "v56025", 21035, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21035, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21035"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21035, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--<embranchment id="100">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<gold type="Less" value="4500"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你钱不够付押金或者没有足够荣誉值来接受商队，等存够了再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+			<embranchment id="101">
+			<conditions>
+				<level type="Great" value="49"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    每次跑商需要10点荣誉点，配带荣誉之星带新人练级可以获得荣誉点。");
+end
+				</menu>
+			</actions>
+		</embranchment>-->
+	</quest>
+	<quest id="21035" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<honor value="10"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54076" map="王城" ltpos="379,400" rbpos="380,408" gold="4000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="60"/>
+				<notify content="你接了一个50级商队，付了40两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+				<innation/>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<honor value="10"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54076" map="王城" ltpos="379,400" rbpos="380,408" gold="4000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="75"/>
+				<notify content="你接了一个50级商队，付了40两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+				<innation/>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<honor value="10"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54076" map="王城" ltpos="379,400" rbpos="380,408" gold="4000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="90"/>
+				<notify content="你接了一个50级商队，付了40两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+				<innation/>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<isguard/>
+				<honor value="10"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54076" map="王城" ltpos="379,400" rbpos="380,408" gold="4000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="90"/>
+				<notify content="你接了一个50级商队，付了40两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<innation/>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<isguard/>
+				<honor value="10"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="-3" id="21035"/>
+				<level type="Great" value="49"/>
+				<level type="Less" value="70"/>
+				<gold type="Great" value="3999"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54076" map="王城" ltpos="379,400" rbpos="380,408" gold="4000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="90"/>
+				<notify content="你接了一个50级商队，付了40两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次护送"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31036">
+		<embranchment id="52">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="-3" id="21026"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 50两  \n\n本日第1次护送")
+this:AddTaskCmdItem("接商队-50两-10荣誉点{10001}", "v56025", 21036, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="-3" id="21026"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 50两  \n\n本日第2次护送")
+this:AddTaskCmdItem("接商队-50两-10荣誉点{10001}", "v56025", 21036, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="54">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="-3" id="21026"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 50两  \n\n本日第3次护送")
+this:AddTaskCmdItem("接商队-50两-10荣誉点{10001}", "v56025", 21036, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="55">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="-3" id="21026"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 50两  \n\n本日第4次护送")
+this:AddTaskCmdItem("接商队-50两-10荣誉点{10001}", "v56025", 21036, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="56">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="-3" id="21026"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 50两  \n\n本日第5次护送")
+this:AddTaskCmdItem("接商队-50两-10荣誉点{10001}", "v56025", 21036, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="100">
+			<conditions>
+				<honor value="10"/>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="-3" id="21026"/>
+				<level type="Less" value="70"/>
+				<level type="Great" value="49"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我护送。70级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="17">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21036, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21036, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21036"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21036, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--<embranchment id="101">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<gold type="Less" value="4999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你钱不够付押金或者没有足够荣誉值来接受商队，等存够了再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="102">
+			<conditions>
+				<level type="Great" value="69"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    每次跑商需要10点荣誉点，配带荣誉之星带新人练级可以获得荣誉点。");
+end
+				</menu>
+			</actions>
+		</embranchment>-->
+	</quest>
+	<quest id="21036" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54077" map="王城" ltpos="379,400" rbpos="380,408" gold="5000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="5000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="100"/>
+				<notify content="你接了一个70级商队，付了50两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54077" map="王城" ltpos="379,400" rbpos="380,408" gold="5000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="5000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="125"/>
+				<notify content="你接了一个70级商队，付了50两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54077" map="王城" ltpos="379,400" rbpos="380,408" gold="5000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="5000"/>
+				<var type="Set" name="state" value="1"/>
+				<notify content="你接了一个70级商队，付了50两押金"/>
+				<var type="Set" name="gold" value="150"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54077" map="王城" ltpos="379,400" rbpos="380,408" gold="5000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="5000"/>
+				<var type="Set" name="state" value="1"/>
+				<notify content="你接了一个70级商队，付了50两押金"/>
+				<var type="Set" name="gold" value="150"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="-3" id="21036"/>
+				<level type="Great" value="69"/>
+				<level type="Less" value="90"/>
+				<gold type="Great" value="4999"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54077" map="王城" ltpos="379,400" rbpos="380,408" gold="5000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="5000"/>
+				<var type="Set" name="state" value="1"/>
+				<notify content="你接了一个70级商队，付了50两押金"/>
+				<var type="Set" name="gold" value="150"/>
+				<notify1 content="王城的郑镖头"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次护送"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31037">
+		<embranchment id="52">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="-3" id="21027"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 60两  \n\n本日第1次护送")
+this:AddTaskCmdItem("接商队-60两-10荣誉点{10001}", "v56025", 21037, 1)
+this:AddCloseItem("离开")
+end				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="-3" id="21027"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 60两  \n\n本日第2次护送")
+this:AddTaskCmdItem("接商队-60两-10荣誉点{10001}", "v56025", 21037, 3)
+this:AddCloseItem("离开")
+end
+		</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="54">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="-3" id="21027"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 60两  \n\n本日第3次护送")
+this:AddTaskCmdItem("接商队-60两-10荣誉点{10001}", "v56025", 21037, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="55">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="-3" id="21027"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 60两  \n\n本日第4次护送")
+this:AddTaskCmdItem("接商队-60两-10荣誉点{10001}", "v56025", 21037, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="56">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="-3" id="21027"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 60两  \n\n本日第5次护送")
+this:AddTaskCmdItem("接商队-60两-10荣誉点{10001}", "v56025", 21037, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="100">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<level type="Less" value="90"/>
+				<level type="Great" value="69"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我护送。到90级后再来找我吧。");
+end
+				</menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="17">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21037, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21037, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21037"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21037, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--<embranchment id="102">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<gold type="Great" value="5999"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你钱不够付押金或者没有足够荣誉值来接受商队，等存够了再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		 	<embranchment id="103">
+			<conditions>
+				<level type="Great" value="89"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    每次跑商需要10点荣誉点，配带荣誉之星带新人练级可以获得荣誉点。");
+end
+				</menu>
+			</actions>
+		</embranchment>-->
+	</quest>
+	<quest id="21037" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54078" map="王城" ltpos="379,400" rbpos="380,408" gold="6000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="6000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="140"/>
+				<notify content="你接了一个90级商队，付了60两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54078" map="王城" ltpos="379,400" rbpos="380,408" gold="6000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="6000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="175"/>
+				<notify content="你接了一个90级商队，付了60两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54078" map="王城" ltpos="379,400" rbpos="380,408" gold="6000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="6000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="210"/>
+				<notify content="你接了一个90级商队，付了60两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54078" map="王城" ltpos="379,400" rbpos="380,408" gold="6000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="6000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="210"/>
+				<notify content="你接了一个90级商队，付了60两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="-3" id="21037"/>
+				<level type="Great" value="89"/>
+				<level type="Less" value="110"/>
+				<gold type="Great" value="5999"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54078" map="王城" ltpos="379,400" rbpos="380,408" gold="6000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="6000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="210"/>
+				<notify content="你接了一个90级商队，付了60两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次护送"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31038">
+		<embranchment id="52">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="-3" id="21028"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 80两  \n\n本日第1次护送")
+this:AddTaskCmdItem("接商队-80两-10荣誉点{10001}", "v56025", 21038, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="-3" id="21028"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 80两  \n\n本日第2次护送")
+this:AddTaskCmdItem("接商队-80两-10荣誉点{10001}", "v56025", 21038, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="54">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="-3" id="21028"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 80两  \n\n本日第3次护送")
+this:AddTaskCmdItem("接商队-80两-10荣誉点{10001}", "v56025", 21038, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="55">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="-3" id="21028"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 80两  \n\n本日第4次护送")
+this:AddTaskCmdItem("接商队-80两-10荣誉点{10001}", "v56025", 21038, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="56">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="-3" id="21028"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 80两  \n\n本日第5次护送")
+this:AddTaskCmdItem("接商队-80两-10荣誉点{10001}", "v56025", 21038, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="100">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<level type="Less" value="110"/>
+				<level type="Great" value="89"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我护送。110级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="17">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21038, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Equal" name="state" value="-3" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21038, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21038"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21038, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21028"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21028, 39)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="28">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21028"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21028, 39)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="29">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21028"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21028, 39)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--<embranchment id="30">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<gold type="Less" value="8900"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你钱不够付押金或者没有足够荣誉值来接受商队，等存够了再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		 		<embranchment id="104">
+			<conditions>
+				<level type="Great" value="109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    每次跑商需要10点荣誉点，配带荣誉之星带新人练级可以获得荣誉点。");
+end
+				</menu>
+			</actions>
+		</embranchment>-->
+	</quest>
+	<quest id="21038" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54079" map="王城" ltpos="379,400" rbpos="380,408" gold="8000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="8000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="180"/>
+				<notify content="你接了一个110级商队，付了80两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54079" map="王城" ltpos="379,400" rbpos="380,408" gold="8000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="8000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="225"/>
+				<notify content="你接了一个110级商队，付了80两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54079" map="王城" ltpos="379,400" rbpos="380,408" gold="8000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="8000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="270"/>
+				<notify content="你接了一个110级商队，付了80两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54079" map="王城" ltpos="379,400" rbpos="380,408" gold="8000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="8000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="270"/>
+				<notify content="你接了一个110级商队，付了80两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="-3" id="21038"/>
+				<level type="Great" value="109"/>
+				<level type="Less" value="130"/>
+				<gold type="Great" value="7999"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54079" map="王城" ltpos="379,400" rbpos="380,408" gold="8000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="8000"/>
+				<var type="Set" name="state" value="1"/>
+				<var type="Set" name="gold" value="270"/>
+				<notify content="你接了一个110级商队，付了80两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次护送"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31039">
+		<embranchment id="52">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="-3" id="21029"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 1锭  \n\n本日第1次护送")
+this:AddTaskCmdItem("接商队-1锭-10荣誉点{10001}", "v56025", 21039, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="53">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="-3" id="21029"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 1锭  \n\n本日第2次护送")
+this:AddTaskCmdItem("接商队-1锭-10荣誉点{10001}", "v56025", 21039, 3)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="54">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="-3" id="21029"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    最近世道不好，悍匪横行，有一队商队需要人来保护，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 1锭  \n\n本日第3次护送")
+this:AddTaskCmdItem("接商队-1锭-10荣誉点{10001}", "v56025", 21039, 5)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="55">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="-3" id="21029"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 1锭  \n\n本日第4次护送")
+this:AddTaskCmdItem("接商队-1锭-10荣誉点{10001}", "v56025", 21039, 7)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="56">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="-3" id="21029"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    今天是跑商日，你获得了额外的保护商队的机会，如果保护成功，他们会给你酬劳的，但如果失败，押金要没收 ，是否要试试呢？需要10点荣誉才能护送。\n\n银子奖励： 1锭  \n\n本日第5次护送")
+this:AddTaskCmdItem("接商队-1锭-10荣誉点{10001}", "v56025", 21039, 9)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--embranchment id="100">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<level type="Less" value="130"/>
+				<level type="Great" value="109"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我护送。130级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment-->
+		<embranchment id="17">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21039, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21039, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21039"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是商队出什么事情了？你要现在放弃这次护送么？");
+this:AddTaskCmdItem("放弃这次护送{10001}", "v56025", 21039, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<!--<embranchment id="101">
+			<conditions>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<gold type="Less" value="10000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你钱不够付押金或者没有足够荣誉值来接受商队，等存够了再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+			<embranchment id="103">
+			<conditions>
+				<level type="Great" value="129"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    每次跑商需要10点荣誉点，配带荣誉之星带新人练级可以获得荣誉点。");
+end
+				</menu>
+			</actions>
+		</embranchment>-->
+	</quest>
+	<quest id="21039" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<uservar type="Less" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54080" map="王城" ltpos="379,400" rbpos="380,408" gold="10000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="10000"/>
+				<var type="Set" name="gold" value="220"/>
+				<notify content="你接了一个130级商队，付了1锭两押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="3" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<uservar type="Equal" name="goldtravel" value="1"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54080" map="王城" ltpos="379,400" rbpos="380,408" gold="10000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="10000"/>
+				<var type="Set" name="gold" value="275"/>
+				<notify content="你接了一个130级商队，付了1锭押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="5" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<uservar type="Equal" name="goldtravel" value="2"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54080" map="王城" ltpos="379,400" rbpos="380,408" gold="10000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="10000"/>
+				<var type="Set" name="gold" value="330"/>
+				<notify content="你接了一个130级商队，付了1锭押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="7" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<uservar type="Equal" name="goldtravel" value="3"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54080" map="王城" ltpos="379,400" rbpos="380,408" gold="10000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="10000"/>
+				<var type="Set" name="gold" value="330"/>
+				<notify content="你接了一个130级商队，付了1锭押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<week value="4"/>
+				<honor value="10"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="21039"/>
+				<level type="Great" value="129"/>
+				<gold type="Great" value="9999"/>
+				<uservar type="Equal" name="goldtravel" value="4"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54080" map="王城" ltpos="379,400" rbpos="380,408" gold="10000" exp="0" dest="828,528"/>
+				<var type="Set" name="clock" value="3000"/>
+				<refresh name="clock"/>
+				<honor type="Sub" value="10"/>
+				<gold type="Sub" value="10000"/>
+				<var type="Set" name="gold" value="330"/>
+				<notify content="你接了一个130级商队，付了1锭押金"/>
+				<notify1 content="王城的郑镖头"/>
+				<var type="Set" name="state" value="1"/>
+				<uservar type="Add" name="goldtravel" value="1"/>
+				<!-- 奖励经验值=int(0.4*角色等级^2)  -->
+				<var type="GetP" name="selflevel" value="1"/>
+				<vars type="Mul" name1="selflevel" name2="selflevel"/>
+				<var type="Set" name="baseexp" value="40"/>
+				<vars type="Mul" name1="selflevel" name2="baseexp"/>
+				<refresh name="selflevel"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+			</conditions>
+			<actions>
+				<notify1 content="取消本次护送"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31001">
+		<embranchment id="2">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<timeouts long="400" id="21001" less="0"/>
+				<var type="Differ" name="time" value="1" id="21001"/>
+				<var type="Equal" name="state" value="-3" id="21001"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成运镖", "Dialog10")
+end
+function Dialog10()
+this:AddTalk("    我们收到你的镖车了，谢谢你，这些奖励你就收下吧。")
+this:AddTaskCmdItem("接受奖励{10002}", "v56025", 21001, 1)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="4">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<timeouts long="400" id="21001" less="0"/>
+				<var type="Equal" name="state" value="-3" id="21001"/>
+				<var type="Equal" name="time" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成运镖", "Dialog14")
+end
+function Dialog14()
+this:AddTalk("    我们收到你的镖车了，但由于你超过了运镖时间，所以押金我们只能还你一部分。")
+this:AddTaskCmdItem("接受奖励{10002}", "v56025", 21001, 2)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="8">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<timeouts long="400" id="21001" less="1"/>
+				<var type="Differ" name="time" value="1" id="21001"/>
+				<var type="Equal" name="state" value="-3" id="21001"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    别急，我正忙着，等会再给你奖励。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+			   <var type="Equal" name="state" value="-3" id="230"/>
+				<var type="Equal" name="car" value="2" id="230"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("   (GetName),你好！原来你是清源村乙镖头的同乡啊。呵呵！是他叫你来看望我的吗，真是太感谢你了。")
+this:AddTaskCmdItem("你太客气了{10002}", "v56025", 230, 10)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21001" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Differ" name="time" value="1" id="21001"/>
+				<var type="Equal" name="state" value="-3" id="21001"/>
+			</conditions>
+			<actions>
+				<notify content="2两押金退还了"/>
+				<gold type="Add" value="200"/>
+				<exp value="2000"/>
+				<notify content="你完成了运镖，增加了经验"/>
+				<notify1 content="经验+2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2" active="1">
+			<conditions>
+			<var type="Differ" name="state" value="-3" id="230"/>
+				<var type="Equal" name="state" value="-3" id="21001"/>
+				<var type="Equal" name="time" value="1" id="21001"/>
+			</conditions>
+			<actions>
+				<notify content="由于你押镖超时，押金只退还了1两"/>
+				<gold type="Add" value="100"/>
+				<exp value="2000"/>
+				<notify content="你完成了运镖，增加了经验"/>
+				<notify1 content="经验+2000"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="230" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+			        <var type="Equal" name="state" value="-3" id="230"/>
+				<var type="Equal" name="car" value="2" id="230"/>
+			</conditions>
+			<actions>
+				<notify content="快去找闻广领取2000经验吧"/>
+				<notify1 content="找闻广领取2000经验"/>
+				<var type="Set" name="car" value="3" id="230"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31002">
+		<embranchment id="2">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21002"/>
+				<var type="Differ" name="state" value="-3" id="21002"/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<gold type="Great" value="599"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("二等镖-6两", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("    你能不能帮我把一个二等镖车保护到凤尾村丙镖师处，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付6两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    由于这是加急的镖，所以如果你没有在规定时间内完成，押金我们要扣除部分的，接之前要考虑清楚哦。\n经验奖励： 5000")
+this:AddTaskCmdItem("接镖{10001}", "v56025", 21002, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21002"/>
+				<var type="Differ" name="state" value="-3" id="21002"/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<gold type="Less" value="600"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你能不能帮我把一个二等镖车保护到凤尾村丙镖师处，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付6两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    由于这是加急的镖，所以如果你没有在规定时间内完成，押金我们要扣除部分的，接之前要考虑清楚哦。\n经验奖励： 5000")
+this:AddDialogItem("接镖{10001}", "Dialog28")
+this:AddCloseItem("离开")
+end
+function Dialog28()
+this:AddTalk("对不起，您的钱不够付押金的。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="1">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21002"/>
+				<var type="Differ" name="state" value="-3" id="21002"/>
+				<level type="Less" value="20"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我运运镖。20级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<var type="Equal" name="state" value="1" id="21002"/>
+				<gold type="Great" value="599"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    你能不能帮我把一个二等镖车保护到凤尾村丙镖师处，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付6两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    由于这是加急的镖，所以如果你没有在规定时间内完成，押金我们要扣除部分的，接之前要考虑清楚哦。\n经验奖励： 5000")
+this:AddDialogItem("接镖{10001}", "Dialog29")
+this:AddCloseItem("离开")
+end
+function Dialog29()
+this:AddTalk("对不起，您先把这趟镖押好再来吧。");
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21002" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<level type="Great" value="19"/>
+				<level type="Less" value="30"/>
+				<gold type="Great" value="599"/>
+				<var type="Differ" name="state" value="1" id="21002"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="50006" map="凤尾村" ltpos="379,400" rbpos="380,408" gold="600" exp="0" dest="75,119"/>
+				<gold type="Sub" value="600"/>
+				<var type="Set" name="clock" value="3600"/>
+				<refresh name="clock"/>
+				<notify content="你接了一个二等镖，付了6两押金"/>
+				<var type="Set" name="state" value="1"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31003">
+		<embranchment id="2">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21002"/>
+				<var type="Differ" name="state" value="-3" id="21003"/>
+				<var type="Differ" name="state" value="1" id="21003"/>
+				<var type="Differ" name="state" value="-3" id="21003"/>
+				<level type="Great" value="29"/>
+				<level type="Less" value="40"/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("30级镖-20两", "Dialog199")
+end
+function Dialog199()
+this:AddTalk("    你能不能帮我把一个三等镖车保护到山寨前哨的李镖头处，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付20两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    由于这是加急的镖，所以如果你没有在规定时间内完成，押金我们要扣除部分的，接之前要考虑清楚哦。\n经验奖励： 20000")
+this:AddTaskCmdItem("接镖{10001}", "v56025", 21003, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21003"/>
+				<var type="Differ" name="state" value="-3" id="21003"/>
+				<level type="Less" value="30"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我运运镖。30级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="5">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<gold type="Less" value="2000"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    银子不够无法接镖。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21003" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<gold type="Great" value="1999"/>
+				<var type="Differ" name="state" value="1" id="21003"/>
+				<level type="Great" value="29"/>
+				<level type="Less" value="40"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="1" id="21059"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54003" map="山寨前哨" ltpos="379,400" rbpos="380,408" gold="2000" exp="0" dest="71,41"/>
+				<gold type="Sub" value="2000"/>
+				<var type="Set" name="clock" value="3600"/>
+				<refresh name="clock"/>
+				<notify content="你接了一个30级镖，付了20两押金，送到山寨前哨的李镖头处"/>
+				<var type="Set" name="state" value="1"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="31004">
+		<embranchment id="2">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="-3" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21004"/>
+				<var type="Differ" name="state" value="-3" id="21004"/>
+				<level type="Great" value="39"/>
+				<level type="Less" value="50"/>
+				<gold type="Great" value="3999"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("40级镖-40两", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    你能不能帮我把一个四等镖车保护到山寨一层的张镖头处，会有丰厚的奖励哦。\n    如果你想保这趟镖的话，需要付40两的押金。记住，镖车如果因为被破坏或者被你遗失，你的定金我们都要没收哦。\n    由于这是加急的镖，所以如果你没有在规定时间内完成，押金我们要扣除部分的，接之前要考虑清楚哦。\n经验奖励： 40000")
+this:AddTaskCmdItem("接镖{10001}", "v56025", 21004, 1)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21004"/>
+				<var type="Differ" name="state" value="-3" id="21004"/>
+				<level type="Less" value="40"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    可惜你等级太低了，不然还可以帮我运运镖。40级后再来吧。");
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21004" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+						<var type="Differ" name="state" value="-3" id="230"/>
+				<isguard/>
+				<gold type="Great" value="3999"/>
+				<level type="Less" value="50"/>
+				<innation/>
+				<var type="Differ" name="state" value="1" id="21004"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54004" map="龙冈山一寨" ltpos="379,400" rbpos="380,408" gold="4000" exp="0" dest="70,161"/>
+				<gold type="Sub" value="4000"/>
+				<var type="Set" name="clock" value="3600"/>
+				<refresh name="clock"/>
+				<notify content="你接了一个40级镖，付了40两押金，送到龙岗山一寨"/>
+				<var type="Set" name="state" value="1"/>
+				<timeouts/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

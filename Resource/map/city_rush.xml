@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSpy v2005 sp2 U (http://www.altova.com) by any (Ru-Board) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by xiao (xiao) -->
+<info>
+	<!--rush id="1" name="暴怒的兽王" mapid="102" boss="3008" bossname="兽王" cleardelay="300" lasttime="3600">
+		<boss x="284" y="635" region="20" num="1"/>
+		<servant id="15014" num="5" rate="50" interval="30"/>
+		<servant id="15013" num="5" rate="30" interval="30"/>
+		<servant id="15012" num="5" rate="30" interval="30"/>
+		<servant id="15016" num="5" rate="30" interval="30"/>
+		<phase action="moveto" x="251" y="629" region="3" lasttime="30"/>
+		<phase action="moveto" x="235" y="597" region="3" lasttime="30"/>
+		<phase action="moveto" x="204" y="571" region="3" lasttime="30"/>
+		<phase action="moveto" x="220" y="549" region="2" lasttime="30"/>
+		<phase action="moveto" x="245" y="522" region="3" lasttime="30"/>
+		<phase action="moveto" x="263" y="506" region="3" lasttime="30"/>
+		<phase action="moveto" x="294" y="476" region="3" lasttime="30"/>
+		<phase action="moveto" x="333" y="444" region="3" lasttime="30"/>
+		<phase action="recover" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon_off"/>
+		<phase action="attack" x="333" y="444" region="30" lasttime="3600"/>
+	</rush>
+	<rush id="2" name="血翼鸟的尖啸" mapid="102" boss="3009" bossname="血翼鸟" cleardelay="300" lasttime="3600">
+		<boss x="475" y="574" region="10" num="1"/>
+		<servant id="15007" num="5" rate="50" interval="30"/>
+		<servant id="15006" num="5" rate="50" interval="30"/>
+		<servant id="15004" num="5" rate="50" interval="30"/>
+		<servant id="15003" num="5" rate="50" interval="30"/>
+		<phase action="moveto" x="458" y="553" region="3" lasttime="30"/>
+		<phase action="moveto" x="440" y="552" region="3" lasttime="30"/>
+		<phase action="moveto" x="421" y="532" region="2" lasttime="30"/>
+		<phase action="moveto" x="400" y="510" region="2" lasttime="30"/>
+		<phase action="moveto" x="374" y="484" region="3" lasttime="30"/>
+		<phase action="moveto" x="340" y="449" region="3" lasttime="30"/>
+		<phase action="recover" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon_off"/>
+		<phase action="attack" x="340" y="449" region="30" lasttime="3600"/>
+	</rush>
+	<rush id="3" name="山贼之黄昏" mapid="102" boss="30002" bossname="山贼王" cleardelay="300" lasttime="3600">
+		<boss x="489" y="355" region="10" num="1"/>
+		<servant id="30001" num="1" rate="80" interval="180"/>
+		<servant id="25111" num="1" rate="30" interval="120"/>
+		<servant id="25114" num="1" rate="30" interval="120"/>
+		<servant id="20111" num="1" rate="40" interval="60"/>
+		<servant id="20114" num="1" rate="40" interval="60"/>
+		<servant id="15014" num="5" rate="50" interval="20"/>
+		<servant id="10148" num="5" rate="50" interval="20"/>
+		<servant id="10142" num="5" rate="50" interval="20"/>
+		<servant id="10140" num="5" rate="50" interval="20"/>
+		<servant id="10114" num="10" rate="60" interval="20"/>
+		<servant id="10115" num="10" rate="60" interval="20"/>
+		<phase action="summon_rush" id="15014" script="1001" x="468" y="342" region="10" num="20" lasttime="3"/>
+		<phase action="summon_rush" id="10148" script="1001" x="468" y="342" region="10" num="20" lasttime="3"/>
+		<phase action="summon_rush" id="10142" script="1001" x="468" y="342" region="10" num="20" lasttime="3"/>
+		<phase action="summon_rush" id="10140" script="1001" x="468" y="342" region="10" num="20" lasttime="3"/>
+		<phase action="summon_rush" id="10114" script="1001" x="468" y="342" region="10" num="20" lasttime="3"/>
+		<phase action="summon_rush" id="10115" script="1001" x="468" y="342" region="10" num="20" lasttime="3"/>
+		<phase action="summon_rush" id="15014" script="1002" x="476" y="575" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10148" script="1002" x="476" y="575" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10142" script="1002" x="476" y="575" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10140" script="1002" x="476" y="575" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10114" script="1002" x="476" y="575" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10115" script="1002" x="476" y="575" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="15014" script="1003" x="284" y="635" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10148" script="1003" x="284" y="635" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10142" script="1003" x="284" y="635" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10140" script="1003" x="284" y="635" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10114" script="1003" x="284" y="635" region="10" num="10" lasttime="3"/>
+		<phase action="summon_rush" id="10115" script="1003" x="284" y="635" region="10" num="10" lasttime="3"/>
+		<phase action="moveto" x="468" y="342" region="3" lasttime="30"/>
+		<phase action="moveto" x="446" y="328" region="3" lasttime="30"/>
+		<phase action="moveto" x="432" y="315" region="2" lasttime="30"/>
+		<phase action="moveto" x="424" y="330" region="2" lasttime="30"/>
+		<phase action="moveto" x="420" y="349" region="3" lasttime="30"/>
+		<phase action="moveto" x="402" y="363" region="3" lasttime="30"/>
+		<phase action="moveto" x="390" y="380" region="3" lasttime="30"/>
+		<phase action="moveto" x="360" y="410" region="3" lasttime="30"/>
+		<phase action="moveto" x="335" y="444" region="3" lasttime="30"/>
+		<phase action="recover" say="让我获得重生" lasttime="1"/>
+		<phase action="summon" say="召唤我的仆人们" lasttime="1"/>
+		<phase action="summon" say="兄弟们上啊！" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon_off"/>
+		<phase action="attack" x="340" y="449" region="30" say="尽情的烧杀抢掠吧" lasttime="3600"/>
+	</rush>
+	<rush id="4" name="怪物嘉年华" mapid="102" boss="130001" bossname="僵尸王" cleardelay="2700" lasttime="2700">
+		<boss x="432" y="315" region="10" num="1"/>
+		<servant id="110001" num="2" rate="100" interval="600"/>
+		<servant id="120001" num="1" rate="100" interval="600"/>
+		<phase action="summon_rush" id="100001" script="1004" x="432" y="315" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1004" x="436" y="305" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1004" x="439" y="309" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1004" x="435" y="313" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1004" x="438" y="308" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1004" x="432" y="312" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1004" x="434" y="306" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1004" x="442" y="310" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1004" x="437" y="304" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1004" x="433" y="309" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1004" x="439" y="313" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1004" x="436" y="315" region="10" num="2" lasttime="1"/>
+		<phase action="moveto" x="432" y="315" region="2" lasttime="30"/>
+		<phase action="moveto" x="424" y="330" region="2" lasttime="30"/>
+		<phase action="moveto" x="420" y="349" region="3" lasttime="30"/>
+		<phase action="summon_rush" id="100001" script="1005" x="440" y="547" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1005" x="436" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1005" x="443" y="560" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1005" x="438" y="563" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1005" x="441" y="548" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1005" x="433" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1005" x="438" y="558" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1005" x="435" y="548" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1005" x="444" y="546" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1005" x="437" y="560" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1005" x="432" y="553" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1005" x="442" y="557" region="10" num="2" lasttime="1"/>
+		<phase action="moveto" x="402" y="363" region="3" lasttime="30"/>
+		<phase action="moveto" x="390" y="380" region="3" lasttime="30"/>
+		<phase action="summon_rush" id="100001" script="1006" x="202" y="568" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1006" x="205" y="565" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1006" x="208" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1006" x="207" y="566" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1006" x="205" y="562" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1006" x="207" y="566" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1006" x="209" y="563" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1006" x="202" y="565" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1006" x="204" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1006" x="204" y="562" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1006" x="203" y="564" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1006" x="208" y="567" region="10" num="2" lasttime="1"/>
+		<phase action="moveto" x="360" y="410" region="3" lasttime="30"/>
+		<phase action="moveto" x="335" y="444" region="3" lasttime="30"/>
+		<phase action="recover" lasttime="1"/>
+		<phase action="attack" x="340" y="449" region="30" lasttime="60"/>
+		<phase action="summon_rush" id="100001" script="1004" x="432" y="315" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1004" x="436" y="305" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1004" x="439" y="309" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1004" x="435" y="313" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1004" x="438" y="308" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1004" x="432" y="312" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1004" x="434" y="306" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1004" x="442" y="310" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1004" x="437" y="304" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1004" x="433" y="309" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1004" x="439" y="313" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1004" x="436" y="315" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1005" x="440" y="547" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1005" x="436" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1005" x="443" y="560" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1005" x="438" y="563" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1005" x="441" y="548" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1005" x="433" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1005" x="438" y="558" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1005" x="435" y="548" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1005" x="444" y="546" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1005" x="437" y="560" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1005" x="432" y="553" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1005" x="442" y="557" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1006" x="202" y="568" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1006" x="205" y="565" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1006" x="208" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1006" x="207" y="566" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1006" x="205" y="562" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1006" x="207" y="566" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1006" x="209" y="563" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1006" x="202" y="565" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1006" x="204" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1006" x="204" y="562" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1006" x="203" y="564" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1006" x="208" y="567" region="10" num="2" lasttime="1"/>
+		<phase action="attack" x="340" y="449" region="30" lasttime="300"/>
+		<phase action="summon_rush" id="100001" script="1004" x="432" y="315" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1004" x="436" y="305" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1004" x="439" y="309" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1004" x="435" y="313" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1004" x="438" y="308" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1004" x="432" y="312" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1004" x="434" y="306" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1004" x="442" y="310" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1004" x="437" y="304" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1004" x="433" y="309" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1004" x="439" y="313" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1004" x="436" y="315" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1005" x="440" y="547" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1005" x="436" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1005" x="443" y="560" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1005" x="438" y="563" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1005" x="441" y="548" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1005" x="433" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1005" x="438" y="558" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1005" x="435" y="548" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1005" x="444" y="546" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1005" x="437" y="560" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1005" x="432" y="553" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1005" x="442" y="557" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1006" x="202" y="568" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1006" x="205" y="565" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1006" x="208" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1006" x="207" y="566" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1006" x="205" y="562" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1006" x="207" y="566" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1006" x="209" y="563" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1006" x="202" y="565" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1006" x="204" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1006" x="204" y="562" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1006" x="203" y="564" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1006" x="208" y="567" region="10" num="2" lasttime="1"/>
+		<phase action="attack" x="340" y="449" region="30" lasttime="300"/>
+		<phase action="summon_rush" id="100001" script="1004" x="432" y="315" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1004" x="436" y="305" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1004" x="439" y="309" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1004" x="435" y="313" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1004" x="438" y="308" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1004" x="432" y="312" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1004" x="434" y="306" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1004" x="442" y="310" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1004" x="437" y="304" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1004" x="433" y="309" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1004" x="439" y="313" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1004" x="436" y="315" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1005" x="440" y="547" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1005" x="436" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1005" x="443" y="560" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1005" x="438" y="563" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1005" x="441" y="548" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1005" x="433" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1005" x="438" y="558" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1005" x="435" y="548" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1005" x="444" y="546" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1005" x="437" y="560" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1005" x="432" y="553" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1005" x="442" y="557" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1006" x="202" y="568" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1006" x="205" y="565" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1006" x="208" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1006" x="207" y="566" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1006" x="205" y="562" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1006" x="207" y="566" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1006" x="209" y="563" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1006" x="202" y="565" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1006" x="204" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1006" x="204" y="562" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1006" x="203" y="564" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1006" x="208" y="567" region="10" num="2" lasttime="1"/>
+		<phase action="attack" x="340" y="449" region="30" lasttime="300"/>
+		<phase action="summon_rush" id="100001" script="1004" x="432" y="315" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1004" x="436" y="305" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1004" x="439" y="309" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1004" x="435" y="313" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1004" x="438" y="308" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1004" x="432" y="312" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1004" x="434" y="306" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1004" x="442" y="310" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1004" x="437" y="304" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1004" x="433" y="309" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1004" x="439" y="313" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1004" x="436" y="315" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1005" x="440" y="547" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1005" x="436" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1005" x="443" y="560" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1005" x="438" y="563" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1005" x="441" y="548" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1005" x="433" y="554" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1005" x="438" y="558" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1005" x="435" y="548" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1005" x="444" y="546" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1005" x="437" y="560" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1005" x="432" y="553" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1005" x="442" y="557" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="130002" script="1005" x="442" y="557" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100001" script="1006" x="202" y="568" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100002" script="1006" x="205" y="565" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100003" script="1006" x="208" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100004" script="1006" x="207" y="566" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100005" script="1006" x="205" y="562" region="10" num="14" lasttime="1"/>
+		<phase action="summon_rush" id="100006" script="1006" x="207" y="566" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="130002" script="1006" x="207" y="566" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100007" script="1006" x="209" y="563" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100008" script="1006" x="202" y="565" region="10" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="100009" script="1006" x="204" y="567" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100010" script="1006" x="204" y="562" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100011" script="1006" x="203" y="564" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="100012" script="1006" x="208" y="567" region="10" num="8" lasttime="1"/>
+		<phase action="attack" x="340" y="449" region="30" lasttime="3600"/>
+	</rush>
+	<rush id="5" name="王城血战" mapid="139" boss="30012" bossname="叛军大将" cleardelay="300" lasttime="3600">
+		<boss x="833" y="216" region="10" num="1"/>
+		<servant id="30011" num="1" rate="25" interval="300"/>
+		<servant id="15085" num="15" rate="50" interval="30"/>
+		<servant id="15082" num="5" rate="50" interval="30"/>
+		<servant id="15080" num="10" rate="50" interval="30"/>
+		<servant id="15084" num="5" rate="50" interval="30"/>
+		<servant id="15092" num="8" rate="50" interval="30"/>
+		<phase action="summon_rush" id="15076" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15077" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="moveto" x="833" y="216" region="5" lasttime="60"/>
+		<phase action="summon_rush" id="15078" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="15079" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15080" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="15081" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15082" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15083" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15084" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15085" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="15086" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15087" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="15090" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15092" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="moveto" x="809" y="248" region="5" lasttime="60"/>
+		<phase action="summon_rush" id="15094" script="1007" x="833" y="216" region="10" num="5" lasttime="1"/>
+		<phase action="summon_rush" id="15096" script="1007" x="833" y="216" region="10" num="10" lasttime="1"/>
+		<phase action="moveto" x="782" y="253" region="5" lasttime="60"/>
+		<phase action="moveto" x="753" y="232" region="5" lasttime="60"/>
+		<phase action="moveto" x="725" y="274" region="5" lasttime="60"/>
+		<phase action="moveto" x="700" y="300" region="5" lasttime="60"/>
+		<phase action="moveto" x="658" y="347" region="5" lasttime="60"/>
+		<phase action="moveto" x="614" y="386" region="5" lasttime="60"/>
+		<phase action="moveto" x="582" y="418" region="5" lasttime="60"/>
+		<phase action="moveto" x="520" y="470" region="5" lasttime="60"/>
+		<phase action="moveto" x="495" y="501" region="5" lasttime="60"/>
+		<phase action="recover" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon" lasttime="1"/>
+		<phase action="summon_off"/>
+		<phase action="attack" x="495" y="501" region="30" lasttime="3600"/>
+	</rush>
+	<rush id="6" name="皇城刷金怪" mapid="139" boss="25102" bossname="女山贼" cleardelay="10800" lasttime="10800">
+		<boss x="100" y="100" region="800" num="1"/>
+		<notify str="皇城刷金怪啦~~~"/>
+		<phase action="summon_rush" id="25102" script="0" x="500" y="500" region="400" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="26172" script="0" x="500" y="500" region="400" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="26212" script="0" x="500" y="500" region="400" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="26173" script="0" x="500" y="500" region="400" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="26036" script="0" x="500" y="500" region="400" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="26062" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26236" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26008" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26063" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26192" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26221" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26085" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26222" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26035" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26086" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26209" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26223" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26239" script="0" x="500" y="500" region="400" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26110" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26229" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26210" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26224" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26123" script="0" x="500" y="500" region="400" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26225" script="0" x="500" y="500" region="400" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26231" script="0" x="500" y="500" region="400" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26211" script="0" x="500" y="500" region="400" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="26213" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26226" script="0" x="500" y="500" region="400" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26227" script="0" x="500" y="500" region="400" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26214" script="0" x="500" y="500" region="400" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26228" script="0" x="500" y="500" region="400" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26241" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26215" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26242" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26244" script="0" x="500" y="500" region="400" num="3" lasttime="1"/>
+		<phase action="attack" x="100" y="100" region="800" lasttime="10800"/>
+	</rush-->
+	<rush id="9" name="袭击凤凰城" mapid="102" boss="30101" bossname="联军大将" cleardelay="7200" lasttime="7200">
+		<!--starttext str="精怪联军第一队将在time后对凤凰城发起攻击，在此国家危难之际,让我们拿起武器，让大地在我们的战鼓下颤抖，誓与凤凰城共存亡"/>
+		<endtext str="因为将士们的拼死抵抗，time后精怪联军第一队不得不带兵撤出凤凰城，他们扬言将在七天之后率领更强大的兵力再次攻打凤凰城。"/-->
+		<boss x="411" y="356" region="10" num="1" script="1022"/>
+		<phase action="summon_rush" id="21502" script="1022" x="411" y="356" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21504" script="1022" x="411" y="356" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26501" script="1022" x="411" y="356" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26503" script="1022" x="411" y="356" region="10" num="2" lasttime="300"/>
+		<phase action="summon_rush" id="30051" script="1014" x="398" y="509" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26501" script="1014" x="398" y="509" region="15" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26502" script="1014" x="398" y="509" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21501" script="1014" x="398" y="509" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21502" script="1014" x="398" y="509" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30101" script="1010" x="226" y="331" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30053" script="1010" x="226" y="331" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26504" script="1010" x="226" y="331" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26505" script="1010" x="226" y="331" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21504" script="1010" x="226" y="331" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21505" script="1010" x="226" y="331" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30052" script="1012" x="247" y="521" region="15" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26502" script="1012" x="247" y="521" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26503" script="1012" x="247" y="521" region="15" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="21502" script="1012" x="247" y="521" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21503" script="1012" x="247" y="521" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30051" script="1020" x="440" y="551" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26501" script="1020" x="440" y="551" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26502" script="1020" x="440" y="551" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21501" script="1020" x="440" y="551" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21502" script="1020" x="440" y="551" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30053" script="1016" x="247" y="405" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26504" script="1016" x="247" y="405" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26505" script="1016" x="247" y="405" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21504" script="1016" x="247" y="405" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21505" script="1016" x="247" y="405" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30052" script="1018" x="196" y="584" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26502" script="1018" x="196" y="584" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26503" script="1018" x="196" y="584" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21502" script="1018" x="196" y="584" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21503" script="1018" x="196" y="584" region="15" num="8" lasttime="1"/>
+	</rush>
+	<rush id="10" name="袭击王城" mapid="139" boss="30102" bossname="联军大将" cleardelay="7200" lasttime="7200">
+		<!--notify str="过年咯~ 15分钟后 财神 要来凤凰城给大家拜年了"/-->
+		<!--starttext str="精怪联军第二队将在time后对王城发起攻击，在此国家危难之际,让我们拿起武器，让大地在我们的战鼓下颤抖，誓与王城共存亡"/>
+		<endtext str="因为将士们的拼死抵抗，time后精怪联军第二队不得不带兵撤出王城，他们扬言将在七天之后率领更强大的兵力再次攻打王城。"/-->
+		<boss x="792" y="481" region="10" num="1" script="1023"/>
+		<phase action="summon_rush" id="21506" script="1023" x="792" y="481" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21509" script="1023" x="792" y="481" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26508" script="1023" x="792" y="481" region="10" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26510" script="1023" x="792" y="481" region="10" num="2" lasttime="300"/>
+		<phase action="summon_rush" id="30054" script="1011" x="657" y="347" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26506" script="1011" x="657" y="347" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26508" script="1011" x="657" y="347" region="15" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="21506" script="1011" x="657" y="347" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21508" script="1011" x="657" y="347" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30056" script="1013" x="351" y="652" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26510" script="1013" x="351" y="652" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26511" script="1013" x="351" y="652" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21510" script="1013" x="351" y="652" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21511" script="1013" x="351" y="652" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30102" script="1015" x="663" y="673" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30055" script="1015" x="663" y="673" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26508" script="1015" x="663" y="673" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26509" script="1015" x="663" y="673" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21508" script="1015" x="663" y="673" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21509" script="1015" x="663" y="673" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30054" script="1017" x="764" y="232" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26506" script="1017" x="764" y="232" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26508" script="1017" x="764" y="232" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21506" script="1017" x="764" y="232" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21508" script="1017" x="764" y="232" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30056" script="1019" x="223" y="777" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26510" script="1019" x="223" y="777" region="15" num="3" lasttime="1"/>
+		<phase action="summon_rush" id="26511" script="1019" x="223" y="777" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21510" script="1019" x="223" y="777" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21511" script="1019" x="223" y="777" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="30055" script="1021" x="757" y="758" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26508" script="1012" x="757" y="758" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="26509" script="1021" x="757" y="758" region="15" num="4" lasttime="1"/>
+		<phase action="summon_rush" id="21508" script="1021" x="757" y="758" region="15" num="8" lasttime="1"/>
+		<phase action="summon_rush" id="21509" script="1021" x="757" y="758" region="15" num="8" lasttime="1"/>
+	</rush>
+	<rush id="15" name="魔族奇袭王城" mapid="139" boss="30037" bossname="魔徒(魔)" cleardelay="3600" lasttime="3600">
+		<boss x="657" y="347" region="10" num="1" script="1030"/>
+		<phase action="summon_rush" id="16621" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16622" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16623" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16624" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16625" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16626" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16627" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16628" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16629" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="16630" script="1030" x="657" y="347" region="15" num="6" lasttime="1"/>
+		<phase action="summon_rush" id="21522" script="1030" x="657" y="347" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="21524" script="1030" x="657" y="347" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26621" script="1030" x="657" y="347" region="15" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26623" script="1030" x="657" y="347" region="15" num="1" lasttime="1"/>
+	</rush>
+	<!--rush id="16" name="嫦娥任务" mapid="101" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="18000">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="200"/>
+        <phase action="summon_rush" id="16697" script="" x="142" y="82" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="17" name="嫦娥任务" mapid="102" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="18000">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="200"/>
+        <phase action="summon_rush" id="16697" script="" x="315" y="471" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+		<rush id="18" name="嫦娥任务" mapid="139" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="18000">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="200"/>
+        <phase action="summon_rush" id="16698" script="" x="762" y="585" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+		<rush id="19" name="嫦娥任务" mapid="134" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="18000">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="200"/>
+        <phase action="summon_rush" id="16699" script="" x="104" y="750" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="23" name="嫦娥任务" mapid="101" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="80"/>
+        <phase action="summon_rush" id="16697" script="" x="142" y="82" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="24" name="嫦娥任务" mapid="102" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="80"/>
+        <phase action="summon_rush" id="16697" script="" x="315" y="471" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+		<rush id="25" name="嫦娥任务" mapid="139" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="80"/>
+        <phase action="summon_rush" id="16698" script="" x="762" y="585" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+		<rush id="26" name="嫦娥任务" mapid="134" boss="30037" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="repeat" time="80"/>
+        <phase action="summon_rush" id="16699" script="" x="104" y="750" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="27" name="嫦娥任务" mapid="101" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="7200">
+        <boss x="1" y="2" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="66001" script="" x="123" y="96" region="20" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="28" name="嫦娥任务" mapid="102" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="7200">
+        <boss x="1" y="2" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="66001" script="" x="323" y="480" region="40" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="29" name="嫦娥任务" mapid="139" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="7200">
+        <boss x="1" y="2" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="66002" script="" x="778" y="651" region="40" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="30" name="嫦娥任务" mapid="134" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="7200">
+        <boss x="1" y="2" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="66003" script="" x="112" y="751" region="20" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="20" name="祝福妹妹" mapid="101" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="21600">
+		<boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="summon_rush" id="896" script="" x="116" y="85" region="1" num="1" lasttime="21600"/>
+        <phase action="clear"/> 
+	</rush>
+		<rush id="21" name="祝福妹妹" mapid="102" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="21600">
+		<boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="summon_rush" id="896" script="" x="361" y="319" region="1" num="1" lasttime="21600"/>
+        <phase action="clear"/> 
+	</rush>
+		<rush id="22" name="祝福妹妹" mapid="139" boss="30037" bossname="魔徒(魔)" cleardelay="0" lasttime="21600">
+		<boss x="1" y="1" region="1" num="1" script=""/>
+        <phase action="summon_rush" id="896" script="" x="890" y="476" region="1" num="1" lasttime="21600"/>
+        <phase action="clear"/> 
+	</rush!-->
+	<!--rush id="40" name="神舟5号" mapid="101" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="282" y="312" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="55351" script="" x="142" y="82" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="41" name="神舟5号" mapid="102" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="130" y="720" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="55351" script="" x="315" y="471" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="42" name="神舟5号" mapid="139" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="306" y="28" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="55352" script="" x="762" y="585" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="43" name="神舟5号" mapid="101" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="283" y="313" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="21541" script="" x="142" y="82" region="100" num="1" lasttime="3600"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="44" name="神舟5号" mapid="102" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="131" y="721" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="21541" script="" x="315" y="471" region="100" num="1" lasttime="3600"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="45" name="神舟5号" mapid="139" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="307" y="29" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="21542" script="" x="762" y="585" region="100" num="1" lasttime="3600"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="46" name="神舟5号" mapid="101" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="284" y="314" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="26641" script="" x="142" y="82" region="100" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="47" name="神舟5号" mapid="102" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="132" y="722" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="26641" script="" x="315" y="471" region="100" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="48" name="神舟5号" mapid="139" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="7200">
+        <boss x="308" y="30" region="1" num="1" script=""/>
+        <phase action="repeat" time="1"/>
+        <phase action="summon_rush" id="26642" script="" x="762" y="585" region="100" num="1" lasttime="7200"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="49" name="神舟5号" mapid="101" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="285" y="315" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="16709" script="" x="142" y="82" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+    </rush>
+    <rush id="50" name="神舟5号" mapid="102" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="133" y="723" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="16709" script="" x="315" y="471" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="51" name="神舟5号" mapid="139" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="309" y="31" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="16710" script="" x="762" y="585" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush>
+	<rush id="52" name="神舟5号" mapid="134" boss="55104" bossname="魔徒(魔)" cleardelay="10" lasttime="3600">
+        <boss x="816" y="17" region="1" num="1" script=""/>
+        <phase action="repeat" time="40"/>
+        <phase action="summon_rush" id="16711" script="" x="104" y="750" region="100" num="50" lasttime="90"/>
+        <phase action="clear"/>
+        <phase action="repeat_end"/>
+	</rush-->
+	<!--rush id="11" name="活动清源村" mapid="101" boss="16642" bossname="隐" cleardelay="7200" lasttime="7200">
+		<boss x="270" y="195" region="1" num="1" script=""/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="300"/>
+        <phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26539" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26538" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26537" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26536" script="" x="163" y="191" region="120" num="1" lasttime="275"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26539" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26537" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26538" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26536" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30064" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30063" script="" x="163" y="191" region="120" num="1" lasttime="275"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26539" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26538" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26537" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26536" script="" x="163" y="191" region="120" num="1" lasttime="275"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16669" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16668" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16667" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16666" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16665" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16664" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16663" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16662" script="" x="163" y="191" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21539" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21538" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21537" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21536" script="" x="163" y="191" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26539" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26538" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26537" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26536" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30064" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30063" script="" x="163" y="191" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30104" script="" x="163" y="191" region="120" num="1" lasttime="275"/>
+		
+	</rush>
+	<rush id="12" name="活动边境" mapid="137" boss="16643" bossname="隐" cleardelay="7200" lasttime="7200">
+		<boss x="308" y="10" region="1" num="1" script=""/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+	    <phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+	    <phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26535" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26534" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26533" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26532" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26531" script="" x="179" y="132" region="120" num="1" lasttime="275"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+	    <phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+	    <phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26535" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26534" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26533" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26532" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26531" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30062" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30061" script="" x="179" y="132" region="120" num="1" lasttime="275"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26535" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26534" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26533" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26532" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26531" script="" x="179" y="132" region="120" num="1" lasttime="275"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="290"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="280"/>
+		<phase action="summon_rush" id="16661" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16660" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16659" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16658" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16657" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16656" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16655" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16654" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16653" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16652" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="16651" script="" x="179" y="132" region="120" num="10" lasttime="1"/>
+		<phase action="summon_rush" id="21535" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21534" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21533" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21532" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="21531" script="" x="179" y="132" region="120" num="2" lasttime="1"/>
+		<phase action="summon_rush" id="26535" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26534" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26533" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26532" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="26531" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30062" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30061" script="" x="179" y="132" region="120" num="1" lasttime="1"/>
+		<phase action="summon_rush" id="30103" script="" x="179" y="132" region="120" num="1" lasttime="280"/>
+	</rush-->
+	<!--rush id="7" name="凤凰城福神" mapid="102" boss="60002" bossname="福神" cleardelay="28800" lasttime="28800">
+                <notify str="过年咯~ 15分钟后 福神 要来凤凰城给大家拜年了"/>
+                <boss x="400" y="500" region="10" num="1" script="1008"/>
+                <servant id="60004" num="8" rate="100" interval="30"/>
+                <phase action="summon_pet"  lasttime="1" />
+                <phase action="summon_off" />
+                <phase action="attack" x="116" y="9" region="30" lasttime="28800"/>
+        </rush>
+        <rush id="8" name="凤凰城财神" mapid="102" boss="60001" bossname="财神" cleardelay="28800" lasttime="28800">
+                <notify str="过年咯~ 15分钟后 财神 要来凤凰城给大家拜年了"/>
+                <boss x="400" y="500" region="10" num="1" script="1009"/>
+                <servant id="60003" num="8" rate="100" interval="30"/>
+                <phase action="summon_pet"  lasttime="1" />
+                <phase action="summon_off" />
+                <phase action="attack" x="116" y="9" region="30" lasttime="28800"/>
+        </rush-->
+</info>
+<!-- 说明 author 邢万里 -->
+<!-- rush id="攻城行动的编号" name="行动名字" mapid="目标地图" boss="boss编号" bossname="boss名" cleardelay="结束后清除怪物的时间" lasttime="持续时间，无论攻城进行到哪一步，该时间一到就进入清除阶段" -->
+<!-- boss x="出生地点" y="出生地点" region="范围" num="数量" boss只有一个，攻城开始时随机选择一个进行召唤-->
+<!-- servant id="召唤小怪的编号" num="数量" rate="几率" interval="间隔" -->
+<!-- phase action="该阶段boss的动作" x="位置" y="位置" region="范围" lasttime="该阶段持续时间" -->
+<!-- 所有阶段都可以指定所有参数，不同阶段参数意义略不相同 -->
+<!-- say="" ，阶段开始时boss会说话 -->
+<!-- 动作说明-->
+<!-- 动作分为瞬间和持续两种-->
+<!-- 持续动作中boss会重复动作直到阶段时间结束-->
+<!-- 瞬间动作在阶段开始时执行，在该阶段内boss做普通攻击-->
+<!-- moveto boss移动到某位置附近，region表示范围，持续时间结束后，boss会跳转到目标位置。持续 -->
+<!-- recover 恢复boss全部hp。瞬间 -->
+<!-- summon 召唤小怪，根据几率，可能一次召唤出所有小怪，也可能什么都没召唤。瞬间 -->
+<!-- summon_off 关闭召唤，boss受到攻击不会召唤小怪。瞬间 -->
+<!-- summon_on 打开召唤，boss受到攻击随机召唤小怪，延迟时间内不会召唤。瞬间 -->
+<!-- attack 在指定的位置和范围内攻击，直到阶段时间结束。持续 -->
+<!-- clear 清除召唤出来的小怪。瞬间 -->
+<!-- warp x="100" y="100" 瞬间移动到某位置(未完成)。瞬间 -->
+<!-- 所有阶段完成或boss被杀死后进入end阶段，end阶段持续时间为攻城的cleardelay时间，end阶段结束时清除boss和所有召唤出来的小怪-->

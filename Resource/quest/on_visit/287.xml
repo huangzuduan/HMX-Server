@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="287" name="凤凰城-算命先生(433,394)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30305">
+		<embranchment id="8">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20304"/>
+				<var type="Differ" name="state" value="-1" id="20305"/>
+				<var type="Differ" name="state" value="1" id="20305"/>
+				<var type="Differ" name="state" value="-3" id="20305"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    齐飞啊，他的事我知道，但一个穷鬼，帮他我有什么好处呢？不过如果能帮我做些事，或许我可以考虑一下。")
+this:AddDialogItem("我帮你，什么事？(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;任务：&lt;/n&gt;&lt;n&gt;占卜\n\n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    帮算命先生打败30只幼狐(419,116)，然后再回到算命先生(433,394)处汇报。\n \n&lt;/n&gt;&lt;n color=\"255,239,196,0\"&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    我曾帮人算命，算出幼狐的数量要减少。\n    为了验证我的占卜，你去帮我打败30只幼狐吧！呵呵.....\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("好吧。{10001}", "v287", 20305, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="17">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20305"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：占卜(2)", "Dialog80")
+end
+function Dialog80()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;占卜\n \n&lt;/n&gt;&lt;n&gt;    哈哈哈哈你果然打败了30只幼狐啊。好吧，我替你写情书。。&lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 3200&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("是替齐飞帮冰淋写{10002}", "v287", 20305, 9)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="27">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20305"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    您包裹空间不够，清空点包裹再来吧。")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20305"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：占卜(2)", "Dialog19")
+end
+function Dialog19()
+this:AddTalk("    怎么又回来了，幼狐还是很多，你到底干什么去了。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="99">
+			<conditions>
+				<var type="Equal" name="state" value="-1" id="20305"/>
+				<var type="Differ" name="state" value="-1" id="20304"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddTalk("    什么？信丢了？哎，再帮你写一封吧。")
+this:AddTaskCmdItem("多谢{10002}", "v287", 20305, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20305" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="1" id="20304"/>
+				<var type="Differ" name="state" value="-1" id="20305"/>
+				<var type="Differ" name="state" value="1" id="20305"/>
+				<var type="Differ" name="state" value="-3" id="20305"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="1"/>
+				<notify content="任务：帮算命先生打败30只幼狐(419,116)"/>
+			</actions>
+		</embranchment>
+		<embranchment id="9" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-3" id="20305"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2080"/>
+				<exp value="3200"/>
+				<notify1 content="经验+3200"/>
+				<notify content="恭喜你完成了“占卜”任务"/>
+				<notify1 content="得到情书，去交给齐飞"/>
+				<var type="Set" name="state" value="-1" id="20305"/>
+				<var type="Set" name="state" value="-3" id="20304"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<space size="1"/>
+				<var type="Equal" name="state" value="-1" id="20305"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2080"/>
+				<notify1 content="得到情书，去交给齐飞"/>
+				<var type="Set" name="state" value="-3" id="20304"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

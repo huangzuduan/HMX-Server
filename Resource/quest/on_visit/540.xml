@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="540" name="王城-吕思远(488,260)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="30506">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20506"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：探听心意(2)", "Dialog20")
+end
+function Dialog20()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;探听心意\n \n&lt;/n&gt;&lt;n&gt;    呵呵，自从你离开吕家，做了不少大事呢！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 120620&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("其实也没什么！{10002}", "v540", 20506, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20506" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20506"/>
+			</conditions>
+			<actions>
+				<exp value="120620"/>
+				<notify1 content="经验+120620"/>
+				<notify content="恭喜你完成了“探听心意”任务"/>
+				<var type="Set" name="state" value="-1" id="20506"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30507">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="85"/>
+				<level type="Less" value="93"/>
+				<var type="Equal" name="state" value="-1" id="20506"/>
+				<var type="Differ" name="state" value="-3" id="20507"/>
+				<var type="Differ" name="state" value="-1" id="20507"/>
+				<var type="Differ" name="state" value="1" id="20507"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：父仇待报(2)", "Dialog21")
+end
+function Dialog21()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;父仇待报\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    把王城－吕思远(488,260)的心事告诉千江镇-花非花(133,415)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，前年先父去世，我曾立誓，要为先父报仇。父仇未报之时，不敢谈儿女情长。这一下，怕是要耽误一段时间了。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 123120&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("吕兄还请节哀。{10001}", "v540", 20507, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20507" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="85"/>
+				<level type="Less" value="93"/>
+				<var type="Equal" name="state" value="-1" id="20506"/>
+				<var type="Differ" name="state" value="-3" id="20507"/>
+				<var type="Differ" name="state" value="-1" id="20507"/>
+				<var type="Differ" name="state" value="1" id="20507"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找千江镇-花非花(133,415)。"/>
+				<notify1 content="去找千江镇-花非花(133,415)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30508">
+		<embranchment id="10">
+			<conditions>
+				<item value="1" id="2197"/>
+				<var type="Equal" name="state" value="-3" id="20508"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：千里送单衣(2)", "Dialog22")
+end
+function Dialog22()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;千里送单衣\n \n&lt;/n&gt;&lt;n&gt;    好一件皮铠……好巧的手！这是谁缝制的？花非花？她是谁？什么？定亲？我怎么从来都不知道？\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 128130&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("花姑娘是这么说的。{10002}", "v540", 20508, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20508" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="2197"/>
+				<var type="Equal" name="state" value="-3" id="20508"/>
+			</conditions>
+			<actions>
+				<removeitem value="1" id="2197" log="交千里送单衣(20508)-删除花鳞皮铠(2197)"/>
+				<exp value="128130"/>
+				<notify1 content="经验128130"/>
+				<notify content="恭喜你完成了“千里送单衣”任务"/>
+				<var type="Set" name="state" value="-1" id="20508"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30509">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="89"/>
+				<level type="Less" value="97"/>
+				<var type="Equal" name="state" value="-1" id="20508"/>
+				<var type="Differ" name="state" value="-3" id="20509"/>
+				<var type="Differ" name="state" value="-1" id="20509"/>
+				<var type="Differ" name="state" value="1" id="20509"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：未婚妻(2)", "Dialog23")
+end
+function Dialog23()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;未婚妻\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去找千江镇的花飞(111,421)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    (GetName)，先父去得太突然，许多话都未来得及留下，但先父若真为我定盟，应当留下凭据吧？还是烦你去替我问问。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 132630&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我去问问{10001}", "v540", 20509, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20509" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="89"/>
+				<level type="Less" value="97"/>
+				<var type="Equal" name="state" value="-1" id="20508"/>
+				<var type="Differ" name="state" value="-3" id="20509"/>
+				<var type="Differ" name="state" value="-1" id="20509"/>
+				<var type="Differ" name="state" value="1" id="20509"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去找千江镇的花飞(111,421)。"/>
+				<notify1 content="去找千江镇的花飞(111,421)。"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30514">
+		<embranchment id="10">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20514"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("完成任务：左右为难(2)", "Dialog25")
+end
+function Dialog25()
+this:AddTalk("&lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;完成任务：&lt;/n&gt;&lt;n&gt;左右为难\n \n&lt;/n&gt;&lt;n&gt;   ……好词，真是好词。上阙起句说夜半无眠，却问自己情缘，又将我比作明月，叫我不要理会少女谁在争先。下阙却分明在说，她的爱情都随水而去，她与朋友的恩情也就此决断。这是要放弃爱情，放弃友情的词句啊！\n \n&lt;/n&gt;&lt;/p&gt; &lt;p&gt;&lt;n color=\"255,239,196,0\"&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 142065&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("是个烈女子呢。{10002}", "v540", 20514, 11)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20514" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<var type="Equal" name="state" value="-3" id="20514"/>
+			</conditions>
+			<actions>
+				<exp value="142065"/>
+				<notify1 content="经验+142065"/>
+				<notify content="恭喜你完成了“左右为难”任务"/>
+				<var type="Set" name="state" value="-1" id="20514"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="30515">
+		<embranchment id="5">
+			<conditions>
+				<level type="Great" value="93"/>
+				<level type="Less" value="101"/>
+				<var type="Equal" name="state" value="-1" id="20514"/>
+				<var type="Differ" name="state" value="-3" id="20515"/>
+				<var type="Differ" name="state" value="-1" id="20515"/>
+				<var type="Differ" name="state" value="1" id="20515"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("任务：谋定大计(2)", "Dialog24")
+end
+function Dialog24()
+this:AddTalk("&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务：&lt;/n&gt;&lt;n&gt;谋定大计\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务目标：\n&lt;/n&gt;&lt;n&gt;    去皇城找吕思远(602,281)。\n \n&lt;/n&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;任务描述：\n&lt;/n&gt;&lt;n&gt;    不错。真是一代奇女子。只可惜，我父仇未报，只有父仇得报，我才能成家立业。当年，先父是在皇城刺探机械工厂秘密时遇害的，我这就起身去皇城，你若肯帮我，就到皇城来找我。\n &lt;/n&gt;&lt;/p&gt;&lt;p&gt;&lt;n color=\&quot;255,239,196,0\&quot;&gt;经验奖励：&lt;/n&gt;&lt;n&gt; 143065&lt;/n&gt;&lt;/p&gt;")
+this:AddTaskCmdItem("我一定去。{10001}", "v540", 20515, 3)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20515" new="1">
+		<embranchment id="3" active="1">
+			<conditions>
+				<level type="Great" value="93"/>
+				<level type="Less" value="101"/>
+				<var type="Equal" name="state" value="-1" id="20514"/>
+				<var type="Differ" name="state" value="-3" id="20515"/>
+				<var type="Differ" name="state" value="-1" id="20515"/>
+				<var type="Differ" name="state" value="1" id="20515"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<notify content="任务：去皇城找吕思远(602,281)"/>
+				<notify1 content="去皇城找吕思远(602,281)"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

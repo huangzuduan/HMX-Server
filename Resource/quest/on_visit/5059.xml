@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5059" name="神偷">
+	<!--new means new quest, default is quest on user-->
+	<quest id="960103">
+		<embranchment id="9">
+			<conditions>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("开门-需要秘匙", "Dialog13")
+end
+function Dialog13()
+this:AddTalk("    给我把秘匙我就可以帮你打开去下水道的门，这样你就能到这个房间的另一头哦。");
+this:AddTaskCmdItem("给他秘匙(0)", "v5059", 160103, 11)
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="160103" new="1">
+		<embranchment id="11" active="1">
+			<conditions>
+				<item value="1" id="1837"/>
+			</conditions>
+			<actions>
+				<goto name="中立区·机械工厂密道" pos="18,70"/>
+				<removeitem value="1" id="1837" log="进入机械工厂密道(160103)-删除秘匙(1837)"/>
+				<notify content="你进入了机械工厂密道，不知道通向哪里"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

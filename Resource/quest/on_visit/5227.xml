@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="5227" name="世外桃源-家具制造商(90,228)">
+	<!--new means new quest, default is quest on user-->
+	<quest id="900011">
+		<embranchment id="4">
+		<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="470"/>
+				<var type="Differ" name="state" value="-1" id="470"/>
+				<var type="Differ" name="state" value="1" id="470"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：家具材料采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    怎么了？想获得那漂亮、高贵的家具吗？来我这里打造吧，去采集区转转你会得到你想的东西。如果没有采集手套,杂货商有的卖哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5227", 470, 4)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+		<embranchment id="5">
+		<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="470"/>
+				<var type="Differ" name="state" value="-1" id="470"/>
+				<var type="Differ" name="state" value="1" id="470"/>
+		</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("任务：家具材料采集(2)", "Dialog39")
+end
+function Dialog39()
+this:AddTalk("    怎么了？想获得那漂亮、高贵的家具吗？来我这里打造吧，去采集区转转你会得到你想的东西。如果没有采集手套,杂货商有的卖哦。")
+this:AddTaskCmdItem("接受任务{10001}", "v5227", 470, 5)
+end
+				</menu>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+	</embranchment>
+	<embranchment id="6">
+		<conditions>
+				<var type="Equal" name="state" value="-3" id="470"/>
+				<var type="Differ" name="state" value="-1" id="470"/>
+				<var type="Differ" name="state" value="1" id="470"/>
+		</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("完成任务：家具材料采集(2)", "Dialog64")
+end
+function Dialog64()
+this:AddTalk("    不错。相信你应该基本了解怎么获得材料了吧。有了材料可以在我这里打造家具哦。")
+this:AddTaskCmdItem("接受奖励{10002}", "v5227", 470, 6)
+end
+				</menu>
+			</actions>
+	</embranchment>
+	<embranchment id="9">
+			<conditions>
+            <space size="3"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("宝石碎片兑换宝石(0)", "Dialog17")
+end
+function Dialog17()
+this:AddTalk("我可以为你提供一些服务，但你必须保持包裹有3个空位：\n  1、三等宝石碎片换普通宝石\n  2、四等宝石碎片换取蓝宝石\n  3、五等宝石碎片换取钻石")
+this:AddTaskCmdItem("三等宝石碎片换普通宝石(0)", "v5227", 100901, 10)
+this:AddTaskCmdItem("四等宝石碎片换蓝宝石(0)", "v5227", 100901, 11)
+this:AddTaskCmdItem("五等宝石碎片换钻石(0)", "v5227", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions> 
+		</embranchment>
+		<embranchment id="10">
+			<conditions>
+
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddDialogItem("宝石碎片兑换宝石(0)", "Dialog17")
+end
+function Dialog17()
+this:AddTalk("我可以为你提供一些服务，但你必须保持包裹有3个空位：\n  1、三等宝石碎片换取普通宝石\n  2、四等宝石碎片换取蓝宝石\n  3、五等宝石碎片换取钻石")
+this:AddDialogItem("三等宝石碎片换普通宝石(0)", "Dialog19")
+this:AddDialogItem("四等宝石碎片换蓝宝石(0)", "Dialog19")
+this:AddDialogItem("五等宝石碎片换钻石(0)", "Dialog19")
+this:AddCloseItem("离开")
+end
+function Dialog19()
+this:AddTalk("    对不起，你包裹没有3个空位，请整理完包裹再来找我。")
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions> 
+		</embranchment>
+	</quest>	
+	<quest id="470" new="1">
+	<embranchment id="4" active="1">
+		<conditions>
+				<level type="Less" value="50"/>
+				<var type="Differ" name="state" value="-3" id="470"/>
+				<var type="Differ" name="state" value="-1" id="470"/>
+				<var type="Differ" name="state" value="1" id="470"/>
+		</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="470"/>
+				<var type="GetP" name="fwclcj_selflevel" value="1"/>
+				<vars type="Mul" name1="fwclcj_selflevel" name2="fwclcj_selflevel"/>
+				<var type="Set" name="fwclcj_num" value="25"/>
+				<vars type="Mul" name1="fwclcj_selflevel" name2="fwclcj_num"/>
+				<refresh name="fwclcj_selflevel"/>
+				<notify content="去采集10个宝石树(33,155)，然后再向家具制造商汇报。"/>
+				<notify1 content="去采集10个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="5" active="1">
+		<conditions>
+				<level type="Great" value="49"/>
+				<var type="Differ" name="state" value="-3" id="470"/>
+				<var type="Differ" name="state" value="-1" id="470"/>
+				<var type="Differ" name="state" value="1" id="470"/>
+		</conditions>
+			<actions>
+				<var type="Set" name="state" value="1" id="470"/>
+				<var type="GetP" name="fwclcj_selflevel" value="1"/>
+				<vars type="Mul" name1="fwclcj_selflevel" name2="fwclcj_selflevel"/>
+				<var type="Set" name="fwclcj_num" value="50"/>
+				<vars type="Mul" name1="fwclcj_selflevel" name2="fwclcj_num"/>
+				<refresh name="fwclcj_selflevel"/>
+				<notify content="去采集10个宝石树(33,155)，然后再向家具制造商汇报。"/>
+				<notify1 content="去采集10个宝石树"/>
+			</actions>
+	</embranchment>
+	<embranchment id="6" active="1">
+		<conditions>
+				<var type="Equal" name="state" value="-3" id="470"/>
+				<var type="Differ" name="state" value="-1" id="470"/>
+				<var type="Differ" name="state" value="1" id="470"/>
+		</conditions>
+			<actions>
+				<var type="Set" name="state" value="-1" id="470"/>
+				<exp1 value="100" id="470" name="fwclcj_selflevel"/>
+				<varnotify2 content="经验+%u" value="fwclcj_selflevel" id="470"/>
+				<notify content="恭喜你完成了“家具材料采集”的任务"/>
+			</actions>
+	</embranchment>
+	</quest>
+	<quest id="100901" new="1">
+		<embranchment id="10" active="1">
+			<conditions>
+                                <space size="3"/>
+				<item value="1" level="2" id="957"/>
+			</conditions>
+			<actions>
+				<notify1 content="获得普通宝石一个"/>
+				<removeitem value="1" level="2" id="957" log="换一个普通宝石扣除一个三等宝石碎片"/>
+				<addbinditem value="1" id="954"/>
+				<addbinditem value="1" id="955" odds="100"/>
+				<addbinditem value="1" id="956" odds="5"/>
+
+				<var type="GetP" name="own_diamend_selflevel" value="1"/>
+				<vars type="Mul" name1="own_diamend_selflevel" name2="own_diamend_selflevel"/>
+				<var type="Set" name="baseexp" value="10"/>
+				<vars type="Mul" name1="own_diamend_selflevel" name2="baseexp"/>
+				<refresh name="own_diamend_selflevel"/>
+				<exp1 value="100" id="100901" name="own_diamend_selflevel"/>
+				<var type="Set" name="state" value="-2"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("我可以为你提供一些服务，但你必须保持包裹有3个空位：\n  1、三等宝石碎片换普通宝石\n  2、四等宝石碎片换取蓝宝石\n  3、五等宝石碎片换取钻石")
+this:AddTaskCmdItem("三等宝石碎片换普通宝石(0)", "v5227", 100901, 10)
+this:AddTaskCmdItem("四等宝石碎片换蓝宝石(0)", "v5227", 100901, 11)
+this:AddTaskCmdItem("五等宝石碎片换钻石(0)", "v5227", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="11" active="1">
+			<conditions>
+                                <space size="3"/>
+				<item value="1" level="3" id="957"/>
+			</conditions>
+			<actions>
+				<notify1 content="获得蓝宝石一个"/>
+				<removeitem value="1" level="3" id="957" log="换一个蓝宝石扣除一个四等宝石碎片"/>
+				<addbinditem value="1" id="955"/>
+				<addbinditem value="1" id="956" odds="100"/>
+				<var type="GetP" name="own_diamend_selflevel" value="1"/>
+				<vars type="Mul" name1="own_diamend_selflevel" name2="own_diamend_selflevel"/>
+				<var type="Set" name="baseexp" value="10"/>
+				<vars type="Mul" name1="own_diamend_selflevel" name2="baseexp"/>
+				<refresh name="own_diamend_selflevel"/>
+				<exp1 value="100" id="100901" name="own_diamend_selflevel"/>
+				<var type="Set" name="state" value="-2"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("我可以为你提供一些服务，但你必须保持包裹有3个空位：\n  1、三等宝石碎片换普通宝石\n  2、四等宝石碎片换取蓝宝石\n  3、五等宝石碎片换取钻石")
+this:AddTaskCmdItem("三等宝石碎片换普通宝石(0)", "v5227", 100901, 10)
+this:AddTaskCmdItem("四等宝石碎片换蓝宝石(0)", "v5227", 100901, 11)
+this:AddTaskCmdItem("五等宝石碎片换钻石(0)", "v5227", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="12" active="1">
+			<conditions>
+                <space size="3"/>
+				<item value="1" level="4" id="957"/>
+			</conditions>
+			<actions>
+				<notify1 content="获得钻石一个"/>
+				<removeitem value="1" level="4" id="957" log="换一个钻石扣除一个五等宝石碎片"/>
+				<addbinditem value="1" id="956"/>
+				<var type="GetP" name="own_diamend_selflevel" value="1"/>
+				<vars type="Mul" name1="own_diamend_selflevel" name2="own_diamend_selflevel"/>
+				<var type="Set" name="baseexp" value="10"/>
+				<vars type="Mul" name1="own_diamend_selflevel" name2="baseexp"/>
+				<refresh name="own_diamend_selflevel"/>
+				<exp1 value="100" id="100901" name="own_diamend_selflevel"/>
+				<var type="Set" name="state" value="-2"/>
+				<menu>
+function TaskDialog()
+this:AddTalk("我可以为你提供一些服务，但你必须保持包裹有3个空位：\n  1、三等宝石碎片换普通宝石\n  2、四等宝石碎片换取蓝宝石\n  3、五等宝石碎片换取钻石")
+this:AddTaskCmdItem("三等宝石碎片换普通宝石(0)", "v5227", 100901, 10)
+this:AddTaskCmdItem("四等宝石碎片换蓝宝石(0)", "v5227", 100901, 11)
+this:AddTaskCmdItem("五等宝石碎片换钻石(0)", "v5227", 100901, 12)
+this:AddCloseItem("离开")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

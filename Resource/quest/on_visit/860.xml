@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by 1 (1) -->
+<event id="860" name="王城-龙镖头(795,488)">
+	<quest id="31037">
+		<embranchment id="52">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<level type="Great" value="19"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu> 
+function TaskDialog()
+this:AddDialogItem("家族运镖(0)", "Dialog10")
+end
+function Dialog10()
+this:AddTalk("    尊敬的族长，我这里有个镖队需要您和您家族的成员一起保护，您现在要开始运家族镖么？\n\n    接镖的时候我身边贵家族的人都能进入运家族镖状态，必须有状态的人才能领取到奖励哦。\n\n    如果能安全送到边境梁镖头(365,180)处，会有大量经验奖励哦。当然，贵家族每个人必须付一定押金才行，押金会在边境归还各位。\n\n    需要注意的是：在运家族镖的过程中，是不能够使用家族令的。")
+this:AddTaskCmdItem("接家族镖 - 附近家族成员扣押金{10001}", "v860", 21030, 1)
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("离开(0)", "Dialog10")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("离开(0)", "Dialog10")
+end
+
+			</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="18">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="2" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次护送么？要想清楚哦！放弃这趟镖车是不退还押金的。")
+this:AddTaskCmdItem("放弃这次护送{10001}", "v860", 21030, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="19">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="1" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次护送么？要想清楚哦！放弃这趟镖车是不退还押金的。")
+this:AddTaskCmdItem("放弃这次护送{10001}", "v860", 21030, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="29">
+			<conditions>
+				<isguard/>
+				<var type="Equal" name="state" value="-3" id="21030"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    是不是镖车出什么事情了？你要现在放弃这次护送么？要想清楚哦！放弃这趟镖车是不退还押金的。")
+this:AddTaskCmdItem("放弃这次护送{10001}", "v860", 21030, 19)
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="40">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<level type="Great" value="34"/>
+                                <level type="Less" value="50"/>
+                                <gold type="Less" value="2000"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的族长！你没有足够的资金运这趟镖。详细情况请参考押金列表")
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="41">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<level type="Great" value="49"/>
+                                <level type="Less" value="70"/>
+                                <gold type="Less" value="6000"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的族长！你没有足够的资金运这趟镖。详细情况请参考押金列表")
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="42">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<level type="Great" value="69"/>
+                                <level type="Less" value="90"/>
+                                <gold type="Less" value="10000"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的族长！你没有足够的资金运这趟镖。详细情况请参考押金列表")
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="43">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<level type="Great" value="89"/>
+                                <level type="Less" value="110"/>
+                                <gold type="Less" value="14000"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的族长！你没有足够的资金运这趟镖。详细情况请参考押金列表")
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="44">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<level type="Great" value="109"/>
+                                <level type="Less" value="130"/>
+                                <gold type="Less" value="18000"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的族长！你没有足够的资金运这趟镖。详细情况请参考押金列表")
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+		<embranchment id="45">
+			<conditions>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<level type="Great" value="129"/>
+                                <level type="Less" value="151"/>
+                                <gold type="Less" value="22000"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<menu>
+function TaskDialog()
+this:AddTalk("    尊敬的族长！你没有足够的资金运这趟镖。详细情况请参考押金列表")
+this:AddDialogItem("押金列表(0)", "Dialog11")
+this:AddDialogItem("经验奖励(0)", "Dialog12")
+this:AddCloseItem("离开")
+end	
+function Dialog11()
+this:AddTalk("    1-49级    押金20两\n    50-69级    押金60两\n    70-89级    押金1锭\n    90-109级   押金1锭40两\n    110-129级  押金1锭80两\n    130-150级  押金2锭20两")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+function Dialog12()
+this:AddTalk("    家族运镖的经验奖励与族长周围的成员个数以及每个成员的等级有关。成员越多，整个家族获得的经验奖励越多；个人等级越高，个人获得的经验奖励越多。")
+this:AddDialogItem("返回(0)", "TaskDialog")
+end
+				</menu>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="21030" new="1">
+		<embranchment id="1" active="1">
+			<conditions>
+				<innation/>
+				<grade value="4"/>
+				<uservar type="Differ" name="familytravel" value="1"/>
+				<isguard/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="-3" id="21030"/>
+				<level type="Great" value="19"/>
+				<var type="Differ" name="state" value="1" id="21030"/>
+				<var type="Differ" name="state" value="1" id="21005"/>
+				<var type="Differ" name="state" value="1" id="21006"/>
+				<var type="Differ" name="state" value="1" id="21007"/>
+				<var type="Differ" name="state" value="1" id="21008"/>
+				<var type="Differ" name="state" value="1" id="21009"/>
+				<var type="Differ" name="state" value="2" id="21005"/>
+				<var type="Differ" name="state" value="2" id="21006"/>
+				<var type="Differ" name="state" value="2" id="21007"/>
+				<var type="Differ" name="state" value="2" id="21008"/>
+				<var type="Differ" name="state" value="2" id="21009"/>
+				<var type="Differ" name="state" value="1" id="21025"/>
+				<var type="Differ" name="state" value="1" id="21026"/>
+				<var type="Differ" name="state" value="1" id="21027"/>
+				<var type="Differ" name="state" value="1" id="21028"/>
+				<var type="Differ" name="state" value="1" id="21029"/>
+				<var type="Differ" name="state" value="2" id="21025"/>
+				<var type="Differ" name="state" value="2" id="21026"/>
+				<var type="Differ" name="state" value="2" id="21027"/>
+				<var type="Differ" name="state" value="2" id="21028"/>
+				<var type="Differ" name="state" value="2" id="21029"/>
+				<var type="Differ" name="state" value="1" id="21035"/>
+				<var type="Differ" name="state" value="1" id="21036"/>
+				<var type="Differ" name="state" value="1" id="21037"/>
+				<var type="Differ" name="state" value="1" id="21038"/>
+				<var type="Differ" name="state" value="1" id="21039"/>
+				<var type="Differ" name="state" value="2" id="21035"/>
+				<var type="Differ" name="state" value="2" id="21036"/>
+				<var type="Differ" name="state" value="2" id="21037"/>
+				<var type="Differ" name="state" value="2" id="21038"/>
+				<var type="Differ" name="state" value="2" id="21039"/>
+				<var type="Differ" name="state" value="-3" id="22005"/>
+				<var type="Differ" name="state" value="-3" id="22006"/>
+				<var type="Differ" name="state" value="2" id="22005"/>
+				<var type="Differ" name="state" value="2" id="22006"/>
+				<var type="Differ" name="state" value="1" id="22005"/>
+				<var type="Differ" name="state" value="1" id="22006"/>
+				<var type="Differ" name="state" value="10" id="21005"/>
+				<var type="Differ" name="state" value="10" id="21006"/>
+				<var type="Differ" name="state" value="10" id="21007"/>
+				<var type="Differ" name="state" value="10" id="21008"/>
+				<var type="Differ" name="state" value="10" id="21009"/>
+				<var type="Differ" name="state" value="10" id="22005"/>
+				<var type="Differ" name="state" value="10" id="22006"/>
+			</conditions>
+			<actions>
+				<addguard id="54101" map="边境" ltpos="799,487" rbpos="800,494" gold="0" exp="0" dest="365,180"/>
+				<enterseptguard/>
+				<uservar type="Set" name="familytravel" value="1"/>
+				<var type="Set" name="state" value="1"/>
+				<notify1 content="边境的梁镖头(365,180)."/>
+				<var type="Set" name="state" value="1"/>
+				<bulletin content="贵家族接了家族镖" kind="2"/>
+			</actions>
+		</embranchment>
+		<embranchment id="19" active="1">
+			<conditions>
+				<innation/>
+				<isguard/>
+			</conditions>
+			<actions>
+				<bulletin content="族长取消了此次家族运镖" kind="2"/>
+				<var type="Set" name="state" value="-2"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>

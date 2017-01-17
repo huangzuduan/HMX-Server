@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by wt (zt) -->
+<event id="16178" name="东郊-异军操兽师">
+	<quest id="327" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+			</conditions>
+			<actions>
+				<additem value="1" id="2123" odds="2000"/>
+			</actions>
+		</embranchment>
+	</quest>
+	<quest id="20807" new="1">
+		<embranchment id="1">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Less" name="kill_异军操兽师" value="1500"/>
+			</conditions>
+			<actions>
+				<var type="Add" name="kill_异军操兽师" value="1"/>
+				<refresh name="kill_异军操兽师"/>
+			</actions>
+		</embranchment>
+		<embranchment id="2">
+			<conditions>
+				<var type="Equal" name="state" value="1"/>
+				<var type="Great" name="kill_异军操兽师" value="1499"/>
+			</conditions>
+			<actions>
+				<var type="Set" name="state" value="-3"/>
+				<refresh name="state"/>
+				<refresh name="kill_异军操兽师"/>
+				<notify content="恭喜你，你已经消灭了1500个55级的异军操兽师，去找清源村的村长(181,287)领取奖赏吧！"/>
+				<notify1 content="去找清源村的村长(181,287)吧！"/>
+			</actions>
+		</embranchment>
+	</quest>
+</event>
