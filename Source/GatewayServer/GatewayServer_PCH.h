@@ -14,7 +14,7 @@
 #include "SrvCoreIncludes.h"
 #include "GateUser.h"
 
-#include "NetService.h"
+#include "GameService.h"
 #include "NetMsgHandler.h"
 #include "PlayerMsgHandler.h"
 #include "ProcLsHandler.h"

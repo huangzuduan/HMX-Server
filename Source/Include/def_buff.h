@@ -2,7 +2,7 @@
 #define __DEF_BUFF_H_
 
 #include <vector>
-#include "ServerDefine.h"
+
 
 #define MAX_BUFF_EFFECT_NUM 5
 

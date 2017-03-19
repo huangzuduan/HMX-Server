@@ -3,7 +3,6 @@
 #include "SceneUser.h"
 #include "Object.h"
 
-
 ObjectManager::ObjectManager(SceneUser* _u):u(_u)
 {
 	nCapacity = 0;
@@ -17,7 +16,7 @@ ObjectManager::~ObjectManager()
 
 bool ObjectManager::Serialize(::protobuf::Itemslots& proto)
 {
-	proto.set_char_id(u->GetUid());
+	proto.set_char_id(u->getUid());
 	proto.set_capacity(nCapacity);
 	proto.set_usecapacity(nUseCapacity);
 
@@ -69,7 +68,7 @@ void ObjectManager::UnSerialize(const ::protobuf::Itemslots& proto)
 			if (!addObject(obj))
 			{
 				DestroyObj(obj);
-				Zebra::logger->error("Load addObject fail");
+				H::logger->error("Load addObject fail");
 				ASSERT(0);
 			}
 		}
@@ -101,7 +100,7 @@ qObject* ObjectManager::getObjectByUUID(DWORD uniqueID)
 
 bool ObjectManager::getUniqeID(QWORD& tempid)
 {
-	tempid = u->uuid.GetUniqueID(UN_ITEM_OBJECT);;
+	//tempid = u->uuid.GetUniqueID(UN_ITEM_OBJECT);;
 	return true;
 }
 

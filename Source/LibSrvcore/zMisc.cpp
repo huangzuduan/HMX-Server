@@ -20,7 +20,7 @@ namespace QuizDef
 
 }
 
-namespace Zebra
+namespace H
 {
 	volatile QWORD qwGameTime = 0;
 

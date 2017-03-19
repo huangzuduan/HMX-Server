@@ -72,7 +72,7 @@ void ProcWorldHandler::ReqQueryEventInfo(zSession* pBaseSession, const NetMsgSS*
 void ProcWorldHandler::ReqSelectRole(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize)
 {
 
-	const W2DSelectRole* packet = static_cast<const W2DSelectRole*>(pMsg);
+	//const W2DSelectRole* packet = static_cast<const W2DSelectRole*>(pMsg);
 	
 	///* 加载道具数据 */
 	//LoadUserTable<StItemSlotsTable>(packet->nCharID, packet->nSessionID, Memory::getMe().GetItemslotsMem(), NULL);
@@ -106,20 +106,13 @@ void ProcWorldHandler::ReqLoadSortLists(zSession* pBaseSession, const NetMsgSS* 
 	int32 byteSize = proto.ByteSize();
 	proto.SerializeToArray(&levelMsg.arrByte[0], byteSize);
 	levelMsg.nByteSize = byteSize;
-	ServerSessMgr::getMe().GetWsSess()->SendMsg(&levelMsg, levelMsg.GetPackLength());*/
+	ServerSessMgr::getMe().GetWsSess()->SendMsg(&levelMsg, levelsizeof(msg));*/
 	
 }
 
 void ProcWorldHandler::ReqSaveSortLists(zSession* pBaseSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const W2DSaveSortLists* packet = static_cast<const W2DSaveSortLists*>(pMsg);
-	::protobuf::LevelTable proto;
-	proto.ParseFromArray(packet->arrByte, packet->nByteSize);
-	for (int32 i = 0; i < proto.levels_size(); ++i)
-	{
-		const ::protobuf::LevelRow& row = proto.levels(i);
-		
-	}
+
 }
 
 void ProcWorldHandler::CallBackSelectRole(int32 nCSID, DUser* pUserMem)

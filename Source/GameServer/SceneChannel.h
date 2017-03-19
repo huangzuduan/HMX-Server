@@ -3,7 +3,6 @@
 
 #include <set>
 #include "Single.h"
-#include "def_channel.h"
 #include "UnorderedSet.h"
 
 
@@ -229,35 +228,35 @@ private:
  *-----------------------------------------------*/
 DEF_IChannelOperate(ChannelPosition)
 DEF_SceneChannel(ChannelPosition)
-extern ObjPool< SceneChannel(ChannelPosition) > g_cPositionChannelFactory;		 
+extern zObjPool< SceneChannel(ChannelPosition) > g_cPositionChannelFactory;		 
 
 /*------------------------------------------------
  * 宏生成生物体频道接口
  *-----------------------------------------------*/
 DEF_IChannelOperate(ChannelCreature)
 DEF_SceneChannel(ChannelCreature)
-extern ObjPool< SceneChannel(ChannelCreature) > g_cCreatureChannelFactory;			
+extern zObjPool< SceneChannel(ChannelCreature) > g_cCreatureChannelFactory;			
 
 /*------------------------------------------------
  * 宏生成穿着频道接口
  *-----------------------------------------------*/
 DEF_IChannelOperate(ChannelWear)
 DEF_SceneChannel(ChannelWear)
-extern ObjPool< SceneChannel(ChannelWear) > g_cWearChannelFactory;		
+extern zObjPool< SceneChannel(ChannelWear) > g_cWearChannelFactory;		
 
 /*------------------------------------------------
  * 宏生成技能频道接口
  *-----------------------------------------------*/
 DEF_IChannelOperate(ChannelSpell)
 DEF_SceneChannel(ChannelSpell)
-extern ObjPool< SceneChannel(ChannelSpell) > g_cSpellChannelFactory;		
+extern zObjPool< SceneChannel(ChannelSpell) > g_cSpellChannelFactory;		
 
 /*------------------------------------------------
  * 宏生成Buff频道接口
  *-----------------------------------------------*/
 DEF_IChannelOperate(ChannelBuff)
 DEF_SceneChannel(ChannelBuff)
-extern ObjPool< SceneChannel(ChannelBuff) > g_cBuffChannelFactory;		
+extern zObjPool< SceneChannel(ChannelBuff) > g_cBuffChannelFactory;		
 
 #endif
 

@@ -105,6 +105,29 @@ IF(WIN32)
         )
 		MARK_AS_ADVANCED(LIB_LIBXML_DEBUG)
 		
+		FIND_PATH(OPENSSL_INCLUDE_DIR
+          NAMES
+            openssl/aes.h
+          PATHS
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/openssl/include
+        )
+		MARK_AS_ADVANCED(OPENSSL_INCLUDE_DIR)
+		
+		FIND_LIBRARY(LIB_LIBEAY32_DEBUG
+          NAMES
+            libeay32
+          PATHS
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/openssl/lib
+        )
+		MARK_AS_ADVANCED(LIB_LIBEAY32_DEBUG)
+		
+		FIND_LIBRARY(LIB_SSLEAY32_DEBUG
+          NAMES
+            ssleay32
+          PATHS
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/openssl/lib
+        )
+		MARK_AS_ADVANCED(LIB_SSLEAY32_DEBUG)
 		
 		FIND_PATH(PROTOBUL_INCLUDE_DIR
           NAMES

@@ -9,8 +9,8 @@ NetMsgHandler::NetMsgHandler()
 	RegisterMessage(msg_idx, sizeof(cls), boost::bind(&NetMsgHandler::handler, this, _1, _2, _3)); \
 	}
 
-	REGISTER_INTERNAL_MESSAGE(PRO_SS_RQ_LOGIN, SSRqLogin, recvLoginRequest);
-	REGISTER_INTERNAL_MESSAGE(PRO_SS_RT_LOGINED, SSRtLogined, recvLoginReponse);
+	REGISTER_INTERNAL_MESSAGE(S::SS_RQ_LOGIN, S::SSRqLogin, recvLoginRequest);
+	REGISTER_INTERNAL_MESSAGE(S::SS_RT_LOGINED, S::SSRtLogined, recvLoginReponse);
 
 #undef REGISTER_INTERNAL_MESSAGE
 
@@ -20,25 +20,25 @@ NetMsgHandler::NetMsgHandler()
 	RegisterMessage(msg_idx, sizeof(cls), boost::bind(&PlayerProcHandler::handler, PlayerProcHandler::Instance(), _1, _2, _3)); \
 	}
 
-	REGISTER_FEP_MESSAGE(PRO_F2C_ENCRYPT_INFO, F2CEncryptInfo, RecvEncryptInfo);
-	REGISTER_FEP_MESSAGE(PRO_F2C_LOGIN_READY_FINISH, F2CLoginReadyFinish, RecvLoginReadyFinish);
-	REGISTER_FEP_MESSAGE(PRO_F2C_ENTER_SCENE_LOADED, F2CEnterSceneLoaded, RecvEnterScene);
-	REGISTER_FEP_MESSAGE(PRO_L2C_ACC_LOGIN, L2CAccLogin, RecvLoginAccountResult);
-	REGISTER_FEP_MESSAGE(PRO_S2C_CHAR_WORLD, S2CRepCharWorld, RecvChatWorld);
-	REGISTER_FEP_MESSAGE(PRO_S2C_SCENE_INIT_RESULT, SSRtLogined, RecvSceneInitResult);
-	REGISTER_FEP_MESSAGE(PRO_W2C_USERLIST, W2CUserList, RecvCharacterList);
-	REGISTER_FEP_MESSAGE(PRO_W2C_CREATE_RET, W2CCreateRet, RecvRoleCreateResult);
-	REGISTER_FEP_MESSAGE(PRO_S2C_CHAR_MAIN_DATA, S2CCharMainData, RecvCharacterMainData);
-	REGISTER_FEP_MESSAGE(PRO_S2C_QUEST_MAIN_DATA, S2CQuestMainData, RecvQuestMainData);
-	REGISTER_FEP_MESSAGE(PRO_S2C_SEND_DATA_FINISH, S2CSendDataFinish, RecvSendDataFinish);
-	REGISTER_FEP_MESSAGE(PRO_S2C_SCENE_LOAD_INFO, S2CSceneLoadInfo, RecvEnterSceneInfo);
-	REGISTER_FEP_MESSAGE(PRO_L2C_NAMES_LIST, L2CNamesList, RecvRandNames);
-	REGISTER_FEP_MESSAGE(PRO_S2C_CHANNEL_JION, S2CChannelJion, RecvChannelJion);
-	REGISTER_FEP_MESSAGE(PRO_S2C_CHANNEL_LEAVE, S2CChannelLeave, RecvChannelLeave);
-	REGISTER_FEP_MESSAGE(PRO_S2C_RELATION_LIST, S2CRelationList, RecvRelationList);
-	REGISTER_FEP_MESSAGE(PRO_S2C_RELATION_UPDATE, S2CRelationUpdate, RecvRelationUpdate);
-	REGISTER_FEP_MESSAGE(PRO_S2C_RELATION_DELETE, S2CRelationDelete, RecvRelationDelete);
-	REGISTER_FEP_MESSAGE(PRO_S2C_ITEM_MAIN_DATA, S2CUserPackages, RecvUserPackages);
+	REGISTER_FEP_MESSAGE(C::RT_ENCRYPT_INFO, C::RtEncryptInfo, RecvEncryptInfo);
+	REGISTER_FEP_MESSAGE(C::RT_LOGIN_READY_FINISH, C::RtLoginReadyFinish, RecvLoginReadyFinish);
+	REGISTER_FEP_MESSAGE(C::RT_ENTER_SCENE_LOADED, C::RtEnterSceneLoaded, RecvEnterScene);
+	REGISTER_FEP_MESSAGE(C::RT_ACC_LOGIN, C::RtAccLogin, RecvLoginAccountResult);
+	REGISTER_FEP_MESSAGE(C::RT_CHAR_WORLD, C::RtCharWorld, RecvChatWorld);
+	//REGISTER_FEP_MESSAGE(C::RT_SCENE_INIT_RESULT, C::S::SSRtLogined, RecvSceneInitResult);
+	REGISTER_FEP_MESSAGE(C::RT_USERLIST_LOGIN, C::RtUserListLogon, RecvCharacterList);
+	REGISTER_FEP_MESSAGE(C::RT_CREATE_RET, C::RtCreateRet, RecvRoleCreateResult);
+	REGISTER_FEP_MESSAGE(C::RT_CHAR_MAIN_DATA, C::RtCharMainData, RecvCharacterMainData);
+	REGISTER_FEP_MESSAGE(C::RT_QUEST_MAIN_DATA, C::RtQuestMainData, RecvQuestMainData);
+	REGISTER_FEP_MESSAGE(C::RT_SEND_DATA_FINISH, C::RtSendDataFinish, RecvSendDataFinish);
+	REGISTER_FEP_MESSAGE(C::RT_SCENE_LOAD_INFO, C::RtSceneLoadInfo, RecvEnterSceneInfo);
+	REGISTER_FEP_MESSAGE(C::RT_NAMES_LIST, C::RtNamesList, RecvRandNames);
+	REGISTER_FEP_MESSAGE(C::RT_CHANNEL_JION, C::RtChannelJion, RecvChannelJion);
+	REGISTER_FEP_MESSAGE(C::RT_CHANNEL_LEAVE, C::RtChannelLeave, RecvChannelLeave);
+	REGISTER_FEP_MESSAGE(C::RT_RELATION_LIST, C::RtRelationList, RecvRelationList);
+	REGISTER_FEP_MESSAGE(C::RT_RELATION_UPDATE, C::RtRelationUpdate, RecvRelationUpdate);
+	REGISTER_FEP_MESSAGE(C::RT_RELATION_DELETE, C::RtRelationDelete, RecvRelationDelete);
+	REGISTER_FEP_MESSAGE(C::RT_ITEM_MAIN_DATA, C::RtUserPackages, RecvUserPackages);
 
 #undef REGISTER_FEP_MESSAGE
 
@@ -52,8 +52,8 @@ NetMsgHandler::~NetMsgHandler()
 
 void NetMsgHandler::OnNetMsgEnter(NetSocket& rSocket)
 {
-	Zebra::logger->info("连接成功！来自于:id=%d ip=%s,port=%d", rSocket.SID(), rSocket.GetIp().c_str(), (int32)rSocket.GetPort());
-	zSession* pSession = NetService::getMe().getSessionMgr().get(rSocket.SLongID());
+	H::logger->info("连接成功！来自于:id=%d ip=%s,port=%d", rSocket.SID(), rSocket.GetIp().c_str(), (int32)rSocket.GetPort());
+	zSession* pSession = GameService::getMe().getSessionMgr().get(rSocket.SLongID());
 	if (pSession)
 	{
 		if (pSession->serverType == zSession::SERVER_TYPE_CLIENT && pSession->sessionType == zSession::FOR_NULL)
@@ -62,7 +62,7 @@ void NetMsgHandler::OnNetMsgEnter(NetSocket& rSocket)
 			if (player)
 			{
 				PlayerProcHandler::SendEncrypt(player);
-				Zebra::logger->info("发送请求密钥信息到:ip=%s port=%d", rSocket.GetIp().c_str(), (int32)rSocket.GetPort());
+				H::logger->info("发送请求密钥信息到:ip=%s port=%d", rSocket.GetIp().c_str(), (int32)rSocket.GetPort());
 			}
 		}
 	}
@@ -74,10 +74,10 @@ void NetMsgHandler::OnNetMsgEnter(NetSocket& rSocket)
 
 void NetMsgHandler::OnNetMsg(NetSocket& rSocket, NetMsgSS* pMsg, int32 nSize)
 {
-	zSession* pSession = NetService::getMe().getSessionMgr().get(rSocket.SLongID());
+	zSession* pSession = GameService::getMe().getSessionMgr().get(rSocket.SLongID());
 	if (pSession == NULL)
 	{
-		Zebra::logger->error("Can not find session");
+		H::logger->error("Can not find session");
 		rSocket.OnEventColse();
 		return;
 	}
@@ -102,12 +102,12 @@ void NetMsgHandler::OnNetMsg(NetSocket& rSocket, NetMsgSS* pMsg, int32 nSize)
 	const MsgFunc* pMsgHandlerInfo = GetMsgHandler(pMsg->protocol);
 	if (pMsgHandlerInfo == NULL)
 	{
-		Zebra::logger->error("找不到该协议:%d,大小:%d", pMsg->protocol, nSize);
+		H::logger->error("找不到该协议:%d,大小:%d", pMsg->protocol, nSize);
 		rSocket.OnEventColse();
 		return;
 	}
 
-	Zebra::logger->info("收到协议=%d", pMsg->protocol);
+	H::logger->info("收到协议=%d", pMsg->protocol);
 
 	(pMsgHandlerInfo->handlerFun)((zSession*)(pSession), pMsg, nSize);
 
@@ -118,39 +118,39 @@ void NetMsgHandler::OnNetMsg(NetSocket& rSocket, NetMsgSS* pMsg, int32 nSize)
 /* 有Server断开回调(此时socket已经回收) */
 void NetMsgHandler::OnNetMsgExit(NetSocket& rSocket)
 {
-	Zebra::logger->info("连接断开！来自于:id=%d ip=%s,port=%d", rSocket.SID(), rSocket.GetIp().c_str(), (int32)rSocket.GetPort());
+	H::logger->info("连接断开！来自于:id=%d ip=%s,port=%d", rSocket.SID(), rSocket.GetIp().c_str(), (int32)rSocket.GetPort());
 }
 
 void NetMsgHandler::recvLoginRequest(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const SSRqLogin* packet = static_cast<const SSRqLogin*>(pMsg);
-	const zSerivceCfgMgr::Server* serverCfg = NetService::getMe().getServerCfgMgr().getServer(packet->serverID);
+	const S::SSRqLogin* packet = static_cast<const S::SSRqLogin*>(pMsg);
+	const zSerivceCfgMgr::Server* serverCfg = GameService::getMe().getServerCfgMgr().getServer(packet->serverID);
 	if (!serverCfg)
 	{
 		ASSERT(0);
 		return;
 	}
 
-	zServerRegMgr& regMgr = NetService::getMe().getServerRegMgr();
+	zServerRegMgr& regMgr = GameService::getMe().getServerRegMgr();
 	zServerReg* addReg = regMgr.CreateObj();
 	if (addReg)
 	{
-		SSRtLogined sendLg;
+		S::SSRtLogined sendLg;
 		addReg->id = packet->serverID;
 		addReg->sessid = pSession->id;
 		if (!regMgr.add(addReg))
 		{
-			Zebra::logger->error("注册服务器ID重复");
+			H::logger->error("注册服务器ID重复");
 			ASSERT(0);
 			regMgr.DestroyObj(addReg);
-			sendLg.result = SSRtLogined::SUCCESS;
-			pSession->sendMsg(&sendLg, sendLg.GetPackLength());
+			sendLg.result = S::SSRtLogined::SUCCESS;
+			pSession->sendMsg(&sendLg, sizeof(sendLg));
 			return;
 		}
 		else
 		{
-			sendLg.result = SSRtLogined::SUCCESS;
-			pSession->sendMsg(&sendLg, sendLg.GetPackLength());
+			sendLg.result = S::SSRtLogined::SUCCESS;
+			pSession->sendMsg(&sendLg, sizeof(sendLg));
 		}
 
 		if (serverCfg->recvsrvlist)
@@ -159,7 +159,7 @@ void NetMsgHandler::recvLoginRequest(zSession* pSession, const NetMsgSS* pMsg, i
 			{
 				virtual bool exec(zServerReg* entry)
 				{
-					const zSerivceCfgMgr::Server* serverCfg = NetService::getMe().getServerCfgMgr().getServer(entry->id);
+					const zSerivceCfgMgr::Server* serverCfg = GameService::getMe().getServerCfgMgr().getServer(entry->id);
 					if (!serverCfg)
 					{
 						ASSERT(0);
@@ -177,15 +177,15 @@ void NetMsgHandler::recvLoginRequest(zSession* pSession, const NetMsgSS* pMsg, i
 
 			MyStruct exec;
 			regMgr.execEveryServer(exec);
-
-			SSServerRegList sendList;
+			BUFFER_CMD(S::SSServerRegList, send, MAX_USERDATASIZE);
+			send->count = 0;
 			std::vector<int32>::const_iterator it = exec.outServerID.begin();
 			for (; it != exec.outServerID.end(); ++it)
 			{
-				sendList.reglist[sendList.count].id = *it;
-				sendList.count++;
+				send->reglist[send->count].id = *it;
+				send->count++;
 			}
-			pSession->sendMsg(&sendList, sendList.GetPackLength());
+			pSession->sendMsg(send, send->getSize());
 
 		}
 
@@ -200,7 +200,7 @@ void NetMsgHandler::recvLoginRequest(zSession* pSession, const NetMsgSS* pMsg, i
 
 				virtual bool exec(zServerReg* entry)
 				{
-					const zSerivceCfgMgr::Server* serverCfg = NetService::getMe().getServerCfgMgr().getServer(entry->id);
+					const zSerivceCfgMgr::Server* serverCfg = GameService::getMe().getServerCfgMgr().getServer(entry->id);
 					if (!serverCfg)
 					{
 						ASSERT(0);
@@ -209,13 +209,14 @@ void NetMsgHandler::recvLoginRequest(zSession* pSession, const NetMsgSS* pMsg, i
 
 					if (serverCfg->recvsrvlist)
 					{
-						zSession* session = NetService::getMe().getSessionMgr().get(entry->sessid);
+						zSession* session = GameService::getMe().getSessionMgr().get(entry->sessid);
 						if (session)
 						{
-							SSServerRegList sendList;
-							sendList.reglist[sendList.count].id = addServerID;
-							sendList.count++;
-							session->sendMsg(&sendList, sendList.GetPackLength());
+							BUFFER_CMD(S::SSServerRegList, send, MAX_USERDATASIZE);
+							send->count = 0;
+							send->reglist[send->count].id = addServerID;
+							send->count++;
+							session->sendMsg(send, send->getSize());
 						}
 					}
 					return true;
@@ -236,14 +237,14 @@ void NetMsgHandler::recvLoginRequest(zSession* pSession, const NetMsgSS* pMsg, i
 
 void NetMsgHandler::recvLoginReponse(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const SSRtLogined* packet = static_cast<const SSRtLogined*>(pMsg);
-	if (packet->result == SSRtLogined::SUCCESS)
+	const S::SSRtLogined* packet = static_cast<const S::SSRtLogined*>(pMsg);
+	if (packet->result == S::SSRtLogined::SUCCESS)
 	{
-		Zebra::logger->error("登录成功");
+		H::logger->error("登录成功");
 	}
 	else
 	{
-		Zebra::logger->error("登录失败");
+		H::logger->error("登录失败");
 		ASSERT(0);
 	}
 }

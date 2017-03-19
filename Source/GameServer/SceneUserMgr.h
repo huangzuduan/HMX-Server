@@ -35,7 +35,7 @@ public:
 
 private:
 	
-	ObjPool<SceneUser> objpool;
+	zObjPool<SceneUser> objpool;
 
 };
 

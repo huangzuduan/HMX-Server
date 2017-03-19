@@ -65,26 +65,28 @@ private:
 */
 class WorldChannelM : public zEntryMgr< zEntryID, zEntryTempID, zEntryName >
 {
-private:
-	zUniqueDWORDID *channelUniqeID;
-	zMutex mlock;
-	ObjPool<WorldChannel> objpool;
-
-	bool getUniqeID(QWORD &tempid);
-	void putUniqeID(const QWORD &tempid);
-
 public:
 	WorldChannelM();
 	~WorldChannelM();
+	bool getUniqeID(QWORD &tempid);
+	void putUniqeID(const QWORD &tempid);
+	WorldChannel* CreateObj();
+	void DestroyObj(WorldChannel* obj);
 
 	void loadDB();
 
+	WorldChannel* get(QWORD id);
 	bool add(WorldChannel *channel);
 	void remove(WorldChannel *channel);
-	WorldChannel* get(DWORD dwChannelID);
+	
 
-	WorldChannel* CreateObj();
-	void DestroyObj(WorldChannel* obj);
+
+private:
+
+	int32 maxid; // ×î´óµÄid
+	zObjPool<WorldChannel> objpool;
+
+
 
 };
 

@@ -67,7 +67,7 @@ public:
 
 private:
 
-	ObjPool<InstanceScene> objpool;
+	zObjPool<InstanceScene> objpool;
 
 };
 

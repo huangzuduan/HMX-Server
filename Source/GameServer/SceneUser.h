@@ -12,11 +12,9 @@
 #include "chatmsg.pb.h"
 
 #include "ConfigBase.h" 
-#include "MyUniqueID.h"
 #include "Object.h"
 #include "ObjectManager.h"
-#include "MessageMgr.h"
-#include "RelationCtrl.h"
+#include "Relation.h"
 
 
 /*
@@ -29,8 +27,15 @@ public:
 	SceneUser();
 	~SceneUser();
 
-	bool Serialize(::protobuf::UserBinary& proto);
-	void UnSerialize(const ::protobuf::UserBinary& proto);
+	bool loadDB(const S::SSRtLoadUser* packet, int32 nSize);
+	bool saveDB();
+	void readBinary(const char* data,int32 len);
+	int32 writeBinary(char* data);
+
+	bool serialize(::protobuf::CounterProto& proto);
+	void unserialize(const ::protobuf::CounterProto& proto);
+	//bool serialize(::protobuf::RelationProto& proto);
+	//void unserialize(const ::protobuf::RelationProto& proto);
 
 public:
 
@@ -40,31 +45,16 @@ public:
 	bool clientReady;			/* 前端状态 0 ok,1 加载资源中 */ 
 	bool userModity;			/* 是否数据变动(0无,1有) */
 
-	/* 角色属性数据 */
-public:
-
-
-	UserSceneBase userbase;
-
+	S::t_UserSceneBase userbase;		/* 角色属性数据 */
 
 public:
 
-	bool ReqMove(Cmd::stUserMoveMoveUserCmd *rev);
-	void CheckSaveToDb(int32 nSrvTime);
-	bool loadFromDb(const D2SLoadUser* packet, int32 nSize);
-	bool SaveToDb(int32 nScoketEventCode = 0);
-
-	void Online(); 
-
-public:
-
-	// 加载该玩家主要数据 
-
-	// 消息更新 
-	void Update(const zTaskTimer* timer);
-
-	/* 秒定时器 */
-	void Timer(int32 curTime); 
+	bool move(Cmd::stUserMoveMoveUserCmd *rev);
+	void online(); 
+	
+	// 由场景调用,可以根据不同的场景,改善调用的频率
+	// 通宵要是200ms以内调用一次
+	void Timer(const zTaskTimer* t);
 
 public:
 
@@ -74,60 +64,57 @@ public:
 	// 重新计算PK属性
 	void setupCharBase(); 
 
-	int64 GetUid()
+	int64 getUid()
 	{ 
 		return id;
 	}
 
-	int32 GetType()
+	int32 getType()
 	{
 		return 0;
 	}
 
-	int32 GetLandMapID() const
+	int32 getLandMapID() const
 	{
 		return 0;
 	}
 
-	int32 GetInstanceMapID() const
+	int32 getInstanceMapID() const
 	{
 		return 0;
 	}
 
-	int32 GetCurrMapID() const
+	int32 getCurrMapID() const
 	{
-		if (GetInstanceMapID())
+		if (getInstanceMapID())
 		{
-			return GetInstanceMapID();
+			return getInstanceMapID();
 		}
 		else
 		{
-			return GetLandMapID();
+			return getLandMapID();
 		}
 	}
 
-	int32 GetSceneID() const
+	int32 getSceneID() const
 	{
 		return 0;
 	}
 
-	int32 GetZoneID() const
+	int32 getZoneID() const
 	{
 		return 0;
 	}
 
-	int32 GetTeamID() const 
+	int32 getTeamID() const 
 	{
 		return 0;
 	}
 
 	void sendCmdToMe(NetMsgSS* pMsg, int32 nSize);
-
-	void SendToFep(NetMsgSS* pMsg, int32 nSize);
-
-	void SendToDp(NetMsgSS* pMsg, int32 nSize);
-
-	void SendToWs(NetMsgSS* pMsg, int32 nSize);
+	void sendToFep(NetMsgSS* pMsg, int32 nSize);
+	void sendToDp(NetMsgSS* pMsg, int32 nSize);
+	void sendToWs(NetMsgSS* pMsg, int32 nSize);
 	
 //-------------------------------属性更改回调函数------------------------------------------
 private:
@@ -138,17 +125,11 @@ private:
 	void OnWeaponChange(const ValueType& vOldValue, const ValueType& vNewValue);
 	void OnMoneyChange(const ValueType& vOldValue, const ValueType& vNewValue);
 
-	/* 同步自己的属性(检查有变动才发送更新) */ 
-	void UpdateAttribute();
-
-
 public:
 
 	bool CheckMoneyEnough(int32 type,int32 num);
 	bool TrySubMoney(int32 type, int32 num);
 	bool SubMoney(int32 type, int32 num, bool notify = true, bool isTry = false);
-
-
 
 //----------------------------------控制器管理------------------------------------------
 public:
@@ -156,17 +137,11 @@ public:
 	/* 计数器(支持每时每日每周每月等清零处理) id=>值 <开始时间,结束时间> */ 
 	MyCounters ucm; 
 
-	/* 唯一ID管理器 */
-	MyUniqueID uuid;
-
 	/* 技能管理器 */
 	UserSkillM usm;
 
 	/* 物品管理器 */
 	ObjectManager objM;
-
-	/* 聊天信息处理器 */
-	MessageMgr mesM;
 
 	/* 背包模块功能 */  
 public:
@@ -320,7 +295,7 @@ public:
 
 public:
 	
-	Relation relM;
+	RelationM relM;
 
 
 };

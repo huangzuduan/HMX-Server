@@ -68,7 +68,7 @@ public:
 private:
 
 	zMutex mlock;
-	ObjPool<GeneralScene> objpool;
+	zObjPool<GeneralScene> objpool;
 };
 
 #endif

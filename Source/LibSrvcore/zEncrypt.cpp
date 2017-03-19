@@ -282,13 +282,19 @@ void zEncrypt::getRandKey(char* outKey, int32 length)
 	uint32 i = 0;
 	for (; i < length; ++i)
 	{
-		outKey[i] = rand() % 255;
+		if (i % 3 == 0)
+			outKey[i] = randBetween(65, 90);
+		else if(i % 3 == 1)
+			outKey[i] = randBetween(97, 122);
+		else
+			outKey[i] = randBetween(48, 57); 
 	}
 }
 
 int32 zEncrypt::xorCode(uint32 nRandNum, const char* inKey, char *pSrc, uint32 nSrcLen)
 {	
 	int32 k = 0, i = 0;
+#if 0
 	int32 int_num = nSrcLen - (nSrcLen % sizeof(uint32));
 	for (; i < (int32)nSrcLen;)
 	{
@@ -304,6 +310,14 @@ int32 zEncrypt::xorCode(uint32 nRandNum, const char* inKey, char *pSrc, uint32 n
 		}
 		k = i % 32;
 	}
+#endif
 	return i;
+}
+
+int zEncrypt::randBetween(int x, int y)
+{
+	int k = x + rand() % (y - x + 1);
+	return k;
+
 }
 

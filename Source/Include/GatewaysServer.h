@@ -51,7 +51,7 @@ class GateChannelM : public zEntryMgr< zEntryID, zEntryTempID, zEntryName >
 private:
 	zUniqueDWORDID *channelUniqeID;
 	zMutex mlock;
-	ObjPool<GateChannel> objpool;
+	zObjPool<GateChannel> objpool;
 
 	bool getUniqeID(QWORD &tempid);
 	void putUniqeID(const QWORD &tempid);

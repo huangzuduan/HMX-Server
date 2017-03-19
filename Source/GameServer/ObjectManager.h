@@ -56,7 +56,7 @@ public:
 private:
 
 	SceneUser* u;
-	ObjPool<qObject> objpool;
+	zObjPool<qObject> objpool;
 
 	int32 nCapacity;
 	int32 nUseCapacity;

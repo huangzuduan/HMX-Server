@@ -1,6 +1,5 @@
 #include "LoginServer_PCH.h"
 #include "NamesManager.h"
-#include "Utility.h"
 
 NamesManager::NamesManager(void)
 {
@@ -24,7 +23,7 @@ bool NamesManager::GetRandTtems(char* o_arrName)
 	if(nRandMax == 0)
 		return false;
 
-	int32 nRandIndx = RangedRand(0,nRandMax);
+	int32 nRandIndx = zUtility::RangedRand(0,nRandMax);
 	memcpy(o_arrName,&m_setNameInfo[nRandIndx].arrName,32);
 	return true;
 }

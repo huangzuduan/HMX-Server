@@ -5,7 +5,6 @@
 #include <assert.h>
 
 #include "UnorderedSet.h"
-#include "def_entity.h"
 #include "SceneChannel.h"
 #include "SrvEngine.h"
 #include "ScenesServer.h"
@@ -27,60 +26,21 @@ class SceneEntryPk : public zSceneEntry
 {
 public:
 	SceneEntryPk(const SceneEntryType entrytype);
+	virtual ~SceneEntryPk() {}
 
-	void SetPosition(zPos pos) {}
+	virtual int32 getLevel() { return 0;}
+	virtual int32 getHp(){ return 0;}
+	virtual int32 getHpMax(){ return 0;}
+	virtual int32 getMp(){return 0;}
+	virtual int32 getMpMax(){return 0;}
 
-	int32 GetMapID(){return 0;}
-	const zPos& GetPosition() const { return baseAttribute.sPos;}
-
-	BaseAttribute& GetEntryBaseAttr() { return baseAttribute; }
-
-	PkValue& GetEntryPkValBase() { return basePkVal; }
-
-	int32 GetLevel() const
-	{
-		return 0;
-	}
-
-	int32 GetHp()
-	{
-		return 0;
-	}
-
-	int32 GetHpMax()
-	{
-		return 0;
-	}
-
-	int32 GetMp()
-	{
-		return 0;
-	}
-
-	int32 GetMpMax()
-	{
-		return 0;
-	}
+	inline const zPos &getPos() const { return pos; }
+	void setPos(const zPos& zPos) { pos = zPos; }
 
 public:
 
-	Scene*	scene; /* old scene not use */
-
-private:
-	
-	BaseAttribute			baseAttribute;	/* 基础属性 */ 
-	AttributeOffset			baseAttributeOffset[ENTITY_ATTRIBUTE_MAX];// 
-	PkValue					basePkVal;		/* pk属性 */
-	AttributeOffset			basePkValOffset[PK_ATTRIBUTE_MAX];// 
-	
-public:
-	/**
-	* \brief 得到物件坐标
-	* \return 物件坐标
-	*/
-	inline const zPos &getPos() const { return baseAttribute.sPos;}
-
-public:
+	Scene*	scene; 
+	PkValue pkVal;/* pk属性 */
 
 	///脱离战斗状态的时间 
 //	zRTime endBattleTime;
@@ -181,12 +141,6 @@ public:
 						
 	bool Soulflag;
 
-	//sky 新增角色状态(PVE:PVP)
-	//useFightState isUsePveOrPvp; /// PVE状态
-								 // sky end
-
-								 //sky 新增阵营ID
-								 //sky 用于战场中攻击和胜利判定用(重要)
 	DWORD BattCampID;
 	//sky end
 

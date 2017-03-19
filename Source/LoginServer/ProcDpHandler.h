@@ -14,9 +14,6 @@ public:
 	ProcDpHandler(void);
 	~ProcDpHandler(void);
 
-
-	void RepNamesList(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
-
 	/*--------------------------------------------
 	 *  @brief  : ÕÊºÅµÇÂ¼µÄ·µ»Ø
 	 *  @input	: 

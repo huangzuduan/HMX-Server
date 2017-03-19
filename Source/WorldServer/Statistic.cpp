@@ -87,7 +87,7 @@ void Statistic::Update(int32 nSrvTime)
 	//	// 执行命令，发送指令给dp，dp查出数据返回给ws，ws处理再广播到ss等 
 	//	W2DReqEventInfo sMsg;
 	//	sMsg.nTimestamp = Utility::NowTime(); // todo 
-	//	pDpSession->SendMsg(&sMsg,sMsg.GetPackLength());
+	//	pDpSession->SendMsg(&sMsg,ssizeof(msg));
 	//}
 }
 

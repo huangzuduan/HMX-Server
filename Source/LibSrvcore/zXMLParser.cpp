@@ -48,7 +48,7 @@ bool zXMLParser::initFile(const std::string &xmlFile)
 */
 bool zXMLParser::initFile(const char *xmlFile)
 {
-	Zebra::logger->info("zXMLParser::initFile(%s)", xmlFile);
+	H::logger->info("zXMLParser::initFile(%s)", xmlFile);
 	final();
 	if (xmlFile == NULL) return false;
 	doc = xmlParseFile(xmlFile);

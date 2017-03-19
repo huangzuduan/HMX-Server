@@ -93,7 +93,7 @@ const dbCol chat_fields[] =
 {
 	{ "ID",DB_QWORD,sizeof(int64) },
 	{ "NAME",DB_STR,MAX_NAMESIZE + 1 },
-	{ "BINDATA",DB_BIN2,0 },
+	{ "INFO",DB_BIN2,0 },
 	{ NULL,0,0 }
 };
 
@@ -116,7 +116,7 @@ bool WorldChannel::loadDB()
 	memset(wheres, 0, sizeof(wheres));
 	sprintf(wheres, "`id`=%lld", this->id);
 	
-	int ret = NetService::getMe().getDbMysql()->ExecSelectLimit("Chatmsg", chat_fields, wheres, NULL, (unsigned char*)data);
+	int ret = GameService::getMe().getDbMysql()->ExecSelectLimit("Chatmsg", chat_fields, wheres, NULL, (unsigned char*)data);
 	if (ret == 1)
 	{
 		strncpy(this->name, data->name, MAX_NAMESIZE);
@@ -128,7 +128,7 @@ bool WorldChannel::loadDB()
 	}
 	else
 	{
-		Zebra::logger->error("加载频道内存失败，找不到数据");
+		H::logger->error("加载频道内存失败，找不到数据");
 		return false;
 	}
 }
@@ -149,14 +149,14 @@ void WorldChannel::saveDB()
 	memset(wheres, 0, sizeof(wheres));
 	sprintf(wheres, "`id`=%llu", this->id);
 
-	int ret = NetService::getMe().getDbMysql()->ExecUpdate("Chatmsg", chat_fields, (const char*)data, wheres);
+	int ret = GameService::getMe().getDbMysql()->ExecUpdate("Chatmsg", chat_fields, (const char*)data, wheres);
 	if (ret == 0)
 	{
-		Zebra::logger->info("保存频道成功!");
+		H::logger->info("保存频道成功!");
 	}
 	else
 	{
-		Zebra::logger->error("保存频道失败!");
+		H::logger->error("保存频道失败!");
 	}
 }
 
@@ -180,14 +180,14 @@ void WorldChannel::unserialize(const protobuf::ChatMsgBinary& proto)
 */
 bool WorldChannel::sendCmdToAll(const NetMsgSS *cmd, int len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = 0;
 	send->size = len;
 	memcpy(send->data, cmd, len);
 
-	MsgSendToAllFep<S2FBoradCastMsg> exec(send,sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllFep<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 
 	return true;
 }
@@ -203,13 +203,13 @@ bool WorldChannel::sendCmdToAll(const NetMsgSS *cmd, int len)
 */
 bool WorldChannel::sendNine(WorldChannel::UserData *user, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = 0;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllFep<S2FBoradCastMsg> exec(send,sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllFep<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -235,13 +235,13 @@ bool WorldChannel::sendNine(WorldChannel::UserData *user, const NetMsgSS *cmd, D
 */
 bool WorldChannel::sendCountry(WorldChannel::UserData *user, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = 0;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllFep<S2FBoradCastMsg> exec(send, sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllFep<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -256,13 +256,13 @@ bool WorldChannel::sendCountry(WorldChannel::UserData *user, const NetMsgSS *cmd
 */
 bool WorldChannel::sendCmdToMap(DWORD mapID, const NetMsgSS *cmd, int len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = mapID;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllFep<S2FBoradCastMsg> exec(send, sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllFep<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -283,13 +283,13 @@ bool WorldChannel::sendPrivate(WorldChannel::UserData *user, const NetMsgSS *rev
 
 bool WorldChannel::sendTeam(QWORD teamid, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = teamid;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllFep<S2FBoradCastMsg> exec(send, sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllFep<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -299,12 +299,13 @@ bool WorldChannel::sendTeam(QWORD teamid, const NetMsgSS *cmd, DWORD len)
 */
 WorldChannelM::WorldChannelM()
 {
-	channelUniqeID = new zUniqueDWORDID(1);
+
+	maxid = 0;
 }
 
 WorldChannelM::~WorldChannelM()
 {
-	SAFE_DELETE(channelUniqeID);
+	
 }
 
 void WorldChannelM::loadDB()
@@ -323,7 +324,7 @@ void WorldChannelM::loadDB()
 #pragma pack(pop)
 
 	dbUserID* dataList, *dataTmp;
-	int ret = NetService::getMe().getDbMysql()->ExecSelect("Chatmsg", msg_id, NULL, NULL, (unsigned char**)&dataList);
+	int ret = GameService::getMe().getDbMysql()->ExecSelect("Chatmsg", msg_id, NULL, NULL, (unsigned char**)&dataList);
 	if (ret > 0)
 	{
 		int loadcount = 0;
@@ -340,13 +341,13 @@ void WorldChannelM::loadDB()
 			else
 			{
 				failcount++;
-				Zebra::logger->error("加载频道失败[ID:%lld]", channel->id);
+				H::logger->error("加载频道失败[ID:%lld]", channel->id);
 				remove(channel);
 			}
 		}
 
 		SAFE_DELETE_VEC(dataList);
-		Zebra::logger->info("共%d条数据，成功加载%d条,失败%d条", ret, loadcount, failcount);
+		H::logger->info("共%d条数据，成功加载%d条,失败%d条", ret, loadcount, failcount);
 
 	}
 }
@@ -360,8 +361,7 @@ void WorldChannelM::loadDB()
 */
 bool WorldChannelM::getUniqeID(QWORD &tempid)
 {
-	tempid = channelUniqeID->get();
-	return (tempid != channelUniqeID->invalid());
+	return true;
 }
 
 /**
@@ -372,7 +372,7 @@ bool WorldChannelM::getUniqeID(QWORD &tempid)
 */
 void WorldChannelM::putUniqeID(const QWORD &tempid)
 {
-	channelUniqeID->put(tempid);
+	
 }
 
 /**
@@ -384,11 +384,7 @@ void WorldChannelM::putUniqeID(const QWORD &tempid)
 */
 bool WorldChannelM::add(WorldChannel *channel)
 {
-	bool ret;
-	mlock.lock();
-	ret = addEntry(channel);
-	mlock.unlock();
-	return ret;
+	return zEntryMgr::addEntry(channel);
 }
 
 /**
@@ -399,9 +395,7 @@ bool WorldChannelM::add(WorldChannel *channel)
 */
 void WorldChannelM::remove(WorldChannel* channel)
 {
-	mlock.lock();
-	removeEntry(channel);
-	mlock.unlock();
+	zEntryMgr::removeEntry(channel);
 }
 
 /**
@@ -411,13 +405,9 @@ void WorldChannelM::remove(WorldChannel* channel)
 * \param dwChannelID: 频道id
 * \return 聊天频道
 */
-WorldChannel *WorldChannelM::get(DWORD dwChannelID)
+WorldChannel *WorldChannelM::get(QWORD dwChannelID)
 {
-	WorldChannel *ret = NULL;
-	mlock.lock();
-	ret = (WorldChannel *)getEntryByTempID(dwChannelID);
-	mlock.unlock();
-	return ret;
+	return (WorldChannel *)zEntryMgr::getEntryByID(dwChannelID);
 }
 
 WorldChannel* WorldChannelM::CreateObj()

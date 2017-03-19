@@ -13,8 +13,8 @@ ProcLsHandler::~ProcLsHandler()
 
 void ProcLsHandler::RqLoadList(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const L2WLoadList* packet = static_cast<const L2WLoadList*>(pMsg);
-	NetService::getMe().getWorldUserMgr().sendRoleList(packet->accid,packet->fepsid,packet->sessid);
+	const S::SSRqLoadList* packet = static_cast<const S::SSRqLoadList*>(pMsg);
+	GameService::getMe().getWorldUserMgr().sendRoleList(packet->accid,packet->fepsid,packet->sessid);
 }
 
 

@@ -3,7 +3,7 @@
 
 
 
-ObjPool<StAccountInfo> LoginAccountMgr::s_cAccountInfoFactory;
+zObjPool<StAccountInfo> LoginAccountMgr::s_cAccountInfoFactory;
 
 LoginAccountMgr::LoginAccountMgr(void)
 {

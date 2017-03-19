@@ -163,7 +163,7 @@ bool zSessionMgr::bind(int32 id, const char* ip, int16 port,int16 maxConnects,Ne
 
 	serverListAdd.push_back(server);
 
-	Zebra::logger->info("启动一个服务:ID=%d,IP=%s,PORT=%d", id, ip,(int32) port);
+	H::logger->info("启动一个服务:ID=%d,IP=%s,PORT=%d", id, ip,(int32) port);
 
 	return true;
 
@@ -189,7 +189,7 @@ zSession* zSessionMgr::connect(int32 id, const char* ip, int16 port, NetMsgEnter
 
 	clientListAdd.push_back(client);
 
-	Zebra::logger->info("启动一个连接:ID=%d,IP=%s,PORT=%d", id, ip, (int32)port);
+	H::logger->info("启动一个连接:ID=%d,IP=%s,PORT=%d", id, ip, (int32)port);
 
 	return session;
 

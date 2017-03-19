@@ -77,7 +77,7 @@ void ProcDpHandler::RtSelectRoleResult(zSession* pSession, const NetMsgSS* pMsg,
 	//	//sMsg.nSceneID = user->sceneid;
 	//	//sMsg.nFepServerID = pFepSession->id;
 	//	//sMsg.nEnterType = ENTER_TYPE_ONLINE_FIRST;
-	//	//user->sendToSs(&sMsg, sMsg.GetPackLength());
+	//	//user->sendToSs(&sMsg, ssizeof(msg));
 
 	//	Zebra::logger->info("Send to dist scene of requst enter this %d scene", user->sceneid);
 
@@ -95,9 +95,9 @@ void ProcDpHandler::RtSelectRoleResult(zSession* pSession, const NetMsgSS* pMsg,
 
 void ProcDpHandler::NtLoadSortLists(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	Zebra::logger->info("RepLoadSortLists");
+	H::logger->info("RepLoadSortLists");
 
-	const D2WLoadSortLists* packet = static_cast<const D2WLoadSortLists*>(pMsg);
+	const S::SSRtLoadSortLists* packet = static_cast<const S::SSRtLoadSortLists*>(pMsg);
 	::protobuf::LevelTable proto;
 	proto.ParseFromArray(packet->arrByte, packet->nByteSize);
 	SortsManager::getMe().UnSerialize(proto);
@@ -106,7 +106,7 @@ void ProcDpHandler::NtLoadSortLists(zSession* pSession, const NetMsgSS* pMsg, in
 	//if (nServerType == ESERVER_TYPE_DP)
 	//{
 	//	W2DLoadSortLists send;
-	//	zSessionMgr::getMe().GetDBSession()->SendMsg(&send, send.GetPackLength());
+	//	zSessionMgr::getMe().GetDBSession()->SendMsg(&send, sizeof(send));
 	//}
 
 }

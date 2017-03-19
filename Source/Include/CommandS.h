@@ -1,1070 +1,665 @@
-#ifndef __COMMON_D2L_H_
-#define __COMMON_D2L_H_
+#ifndef __COMMON_S2S_H_
+#define __COMMON_S2S_H_
 
-
-#include "ServerDefine.h"
+#include "BaseDefine.h"
+#include "DbConfig.h"
 #include "NetConfig.h"
-#include "CommonInternal.h"
+#include "csCommon.h"
+
+namespace S
+{
+
+
+
+	/*
+
+	服务器与客户端或客户端与服务器直接通信的协议
+
+	*/
 
 #pragma pack(push,1)
 
-enum EProD2L
-{
 
-	PRO_D2L_ACCOUNT_LOGIN			= PRO_D2L_BASE + 0, // 返回帐号登录结果 
-	PRO_D2L_CHARACTER_LIST			= PRO_D2L_BASE + 1, // 返回角色列表信息 
-	PRO_D2L_ROLE_CREATE_RESULT		= PRO_D2L_BASE + 2,	// 角色创建结果 
-	PRO_D2L_NAMES_LIST				= PRO_D2L_BASE + 3, 
-
-
-};
-
-
-/*------------------------------------------------------------------
- *
- * @Brief : 校验帐户密码返回结果
- *
- * @Author: hzd 
- * @File  : CommonD2L.h
- * @Date  : 2015/10/18 20:52
- * @Copyright (c) 2015,hzd, All rights reserved.
- *-----------------------------------------------------------------*/
-struct D2LAccountLogin : public NetMsgSS
-{
-
-	enum 
+	enum
 	{
-		E_RESULT_SUCCESS = 0,
-		E_RESULT_FAIL,
+		PRO_S2S_LOGIN = PRO_S2S + 100,
+		PRO_S2S_SCENE = PRO_S2S + 200,	/* 场景协议 */
+		PRO_S2S_LOAD = PRO_S2S + 300,	/* 加载协议 */
+		PRO_S2S_CHAT = PRO_S2S + 400,
+		PRO_S2W_RELATION = PRO_S2S + 500,
 	};
 
-	int32 result;
-	int64 accountID;
-
-	D2LAccountLogin():NetMsgSS(PRO_D2L_ACCOUNT_LOGIN)
+	//------------------------req------------------------------
+	// 登录处理，包括,所有服务器登录到ws 
+	const int32 SS_RQ_LOGIN = PRO_S2S_LOGIN + 0;
+	struct SSRqLogin : public NetMsgSS
 	{
-		result = 0;
-		accountID = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/*-------------------------------------------------------------------
- * @Brief : 角色列表信息，当帐号密码正确时，会自动返回该信息到LS
- * 
- * @Author:hzd 2015:10:24
- *------------------------------------------------------------------*/
-struct D2LCharacterList : public NetMsgSS
-{
-	int32 nCount;
-	struct StCharacterInfo
-	{
-		int64 nCharID;
-		int32 nServerID;
-		int64 nAccountID;
-		char arrName[MAX_NAME_LENGTH];
-		int32 nType;
-		int32 nLevel;
-		int32 nLastLogin;
-		StCharacterInfo()
+		SSRqLogin() :NetMsgSS(SS_RQ_LOGIN)
 		{
-			nCharID = nAccountID = nServerID = nType = nLevel = nLastLogin = 0;
-			memset(arrName,0,sizeof(arrName));
+			serverID = serverID = 0;
+		}
+		int32 serverID;
+		int32 serivceID;
+
+	};
+
+	// 分配服务器信息  
+	const int32 SS_RQ_CHECK_SERIVCES = PRO_S2S_LOGIN + 2;
+	struct SSRqCheckSerivces : public NetMsgSS
+	{
+		SSRqCheckSerivces() :NetMsgSS(SS_RQ_CHECK_SERIVCES)
+		{
+
 		}
 	};
 
-	StCharacterInfo arrInfo[MAX_ROLE_TYPE_COUNT];
-
-	D2LCharacterList():NetMsgSS(PRO_D2L_CHARACTER_LIST)
+	// PING协议客户端ping服务端，ping后，就socket->setTimeout,收到数据，则取消 
+	const int32 SS_RQ_PING_S = PRO_S2S_LOGIN + 3;
+	struct SSRqPingToS : public NetMsgSS
 	{
-		nCount = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
+		SSRqPingToS() :NetMsgSS(SS_RQ_PING_S)
+		{
 
-struct D2LRoleCreateResult : public NetMsgSS
-{
-
-	enum
-	{
-		E_SUCCESS = 0,
-		E_FAIL_SYNC,
-		E_FAIL_ROLE_MAX,
-		E_FAIL_NAME_EXIST,
-		E_FAIL_INSERT_FAIL,
+		}
 	};
 
-	int32 nResult;
-	int64 nNewCharID;
 
-	D2LRoleCreateResult():NetMsgSS(PRO_D2L_ROLE_CREATE_RESULT)
-	{
-		nResult = 0;
-		nNewCharID = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
+	//--------------------------rep------------------------------------
 
-struct D2LNamesList : public NetMsgSS
-{
-	int32 nCount;
-	struct StNameInfo
+	// 登录结果  
+	const int32 SS_RT_LOGINED = PRO_S2S_LOGIN + 4;
+	struct SSRtLogined : public NetMsgSS
 	{
-		char arrName[32];
+		SSRtLogined() :NetMsgSS(SS_RT_LOGINED)
+		{
+		}
+		enum
+		{
+			SUCCESS,
+			FAIL,
+		};
+		int32 result;
 	};
 
-	StNameInfo arrNameList[1000];
-
-	D2LNamesList():NetMsgSS(PRO_D2L_NAMES_LIST)
+	// 服务器列表信息 
+	const int32 SS_RT_SERVERINFO_LIST = PRO_S2S_LOGIN + 5;
+	struct SSServerRegList : public NetMsgSS
 	{
-		nCount = 0;
-		memset(arrNameList,0,sizeof(arrNameList));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-
-//-------------------dp2ws--------------------- 600-699
-
-enum EProDP2WS
-{
-
-};
-
-/////////////////////////////////////l2d/////////////////////////////////////
-
-enum EProL2D
-{
-	PRO_L2D_ACCOUNT_LOGIN		= PRO_L2D_BASE + 1,	// 查询用户名与密码是否正确 
-	PRO_L2D_ROLE_CREATE			= PRO_L2D_BASE + 2, // 创建角色
-};
-
-struct L2DAccountLogin : public NetMsgSS
-{
-	L2DAccountLogin():NetMsgSS(PRO_L2D_ACCOUNT_LOGIN)
-	{
-
-	}
-	char name[32];
-	char password[32];
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct L2DRoleCreate : public NetMsgSS
-{
-	int32 nType;
-	int64 nAccountID;
-	char arrName[MAX_NAME_LENGTH];
-	L2DRoleCreate():NetMsgSS(PRO_L2D_ROLE_CREATE)
-	{
-		nType = 0;
-		nAccountID = 0;
-		memset(arrName,0,sizeof(arrName));
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/////////////////////////////////s2dp/////////////////////////////////////////
-
-enum EProS2D
-{
-
-	PRO_S2D_LOAD_USER			= PRO_S2D_BASE + 0,	// 加载角色数据 
-	PRO_S2D_CLIENT_EXIT_SCENE	= PRO_S2D_BASE + 1,	// 玩家从场景退出
-	PRO_S2D_SAVE_USER			= PRO_S2D_BASE + 2, // 保存数据 
-
-	PRO_S2D_SAVE_MIXITEMNUMBER	= PRO_S2D_BASE + 3, // 
-	PRO_S2D_SAVE_MXIITEMBINARY	= PRO_S2D_BASE + 4,
-
-};
-
-
-struct S2DLoadUser : public NetMsgSS
-{
-	int64 uid;
-	int64 sceneid;
-	int32 enterType; /* 0首次进入,1更改场景,2离线加载 */
-	S2DLoadUser():NetMsgSS(PRO_S2D_LOAD_USER)
-	{
-		uid = sceneid = enterType = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct S2DClientExitScene : public NetMsgSS
-{
-
-	S2DClientExitScene():NetMsgSS(PRO_S2D_CLIENT_EXIT_SCENE)
-	{
-
-	}
-
-	int32 nReason;
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-
-};
-
-struct S2DSaveUser : public NetMsgSS
-{
-	S2DSaveUser():NetMsgSS(PRO_S2D_SAVE_USER)
-	{
-		uid = size = 0;
-	}
-	int64 uid;
-	UserSceneBase base;
-	int32 size;
-	char data[0];
-};
-
-struct S2DSaveMixItemNumber : public NetMsgSS
-{
-	int32 nType;
-	int64 nValue;
-	S2DSaveMixItemNumber():NetMsgSS(PRO_S2D_SAVE_MIXITEMNUMBER)
-	{
-		nType = 0;
-		nValue = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-////////////////////////////////d2s//////////////////////////////////////////
-
-enum EProD2S
-{
-	PRO_D2S_LOAD_USER	= PRO_D2S_BASE + 0, /* 加载角色数据 */ 
-	PRO_D2S_SAVE_CALLBACK	= PRO_D2S_BASE + 1, /* 保存成功回调 */ 
-};
-
-
-
-
-struct D2SLoadUser : public NetMsgSS
-{
-	D2SLoadUser():NetMsgSS(PRO_D2S_LOAD_USER)
-	{
-		size = 0;
-	}
-	int64 uid;
-	UserSceneBase base;
-	int32 size;
-	char data[0];
-};
-
-struct D2SSaveCallBack : public NetMsgSS
-{
-
-	int64 nCharID;
-	int32 nReceiptID;
-
-	D2SSaveCallBack() :NetMsgSS(PRO_D2S_SAVE_CALLBACK)
-	{
-		nCharID = nReceiptID = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-
-};
-
-
-
-////////////////////////////////s2fep//////////////////////////////////////////
-
-enum EProS2F
-{
-	PRO_S2F_SYNC_USER_SCENE = PRO_S2F_BASE + 0,
-	PRO_S2F_SYNC_USER_DATA = PRO_S2F_BASE + 1,	/* 加载角色数据到网关 */ 
-	PRO_S2F_BORADCAST_MSG = PRO_S2F_BASE + 2,	/* 广播消息到用户（网关处理） */
-};
-
-struct S2FSyncUserScene : public NetMsgSS
-{
-	S2FSyncUserScene():NetMsgSS(PRO_S2F_SYNC_USER_SCENE)
-	{
-		uid = 0;
-	}
-
-	int64 uid; 
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct S2FSyncUserData : public NetMsgSS
-{
-	int64 uid;
-	char name[MAX_NAME_LENGTH + 1];
-	UserGateBase base;
-	
-	S2FSyncUserData() :NetMsgSS(PRO_S2F_SYNC_USER_DATA)
-	{
-		uid = 0;
-		memset(name, 0, sizeof(name));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/* 广播消息类型 */
-enum 
-{
-	BORADCAST_TYPE_ALL = 0,
-	BORADCAST_TYPE_COUNTRY,
-	BORADCAST_TYPE_MAPID,
-	BORADCAST_TYPE_SCENE,
-	BORADCAST_TYPE_ZONE,
-	BORADCAST_TYPE_NINE,
-	BORADCAST_TYPE_TEAM
-};
-
-/*
- * 广播消息 
- * 
- */
-struct S2FBoradCastMsg : public NetMsgSS
-{
-	S2FBoradCastMsg() : NetMsgSS(PRO_S2F_BORADCAST_MSG)
-	{
-		msgtype = regid = regid = x = y = size = 0;
-	}
-
-	int32 msgtype;	/* 0全体,1国家,2地图,3场景,4区域,5九屏,6队伍 */
-	int32 regid;	/* 范围参考值,复用：国家ID,地图ID,场景ID,区域ID,队伍ID */
-	int64 userid;	/* 用户ID参考值 */
-	int32 x;		/* 坐标x */
-	int32 y;		/* 坐标y */
-
-	int32 size;
-	char data[0];
-};
-
-enum EProF2S
-{
-	PRO_F2S_PLAYER_EXIT = PRO_F2S_BASE + 0, // 客户端退出 
-};
-
-struct F2SRqPlayerExit : public NetMsgSS
-{
-	enum
-	{
-		E_REASON_UNKOWN = 0,			// 未知 
-		E_REASON_SERVER_TICKED,			// 服务器踢出
-		E_REASON_CLIENT_EXIT,			// 主动退出 
-		E_REASON_TIMEOUT,				// 超时断开 
-		E_REASON_PACKAGE_ERROR,			// 非法协议 
-		E_REASON_SEND_ERROR,			// 向Client发送时出错 
-		E_REASON_SWITCH_SCENE,			// 切换场景（这个仅对Scene，dp）
-		E_REASON_REPEAT_CHARACTER = 99,	// 重复登录
+		SSServerRegList() :NetMsgSS(SS_RT_SERVERINFO_LIST)
+		{
+			count = 0;
+		}
+		int8 count;
+		t_ServerReg reglist[0];
+		int32 getSize()
+		{
+			return sizeof(*this) + count * sizeof(t_ServerReg);
+		}
 	};
 
-	int64 uid;
-	int32 nReason;
-
-	enum
+	// 更新服务器信息 
+	const int32 SS_NT_SERVERID = PRO_S2S_LOGIN + 6;
+	struct SSNtInitUserClient : public NetMsgSS
 	{
-		E_STATE_IN_UNKOWN = 0,	// 未知 
-		E_STATE_IN_LOGIN,		// 在登录时退出 
-		E_STATE_IN_SELECT,		// 在选择角色时退出 
-		E_STATE_IN_WORLD,		// 在WORLD中 
-		E_STATE_IN_SCENE,		// 在场景中退出 
+		SSNtInitUserClient() :NetMsgSS(SS_NT_SERVERID)
+		{
+			nSceneID = 0;
+		}
+		int32 nSceneID;
 	};
 
-	int32 nPostion;				// 玩家所在位置 
-
-	F2SRqPlayerExit() : NetMsgSS(PRO_F2S_PLAYER_EXIT)
+	// 服务器返回PING的结果，将socket取消定时器 
+	const int32 SS_RT_PING_S = PRO_S2S_LOGIN + 7;
+	struct SSRtPingS : public NetMsgSS
 	{
-		nReason = 0;
-		nPostion = 0;
-	}
+		SSRtPingS() :NetMsgSS(SS_RT_PING_S)
+		{
+		}
+	};
 
-	inline int32 GetPackLength()const
+	static dbCol user_columns[] =
 	{
-		return sizeof(*this);
-	}
-};
+		{ "ID", DB_QWORD, sizeof(int64) },
+		{ "ACCID", DB_QWORD, sizeof(int64) },
+		{ "NAME",DB_STR,MAX_NAMESIZE + 1 },
+		{ "STATUS",DB_BYTE, sizeof(int8) },
+		{ "LEVEL",DB_WORD, sizeof(int16) },
+		{ "VIP",DB_BYTE, sizeof(int8) },
+		{ "SCENEID",DB_DWORD, sizeof(int64) },
+		{ "MAPID",DB_DWORD, sizeof(int32) },
+		{ "ROLETYPE",DB_DWORD, sizeof(int8) },
+		{ "EXP",DB_DWORD, sizeof(int32) },
+		{ "POSX",DB_DWORD, sizeof(int32) },
+		{ "POSY",DB_DWORD, sizeof(int32) },
+		{ "GOLD",DB_DWORD, sizeof(int32) },
+		{ "SILVER",DB_DWORD, sizeof(int32) },
+		{ "COPPER",DB_DWORD, sizeof(int32) },
+		{ "LASTLOGIN",DB_DWORD, sizeof(int32) },
+		{ "COUNTRY",DB_DWORD, sizeof(int8) },
+		{ "TEAMID",DB_DWORD, sizeof(int32) },
+		{ "INFO",DB_BIN2, 0 },
+		{ NULL,0,0 }
+	};
+
+	struct t_UserSceneBase
+	{
+		t_UserSceneBase()
+		{
+			id = accid = status = level = sceneid = mapid = vip = roletype = exp = 0;
+			posx = posy = gold = silver = copper = lastLogin = country = teamid = 0;
+		}
+
+		int64 id;
+		int64 accid;
+		char name[MAX_NAMESIZE + 1];
+		int8 status;
+		int16 level;
+		int8 vip;
+		int64 sceneid;
+		int32 mapid;
+		int8 roletype;				// 角色类型 
+		int32 exp;					// 经验 
+		int32 posx;					// X
+		int32 posy;					// Y
+		int32 gold;
+		int32 silver;
+		int32 copper;
+		int32 lastLogin;
+		int8 country;
+		int32 teamid;
+	};
+
+	struct t_UserGateBase
+	{
+		t_UserGateBase()
+		{
+			uid = x = y = level = vip = sceneid = mapid = zoneid = countryID = teamid = 0;
+			bzero(name, sizeof(name));
+		}
+
+		int32 uid;
+		char name[MAX_NAMESIZE + 1];
+		int32 x;
+		int32 y;
+		int16 level;
+		int8 vip;
+		int64 sceneid;
+		int32 mapid;
+		int32 zoneid;
+		int8 countryID;
+		int32 teamid;
+	};
+
+	struct t_UserWorldBase // World
+	{
+
+	};
+
+
+	struct t_UserWorldBase2 // offline
+	{
+
+	};
+
+	/////////////////////////////////s2dp/////////////////////////////////////////
+
+	// 消息的结构体
+	struct t_MsgObject
+	{
+		char conent[MAX_ACCNAMESIZE + 1];
+	};
+
+	// 消息详细结构
+	struct t_RelChatMsg
+	{
+		int64 msgid; 		// 唯一消息编号
+		int64 senduid;		// 发送者ID
+		char sendname[MAX_NAMESIZE + 1];	// 发送者名字
+		int64 recvuid;		// 接收者ID
+		char recvname[MAX_NAMESIZE + 1];	// 接收者名字
+		int32 sendtime;	// 发送时间
+		t_MsgObject msgobj;	// 消息的结构体	
+	};
+
+	// 加载角色数据 
+	const int32 SS_RQ_LOAD_USER = PRO_S2S_CHAT + 0;
+	struct SSRqLoadUser : public NetMsgSS
+	{
+		SSRqLoadUser() :NetMsgSS(SS_RQ_LOAD_USER)
+		{
+			uid = sceneid = enterType = 0;
+		}
+		int64 uid;
+		int64 sceneid;
+		int32 enterType; /* 0首次进入,1更改场景,2离线加载 */
+	};
+
+	// 玩家从场景退出
+	const int32 SS_RQ_CLIENT_EXIT_SCENE = PRO_S2S_CHAT + 1;
+	struct SSRqClientExitScene : public NetMsgSS
+	{
+		SSRqClientExitScene() :NetMsgSS(SS_RQ_CLIENT_EXIT_SCENE)
+		{
+		}
+		int32 nReason;
+	};
+
+	// 保存数据 
+	const int32	SS_RQ_SAVE_USER = PRO_S2S_CHAT + 2;
+	struct SSRqSaveUser : public NetMsgSS
+	{
+		SSRqSaveUser() :NetMsgSS(SS_RQ_SAVE_USER)
+		{
+		}
+		t_UserSceneBase base;
+		int32 size;
+		BinaryHeader header;
+		int32 getSize()
+		{
+			return sizeof(SSRqSaveUser) + header.size;
+		}
+	};
+
+	////////////////////////////////d2s//////////////////////////////////////////
+
+	/* 加载角色数据 */
+	const int32 SS_RT_LOAD_USER = PRO_S2S_CHAT + 3;
+	struct SSRtLoadUser : public NetMsgSS
+	{
+		SSRtLoadUser() :NetMsgSS(SS_RT_LOAD_USER)
+		{
+		}
+		t_UserSceneBase base;
+		int32 size;
+		BinaryHeader header;
+		int32 getSize()
+		{
+			return sizeof(SSRtLoadUser) + header.size;
+		}
+	};
+
+
+	////////////////////////////////s2fep//////////////////////////////////////////
+
+	const int32 SS_NT_SYNC_USER_SCENE = PRO_S2S_CHAT + 4;
+	struct SSNtSyncUserScene : public NetMsgSS
+	{
+		SSNtSyncUserScene() :NetMsgSS(SS_NT_SYNC_USER_SCENE)
+		{
+			uid = 0;
+		}
+		int64 uid;
+	};
+
+	/* 加载角色数据到网关 */
+	const int32 SS_NT_SYNC_USER_DATA = PRO_S2S_CHAT + 5;
+	struct SSNtSyncUserData : public NetMsgSS
+	{
+		SSNtSyncUserData() :NetMsgSS(SS_NT_SYNC_USER_DATA)
+		{
+		}
+		t_UserGateBase base;
+	};
+
+	/*
+	 * 广播消息
+	 */
+	const int32 SS_NT_BORADCAST_MSG = PRO_S2S_CHAT + 6;
+	struct SSNtBoradCastMsg : public NetMsgSS
+	{
+		SSNtBoradCastMsg() : NetMsgSS(SS_NT_BORADCAST_MSG)
+		{
+			msgtype = regid = regid = x = y = size = 0;
+		}
+
+		/* 广播消息类型 */
+		enum
+		{
+			TYPE_ALL = 0,
+			TYPE_COUNTRY,
+			TYPE_MAPID,
+			TYPE_SCENE,
+			TYPE_ZONE,
+			TYPE_NINE,
+			TYPE_TEAM
+		};
+
+		int32 msgtype;	/* 0全体,1国家,2地图,3场景,4区域,5九屏,6队伍 */
+		int32 regid;	/* 范围参考值,复用：国家ID,地图ID,场景ID,区域ID,队伍ID */
+		int64 userid;	/* 用户ID参考值 */
+		int32 x;		/* 坐标x */
+		int32 y;		/* 坐标y */
+		int32 size;
+		char data[0];
+	};
+
+	// 客户端退出 
+	const int32 SS_RQ_PLAYER_EXIT = PRO_S2S_CHAT + 7;
+	struct SSRqPlayerExit : public NetMsgSS
+	{
+		SSRqPlayerExit() : NetMsgSS(SS_RQ_PLAYER_EXIT)
+		{
+			nReason = 0;
+			nPostion = 0;
+		}
+
+		enum
+		{
+			REASON_UNKOWN = 0,			// 未知 
+			REASON_SERVER_TICKED,			// 服务器踢出
+			REASON_CLIENT_EXIT,			// 主动退出 
+			REASON_TIMEOUT,				// 超时断开 
+			REASON_PACKAGE_ERROR,			// 非法协议 
+			REASON_SEND_ERROR,			// 向Client发送时出错 
+			REASON_SWITCH_SCENE,			// 切换场景（这个仅对Scene，dp）
+			REASON_REPEAT_CHARACTER = 99,	// 重复登录
+		};
+
+		enum
+		{
+			STATE_IN_UNKOWN = 0,	// 未知 
+			STATE_IN_LOGIN,		// 在登录时退出 
+			STATE_IN_SELECT,		// 在选择角色时退出 
+			STATE_IN_WORLD,		// 在WORLD中 
+			STATE_IN_SCENE,		// 在场景中退出 
+		};
+
+		int64 uid;
+		int32 nReason;
+		int32 nPostion;				// 玩家所在位置 
+	};
+
+	// 注册场景 
+	const int32 SS_RQ_REGISTER_SCENE = PRO_S2S_CHAT + 8;
+	struct SSRqRegisterScene : public NetMsgSS
+	{
+		SSRqRegisterScene() :NetMsgSS(SS_RQ_REGISTER_SCENE)
+		{
+		}
+
+		QWORD sceneid;
+		QWORD sceneTempID;
+		char name[MAX_NAMESIZE + 1];
+		char fileName[MAX_NAMESIZE + 1];
+		DWORD dwCountryID;
+		BYTE byLevel;
+		DWORD mapid;
+	};
+
+	// 注销场景 
+	const int32 SS_RQ_CANCEL_SCENE = PRO_S2S_CHAT + 9;
+	struct SSRqCancelScene : public NetMsgSS
+	{
+		SSRqCancelScene() :NetMsgSS(SS_RQ_CANCEL_SCENE)
+		{
+
+		}
+		int32 nSceneNum;
+		int32 arrSceneID[MAX_MAP_NUM];
+	};
+
+	// 进入场景结果
+	const int32 SS_RQ_ENTER_SCENE_RESULT = PRO_S2S_CHAT + 10;
+	struct SSRqEnterSceneResult : public NetMsgSS
+	{
+		SSRqEnterSceneResult() :NetMsgSS(SS_RQ_ENTER_SCENE_RESULT)
+		{
+			nSceneID = nEnterType = nCross = nResult = 0;
+		}
+		enum
+		{
+			E_ENTER_SUCCESS = 0,
+			E_ENTER_FAIL,
+		};
+		int32 nSceneID;
+		int32 nEnterType;
+		int32 nCross;// 是否为跨服，1是，则需要通知原场景，0否，则需要进入主场景 
+		int32 nResult;
+	};
+
+	/*
+
+	切换场景，由ss向ws请求
+	参考td
+
+	*/
+	const int32 SS_RQ_CHANGE_SCENE = PRO_S2S_CHAT + 11; // 请求切换场景 
+	struct SSRqChangeScene : public NetMsgSS
+	{
+		SSRqChangeScene() :NetMsgSS(SS_RQ_CHANGE_SCENE)
+		{
+			uid = sceneID = 0;
+		}
+		int64 uid;
+		int32 sceneID;
+		stEnterSceneParam stParam;
+	};
+
+	/* ChatMsg */
+	/* 单聊转发消息 */
+	const int32 SS_RQ_CHATTOONE = PRO_S2S_CHAT + 12;
+	struct SSRqChatToOne : public NetMsgSS
+	{
+		SSRqChatToOne() :NetMsgSS(SS_RQ_CHATTOONE)
+		{
+		}
+		int64 fromUID;
+		int64 toUID;
+	};
+
+	const int32 SS_RQ_REL_SCENE_ADD = PRO_S2S_CHAT + 13;
+	struct SSRqRelalionAdd : public NetMsgSS
+	{
+		SSRqRelalionAdd() :NetMsgSS(SS_RQ_REL_SCENE_ADD)
+		{
+
+		}
+	};
+
+
+	//////////////////////////////////////////////////////////////////////////
+
+	/* 全局信息 */
+	const int32 SS_RT_GLOBAL_INFO = PRO_S2S_LOAD + 0;
+	struct SSRtGlobalInfo : public NetMsgSS
+	{
+		SSRtGlobalInfo() :NetMsgSS(SS_RT_GLOBAL_INFO)
+		{
+
+		}
+		// 第几次启动 
+		int32 nStartTimes;
+	};
+
+	/*-------------------------------------------------------------------
+	* @Brief : 保存在WS上的数据，WS上保存的数据比较少，也减少S2W数据同步
+	*
+	* @Author:hzd 2015:11:6
+	*------------------------------------------------------------------*/
+	struct StUserDataForWs
+	{
+		StUserDataForWs()
+		{
+			memset(this, 0, sizeof(*this));
+		}
+
+		StUserDataForWs(const StUserDataForWs* _userData)
+		{
+			memcpy(this, _userData, sizeof(StUserDataForWs));
+		}
+		int64 uid;
+		int32 nServerID;
+		int64 nAccountID;
+		char name[MAX_NAMESIZE + 1];
+		int32 nType;
+		int32 nLevel;
+		int32 nLandMapid;
+		int32 nLandX;
+		int32 nLandY;
+		int32 nInstanceMapId;
+		int32 nInstanceX;
+		int32 nInstanceY;
+
+	};
+
+	/* 选择角色结果 */
+	const int32 SS_RT_SELECT_ROLE_RESULT = PRO_S2S_LOAD + 1;
+	struct SSRtSelectRoleResult : public NetMsgSS
+	{
+		SSRtSelectRoleResult() :NetMsgSS(SS_RT_SELECT_ROLE_RESULT)
+		{
+			nResult = fepSessionID = 0;
+		}
+		enum {
+
+			E_SELECT_SUCCESS = 0,
+			E_SELECT_LOADING,	// 加载中 
+			E_SELECT_NOT_FOUND, // 找不到
+		};
+		int32 nResult;
+		int64 fepSessionID;
+		StUserDataForWs data;
+	};
+
+	/* 加载数据 */
+	const int32 SS_RT_LOAD_SORTLIST = PRO_S2S_LOAD + 2;
+	struct SSRtLoadSortLists : public NetMsgSS
+	{
+		SSRtLoadSortLists() :NetMsgSS(SS_RT_LOAD_SORTLIST)
+		{
+			nByteSize = 0;
+			memset(arrByte, 0, sizeof(arrByte));
+		}
+		int32 nByteSize; /* 该长度为proto真实长度 */
+		char arrByte[4096];
+	};
+
+	// 加载角色列表 
+	const int32 SS_RQ_LOADLIST = PRO_S2S_LOAD + 3;
+	struct SSRqLoadList : public NetMsgSS
+	{
+		SSRqLoadList() :NetMsgSS(SS_RQ_LOADLIST)
+		{
+			accid = 0;
+		}
+		int64 accid;
+	};
+
+	// 客户端退出 
+	const int32 SS_NT_PLAYER_EXIT = PRO_S2S_LOAD + 4;
+	struct SSNtRqPlayerExit : public NetMsgSS
+	{
+		SSNtRqPlayerExit() : NetMsgSS(SS_NT_PLAYER_EXIT)
+		{
+			nReason = 0;
+			nPostion = 0;
+		}
+
+		enum
+		{
+			E_REASON_UNKOWN = 0,			// 未知 
+			E_REASON_SERVER_TICKED,			// 服务器踢出
+			E_REASON_CLIENT_EXIT,			// 主动退出 
+			E_REASON_TIMEOUT,				// 超时断开 
+			E_REASON_PACKAGE_ERROR,			// 非法协议 
+			E_REASON_SEND_ERROR,			// 向Client发送时出错 
+			E_REASON_SWITCH_SCENE,			// 切换场景（这个仅对Scene，dp）
+			E_REASON_REPEAT_CHARACTER = 99,	// 重复登录
+		};
+
+		int64 uid;
+		int32 nReason;
+
+		enum
+		{
+			E_STATE_IN_UNKOWN = 0,	// 未知 
+			E_STATE_IN_LOGIN,		// 在登录时退出 
+			E_STATE_IN_SELECT,		// 在选择角色时退出 
+			E_STATE_IN_WORLD,		// 在WORLD中 
+			E_STATE_IN_SCENE,		// 在场景中退出 
+		};
+
+		int32 nPostion;				// 玩家所在位置 
+
+
+	};
+
+	// 创建频道
+	const int32 SS_NT_CREATE_CHANNEL = PRO_S2S_LOAD + 5;
+	struct SSNtChannelCreate : public NetMsgSS
+	{
+		SSNtChannelCreate() : NetMsgSS(SS_NT_CREATE_CHANNEL)
+		{
+
+		}
+		char name[MAX_NAMESIZE + 1];
+		int8 count;
+		int64 uids[0];
+	};
+
+	// 更新频道
+	const int32 SS_NT_UPDATE_CHANNLE = PRO_S2S_LOAD + 6;
+	struct SSNtChannelUpdate : public NetMsgSS
+	{
+		SSNtChannelUpdate() :NetMsgSS(SS_NT_UPDATE_CHANNLE)
+		{
+
+		}
+		char name[MAX_NAMESIZE + 1];
+		int8 opt;//0全部更新，1新增，2删除
+		int8 count;
+		int64 uids[0];
+	};
+
+	// 删除频道
+	const int32 SS_NT_DELETE_CHANNEL = PRO_S2S_LOAD + 7;
+	struct SSNtChannelDelete : public NetMsgSS
+	{
+		SSNtChannelDelete() :NetMsgSS(SS_NT_DELETE_CHANNEL)
+		{
+
+		}
+		char name[MAX_NAMESIZE + 1];
+	};
+
+	//////////////////////////////////////////////////////////////////////////
+
+
+	/* 请求进入场景 */
+	const int32 SS_RQ_ReqTransfer = PRO_S2S_LOAD + 8;
+	struct SSRqEnterScene : public NetMsgSS
+	{
+		SSRqEnterScene() :NetMsgSS(SS_RQ_ReqTransfer)
+		{
+			uid = mapid = sceneid = enterscenetime = 0;
+		}
+		int64 uid;
+		int64 sceneid;
+		int16 mapid;
+		int32 enterscenetime;
+	};
+
+	/* 请求场景结果 */
+	const int32 SS_RQ_ENTER_RESULT = PRO_S2S_LOAD + 9;
+	struct SSRqEnterResult : public NetMsgSS
+	{
+		SSRqEnterResult() :NetMsgSS(SS_RQ_ENTER_RESULT)
+		{
+			nCharID = nResult = 0;
+		}
+		enum
+		{
+			E_ENTER_SUCCESS = 0,
+			E_ENTER_FAIL,
+		};
+
+		int64 nCharID;
+		int32 nResult;
+	};
 
 #pragma pack(pop)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
-
-#ifndef __COMMON_S2W_H_
-#define __COMMON_S2W_H_
-
-
-#include "ServerDefine.h"
-#include "NetConfig.h"
-#include "CommanC.h"
-
-
-#pragma pack(push,1)
-
-enum
-{
-	PRO_S2W_SCENE_BASE = PRO_S2W_BASE + 0,
-	PRO_S2W_CHAT_BASE = PRO_S2W_BASE + 400,
-	PRO_S2W_REL_BASE = PRO_S2W_BASE + 500,
-	PRO_L2W_LOGIN_BASE = PRO_L2W_BASE + 100,
-	PRO_F2W_LOGIN_BASE = PRO_F2W_BASE + 200,
-};
-
-
-enum EProS2W
-{
-	/* 场景相关协议 */
-	PRO_S2W_REGISTER_SCENE = PRO_S2W_SCENE_BASE + 0, // 注册场景 
-	PRO_S2W_CANCEL_SCENE = PRO_S2W_SCENE_BASE + 1, // 注销场景 
-	PRO_S2W_ENTER_SCENE_RESULT = PRO_S2W_SCENE_BASE + 2,	// 进入场景结果
-	PRO_S2W_CHANGE_SCENE = PRO_S2W_SCENE_BASE + 3, // 请求切换场景 
-
-
-												   // scene
-												   /* 聊天协议 */
-												   PRO_S2W_CHATTOONE = PRO_S2W_CHAT_BASE + 0,
-												   //PRO_S2W_REL_SCENE_RM = PRO_S2W_REL_BASE + 1,
-
-};
-
-struct S2WRegisterScene : public NetMsgSS
-{
-
-	S2WRegisterScene() :NetMsgSS(PRO_S2W_REGISTER_SCENE)
-	{
-
-	}
-
-	QWORD sceneid;
-	QWORD sceneTempID;
-	char name[MAX_NAMESIZE + 1];
-	char fileName[MAX_NAMESIZE + 1];
-	DWORD dwCountryID;
-	BYTE byLevel;
-	DWORD mapid;
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct S2WReqCancelScene : public NetMsgSS
-{
-	S2WReqCancelScene() :NetMsgSS(PRO_S2W_CANCEL_SCENE)
-	{
-
-	}
-	int32 nSceneNum;
-	int32 arrSceneID[MAX_MAP_NUM];
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-
-struct S2WEnterSceneResult : public NetMsgSS
-{
-
-	int32 nSceneID;
-	int32 nEnterType;
-	// 是否为跨服，1是，则需要通知原场景，0否，则需要进入主场景 
-	int32 nCross;
-	enum
-	{
-		E_ENTER_SUCCESS = 0,
-		E_ENTER_FAIL,
-	};
-
-	int32 nResult;
-
-	S2WEnterSceneResult() :NetMsgSS(PRO_S2W_ENTER_SCENE_RESULT)
-	{
-		nSceneID = nEnterType = nCross = nResult = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/*
-
-切换场景，由ss向ws请求
-参考td
-
-*/
-struct S2WChangeScene : public NetMsgSS
-{
-	int64 uid;
-	int32 sceneID;
-	stEnterSceneParam stParam;
-	S2WChangeScene() :NetMsgSS(PRO_S2W_CHANGE_SCENE)
-	{
-		uid = sceneID = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/* ChatMsg */
-/* 单聊转发消息 */
-struct S2WChatToOne : public NetMsgSS
-{
-	S2WChatToOne() :NetMsgSS(PRO_S2W_CHATTOONE)
-	{
-	}
-	int64 fromUID;
-	int64 toUID;
-	t_ChatBase msg;
-};
-
-const int32 PRO_S2W_REL_SCENE_ADD = PRO_S2W_REL_BASE + 0;
-struct S2WRelalionAdd : public NetMsgSS
-{
-	S2WRelalionAdd() :NetMsgSS(PRO_S2W_REL_SCENE_ADD)
-	{
-
-	}
-};
-
-
-//////////////////////////////////////////////////////////////////////////
-
-enum EProD2W
-{
-
-	PRO_D2W_GLOBAL_INFO = PRO_D2W_BASE + 0,	/* 全局信息 */
-	PRO_D2W_SELECT_ROLE_RESULT = PRO_D2W_BASE + 1,	/* 选择角色结果 */
-	PRO_D2W_LOAD_SORTLIST = PRO_D2W_BASE + 2, /* 加载数据 */
-
-};
-
-struct D2WGlobalInfo : public NetMsgSS
-{
-
-	// 第几次启动 
-	int32 nStartTimes;
-	// 
-
-	D2WGlobalInfo() :NetMsgSS(PRO_D2W_GLOBAL_INFO)
-	{
-
-	}
-	inline int32 GetLength()
-	{
-		return sizeof(*this);
-	}
-};
-
-/*-------------------------------------------------------------------
-* @Brief : 保存在WS上的数据，WS上保存的数据比较少，也减少S2W数据同步
-*
-* @Author:hzd 2015:11:6
-*------------------------------------------------------------------*/
-struct StUserDataForWs
-{
-	int64 uid;
-	int32 nServerID;
-	int64 nAccountID;
-	char name[MAX_NAMESIZE + 1];
-	int32 nType;
-	int32 nLevel;
-	int32 nLandMapid;
-	int32 nLandX;
-	int32 nLandY;
-	int32 nInstanceMapId;
-	int32 nInstanceX;
-	int32 nInstanceY;
-	StUserDataForWs()
-	{
-		memset(this, 0, sizeof(*this));
-	}
-
-	StUserDataForWs(const StUserDataForWs* _userData)
-	{
-		memcpy(this, _userData, sizeof(StUserDataForWs));
-	}
-
-	inline int32 GetLength()
-	{
-		return sizeof(*this);
-	}
-};
-
-/*-------------------------------------------------------------------
-* @Brief : 选择角色信息，本信息如果成功会有数据通知到Client，失败
-*			则会停在WS，由WS处理，等Client再次发起选择角色
-* @Author:hzd 2015:11:6
-*------------------------------------------------------------------*/
-struct D2WSelectRoleResult : public NetMsgSS
-{
-	enum {
-
-		E_SELECT_SUCCESS = 0,
-		E_SELECT_LOADING,	// 加载中 
-		E_SELECT_NOT_FOUND, // 找不到
-	};
-	int32 nResult;
-	int64 fepSessionID;
-	StUserDataForWs data;
-	D2WSelectRoleResult() :NetMsgSS(PRO_D2W_SELECT_ROLE_RESULT)
-	{
-		nResult = fepSessionID = 0;
-	}
-	inline int32 GetLength()
-	{
-		return sizeof(*this);
-	}
-};
-
-struct D2WLoadSortLists : public NetMsgSS
-{
-	int32 nByteSize; /* 该长度为proto真实长度 */
-	char arrByte[4096];
-	D2WLoadSortLists() :NetMsgSS(PRO_D2W_LOAD_SORTLIST)
-	{
-		nByteSize = 0;
-		memset(arrByte, 0, sizeof(arrByte));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-enum EProL2W
-{
-	PRO_L2W_LOADLIST = PRO_L2W_LOGIN_BASE + 0, // 加载角色列表 
-};
-
-// login
-struct L2WLoadList : public NetMsgSS
-{
-	L2WLoadList() :NetMsgSS(PRO_L2W_LOADLIST)
-	{
-		accid = 0;
-	}
-
-	int64 accid;
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-enum EProF2W
-{
-	PRO_F2W_PLAYER_EXIT = PRO_F2W_LOGIN_BASE + 0, // 客户端退出 
-};
-
-struct F2WRqPlayerExit : public NetMsgSS
-{
-	enum
-	{
-		E_REASON_UNKOWN = 0,			// 未知 
-		E_REASON_SERVER_TICKED,			// 服务器踢出
-		E_REASON_CLIENT_EXIT,			// 主动退出 
-		E_REASON_TIMEOUT,				// 超时断开 
-		E_REASON_PACKAGE_ERROR,			// 非法协议 
-		E_REASON_SEND_ERROR,			// 向Client发送时出错 
-		E_REASON_SWITCH_SCENE,			// 切换场景（这个仅对Scene，dp）
-		E_REASON_REPEAT_CHARACTER = 99,	// 重复登录
-	};
-
-	int64 uid;
-	int32 nReason;
-
-	enum
-	{
-		E_STATE_IN_UNKOWN = 0,	// 未知 
-		E_STATE_IN_LOGIN,		// 在登录时退出 
-		E_STATE_IN_SELECT,		// 在选择角色时退出 
-		E_STATE_IN_WORLD,		// 在WORLD中 
-		E_STATE_IN_SCENE,		// 在场景中退出 
-	};
-
-	int32 nPostion;				// 玩家所在位置 
-
-	F2WRqPlayerExit() : NetMsgSS(PRO_F2W_PLAYER_EXIT)
-	{
-		nReason = 0;
-		nPostion = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-#pragma pack(pop)
-
-
-
-
-#endif
-
-#ifndef __COMMON_W2D_H_
-#define __COMMON_W2D_H_
-
-
-#include "ServerDefine.h"
-#include "NetConfig.h"
-
-
-//-----------------------600~699-----------------
-
-enum EProWS2DP
-{
-	PRO_W2D_LOGINED = PRO_W2D_BASE + 0, // 登录结果 
-	PRO_W2D_SERVER_INFO = PRO_W2D_BASE + 1,
-	PRO_W2D_SCENE_INFO = PRO_W2D_BASE + 2,
-	PRO_W2D_EVENT_INFO = PRO_W2D_BASE + 3, // 查询event_info是否有后台事件要执行   
-	PRO_W2D_SELECT_ROLE = PRO_W2D_BASE + 4, // 选择角色 
-
-	PRO_W2D_LOAD_SORTLISTS = PRO_W2D_BASE + 100, /* 加载排行榜数据 */
-	PRO_W2D_SAVE_SORTLIST = PRO_W2D_BASE + 101, /* 保存排行榜数据 */
-};
-
-#pragma pack(push,1)
-
-struct WS2DPLogined : public NetMsgSS
-{
-
-	WS2DPLogined() :NetMsgSS(PRO_W2D_LOGINED)
-	{
-
-	}
-	enum
-	{
-		SUCCESS,
-		FAIL,
-	};
-	int32 nResult; // 0 成功,其他失败 
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct NotifyServerInfo
-{
-	NotifyServerInfo()
-	{
-		int32 nServerLoad = 0;
-		int32 nClientLoad = 0;
-	}
-	char arrHost[32];
-	int32 nPort;
-	int32 nServerType;
-	int32 nServerID;
-	int32 nServerLoad; // 该服务器下负载人数 
-	int32 nClientLoad; // 客户端选择的人数 
-};
-
-struct W2DNotifyServerInfo : public NetMsgSS
-{
-	W2DNotifyServerInfo() :NetMsgSS(PRO_W2D_SERVER_INFO)
-	{
-		nGroupID = 0;
-	}
-	int32 nGroupID;
-	int32 nServerNum;
-	NotifyServerInfo arrServerInfo[MAX_SERVER_NUM];
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct NotifySceneInfo
-{
-	int32 nServerID;
-	int32 nSceneID;
-	int32 nLoadNum; // 当前负载量 
-};
-
-struct W2DNotifySceneInfo : public NetMsgSS
-{
-	W2DNotifySceneInfo() :NetMsgSS(PRO_W2D_SCENE_INFO)
-	{
-
-	}
-	int32 nSceneNum;
-	NotifySceneInfo arrSceneInfo[MAX_MAP_NUM];
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct W2DReqEventInfo : public NetMsgSS
-{
-	W2DReqEventInfo() :NetMsgSS(PRO_W2D_EVENT_INFO)
-	{
-
-	}
-	int32 nTimestamp; // 时间戳  
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct W2DSelectRole : public NetMsgSS
-{
-	int64 uid;
-	int64 fepSessionID;
-	W2DSelectRole() :NetMsgSS(PRO_W2D_SELECT_ROLE)
-	{
-		uid = fepSessionID = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct W2DLoadSortLists : public NetMsgSS
-{
-	W2DLoadSortLists() :NetMsgSS(PRO_W2D_LOAD_SORTLISTS)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct W2DSaveSortLists : public NetMsgSS
-{
-	int32 nByteSize;
-	char arrByte[4096];
-	W2DSaveSortLists() :NetMsgSS(PRO_W2D_SAVE_SORTLIST)
-	{
-		nByteSize = 0;
-		memset(arrByte, 0, sizeof(arrByte));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-
-enum EProW2Fep
-{
-	PRO_W2FEP_LOGINED = 200, // 登录结果 
-
-};
-
-// fep登录结果 
-struct W2FepLogined : public NetMsgSS
-{
-	W2FepLogined() :NetMsgSS(PRO_W2FEP_LOGINED)
-	{
-
-	}
-	enum
-	{
-		SUCCESS,
-		FAIL,
-	};
-	int32 nResult; // 0 成功,其他失败 
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-// 创建频道
-const BYTE PRO_W2F_CREATE_CHANNEL = PRO_W2F_BASE + 1;
-struct W2FChannelCreate : public NetMsgSS
-{
-	W2FChannelCreate() : NetMsgSS(PRO_W2F_CREATE_CHANNEL)
-	{
-
-	}
-	char name[MAX_NAMESIZE + 1];
-	int8 count;
-	int64 uids[0];
-};
-
-// 更新频道
-const BYTE PRO_W2F_UPDATE_CHANNLE = PRO_W2F_BASE + 2;
-struct W2FChannelUpdate : public NetMsgSS
-{
-	W2FChannelUpdate() :NetMsgSS(PRO_W2F_UPDATE_CHANNLE)
-	{
-
-	}
-	char name[MAX_NAMESIZE + 1];
-	int8 opt;//0全部更新，1新增，2删除
-	int8 count;
-	int64 uids[0];
-};
-
-// 删除频道
-const BYTE PRO_W2F_DELETE_CHANNEL = PRO_W2S_BASE + 3;
-struct W2FChannelDelete : public NetMsgSS
-{
-	W2FChannelDelete() :NetMsgSS(PRO_W2F_DELETE_CHANNEL)
-	{
-
-	}
-	char name[MAX_NAMESIZE + 1];
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-enum EProW2Ls
-{
-
-	PRO_W2LS_LOGINED = 300, // 登录结果 
-	PRO_W2LS_SERVERINFO_LIST = 301,
-
-};
-
-
-
-//////////////////////////////////////////////////////////////////////////
-
-enum MyEnum
-{
-	PRO_W2S_SCENE = PRO_W2S_BASE + 0,	/* 场景协议 */
-	PRO_W2S_LOAD = PRO_W2S_BASE + 100, /* 加载协议 */
-};
-
-enum EProW2Ss
-{
-	PRO_W2S_ReqTransfer = PRO_W2S_SCENE + 0,	/* 请求进入场景 */
-	PRO_W2S_RepEnterResult = PRO_W2S_SCENE + 1, /* 请求场景结果 */
-
-	PRO_W2S_LOAD_UIDS = PRO_W2S_LOAD + 0, /* 加载离线玩家数据到临时场景中 */
-
-};
-
-struct W2SRqEnterScene : public NetMsgSS
-{
-	int64 uid;
-	int64 sceneid;
-	int16 mapid;
-	int32 enterscenetime;
-	W2SRqEnterScene() :NetMsgSS(PRO_W2S_ReqTransfer)
-	{
-		uid = mapid = sceneid = enterscenetime = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct W2SNtEnterResult : public NetMsgSS
-{
-	int64 nCharID;
-	enum
-	{
-		E_ENTER_SUCCESS = 0,
-		E_ENTER_FAIL,
-	};
-
-	int32 nResult;
-
-	W2SNtEnterResult() :NetMsgSS(PRO_W2S_RepEnterResult)
-	{
-		nCharID = nResult = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-
-};
-
-
-struct W2SLoadUids : public NetMsgSS
-{
-	int32 count;
-	int64 uids[MAX_LOAD_ALL_UID];
-	W2SLoadUids() :NetMsgSS(PRO_W2S_LOAD_UIDS)
-	{
-		count = 0;
-		memset(uids, 0, sizeof(uids));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this) - sizeof(uids) + count * sizeof(uids[0]);
-	}
-};
-
-#pragma pack(pop)
-
+}; //namespace
 
 #endif
 

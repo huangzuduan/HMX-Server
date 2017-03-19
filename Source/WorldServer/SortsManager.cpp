@@ -1,6 +1,5 @@
 #include "WorldServer_PCH.h"
 #include "SortsManager.h"
-#include "Utility.h"
 
 void SortsManager::Serialize(::protobuf::LevelTable& proto)
 {

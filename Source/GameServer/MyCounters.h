@@ -28,8 +28,8 @@ public:
 	MyCounters();
 	~MyCounters();
 
-	void Serialize(::protobuf::MyCounters& proto);
-	void UnSerialize(const ::protobuf::MyCounters& proto);
+	void serialize(::protobuf::CounterProto& proto);
+	void unserialize(const ::protobuf::CounterProto& proto);
 
 	/* Ãë¶¨Ê±Æ÷ */
 	void Timer(int32 curTime);
@@ -54,7 +54,7 @@ public:
 private:
 
 	// typeid = > value,start,end 
-	std::multimap<int32, my_streble<int32, int32, int32> > counters;
+	std::multimap<int32, zUtility::my_streble<int32, int32, int32> > counters;
 
 };
 

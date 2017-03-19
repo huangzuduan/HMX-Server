@@ -1,6 +1,5 @@
 #include "SceneNpc.h"
 
-#include "Utility.h"
 #include "UnorderedMap.h"
 #include "ResourceMgr.h"
 #include "SceneNpcAIController.h"

@@ -87,7 +87,7 @@ void SceneNpcAIController::setAI(const t_NpcAIDefine ai, const bool setTime)
 	default:
 		break;
 	}
-	//Zebra::logger->debug("setAI(): %s AI=%d",npc->name,ai.type);
+	//H::logger->debug("setAI(): %s AI=%d",npc->name,ai.type);
 }
 
 /**
@@ -307,7 +307,7 @@ void SceneNpcAIController::setActRegion(zPos pos, int x, int y)
 {
 	if (pos == zPos(0, 0)) 
 		pos = npc->getPos();
-	npc->SetPosition(pos);
+	npc->setPos(pos);
 	actPos = pos;
 	if (0 <= x) actRegionX = x >= npc_min_act_region ? x : npc_min_act_region;
 	if (0 <= y) actRegionY = y >= npc_min_act_region ? y : npc_min_act_region;
@@ -321,7 +321,7 @@ void SceneNpcAIController::setActRegion(zPos pos, int x, int y)
 */
 void SceneNpcAIController::setPhaseTime(const int delay)
 {
-	phaseEndTime = Zebra::timeTick->getMilliTime();
+	phaseEndTime = H::timeTick->getMilliTime();
 	phaseEndTime += delay;
 }
 
@@ -334,7 +334,7 @@ bool SceneNpcAIController::phaseTimeOver()
 {
 	if (NPC_AI_NORMAL != curAI.type)
 	{
-		return Zebra::timeTick->getMilliTime() >= phaseEndTime;
+		return H::timeTick->getMilliTime() >= phaseEndTime;
 	}
 	else
 		return false;

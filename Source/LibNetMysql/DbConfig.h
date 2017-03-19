@@ -18,11 +18,6 @@
 
 #include <mysql.h>
 
-//using namespace boost;
-//using namespace boost::asio;
-//using namespace boost::asio::ip;
-//using namespace boost::system;
-
 
 #ifdef WIN32
 #define SSleep(ms) Sleep(ms)

@@ -77,13 +77,13 @@ bool WorldUserMgr::checkmd5(int64 accid, int32 keytime, const char* keymd5)
 
 	if (stricmp((const char*)makeKeymd5, (const char*)reciveKeymd5) != 0)
 	{
-		Zebra::logger->error("Md5检验失败，密钥不匹配 需要:%s,传入:%s", makeKeymd5, reciveKeymd5);
+		H::logger->error("Md5检验失败，密钥不匹配 需要:%s,传入:%s", makeKeymd5, reciveKeymd5);
 		return false;
 	}
 
-	if (keytime + 86400 < Zebra::timeTick->getNowTime())
+	if (keytime + 86400 < H::timeTick->now())
 	{
-		Zebra::logger->error("Md5检验失败,时间过期");
+		H::logger->error("Md5检验失败,时间过期");
 		return false;
 	}
 
@@ -119,13 +119,13 @@ void WorldUserMgr::sendRoleList(int64 accid, int64 fepsid, int64 sessid)
 #pragma pack(pop)
 
 	MyStruct* dataList, *dataTmp;
-	int32 retsize = NetService::getMe().getDbMysql()->ExecSelect("User", fields, wheres, NULL, (unsigned char**)&dataList);
+	int32 retsize = GameService::getMe().getDbMysql()->ExecSelect("USER", fields, wheres, NULL, (unsigned char**)&dataList);
 	if (retsize < 0)
 	{
-		Zebra::logger->warn("获取角色列表失败");
+		H::logger->warn("获取角色列表失败");
 	}
 
-	W2CUserList send;
+	C::RtUserListLogon send;
 	if (retsize && dataList)
 	{
 		dataTmp = &dataList[0];
@@ -141,24 +141,24 @@ void WorldUserMgr::sendRoleList(int64 accid, int64 fepsid, int64 sessid)
 
 	if (sessid && fepsid) // 转发到fep 
 	{
-		zSession* fepSs = NetService::getMe().getSessionMgr().getFep(fepsid);
+		zSession* fepSs = GameService::getMe().getSessionMgr().getFep(fepsid);
 		if (fepSs)
 		{
 			send.sessid = sessid;
 			send.fepsid = fepsid;
-			fepSs->sendMsg(&send, send.GetPackLength());
+			fepSs->sendMsg(&send, sizeof(send));
 			return;
 		}
 		else
 		{
-			Zebra::logger->error("fepsid=%lld有误,",fepsid);
+			H::logger->error("fepsid=%lld有误,",fepsid);
 			ASSERT(0);
 			return;
 		}
 	}
 	else
 	{
-		Zebra::logger->error("sessid=%lld或fepsid=%lld有误,",sessid,fepsid);
+		H::logger->error("sessid=%lld或fepsid=%lld有误,",sessid,fepsid);
 		ASSERT(0);
 		return;
 	}

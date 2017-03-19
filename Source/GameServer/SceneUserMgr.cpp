@@ -78,7 +78,7 @@ DWORD SceneUserMgr::countUserInOneScene(Scene *scene)
     }
   };
   CountSceneExec exec(scene);
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
   return exec.count;
 }
 DWORD SceneUserMgr::countUserByTask(SceneTask *task)
@@ -100,7 +100,7 @@ DWORD SceneUserMgr::countUserByTask(SceneTask *task)
     }
   };
   CountUserBySceneTask exec(task);  
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
   return exec.count;
 }
 void SceneUserMgr::removeUserByTask(SceneTask *task)
@@ -122,10 +122,10 @@ void SceneUserMgr::removeUserByTask(SceneTask *task)
     }
   };
   removeAllUserBySceneTask exec(task);  
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
   for(std::vector<DWORD>::iterator iter = exec.del_vec.begin() ; iter != exec.del_vec.end() ; iter ++)
   {
-    SceneUser *pUser=NetService::getMe().getSceneUserMgr().getUserByID(*iter);
+    SceneUser *pUser=GameService::getMe().getSceneUserMgr().getUserByID(*iter);
     if (pUser)
     {
       //OnQuit event(1);
@@ -139,7 +139,7 @@ void SceneUserMgr::removeUserByTask(SceneTask *task)
     }
     else
     {
-      SceneUser *pUser=NetService::getMe().getSceneUserMgr().getUserByIDOut(*iter);
+      SceneUser *pUser=GameService::getMe().getSceneUserMgr().getUserByIDOut(*iter);
       if (pUser)
       {
       /*  Zebra::logger->info("用户%s(%ld)因卸载网关注销,但这个人正在读取档案",pUser->name,pUser->id);
@@ -173,10 +173,10 @@ void SceneUserMgr::removeAllUser()
     }
   };
   UnloadAllExec exec;
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
   for(std::vector<DWORD>::iterator iter = exec.del_vec.begin() ; iter != exec.del_vec.end() ; iter ++)
   {
-    SceneUser *pUser=NetService::getMe().getSceneUserMgr().getUserByID(*iter);
+    SceneUser *pUser=GameService::getMe().getSceneUserMgr().getUserByID(*iter);
     if (pUser)
     {
       //pUser->save(Cmd::Record::LOGOUT_WRITEBACK);
@@ -219,10 +219,10 @@ void SceneUserMgr::removeUserInOneScene(Scene *scene)
     }
   };
   UnloadSceneExec exec(scene);
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
   for(std::vector<DWORD>::iterator iter = exec.del_vec.begin() ; iter != exec.del_vec.end() ; iter ++)
   {
-    SceneUser *pUser=NetService::getMe().getSceneUserMgr().getUserByID(*iter);
+    SceneUser *pUser=GameService::getMe().getSceneUserMgr().getUserByID(*iter);
     if (pUser)
     {
       //pUser->save(Cmd::Record::LOGOUT_WRITEBACK);
@@ -283,7 +283,7 @@ void SceneUserMgr::setAntiAtt(DWORD dwType,DWORD dwFromRelationID,DWORD dwToRela
   };      
 
   EverySceneUserAction esua(dwType,dwFromRelationID,dwToRelationID);
-  NetService::getMe().getSceneUserMgr().execEveryUser(esua);
+  GameService::getMe().getSceneUserMgr().execEveryUser(esua);
 }
 
 //void SceneUserMgr::enterWar(Cmd::Session::t_enterWar_SceneSession* cmd)
@@ -403,7 +403,7 @@ void SceneUserMgr::countryTrans(DWORD dwCountryID,DWORD dwLevel)
   };      
 
   EverySceneUserAction esua(dwCountryID,dwLevel);
-  NetService::getMe().getSceneUserMgr().execEveryUser(esua);
+  GameService::getMe().getSceneUserMgr().execEveryUser(esua);
   esua.trans();
 }
 
@@ -515,10 +515,10 @@ void SceneUserMgr::removeUserToHuangcheng(Scene *scene)
     }
   };
   GotoSceneExec exec(scene);
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
   for(std::vector<DWORD>::iterator iter = exec.del_vec.begin() ; iter != exec.del_vec.end() ; iter ++)
   {
-    SceneUser *pUser=NetService::getMe().getSceneUserMgr().getUserByID(*iter);
+    SceneUser *pUser=GameService::getMe().getSceneUserMgr().getUserByID(*iter);
     if (pUser)
     {
       //Gm::gomap(pUser,"name=中立区·皇城 type=4");
@@ -549,7 +549,7 @@ void SceneUserMgr::clearEmperorDare(Scene *scene)
     }
   };
   ClearEmperorDareSceneExec exec(scene);
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
 }
 
 void SceneUserMgr::setEmperorDare(Scene *scene)
@@ -576,7 +576,7 @@ void SceneUserMgr::setEmperorDare(Scene *scene)
   };
 
   SetEmperorDareSceneExec exec(scene);
-  NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+  GameService::getMe().getSceneUserMgr().execEveryUser(exec);
 }
 
 void SceneUserMgr::Update(const zTaskTimer* timer)
@@ -589,13 +589,13 @@ void SceneUserMgr::Update(const zTaskTimer* timer)
 		}
 		bool exec(SceneUser *u)
 		{
-			u->Update(timer);
+			u->Timer(timer);
 			return true;
 		}
 		const zTaskTimer* timer;
 	};
 
 	SetEmperorDareSceneExec exec(timer);
-	NetService::getMe().getSceneUserMgr().execEveryUser(exec);
+	GameService::getMe().getSceneUserMgr().execEveryUser(exec);
 }
 

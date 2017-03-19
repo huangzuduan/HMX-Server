@@ -7,6 +7,7 @@ include_directories(
 	${PROTOBUL_INCLUDE_DIR}
 	${ICONV_INCLUDE_DIR}
 	${LIBXML_INCLUDE_DIR}
+	${OPENSSL_INCLUDE_DIR}
 	${CMAKE_SOURCE_DIR}/LibNetMysql
 	${CMAKE_SOURCE_DIR}/LibNetSocket
 	${CMAKE_SOURCE_DIR}/LibProtocol
@@ -23,6 +24,8 @@ add_library(LibSrvcore STATIC
 
 target_link_libraries(LibSrvcore
    ${BOOST_LIBRARIES}
+   ${LIB_LIBEAY32_DEBUG}
+   ${LIB_SSLEAY32_DEBUG}
 )
 
 if( WIN32 )

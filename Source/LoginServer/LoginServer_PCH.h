@@ -6,11 +6,13 @@
 #include "DbIncludes.h"
 #include "SrvCoreIncludes.h"
 
-#include "NetService.h"
+#include "GameService.h"
 #include "NetMsgHandler.h"
 #include "ProcDpHandler.h"
 #include "ProcFepHandler.h"
 #include "ProcWorldHandler.h"
+
+#include "Account.h"
 
 
 #endif

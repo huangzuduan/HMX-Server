@@ -38,34 +38,34 @@ struct GateUserExce : public execEntry<GateUser>
 
 	bool exec(GateUser *u)
 	{
-		zSession* session = NetService::getMe().getSessionMgr().get(u->tempid);
+		zSession* session = GameService::getMe().getSessionMgr().get(u->tempid);
 		if (session)
 		{
-			if (msgtype == BORADCAST_TYPE_ALL)
+			if (msgtype == S::SSNtBoradCastMsg::TYPE_ALL)
 			{
 				
 			}
-			else if (msgtype == BORADCAST_TYPE_COUNTRY && regid == u->base.countryID)
+			else if (msgtype == S::SSNtBoradCastMsg::TYPE_COUNTRY && regid == u->base.countryID)
 			{
 
 			}
-			else if (msgtype == BORADCAST_TYPE_MAPID && regid == u->base.mapid)
+			else if (msgtype == S::SSNtBoradCastMsg::TYPE_MAPID && regid == u->base.mapid)
 			{
 
 			}
-			else if (msgtype == BORADCAST_TYPE_SCENE && regid == u->base.sceneid)
+			else if (msgtype == S::SSNtBoradCastMsg::TYPE_SCENE && regid == u->base.sceneid)
 			{
 
 			}
-			else if (msgtype == BORADCAST_TYPE_ZONE && regid == u->base.zoneid)
+			else if (msgtype == S::SSNtBoradCastMsg::TYPE_ZONE && regid == u->base.zoneid)
 			{
 
 			}
-			else if (msgtype == BORADCAST_TYPE_NINE && u->IsNineOfScene(x,y))
+			else if (msgtype == S::SSNtBoradCastMsg::TYPE_NINE && u->IsNineOfScene(x,y))
 			{
 
 			}
-			else if (msgtype == BORADCAST_TYPE_TEAM && regid == u->base.teamid)
+			else if (msgtype == S::SSNtBoradCastMsg::TYPE_TEAM && regid == u->base.teamid)
 			{
 
 			}
@@ -160,49 +160,49 @@ void GateUserManager::DestoryObj(GateUser* obj)
 
 void GateUserManager::sendToAllUser(const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToAllUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_ALL);
+	H::logger->info("sendToAllUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_ALL);
 	GateUserManager::getMe().execEveryUser(exce);
 }
 
 void GateUserManager::sendToCountryUser(int32 countryID, const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToCountryUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_COUNTRY,countryID);
+	H::logger->info("sendToCountryUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_COUNTRY,countryID);
 	GateUserManager::getMe().execEveryUser(exce);
 }
 
 void GateUserManager::sendToMapUser(int32 mapID, const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToMapUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_MAPID, mapID);
+	H::logger->info("sendToMapUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_MAPID, mapID);
 	GateUserManager::getMe().execEveryUser(exce);
 }
 
 void GateUserManager::sendToSceneUser(int32 sceneID, const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToSceneUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_SCENE, sceneID);
+	H::logger->info("sendToSceneUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_SCENE, sceneID);
 	GateUserManager::getMe().execEveryUser(exce);
 }
 
 void GateUserManager::sendToZoneUser(int32 zoneID, const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToZoneUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_ZONE, zoneID);
+	H::logger->info("sendToZoneUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_ZONE, zoneID);
 	GateUserManager::getMe().execEveryUser(exce);
 }
 
 void GateUserManager::sendToTeamUser(int32 teamID, const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToTeamUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_TEAM, teamID);
+	H::logger->info("sendToTeamUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_TEAM, teamID);
 	GateUserManager::getMe().execEveryUser(exce);
 }
 
 void GateUserManager::sendToNineUser(int64 userID, int32 x, int32 y, const NetMsgSS* msg, int32 len)
 {
-	Zebra::logger->info("sendToNineUser");
-	GateUserExce exce(len, msg, BORADCAST_TYPE_NINE,0, userID, x, y);
+	H::logger->info("sendToNineUser");
+	GateUserExce exce(len, msg, S::SSNtBoradCastMsg::TYPE_NINE,0, userID, x, y);
 	GateUserManager::getMe().execEveryUser(exce);
 }

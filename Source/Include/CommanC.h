@@ -1,1041 +1,810 @@
-#ifndef __COMMON_C2F_H_
-#define __COMMON_C2F_H_
+#ifndef __COMMON_Rq_H_
+#define __COMMON_Rq_H_
 
-#include "ServerDefine.h"
+#include "BaseDefine.h"
+#include "DbConfig.h"
 #include "NetConfig.h"
-#include "SrvEngine.h"
-
-#pragma pack(push,1)
-
-//////////////////////////////////////////////////////////////////////////
-
-enum EProC2F
-{
-
-	PRO_C2F_ENCRYPT		= PRO_C2F_BASE + 0, // 获得密钥 
-	PRO_C2F_CLOSE		= PRO_C2F_BASE + 1, // 主动退出 
-	
-};
-
-
-
-// 发送加密请求 
-struct C2FepEncryptInfo : public NetMsgSS
-{
-	C2FepEncryptInfo():NetMsgSS(PRO_C2F_ENCRYPT)
-	{
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2FepClose : public NetMsgSS
-{
-	C2FepClose():NetMsgSS(PRO_C2F_CLOSE)
-	{
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-enum EProC2L
-{
-
-	PRO_C2L_ACCOUNT_LOGIN	= PRO_C2L_BASE + 0, // 帐号登录 
-	PRO_C2L_RAND_NAMES		= PRO_C2L_BASE + 2, // 获得随机名 
-
-
-};
-
-struct C2LAccountLogin : public NetMsgSS
-{
-	char username[32];
-	char password[32];
-	C2LAccountLogin():NetMsgSS(PRO_C2L_ACCOUNT_LOGIN)
-	{
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2LRandNames : public NetMsgSS
-{
-	C2LRandNames():NetMsgSS(PRO_C2L_RAND_NAMES)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-
-//////////////////////////////////////////////////////////////////////////
-
-enum EProC2SFunc
-{
-	PRO_C2S_SCENE_BASE = PRO_C2S_BASE + 0,		// 场景模块  
-	PRO_C2S_CHAR_BASE = PRO_C2S_BASE + 100,		// 主角模块
-	PRO_C2S_EQUIP_BASE = PRO_C2S_BASE + 200,	// 装备模块
-	PRO_C2S_ITEM_BASE = PRO_C2S_BASE + 300,		// 背包模块 
-	PRO_C2S_QUEST_BASE = PRO_C2F_BASE + 400,	// 任务模块 
-	PRO_C2S_CHAT_BASE	= PRO_C2S_BASE + 500,	/* 聊天模块 */
-	PRO_C2S_RELATION_BASE = PRO_C2S_BASE + 600, 
-};
-
-enum EProC2S
-{
-
-	//////////////////////////////场景模块////////////////////////////////////////////
-	PRO_C2S_SCENE_INIT_DATA = PRO_C2S_SCENE_BASE + 1,	// 进入场景获得数据 
-	PRO_C2S_CHANGE_SCENE = PRO_C2S_SCENE_BASE + 2,	// 切换场景
-
-	//////////////////////////////主角模块////////////////////////////////////////////
-	PRO_C2S_POSITION_MOVE = PRO_C2S_CHAR_BASE + 100,   // 
-
-
-	//////////////////////////////装备模块////////////////////////////////////////////	
-
-	//////////////////////////////背包模块////////////////////////////////////////////
-	PRO_C2S_ITEM_MOVE_POSITION = PRO_C2S_ITEM_BASE + 0, // 移动位置 
-	PRO_C2S_ITEM_UPDATE = PRO_C2S_ITEM_BASE + 1, // 更新物品数据 
-	PRO_C2S_ITEM_USE_OBJECT = PRO_C2S_ITEM_BASE + 2, // 使用物品 
-
-
-	//////////////////////////////商城模块////////////////////////////////////////////
-	PRO_C2S_SHOPPING_BUY_ITME = PRO_C2S_BASE + 500,	// 商城购买物品 
-	PRO_C2S_SHOPPING_SELL_ITME = PRO_C2S_BASE + 501,	// 商城卖出物品 
-
-	///////////////////////////////聊天模块///////////////////////////////////////////
-	PRO_C2S_CHAT_TO_CHANNEL = PRO_C2S_CHAT_BASE + 0,
-	PRO_C2S_CHAT_TO_TEAM = PRO_C2S_CHAT_BASE + 1,
-	PRO_C2S_CHAT_TO_DISCUSS = PRO_C2S_CHAT_BASE + 2,
-	PRO_C2S_CHAT_TO_WORLD = PRO_C2S_CHAT_BASE + 3,
-
-	/* 社会关系 */
-	PRO_C2S_RELATION_LIST = PRO_C2S_RELATION_BASE + 0,
-	PRO_C2S_RELATION_ADD = PRO_C2S_RELATION_BASE + 1,
-	PRO_C2S_RELATION_REMOVE = PRO_C2S_RELATION_BASE + 2,
-
-
-};
-
-/*
- *	世界聊天 
- */
-//struct C2SCharWorld : public NetMsgSS
-//{
-//	C2SCharWorld():NetMsgSS(0)
-//	{
-//		nLength = 0;
-//	}
-//	int32 nLength;
-//	char arrMsg[MAX_CHAR_WORLD_MSG_LENGTH];
-//	inline int32 GetPackLength()const
-//	{
-//		return sizeof(*this) - sizeof(arrMsg) + nLength;
-//	}
-//};
-
-/*
- *	请求加载场景的数据 
- */
-struct C2SClientIsReady : public NetMsgSS
-{
-	enum
-	{
-		E_DATA_TYPE_NULL		= 0x00000000,
-		E_DATA_TYPE_CHARMAIN	= 0x00000001,
-		E_DATA_TYPE_PACKAGE		= 0x00000002,
-		E_DATA_TYPE_RELATION	= 0x00000004,
-		E_DATA_TYPE_PET			= 0x00000008,
-		E_DATA_TYPE_ALL			= 0x0fffffff,
-	};
-	
-	int32 nLoadDataFlags; // 需要加载的数据 
-		
-	C2SClientIsReady():NetMsgSS(PRO_C2S_SCENE_INIT_DATA)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/*
- *	切换场景 
- */
-struct C2SChanageScene : public NetMsgSS
-{
-	int32 nSceneID;
-	C2SChanageScene() :NetMsgSS(PRO_C2S_CHANGE_SCENE)
-	{
-		nSceneID = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2SPositionMove : public NetMsgSS
-{
-	int32 nNewX; // 已经放大一百倍，服务器直接使用即可 
-	int32 nNewY; // 已经放大一百倍，服务器直接使用即可 
-	C2SPositionMove() :NetMsgSS(PRO_C2S_POSITION_MOVE)
-	{
-		nNewX = nNewY = 0;
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/* 物品模块开始 */
-
-struct C2SItemMovePosition : public NetMsgSS
-{
-	int32 nSrcPos;
-	int32 nDstPos;
-	C2SItemMovePosition() : NetMsgSS(PRO_C2S_ITEM_MOVE_POSITION)
-	{
-		nSrcPos = nDstPos = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2SItemUseObject : public NetMsgSS
-{
-	int32 nUniqueID;
-	int32 nItemNum;
-	C2SItemUseObject() :NetMsgSS(PRO_C2S_ITEM_USE_OBJECT)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/* 商城模块开始 */
-
-struct C2SShoppingBuyItem : public NetMsgSS
-{
-	int32 nShopID;
-	int32 nShopNum;
-	C2SShoppingBuyItem() : NetMsgSS(PRO_C2S_SHOPPING_BUY_ITME)
-	{
-		nShopID = nShopNum = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2SShoppingSellItem : public NetMsgSS
-{
-	int32 nUniqueID;
-	int32 nItemNum;
-	C2SShoppingSellItem() : NetMsgSS(PRO_C2S_SHOPPING_SELL_ITME)
-	{
-		nUniqueID = nItemNum = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-// 发起聊天者信息 
-struct t_ChatBase
-{
-	int64 uid;
-	char name[MAX_NAMESIZE + 1];
-	int16 level;
-	int8 vip;
-};
-
-// 聊天
-struct C2SChatToChannel : public NetMsgSS
-{
-	C2SChatToChannel() :NetMsgSS(PRO_C2S_CHAT_TO_CHANNEL)
-	{
-		
-	}
-
-	int64 fromUID;
-	int64 toChannelID;
-	t_ChatBase fromBase;
-	uint16 msgleg;
-	char msgdata[0];
-
-};
-
-struct C2SChatToTeam : public NetMsgSS
-{
-	C2SChatToTeam() :NetMsgSS(PRO_C2S_CHAT_TO_TEAM)
-	{
-
-	}
-	t_ChatBase msg;
-};
-
-struct C2SChatToDiscuss : public NetMsgSS
-{
-	C2SChatToDiscuss() :NetMsgSS(PRO_C2S_CHAT_TO_DISCUSS)
-	{
-
-	}
-	t_ChatBase msg;
-};
-
-struct C2SChatToWorld : public NetMsgSS
-{
-	C2SChatToWorld() :NetMsgSS(PRO_C2S_CHAT_TO_WORLD)
-	{
-
-	}
-	t_ChatBase msg;
-};
-
-struct C2SRelationList : public NetMsgSS
-{
-	C2SRelationList() :NetMsgSS(PRO_C2S_RELATION_LIST)
-	{
-
-	}
-};
-
-struct C2SRelationAdd : public NetMsgSS
-{
-	C2SRelationAdd() :NetMsgSS(PRO_C2S_RELATION_ADD)
-	{
-		memset(name, 0, sizeof(name));
-		rel = 0;
-	}
-	char name[MAX_NAME_LENGTH + 1];
-	int32 rel;
-};
-
-struct C2SRelationRemove : public NetMsgSS 
-{
-	C2SRelationRemove() :NetMsgSS(PRO_C2S_RELATION_REMOVE)
-	{
-		uid = 0;
-	}
-	int64 uid;
-};
-
-//创建一个会话(把自己添加进入)
-const BYTE PRO_C2S_REL_CREATE_SESS = PRO_C2S_RELATION_BASE + 3;
-struct C2SRelCreateSess : public NetMsgSS
-{
-	C2SRelCreateSess() : NetMsgSS(PRO_C2S_REL_CREATE_SESS)
-	{
-
-	}
-};
-
-//发送会话到频道中
-const BYTE PRO_C2S_ReL_SEND_MSG = PRO_C2S_RELATION_BASE + 4;
-struct C2SRelSendMsg : public NetMsgSS
-{
-	C2SRelSendMsg() :NetMsgSS(PRO_C2S_ReL_SEND_MSG)
-	{
-
-	}
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-enum EProC2W
-{
-
-	PRO_C2W_SWITCH_SCENE = PRO_C2W_BASE + 0, // 更换场景  选择角色后就直接根据场景ID进入游戏 
-	PRO_C2W_SELECT_ROLE	 = PRO_C2W_BASE + 1, // 选择角色 
-	PRO_C2W_CREATE_ROLE	 = PRO_C2W_BASE + 2, // 创建角色 
-	PRO_C2W_DELETE_ROLE  = PRO_C2W_BASE + 3, // 删除角色
-
-};
-
-
-
-
-// fep->ws->ss,由ss确认 
-struct C2WSwitchScene : public NetMsgSS
-{
-	C2WSwitchScene():NetMsgSS(PRO_C2W_SWITCH_SCENE)
-	{
-		nSceneID = 0;
-	}
-	int32 nSceneID;
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2WSelectRole : public NetMsgSS
-{
-	int64 uid;
-	C2WSelectRole():NetMsgSS(PRO_C2W_SELECT_ROLE)
-	{
-		uid = 0; 
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-
-struct C2WCreateRole : public NetMsgSS
-{
-	int64 accid;
-	int8 roleType;
-	char name[MAX_NAMESIZE + 1];
-	char keymd5[MAX_NAMESIZE + 1];
-	int32 keytime;
-
-	C2WCreateRole():NetMsgSS(PRO_C2W_CREATE_ROLE)
-	{
-		accid = roleType = keytime = 0;
-		memset(name, 0, sizeof(name));
-		memset(keymd5, 0, sizeof(keymd5));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct C2WDeleteRole : public NetMsgSS
-{
-	int64 uid;
-	int64 accid;
-	char keymd5[MAX_NAMESIZE + 1];
-	int32 keytime;
-	C2WDeleteRole() :NetMsgSS(PRO_C2W_DELETE_ROLE)
-	{
-		uid =  accid = keytime = 0;
-		memset(keymd5, 0, sizeof(keymd5));
-	}
-
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-#pragma pack(pop)
-
-
-
-
-
-#endif
-
-#ifndef __COMMONS2C_H_
-#define __COMMONS2C_H_
-
-#include "ServerDefine.h"
-#include "NetConfig.h"
-#include "def_entity.h"
-
-enum EProcS2CFunc
-{
-	PRO_S2C_SCENE_BASE = PRO_S2C_BASE + 0,		// 场景相关 
-	PRO_S2C_CHAR_BASE = PRO_S2C_BASE + 100,	// 主角相关  
-	PRO_S2C_EQUIP_BASE = PRO_S2C_BASE + 200,	// 装备相关
-	PRO_S2C_ITEM_BASE = PRO_S2C_BASE + 300,	// 背包相关
-	PRO_S2C_QUEST_BASE = PRO_S2C_BASE + 400,	// 任务相关 
-	PRO_S2C_CHANNEL_BASE = PRO_S2C_BASE + 500,	// 频道相关 
-	PRO_S2C_RELATION_BASE = PRO_S2C_BASE + 600,	// 社会关系
-
-	PRO_S2C_MAX_BASE = PRO_S2C_BASE + 9999,	// 最大模块数量99
-};
-
-
-// s2c协议 
-enum EProS2C
-{
-
-	//////////////////////////////场景模块////////////////////////////////////////////
-	PRO_S2C_SCENE_INIT_RESULT = PRO_S2C_SCENE_BASE + 0, // 场景初始化 
-	PRO_S2C_CHAR_WORLD = PRO_S2C_SCENE_BASE + 1, // ss上的世界聊天 
-	PRO_S2C_SCENE_LOADING = PRO_S2C_SCENE_BASE + 2, // 场景加载中 
-	PRO_S2C_SEND_DATA_FINISH = PRO_S2C_SCENE_BASE + 3, // 发送数据完毕 
-	PRO_S2C_SCENE_LOAD_INFO = PRO_S2C_SCENE_BASE + 4, // 进入的场景信息 
-
-													  //////////////////////////////角色模块////////////////////////////////////////////
-													  PRO_S2C_CHAR_MAIN_DATA = PRO_S2C_CHAR_BASE + 0,	// 角色主数据 
-													  PRO_S2C_CHAR_MONEY_DATA = PRO_S2C_CHAR_BASE + 1,	// 钱包数据 
-
-																										//////////////////////////////装备模块////////////////////////////////////////////
-																										PRO_S2C_EQUIP_MAIN_DATA = PRO_S2C_EQUIP_BASE + 0, // 装备主数据(身上穿)
-
-
-																																						  //////////////////////////////任务模块///////////////////////////////////////////////
-																																						  PRO_S2C_QUEST_MAIN_DATA = PRO_S2C_QUEST_BASE + 0, // 任务主数据 
-
-
-																																																			//////////////////////////////背包模块///////////////////////////////////////////////
-																																																			PRO_S2C_ITEM_MAIN_DATA = PRO_S2C_ITEM_BASE + 0, // 背包主数据 
-																																																			PRO_S2C_ITEM_UPDATE_DATA = PRO_S2C_ITEM_BASE + 1, // 增加或更新 
-																																																			PRO_S2C_ITEM_DELTE_DATA = PRO_S2C_ITEM_BASE + 2, // 删除道具装备
-
-																																																															 //////////////////////////////频道模块///////////////////////////////////////////////
-																																																															 PRO_S2C_CHANNEL_JION = PRO_S2C_CHANNEL_BASE + 0,	/* 加入频道 */
-																																																															 PRO_S2C_CHANNEL_LEAVE = PRO_S2C_CHANNEL_BASE + 1,	/* 离开频道 */
-
-																																																																												//////////////////////////////社会关系模块///////////////////////////////////////////////
-																																																																												PRO_S2C_RELATION_LIST = PRO_S2C_RELATION_BASE + 0,  /* 好友列表 */
-																																																																												PRO_S2C_RELATION_UPDATE = PRO_S2C_RELATION_BASE + 1,
-																																																																												PRO_S2C_RELATION_DELETE = PRO_S2C_RELATION_BASE + 2,
-};
-
-
-#pragma pack(push, 1)
-
-
-//////////////////////////////场景模块////////////////////////////////////////////
-struct S2CRepCharWorld : public NetMsgSS
-{
-	int64 fromUID;
-	char fromName[MAX_NAME_LENGTH];
-
-	int32 sayLen;
-	char sayMsg[MAX_CHAR_WORLD_MSG_LENGTH];
-
-	S2CRepCharWorld() :NetMsgSS(PRO_S2C_CHAR_WORLD)
-	{
-		fromUID = sayLen = 0;
-		memset(fromName, 0, sizeof(fromName));
-		memset(sayMsg, 0, sizeof(sayMsg));
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this) - sizeof(sayMsg) + sayLen;
-	}
-};
-
-// 进入场景的初始化结果 
-struct S2CSceneInitResult : public NetMsgSS
-{
-
-	enum
-	{
-		SUCCESS = 0,
-		FAIL
-	};
-	int32 nResult;
-
-	S2CSceneInitResult() :NetMsgSS(PRO_S2C_SCENE_INIT_RESULT)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct S2CSceneLoadInfo : public NetMsgSS
-{
-	int32 mapid;
-	S2CSceneLoadInfo() :NetMsgSS(PRO_S2C_SCENE_LOAD_INFO)
-	{
-		mapid = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-/*-------------------------------------------------------------------
-* @Brief : 主数据发送完成
-*
-* @Author:hzd 2015:11:24
-*------------------------------------------------------------------*/
-struct S2CSendDataFinish : public NetMsgSS
-{
-
-	// 这里做发一些检查值 服务器时间等  
-	int32 nServerTime; // 服务器时间
-	int32 nMsgOrderID; // 消息顺序值，用于外挂检查 	
-	S2CSendDataFinish() :NetMsgSS(PRO_S2C_SEND_DATA_FINISH)
-	{
-		nServerTime = nMsgOrderID = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////角色模块////////////////////////////////////////////
-
-// 主角主数据 
-struct S2CCharMainData : public NetMsgSS
-{
-	SceneUserAttr userVal;
-	EntryPkValBase pkVal;
-	S2CCharMainData() :NetMsgSS(PRO_S2C_CHAR_MAIN_DATA)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-// 钱包数据 
-struct S2CCharMoneyData : public NetMsgSS
-{
-	int32 nGold;
-	int32 nSilver;
-	int32 nCopper;
-	S2CCharMoneyData() :NetMsgSS(PRO_S2C_CHAR_MONEY_DATA)
-	{
-		nGold = nSilver = nCopper = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////频道模块////////////////////////////////////////////
-struct S2CChannelJion : public NetMsgSS
-{
-	int32 channelID;
-	char name[MAX_NAME_LENGTH];
-	S2CChannelJion() :NetMsgSS(PRO_S2C_CHANNEL_JION)
-	{
-		channelID = 0;
-		memset(name, 0, sizeof(name));
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct S2CChannelLeave : public NetMsgSS
-{
-	int32 channelID;
-	char name[MAX_NAME_LENGTH];
-	S2CChannelLeave() :NetMsgSS(PRO_S2C_CHANNEL_LEAVE)
-	{
-		channelID = 0;
-		memset(name, 0, sizeof(name));
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////装备模块////////////////////////////////////////////
-
-// 穿着的装备数据 
-struct S2CEquipMainData : public NetMsgSS
-{
-	S2CEquipMainData() :NetMsgSS(PRO_S2C_EQUIP_MAIN_DATA)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////背包模块///////////////////////////////////////////////
-
-// 单个物品数据
-struct stItemSlot
-{
-	int32 nUniqueID; // 唯一ID 
-	int32 nItemID;
-
-	// 其他动态参数
-	uint8 nItemNum;		// 数量 
-	uint8 nIndex;		// 格子位置 0-99 
-	uint8 nLock;		// 是否有锁 
-};
-
-// inventory
-// 对于服务器来说，只有一个背包（包括穿在身上）
-// 背包主数据 inventory
-struct S2CUserPackages : public NetMsgSS
-{
-	int32 nCount;
-	stItemSlot items[100]; // 12 + 背包上的数量 最次最多只能发送100个 
-	S2CUserPackages() :NetMsgSS(PRO_S2C_ITEM_MAIN_DATA)
-	{
-		nCount = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this) - sizeof(items) + nCount * sizeof(items[0]);
-	}
-};
-
-struct S2CItemSlotUpdate : public NetMsgSS
-{
-	int32 nCount;
-	stItemSlot items[100]; // 最次最多只能发送100个 
-	S2CItemSlotUpdate() :NetMsgSS(PRO_S2C_ITEM_UPDATE_DATA)
-	{
-		nCount = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this) - sizeof(items) + nCount * sizeof(items[0]);
-	}
-};
-
-struct S2CItemSlotDelete : public NetMsgSS
-{
-	int32 nCount;
-	int32 nUniqueIDs[100];
-	S2CItemSlotDelete() :NetMsgSS(PRO_S2C_ITEM_DELTE_DATA)
-	{
-		nCount = 0;
-		memset(nUniqueIDs, 0, sizeof(nUniqueIDs));
-	}
-	inline int32 GetPackLength() const
-	{
-		return sizeof(*this) - sizeof(nUniqueIDs) + nCount * sizeof(nUniqueIDs[0]);
-	}
-};
-
-//////////////////////////////任务模块///////////////////////////////////////////////
-
-// 任务主数据  
-struct S2CQuestMainData : public NetMsgSS
-{
-
-	struct QuestInfo
-	{
-		int32 nQuestID;
-		int32 nResult0;
-		int32 nResult1;
-	};
-
-	QuestInfo arrHadAccept[MAX_QUEST_LIST_COUNT];
-	QuestInfo arrCanAccept[MAX_QUEST_LIST_COUNT];
-
-	S2CQuestMainData() :NetMsgSS(PRO_S2C_QUEST_MAIN_DATA)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-enum EProF2C
-{
-
-	PRO_F2C_ENCRYPT_INFO = PRO_F2C_BASE + 0,	// 返回密钥信息 
-	PRO_F2C_LOGIN_READY_FINISH = PRO_F2C_BASE + 1, // 服务器对即将登录请求准备完成 
-	PRO_F2C_ENTER_SCENE_LOADED = PRO_F2C_BASE + 2, // 场景进入完成  
-
-};
-
-
-// 返回密钥 
-struct F2CEncryptInfo : public NetMsgSS
-{
-
-	char encryptKey[MAX_ENCRYPTSIZE];
-
-	F2CEncryptInfo() :NetMsgSS(PRO_F2C_ENCRYPT_INFO)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct F2CLoginReadyFinish : public NetMsgSS
-{
-	F2CLoginReadyFinish() :NetMsgSS(PRO_F2C_LOGIN_READY_FINISH)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-// 加载完成 
-struct F2CEnterSceneLoaded : public NetMsgSS
-{
-	enum EEnterSceneResult
-	{
-		SUCCESS = 0,
-		FAIL
-	};
-
-	int32 nResult;
-
-	F2CEnterSceneLoaded() :NetMsgSS(PRO_F2C_ENTER_SCENE_LOADED)
-	{
-
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-//////////////////////////////////////////////////////////////////////////
-
-enum EProL2C
-{
-	PRO_L2C_ACC_LOGIN = PRO_L2C_BASE + 0,	// 返回登录信息 
-	PRO_L2C_CREATE_RES = PRO_L2C_BASE + 2, // 角色创建结果 
-	PRO_L2C_NAMES_LIST = PRO_L2C_BASE + 3, // 名字列表 
-};
-
-
-struct L2CAccLogin : public NetMsgSS
-{
-	int64 accid;
-	int32 result; //1成功,0失败
-	char keymd5[MAX_NAMESIZE + 1];
-	int32 keytime;
-	L2CAccLogin() :NetMsgSS(PRO_L2C_ACC_LOGIN)
-	{
-		accid = result = keytime = 0;
-		memset(keymd5, 0, MAX_NAMESIZE);
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct L2CRoleCreateRes : public NetMsgSS
-{
-
-	enum
-	{
-		E_SUCCESS = 0,
-		E_FAIL_SYNC,
-		E_FAIL_ROLE_MAX,
-		E_FAIL_NAME_EXIST,
-		E_FAIL_INSERT_FAIL,
-	};
-
-	int32 nResult;
-	int64 nNewCharID;
-
-	L2CRoleCreateRes() :NetMsgSS(PRO_L2C_CREATE_RES)
-	{
-		nResult = 0;
-		nNewCharID = 0;
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-struct L2CNamesList : public NetMsgSS
-{
-	int32 nCount;
-	char arrNames[10][32];
-	L2CNamesList() :NetMsgSS(PRO_L2C_NAMES_LIST)
-	{
-		nCount = 0;
-		memset(arrNames, 0, 10 * 32);
-	}
-	inline int32 GetPackLength()const
-	{
-		return sizeof(*this);
-	}
-};
-
-// 单个关系信息 
-struct t_RelData
-{
-	int64 uid;
-	char name[MAX_NAMESIZE + 1];
-	int32 rel; // 0邀请未同意,1好友,2陌生人,3黑名单
-	int32 createtime;
-	int32 dealreltime; // 上次操作时间
-};
-
-// 好友列表
-struct S2CRelationList : public NetMsgSS
-{
-	S2CRelationList() :NetMsgSS(PRO_S2C_RELATION_LIST)
-	{
-		count = 0;
-	}
-	int32 count;
-	t_RelData list[0];
-};
-
-// 好友信息更新 
-struct S2CRelationUpdate : public NetMsgSS
-{
-	S2CRelationUpdate() :NetMsgSS(PRO_S2C_RELATION_UPDATE)
-	{
-
-	}
-	t_RelData rel;
-};
-
-// 好友删除
-struct S2CRelationDelete : public NetMsgSS
-{
-	S2CRelationDelete() :NetMsgSS(PRO_S2C_RELATION_DELETE)
-	{
-		uid = 0;
-	}
-	int64 uid;
-};
-
-#pragma pack(pop)
-
-#endif
-
-#ifndef __COMMON_W2C_H_
-#define __COMMON_W2C_H_
-
-
-#include "ServerDefine.h"
-#include "NetConfig.h"
-#include "SrvEngine.h"
 #include "csCommon.h"
 
-
-//---------------------------------------
-
-enum EProWS2C
+namespace C
 {
-	PRO_W2C_CHATTOWORLD = PRO_W2C_BASE + 0, // 世界聊天 
-	PRO_W2C_USERLIST = PRO_W2C_BASE + 1,	// 角色列表
-	PRO_W2C_CREATE_RET = PRO_W2C_BASE + 2,	// 创建结果
-};
+	/*
+		服务器与客户端或客户端与服务器直接通信的协议
+	 */
 
 #pragma pack(push,1)
 
 
-
-
-struct W2CUserList : public NetMsgSS
-{
-	W2CUserList() :NetMsgSS(PRO_W2C_USERLIST)
+	enum ProRqFunc
 	{
+		PRO_LOGIN = PRO_C2S + 100,		// 登录相关 
+		PRO_SCENE = PRO_C2S + 200,		// 场景相关 
+		PRO_USER = PRO_C2S + 300,		// 主角相关  
+		PRO_EQUIP = PRO_C2S + 400,		// 装备相关
+		PRO_ITEM = PRO_C2S + 500,		// 背包相关
+		PRO_QUEST = PRO_C2S + 600,		// 任务相关 
+		PRO_CHANNEL = PRO_C2S + 700,	// 频道相关 
+		PRO_RELATION = PRO_C2S + 800,	// 社会关系
+		PRO_CHAT = PRO_C2S + 900,		// 聊天模块
+		PRO_SHOP = PRO_C2S + 1000,		// 商城模块
+		PRO_PACK = PRO_C2S + 1100,		// 背包模块
+		PRO_MESSAGE = PRO_C2S + 1200,	// 信箱模块
+	};
 
-	}
-
-	struct UserInfo
+	// 主动断开连接 
+	const int32 RQ_CLOSE = PRO_LOGIN + 1;
+	struct RqClose : public NetMsgSS
 	{
-		int64 id;
-		char name[MAX_NAMESIZE + 1];
-		int16 level;
-		UserInfo()
+		RqClose() :NetMsgSS(RQ_CLOSE)
 		{
-			id = level = 0;
-			memset(name, 0, sizeof(name));
 		}
 	};
 
-	UserInfo datas[4];
-
-	inline int32 GetPackLength()const
+	// 发送加密请求 
+	const int32 RQ_ENCRYPT = PRO_LOGIN + 2;
+	struct RqEncryptInfo : public NetMsgSS
 	{
-		return sizeof(*this);
-	}
-};
+		RqEncryptInfo() :NetMsgSS(RQ_ENCRYPT)
+		{
+		}
+	};
 
-
-struct ChatMsgInfo2
-{
-	uint16 len;
-	char data[MAX_SOCKET_BUFFER];
-	ChatMsgInfo2()
+	// 返回密钥 
+	const int32 RT_ENCRYPT_INFO = PRO_LOGIN + 3;
+	struct RtEncryptInfo : public NetMsgSS
 	{
-		len = 0;
-		memset(data, 0, sizeof(data));
-	}
-	inline int32 GetLength() const
+		RtEncryptInfo() :NetMsgSS(RT_ENCRYPT_INFO)
+		{
+
+		}
+		char encryptKey[MAX_ENCRYPTSIZE + 1];
+	};
+
+
+	// 服务器对即将登录请求准备完成 
+	const int32 RT_LOGIN_READY_FINISH = PRO_LOGIN + 4;
+	struct RtLoginReadyFinish : public NetMsgSS
 	{
-		return sizeof(*this) - sizeof(data) + len;
-	}
-};
+		RtLoginReadyFinish() :NetMsgSS(RT_LOGIN_READY_FINISH)
+		{
 
-struct WS2CChatToWorld : public NetMsgSS
-{
+		}
+	};
 
-	WS2CChatToWorld() :NetMsgSS(PRO_W2C_CHATTOWORLD)
+	// 帐号登录 
+	const int32 RQ_ACCOUNT_LOGIN = PRO_LOGIN + 5;
+	struct RqAccountLogin : public NetMsgSS
+	{
+		RqAccountLogin() :NetMsgSS(RQ_ACCOUNT_LOGIN)
+		{
+			loginType = LOGINTYPE_NAMEPASS;
+			bzero(username, sizeof(username));
+			bzero(password, sizeof(password));
+		}
+		enum
+		{
+			LOGINTYPE_NAMEPASS = 0,	//普通帐号密码登录
+			LOGINTYPE_RSA,			//RSA检验登录
+			LOGINTYPE_CREATENAME,	//创建普通帐号
+			LOGINTYPE_CREATERSA,	//创建RSA帐号
+		};
+		int8 loginType;
+		char username[MAX_NAMESIZE + 1];
+		char password[MAX_NAMESIZE + 1];
+	};
+
+	// 注册帐号
+	const int32 RQ_ACCOUNT_REGIEST = PRO_LOGIN + 6;
+	struct RqAccountRegiest : public NetMsgSS
+	{
+		RqAccountRegiest() :NetMsgSS(RQ_ACCOUNT_REGIEST)
+		{
+			bzero(username, sizeof(username));
+			bzero(password, sizeof(password));
+		}
+		char username[MAX_NAMESIZE + 1];
+		char password[MAX_NAMESIZE + 1];
+	};
+
+	// 获得随机名 
+	const int32 RQ_ACCOUNT_RAND = PRO_LOGIN + 7;
+	struct RqRandAccount : public NetMsgSS
+	{
+		RqRandAccount() :NetMsgSS(RQ_ACCOUNT_RAND)
+		{
+			bzero(username, sizeof(username));
+			bzero(password, sizeof(password));
+		}
+		char username[MAX_NAMESIZE + 1];
+		char password[MAX_NAMESIZE + 1];
+	};
+
+	struct t_NameInfo
+	{
+		char name[MAX_NAMESIZE + 1];
+	};
+
+	// 名字列表 
+	const int32 RT_NAMES_LIST = PRO_LOGIN + 8;
+	struct RtNamesList : public NetMsgSS
+	{
+		RtNamesList() :NetMsgSS(RT_NAMES_LIST)
+		{
+			count = 0;
+		}
+		int8 count;
+		t_NameInfo list[0];
+	};
+
+	// 选择角色 
+	const int32 RQ_Rq_SELECT_ROLE = PRO_LOGIN + 9;
+	struct RqSelectRole : public NetMsgSS
+	{
+		int64 uid;
+		RqSelectRole() :NetMsgSS(RQ_Rq_SELECT_ROLE)
+		{
+			uid = 0;
+		}
+	};
+
+	// 返回登录信息 
+	const int32 RT_ACC_LOGIN = PRO_LOGIN + 10;
+	struct RtAccLogin : public NetMsgSS
+	{
+		RtAccLogin() :NetMsgSS(RT_ACC_LOGIN)
+		{
+			accid = result = keytime = 0;
+			memset(keymd5, 0, MAX_NAMESIZE);
+		}
+		int64 accid;
+		int32 result; //0成功,1失败,2...
+		char keymd5[MAX_NAMESIZE + 1];
+		int32 keytime;
+	};
+
+	// 创建角色 
+	const int32 RQ_CREATE_ROLE = PRO_LOGIN + 11;
+	struct RqCreateRole : public NetMsgSS
+	{
+		int64 accid;
+		int8 roleType;
+		char name[MAX_NAMESIZE + 1];
+		char keymd5[MAX_NAMESIZE + 1];
+		int32 keytime;
+
+		RqCreateRole() :NetMsgSS(RQ_CREATE_ROLE)
+		{
+			accid = roleType = keytime = 0;
+			memset(name, 0, sizeof(name));
+			memset(keymd5, 0, sizeof(keymd5));
+		}
+	};
+
+	// 创建结果
+	const int32	RT_CREATE_RET = PRO_LOGIN + 12;
+	struct RtCreateRet : public NetMsgSS
+	{
+		RtCreateRet() :NetMsgSS(RT_CREATE_RET)
+		{
+			reasoin = newid = 0;
+		}
+		int8 reasoin;
+		int64 newid;
+	};
+
+	// 删除角色
+	const int32 RQ_DELETE_ROLE = PRO_LOGIN + 13;
+	struct RqDeleteRole : public NetMsgSS
+	{
+		RqDeleteRole() :NetMsgSS(RQ_DELETE_ROLE)
+		{
+			uid = accid = keytime = 0;
+			memset(keymd5, 0, sizeof(keymd5));
+		}
+		int64 uid;
+		int64 accid;
+		char keymd5[MAX_NAMESIZE + 1];
+		int32 keytime;
+	};
+
+	// 角色列表
+	const int32 RT_USERLIST_LOGIN = PRO_LOGIN + 14;
+	struct RtUserListLogon : public NetMsgSS
+	{
+		RtUserListLogon() :NetMsgSS(RT_USERLIST_LOGIN)
+		{
+
+		}
+		struct UserInfo
+		{
+			int64 id;
+			char name[MAX_NAMESIZE + 1];
+			int16 level;
+			UserInfo()
+			{
+				id = level = 0;
+				memset(name, 0, sizeof(name));
+			}
+		};
+		UserInfo datas[4];
+	};
+
+	// 请求生成帐号
+	const int32 RQ_GENENER_ACCOUNT = PRO_LOGIN + 15;
+	struct rqGenenerAccount : public NetMsgSS
+	{
+		rqGenenerAccount() :NetMsgSS(RQ_GENENER_ACCOUNT)
+		{
+			bzero(inpassword, sizeof(inpassword));
+		}
+		char inpassword[MAX_NAMESIZE + 1];
+	};
+
+	//返还生成的帐号
+	const int32 RT_GENERATE_ACCOUNT = PRO_LOGIN + 16;
+	struct rtGenerateAccount : public NetMsgSS
+	{
+		rtGenerateAccount() :NetMsgSS(RT_GENERATE_ACCOUNT)
+		{
+			AccounID = 0;
+			bzero(publickey, sizeof(publickey));
+			bzero(privatekey, sizeof(privatekey));
+		}
+		int64 AccounID;
+		char publickey[MAX_ACCNAMESIZE + 1];
+		char privatekey[MAX_ACCNAMESIZE + 1];
+	};
+
+	//////////////////////////////场景模块////////////////////////////////////////////
+
+	// 加载完成
+	const int32 RT_ENTER_SCENE_LOADED = PRO_SCENE + 1;
+	struct RtEnterSceneLoaded : public NetMsgSS
 	{
 
-	}
+		RtEnterSceneLoaded() :NetMsgSS(RT_ENTER_SCENE_LOADED)
+		{
 
-	ChatMsgInfo2 msg;
+		}
+		enum EEnterSceneResult
+		{
+			SUCCESS = 0,
+			FAIL
+		};
+		int32 nResult;
+	};
 
-	inline int32 GetPackLength()const
+	//请求加载场景的数据
+	const int32 RQ_SCENE_INIT_DATA = PRO_SCENE + 2;
+	struct RqClientIsReady : public NetMsgSS
 	{
-		return sizeof(*this);
-	}
-};
+		RqClientIsReady() :NetMsgSS(RQ_SCENE_INIT_DATA)
+		{
 
-struct W2CCreateRet : public NetMsgSS
-{
-	W2CCreateRet() :NetMsgSS(PRO_W2C_CREATE_RET)
+		}
+
+		enum
+		{
+			E_DATA_TYPE_NULL = 0x00000000,
+			E_DATA_TYPE_CHARMAIN = 0x00000001,
+			E_DATA_TYPE_PACKAGE = 0x00000002,
+			E_DATA_TYPE_RELATION = 0x00000004,
+			E_DATA_TYPE_PET = 0x00000008,
+			E_DATA_TYPE_ALL = 0x0fffffff,
+		};
+
+		int32 nLoadDataFlags; // 需要加载的数据 
+	};
+
+	const int32 RT_CHAR_WORLD = PRO_SCENE + 3; // ss上的世界聊天 
+	struct RtCharWorld : public NetMsgSS
 	{
-		reasoin = newid = 0;
-	}
-	int8 reasoin;
-	int64 newid;
-	inline int32 GetPackLength()const
+		RtCharWorld() :NetMsgSS(RT_CHAR_WORLD)
+		{
+			fromUID = sayLen = 0;
+			memset(fromName, 0, sizeof(fromName));
+			memset(sayMsg, 0, sizeof(sayMsg));
+		}
+		int64 fromUID;
+		char fromName[MAX_NAME_LENGTH];
+		int32 sayLen;
+		char sayMsg[MAX_CHAR_WORLD_MSG_LENGTH];
+	};
+
+	// 进入场景的初始化结果 
+	const int32 RT_SCENE_INIT_RESULT = PRO_SCENE + 4; // 场景初始化 
+	struct RtSceneInitResult : public NetMsgSS
 	{
-		return sizeof(*this);
-	}
-};
+		RtSceneInitResult() :NetMsgSS(RT_SCENE_INIT_RESULT)
+		{
+
+		}
+		enum
+		{
+			SUCCESS = 0,
+			FAIL
+		};
+		int32 nResult;
+	};
+
+	const int32 RT_SCENE_LOAD_INFO = PRO_SCENE + 5; // 进入的场景信息 
+	struct RtSceneLoadInfo : public NetMsgSS
+	{
+		RtSceneLoadInfo() :NetMsgSS(RT_SCENE_LOAD_INFO)
+		{
+			mapid = 0;
+		}
+		int32 mapid;
+	};
+
+	// 发送数据完毕 
+	const int32 RT_SEND_DATA_FINISH = PRO_SCENE + 6;
+	struct RtSendDataFinish : public NetMsgSS
+	{
+		RtSendDataFinish() :NetMsgSS(RT_SEND_DATA_FINISH)
+		{
+			nServerTime = nMsgOrderID = 0;
+		}
+		// 这里做发一些检查值 服务器时间等  
+		int32 nServerTime; // 服务器时间
+		int32 nMsgOrderID; // 消息顺序值，用于外挂检查 	
+	};
+
+	/*
+	 *	切换场景
+	 */
+	const int32 RQ_CHANGE_SCENE = PRO_SCENE + 7;	// 切换场景
+	struct RqChanageScene : public NetMsgSS
+	{
+		RqChanageScene() :NetMsgSS(RQ_CHANGE_SCENE)
+		{
+			nSceneID = 0;
+		}
+
+		int32 nSceneID;
+	};
+
+
+	// fep->ws->ss,由ss确认 
+	const int32 RQ_SWITCH_SCENE = PRO_SCENE + 8; // 更换场景  选择角色后就直接根据场景ID进入游戏 
+	struct RqSwitchScene : public NetMsgSS
+	{
+		RqSwitchScene() :NetMsgSS(RQ_SWITCH_SCENE)
+		{
+			nSceneID = 0;
+		}
+		int32 nSceneID;
+
+	};
+
+	const int32 RQ_POSITION_MOVE = PRO_USER + 1;   // 
+	struct RqPositionMove : public NetMsgSS
+	{
+		RqPositionMove() :NetMsgSS(RQ_POSITION_MOVE)
+		{
+			nNewX = nNewY = 0;
+		}
+
+		int32 nNewX; // 已经放大一百倍，服务器直接使用即可 
+		int32 nNewY; // 已经放大一百倍，服务器直接使用即可 
+	};
+
+	/* 物品模块开始 */
+	const int32 RQ_ITEM_MOVE_POSITION = PRO_ITEM + 1;// 移动位置 
+	struct RqItemMovePosition : public NetMsgSS
+	{
+		RqItemMovePosition() : NetMsgSS(RQ_ITEM_MOVE_POSITION)
+		{
+			nSrcPos = nDstPos = 0;
+		}
+		int32 nSrcPos;
+		int32 nDstPos;
+	};
+
+	const int32 RQ_ITEM_USE_OBJECT = PRO_ITEM + 2; // 使用物品 
+	struct RqItemUseObject : public NetMsgSS
+	{
+
+		RqItemUseObject() :NetMsgSS(RQ_ITEM_USE_OBJECT)
+		{
+
+		}
+
+		int32 nUniqueID;
+		int32 nItemNum;
+	};
+
+	/* 商城模块开始 */
+	const int32 RQ_SHOPPING_BUY_ITME = PRO_SHOP + 1;	// 商城购买物品 
+	struct RqShoppingBuyItem : public NetMsgSS
+	{
+		RqShoppingBuyItem() : NetMsgSS(RQ_SHOPPING_BUY_ITME)
+		{
+			nShopID = nShopNum = 0;
+		}
+		int32 nShopID;
+		int32 nShopNum;
+	};
+
+	const int32 RQ_SHOPPING_SELL_ITME = PRO_SHOP + 2;	// 商城卖出物品 
+	struct RqShoppingSellItem : public NetMsgSS
+	{
+
+		RqShoppingSellItem() : NetMsgSS(RQ_SHOPPING_SELL_ITME)
+		{
+			nUniqueID = nItemNum = 0;
+		}
+		int32 nUniqueID;
+		int32 nItemNum;
+	};
+
+	// 发起聊天者信息 
+	struct t_ChatBase
+	{
+		int64 uid;
+		char name[MAX_NAMESIZE + 1];
+		int16 level;
+		int8 vip;
+	};
+
+	// 聊天
+	const int32 RQ_CHAT_TO_CHANNEL = PRO_CHAT + 0;
+	struct RqChatToChannel : public NetMsgSS
+	{
+		RqChatToChannel() :NetMsgSS(RQ_CHAT_TO_CHANNEL)
+		{
+
+		}
+
+		int64 fromUID;
+		int64 toChannelID;
+		C::t_ChatBase fromBase;
+		uint16 msgleg;
+		char msgdata[0];
+
+	};
+	const int32 RQ_CHAT_TO_TEAM = PRO_CHAT + 1;
+	struct RqChatToTeam : public NetMsgSS
+	{
+		RqChatToTeam() :NetMsgSS(RQ_CHAT_TO_TEAM)
+		{
+
+		}
+		C::t_ChatBase msg;
+	};
+
+	const int32 RQ_CHAT_TO_DISCUSS = PRO_CHAT + 2;
+	struct RqChatToDiscuss : public NetMsgSS
+	{
+		RqChatToDiscuss() :NetMsgSS(RQ_CHAT_TO_DISCUSS)
+		{
+
+		}
+		C::t_ChatBase msg;
+	};
+
+	const int32 RQ_CHAT_TO_WORLD = PRO_CHAT + 3;
+	struct RqChatToWorld : public NetMsgSS
+	{
+		RqChatToWorld() :NetMsgSS(RQ_CHAT_TO_WORLD)
+		{
+
+		}
+		C::t_ChatBase msg;
+	};
+
+	struct ChatMsgInfo2
+	{
+		ChatMsgInfo2()
+		{
+			len = 0;
+			memset(data, 0, sizeof(data));
+		}
+		uint16 len;
+		char data[MAX_SOCKET_BUFFER];
+	};
+
+	// 世界聊天 
+	const int32	RT_CHATTOWORLD = PRO_CHAT + 4;
+	struct RtChatToWorld : public NetMsgSS
+	{
+
+		RtChatToWorld() :NetMsgSS(RT_CHATTOWORLD)
+		{
+
+		}
+		ChatMsgInfo2 msg;
+	};
+
+
+
+	const int32 RQ_RELATION_LIST = PRO_RELATION + 0;
+	struct RqRelationList : public NetMsgSS
+	{
+		RqRelationList() :NetMsgSS(RQ_RELATION_LIST)
+		{
+
+		}
+	};
+
+	const int32 RQ_RELATION_ADD = PRO_RELATION + 1;
+	struct RqRelationAdd : public NetMsgSS
+	{
+		RqRelationAdd() :NetMsgSS(RQ_RELATION_ADD)
+		{
+			memset(name, 0, sizeof(name));
+			rel = 0;
+		}
+		char name[MAX_NAMESIZE + 1];
+		int32 rel;
+	};
+
+	const int32 RQ_RELATION_REMOVE = PRO_RELATION + 2;
+	struct RqRelationRemove : public NetMsgSS
+	{
+		RqRelationRemove() :NetMsgSS(RQ_RELATION_REMOVE)
+		{
+			uid = 0;
+		}
+		int64 uid;
+	};
+
+	//创建一个会话(把自己添加进入)
+	const int32  RQ_REL_CREATE_SESS = PRO_RELATION + 3;
+	struct RqRelCreateSess : public NetMsgSS
+	{
+		RqRelCreateSess() : NetMsgSS(RQ_REL_CREATE_SESS)
+		{
+
+		}
+	};
+
+	//发送会话到频道中
+	const int32 RQ_ReL_SEND_MSG = PRO_RELATION + 4;
+	struct RqRelSendMsg : public NetMsgSS
+	{
+		RqRelSendMsg() :NetMsgSS(RQ_ReL_SEND_MSG)
+		{
+
+		}
+	};
+
+	// 单个关系信息 
+	struct t_RelationData
+	{
+		int64 uid;
+		char name[MAX_NAMESIZE + 1];
+		int32 rel; // 0邀请未同意,1好友,2陌生人,3黑名单
+		int32 createtime;
+		int32 dealreltime; // 上次操作时间
+	};
+
+	// 好友列表
+	const int32 RT_RELATION_LIST = PRO_RELATION + 5;
+	struct RtRelationList : public NetMsgSS
+	{
+		RtRelationList() :NetMsgSS(RT_RELATION_LIST)
+		{
+			count = 0;
+		}
+		int32 count;
+		C::t_RelationData list[0];
+	};
+
+	// 好友信息更新 
+	const int32 RT_RELATION_UPDATE = PRO_RELATION + 6;
+	struct RtRelationUpdate : public NetMsgSS
+	{
+		RtRelationUpdate() :NetMsgSS(RT_RELATION_UPDATE)
+		{
+
+		}
+		C::t_RelationData rel;
+	};
+
+	// 好友删除
+	const int32 RT_RELATION_DELETE = PRO_RELATION + 7;
+	struct RtRelationDelete : public NetMsgSS
+	{
+		RtRelationDelete() :NetMsgSS(RT_RELATION_DELETE)
+		{
+			uid = 0;
+		}
+		int64 uid;
+	};
+
+	//////////////////////////////角色模块////////////////////////////////////////////
+
+	// 主角主数据 
+	const int32  RT_CHAR_MAIN_DATA = PRO_USER + 0;	// 角色主数据 
+	struct RtCharMainData : public NetMsgSS
+	{
+		RtCharMainData() :NetMsgSS(RT_CHAR_MAIN_DATA)
+		{
+
+		}
+		SceneUserAttr userVal;
+		EntryPkValBase pkVal;
+	};
+
+	// 钱包数据 
+	const int32 RT_CHAR_MONEY_DATA = PRO_USER + 1;	// 钱包数据 
+	struct RtCharMoneyData : public NetMsgSS
+	{
+		RtCharMoneyData() :NetMsgSS(RT_CHAR_MONEY_DATA)
+		{
+			nGold = nSilver = nCopper = 0;
+		}
+		int32 nGold;
+		int32 nSilver;
+		int32 nCopper;
+	};
+
+	//////////////////////////////频道模块////////////////////////////////////////////
+	const int32 RT_CHANNEL_JION = PRO_CHANNEL + 0;	/* 加入频道 */
+	struct RtChannelJion : public NetMsgSS
+	{
+		RtChannelJion() :NetMsgSS(RT_CHANNEL_JION)
+		{
+			channelID = 0;
+			memset(name, 0, sizeof(name));
+		}
+		int32 channelID;
+		char name[MAX_NAME_LENGTH];
+	};
+
+	const int32 RT_CHANNEL_LEAVE = PRO_CHANNEL + 1;	/* 离开频道 */
+	struct RtChannelLeave : public NetMsgSS
+	{
+		RtChannelLeave() :NetMsgSS(RT_CHANNEL_LEAVE)
+		{
+			channelID = 0;
+			memset(name, 0, sizeof(name));
+		}
+		int32 channelID;
+		char name[MAX_NAME_LENGTH];
+	};
+
+	//////////////////////////////装备模块////////////////////////////////////////////
+
+	// 穿着的装备数据 
+	const int32 RT_EQUIP_MAIN_DATA = PRO_EQUIP + 0; // 装备主数据(身上穿)
+	struct RtEquipMainData : public NetMsgSS
+	{
+		RtEquipMainData() :NetMsgSS(RT_EQUIP_MAIN_DATA)
+		{
+
+		}
+	};
+
+	//////////////////////////////背包模块///////////////////////////////////////////////
+
+	// 单个物品数据
+	struct t_ItemSlot
+	{
+		int32 nUniqueID; // 唯一ID 
+		int32 nItemID;
+
+		// 其他动态参数
+		uint8 nItemNum;		// 数量 
+		uint8 nIndex;		// 格子位置 0-99 
+		uint8 nLock;		// 是否有锁 
+	};
+
+	// inventory
+	// 对于服务器来说，只有一个背包（包括穿在身上）
+	// 背包主数据 inventory
+	const int32 RT_ITEM_MAIN_DATA = PRO_PACK + 0; // 背包主数据 
+	struct RtUserPackages : public NetMsgSS
+	{
+		RtUserPackages() :NetMsgSS(RT_ITEM_MAIN_DATA)
+		{
+			nCount = 0;
+		}
+		int32 nCount;
+		t_ItemSlot items[100]; // 12 + 背包上的数量 最次最多只能发送100个 
+	};
+
+	const int32 RT_ITEM_UPDATE_DATA = PRO_PACK + 1; // 增加或更新 
+	struct RtItemSlotUpdate : public NetMsgSS
+	{
+		RtItemSlotUpdate() :NetMsgSS(RT_ITEM_UPDATE_DATA)
+		{
+			nCount = 0;
+		}
+		int32 nCount;
+		t_ItemSlot items[100]; // 最次最多只能发送100个 
+	};
+
+	const int32 RT_ITEM_DELTE_DATA = PRO_PACK + 2; // 删除道具装备
+	struct RtItemSlotDelete : public NetMsgSS
+	{
+		RtItemSlotDelete() :NetMsgSS(RT_ITEM_DELTE_DATA)
+		{
+			nCount = 0;
+			memset(nUniqueIDs, 0, sizeof(nUniqueIDs));
+		}
+		int32 nCount;
+		int32 nUniqueIDs[100];
+	};
+
+	//////////////////////////////任务模块///////////////////////////////////////////////
+
+	// 任务主数据  
+	const int32 RT_QUEST_MAIN_DATA = PRO_QUEST + 0; // 任务主数据 
+	struct RtQuestMainData : public NetMsgSS
+	{
+		RtQuestMainData() :NetMsgSS(RT_QUEST_MAIN_DATA)
+		{
+
+		}
+
+		struct QuestInfo
+		{
+			int32 nQuestID;
+			int32 nResult0;
+			int32 nResult1;
+		};
+
+		QuestInfo arrHadAccept[MAX_QUEST_LIST_COUNT];
+		QuestInfo arrCanAccept[MAX_QUEST_LIST_COUNT];
+
+	};
+
+	///////////////////////////信箱模块///////////////////////////////////////////////
+
+	// 查看某个信件
+	const int32 RQ_LOOK_MESSAGE = PRO_MESSAGE + 0;
+	struct rqLookMessage : public NetMsgSS
+	{
+		rqLookMessage():NetMsgSS(RQ_LOOK_MESSAGE)
+		{
+			msgID = askPass = 0;
+		}
+		int64 msgID;	// 信件ID
+		int32 askPass;	// 信件密码0时，则是查看是否有该信件，>0是获得内容
+	};
+
+	// 返回信件访问密码
+	const int32 RT_NEED_PASS_MESSAGE = PRO_MESSAGE + 1;
+	struct rtNeedPassMessage : public NetMsgSS
+	{
+		rtNeedPassMessage(): NetMsgSS(RT_NEED_PASS_MESSAGE)
+		{
+			msgID = needPass = 0;
+		}
+		int64 msgID;
+		int32 needPass;	 // 需要指定密码才能查看
+	};
+
+	// 返回内容信息
+	const int32 RT_CONNET_MESSAGE = PRO_MESSAGE + 2;
+	struct rtConentMessage : public NetMsgSS
+	{
+		rtConentMessage():NetMsgSS(RT_CONNET_MESSAGE)
+		{
+			msgID = msgLen = 0;
+		}
+		int64 msgID;
+		int16 msgLen;
+		char msgData[0];
+	};
+
+	// 信件操作
+	const int32 RQ_OPT_MESSAGE = PRO_MESSAGE + 3;
+	struct rqOptMessage : public NetMsgSS
+	{
+		rqOptMessage() :NetMsgSS(RQ_OPT_MESSAGE)
+		{
+			msgID = pass = optType = 0;
+		}
+		int64 msgID;
+		int32 pass;
+		int8 optType; //0无,1删除
+	};
 
 #pragma pack(pop)
 
+};	//namespace
 
 #endif

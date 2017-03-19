@@ -16,7 +16,7 @@ DCollection<DUser>& MCharacter::getUserCollection()
 		{ "mapid",DB_DWORD, sizeof(int32) },
 		{ NULL,0,0 }
 	};
-	return dbmem::Memory::data.getCollection<DUser>("User", columns, "id");
+	return dbmem::Memory::data.getCollection<DUser>("USER", columns, "id");
 }
 
 DCollection<DRelation>& MCharacter::getRelationCollection()
@@ -44,7 +44,7 @@ DWORD MCharacter::getBinary(int64 uid,char* out)
 	static dbCol columns[] =
 	{
 		{ "id", DB_QWORD, sizeof(int64) },
-		{ "bindata",DB_BIN2,0 },
+		{ "INFO",DB_BIN2,0 },
 		{ NULL,0,0 }
 	};
 
@@ -53,7 +53,7 @@ DWORD MCharacter::getBinary(int64 uid,char* out)
 	char wheres[100];
 	memset(wheres, 0, sizeof(wheres));
 	sprintf(wheres, "`id`=%llu", uid);
-	unsigned int ret = dbmem::Memory::data.getDB()->ExecSelectLimit("User", columns, wheres, NULL, (unsigned char*)buffer);
+	unsigned int ret = dbmem::Memory::data.getDB()->ExecSelectLimit("USER", columns, wheres, NULL, (unsigned char*)buffer);
 	if (ret == 1)
 	{
 

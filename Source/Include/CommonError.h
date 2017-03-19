@@ -2,7 +2,7 @@
 #define _GAMEERROR_H_
 
 
-#include "ServerDefine.h"
+
 
 // ´íÎóÂë 
 

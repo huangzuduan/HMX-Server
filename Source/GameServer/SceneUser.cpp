@@ -1,13 +1,12 @@
 #include "SceneUser.h"
 #include "ResourceMgr.h"
-#include "def_entity.h"
-#include "ServerDefine.h"
+
 #include "def_resource.h"
-#include "RelationCtrl.h"
+#include "Relation.h"
 
 
-SceneUser::SceneUser(): SceneEntryPk(zSceneEntry::SceneEntry_Player)
-	, uuid(this), objM(this), usm(this), mesM(this), relM(this)
+SceneUser::SceneUser() : SceneEntryPk(zSceneEntry::SceneEntry_Player)
+, objM(this), usm(this), relM(this)
 {
 	clientReady = false;
 	userModity = false;
@@ -19,21 +18,11 @@ SceneUser::~SceneUser()
 
 }
 
-void SceneUser::CheckSaveToDb(int32 nSrvTime)
-{
-	// 检查是否有修改 
-	if (__INTERAVAL_FIVE_SECOND__)
-	{
-		if (!userModity) return;
-		userModity = false;
-		SaveToDb(0);
-	}
-}
 
-bool SceneUser::loadFromDb(const D2SLoadUser* packet, int32 nSize)
+bool SceneUser::loadDB(const S::SSRtLoadUser* packet, int32 nSize)
 {
 	// 拷贝基本的数据
-	memcpy(&userbase,&packet->base,sizeof(userbase));
+	memcpy(&userbase, &packet->base, sizeof(userbase));
 
 	// 初始化Entry实例数据 
 	this->id = userbase.id;
@@ -41,94 +30,167 @@ bool SceneUser::loadFromDb(const D2SLoadUser* packet, int32 nSize)
 	strncpy(this->name, userbase.name, MAX_NAMESIZE);
 
 	// 解析二进制数据
-	::protobuf::UserBinary proto;
-	proto.ParsePartialFromArray(packet->data, packet->size);
-	UnSerialize(proto);
-
-	return true;
-}
-
-bool SceneUser::SaveToDb(int32 nScoketEventCode)
-{
-	BUFFER_CMD(S2DSaveUser,send,MAX_BUFFERSIZE);
-
-	send->uid = this->id;
-	memcpy(&send->base,&userbase,sizeof(send->base));
-	::protobuf::UserBinary proto;
-
-	Serialize(proto);
-	proto.SerializeToArray(send->data, MAX_BUFFERSIZE - sizeof(S2DSaveUser));
-
-	send->size = proto.ByteSize();
-	NetService::getMe().getSessionMgr().sendToDp(send, sizeof(S2DSaveUser) + send->size * sizeof(send->data[0]));
-
-	return true;
-}
-
-// 保存数据 
-bool SceneUser::Serialize(::protobuf::UserBinary& proto)
-{
-	//* 保存二进制数据 */ 
-	::protobuf::Relation* relation = proto.mutable_relation();
-	if (relation)
+	if (packet->size == sizeof(packet->header) + packet->header.size)
 	{
-		relM.serialize(*relation);
+		this->readBinary(packet->header.data, packet->header.size);
+	}
+	else
+	{
+		H::logger->error("数据错误:name=%s", this->name);
+		ASSERT(0);
+		return false;
 	}
 	return true;
 }
 
-// 初始化角色基本数据 
-void SceneUser::UnSerialize(const ::protobuf::UserBinary& proto)
+bool SceneUser::saveDB()
 {
-	/* 二进制数据解析 */ 
-	const ::protobuf::Relation& relation = proto.relation();
-	relM.unserialize(relation);
+	BUFFER_CMD(S::SSRqSaveUser, send, MAX_BUFFERSIZE);
+	memcpy(&send->base, &userbase, sizeof(send->base));
+	send->header.size = this->writeBinary(&send->header.data[send->size]);
+	send->size += sizeof(BinaryHeader);
+	send->size += send->header.size;
+	GameService::getMe().getSessionMgr().sendToDp(send, send->getSize());
+	return true;
+}
+
+void SceneUser::readBinary(const char* data, int32 len)
+{
+	if (len < sizeof(BinaryMember))
+		return;
+
+	int32 dwSize = 0;
+	const BinaryMember* pMember = (const BinaryMember*)data;
+	while (pMember->type != BINARY_USER_NULL && pMember->type < BINARY_USER_MAX)
+	{
+		switch (pMember->type)
+		{
+			case BINARY_USER_COUNTER:
+			{
+				::protobuf::CounterProto proto;
+				proto.ParseFromArray(pMember->data, pMember->size);
+				this->unserialize(proto);
+			}
+			break;
+			case BINARY_USER_RELATION:
+			{
+				::protobuf::RelationProto proto;
+				proto.ParseFromArray(pMember->data, pMember->size);
+				relM.unserialize(proto);
+			}
+			break;
+		}
+		dwSize += sizeof(BinaryMember);
+		dwSize += pMember->size;
+		pMember = (const BinaryMember*)(&pMember->data[pMember->size]);
+	}
+}
+
+int32 SceneUser::writeBinary(char* data)
+{
+	int32 dwSize = 0;
+	BinaryMember* pMember = (BinaryMember*)data;
+	for (int type = BINARY_USER_NULL + 1; type < BINARY_USER_MAX; ++type)
+	{
+		pMember->type = type;
+		pMember->size = 0;
+		switch (pMember->type)
+		{
+			case BINARY_USER_COUNTER:
+			{
+				::protobuf::CounterProto proto;
+				this->serialize(proto);
+				pMember->size += proto.ByteSize();
+				proto.SerializeToArray(pMember->data, pMember->size);
+			}
+			break;
+			case BINARY_USER_RELATION:
+			{
+				::protobuf::RelationProto proto;
+				relM.serialize(proto);
+				pMember->size += proto.ByteSize();
+				proto.SerializeToArray(pMember->data, pMember->size);
+			}
+			break;
+		}
+
+		if (pMember->size)
+		{
+			dwSize += sizeof(BinaryMember);
+			dwSize += pMember->size;
+			pMember = (BinaryMember*)(&pMember->data[pMember->size]);
+		}
+	}
+
+	pMember = (BinaryMember*)(&pMember->data[dwSize]);
+	pMember->type = BINARY_USER_NULL;
+	pMember->size = 0;
+	dwSize += sizeof(BinaryMember) + 0;
+
+	return dwSize;
+}
+
+// 保存数据 
+bool SceneUser::serialize(::protobuf::CounterProto& proto)
+{
+	//proto.SerializeToArray(send->data, MAX_BUFFERSIZE - sizeof(S2DSaveUser));
+
+	return true;
+}
+
+// 初始化角色基本数据 
+void SceneUser::unserialize(const ::protobuf::CounterProto& proto)
+{
+
+
 }
 
 /* 上线-处理小逻辑方面的功能 */
-void SceneUser::Online()
+void SceneUser::online()
 {
 
 	/* 加入聊天频道 */
-	Channel* wdCh = NetService::getMe().getChannelM().get(CHANNEL_TYPE_WORLD);
+	Channel* wdCh = GameService::getMe().getChannelM().get(CHANNEL_TYPE_WORLD);
 	if (wdCh)
 	{
 		wdCh->add(this);
 	}
 	else
 	{
-		Zebra::logger->error("Not Found The World Channel");
+		H::logger->error("Not Found The World Channel");
 	}
 
 	relM.sendAllRelList();
 }
 
-void SceneUser::Update(const zTaskTimer* timer)
-{	
-	//CheckSaveToDb(nSrvTime);
-
-	//if (__INTERAVAL_ONE_SECOND__)
-	//{
-	//	int32 nowTime = Zebra::timeTick->getNowTime();
-	//	Timer(nowTime);
-
-	//}
-}
-
-void SceneUser::Timer(int32 curTime)
+void SceneUser::Timer(const zTaskTimer* t)
 {
-	ucm.Timer(curTime);
+	int32 now = H::timeTick->now();
+	if (t->is1Sec())
+	{
+		ucm.Timer(now);
+	}
 
-	//Channel* wdCh = NetService::getMe().getChannelM().get(CHANNEL_TYPE_WORLD);
-	//if (wdCh)
-	//{
-	//	S2CRepCharWorld msg;
-	//	wdCh->sendCmdToAll(&msg, (int)msg.GetPackLength());
-	//}
-}
+	if (t->is2Sec())
+	{
 
-void SceneUser::UpdateAttribute()
-{
+
+	}
+
+	if (t->is3Sec())
+	{
+
+	}
+
+	if (t->is5Sec())
+	{
+
+	}
+
+	if (t->is1Min())
+	{
+
+	}
 
 }
 
@@ -154,33 +216,33 @@ void SceneUser::OnWeaponChange(const ValueType& vOldValue, const ValueType& vNew
 
 void SceneUser::OnMoneyChange(const ValueType& vOldValue, const ValueType& vNewValue)
 {
-	S2CCharMoneyData msg;
+	C::RtCharMoneyData msg;
 	msg.nGold = 0;
 	msg.nSilver = 0;
 	msg.nCopper = 0;
-	sendCmdToMe(&msg, msg.GetPackLength());
+	sendCmdToMe(&msg, sizeof(msg));
 }
 
 void SceneUser::sendCmdToMe(NetMsgSS* pMsg, int32 nSize)
 {
 	if (!initDataFinish)
 	{
-		Zebra::logger->warn("Server Not initDataFinish");
+		H::logger->warn("Server Not initDataFinish");
 		ASSERT(0);
 		return;
 	}
 
 	if (!clientReady)
 	{
-		Zebra::logger->warn("ClientReady Not Ready");
+		H::logger->warn("ClientReady Not Ready");
 		return;
 	}
-	SendToFep(pMsg, nSize);
+	sendToFep(pMsg, nSize);
 }
 
-void SceneUser::SendToFep(NetMsgSS* pMsg, int32 nSize)
+void SceneUser::sendToFep(NetMsgSS* pMsg, int32 nSize)
 {
-	zSession* session = NetService::getMe().getSessionMgr().getFep(fepsid);
+	zSession* session = GameService::getMe().getSessionMgr().getFep(fepsid);
 	if (session)
 	{
 		pMsg->sessid = this->sessid;
@@ -189,31 +251,31 @@ void SceneUser::SendToFep(NetMsgSS* pMsg, int32 nSize)
 	}
 }
 
-void SceneUser::SendToDp(NetMsgSS* pMsg, int32 nSize)
+void SceneUser::sendToDp(NetMsgSS* pMsg, int32 nSize)
 {
 	pMsg->sessid = this->sessid;
 	pMsg->fepsid = this->fepsid;
-	NetService::getMe().getSessionMgr().sendToDp(pMsg, nSize);
+	GameService::getMe().getSessionMgr().sendToDp(pMsg, nSize);
 }
 
-void SceneUser::SendToWs(NetMsgSS* pMsg, int32 nSize)
+void SceneUser::sendToWs(NetMsgSS* pMsg, int32 nSize)
 {
 	pMsg->sessid = this->sessid;
 	pMsg->fepsid = this->fepsid;
-	NetService::getMe().getSessionMgr().sendToWs(pMsg, nSize);
+	GameService::getMe().getSessionMgr().sendToWs(pMsg, nSize);
 }
 
 
 void SceneUser::sendMainToMe()
 {
-	/* 角色基本数据  */ 
-	S2CCharMainData sMsg;
+	/* 角色基本数据  */
+	C::RtCharMainData sMsg;
 	//sMsg.userVal = userAttribute;
 	//sMsg.pkVal = GetEntryPkValBase();
-	sendCmdToMe(&sMsg, sMsg.GetPackLength());
+	sendCmdToMe(&sMsg, sizeof(sMsg));
 
 	/* 道具数据 */
-	S2CUserPackages sendItemMsg;
+	C::RtUserPackages sendItemMsg;
 	std::vector<qObject*> allItems;
 	getAllItemSlots(allItems);
 	sendItemMsg.nCount = 0;
@@ -226,8 +288,8 @@ void SceneUser::sendMainToMe()
 		sendItemMsg.items[sendItemMsg.nCount].nLock = 0;
 		sendItemMsg.nCount++;
 	}
-	Zebra::logger->debug("Items Count:%u", sendItemMsg.nCount);
-	sendCmdToMe(&sendItemMsg, sendItemMsg.GetPackLength());
+	H::logger->debug("Items Count:%u", sendItemMsg.nCount);
+	sendCmdToMe(&sendItemMsg, sizeof(sendItemMsg));
 }
 
 void SceneUser::setupCharBase()
@@ -301,7 +363,7 @@ bool SceneUser::SubMoney(int32 nType, int32 nNum, bool notify, bool isTry)
 
 	//if (notify)
 	//{
-	//	S2CCharMoneyData sendMsg;
+	//	RtCharMoneyData sendMsg;
 	//	sendMsg.nGold = GetUserAttrInt32(USER_ATTR_GOLD);
 	//	sendMsg.nSilver = GetUserAttrInt32(USER_ATTR_SILVER);
 	//	sendMsg.nCopper = GetUserAttrInt32(USER_ATTR_COPPER);
@@ -353,7 +415,7 @@ bool SceneUser::isDie()
 
 DWORD SceneUser::getLevel() const
 {
-	return SceneEntryPk::GetLevel();
+	return 0;
 }
 
 
@@ -417,6 +479,6 @@ void SceneUser::toDie(const DWORD &dwTempID)
 
 SWORD SceneUser::directDamage(SceneEntryPk *pAtt, const SDWORD &dam, bool notify)
 {
-	
+
 	return 0;
 }

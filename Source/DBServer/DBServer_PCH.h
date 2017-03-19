@@ -6,7 +6,7 @@
 #include "NetIncludes.h"
 #include "SrvCoreIncludes.h"
 
-#include "NetService.h"
+#include "GameService.h"
 #include "NetMsgHandler.h"
 #include "ProcSsHandler.h"
 

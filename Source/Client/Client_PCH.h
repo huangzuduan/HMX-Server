@@ -14,7 +14,7 @@
 #include "PlayerMgr.h"
 #include "PlayerProcHandler.h"
 
-#include "NetService.h"
+#include "GameService.h"
 
 #endif
 

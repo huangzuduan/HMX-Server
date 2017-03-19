@@ -50,7 +50,7 @@ void OfflineUserMgr::loadDB()
 #pragma pack(pop)
 
 	dbUserID* dataList, *dataTmp;
-	int ret = NetService::getMe().getDbMysql()->ExecSelect("User", user_id, NULL, NULL, (unsigned char**)&dataList);
+	int ret = GameService::getMe().getDbMysql()->ExecSelect("USER", user_id, NULL, NULL, (unsigned char**)&dataList);
 	if (ret > 0)
 	{
 		int usercount = 0;
@@ -67,13 +67,13 @@ void OfflineUserMgr::loadDB()
 			else
 			{
 				failcount++;
-				Zebra::logger->error("加载角色失败[ID:%lld]",user->id);
+				H::logger->error("加载角色失败[ID:%lld]",user->id);
 				removeUser(user);
 			}
 		}
 
 		SAFE_DELETE_VEC(dataList);
-		Zebra::logger->info("共%d条数据，成功加载%d条,失败%d条",ret,usercount,failcount);
+		H::logger->info("共%d条数据，成功加载%d条,失败%d条",ret,usercount,failcount);
 
 	}
 }

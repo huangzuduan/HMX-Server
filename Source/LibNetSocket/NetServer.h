@@ -214,8 +214,8 @@ private:
 	PNetServerOnMsgHandler		m_pOnMsg;		// 消息回调 
 	PNetServerExistHandler		m_pOnExit;		// 断开回调 
 
-	thread  m_cServiceThread;
-	mutex   m_cClientListMutex;
+	boost::thread  m_cServiceThread;
+	boost::mutex   m_cClientListMutex;
 
 };
 

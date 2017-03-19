@@ -140,7 +140,7 @@ SceneUser *Scene::getSceneUserByPos(const zPos &pos,const bool bState,const zSce
   */
 SceneUser *Scene::getUserByID(DWORD userid)
 {
-  SceneUser *ret=NetService::getMe().getSceneUserMgr().getUserByID(userid);
+  SceneUser *ret=GameService::getMe().getSceneUserMgr().getUserByID(userid);
   if (ret)
   {
     //if (ret->scene!=this) ret=NULL;
@@ -157,7 +157,7 @@ SceneUser *Scene::getUserByID(DWORD userid)
  */
 SceneUser *Scene::getUserByTempID(DWORD usertempid)
 {
-  SceneUser *ret=NetService::getMe().getSceneUserMgr().getUserBySessID(usertempid);
+  SceneUser *ret=GameService::getMe().getSceneUserMgr().getUserBySessID(usertempid);
   if (ret)
   {
    // if (ret->scene!=this) ret=NULL;
@@ -174,7 +174,7 @@ SceneUser *Scene::getUserByTempID(DWORD usertempid)
  */
 SceneUser *Scene::getUserByName(const char *username)
 {
-  SceneUser *ret=NetService::getMe().getSceneUserMgr().getUserByName(username);
+  SceneUser *ret=GameService::getMe().getSceneUserMgr().getUserByName(username);
   if (ret)
   {
     //if (ret->scene!=this) ret=NULL;
@@ -704,13 +704,13 @@ bool Scene::init(DWORD countryid,DWORD mapid)
   SceneManager::MapMap_iter map_iter = SceneManager::getInstance().map_info.find(mapid);
   if (map_iter == SceneManager::getInstance().map_info.end())
   {
-    Zebra::logger->error("得到地图名称失败");
+    H::logger->error("得到地图名称失败");
     return inited;
   }
   SceneManager::CountryMap_iter country_iter = SceneManager::getInstance().country_info.find(countryid);
   if (country_iter == SceneManager::getInstance().country_info.end())
   {
-    Zebra::logger->error("得到国家信息失败");
+    H::logger->error("得到国家信息失败");
     return inited;
   }
 
@@ -854,7 +854,7 @@ bool Scene::init(DWORD countryid,DWORD mapid)
     
     if (!initByNpcDefine(define))
     {
-      Zebra::logger->warn("初始化NPC失败");
+      H::logger->warn("初始化NPC失败");
       return false;
     }
   }
@@ -1130,9 +1130,9 @@ bool Scene::loadMapFile()
 	//}
 
 	zXMLParser xml;
-	if (!xml.initFile(Zebra::global["datadir"] + getRealFileName() + ".xml"))
+	if (!xml.initFile(H::global["datadir"] + getRealFileName() + ".xml"))
 	{
-		Zebra::logger->error("不能读取场景配置文件 %s", (Zebra::global["datadir"] + getRealFileName() + ".xml").c_str());
+		H::logger->error("不能读取场景配置文件 %s", (H::global["datadir"] + getRealFileName() + ".xml").c_str());
 		return false;
 	}
 
@@ -1230,14 +1230,14 @@ bool Scene::loadMapFile()
 				else
 				{
 					if (strlen(define.name)!=0)
-						Zebra::logger->warn("基本数据表格中没有这个Npc %s",define.name);
+						H::logger->warn("基本数据表格中没有这个Npc %s",define.name);
 				}
 			}
 			else if (strcmp((char *)node->name,"waypoint") == 0)
 			{
 				if (!initWayPoint(&xml,node,countryID))
 				{
-					Zebra::logger->error("解析跳转点错误");
+					H::logger->error("解析跳转点错误");
 					return false;
 				}
 			}
@@ -1246,7 +1246,7 @@ bool Scene::loadMapFile()
 	}
 	else
 	{
-		Zebra::logger->warn("加载地图配置%s失败",(Zebra::global["datadir"] + fileName + ".xml").c_str());
+		H::logger->warn("加载地图配置%s失败",(H::global["datadir"] + fileName + ".xml").c_str());
 		return false;
 	}
 
@@ -1794,7 +1794,7 @@ void Scene::runCircle_anti_clockwise(
     }
   }
   else
-    Zebra::logger->info("Scene::runCircle_anti_clockwise(): 错误的参数 side=%u,X=%u Y=%u CX=%u CY=%u",side,X,Y,CX,CY);
+    H::logger->info("Scene::runCircle_anti_clockwise(): 错误的参数 side=%u,X=%u Y=%u CX=%u CY=%u",side,X,Y,CX,CY);
 }
 
 /**
@@ -1865,7 +1865,7 @@ void Scene::runCircle_clockwise(
     }
   }
   else
-    Zebra::logger->info("Scene::runCircle_clockwise(): 错误的参数 side=%u,X=%u Y=%u CX=%u CY=%u",side,X,Y,CX,CY);
+    H::logger->info("Scene::runCircle_clockwise(): 错误的参数 side=%u,X=%u Y=%u CX=%u CY=%u",side,X,Y,CX,CY);
 }
 
 /**
@@ -1962,7 +1962,7 @@ bool Scene::getNextPos(
       }
       else
       {
-        Zebra::logger->info("Scene::getNextPos(): 错误的参数 clockwise=%u",clockwise);
+        H::logger->info("Scene::getNextPos(): 错误的参数 clockwise=%u",clockwise);
 
         //按照顺时针处理
         runCircle_clockwise(side,orgPos.x,orgPos.y,crtPos.x,crtPos.y);
@@ -1987,7 +1987,7 @@ bool Scene::getNextPos(
     else
     {
       //跳过超出边界的点
-      Zebra::logger->error("中心点(%u,%u),超出边界点(%u,%u)",orgPos.x,orgPos.y,crtPos.x,crtPos.y);
+      H::logger->error("中心点(%u,%u),超出边界点(%u,%u)",orgPos.x,orgPos.y,crtPos.x,crtPos.y);
     }
   } while(true);
 

@@ -38,7 +38,7 @@ void NetIOBuffer::ReleaseBuffer()
 
 bool NetIOBuffer::Write(char* recvBuf, int32 bodyLen)
 {
-	mutex::scoped_lock lock(m_cMutex);
+	boost::mutex::scoped_lock lock(m_cMutex);
 	if(bodyLen > m_nMax - m_nBegin - m_nLen)
 	{
 		/* 将数据往前移 */ 
@@ -68,7 +68,7 @@ int32 NetIOBuffer::ReadRemove(void* pMsg, int32 nLen)
 {
 	if(!m_nLen)	return m_nLen;
 
-	mutex::scoped_lock lock(m_cMutex);
+	boost::mutex::scoped_lock lock(m_cMutex);
 
 	int nGetLen = 0;
 	if(nLen < m_nLen)
@@ -89,7 +89,7 @@ int32 NetIOBuffer::ReadRemove(void* pMsg, int32 nLen)
 
 void NetIOBuffer::RemoveBuffer(int32 nLen)
 {
-	mutex::scoped_lock lock(m_cMutex);
+	boost::mutex::scoped_lock lock(m_cMutex);
 	m_nBegin += nLen;
 	m_nLen -= nLen;
 	if(m_nLen == 0)

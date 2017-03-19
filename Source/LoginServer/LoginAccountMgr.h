@@ -3,9 +3,8 @@
 
 #include "BaseDefine.h"
 #include "Single.h"
-#include "ServerDefine.h"
 
-#include "Utility.h"
+
 
 
 /*------------------------------------------------------------------
@@ -43,7 +42,7 @@ struct StAccountInfo
 	 *-------------------------------------------*/
 	void AddLoginTimes()
 	{
-		int32 now = Zebra::timeTick->getNowTime();
+		int32 now = H::timeTick->now();
 		if(now - nLastLogin < 1) // 小于1称重登都是属于非法 
 		{
 			nIllegalTime++;
@@ -109,7 +108,7 @@ private:
 
 	AccountInfoMapType m_mapAccountInfo;
 
-	static ObjPool<StAccountInfo> s_cAccountInfoFactory;
+	static zObjPool<StAccountInfo> s_cAccountInfoFactory;
 
 };
 

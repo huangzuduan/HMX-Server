@@ -2,32 +2,27 @@ syntax = "proto2";
 
 package protobuf;
 
-// 频道消息
-
-
-message UserData
+// 公共信箱，不指定谁可以看，有密码就可以看见，同时还要以进行处理
+message MsgConent
 {
-	optional int64 uid = 1;		// 唯一ID 
-	optional string name = 2;	// 缓存名字
-	optional int32 createtime = 3; 	// 参与时间
-	optional int32 receivetime = 4; // 收到时间(如果不在线，则该值为0),> 0 代表已经发送过给用户 
+	optional int64 msgid = 1; 		// 消息ID
+	optional int64 senduid = 2;		// 发送者ID
+	optional string sendname = 3;	// 发送者名字
+	optional int32 sendtime = 4; 	// 发送时间
+	optional string conent = 5;		// 消息内容
 }
 
-message MsgData
+// 消息标记
+message MsgMark
 {
-	optional int64 msgid = 1;
-	optional int32 createtime = 2;
-	optional string msgstr = 3;
+	optional int32 opentime = 0; // 最早读取时间
+	optional int32 lasttime = 1; // 最近读取时间
+	repeated int64 readuids = 2; // 读取过UID
 }
 
-
-// 单条频道信息的Binary
 message ChatMsgBinary 
 {
-	//optional int64 id = 1;
-	//optional int32 createtime = 2;
-	repeated UserData users = 1; 
-	repeated MsgData msgs = 2;
+	optional MsgConent conent = 1;
 }
 
 

@@ -1,7 +1,7 @@
 #include "SceneUser.h"
 
 
-bool SceneUser::ReqMove(Cmd::stUserMoveMoveUserCmd *rev)
+bool SceneUser::move(Cmd::stUserMoveMoveUserCmd *rev)
 {
 
 	//bool canmove = false;

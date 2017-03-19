@@ -34,7 +34,7 @@ private:
 		
 	bool				m_connected;		// 是否连接成功  
 	bool				m_onconnected;		// 是否连接调用 
-	thread				m_serviceThread;
+	boost::thread		m_serviceThread;
 	NetSocket*			pSocket;
 	tcp::endpoint		m_serverAddr;
 	PNetServerEnterHandler		m_pOnMsgConnected;

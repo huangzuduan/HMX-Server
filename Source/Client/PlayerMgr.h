@@ -29,7 +29,7 @@ public:
 
 private:
 
-	ObjPool<Player>		objpool;
+	zObjPool<Player>		objpool;
 	std::vector<Player*>  connectings;
 };
 

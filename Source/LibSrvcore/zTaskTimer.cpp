@@ -20,14 +20,14 @@ zTaskTimer::~zTaskTimer()
 
 void zTaskTimer::start()
 {
-	thread t(boost::bind(&zTaskTimer::doStart, this));
-	this_thread::yield();		// Temporarily give up a CPU time , to other threads
+	boost::thread t(boost::bind(&zTaskTimer::doStart, this));
+	boost::this_thread::yield();		// Temporarily give up a CPU time , to other threads
 	t.swap(m_cServiceThread);	// Swaps the state of the object with that of mServiceThread
 }
 
 void zTaskTimer::doStart()
 {
-	m_ctimer.expires_from_now(posix_time::millisec(m_Interval));
+	m_ctimer.expires_from_now(boost::posix_time::millisec(m_Interval));
 	m_ctimer.async_wait(boost::bind(&zTaskTimer::doHandler,this)); 
 	io_service::run();
 }
@@ -45,7 +45,7 @@ void zTaskTimer::doHandler()
 
 	diyTimeCache();
 
-	m_ctimer.expires_at(m_ctimer.expires_at() + posix_time::millisec(m_Interval));
+	m_ctimer.expires_at(m_ctimer.expires_at() + boost::posix_time::millisec(m_Interval));
 	m_ctimer.async_wait(boost::bind(&zTaskTimer::doHandler,this));
 	(m_fHandler)(this);
 
@@ -54,6 +54,7 @@ void zTaskTimer::doHandler()
 
 void zTaskTimer::diyTimeCache()
 {
+	b2Sec = b3Sec = b5Sec = b1Min = b5Min = b1Hour = false;
 	b1Sec = m_execTime % 1000 < m_Interval;
 	if (b1Sec)
 	{
@@ -73,13 +74,6 @@ void zTaskTimer::diyTimeCache()
 			}
 		}
 	}
-
-	b2Sec = false;
-	b3Sec = false;
-	b5Sec = false;
-	b1Min = false;
-	b5Min = false;
-	b1Hour = false;
 }
 
 void zTaskTimer::checkCancel()

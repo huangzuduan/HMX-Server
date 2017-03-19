@@ -2,7 +2,6 @@
 #define __CONFIG_BASE_H_
 
 #include "srvEngine.h"
-#include "def_entity.h"
 
 #pragma pack(push,1)
 

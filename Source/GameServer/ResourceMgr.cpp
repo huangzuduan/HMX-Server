@@ -1,7 +1,6 @@
 #include "ResourceMgr.h"
 
 #include "def_buff.h"
-#include "ResourceBuffer.h"
 
 #include "srvEngine.h"
 #include "ConfigBase.h"
@@ -36,42 +35,42 @@ ResourceMgr::~ResourceMgr()
 bool ResourceMgr::LoadAllResources()
 {
 	bool bResult = true;
-	if(!LoadCharLevelResource(Zebra::global["confdir"] +  "char_level.xml"))
+	if(!LoadCharLevelResource(H::global["confdir"] +  "char_level.xml"))
 	{
 		bResult =  false;
 	}
 
-	if(!LoadMapInfoResource(Zebra::global["confdir"] + "map_info.xml"))
+	if(!LoadMapInfoResource(H::global["confdir"] + "map_info.xml"))
 	{
 		bResult = false;
 	}
 
-	if(!LoadCharTypeResource(Zebra::global["confdir"] + "char_type.xml"))
+	if(!LoadCharTypeResource(H::global["confdir"] + "char_type.xml"))
 	{
 		bResult = false;
 	}
 
-	if(!LoadQuestResource(Zebra::global["confdir"] + "quest_info.xml"))
+	if(!LoadQuestResource(H::global["confdir"] + "quest_info.xml"))
 	{
 		bResult = false;
 	}
 
-	if (!LoadNpcBaseResource(Zebra::global["confdir"] + "npcbase.xml"))
+	if (!LoadNpcBaseResource(H::global["confdir"] + "npcbase.xml"))
 	{
 		bResult = false;
 	}
 
-	if (!LoadItemResource(Zebra::global["confdir"] + "itembase.xml"))
+	if (!LoadItemResource(H::global["confdir"] + "itembase.xml"))
 	{
 		bResult = false;
 	}
 
-	if (!LoadShopResource(Zebra::global["confdir"] + "shop.xml"))
+	if (!LoadShopResource(H::global["confdir"] + "shop.xml"))
 	{
 		bResult = false;
 	}
 
-	if (!LoadSkillResource(Zebra::global["confdir"] + "skillbase.xml"))
+	if (!LoadSkillResource(H::global["confdir"] + "skillbase.xml"))
 	{
 		bResult = false;
 	}
@@ -164,14 +163,14 @@ bool ResourceMgr::LoadMapInfoResource(const std::string& strFileName)
 	{
 		int32 nMapId = it->first;
 		StMapInfoResCfg rItem = it->second;
-		if (!LoadMapRes(nMapId, std::string(Zebra::global["datadir"] + rItem.strSceneFileName)))
+		if (!LoadMapRes(nMapId, std::string(H::global["datadir"] + rItem.strSceneFileName)))
 		{
-			Zebra::logger->error("Load map fail,id=%u", nMapId);
+			H::logger->error("Load map fail,id=%u", nMapId);
 		}
 
-		if(!LoadZoneRes(nMapId,std::string(Zebra::global["confdir"] + "zone/" + rItem.strZoneFileName)))
+		if(!LoadZoneRes(nMapId,std::string(H::global["confdir"] + "zone/" + rItem.strZoneFileName)))
 		{
-			Zebra::logger->error("Load zone fail,id=%u",nMapId);
+			H::logger->error("Load zone fail,id=%u",nMapId);
 		}
 	}
 

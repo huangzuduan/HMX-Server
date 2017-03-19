@@ -29,40 +29,38 @@ void ProcSsHandler::ReqRoleCreate(zSession* pBaseSession, const NetMsgSS* pMsg,i
 
 void ProcSsHandler::ReqLoadUser(zSession* pBaseSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const S2DLoadUser* packet = static_cast<const S2DLoadUser*>(pMsg);
+	const S::SSRqLoadUser* packet = static_cast<const S::SSRqLoadUser*>(pMsg);
 
 	static char wheres[100];
 	memset(wheres, 0, sizeof(wheres));
 	sprintf(wheres, "`id`=%llu", packet->uid);
 
-	BUFFER_CMD(D2SLoadUser, send, MAX_USERDATASIZE);
-	send->uid = packet->uid;
-	int ret = dbmem::Memory::data.getDB()->ExecSelectLimit("User", user_columns, wheres, NULL, (unsigned char*)&send->base);
+	BUFFER_CMD(S::SSRtLoadUser, send, MAX_USERDATASIZE);
+	int ret = dbmem::Memory::data.getDB()->ExecSelectLimit("USER", S::user_columns, wheres, NULL, (unsigned char*)&send->base);
 	if (ret == 1)
 	{
-		Zebra::logger->info("[%s]加载角色数据",Utf8ToGBK(send->base.name));
+		H::logger->info("[%s]加载角色数据",zUtility::Utf8ToGBK(send->base.name));
 		send->sessid = packet->sessid;
 		send->fepsid = packet->fepsid;
-		pBaseSession->sendMsg(send, sizeof(D2SLoadUser) + send->size * sizeof(send->data[0]));
+		pBaseSession->sendMsg(send, sizeof(S::SSRtLoadUser) + send->getSize());
 	}
-
 }
 
 void ProcSsHandler::ReqSaveUser(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize)
 {
-	const S2DSaveUser* packet = static_cast<const S2DSaveUser*>(pMsg);
+	const S::SSRqSaveUser* packet = static_cast<const S::SSRqSaveUser*>(pMsg);
 
 	static char wheres[100];
 	memset(wheres, 0, sizeof(wheres));
-	sprintf(wheres, "`id`=%llu", packet->uid);
-	int ret = dbmem::Memory::data.getDB()->ExecUpdate("User", user_columns, (const char*)&packet->base, wheres);
+	sprintf(wheres, "`id`=%llu",packet->base.id);
+	int ret = dbmem::Memory::data.getDB()->ExecUpdate("USER", S::user_columns, (const char*)&packet->base, wheres);
 	if (ret == 0)
 	{
-		Zebra::logger->info("保存档案成功!");
+		H::logger->info("保存档案成功!");
 	}
 	else
 	{
-		Zebra::logger->error("保存档案失败!");
+		H::logger->error("保存档案失败!");
 	}
 }
 

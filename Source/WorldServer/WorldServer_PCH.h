@@ -12,7 +12,7 @@
 #include "NetIncludes.h"
 #include "SrvCoreIncludes.h"
 
-#include "NetService.h"
+#include "GameService.h"
 #include "OfflineUserMgr.h"
 #include "WorldUserMgr.h"
 #include "NetMsgHandler.h"

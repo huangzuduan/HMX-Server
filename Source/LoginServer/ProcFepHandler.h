@@ -13,11 +13,24 @@ public:
 	ProcFepHandler(void);
 	~ProcFepHandler(void);
 
-	void RqAccountLogin(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+	void doLoginAccount(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
 
-	void RqRoleCreate(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
 
-	void RqRandNames(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+public:
+
+	struct t_Account
+	{
+		t_Account()
+		{
+			bzero(username,sizeof(username));
+			bzero(namepass, sizeof(namepass));
+			bzero(checkcode, sizeof(checkcode));
+		}
+		char username[MAX_ACCNAMESIZE + 1];
+		char namepass[MAX_ACCNAMESIZE + 1];
+		char checkcode[MAX_NAMESIZE + 1];
+	};
+
 };
 
 #endif

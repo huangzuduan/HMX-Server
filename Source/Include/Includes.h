@@ -3,12 +3,10 @@
 
 #include "BaseDefine.h"
 #include "Single.h"
-#include "ServerDefine.h"
 
 #include "CommanC.h"
 #include "CommandS.h"
 #include "CommonError.h"
-#include "CommonInternal.h"
 
 #include "def_resource.h"
 

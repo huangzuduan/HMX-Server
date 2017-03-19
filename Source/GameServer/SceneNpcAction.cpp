@@ -135,7 +135,7 @@ bool SceneNpc::doMovetoAI()
 {
 	if (!AIC->phaseTimeOver())
 	{
-		if (checkMoveTime(Zebra::timeTick->getMilliTime()) && canMove())
+		if (checkMoveTime(H::timeTick->getMilliTime()) && canMove())
 		{
 			if (!gotoFindPath(getPos(), aiDefine.pos))//向目标移动
 				goTo(aiDefine.pos);//换一种方式向目标移动

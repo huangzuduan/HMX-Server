@@ -25,8 +25,8 @@ NetClient::~NetClient(void)
 
 void NetClient::Start()
 {
-	thread t(boost::bind(&NetClient::HandleStart, this));
-	this_thread::yield();
+	boost::thread t(boost::bind(&NetClient::HandleStart, this));
+	boost::this_thread::yield();
 	t.swap(m_serviceThread);
 }
 
@@ -36,9 +36,9 @@ void NetClient::HandleStart()
 	// here can SetConnect more socket connect
 	SetConnect(*pSocket);
 
-	thread_group tg;
+	boost::thread_group tg;
 	tg.create_thread(boost::bind(&NetClient::Run, this));
-	this_thread::yield();
+	boost::this_thread::yield();
 	tg.join_all(); // Waitting threads to complete
 
 }

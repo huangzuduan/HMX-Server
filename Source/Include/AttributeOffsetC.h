@@ -1,7 +1,7 @@
 #ifndef __ATTRIBUTE_OFFSET_H_
 #define __ATTRIBUTE_OFFSET_H_
 
-#include "ServerDefine.h"
+
 
 /*-------------------------------------------------------------------
  * @Brief :  Ù–‘π‹¿Ì∆˜ 

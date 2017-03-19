@@ -52,7 +52,7 @@ public:
 
 private:
 
-	ObjPool<SceneReg> objpool;
+	zObjPool<SceneReg> objpool;
 
 };
 

@@ -1,11 +1,11 @@
 #include "SceneChannel.h"
 
 
-ObjPool<SceneChannel(ChannelPosition)>	g_cPositionChannelFactory;
-ObjPool<SceneChannel(ChannelCreature)>	g_cCreatureChannelFactory;
-ObjPool<SceneChannel(ChannelWear)>		g_cEquipmentChannelFactory;	
-ObjPool<SceneChannel(ChannelSpell)>		g_cSpellChannelFactory;
-ObjPool<SceneChannel(ChannelBuff)>		g_cBuffChannelFactory;
+zObjPool<SceneChannel(ChannelPosition)>	g_cPositionChannelFactory;
+zObjPool<SceneChannel(ChannelCreature)>	g_cCreatureChannelFactory;
+zObjPool<SceneChannel(ChannelWear)>		g_cEquipmentChannelFactory;	
+zObjPool<SceneChannel(ChannelSpell)>		g_cSpellChannelFactory;
+zObjPool<SceneChannel(ChannelBuff)>		g_cBuffChannelFactory;
 
 // Ôö¼ÓÆµµÀ 
 void SceneChannelManager::AddSceneChannel(ChannelEx& rChannel)

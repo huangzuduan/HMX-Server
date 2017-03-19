@@ -55,7 +55,7 @@ bool SceneUser::AddObject(int32 itemID, int32 itemNum, bool notify, bool isTry)
 			{
 				objM.putUniqeID(obj->tempid);
 				objM.DestroyObj(obj);
-				Zebra::logger->error("Buy addObject fail");
+				H::logger->error("Buy addObject fail");
 				ASSERT(0);
 				continue;
 			}
@@ -71,12 +71,12 @@ bool SceneUser::AddObject(int32 itemID, int32 itemNum, bool notify, bool isTry)
 
 	if (notify)
 	{
-		S2CItemSlotUpdate sendMsg;
+		C::RtItemSlotUpdate sendMsg;
 		sendMsg.nCount = 1;
 		sendMsg.items[0].nIndex = obj->id;
 		sendMsg.items[0].nItemID = obj->itemID;
 		sendMsg.items[0].nItemNum = obj->itemNum;
-		sendCmdToMe(&sendMsg,sendMsg.GetPackLength());
+		sendCmdToMe(&sendMsg,sizeof(sendMsg));
 	}
 
 	return true;
@@ -151,7 +151,7 @@ bool SceneUser::UseItemObj(qObject* obj, int32 num, bool notify, bool isTry)
 				bool result = ExecEffectMoney(effect, num);
 				if (!result)
 				{
-					Zebra::logger->error("Use Object Effect Error:%d", effect.funcType, num);
+					H::logger->error("Use Object Effect Error:%d", effect.funcType, num);
 				}
 			}
 		}
@@ -205,21 +205,21 @@ bool SceneUser::UseItemObj(qObject* obj, int32 num, bool notify, bool isTry)
 		{
 			if (lastNum && obj)
 			{
-				S2CItemSlotUpdate sendMsg;
+				C::RtItemSlotUpdate sendMsg;
 				sendMsg.nCount = 1;
 				sendMsg.items[0].nUniqueID = obj->tempid;
 				sendMsg.items[0].nItemID = obj->base->id;
 				sendMsg.items[0].nItemNum = obj->itemNum;
 				sendMsg.items[0].nIndex = obj->id;
 				sendMsg.items[0].nLock = obj->nLock;
-				sendCmdToMe(&sendMsg, sendMsg.GetPackLength());
+				sendCmdToMe(&sendMsg, sizeof(sendMsg));
 			}
 			else
 			{
-				S2CItemSlotDelete sendMsg;
+				C::RtItemSlotDelete sendMsg;
 				sendMsg.nCount = 1;
 				sendMsg.nUniqueIDs[0] = uniqueID;
-				sendCmdToMe(&sendMsg, sendMsg.GetPackLength());
+				sendCmdToMe(&sendMsg, sizeof(sendMsg));
 			}
 		}
 	}

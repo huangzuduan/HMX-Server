@@ -13,7 +13,7 @@
 	<Server id="1001" name="gatewayserver" broadcastlist="1">
 		<Serivce id="1" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>
 		<Serivce id="2" name="server" fun="forss" ip="127.0.0.1" port="9901" maxConnects="10"/>
-		<Serivce id="3" name="server" fun="foruser" ip="127.0.0.1" port="9000" maxConnects="100"/>
+		<Serivce id="3" name="server" fun="foruser" ip="0.0.0.0" port="9000" maxConnects="100"/>
 	</Server>
 	<Server id="1002" name="gatewayserver" broadcastlist="1">
 		<Serivce id="1" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>
@@ -23,7 +23,7 @@
 	<!--登录服-->
 	<Server id="2001" name="loginserver" recvsrvlist="1">
 		<Serivce id="1" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>
-		<Serivce id="2" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="root" value="hmx_data"/>
+		<Serivce id="2" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="root" value="hmx_login"/>
 	</Server>
 	<!--世界服-->
 	<Server id="3001" name="worldserver">

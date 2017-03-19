@@ -2,6 +2,11 @@ Welcome to the HMX-Server wiki!
 # HMX-Server
 HMX-Server分步式服务器框架，主要分为网关、登录、世界、场景、数据服务器，适用于大中小型项目
 
+版本更新记录：
+
+2017-01-17 更新所有文件，实现有基本的从登录到帐号数据保存的功能
+2017-03-19 优化了Socket、管理器方面的功能，实现二进制数据存储到mysql的功能
+
 # 安装步骤
 1. 下载后，将Source/dependence/下的boost,protobuf里面的lib.rar解压到当前目录
 2. 安装Cmake-3.4 x64以上版本,vs2015 x64 ,mysql5.6 x64

@@ -14,6 +14,7 @@ include_directories(
 	${PROTOBUL_INCLUDE_DIR}
 	${ICONV_INCLUDE_DIR}
 	${LIBXML_INCLUDE_DIR}
+	${OPENSSL_INCLUDE_DIR}
     ${CMAKE_SOURCE_DIR}/Include	
 	${CMAKE_SOURCE_DIR}/LibSrvcore
 	${CMAKE_SOURCE_DIR}/LibProtocol
@@ -35,6 +36,8 @@ target_link_libraries(Client
 	${LIB_PROTOBUF_DEBUG}
 	${LIB_ICONV_DEBUG}
 	${LIB_LIBXML_DEBUG}
+	${LIB_LIBEAY32_DEBUG}
+	${LIB_SSLEAY32_DEBUG}
 )
 
 IF(UNIX)

@@ -14,7 +14,7 @@ public:
 
 public:
 
-	UserGateBase base;
+	S::t_UserGateBase base;
 	int32 sceneServerid;
 
 public:
@@ -63,7 +63,7 @@ public:
 private:
 
 	zRWLock rwlock;
-	ObjPool<GateUser> objpool;
+	zObjPool<GateUser> objpool;
 	static GateUserManager* ins;
 	
 };

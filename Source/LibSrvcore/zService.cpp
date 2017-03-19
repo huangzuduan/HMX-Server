@@ -13,10 +13,10 @@
  */
 static void ctrlcHandler(int signum)
 {
-  Zebra::logger->info("ctrlcHandler");
+  H::logger->info("ctrlcHandler");
   fprintf(stderr,"ctrlcHandler\n");
   //如果没有初始化zService实例,表示出错
-  zService *instance = zService::serviceInstance();
+  zService *instance = zService::getInst();
   instance->Terminate();
 }
 
@@ -27,20 +27,20 @@ static void ctrlcHandler(int signum)
  */
 static void hupHandler(int signum)
 {
-  Zebra::logger->info("hupHandler");
+  H::logger->info("hupHandler");
   //如果没有初始化zService实例,表示出错
-  zService *instance = zService::serviceInstance();
+  zService *instance = zService::getInst();
   instance->reloadConfig();
 }
 
-zService *zService::serviceInst = NULL;
+zService *zService::inst = NULL;
 
 /**
  * \brief 服务程序框架的主函数
  */
 void zService::main()
 {
-  Zebra::logger->debug("zService::main");
+  H::logger->debug("zService::main");
   //初始化程序,并确认服务器启动成功
   if(signal(SIGTERM  , ctrlcHandler)==SIG_ERR)
   {

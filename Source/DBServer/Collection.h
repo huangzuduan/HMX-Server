@@ -14,13 +14,13 @@ protected:
 	typename typedef std::multimap<int64, TData*> KeyValueMap;
 	typename typedef std::multimap<int64, TData*>::iterator KeyValueMapIter;
 
-	int32		nowTime;					// 当时时间
-	IDbBase*	dbConn;							// 数据库连接
-	mutex		mutex;						// 锁  
-	char		keyName[MAX_NAMESIZE + 1];
-	dbCol		columns[100];
+	int32			nowTime;					// 当时时间
+	IDbBase*		dbConn;							// 数据库连接
+	boost::mutex	mutex;						// 锁  
+	char			keyName[MAX_NAMESIZE + 1];
+	dbCol			columns[100];
 
-	ObjPool<TData>	objpool;
+	zObjPool<TData>	objpool;
 	KeyValueMap	datas;			// 唯一集合 
 
 
@@ -178,7 +178,7 @@ private:
 	{
 		if (dbConn == NULL)
 		{
-			Zebra::logger->warn("SaveNow Not Found UserData!");
+			H::logger->warn("SaveNow Not Found UserData!");
 			ASSERT(dbConn);
 			return;
 		}

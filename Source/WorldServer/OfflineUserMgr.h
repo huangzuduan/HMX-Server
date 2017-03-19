@@ -44,7 +44,7 @@ public:
 
 private:
 
-	ObjPool<OfflineUser> objpool;
+	zObjPool<OfflineUser> objpool;
 	
 };
 

@@ -12,7 +12,7 @@
 
 #include "BaseDefine.h"
 #include "Single.h"
-#include "ServerDefine.h"
+
 #include "NetConfig.h"
 
 class BaseProcHandler

@@ -125,14 +125,14 @@ Channel::~Channel()
 */
 bool Channel::sendCmdToAll(const NetMsgSS *cmd, int len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = 0;
 	send->size = len;
 	memcpy(send->data, cmd, len);
 
-	MsgSendToAllPlayer<S2FBoradCastMsg> exec(send,sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 
 	return true;
 }
@@ -149,8 +149,8 @@ bool Channel::remove(const char *uname)
 	WORD found = has(uname);
 	if (found != (WORD)-1)
 	{
-		Zebra::logger->info("%s离开%s的聊天频道", uname, creater.name);
-		S2CChannelLeave send;
+		H::logger->info("%s离开%s的聊天频道", uname, creater.name);
+		C::RtChannelLeave send;
 		send.channelID = tempid;
 		strncpy(send.name, uname, MAX_NAMESIZE);
 		sendCmdToAll(&send, sizeof(send));
@@ -181,7 +181,7 @@ bool Channel::add(SceneUser *pUser)
 		WORD found = has(pUser->name);
 		if (found == (WORD)-1)
 		{
-			Zebra::logger->info("%s加入%s的聊天频道", Utf8ToGBK(pUser->name), creater.name);
+			H::logger->info("%s加入%s的聊天频道", zUtility::Utf8ToGBK(pUser->name), creater.name);
 
 			zEntryC temp;
 			temp.id = pUser->id;
@@ -190,7 +190,7 @@ bool Channel::add(SceneUser *pUser)
 			userlist.push_back(temp);
 
 			/* 把自己发送给所有人 */
-			S2CChannelJion send;
+			C::RtChannelJion send;
 			send.channelID = tempid;
 			strncpy(send.name, pUser->name, MAX_NAMESIZE);
 			sendCmdToAll(&send, sizeof(send));
@@ -238,13 +238,13 @@ WORD Channel::has(const char *name)
 */
 bool Channel::sendNine(SceneUser *pUser, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = 0;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S2FBoradCastMsg> exec(send,sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -312,13 +312,13 @@ bool Channel::sendCountry(SceneUser *pUser, const char *pattern, ...)
 */
 bool Channel::sendCountry(SceneUser *pUser, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = 0;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S2FBoradCastMsg> exec(send, sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -348,13 +348,13 @@ bool Channel::sendCmdToMap(Scene* scene, const NetMsgSS *cmd, int len)
 */
 bool Channel::sendCmdToMap(DWORD mapID, const NetMsgSS *cmd, int len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = mapID;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S2FBoradCastMsg> exec(send, sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 
@@ -396,13 +396,13 @@ bool Channel::sendNine(const SceneNpc *pNpc, const char *pattern, ...)
 */
 bool Channel::sendTeam(DWORD teamid, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S2FBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = BORADCAST_TYPE_ALL;
+	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
 	send->regid = teamid;
 	send->size = len;
 	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S2FBoradCastMsg> exec(send, sizeof(S2FBoradCastMsg) + send->size * sizeof(send->data[0]));
-	NetService::getMe().getSessionMgr().execEveryConn(exec);
+	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	GameService::getMe().getSessionMgr().execEveryConn(exec);
 	return true;
 }
 

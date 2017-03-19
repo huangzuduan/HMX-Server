@@ -14,44 +14,44 @@ public:
 	ProcFepHandler(void);
 	~ProcFepHandler(void);
 
-	void RqPlayerExit(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void ReqChatWorld(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
-	void RqClientIsReady(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
-	void ReqChangeScene(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void ReqItemMovePosition(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doPlayerExit(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doChatWorld(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+	void doClientIsReady(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+	void doChangeScene(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doItemMovePosition(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 	// 
-	void ReqQuestAccept(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+	void doQuestAccept(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
 	
 	// 移动 
-	void ReqPositionMove(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doPositionMove(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
-	void ReqShoppingBuyItem(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doShoppingBuyItem(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
-	void ReqShoppingSellItem(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doShoppingSellItem(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
-	void ReqUseItem(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doUseItem(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 	// 频道
-	void rqChanneCmd(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doChanneCmd(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 
 	/* 单聊 */
-	void RqChatToOne(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doChatToOne(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 	/* 群聊 */
-	void RqChatToTeam(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doChatToTeam(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 	/* 讨论组 */
-	void RqChatToDiscuss(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doChatToDiscuss(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 	/* 世界聊 */
-	void RqChatToWorld(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doChatToWorld(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 	// 社会关系
-	void rqRelationList(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void rqRelationAdd(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void rqRelationRemove(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doRelationList(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doRelationAdd(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doRelationRemove(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 };
 
 

@@ -12,15 +12,6 @@ ProcDpHandler::~ProcDpHandler(void)
 {
 }
 
-void ProcDpHandler::RepNamesList(zSession* pSession, const NetMsgSS* pMsg,int32 nSize)
-{
-	const D2LNamesList* packet = static_cast<const D2LNamesList*>(pMsg);
-	for (int32 i = 0 ; i < packet->nCount; ++i)
-	{
-		NamesManager::getMe().LoadItems(packet->arrNameList[i].arrName);
-	}
-}
-
 void ProcDpHandler::AccountLogin(zSession* pSession, const NetMsgSS* pMsg,int32 nSize)
 {
 
@@ -55,7 +46,7 @@ void ProcDpHandler::AccountLogin(zSession* pSession, const NetMsgSS* pMsg,int32 
 	//		break;
 	//	}
 
-	//	pClientSession->SendMsgToFep(&sMsg,sMsg.GetPackLength());
+	//	pClientSession->SendMsgToFep(&sMsg,ssizeof(msg));
 
 	//	// ·Ç·¨µÇÂ¼£¬Æµ·±µÇÂ¼¼ì²â 
 	//	StAccountInfo* pAccountInfo = LoginAccountMgr::getMe().GetAccountInfo(packer->clientSessionID);
@@ -101,7 +92,7 @@ void ProcDpHandler::CharacterList(zSession* pSession, const NetMsgSS* pMsg,int32
 	//		sMsg.arrInfo[i].nLastLogin = packet->arrInfo[i].nLastLogin;
 	//		strcpy(sMsg.arrInfo[i].arrName,packet->arrInfo[i].arrName);
 	//	}
-	//	pClientSession->SendMsgToFep(&sMsg,sMsg.GetPackLength());	
+	//	pClientSession->SendMsgToFep(&sMsg,ssizeof(msg));	
 	//}
 
 }
@@ -114,7 +105,7 @@ void ProcDpHandler::RoleCreateResult(zSession* pSession, const NetMsgSS* pMsg,in
 	//	L2CRoleCreateResult sMsg;
 	//	sMsg.nResult = pPacket->nResult;
 	//	sMsg.nNewCharID = pPacket->nNewCharID;
-	//	pClientSession->SendMsgToFep(&sMsg,sMsg.GetPackLength());
+	//	pClientSession->SendMsgToFep(&sMsg,ssizeof(msg));
 	//}
 }
 

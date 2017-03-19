@@ -313,7 +313,7 @@ BYTE SkillStatus_7(SceneEntryPk *pEntry,SkillStatusElement &sse)
   if (sse.attacktype == zSceneEntry::SceneEntry_Player)
   {
     SceneUser *pUser = NULL;
-    pUser = NetService::getMe().getSceneUserMgr().getUserBySessID(sse.dwTempID);
+    pUser = GameService::getMe().getSceneUserMgr().getUserBySessID(sse.dwTempID);
     if (pUser)
     {
      // value= (WORD)(0.5f*pUser->charstate.wdMen);
@@ -414,7 +414,7 @@ BYTE SkillStatus_9(SceneEntryPk *pEntry,SkillStatusElement &sse)
   if (sse.attacktype == zSceneEntry::SceneEntry_Player)
   {
     SceneUser *pUser = NULL;
-    pUser = NetService::getMe().getSceneUserMgr().getUserBySessID(sse.dwTempID);
+    pUser = GameService::getMe().getSceneUserMgr().getUserBySessID(sse.dwTempID);
     if (pUser)
     {
       //value= (WORD)(1*pUser->charstate.wdMen);
@@ -655,13 +655,13 @@ void SkillStatusManager::loadSkillStatus(char *buf,DWORD length)
   length-=statelen;
 
 #ifdef _DEBUG
-  Zebra::logger->debug("[为角色(%s)(%d)加载保存的技能状态]",entry->name,entry->id);
+  H::logger->debug("[为角色(%s)(%d)加载保存的技能状态]",entry->name,entry->id);
 #endif
   //COfflineSkillStatus::getOfflineSkillStatus(entry->id,buf,length);
   count = length/sizeof(SkillStatusElement);
   notify = false;
 #ifdef _DEBUG
-  Zebra::logger->debug("[有%d个技能状态需要加载]",count);
+  H::logger->debug("[有%d个技能状态需要加载]",count);
 #endif
   value = (SkillStatusElement *)(buf+statelen);
 
@@ -680,12 +680,12 @@ void SkillStatusManager::loadSkillStatus(char *buf,DWORD length)
       case SKILL_RECOVERY:
         {
 #ifdef _DEBUG
-          Zebra::logger->debug("[%d号技能状态被加载到临时被动表内]",value->id);
+          H::logger->debug("[%d号技能状态被加载到临时被动表内]",value->id);
 #endif
           //value->refresh = 1;
-          //value->qwTime = Zebra::timeTick->getMilliTime()+value->dwTime *1000;
+          //value->qwTime = H::timeTick->getMilliTime()+value->dwTime *1000;
           _recoveryElement[value->id/*value->byMutexType*/]=*value;
-         // _recoveryElement[value->id].qwTime = Zebra::timeTick->getMilliTime()+_recoveryElement[value->id].dwTime *1000;
+         // _recoveryElement[value->id].qwTime = H::timeTick->getMilliTime()+_recoveryElement[value->id].dwTime *1000;
           if (value->state >0)
           {
             sendSelectStates(entry,value->state,value->value,value->dwTime);
@@ -698,10 +698,10 @@ void SkillStatusManager::loadSkillStatus(char *buf,DWORD length)
       case SKILL_ACTIVE:
         {
 #ifdef _DEBUG
-          Zebra::logger->debug("[%d号技能状态被加载到主动表内]",value->id);
+          H::logger->debug("[%d号技能状态被加载到主动表内]",value->id);
 #endif
           _activeElement[value->id/*value->byMutexType*/]=*value;
-         // _recoveryElement[value->id].qwTime = Zebra::timeTick->getMilliTime()+_recoveryElement[value->id].dwTime *1000;
+         // _recoveryElement[value->id].qwTime = H::timeTick->getMilliTime()+_recoveryElement[value->id].dwTime *1000;
           if (value->state >0)
           {
             sendSelectStates(entry,value->state,value->value,value->dwTime);
@@ -713,7 +713,7 @@ void SkillStatusManager::loadSkillStatus(char *buf,DWORD length)
         break;
       default:
 #ifdef _DEBUG
-          Zebra::logger->debug("[%d号技能状态无法被加到对应的表中]",value->id);
+          H::logger->debug("[%d号技能状态无法被加到对应的表中]",value->id);
 #endif
         break;
     }
@@ -751,7 +751,7 @@ void SkillStatusManager::saveSkillStatus(char *buf,DWORD &size)
   {
     //memcpy(value,&tIterator->second,length,length);
 #ifdef _DEBUG
-    Zebra::logger->debug("[技能状态%d被存储]",tIterator->second.id);
+    H::logger->debug("[技能状态%d被存储]",tIterator->second.id);
 #endif
     count++;
     value++;
@@ -764,7 +764,7 @@ void SkillStatusManager::saveSkillStatus(char *buf,DWORD &size)
     {
       //memcpy(value,&tIterator->second,length,length);
 #ifdef _DEBUG
-    Zebra::logger->debug("[技能状态%d被存储]",tIterator->second.id);
+    H::logger->debug("[技能状态%d被存储]",tIterator->second.id);
 #endif
       count++;
       value++;
@@ -774,7 +774,7 @@ void SkillStatusManager::saveSkillStatus(char *buf,DWORD &size)
   //if (count >0) COfflineSkillStatus::writeOfflineSkillStatus(entry->id,buf,count*length);
   size = statelen + count*length;
 #ifdef _DEBUG
-  Zebra::logger->debug("[有%d个技能状态需要存储]",count);
+  H::logger->debug("[有%d个技能状态需要存储]",count);
 #endif
 }
 
@@ -805,7 +805,7 @@ bool SkillStatusManager::putOperationToMe(const SkillStatusCarrier &carrier,cons
 
     element.dwSkillID = carrier.skillbase->id;//carrier.skillID; 
     element.dwTime = tIterator->time;
-    element.qwTime = Zebra::timeTick->getMilliTime()+element.dwTime *1000;
+    element.qwTime = H::timeTick->getMilliTime()+element.dwTime *1000;
 
     SceneEntryPk *pAtt = carrier.attacker->getTopMaster();
     element.dwTempID = pAtt->tempid;
@@ -832,10 +832,10 @@ bool SkillStatusManager::putOperationToMe(const SkillStatusCarrier &carrier,cons
       case SKILL_RECOVERY:
         {
 #ifdef _DEBUG
-          Zebra::logger->debug("[临时被动]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
+          H::logger->debug("[临时被动]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
           Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[临时被动]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
 #endif
-          element.qwTime = Zebra::timeTick->getMilliTime()+element.dwTime *1000;
+          element.qwTime = H::timeTick->getMilliTime()+element.dwTime *1000;
           if (element.state >0)
           {
             clearMapElement(element.id/*element.byMutexType*/,_recoveryElement,element.id,false);
@@ -859,7 +859,7 @@ bool SkillStatusManager::putOperationToMe(const SkillStatusCarrier &carrier,cons
       case SKILL_ACTIVE:
         {
 #ifdef _DEBUG
-          Zebra::logger->debug("[伤害状态]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
+          H::logger->debug("[伤害状态]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
           Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[攻击状态]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
 #endif
           if (element.dwTime==0) break;
@@ -884,7 +884,7 @@ bool SkillStatusManager::putOperationToMe(const SkillStatusCarrier &carrier,cons
     entry->AttackMe(carrier.attacker,&carrier.revCmd,entry->isPhysics,rangDamageBonus);
    // carrier.attacker->setPetsChaseTarget(entry);
 #ifdef _DEBUG
-    Zebra::logger->debug("[走攻防计算公式]");
+    H::logger->debug("[走攻防计算公式]");
     Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[伤害法术]");
 #endif
   }
@@ -911,7 +911,7 @@ bool SkillStatusManager::putOperationToMe(const SkillStatusCarrier &carrier,cons
     }
     //entry->processDeath(carrier.attacker);
 #ifdef _DEBUG
-    Zebra::logger->debug("[不走攻防计算公式]");
+    H::logger->debug("[不走攻防计算公式]");
     Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[非伤血性法术]");
 #endif
   }
@@ -932,7 +932,7 @@ void SkillStatusManager::timer()
   for(tIterator = _activeElement.begin() ; tIterator !=_activeElement.end() ; )
   {
 #ifdef _DEBUG
-    Zebra::logger->debug("[计时.伤]施加在身上的第[%u]号状态剩下时间[%u]",tIterator->second.id,tIterator->second.dwTime);
+    H::logger->debug("[计时.伤]施加在身上的第[%u]号状态剩下时间[%u]",tIterator->second.id,tIterator->second.dwTime);
     Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[计时.伤]施加在身上的第[%u]号状态剩下时间[%u]",tIterator->second.id,tIterator->second.dwTime);
 #endif
 	if (tIterator->second.dwTime>0)
@@ -960,7 +960,7 @@ void SkillStatusManager::timer()
         //entry->showCurrentEffect(tIterator->second.state,false);
       }
 #ifdef _DEBUG
-    Zebra::logger->debug("[伤害状态]施加在身上的第[%u]号状态被删除",tIterator->second.id);
+    H::logger->debug("[伤害状态]施加在身上的第[%u]号状态被删除",tIterator->second.id);
     Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[伤害状态]施加在身上的第[%u]号状态被删除",tIterator->second.id);
 #endif
       delIterator = tIterator;
@@ -976,7 +976,7 @@ void SkillStatusManager::timer()
 
   for(tIterator = _recoveryElement.begin() ; tIterator !=_recoveryElement.end();)
   {
-    QWORD curQtime = Zebra::timeTick->getMilliTime();
+    QWORD curQtime = H::timeTick->getMilliTime();
     if (curQtime >= tIterator->second.qwTime)
     {
       tIterator->second.byStep = ACTION_STEP_STOP;
@@ -988,7 +988,7 @@ void SkillStatusManager::timer()
         entry->showCurrentEffect(tIterator->second.state,false);
       }
 #ifdef _DEBUG
-      Zebra::logger->debug("[临时被动]施加在身上的第[%u]号状态被删除",tIterator->second.id);
+      H::logger->debug("[临时被动]施加在身上的第[%u]号状态被删除",tIterator->second.id);
       Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[临时被动]施加在身上的第[%u]号状态被删除",tIterator->second.id);
 #endif
       delIterator = tIterator;
@@ -1260,7 +1260,7 @@ void SkillStatusManager::putPassivenessOperationToMe(const DWORD skillid,const S
     _passivenessElement[element.id]=element;
 
 #ifdef _DEBUG
-      Zebra::logger->debug("[永久被动]之[%u]号状态被施加在身上",element.id);
+      H::logger->debug("[永久被动]之[%u]号状态被施加在身上",element.id);
       Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[永久被动]之[%u]号状态被施加在身上",element.id);
 #endif
   }
@@ -1526,7 +1526,7 @@ void SkillStatusManager::showActive()
     std::string myname;
     char buf [45];
     element = &tIterator->second;
-    SceneUser *pUser = NetService::getMe().getSceneUserMgr().getUserBySessID(element->dwTempID);
+    SceneUser *pUser = GameService::getMe().getSceneUserMgr().getUserBySessID(element->dwTempID);
     if (pUser)
       myname = pUser->name;
     else
@@ -1553,7 +1553,7 @@ void SkillStatusManager::showRecovery()
     std::string myname;
     char buf [45];
     element = &tIterator->second;
-    SceneUser *pUser = NetService::getMe().getSceneUserMgr().getUserBySessID(element->dwTempID);
+    SceneUser *pUser = GameService::getMe().getSceneUserMgr().getUserBySessID(element->dwTempID);
     if (pUser)
       myname = pUser->name;
     else
@@ -1580,7 +1580,7 @@ void SkillStatusManager::showPassiveness()
     std::string myname;
     char buf [45];
     element = &tIterator->second;
-    SceneUser *pUser = NetService::getMe().getSceneUserMgr().getUserBySessID(element->dwTempID);
+    SceneUser *pUser = GameService::getMe().getSceneUserMgr().getUserBySessID(element->dwTempID);
     if (pUser)
       myname = pUser->name;
     else
@@ -1618,7 +1618,7 @@ void SkillStatusManager::SetStatuToRecovery(DWORD id, DWORD time, DWORD percent,
 
 	element.dwSkillID = 0;
 	element.dwTime = time;
-	element.qwTime = Zebra::timeTick->getMilliTime()+element.dwTime *1000;
+	element.qwTime = H::timeTick->getMilliTime()+element.dwTime *1000;
 	
 
 	switch(runStatusElement(element))
@@ -1626,10 +1626,10 @@ void SkillStatusManager::SetStatuToRecovery(DWORD id, DWORD time, DWORD percent,
 	case SKILL_RECOVERY:
 		{
 #ifdef _DEBUG
-			Zebra::logger->debug("[临时被动]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
+			H::logger->debug("[临时被动]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
 			Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[临时被动]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
 #endif
-			element.qwTime = Zebra::timeTick->getMilliTime()+element.dwTime *1000;
+			element.qwTime = H::timeTick->getMilliTime()+element.dwTime *1000;
 			if (element.state >0)
 			{
 				clearMapElement(element.id/*element.byMutexType*/,_recoveryElement,element.id,false);
@@ -1653,7 +1653,7 @@ void SkillStatusManager::SetStatuToRecovery(DWORD id, DWORD time, DWORD percent,
 	case SKILL_ACTIVE:
 		{
 #ifdef _DEBUG
-			Zebra::logger->debug("[伤害状态]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
+			H::logger->debug("[伤害状态]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
 			Channel::sendSys(entry->tempid,Cmd::INFO_TYPE_SYS,"[攻击状态]第[%u]号状态被施加在身上持续时间为[%u]",element.id,element.dwTime);
 #endif
 			if (element.dwTime==0) break;

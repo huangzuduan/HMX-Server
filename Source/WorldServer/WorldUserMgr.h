@@ -33,7 +33,7 @@ public:
 
 private:
 
-	ObjPool<WorldUser> objpool;
+	zObjPool<WorldUser> objpool;
 	
 };
 

@@ -40,7 +40,6 @@
 
 using namespace std;
 
-using namespace boost;
 using namespace boost::system;
 using namespace boost::asio::ip;
 using namespace boost::asio;

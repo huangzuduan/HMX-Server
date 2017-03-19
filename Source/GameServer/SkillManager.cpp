@@ -55,13 +55,13 @@ bool UserSkillM::addSkill(zSkill *s)
     zSkill *ret = (zSkill *)getEntryByTempID(s->id);
     if (ret)
     {
-      Zebra::logger->debug("技能ID重复(%ld)",s->id);
+      H::logger->debug("技能ID重复(%ld)",s->id);
     }
 
     bret = addEntry((zSkill *)s);
     if (!bret)
     {
-      Zebra::logger->fatal("添加技能表失败");
+      H::logger->fatal("添加技能表失败");
     }
   }
 

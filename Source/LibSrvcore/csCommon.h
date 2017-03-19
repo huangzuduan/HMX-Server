@@ -48,6 +48,9 @@
 #include <libxml/xmlstring.h>
 #include <time.h>
 
+#include "UnorderedSet.h"
+#include "UnorderedMap.h"
+
 #define __CAT(x)    #x
 
 #define SAFE_DELETE(x) { if (NULL != x) { delete (x); (x) = NULL; } }
@@ -86,130 +89,6 @@ typedef signed long long SQWORD;
 #include <stdint.h>
 #endif
 
-// 系统检测 
-#ifndef __COMPILERDEFS_H_
-#define __COMPILERDEFS_H_
-
-#define PLATFORM_WINDOWS 1
-#define PLATFORM_UNIX    2
-
-#if defined( _WIN64 )
-#  define PLATFORM PLATFORM_WINDOWS
-#elif defined( __WIN32__ ) || defined( WIN32 ) || defined( _WIN32 )
-#  define PLATFORM PLATFORM_WINDOWS
-#else
-#  define PLATFORM PLATFORM_UNIX
-#endif
-
-// 编译器检测 
-#define COMPILER_MICROSOFT 1
-#define COMPILER_GNU       2
-
-#ifdef _MSC_VER
-#  define COMPILER COMPILER_MICROSOFT
-#elif defined( __GNUC__ )
-#  define COMPILER COMPILER_GNU
-#  define GCC_VERSION (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
-#else
-#  error "FATAL ERROR: Unknown compiler."
-#endif
-
-// 编译格式检测 
-#if PLATFORM == PLATFORM_WINDOWS
-# if _WIN64
-#  define ENVIRONMENT64
-# else
-#  define ENVIRONMENT32
-# endif
-#endif
-
-#if __GNUC__
-# if __x86_64__ || __ppc64__
-#  define ENVIRONMENT64
-# else
-#  define ENVIRONMENT32
-# endif
-#endif
-
-#endif
-
-#ifndef __UNORDEREDSET_H_
-#define __UNORDEREDSET_H_
-
-#if COMPILER == COMPILER_GNU && GCC_VERSION > 40200
-# include <tr1/unordered_set>
-#elif COMPILER == COMPILER_GNU && GCC_VERSION >= 30000
-# include <ext/hash_set>
-#elif COMPILER == COMPILER_MICROSOFT && ((_MSC_VER >= 1500 && _HAS_TR1) || _MSC_VER >= 1700) // VS90(2008) SP1 or VS100(2010) SP1 or // VS110(2012)
-# include <unordered_set>
-#else
-# include <hash_set>
-#endif
-
-#if COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1700 // VS110(2012)
-#    define UNORDERED_SET std::unordered_set
-#    define UNORDERED_MULTISET std::unordered_multiset
-#elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1600 // VS100(2010)
-#    define UNORDERED_SET std::unordered_set
-#    define UNORDERED_MULTISET std::unordered_multiset
-#elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1500 && _HAS_TR1 // VS90(2008) SP1
-#    define UNORDERED_SET std::tr1::unordered_set
-#    define UNORDERED_MULTISET std::tr1::unordered_multiset
-#elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1300 // VS80(2005)
-#    define UNORDERED_SET stdext::hash_set
-#    define UNORDERED_MULTISET stdext::hash_multiset
-#elif COMPILER == COMPILER_GNU && GCC_VERSION > 40200
-#    define UNORDERED_SET std::tr1::unordered_set
-#    define UNORDERED_MULTISET std::tr1::unordered_multiset
-#elif COMPILER == COMPILER_GNU && GCC_VERSION >= 30000
-#    define UNORDERED_SET __gnu_cxx::hash_set
-#    define UNORDERED_MULTISET __gnu_cxx::hash_multiset
-#else
-#    define UNORDERED_SET std::hash_set
-#    define UNORDERED_MULTISET std::hash_multiset
-#endif
-
-#endif
-
-
-#ifndef __UNORDEREDMAP_H_
-#define __UNORDEREDMAP_H_
-
-#if COMPILER == COMPILER_GNU && GCC_VERSION > 40200
-# include <tr1/unordered_map>
-#elif COMPILER == COMPILER_GNU && GCC_VERSION >= 30000
-# include <ext/hash_map>
-#elif COMPILER == COMPILER_MICROSOFT && ((_MSC_VER >= 1500 && _HAS_TR1) || _MSC_VER >= 1700) // VS90(2008) SP1 or VS100(2010) SP1 or // VS110(2012)
-# include <unordered_map>
-#else
-# include <hash_map>
-#endif
-
-#if COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1700 // VS110(2012)
-#    define UNORDERED_MAP std::unordered_map
-#    define UNORDERED_MULTIMAP std::unordered_multimap
-#elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1600 // VS100(2010)
-#    define UNORDERED_MAP std::unordered_map
-#    define UNORDERED_MULTIMAP std::unordered_multimap
-#elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1500 && _HAS_TR1 // VS90(2008) SP1
-#    define UNORDERED_MAP std::tr1::unordered_map
-#    define UNORDERED_MULTIMAP std::tr1::unordered_multimap
-#elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1300 // VS80(2005)
-#    define UNORDERED_MAP stdext::hash_map
-#    define UNORDERED_MULTIMAP stdext::hash_multimap
-#elif COMPILER == COMPILER_GNU && GCC_VERSION > 40200
-#    define UNORDERED_MAP std::tr1::unordered_map
-#    define UNORDERED_MULTIMAP std::tr1::unordered_multimap
-#elif COMPILER == COMPILER_GNU && GCC_VERSION >= 30000
-#    define UNORDERED_MAP __gnu_cxx::hash_map
-#    define UNORDERED_MULTIMAP __gnu_cxx::hash_multimap
-#else
-#    define UNORDERED_MAP std::hash_map
-#    define UNORDERED_MULTIMAP std::hash_multimap
-#endif
-
-#endif
-
 #include <boost/timer.hpp>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
@@ -223,7 +102,6 @@ typedef signed long long SQWORD;
 
 using namespace std;
 
-using namespace boost;
 using namespace boost::system;
 using namespace boost::asio::ip;
 using namespace boost::asio;
@@ -305,9 +183,6 @@ typedef signed long long SQWORD;
 #define TIMETICK_UPDATE_TIME		1000
 
 
-
-
-
 /**
  * \brief 名字的最大长度
  */
@@ -367,6 +242,21 @@ typedef signed long long SQWORD;
 #define MAX_SQL_FIELD 100
 
 #define MAX_BUFFERSIZE 10000
+
+/* 常用常量定义 */
+#define MAX_ACCOUNT_LENG  32		/* 平台账号最大长度 */
+#define MAX_PASSWORD_LENG  32		/* 平台密码最大长度 */
+#define MAX_NAME_LENGTH  32			/* 昵称最大长度 */
+#define MAX_ROLE_TYPE_COUNT  4		/* 一个平台帐号最多允许创建角色数量 */
+#define MAX_CHAT_MSG_LENGTH  128	/* 聊天内容最大长度 */
+#define MAX_ENCRYPTSIZE  32			/* 密钥长度 */
+#define MAX_SERVERINFO_LIST  32		/* 最大服务器数量(除ws外) */
+#define MAX_CHAR_WORLD_MSG_LENGTH  64	/* 聊天最多可以说64个字符 */
+#define MAX_SKILL_COUNT  5			/* 技能最大数量 */
+#define MAX_QUEST_LIST_COUNT  10	/* 最大接受任务数量 */
+#define MAX_BINARY_SIZE 4096		/* 每个数据表最大的二进制大小(不可修改) */
+#define MAX_BORADCAST_MSG 4096		/* 广播消息最大数据 */
+#define MAX_SOCKET_BUFFER 4096		/* 创建消息容器 */
 
 /**
  * \brief 连接线程池的状态标记位
@@ -512,6 +402,336 @@ struct stSeptMemberInfo                      // 数据库读取结构，请不要随意修改，
 };
 
 }
+
+// 客户端当前状态 
+enum ClientStatus
+{
+	CS_INVALID = 0,
+	CS_LOGIN_ING,			//	登录中 
+	CS_LOGIN_OK,			//	登录完成 
+	CS_REGISTER_ING,		//  注册中 
+	CS_REGISTER_OK,			//	注册成功 
+	CS_LOADDATA_ING,		//	初始化数据中 
+	CS_LOADDATA_OK,			//	初始化数据完成 
+	CS_IN_GAME,			//	进入游戏(选择或注册角色后) 
+	CS_RES_OK,			//	前端资源加载完成 
+};
+
+
+// 服务器类型定义 
+enum EServerType
+{
+	ESERVER_TYPE_NULL = 0,
+	ESERVER_TYPE_CLIENT = 0,
+	ESERVER_TYPE_FEP = 1,
+	ESERVER_TYPE_LS = 2,
+	ESERVER_TYPE_WS = 3,
+	ESERVER_TYPE_SS = 4,
+	ESERVER_TYPE_DP = 5,
+	ESERVER_TYPE_LOG = 6,
+	ESERVER_TYPE_MAX,
+};
+
+// session 类型 
+enum ESessionType
+{
+	ESESSION_TYPE_NULL = 0,
+	ESESSION_TYPE_CLINET,
+	ESESSION_TYPE_SERVER,
+};
+
+/// 移动方向的定义
+enum {
+	_DIR_UP = 0,/// 向上
+	_DIR_UPRIGHT = 1,/// 右上
+	_DIR_RIGHTUP = 1,/// 右上
+	_DIR_RIGHT = 2,/// 向右
+	_DIR_RIGHTDOWN = 3,/// 右下
+	_DIR_DOWNRIGHT = 3,/// 右下
+	_DIR_DOWN = 4,/// 向下
+	_DIR_DOWNLEFT = 5,/// 左下
+	_DIR_LEFTDOWN = 5,/// 左下
+	_DIR_LEFT = 6,/// 向左
+	_DIR_LEFTUP = 7,/// 左上
+	_DIR_UPLEFT = 7,/// 左上
+	_DIR_WRONG = 8    /// 错误方向
+};
+
+enum
+{
+	NPC_TYPE_HUMAN = 0,///人型
+	NPC_TYPE_NORMAL = 1,/// 普通类型
+	NPC_TYPE_BBOSS = 2,/// 大Boss类型
+	NPC_TYPE_LBOSS = 3,/// 小Boss类型
+	NPC_TYPE_BACKBONE = 4,/// 精英类型
+	NPC_TYPE_GOLD = 5,/// 黄金类型
+	NPC_TYPE_TRADE = 6,/// 买卖类型
+	NPC_TYPE_TASK = 7,/// 任务类型
+	NPC_TYPE_GUARD = 8,/// 士兵类型
+	NPC_TYPE_PET = 9,/// 宠物类型
+	NPC_TYPE_BACKBONEBUG = 10,/// 精怪类型
+	NPC_TYPE_SUMMONS = 11,/// 召唤类型
+	NPC_TYPE_TOTEM = 12,/// 图腾类型
+	NPC_TYPE_AGGRANDIZEMENT = 13,/// 强化类型
+	NPC_TYPE_ABERRANCE = 14,/// 变异类型
+	NPC_TYPE_STORAGE = 15,/// 仓库类型
+	NPC_TYPE_ROADSIGN = 16,/// 路标类型
+	NPC_TYPE_TREASURE = 17,/// 宝箱类型
+	NPC_TYPE_WILDHORSE = 18,/// 野马类型
+	NPC_TYPE_MOBILETRADE = 19,/// 流浪小贩
+	NPC_TYPE_LIVENPC = 20,/// 生活npc（不战斗，攻城时消失）
+	NPC_TYPE_DUCKHIT = 21,/// 蹲下才能打的npc
+	NPC_TYPE_BANNER = 22,/// 旗帜类型
+	NPC_TYPE_TRAP = 23,/// 陷阱类型
+	NPC_TYPE_MAILBOX = 24,///邮箱
+	NPC_TYPE_AUCTION = 25,///拍卖管理员
+	NPC_TYPE_UNIONGUARD = 26,///帮会守卫
+	NPC_TYPE_SOLDIER = 27,///士兵，只攻击外国人
+	NPC_TYPE_UNIONATTACKER = 28,///攻方士兵
+	NPC_TYPE_SURFACE = 29,/// 地表类型
+	NPC_TYPE_CARTOONPET = 30,/// 替身宝宝
+	NPC_TYPE_PBOSS = 31,/// 紫色BOSS
+	NPC_TYPE_RESOURCE = 32, /// 资源类NPC
+
+							//sky添加
+							NPC_TYPE_GHOST = 999,  /// 元神类NPC
+							NPC_TYPE_ANIMON = 33,   /// 动物类怪物
+							NPC_TYPE_GOTO = 34,	///传送点
+							NPC_TYPE_RESUR = 35,	///复活点
+							NPC_TYPE_UNFIGHTPET = 36, ///非战斗宠物
+							NPC_TYPE_FIGHTPET = 37, ///战斗宠物
+							NPC_TYPE_RIDE = 38, ///坐骑
+							NPC_TYPE_TURRET = 39, /// 炮塔
+							NPC_TYPE_BARRACKS = 40, /// 兵营
+							NPC_TYPE_CAMP = 41,		/// 基地
+};
+
+enum
+{
+	NPC_ATYPE_NEAR = 1,/// 近距离攻击
+	NPC_ATYPE_FAR = 2,/// 远距离攻击
+	NPC_ATYPE_MFAR = 3,/// 法术远程攻击
+	NPC_ATYPE_MNEAR = 4,/// 法术近身攻击
+	NPC_ATYPE_NOACTION = 5,    /// 无攻击动作
+	NPC_ATYPE_ANIMAL = 6  /// 动物类
+};
+
+/**
+* \brief 用于偏移计算的坐标值
+*/
+struct zAdjust
+{
+	int x;    /**< 横坐标*/
+	int y;    /**< 纵坐标*/
+};
+
+/**
+* \brief 场景坐标
+*/
+struct zPos
+{
+	DWORD x;    /**< 横坐标*/
+	DWORD y;    /**< 纵坐标*/
+				/**
+				* \brief 构造函数
+				*
+				*/
+	zPos()
+	{
+		x = 0;
+		y = 0;
+	}
+	/**
+	* \brief 构造函数
+	*
+	*/
+	zPos(const DWORD x, const DWORD y)
+	{
+		this->x = x;
+		this->y = y;
+	}
+	/**
+	* \brief 拷贝构造函数
+	*
+	*/
+	zPos(const zPos &pos)
+	{
+		x = pos.x;
+		y = pos.y;
+	}
+	/**
+	* \brief 赋值操作符号
+	*
+	*/
+	zPos & operator= (const zPos &pos)
+	{
+		x = pos.x;
+		y = pos.y;
+		return *this;
+	}
+	/**
+	* \brief 重载+运算符号
+	*
+	*/
+	const zPos & operator+ (const zPos &pos)
+	{
+		x += pos.x;
+		y += pos.y;
+		return *this;
+	}
+	/**
+	* \brief 重载+运算符号
+	* 对坐标进行修正
+	*/
+	const zPos & operator+ (const zAdjust &adjust)
+	{
+		x += adjust.x;
+		y += adjust.y;
+		return *this;
+	}
+	/**
+	* \brief 重载+=运算符号
+	*
+	*/
+	const zPos & operator+= (const zPos &pos)
+	{
+		x += pos.x;
+		y += pos.y;
+		return *this;
+	}
+	/**
+	* \brief 重载+=运算符号
+	* 对坐标进行修正
+	*/
+	const zPos & operator+= (const zAdjust &adjust)
+	{
+		x += adjust.x;
+		y += adjust.y;
+		return *this;
+	}
+	/**
+	* \brief 重载-运算符号
+	*
+	*/
+	const zPos & operator- (const zPos &pos)
+	{
+		x -= pos.x;
+		y -= pos.y;
+		return *this;
+	}
+	/**
+	* \brief 重载-运算符号
+	* 对坐标进行修正
+	*/
+	const zPos & operator- (const zAdjust &adjust)
+	{
+		x -= adjust.x;
+		y -= adjust.y;
+		return *this;
+	}
+	/**
+	* \brief 重载-=运算符号
+	*
+	*/
+	const zPos & operator-= (const zPos &pos)
+	{
+		x -= pos.x;
+		y -= pos.y;
+		return *this;
+	}
+	/**
+	* \brief 重载-=运算符号
+	* 对坐标进行修正
+	*/
+	const zPos & operator-= (const zAdjust &adjust)
+	{
+		x -= adjust.x;
+		y -= adjust.y;
+		return *this;
+	}
+	/**
+	* \brief 重载==逻辑运算符号
+	*
+	*/
+	const bool operator== (const zPos &pos) const
+	{
+		return (x == pos.x && y == pos.y);
+	}
+	/**
+	* \brief 重载>逻辑运算符号
+	*
+	*/
+	const bool operator> (const zPos &pos) const
+	{
+		return (x > pos.x && y > pos.y);
+	}
+	/**
+	* \brief 重载>=逻辑运算符号
+	*
+	*/
+	const bool operator>= (const zPos &pos) const
+	{
+		return (x >= pos.x && y >= pos.y);
+	}
+	/**
+	* \brief 重载<逻辑运算符号
+	*
+	*/
+	const bool operator< (const zPos &pos) const
+	{
+		return (x < pos.x && y < pos.y);
+	}
+	/**
+	* \brief 重载<=逻辑运算符号
+	*
+	*/
+	const bool operator<= (const zPos &pos) const
+	{
+		return (x <= pos.x && y <= pos.y);
+	}
+	/**
+	* \brief 以自身为中心点，获取到另外一个坐标的方向
+	* \param pos 另外一个坐标点
+	* \return 方向
+	*/
+	const int getDirect(const zPos &pos) const
+	{
+		if (x == pos.x && y > pos.y)
+		{
+			return _DIR_UP;
+		}
+		else if (x < pos.x && y > pos.y)
+		{
+			return _DIR_UPRIGHT;
+		}
+		else if (x < pos.x && y == pos.y)
+		{
+			return _DIR_RIGHT;
+		}
+		else if (x < pos.x && y < pos.y)
+		{
+			return _DIR_RIGHTDOWN;
+		}
+		else if (x == pos.x && y < pos.y)
+		{
+			return _DIR_DOWN;
+		}
+		else if (x > pos.x && y < pos.y)
+		{
+			return _DIR_DOWNLEFT;
+		}
+		else if (x > pos.x && y == pos.y)
+		{
+			return _DIR_LEFT;
+		}
+		else if (x > pos.x && y > pos.y)
+		{
+			return _DIR_LEFTUP;
+		}
+
+		return _DIR_WRONG;
+	}
+};
 
 /**
  * \brief 定义门派的基本结构
@@ -10912,58 +11132,346 @@ namespace Cmd
  * \brief 定义统一用户平台登陆服务器指令
  */
 
-
-
-/*
-# Host: 192.168.2.35
-# Database: RecordServer
-# Table: 'GMMESSAGE'
-# 
-CREATE TABLE `GMMESSAGE` (
-    `ID` int(10) unsigned NOT NULL auto_increment,
-    `ZONE` int(10) unsigned NOT NULL default '0',
-    `NAME` varchar(33) NOT NULL default '',
-    `TYPE` smallint(5) unsigned NOT NULL default '0',
-    `CONTENT` varchar(255) NOT NULL default '',
-    `CONTACT` smallint(5) unsigned NOT NULL default '0',
-    `TELE` varchar(100) NOT NULL default '',
-    `START_TIME` varchar(100) NOT NULL default '',
-    `STATE` int(11) NOT NULL default '0',
-    `REPLY` varchar(100) NOT NULL default '',
-    `ISDEAL` smallint(6) NOT NULL default '0',
-    `ACCNAME` varchar(100) NOT NULL default '',
-    `CONTRY` varchar(100) NOT NULL default '',
-    `GMNAME` varchar(100) NOT NULL default '',
-    `SERVER` varchar(100) NOT NULL default '',
-    PRIMARY KEY  (`ID`)
-    ) ENGINE=MyISAM DEFAULT CHARSET=latin1; 
-
-# Host: 192.168.2.35
-# Database: RecordServer
-# Table: 'operator'
-# 
-CREATE TABLE `operator` (
-    `id` int(11) NOT NULL auto_increment,
-    `gmname` varchar(100) NOT NULL default '',
-    `time` varchar(100) NOT NULL default '',
-    `content` varchar(100) NOT NULL default '',
-    `recordid` varchar(100) NOT NULL default '',
-    PRIMARY KEY  (`id`)
-    ) ENGINE=MyISAM DEFAULT CHARSET=latin1; 
-
-struct stTradeObject
+struct BinaryHeader
 {
-  DWORD dwObjectID;
-  DWORD dwObjectTempID;
-  char strName[MAX_NAMESIZE + 1];
-  BYTE upgrade;                         // 等级
-  BYTE kind;      //物品类型,0普通,1蓝色,2金色,4神圣,8套装
+	int32 version;
+	int32 size;
+	char data[0];
 };
 
-*/
+struct BinaryMember
+{
+	int32 type;
+	int32 size;
+	char data[0];
+};
+
+enum
+{
+	BINARY_ACCOUNT_NULL = 0,
+	BINARY_ACCOUNT_SETTING,	// 设置属性
+	BINARY_ACCOUNT_MAX,
+};
+
+
+enum
+{
+	BINARY_USER_NULL = 0,
+	BINARY_USER_COUNTER = 1,
+	BINARY_USER_RELATION = 2,
+	BINARY_USER_MAX,
+};
+
+enum 
+{
+	BINARY_MESSAGE_NULL = 0,
+	BINARY_MESSAGE_CONENT,
+	BINARY_MESSAGE_MARK, //标记信息
+	BINARY_MESSAGE_MAX,
+};
+
+
+// 实体类型 
+enum EntityType
+{
+	ENTITY_TYPE_NPC = 1,
+	ENTITY_TYPE_PLAYER = 2,
+	ENTITY_TYPE_MASTER = 3,
+	ENTITY_TYPE_TRANSFER = 4,
+};
+
+#define MAX_SPELL_CONTROL_NUM 4
+
+/*-------------------------------------------------------------------
+* @Brief : PK对象属性定义
+*
+* @Author:hzd 2015:11:12
+*------------------------------------------------------------------*/
+////////////////////////////////////战斗对象共用属性 start//////////////////////////////////////
+struct EntryPkValBase
+{
+	int32 nStatus;							// 状态(二进制位运算值) 
+	int32 nLevel;							// 等级 
+	int32 nRed;								// 红(血) 
+	int32 nRedMax;							// 红上限 
+	int32 nBlue;							// 蓝(法术) 
+	int32 nBlueMax;							// 蓝上限 
+	int32 nRedRecover;						// 红恢复 
+	int32 nBlueRecover;						// 蓝恢复 
+	int32 nPhysicAttack;					// 物理攻击 
+	int32 nPhysicDefend;					// 物理防御 
+	int32 nSpellAttack;						// 法术攻击 
+	int32 nSpellDefend;						// 法术防御 
+	int32 nBaojilv;							// 暴击率 
+	int32 nBaoji;							// 暴击 
+	int32 nGedanglv;						// 隔挡率 
+	int32 nGedang;							// 隔挡 
+	int32 nShanbilv;						// 闪避率 
+	int32 nMingzhonglv;						// 命中率 
+	int32 nAttackSpeed;						// 速度 
+	int32 nMoveSpeed;						// 移速 
+
+	EntryPkValBase()
+	{
+		memset(this, 0, sizeof(*this));
+	}
+
+	EntryPkValBase(const EntryPkValBase& pkVal)
+	{
+		operator=(pkVal);
+	}
+
+	EntryPkValBase& operator=(const EntryPkValBase& pkVal)
+	{
+		memcpy(this, &pkVal, sizeof(*this));
+		return *this;
+	}
+
+};
 
 
 
+
+// 生物体类型 
+/*-------------------------------------------------------------------
+* @Brief : 本类属性，是指在地图上使用的，共用的，也就是地图上的PK相关
+*			的数据，而功能属性不注册在这里
+* @Author:hzd 2015:11:28
+*------------------------------------------------------------------*/
+enum EntiryBaseAttrType
+{
+	////////////////////////////////////Entry共用属性//////////////////////////////////////
+	ENTITY_ATTRIBUTE_MAPID,
+	ENTITY_ATTRIBUTE_POS_X,
+	ENTITY_ATTRIBUTE_POS_Y,
+	ENTITY_ATTRIBUTE_INVIEWRANGE,
+	ENTITY_ATTRIBUTE_OUTVIEWRANGE,
+	ENTITY_ATTRIBUTE_MAX,
+};
+
+struct BaseAttribute
+{
+	int32 nMapID;					// 地图ID 
+	zPos sPos;						// 坐标 
+	int32 nInViewRange;				// 进入视野距离 
+	int32 nOutViewRangle;			// 离开视野距离 
+	BaseAttribute()
+	{
+		sPos.x = sPos.y = 0;
+		nInViewRange = nOutViewRangle = 0;
+	}
+};
+
+//////////////////////////////////////////////////////////////////////////
+
+struct SpellData
+{
+	uint32 nSpellID;	// 技能ID 
+	int32 nPosition;    // 携带位置 (-1未携带,0 - 4 携带在对应的位置上) 
+};
+
+enum CharacterType
+{
+	CHARACTER_TYPE_NULL = 0,    // 非法 
+	CHARACTER_TYPE_SHAOLIN = 1,	// 少林 
+	CHARACTER_TYPE_MOJIAO = 2,	// 魔教 
+	CHARACTER_TYPE_GUMU = 3,	// 古墓 
+	CHARACTER_TYPE_XIAOYAO = 4,	// 逍遥 
+};
+
+//////////////////////////////////角色////////////////////////////////////////
+
+// 角色专有的基本数据，大部分数据已经继承于PK类  
+struct SceneUserAttr
+{
+	int64 nUid;						// UID
+	char  arrName[MAX_NAME_LENGTH]; // 角色名 
+	int32 nExp;						// 经验 
+	int32 nExpMax;					// 经验上限 
+	int32 nLandID;					// 地图ID(副本或主地图) 加载时会先检查副本地图，再检查主地图 
+	int32 nLandX;
+	int32 nLandY;
+	int32 nInstanceID;				// 副本ID 
+	int32 nInstanceX;
+	int32 nInstanceY;
+	int32 nRoleType;				// 角色类型 
+	int32 nClothesID;				// 衣物装备ID 
+	int32 nWeaponID;				// 武器装备ID 
+	int32 nGold;
+	int32 nSilver;
+	int32 nCopper;
+	int32 nLastLogin;
+	int32 nCountry;
+	int32 nSceneID;
+	int32 nZoneID;
+	int32 nTeamID;
+	int32 nVip;
+	SceneUserAttr()
+	{
+
+	}
+	SceneUserAttr(const SceneUserAttr& pkVal)
+	{
+		operator=(pkVal);
+	}
+
+	SceneUserAttr& operator=(const SceneUserAttr& pkVal)
+	{
+		memcpy(this, &pkVal, sizeof(*this));
+		return *this;
+	}
+
+	/*void Serialize(::protobuf::UserBinary& proto);
+	void Unserialize(const ::protobuf::UserBinary& proto);*/
+
+};
+
+enum SceneUserAttrType
+{
+	USER_ATTR_UID = 0,
+	USER_ATTR_EXP,
+	USER_ATTR_EXPMAX,
+	USER_ATTR_LAND_ID,
+	USER_ATTR_LAND_X,
+	USER_ATTR_LAND_Y,
+	USER_ATTR_INSTANCE_ID,
+	USER_ATTR_INSTANCE_X,
+	USER_ATTR_INSTANCE_Y,
+	USER_ATTR_ROLETYPE,
+	USER_ATTR_CLOTHESID,
+	USER_ATTR_WEAPONID,
+
+	USER_ATTR_GOLD,
+	USER_ATTR_SILVER,
+	USER_ATTR_COPPER,
+	USER_ATTR_LASTLOGIN,
+	USER_ATTR_COUNTRY,
+	USER_ATTR_SCENEID,
+	USER_ATTR_ZONEID,
+	USER_ATTR_TEAMID,
+	USER_ATTR_VIP,
+	USER_ATTR_MAX
+};
+
+
+// 背包数据 
+struct SceneUserItemSlot
+{
+	int32 nCapacity;
+	int32 nUseCapacity;
+
+};
+
+
+//////////////////////////////////////////////////////////////////////////
+
+
+// 角色身上穿的三件装备 
+struct CharacterWearData
+{
+	uint64 nCharacterID;	// 角色ID  
+	uint32 nClothesID;		// 衣服ID 
+	uint32 nWeaponID;		// 武器ID 
+};
+
+/*------------------------------------------------------------------
+*
+* @Brief : 频道消息类型
+*
+* @Author: hzd
+* @File  : def_channel.h
+* @Date  : 2015/09/18 23:54
+* @Copyright (c) 2015,hzd, All rights reserved.
+*-----------------------------------------------------------------*/
+enum EChannelRegistType
+{
+	E_CH_REG_TYPE_NULL = 0x0000000,	// 无 
+	E_CH_REG_TYPE_POS_B = 0x00000001,	// 位置信息广播 
+	E_CH_REG_TYPE_POS_R = 0x00000002,	// 位置信息收集 
+	E_CH_REG_TYPE_NPC_B = 0x00000004,	// 生物体信息广播 
+	E_CH_REG_TYPE_NPC_R = 0x00000008,	// 生物体信息收集 
+	E_CH_REG_TYPE_EQUIP_B = 0x00000010,   // 装备广播 
+	E_CH_REG_TYPE_EQUIP_R = 0x00000020,   // 装备收集 
+	E_CH_REG_TYPE_SPELL_B = 0x00000040,	// 技能广播 
+	E_CH_REG_TYPE_SPELL_R = 0x00000080,   // 技能收集 
+	E_CH_REG_TYPE_BUFF_B = 0x00000100,	// Buff信息广播	 
+	E_CH_REG_TYPE_BUFF_R = 0x00000200,	// Buff信息收集 
+	E_CH_REG_TYPE_MAX
+};
+
+enum
+{
+	MAX_CHANNEL_BUFF = 15,	// 最大Buff数量	 
+	MAX_CHARACTER_NAME_LENGTH_C = 32,
+};
+
+enum
+{
+	MAX_POSITION_COUNT = 100, // 最多可存放周边玩家位置数据 
+	MAX_CREATURE_COUNT = 100, // 最多可存放周边玩家生物数据 
+};
+
+
+// 位置信息
+struct ChannelPosition
+{
+	uint64			nID;			// 实体ID 
+	int32			nPositionX;		// 位置x 
+	int32			nPositionZ;		// 位置z 
+	int32			nHeadingX;		// 朝向X已经扩大了100 
+	int32			nHeadingZ;		// 朝向X已经扩大了100 
+};
+
+// 生物体信息 
+struct ChannelCreature
+{
+	uint64		nID;									// 实体ID 
+	int8		arrName[MAX_CHARACTER_NAME_LENGTH_C];	// 昵称 
+	int32		nRed;									// 红(血) 
+	int32		nRedMax;								// 红上限 
+	int32		nBlue;									// 蓝(法术) 
+	int32		nBlueMax;								// 蓝上限 
+};
+
+// 装备信息 
+struct ChannelWear
+{
+	uint64		nID;				// 实体ID 
+	uint32		nClothesID;			// 衣服ID 
+	uint32		nWeaponID;			// 武器装备ID 
+};
+
+// 技能信息 
+struct ChannelSpell
+{
+	uint64		nID;			// 实体ID 
+	uint32      nSpellID;		// 技能ID 
+};
+
+// Buff信息 
+struct ChannelBuff
+{
+	uint32		nNum;							// Buff数量 
+	uint64		nID;							// 实体ID 
+	uint32		arrBuffID[MAX_CHANNEL_BUFF];    // BuffID  
+};
+
+
+#define FUNCTION_CHANNEL_BROADCAST(InfoType)\
+virtual void ChannelBroadcast(const std::set<const InfoType*>& rsetValues) {}
+#define DEFINE_FUNCTION_CHANNEL_BROADCAST(InfoType)\
+virtual void ChannelBroadcast(const std::set<const InfoType*>& rsetValues);
+#define IMPLEMENT_FUNCTION_CHANNEL_BROADCAST(ClassName, InfoType)\
+void ClassName::ChannelBroadcast(const std::set<const InfoType*>& rsetValues)
+
+#define FUNCTION_CHANNEL_COLLECT(InfoType)\
+typedef const InfoType* P##InfoType;\
+virtual void ChannelCollect(P##InfoType& o_rpInfo) { \
+o_rpInfo = &m_s##InfoType; }
+#define DEFINE_FUNCTION_CHANNEL_COLLECT(InfoType)\
+virtual void ChannelCollect(P##InfoType& o_rpInfo);
+#define IMPLEMENT_FUNCTION_CHANNEL_COLLECT(ClassName, InfoType)\
+void ClassName::ChannelCollect(P##InfoType& o_rpInfo)
 
 #pragma pack()
 

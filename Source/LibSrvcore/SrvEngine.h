@@ -4,142 +4,65 @@
 #include "csCommon.h"
 #include "NetIncludes.h"
 
+class zLogger;
+class zProperties;
+class zCond;
+class zLock;
+class zMutex;
+class zMutex_scope_lock;
+class zRWLock;
+class zRWLock_scope_rdlock;
+class zRWLock_scope_wrlock;
+class zThread;
+class zThreadGroup;
+class zTCPTask;
+class zTCPTaskPool;
+class zSyncThread;
+class zRecycleThread;
+class zCheckconnectThread;
+class zCheckwaitThread;
+class zTCPClientTaskThread;
+class zTimeTick;
+class zTaskTimer;
+class zRSA;
+class zUtility;
+class zTextCVS;
 
-/* 常用常量定义 */
-enum
+namespace H
 {
-	MAX_ACCOUNT_LENG = 32,	/* 平台账号最大长度 */
-	MAX_PASSWORD_LENG = 32,   /* 平台密码最大长度 */
-	MAX_NAME_LENGTH = 32,	/* 昵称最大长度 */
-	MAX_ROLE_TYPE_COUNT = 4,	/* 一个平台帐号最多允许创建角色数量 */
-	MAX_CHAT_MSG_LENGTH = 128,	/* 聊天内容最大长度 */
-	MAX_ENCRYPTSIZE = 32,		/* 密钥长度 */
-	MAX_SERVERINFO_LIST = 32,   /* 最大服务器数量(除ws外) */
-	MAX_CHAR_WORLD_MSG_LENGTH = 64,	/* 聊天最多可以说64个字符 */
-	MAX_SKILL_COUNT = 5,	/* 技能最大数量 */
-	MAX_QUEST_LIST_COUNT = 10,	/* 最大接受任务数量 */
-	MAX_BINARY_SIZE = 4096,	/* 每个数据表最大的二进制大小(不可修改) */
-	MAX_BORADCAST_MSG = 4096,	/* 广播消息最大数据 */
-	MAX_SOCKET_BUFFER = 4096, /* 创建消息容器 */
-};
+	/**
+	* \brief 游戏时间
+	*
+	*/
+	extern volatile QWORD qwGameTime;
 
+	/**
+	* \brief 日志指针
+	*
+	*/
+	extern zLogger *logger;
 
-// 客户端当前状态 
-enum ClientStatus
-{
-	CS_INVALID = 0,
-	CS_LOGIN_ING,			//	登录中 
-	CS_LOGIN_OK,			//	登录完成 
-	CS_REGISTER_ING,		//  注册中 
-	CS_REGISTER_OK,			//	注册成功 
-	CS_LOADDATA_ING,		//	初始化数据中 
-	CS_LOADDATA_OK,			//	初始化数据完成 
-	CS_IN_GAME,			//	进入游戏(选择或注册角色后) 
-	CS_RES_OK,			//	前端资源加载完成 
-};
+	/**
+	* \brief 存取全局变量的容器
+	*
+	*/
+	extern zProperties global;
 
+	/**
+	* \brief 时间缓存器
+	*
+	*/
+	extern zTimeTick* timeTick;
 
-// 服务器类型定义 
-enum EServerType
-{
-	ESERVER_TYPE_NULL = 0,
-	ESERVER_TYPE_CLIENT = 0,
-	ESERVER_TYPE_FEP = 1,
-	ESERVER_TYPE_LS = 2,
-	ESERVER_TYPE_WS = 3,
-	ESERVER_TYPE_SS = 4,
-	ESERVER_TYPE_DP = 5,
-	ESERVER_TYPE_LOG = 6,
-	ESERVER_TYPE_MAX,
-};
-
-// session 类型 
-enum ESessionType
-{
-	ESESSION_TYPE_NULL = 0,
-	ESESSION_TYPE_CLINET,
-	ESESSION_TYPE_SERVER,
-};
-
-/// 移动方向的定义
-enum {
-	_DIR_UP = 0,/// 向上
-	_DIR_UPRIGHT = 1,/// 右上
-	_DIR_RIGHTUP = 1,/// 右上
-	_DIR_RIGHT = 2,/// 向右
-	_DIR_RIGHTDOWN = 3,/// 右下
-	_DIR_DOWNRIGHT = 3,/// 右下
-	_DIR_DOWN = 4,/// 向下
-	_DIR_DOWNLEFT = 5,/// 左下
-	_DIR_LEFTDOWN = 5,/// 左下
-	_DIR_LEFT = 6,/// 向左
-	_DIR_LEFTUP = 7,/// 左上
-	_DIR_UPLEFT = 7,/// 左上
-	_DIR_WRONG = 8    /// 错误方向
-};
-
-enum
-{
-	NPC_TYPE_HUMAN = 0,///人型
-	NPC_TYPE_NORMAL = 1,/// 普通类型
-	NPC_TYPE_BBOSS = 2,/// 大Boss类型
-	NPC_TYPE_LBOSS = 3,/// 小Boss类型
-	NPC_TYPE_BACKBONE = 4,/// 精英类型
-	NPC_TYPE_GOLD = 5,/// 黄金类型
-	NPC_TYPE_TRADE = 6,/// 买卖类型
-	NPC_TYPE_TASK = 7,/// 任务类型
-	NPC_TYPE_GUARD = 8,/// 士兵类型
-	NPC_TYPE_PET = 9,/// 宠物类型
-	NPC_TYPE_BACKBONEBUG = 10,/// 精怪类型
-	NPC_TYPE_SUMMONS = 11,/// 召唤类型
-	NPC_TYPE_TOTEM = 12,/// 图腾类型
-	NPC_TYPE_AGGRANDIZEMENT = 13,/// 强化类型
-	NPC_TYPE_ABERRANCE = 14,/// 变异类型
-	NPC_TYPE_STORAGE = 15,/// 仓库类型
-	NPC_TYPE_ROADSIGN = 16,/// 路标类型
-	NPC_TYPE_TREASURE = 17,/// 宝箱类型
-	NPC_TYPE_WILDHORSE = 18,/// 野马类型
-	NPC_TYPE_MOBILETRADE = 19,/// 流浪小贩
-	NPC_TYPE_LIVENPC = 20,/// 生活npc（不战斗，攻城时消失）
-	NPC_TYPE_DUCKHIT = 21,/// 蹲下才能打的npc
-	NPC_TYPE_BANNER = 22,/// 旗帜类型
-	NPC_TYPE_TRAP = 23,/// 陷阱类型
-	NPC_TYPE_MAILBOX = 24,///邮箱
-	NPC_TYPE_AUCTION = 25,///拍卖管理员
-	NPC_TYPE_UNIONGUARD = 26,///帮会守卫
-	NPC_TYPE_SOLDIER = 27,///士兵，只攻击外国人
-	NPC_TYPE_UNIONATTACKER = 28,///攻方士兵
-	NPC_TYPE_SURFACE = 29,/// 地表类型
-	NPC_TYPE_CARTOONPET = 30,/// 替身宝宝
-	NPC_TYPE_PBOSS = 31,/// 紫色BOSS
-	NPC_TYPE_RESOURCE = 32, /// 资源类NPC
-
-	//sky添加
-	NPC_TYPE_GHOST = 999,  /// 元神类NPC
-	NPC_TYPE_ANIMON = 33,   /// 动物类怪物
-	NPC_TYPE_GOTO = 34,	///传送点
-	NPC_TYPE_RESUR = 35,	///复活点
-	NPC_TYPE_UNFIGHTPET = 36, ///非战斗宠物
-	NPC_TYPE_FIGHTPET = 37, ///战斗宠物
-	NPC_TYPE_RIDE = 38, ///坐骑
-	NPC_TYPE_TURRET = 39, /// 炮塔
-	NPC_TYPE_BARRACKS = 40, /// 兵营
-	NPC_TYPE_CAMP = 41,		/// 基地
-};
-
-enum
-{
-	NPC_ATYPE_NEAR = 1,/// 近距离攻击
-	NPC_ATYPE_FAR = 2,/// 远距离攻击
-	NPC_ATYPE_MFAR = 3,/// 法术远程攻击
-	NPC_ATYPE_MNEAR = 4,/// 法术近身攻击
-	NPC_ATYPE_NOACTION = 5,    /// 无攻击动作
-	NPC_ATYPE_ANIMAL = 6  /// 动物类
+	/**
+	* \brief 密码生成器
+	*
+	*/
+	extern zRSA* rsa;
 };
 
 template <typename Container>
-inline void
-stringtok(Container &container, std::string const &in,
+inline void stringtok(Container &container, std::string const &in,
 	const char * const delimiters = " \t\n",
 	const int deep = 0)
 {
@@ -278,14 +201,7 @@ bool selectByLakh(const DWORD lakh);
 //获取亿分之之的几率
 bool selectByOneHM(const DWORD lakh);
 
-/**
-* \brief 用于偏移计算的坐标值
-*/
-struct zAdjust
-{
-	int x;    /**< 横坐标*/
-	int y;    /**< 纵坐标*/
-};
+
 
 #pragma pack(push,1)
 
@@ -434,7 +350,7 @@ public:
 	}
 
 public:
-	static UsingBlocksSet		s_setBlocks;	// 使用中含管理信息的内存块 
+	static UsingBlocksSet s_setBlocks;	// 使用中含管理信息的内存块 
 
 private:
 	// 检测内存是否被管理 
@@ -444,17 +360,18 @@ private:
 	}
 };
 
+
 // 对象池(必须实现CreateObj才可使用) 
 template<typename T>
-class ObjPool : protected MemPool
+class zObjPool : protected MemPool
 {
 public:
-	ObjPool(bool bIsManageInfo = false, uint32 nNumPerSlice = 256)
+	zObjPool(bool bIsManageInfo = false, uint32 nNumPerSlice = 256)
 		: MemPool(bIsManageInfo, (bIsManageInfo ? (sizeof(T) + sizeof(ObjMemInfo)) : sizeof(T)), nNumPerSlice), m_bManageInfo(bIsManageInfo)
 	{
 	}
 
-	virtual ~ObjPool()
+	virtual ~zObjPool()
 	{
 		// 保证在释放内存片之前,调用正在使用的内存块上对象的析构函数 
 		for (UsingBlocksSet::iterator iter = m_setUsingBlocks.begin();
@@ -624,11 +541,11 @@ template<typename T>
 class ObjPoolFactory
 {
 protected:
-	static ObjPool<T> objpool;
+	static zObjPool<T> objpool;
 };
 
 template< typename T >
-ObjPool<T> ObjPoolFactory< T >::objpool;
+zObjPool<T> ObjPoolFactory< T >::objpool;
 
 // 对象池管理接口(用于不符合谁创建谁销毁的情况) 
 struct IObjPoolManagement
@@ -637,236 +554,9 @@ public:
 	virtual void recycle() = 0;
 };
 
-/**
-* \brief 场景坐标
-*/
-struct zPos
-{
-	DWORD x;    /**< 横坐标*/
-	DWORD y;    /**< 纵坐标*/
-				/**
-				* \brief 构造函数
-				*
-				*/
-	zPos()
-	{
-		x = 0;
-		y = 0;
-	}
-	/**
-	* \brief 构造函数
-	*
-	*/
-	zPos(const DWORD x, const DWORD y)
-	{
-		this->x = x;
-		this->y = y;
-	}
-	/**
-	* \brief 拷贝构造函数
-	*
-	*/
-	zPos(const zPos &pos)
-	{
-		x = pos.x;
-		y = pos.y;
-	}
-	/**
-	* \brief 赋值操作符号
-	*
-	*/
-	zPos & operator= (const zPos &pos)
-	{
-		x = pos.x;
-		y = pos.y;
-		return *this;
-	}
-	/**
-	* \brief 重载+运算符号
-	*
-	*/
-	const zPos & operator+ (const zPos &pos)
-	{
-		x += pos.x;
-		y += pos.y;
-		return *this;
-	}
-	/**
-	* \brief 重载+运算符号
-	* 对坐标进行修正
-	*/
-	const zPos & operator+ (const zAdjust &adjust)
-	{
-		x += adjust.x;
-		y += adjust.y;
-		return *this;
-	}
-	/**
-	* \brief 重载+=运算符号
-	*
-	*/
-	const zPos & operator+= (const zPos &pos)
-	{
-		x += pos.x;
-		y += pos.y;
-		return *this;
-	}
-	/**
-	* \brief 重载+=运算符号
-	* 对坐标进行修正
-	*/
-	const zPos & operator+= (const zAdjust &adjust)
-	{
-		x += adjust.x;
-		y += adjust.y;
-		return *this;
-	}
-	/**
-	* \brief 重载-运算符号
-	*
-	*/
-	const zPos & operator- (const zPos &pos)
-	{
-		x -= pos.x;
-		y -= pos.y;
-		return *this;
-	}
-	/**
-	* \brief 重载-运算符号
-	* 对坐标进行修正
-	*/
-	const zPos & operator- (const zAdjust &adjust)
-	{
-		x -= adjust.x;
-		y -= adjust.y;
-		return *this;
-	}
-	/**
-	* \brief 重载-=运算符号
-	*
-	*/
-	const zPos & operator-= (const zPos &pos)
-	{
-		x -= pos.x;
-		y -= pos.y;
-		return *this;
-	}
-	/**
-	* \brief 重载-=运算符号
-	* 对坐标进行修正
-	*/
-	const zPos & operator-= (const zAdjust &adjust)
-	{
-		x -= adjust.x;
-		y -= adjust.y;
-		return *this;
-	}
-	/**
-	* \brief 重载==逻辑运算符号
-	*
-	*/
-	const bool operator== (const zPos &pos) const
-	{
-		return (x == pos.x && y == pos.y);
-	}
-	/**
-	* \brief 重载>逻辑运算符号
-	*
-	*/
-	const bool operator> (const zPos &pos) const
-	{
-		return (x > pos.x && y > pos.y);
-	}
-	/**
-	* \brief 重载>=逻辑运算符号
-	*
-	*/
-	const bool operator>= (const zPos &pos) const
-	{
-		return (x >= pos.x && y >= pos.y);
-	}
-	/**
-	* \brief 重载<逻辑运算符号
-	*
-	*/
-	const bool operator< (const zPos &pos) const
-	{
-		return (x < pos.x && y < pos.y);
-	}
-	/**
-	* \brief 重载<=逻辑运算符号
-	*
-	*/
-	const bool operator<= (const zPos &pos) const
-	{
-		return (x <= pos.x && y <= pos.y);
-	}
-	/**
-	* \brief 以自身为中心点，获取到另外一个坐标的方向
-	* \param pos 另外一个坐标点
-	* \return 方向
-	*/
-	const int getDirect(const zPos &pos) const
-	{
-		if (x == pos.x && y > pos.y)
-		{
-			return _DIR_UP;
-		}
-		else if (x < pos.x && y > pos.y)
-		{
-			return _DIR_UPRIGHT;
-		}
-		else if (x < pos.x && y == pos.y)
-		{
-			return _DIR_RIGHT;
-		}
-		else if (x < pos.x && y < pos.y)
-		{
-			return _DIR_RIGHTDOWN;
-		}
-		else if (x == pos.x && y < pos.y)
-		{
-			return _DIR_DOWN;
-		}
-		else if (x > pos.x && y < pos.y)
-		{
-			return _DIR_DOWNLEFT;
-		}
-		else if (x > pos.x && y == pos.y)
-		{
-			return _DIR_LEFT;
-		}
-		else if (x > pos.x && y > pos.y)
-		{
-			return _DIR_LEFTUP;
-		}
 
-		return _DIR_WRONG;
-	}
-};
 
 #pragma pack(pop)
-
-class zLogger;
-class zProperties;
-class zCond;
-class zLock;
-class zMutex;
-class zMutex_scope_lock;
-class zRWLock;
-class zRWLock_scope_rdlock;
-class zRWLock_scope_wrlock;
-class zThread;
-class zThreadGroup;
-class zTCPTask;
-class zTCPTaskPool;
-class zSyncThread;
-class zRecycleThread;
-class zCheckconnectThread;
-class zCheckwaitThread;
-class zTCPClientTaskThread;
-class zTimeTick;
-class zTaskTimer;
 
 
 /**
@@ -4001,35 +3691,6 @@ public:
 	}
 };
 
-
-
-namespace Zebra
-{
-	/**
-	* \brief 游戏时间
-	*
-	*/
-	extern volatile QWORD qwGameTime;
-
-	/**
-	* \brief 日志指针
-	*
-	*/
-	extern zLogger *logger;
-
-	/**
-	* \brief 存取全局变量的容器
-	*
-	*/
-	extern zProperties global;
-
-	/**
-	* \brief 时间缓存器
-	*
-	*/
-	extern zTimeTick* timeTick;
-};
-
 class zLock
 {
 public:
@@ -4326,8 +3987,6 @@ private:
 	xmlDocPtr doc;
 };
 
-
-using namespace boost;
 using namespace boost::gregorian;
 using namespace boost::posix_time;
 
@@ -4346,7 +4005,7 @@ public:
 
 	void update();
 
-	inline int32 getNowTime() const
+	inline int32 now() const
 	{
 		return nowtime;
 	}
@@ -4512,7 +4171,7 @@ private:
 	zTaskTimerHandler	m_fHandler;  // 回调函数 
 	deadline_timer		m_ctimer;
 
-	thread  m_cServiceThread;		// 定时器线程  
+	boost::thread  m_cServiceThread;		// 定时器线程  
 
 	bool b1Sec;
 	bool b2Sec;
@@ -4545,7 +4204,7 @@ public:
 	* \brief 虚析构函数
 	*
 	*/
-	virtual ~zService() { serviceInst = NULL; };
+	virtual ~zService() { inst = NULL; };
 
 	/**
 	* \brief 重新读取配置文件，为HUP信号的处理函数
@@ -4585,24 +4244,11 @@ public:
 	*
 	* \return 服务的实例指针
 	*/
-	static zService *serviceInstance()
+	static zService *getInst()
 	{
-		return serviceInst;
+		return inst;
 	}
 
-	zProperties env;        /**< 存储当前运行系统的环境变量 */
-
-protected:
-
-	/**
-	* \brief 构造函数
-	*
-	*/
-	zService(const std::string &_name) : name(_name)
-	{
-		serviceInst = this;
-		terminate = false;
-	}
 
 	virtual bool init() = 0;
 
@@ -4629,12 +4275,105 @@ protected:
 	*/
 	virtual void finaly() = 0;
 
+public:
+
+	static zService *inst;	/**< 类的唯一实例指针，包括派生类，初始化为空指针 */
+
+	zProperties env;        /**< 存储当前运行系统的环境变量 */
+	std::string name;       /**< 服务名称 */
+	bool terminate;         /**< 服务结束标记 */
+
+protected:
+
+	/**
+	* \brief 构造函数
+	*/
+	zService(const std::string &_name) : name(_name)
+	{
+		inst = this;
+		terminate = false;
+	}
+};
+
+// 游戏区
+struct GameZone_t
+{
+	int32 gameID;
+	int32 zoneID;
+};
+
+// 通用区
+struct GeneralZone_t
+{
+	int8 type;
+	int8 actID;
+	int32 flatID;
+	GameZone_t zone;
+};
+
+/*
+ * 路由头信息，来自zone,去往zone
+ * 模拟以太网包消息,包结构为[fromZone,toZone,prootol][GOTOdata/SENDTOdata]
+ * GOTO为进入跨服协议，gotoServerZone所在的区
+ * SENDTO为转发跨服协议,sendToServerZone所在的区
+ */
+struct GeneralRoute_t
+{
+	GeneralZone_t fromZone;
+	GeneralZone_t toZone;
+	BYTE formType;	//来自于:0源服务器,1玩家
+	QWORD formID;	//来源ID
+	BYTE toType;	//接收类型:0服务器,1玩家
+	QWORD toID;		//接收ID
+	BYTE routeCount;//转发计数
+	BYTE dirType;	//指令类型0向前,1回退
+	BYTE errType;	//0无,1失败返回,2解包发送
+	bool needFailBack()
+	{
+		return errType & 0x01;
+	}
+	bool needUppack()
+	{
+		return errType & 0x02;
+	}
+};
+
+
+/*
+ * 网络服务器框架基类
+ *
+ */
+class zNetSerivce : public zService
+{
+public:
+
+	virtual ~zNetSerivce() { };
+
+	// 将消息发到某区
+	void sendToServerZone(GeneralRoute_t route, const NetMsgSS* cmd,int32 len); // S协议
+	void sendToServerZoneUser(GeneralRoute_t route,int64 toUserID,const NetMsgSS* cmd, int32 len); //c协议
+
+	// 将自己转移到某区登录(本区下线,某区上线)
+	void gotoServerZone(GeneralRoute_t route);
+
+protected:
+
+	zNetSerivce(const std::string &_name) : zService(_name)
+	{
+
+	}
+
+	void sendToServerZone(GeneralRoute_t route, std::pair<int32, int64> toPair, const NetMsgSS* cmd, int32 len);
+
 private:
 
-	static zService *serviceInst;	/**< 类的唯一实例指针，包括派生类，初始化为空指针 */
-	std::string name;          /**< 服务名称 */
-	bool terminate;            /**< 服务结束标记 */
+	// 平台数据
+	int32 flatID;	//平台ID
+	int32 flatZone;	//区服ID
 
+	// 区数据 平台id=>区ID(区id=>合服ID)
+	std::map<int32, int32> flatZonelist;
+	std::map<int32, int32> gameZoneList;
 };
 
 /*
@@ -4649,6 +4388,9 @@ public:
 
 	// 异或加解密
 	static int32 xorCode(uint32 nRandNum, const char* inKey, char *pSrc, uint32 nSrcLen);
+
+	// 在[x,y]取随机数据
+	static int32 randBetween(int x,int y);
 
 };
 
@@ -4678,31 +4420,29 @@ extern "C" {
 }
 #endif
 
-namespace utils
+class zUUID
 {
+
 	//twitter snowflake 算法
 	//64     63--------------22-----------12------0
 	//符号位 |    41位时间   | 10位机器吗| 12位自增码|
+public:
+	zUUID();
+	~zUUID();
+	uint64_t get_time();
 
-	extern uint64_t get_time();
+	void set_epoch(uint64_t epoch);
+	void set_machine(int32_t machine);
 
-	class unique_id_t {
-	public:
-		unique_id_t();
-		~unique_id_t();
+	int64_t generate();
+private:
+	uint64_t epoch_;
+	uint64_t time_;
+	uint64_t machine_;
+	int32_t sequence_;
 
-		void set_epoch(uint64_t epoch);
-		void set_machine(int32_t machine);
+};
 
-		int64_t generate();
-	private:
-		uint64_t epoch_;
-		uint64_t time_;
-		uint64_t machine_;
-		int32_t sequence_;
-	};
-
-}
 
 /*
  * 连接管理器 
@@ -4917,9 +4657,9 @@ public:
 
 private:
 
-	ObjPool<NetServer>  serverobjpool;
-	ObjPool<NetClient>  clientobjpool;
-	ObjPool<zSession>	sessionobjpool;
+	zObjPool<NetServer>  serverobjpool;
+	zObjPool<NetClient>  clientobjpool;
+	zObjPool<zSession>	sessionobjpool;
 
 	// 等待加入到used列表中 
 	std::vector<NetServer*> serverListAdd;
@@ -5022,7 +4762,7 @@ public:
 
 private:
 
-	ObjPool<zServerReg> objpool;
+	zObjPool<zServerReg> objpool;
 
 };
 
@@ -5107,6 +4847,348 @@ private:
 	std::map<int32, Server > allServers;
 
 };
+
+
+/*
+ * RSA加密解密	
+ *
+ */
+class zRSA
+{
+public:
+	zRSA(const char* _pubfilename,const char* _prifilename,const char* _password);
+	~zRSA();
+	bool generateKey();
+	std::string bio_read_privateKey(std::string data);
+	std::string bio_read_publicKey(std::string data);
+	void encryptFile(std::string inputfile, std::string outputfile);
+	void decryptFile(std::string inputfile, std::string outputfile);
+	int testEncodeUncode();
+
+	const char* getPubfilename() const;
+	const char* getPrifilename() const;
+	const char* getPassword() const;
+
+private:
+
+	char pubfilename[MAX_NAMESIZE + 1];
+	char prifilename[MAX_NAMESIZE + 1];
+	char password[MAX_NAMESIZE + 1];
+
+};
+
+/*
+ * 常用工具类	
+ */
+class zUtility
+{
+public:
+	inline static int RangedRand(int nMin, int nMax)
+	{
+		return static_cast<int>(nMin + rand() * 1.f / (RAND_MAX + 1) * (nMax - nMin));
+	}
+
+	inline static int GBKToUTF8(const char * lpGBKStr, char * lpUTF8Str, int nUTF8StrLen)
+	{
+		wchar_t * lpUnicodeStr = NULL;
+		int nRetLen = 0;
+
+		if (!lpGBKStr)  // 如果GBK字符串为NULL则出错退出  
+			return 0;
+
+		nRetLen = ::MultiByteToWideChar(CP_ACP, 0, (char *)lpGBKStr, -1, NULL, NULL);  // 获取转换到Unicode编码后所需要的字符空间长度 
+		lpUnicodeStr = new WCHAR[nRetLen + 1];  // 为Unicode字符串空间 
+		nRetLen = ::MultiByteToWideChar(CP_ACP, 0, (char *)lpGBKStr, -1, lpUnicodeStr, nRetLen);  // 转换到Unicode编码 
+		if (!nRetLen)  // 转换失败则出错退出
+			return 0;
+
+		nRetLen = ::WideCharToMultiByte(CP_UTF8, 0, lpUnicodeStr, -1, NULL, 0, NULL, NULL);  // 获取转换到UTF8编码后所需要的字符空间长度 
+
+		if (!lpUTF8Str)  // 输出缓冲区为空则返回转换后需要的空间大小 
+		{
+			if (lpUnicodeStr)
+				delete[]lpUnicodeStr;
+			return nRetLen;
+		}
+
+		if (nUTF8StrLen < nRetLen)  // 如果输出缓冲区长度不够则退出 
+		{
+			if (lpUnicodeStr)
+				delete[]lpUnicodeStr;
+			return 0;
+		}
+
+		nRetLen = ::WideCharToMultiByte(CP_UTF8, 0, lpUnicodeStr, -1, (char *)lpUTF8Str, nUTF8StrLen, NULL, NULL);  // 转换到UTF8编码 
+
+		if (lpUnicodeStr)
+			delete[]lpUnicodeStr;
+
+		return nRetLen;
+	}
+
+	inline static char* Utf8ToGBK(const char* strUtf8)
+	{
+		int len = MultiByteToWideChar(CP_UTF8, 0, strUtf8, -1, NULL, 0);
+		unsigned short * wszGBK = new unsigned short[len + 1];
+		memset(wszGBK, 0, len * 2 + 2);
+		MultiByteToWideChar(CP_UTF8, 0, strUtf8, -1, (LPWSTR)wszGBK, len);
+		len = WideCharToMultiByte(CP_ACP, 0, (LPCWSTR)wszGBK, -1, NULL, 0, NULL, NULL);
+		char *szGBK = new char[len + 1];
+		memset(szGBK, 0, len + 1);
+		WideCharToMultiByte(CP_ACP, 0, (LPCWSTR)wszGBK, -1, (LPSTR)szGBK, len, NULL, NULL);
+		return szGBK;
+	}
+
+	inline static int CalcGroupCount(int count, int max_pile_count)
+	{
+		if (max_pile_count == 0)
+		{
+			return 1;
+		}
+		int group_count = count / max_pile_count;
+		if (count % max_pile_count != 0)
+		{
+			++group_count;
+		}
+		return group_count;
+	}
+
+	/*
+	*	给Map中Value值加值
+	*/
+	template <typename MapType>
+	inline void AddValueInMap(MapType& map_obj, typename MapType::key_type key, typename MapType::mapped_type value)
+	{
+		typename MapType::iterator iter = map_obj.find(key);
+		if (iter != map_obj.end())
+		{
+			iter->second += value;
+		}
+		else
+		{
+			map_obj.insert(std::make_pair(key, value));
+		}
+	}
+
+	/*
+	*	获得Map中Value指针，如果Key不存在，则返回NULL
+	*/
+	template <typename MapType>
+	inline typename MapType::mapped_type* GetValPtrFromMap(MapType& map_obj, typename MapType::key_type& key)
+	{
+		typename MapType::iterator iter = map_obj.find(key);
+		return iter == map_obj.end() ? NULL : &iter->second;
+	}
+
+	/*
+	* 给Map中插入一个Key，如果存在则返回false，成功则返回true
+	*/
+	template <typename MapType>
+	inline bool InsertToMap(MapType& map_obj, typename MapType::key_type& key, typename MapType::mapped_type& value)
+	{
+		typename MapType::iterator iter = map_obj.find(key);
+		if (iter != map_obj.end())
+			return false;
+		map_obj.insert(std::make_pair(key, value));
+		return true;
+	}
+
+	/*
+	*   值类型一定为指针
+	*	获得Map中Value指针，如果Key不存在，则返回NULL
+	*/
+	template <typename MapType>
+	inline typename MapType::mapped_type GetValFromMap(MapType& map_obj, typename MapType::key_type key)
+	{
+		typename MapType::iterator iter = map_obj.find(key);
+		return iter == map_obj.end() ? NULL : iter->second;
+	}
+
+	/*
+	*	查找一个数组中第一个值不为elem的下标
+	*/
+	template <typename T, unsigned int count>
+	inline unsigned int FindFirstNotOf(const T(&arr)[count], const T& elem)
+	{
+		unsigned int index = 0;
+		for (unsigned int i = 0; i < count; ++i)
+		{
+			if (elem != arr[i])
+			{
+				index = i;
+				break;
+			}
+		}
+		return index;
+	}
+
+	/*
+	*	查找一个数组中第一个值为elem的下标
+	*/
+	template <typename T, unsigned int count>
+	inline unsigned int FindFirstOf(const T(&arr)[count], const T& elem)
+	{
+		unsigned int index = 0;
+		for (unsigned int i = 0; i < count; ++i)
+		{
+			if (elem == arr[i])
+			{
+				index = i;
+				break;
+			}
+		}
+		return index;
+	}
+
+
+#ifdef TWP_SNPRINTF
+# undef	TWP_SNPRINTF
+#endif // TWP_SNPRINTF
+#if defined(linux) || defined(__linux) || defined(__linux__)
+#  define TWP_SNPRINTF snprintf
+#elif defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
+#  define TWP_SNPRINTF(str, size, fmt, ...) _snprintf_s(str, size, (size) - 1, fmt, ##__VA_ARGS__)
+#endif
+
+	/**
+	* \brief 把字符串根据token转化为多个字符串
+	*
+	* 下面是使用例子程序：
+	*    <pre>
+	*    std::list<string> ls;
+	*    stringtok (ls," this  \t is\t\n  a test  ");
+	*    for(std::list<string>const_iterator i = ls.begin(); i != ls.end(); ++i)
+	*        std::cerr << ':' << (*i) << ":\n";
+	*     </pre>
+	*
+	* \param container 容器，用于存放字符串
+	* \param in 输入字符串
+	* \param delimiters 分隔符号
+	* \param deep 深度，分割的深度，缺省没有限制
+	*/
+	template <typename Container>
+	inline void my_stringtok(Container &container, std::string const &in,
+		const char * const delimiters = " \t\n",
+		const int deep = 0)
+	{
+		const std::string::size_type len = in.length();
+		std::string::size_type i = 0;
+		int count = 0;
+
+		while (i < len)
+		{
+			i = in.find_first_not_of(delimiters, i);
+			if (i == std::string::npos)
+				return;   // nothing left
+
+						  // find the end of the token
+			std::string::size_type j = in.find_first_of(delimiters, i);
+
+			count++;
+			// push token
+			if (j == std::string::npos
+				|| (deep > 0 && count > deep)) {
+				container.push_back(in.substr(i));
+				return;
+			}
+			else
+				container.push_back(in.substr(i, j - i));
+
+			// set up for next loop
+			i = j + 1;
+		}
+	}
+
+	template<typename T1, typename T2, typename T3> struct my_streble
+	{
+		T1 first;
+		T2 second;
+		T3 third;
+		my_streble() :first(), second(), third() {}
+		my_streble(const T1& t1, const T2& t2, const T3& t3) :first(t1), second(t2), third(t3) {}
+		template<typename U1, typename U2, typename U3> my_streble(const my_streble<U1, U2, U3>& _streble) : first(_streble.first), second(_streble.second), third(_streble.third) {}
+	};
+	template<typename T1, typename T2, typename T3> inline static my_streble<T1, T2, T3> make_my_streble(T1 x, T2 y, T3 z)
+	{
+		return my_streble<T1, T2, T3>(x, y, z);
+	}
+
+};
+
+
+/*
+ * 解析指定分隔符间隔的资源文件
+ * 如 Excel转为CVS的txt文件
+ */
+class zTextCVS
+{
+public:
+	zTextCVS(const std::string& strFileName, uint32 nFlagsRow = 4, uint32 nDataStartRow = 6);
+
+	~zTextCVS();
+
+	/*
+	* 读取当前行后面的第nLines行
+	*/
+	bool NextRow(int32 nLines = 1);
+
+	/*
+	* 获得数据块
+	*/
+	bool GetInt8(int8& o_nValue);
+	bool GetUInt8(uint8& o_nValue);
+	bool GetInt16(int16& o_nValue);
+	bool GetUInt16(uint16& o_nValue);
+	bool GetInt32(int32& o_nValue);
+	bool GetUInt32(uint32& o_nValue);
+	bool GetInt64(int64& o_nValue);
+	bool GetFloat32(float32& o_fValue);
+	bool GetString(std::string& o_strValue);
+	const char*	GetCString();
+
+	// 可用列数 
+	int32 UseColCount()
+	{
+		return m_nUseColCount;
+	}
+
+	// 是否可用 
+	bool Valid()
+	{
+		return m_bValid;
+	}
+
+private:
+	/*
+	* 打开资源文件
+	*/
+	bool Load(const char* cstrFileName);
+
+	/*
+	* 初始化标志列
+	*/
+	bool ReadFlagsRow();
+
+	/*
+	* 解析一行数据
+	*/
+	void AnalyseLine(const std::string& i_strLine, std::vector<std::string>& o_vecCol);
+
+private:
+	int32						m_nFlagsRow;		// 标志行(1:跳过不读取,2:读取,3:读取) 
+	int32						m_nDataStartRow;	// 数据起始行 
+	uint32						m_nCurrRowIndex;	// 当前读取到的行[0,xx) 
+
+	bool						m_bValid;			// 文件是否可用 
+	std::ifstream				m_cFileStream;		// 文件读入流 
+	std::vector<bool>			m_vecFlags;			// 列可用状态 
+
+	std::string					m_strLine;			// 当前读取行 
+	std::vector<std::string>	m_vecCol;			// 当前读取行各列值 
+	uint32						m_nCol;				// 当前读取行列索引 
+	int32						m_nUseColCount;		// 可用列数量 
+};
+
 
 
 #endif

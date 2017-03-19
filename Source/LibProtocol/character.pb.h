@@ -36,25 +36,26 @@ void protobuf_AddDesc_character_2eproto();
 void protobuf_AssignDesc_character_2eproto();
 void protobuf_ShutdownFile_character_2eproto();
 
-class CounterInfo;
-class MyCounters;
-class MyUniqueID;
-class RelInfo;
+class Counter;
+class CounterProto;
+class MsgObject;
+class RelChatMsg;
+class RelChatProto;
 class Relation;
-class UniqueIDItem;
+class RelationProto;
 class UserBinary;
 class WsUser;
 
 // ===================================================================
 
-class CounterInfo : public ::google::protobuf::Message {
+class Counter : public ::google::protobuf::Message {
  public:
-  CounterInfo();
-  virtual ~CounterInfo();
+  Counter();
+  virtual ~Counter();
 
-  CounterInfo(const CounterInfo& from);
+  Counter(const Counter& from);
 
-  inline CounterInfo& operator=(const CounterInfo& from) {
+  inline Counter& operator=(const Counter& from) {
     CopyFrom(from);
     return *this;
   }
@@ -68,19 +69,19 @@ class CounterInfo : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CounterInfo& default_instance();
+  static const Counter& default_instance();
 
-  void Swap(CounterInfo* other);
+  void Swap(Counter* other);
 
   // implements Message ----------------------------------------------
 
-  inline CounterInfo* New() const { return New(NULL); }
+  inline Counter* New() const { return New(NULL); }
 
-  CounterInfo* New(::google::protobuf::Arena* arena) const;
+  Counter* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const CounterInfo& from);
-  void MergeFrom(const CounterInfo& from);
+  void CopyFrom(const Counter& from);
+  void MergeFrom(const Counter& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -95,7 +96,7 @@ class CounterInfo : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(CounterInfo* other);
+  void InternalSwap(Counter* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -139,7 +140,7 @@ class CounterInfo : public ::google::protobuf::Message {
   ::google::protobuf::int32 endtime() const;
   void set_endtime(::google::protobuf::int32 value);
 
-  // @@protoc_insertion_point(class_scope:protobuf.CounterInfo)
+  // @@protoc_insertion_point(class_scope:protobuf.Counter)
  private:
   inline void set_has_itemid();
   inline void clear_has_itemid();
@@ -162,18 +163,18 @@ class CounterInfo : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_character_2eproto();
 
   void InitAsDefaultInstance();
-  static CounterInfo* default_instance_;
+  static Counter* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class MyCounters : public ::google::protobuf::Message {
+class CounterProto : public ::google::protobuf::Message {
  public:
-  MyCounters();
-  virtual ~MyCounters();
+  CounterProto();
+  virtual ~CounterProto();
 
-  MyCounters(const MyCounters& from);
+  CounterProto(const CounterProto& from);
 
-  inline MyCounters& operator=(const MyCounters& from) {
+  inline CounterProto& operator=(const CounterProto& from) {
     CopyFrom(from);
     return *this;
   }
@@ -187,19 +188,19 @@ class MyCounters : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const MyCounters& default_instance();
+  static const CounterProto& default_instance();
 
-  void Swap(MyCounters* other);
+  void Swap(CounterProto* other);
 
   // implements Message ----------------------------------------------
 
-  inline MyCounters* New() const { return New(NULL); }
+  inline CounterProto* New() const { return New(NULL); }
 
-  MyCounters* New(::google::protobuf::Arena* arena) const;
+  CounterProto* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const MyCounters& from);
-  void MergeFrom(const MyCounters& from);
+  void CopyFrom(const CounterProto& from);
+  void MergeFrom(const CounterProto& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -214,7 +215,7 @@ class MyCounters : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(MyCounters* other);
+  void InternalSwap(CounterProto* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -230,42 +231,42 @@ class MyCounters : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .protobuf.CounterInfo counters = 1;
-  int counters_size() const;
-  void clear_counters();
-  static const int kCountersFieldNumber = 1;
-  const ::protobuf::CounterInfo& counters(int index) const;
-  ::protobuf::CounterInfo* mutable_counters(int index);
-  ::protobuf::CounterInfo* add_counters();
-  ::google::protobuf::RepeatedPtrField< ::protobuf::CounterInfo >*
-      mutable_counters();
-  const ::google::protobuf::RepeatedPtrField< ::protobuf::CounterInfo >&
-      counters() const;
+  // repeated .protobuf.Counter counter = 1;
+  int counter_size() const;
+  void clear_counter();
+  static const int kCounterFieldNumber = 1;
+  const ::protobuf::Counter& counter(int index) const;
+  ::protobuf::Counter* mutable_counter(int index);
+  ::protobuf::Counter* add_counter();
+  ::google::protobuf::RepeatedPtrField< ::protobuf::Counter >*
+      mutable_counter();
+  const ::google::protobuf::RepeatedPtrField< ::protobuf::Counter >&
+      counter() const;
 
-  // @@protoc_insertion_point(class_scope:protobuf.MyCounters)
+  // @@protoc_insertion_point(class_scope:protobuf.CounterProto)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::protobuf::CounterInfo > counters_;
+  ::google::protobuf::RepeatedPtrField< ::protobuf::Counter > counter_;
   friend void  protobuf_AddDesc_character_2eproto();
   friend void protobuf_AssignDesc_character_2eproto();
   friend void protobuf_ShutdownFile_character_2eproto();
 
   void InitAsDefaultInstance();
-  static MyCounters* default_instance_;
+  static CounterProto* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class UniqueIDItem : public ::google::protobuf::Message {
+class MsgObject : public ::google::protobuf::Message {
  public:
-  UniqueIDItem();
-  virtual ~UniqueIDItem();
+  MsgObject();
+  virtual ~MsgObject();
 
-  UniqueIDItem(const UniqueIDItem& from);
+  MsgObject(const MsgObject& from);
 
-  inline UniqueIDItem& operator=(const UniqueIDItem& from) {
+  inline MsgObject& operator=(const MsgObject& from) {
     CopyFrom(from);
     return *this;
   }
@@ -279,19 +280,19 @@ class UniqueIDItem : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const UniqueIDItem& default_instance();
+  static const MsgObject& default_instance();
 
-  void Swap(UniqueIDItem* other);
+  void Swap(MsgObject* other);
 
   // implements Message ----------------------------------------------
 
-  inline UniqueIDItem* New() const { return New(NULL); }
+  inline MsgObject* New() const { return New(NULL); }
 
-  UniqueIDItem* New(::google::protobuf::Arena* arena) const;
+  MsgObject* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const UniqueIDItem& from);
-  void MergeFrom(const UniqueIDItem& from);
+  void CopyFrom(const MsgObject& from);
+  void MergeFrom(const MsgObject& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -306,7 +307,7 @@ class UniqueIDItem : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(UniqueIDItem* other);
+  void InternalSwap(MsgObject* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -322,79 +323,44 @@ class UniqueIDItem : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional int32 itemid = 1;
-  bool has_itemid() const;
-  void clear_itemid();
-  static const int kItemidFieldNumber = 1;
-  ::google::protobuf::int32 itemid() const;
-  void set_itemid(::google::protobuf::int32 value);
+  // optional string conent = 1;
+  bool has_conent() const;
+  void clear_conent();
+  static const int kConentFieldNumber = 1;
+  const ::std::string& conent() const;
+  void set_conent(const ::std::string& value);
+  void set_conent(const char* value);
+  void set_conent(const char* value, size_t size);
+  ::std::string* mutable_conent();
+  ::std::string* release_conent();
+  void set_allocated_conent(::std::string* conent);
 
-  // optional int32 startid = 2;
-  bool has_startid() const;
-  void clear_startid();
-  static const int kStartidFieldNumber = 2;
-  ::google::protobuf::int32 startid() const;
-  void set_startid(::google::protobuf::int32 value);
-
-  // optional int32 endid = 3;
-  bool has_endid() const;
-  void clear_endid();
-  static const int kEndidFieldNumber = 3;
-  ::google::protobuf::int32 endid() const;
-  void set_endid(::google::protobuf::int32 value);
-
-  // optional int32 steplenght = 4;
-  bool has_steplenght() const;
-  void clear_steplenght();
-  static const int kSteplenghtFieldNumber = 4;
-  ::google::protobuf::int32 steplenght() const;
-  void set_steplenght(::google::protobuf::int32 value);
-
-  // optional int32 startcount = 5;
-  bool has_startcount() const;
-  void clear_startcount();
-  static const int kStartcountFieldNumber = 5;
-  ::google::protobuf::int32 startcount() const;
-  void set_startcount(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:protobuf.UniqueIDItem)
+  // @@protoc_insertion_point(class_scope:protobuf.MsgObject)
  private:
-  inline void set_has_itemid();
-  inline void clear_has_itemid();
-  inline void set_has_startid();
-  inline void clear_has_startid();
-  inline void set_has_endid();
-  inline void clear_has_endid();
-  inline void set_has_steplenght();
-  inline void clear_has_steplenght();
-  inline void set_has_startcount();
-  inline void clear_has_startcount();
+  inline void set_has_conent();
+  inline void clear_has_conent();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::int32 itemid_;
-  ::google::protobuf::int32 startid_;
-  ::google::protobuf::int32 endid_;
-  ::google::protobuf::int32 steplenght_;
-  ::google::protobuf::int32 startcount_;
+  ::google::protobuf::internal::ArenaStringPtr conent_;
   friend void  protobuf_AddDesc_character_2eproto();
   friend void protobuf_AssignDesc_character_2eproto();
   friend void protobuf_ShutdownFile_character_2eproto();
 
   void InitAsDefaultInstance();
-  static UniqueIDItem* default_instance_;
+  static MsgObject* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class MyUniqueID : public ::google::protobuf::Message {
+class RelChatMsg : public ::google::protobuf::Message {
  public:
-  MyUniqueID();
-  virtual ~MyUniqueID();
+  RelChatMsg();
+  virtual ~RelChatMsg();
 
-  MyUniqueID(const MyUniqueID& from);
+  RelChatMsg(const RelChatMsg& from);
 
-  inline MyUniqueID& operator=(const MyUniqueID& from) {
+  inline RelChatMsg& operator=(const RelChatMsg& from) {
     CopyFrom(from);
     return *this;
   }
@@ -408,19 +374,19 @@ class MyUniqueID : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const MyUniqueID& default_instance();
+  static const RelChatMsg& default_instance();
 
-  void Swap(MyUniqueID* other);
+  void Swap(RelChatMsg* other);
 
   // implements Message ----------------------------------------------
 
-  inline MyUniqueID* New() const { return New(NULL); }
+  inline RelChatMsg* New() const { return New(NULL); }
 
-  MyUniqueID* New(::google::protobuf::Arena* arena) const;
+  RelChatMsg* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const MyUniqueID& from);
-  void MergeFrom(const MyUniqueID& from);
+  void CopyFrom(const RelChatMsg& from);
+  void MergeFrom(const RelChatMsg& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -435,7 +401,7 @@ class MyUniqueID : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(MyUniqueID* other);
+  void InternalSwap(RelChatMsg* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -451,42 +417,111 @@ class MyUniqueID : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .protobuf.UniqueIDItem uuids = 1;
-  int uuids_size() const;
-  void clear_uuids();
-  static const int kUuidsFieldNumber = 1;
-  const ::protobuf::UniqueIDItem& uuids(int index) const;
-  ::protobuf::UniqueIDItem* mutable_uuids(int index);
-  ::protobuf::UniqueIDItem* add_uuids();
-  ::google::protobuf::RepeatedPtrField< ::protobuf::UniqueIDItem >*
-      mutable_uuids();
-  const ::google::protobuf::RepeatedPtrField< ::protobuf::UniqueIDItem >&
-      uuids() const;
+  // optional int64 msgid = 1;
+  bool has_msgid() const;
+  void clear_msgid();
+  static const int kMsgidFieldNumber = 1;
+  ::google::protobuf::int64 msgid() const;
+  void set_msgid(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:protobuf.MyUniqueID)
+  // optional int64 senduid = 2;
+  bool has_senduid() const;
+  void clear_senduid();
+  static const int kSenduidFieldNumber = 2;
+  ::google::protobuf::int64 senduid() const;
+  void set_senduid(::google::protobuf::int64 value);
+
+  // optional string sendname = 3;
+  bool has_sendname() const;
+  void clear_sendname();
+  static const int kSendnameFieldNumber = 3;
+  const ::std::string& sendname() const;
+  void set_sendname(const ::std::string& value);
+  void set_sendname(const char* value);
+  void set_sendname(const char* value, size_t size);
+  ::std::string* mutable_sendname();
+  ::std::string* release_sendname();
+  void set_allocated_sendname(::std::string* sendname);
+
+  // optional int64 recvuid = 4;
+  bool has_recvuid() const;
+  void clear_recvuid();
+  static const int kRecvuidFieldNumber = 4;
+  ::google::protobuf::int64 recvuid() const;
+  void set_recvuid(::google::protobuf::int64 value);
+
+  // optional string recvname = 5;
+  bool has_recvname() const;
+  void clear_recvname();
+  static const int kRecvnameFieldNumber = 5;
+  const ::std::string& recvname() const;
+  void set_recvname(const ::std::string& value);
+  void set_recvname(const char* value);
+  void set_recvname(const char* value, size_t size);
+  ::std::string* mutable_recvname();
+  ::std::string* release_recvname();
+  void set_allocated_recvname(::std::string* recvname);
+
+  // optional int32 sendtime = 6;
+  bool has_sendtime() const;
+  void clear_sendtime();
+  static const int kSendtimeFieldNumber = 6;
+  ::google::protobuf::int32 sendtime() const;
+  void set_sendtime(::google::protobuf::int32 value);
+
+  // optional .protobuf.MsgObject msgobj = 7;
+  bool has_msgobj() const;
+  void clear_msgobj();
+  static const int kMsgobjFieldNumber = 7;
+  const ::protobuf::MsgObject& msgobj() const;
+  ::protobuf::MsgObject* mutable_msgobj();
+  ::protobuf::MsgObject* release_msgobj();
+  void set_allocated_msgobj(::protobuf::MsgObject* msgobj);
+
+  // @@protoc_insertion_point(class_scope:protobuf.RelChatMsg)
  private:
+  inline void set_has_msgid();
+  inline void clear_has_msgid();
+  inline void set_has_senduid();
+  inline void clear_has_senduid();
+  inline void set_has_sendname();
+  inline void clear_has_sendname();
+  inline void set_has_recvuid();
+  inline void clear_has_recvuid();
+  inline void set_has_recvname();
+  inline void clear_has_recvname();
+  inline void set_has_sendtime();
+  inline void clear_has_sendtime();
+  inline void set_has_msgobj();
+  inline void clear_has_msgobj();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::protobuf::UniqueIDItem > uuids_;
+  ::google::protobuf::int64 msgid_;
+  ::google::protobuf::int64 senduid_;
+  ::google::protobuf::internal::ArenaStringPtr sendname_;
+  ::google::protobuf::int64 recvuid_;
+  ::google::protobuf::internal::ArenaStringPtr recvname_;
+  ::protobuf::MsgObject* msgobj_;
+  ::google::protobuf::int32 sendtime_;
   friend void  protobuf_AddDesc_character_2eproto();
   friend void protobuf_AssignDesc_character_2eproto();
   friend void protobuf_ShutdownFile_character_2eproto();
 
   void InitAsDefaultInstance();
-  static MyUniqueID* default_instance_;
+  static RelChatMsg* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class RelInfo : public ::google::protobuf::Message {
+class RelChatProto : public ::google::protobuf::Message {
  public:
-  RelInfo();
-  virtual ~RelInfo();
+  RelChatProto();
+  virtual ~RelChatProto();
 
-  RelInfo(const RelInfo& from);
+  RelChatProto(const RelChatProto& from);
 
-  inline RelInfo& operator=(const RelInfo& from) {
+  inline RelChatProto& operator=(const RelChatProto& from) {
     CopyFrom(from);
     return *this;
   }
@@ -500,19 +535,19 @@ class RelInfo : public ::google::protobuf::Message {
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const RelInfo& default_instance();
+  static const RelChatProto& default_instance();
 
-  void Swap(RelInfo* other);
+  void Swap(RelChatProto* other);
 
   // implements Message ----------------------------------------------
 
-  inline RelInfo* New() const { return New(NULL); }
+  inline RelChatProto* New() const { return New(NULL); }
 
-  RelInfo* New(::google::protobuf::Arena* arena) const;
+  RelChatProto* New(::google::protobuf::Arena* arena) const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const RelInfo& from);
-  void MergeFrom(const RelInfo& from);
+  void CopyFrom(const RelChatProto& from);
+  void MergeFrom(const RelChatProto& from);
   void Clear();
   bool IsInitialized() const;
 
@@ -527,7 +562,7 @@ class RelInfo : public ::google::protobuf::Message {
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const;
-  void InternalSwap(RelInfo* other);
+  void InternalSwap(RelChatProto* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return _internal_metadata_.arena();
@@ -543,58 +578,31 @@ class RelInfo : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional int64 uid = 1;
-  bool has_uid() const;
-  void clear_uid();
-  static const int kUidFieldNumber = 1;
-  ::google::protobuf::int64 uid() const;
-  void set_uid(::google::protobuf::int64 value);
+  // repeated .protobuf.RelChatMsg msglist = 1;
+  int msglist_size() const;
+  void clear_msglist();
+  static const int kMsglistFieldNumber = 1;
+  const ::protobuf::RelChatMsg& msglist(int index) const;
+  ::protobuf::RelChatMsg* mutable_msglist(int index);
+  ::protobuf::RelChatMsg* add_msglist();
+  ::google::protobuf::RepeatedPtrField< ::protobuf::RelChatMsg >*
+      mutable_msglist();
+  const ::google::protobuf::RepeatedPtrField< ::protobuf::RelChatMsg >&
+      msglist() const;
 
-  // optional int32 rel = 2;
-  bool has_rel() const;
-  void clear_rel();
-  static const int kRelFieldNumber = 2;
-  ::google::protobuf::int32 rel() const;
-  void set_rel(::google::protobuf::int32 value);
-
-  // optional int32 createtime = 3;
-  bool has_createtime() const;
-  void clear_createtime();
-  static const int kCreatetimeFieldNumber = 3;
-  ::google::protobuf::int32 createtime() const;
-  void set_createtime(::google::protobuf::int32 value);
-
-  // optional int32 dealreltime = 4;
-  bool has_dealreltime() const;
-  void clear_dealreltime();
-  static const int kDealreltimeFieldNumber = 4;
-  ::google::protobuf::int32 dealreltime() const;
-  void set_dealreltime(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:protobuf.RelInfo)
+  // @@protoc_insertion_point(class_scope:protobuf.RelChatProto)
  private:
-  inline void set_has_uid();
-  inline void clear_has_uid();
-  inline void set_has_rel();
-  inline void clear_has_rel();
-  inline void set_has_createtime();
-  inline void clear_has_createtime();
-  inline void set_has_dealreltime();
-  inline void clear_has_dealreltime();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::int64 uid_;
-  ::google::protobuf::int32 rel_;
-  ::google::protobuf::int32 createtime_;
-  ::google::protobuf::int32 dealreltime_;
+  ::google::protobuf::RepeatedPtrField< ::protobuf::RelChatMsg > msglist_;
   friend void  protobuf_AddDesc_character_2eproto();
   friend void protobuf_AssignDesc_character_2eproto();
   friend void protobuf_ShutdownFile_character_2eproto();
 
   void InitAsDefaultInstance();
-  static RelInfo* default_instance_;
+  static RelChatProto* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -662,31 +670,177 @@ class Relation : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // repeated .protobuf.RelInfo rels = 99;
-  int rels_size() const;
-  void clear_rels();
-  static const int kRelsFieldNumber = 99;
-  const ::protobuf::RelInfo& rels(int index) const;
-  ::protobuf::RelInfo* mutable_rels(int index);
-  ::protobuf::RelInfo* add_rels();
-  ::google::protobuf::RepeatedPtrField< ::protobuf::RelInfo >*
-      mutable_rels();
-  const ::google::protobuf::RepeatedPtrField< ::protobuf::RelInfo >&
-      rels() const;
+  // optional int64 uid = 1;
+  bool has_uid() const;
+  void clear_uid();
+  static const int kUidFieldNumber = 1;
+  ::google::protobuf::int64 uid() const;
+  void set_uid(::google::protobuf::int64 value);
+
+  // optional string name = 2;
+  bool has_name() const;
+  void clear_name();
+  static const int kNameFieldNumber = 2;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // optional int32 rel = 3;
+  bool has_rel() const;
+  void clear_rel();
+  static const int kRelFieldNumber = 3;
+  ::google::protobuf::int32 rel() const;
+  void set_rel(::google::protobuf::int32 value);
+
+  // optional int32 createtime = 4;
+  bool has_createtime() const;
+  void clear_createtime();
+  static const int kCreatetimeFieldNumber = 4;
+  ::google::protobuf::int32 createtime() const;
+  void set_createtime(::google::protobuf::int32 value);
+
+  // optional int32 dealreltime = 5;
+  bool has_dealreltime() const;
+  void clear_dealreltime();
+  static const int kDealreltimeFieldNumber = 5;
+  ::google::protobuf::int32 dealreltime() const;
+  void set_dealreltime(::google::protobuf::int32 value);
+
+  // optional .protobuf.RelChatProto relchat = 6;
+  bool has_relchat() const;
+  void clear_relchat();
+  static const int kRelchatFieldNumber = 6;
+  const ::protobuf::RelChatProto& relchat() const;
+  ::protobuf::RelChatProto* mutable_relchat();
+  ::protobuf::RelChatProto* release_relchat();
+  void set_allocated_relchat(::protobuf::RelChatProto* relchat);
 
   // @@protoc_insertion_point(class_scope:protobuf.Relation)
  private:
+  inline void set_has_uid();
+  inline void clear_has_uid();
+  inline void set_has_name();
+  inline void clear_has_name();
+  inline void set_has_rel();
+  inline void clear_has_rel();
+  inline void set_has_createtime();
+  inline void clear_has_createtime();
+  inline void set_has_dealreltime();
+  inline void clear_has_dealreltime();
+  inline void set_has_relchat();
+  inline void clear_has_relchat();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::protobuf::RelInfo > rels_;
+  ::google::protobuf::int64 uid_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::int32 rel_;
+  ::google::protobuf::int32 createtime_;
+  ::protobuf::RelChatProto* relchat_;
+  ::google::protobuf::int32 dealreltime_;
   friend void  protobuf_AddDesc_character_2eproto();
   friend void protobuf_AssignDesc_character_2eproto();
   friend void protobuf_ShutdownFile_character_2eproto();
 
   void InitAsDefaultInstance();
   static Relation* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class RelationProto : public ::google::protobuf::Message {
+ public:
+  RelationProto();
+  virtual ~RelationProto();
+
+  RelationProto(const RelationProto& from);
+
+  inline RelationProto& operator=(const RelationProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RelationProto& default_instance();
+
+  void Swap(RelationProto* other);
+
+  // implements Message ----------------------------------------------
+
+  inline RelationProto* New() const { return New(NULL); }
+
+  RelationProto* New(::google::protobuf::Arena* arena) const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const RelationProto& from);
+  void MergeFrom(const RelationProto& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(RelationProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return _internal_metadata_.arena();
+  }
+  inline void* MaybeArenaPtr() const {
+    return _internal_metadata_.raw_arena_ptr();
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .protobuf.Relation relation = 1;
+  int relation_size() const;
+  void clear_relation();
+  static const int kRelationFieldNumber = 1;
+  const ::protobuf::Relation& relation(int index) const;
+  ::protobuf::Relation* mutable_relation(int index);
+  ::protobuf::Relation* add_relation();
+  ::google::protobuf::RepeatedPtrField< ::protobuf::Relation >*
+      mutable_relation();
+  const ::google::protobuf::RepeatedPtrField< ::protobuf::Relation >&
+      relation() const;
+
+  // @@protoc_insertion_point(class_scope:protobuf.RelationProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::protobuf::Relation > relation_;
+  friend void  protobuf_AddDesc_character_2eproto();
+  friend void protobuf_AssignDesc_character_2eproto();
+  friend void protobuf_ShutdownFile_character_2eproto();
+
+  void InitAsDefaultInstance();
+  static RelationProto* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -754,48 +908,36 @@ class UserBinary : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional .protobuf.MyCounters counters = 1;
+  // optional .protobuf.CounterProto counters = 1;
   bool has_counters() const;
   void clear_counters();
   static const int kCountersFieldNumber = 1;
-  const ::protobuf::MyCounters& counters() const;
-  ::protobuf::MyCounters* mutable_counters();
-  ::protobuf::MyCounters* release_counters();
-  void set_allocated_counters(::protobuf::MyCounters* counters);
+  const ::protobuf::CounterProto& counters() const;
+  ::protobuf::CounterProto* mutable_counters();
+  ::protobuf::CounterProto* release_counters();
+  void set_allocated_counters(::protobuf::CounterProto* counters);
 
-  // optional .protobuf.MyUniqueID uniqueid = 2;
-  bool has_uniqueid() const;
-  void clear_uniqueid();
-  static const int kUniqueidFieldNumber = 2;
-  const ::protobuf::MyUniqueID& uniqueid() const;
-  ::protobuf::MyUniqueID* mutable_uniqueid();
-  ::protobuf::MyUniqueID* release_uniqueid();
-  void set_allocated_uniqueid(::protobuf::MyUniqueID* uniqueid);
-
-  // optional .protobuf.Relation relation = 3;
-  bool has_relation() const;
-  void clear_relation();
-  static const int kRelationFieldNumber = 3;
-  const ::protobuf::Relation& relation() const;
-  ::protobuf::Relation* mutable_relation();
-  ::protobuf::Relation* release_relation();
-  void set_allocated_relation(::protobuf::Relation* relation);
+  // optional .protobuf.RelationProto relations = 3;
+  bool has_relations() const;
+  void clear_relations();
+  static const int kRelationsFieldNumber = 3;
+  const ::protobuf::RelationProto& relations() const;
+  ::protobuf::RelationProto* mutable_relations();
+  ::protobuf::RelationProto* release_relations();
+  void set_allocated_relations(::protobuf::RelationProto* relations);
 
   // @@protoc_insertion_point(class_scope:protobuf.UserBinary)
  private:
   inline void set_has_counters();
   inline void clear_has_counters();
-  inline void set_has_uniqueid();
-  inline void clear_has_uniqueid();
-  inline void set_has_relation();
-  inline void clear_has_relation();
+  inline void set_has_relations();
+  inline void clear_has_relations();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::protobuf::MyCounters* counters_;
-  ::protobuf::MyUniqueID* uniqueid_;
-  ::protobuf::Relation* relation_;
+  ::protobuf::CounterProto* counters_;
+  ::protobuf::RelationProto* relations_;
   friend void  protobuf_AddDesc_character_2eproto();
   friend void protobuf_AssignDesc_character_2eproto();
   friend void protobuf_ShutdownFile_character_2eproto();
@@ -943,435 +1085,719 @@ class WsUser : public ::google::protobuf::Message {
 // ===================================================================
 
 #if !PROTOBUF_INLINE_NOT_IN_HEADERS
-// CounterInfo
+// Counter
 
 // optional int32 itemid = 1;
-inline bool CounterInfo::has_itemid() const {
+inline bool Counter::has_itemid() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void CounterInfo::set_has_itemid() {
+inline void Counter::set_has_itemid() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void CounterInfo::clear_has_itemid() {
+inline void Counter::clear_has_itemid() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void CounterInfo::clear_itemid() {
+inline void Counter::clear_itemid() {
   itemid_ = 0;
   clear_has_itemid();
 }
-inline ::google::protobuf::int32 CounterInfo::itemid() const {
-  // @@protoc_insertion_point(field_get:protobuf.CounterInfo.itemid)
+inline ::google::protobuf::int32 Counter::itemid() const {
+  // @@protoc_insertion_point(field_get:protobuf.Counter.itemid)
   return itemid_;
 }
-inline void CounterInfo::set_itemid(::google::protobuf::int32 value) {
+inline void Counter::set_itemid(::google::protobuf::int32 value) {
   set_has_itemid();
   itemid_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.CounterInfo.itemid)
+  // @@protoc_insertion_point(field_set:protobuf.Counter.itemid)
 }
 
 // optional int32 itemval = 2;
-inline bool CounterInfo::has_itemval() const {
+inline bool Counter::has_itemval() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void CounterInfo::set_has_itemval() {
+inline void Counter::set_has_itemval() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void CounterInfo::clear_has_itemval() {
+inline void Counter::clear_has_itemval() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void CounterInfo::clear_itemval() {
+inline void Counter::clear_itemval() {
   itemval_ = 0;
   clear_has_itemval();
 }
-inline ::google::protobuf::int32 CounterInfo::itemval() const {
-  // @@protoc_insertion_point(field_get:protobuf.CounterInfo.itemval)
+inline ::google::protobuf::int32 Counter::itemval() const {
+  // @@protoc_insertion_point(field_get:protobuf.Counter.itemval)
   return itemval_;
 }
-inline void CounterInfo::set_itemval(::google::protobuf::int32 value) {
+inline void Counter::set_itemval(::google::protobuf::int32 value) {
   set_has_itemval();
   itemval_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.CounterInfo.itemval)
+  // @@protoc_insertion_point(field_set:protobuf.Counter.itemval)
 }
 
 // optional int32 starttime = 3;
-inline bool CounterInfo::has_starttime() const {
+inline bool Counter::has_starttime() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void CounterInfo::set_has_starttime() {
+inline void Counter::set_has_starttime() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void CounterInfo::clear_has_starttime() {
+inline void Counter::clear_has_starttime() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void CounterInfo::clear_starttime() {
+inline void Counter::clear_starttime() {
   starttime_ = 0;
   clear_has_starttime();
 }
-inline ::google::protobuf::int32 CounterInfo::starttime() const {
-  // @@protoc_insertion_point(field_get:protobuf.CounterInfo.starttime)
+inline ::google::protobuf::int32 Counter::starttime() const {
+  // @@protoc_insertion_point(field_get:protobuf.Counter.starttime)
   return starttime_;
 }
-inline void CounterInfo::set_starttime(::google::protobuf::int32 value) {
+inline void Counter::set_starttime(::google::protobuf::int32 value) {
   set_has_starttime();
   starttime_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.CounterInfo.starttime)
+  // @@protoc_insertion_point(field_set:protobuf.Counter.starttime)
 }
 
 // optional int32 endtime = 4;
-inline bool CounterInfo::has_endtime() const {
+inline bool Counter::has_endtime() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void CounterInfo::set_has_endtime() {
+inline void Counter::set_has_endtime() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void CounterInfo::clear_has_endtime() {
+inline void Counter::clear_has_endtime() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void CounterInfo::clear_endtime() {
+inline void Counter::clear_endtime() {
   endtime_ = 0;
   clear_has_endtime();
 }
-inline ::google::protobuf::int32 CounterInfo::endtime() const {
-  // @@protoc_insertion_point(field_get:protobuf.CounterInfo.endtime)
+inline ::google::protobuf::int32 Counter::endtime() const {
+  // @@protoc_insertion_point(field_get:protobuf.Counter.endtime)
   return endtime_;
 }
-inline void CounterInfo::set_endtime(::google::protobuf::int32 value) {
+inline void Counter::set_endtime(::google::protobuf::int32 value) {
   set_has_endtime();
   endtime_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.CounterInfo.endtime)
+  // @@protoc_insertion_point(field_set:protobuf.Counter.endtime)
 }
 
 // -------------------------------------------------------------------
 
-// MyCounters
+// CounterProto
 
-// repeated .protobuf.CounterInfo counters = 1;
-inline int MyCounters::counters_size() const {
-  return counters_.size();
+// repeated .protobuf.Counter counter = 1;
+inline int CounterProto::counter_size() const {
+  return counter_.size();
 }
-inline void MyCounters::clear_counters() {
-  counters_.Clear();
+inline void CounterProto::clear_counter() {
+  counter_.Clear();
 }
-inline const ::protobuf::CounterInfo& MyCounters::counters(int index) const {
-  // @@protoc_insertion_point(field_get:protobuf.MyCounters.counters)
-  return counters_.Get(index);
+inline const ::protobuf::Counter& CounterProto::counter(int index) const {
+  // @@protoc_insertion_point(field_get:protobuf.CounterProto.counter)
+  return counter_.Get(index);
 }
-inline ::protobuf::CounterInfo* MyCounters::mutable_counters(int index) {
-  // @@protoc_insertion_point(field_mutable:protobuf.MyCounters.counters)
-  return counters_.Mutable(index);
+inline ::protobuf::Counter* CounterProto::mutable_counter(int index) {
+  // @@protoc_insertion_point(field_mutable:protobuf.CounterProto.counter)
+  return counter_.Mutable(index);
 }
-inline ::protobuf::CounterInfo* MyCounters::add_counters() {
-  // @@protoc_insertion_point(field_add:protobuf.MyCounters.counters)
-  return counters_.Add();
+inline ::protobuf::Counter* CounterProto::add_counter() {
+  // @@protoc_insertion_point(field_add:protobuf.CounterProto.counter)
+  return counter_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField< ::protobuf::CounterInfo >*
-MyCounters::mutable_counters() {
-  // @@protoc_insertion_point(field_mutable_list:protobuf.MyCounters.counters)
-  return &counters_;
+inline ::google::protobuf::RepeatedPtrField< ::protobuf::Counter >*
+CounterProto::mutable_counter() {
+  // @@protoc_insertion_point(field_mutable_list:protobuf.CounterProto.counter)
+  return &counter_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::protobuf::CounterInfo >&
-MyCounters::counters() const {
-  // @@protoc_insertion_point(field_list:protobuf.MyCounters.counters)
-  return counters_;
+inline const ::google::protobuf::RepeatedPtrField< ::protobuf::Counter >&
+CounterProto::counter() const {
+  // @@protoc_insertion_point(field_list:protobuf.CounterProto.counter)
+  return counter_;
 }
 
 // -------------------------------------------------------------------
 
-// UniqueIDItem
+// MsgObject
 
-// optional int32 itemid = 1;
-inline bool UniqueIDItem::has_itemid() const {
+// optional string conent = 1;
+inline bool MsgObject::has_conent() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void UniqueIDItem::set_has_itemid() {
+inline void MsgObject::set_has_conent() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void UniqueIDItem::clear_has_itemid() {
+inline void MsgObject::clear_has_conent() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void UniqueIDItem::clear_itemid() {
-  itemid_ = 0;
-  clear_has_itemid();
+inline void MsgObject::clear_conent() {
+  conent_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_conent();
 }
-inline ::google::protobuf::int32 UniqueIDItem::itemid() const {
-  // @@protoc_insertion_point(field_get:protobuf.UniqueIDItem.itemid)
-  return itemid_;
+inline const ::std::string& MsgObject::conent() const {
+  // @@protoc_insertion_point(field_get:protobuf.MsgObject.conent)
+  return conent_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void UniqueIDItem::set_itemid(::google::protobuf::int32 value) {
-  set_has_itemid();
-  itemid_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.UniqueIDItem.itemid)
+inline void MsgObject::set_conent(const ::std::string& value) {
+  set_has_conent();
+  conent_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:protobuf.MsgObject.conent)
+}
+inline void MsgObject::set_conent(const char* value) {
+  set_has_conent();
+  conent_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:protobuf.MsgObject.conent)
+}
+inline void MsgObject::set_conent(const char* value, size_t size) {
+  set_has_conent();
+  conent_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:protobuf.MsgObject.conent)
+}
+inline ::std::string* MsgObject::mutable_conent() {
+  set_has_conent();
+  // @@protoc_insertion_point(field_mutable:protobuf.MsgObject.conent)
+  return conent_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* MsgObject::release_conent() {
+  // @@protoc_insertion_point(field_release:protobuf.MsgObject.conent)
+  clear_has_conent();
+  return conent_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void MsgObject::set_allocated_conent(::std::string* conent) {
+  if (conent != NULL) {
+    set_has_conent();
+  } else {
+    clear_has_conent();
+  }
+  conent_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), conent);
+  // @@protoc_insertion_point(field_set_allocated:protobuf.MsgObject.conent)
 }
 
-// optional int32 startid = 2;
-inline bool UniqueIDItem::has_startid() const {
+// -------------------------------------------------------------------
+
+// RelChatMsg
+
+// optional int64 msgid = 1;
+inline bool RelChatMsg::has_msgid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void RelChatMsg::set_has_msgid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void RelChatMsg::clear_has_msgid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void RelChatMsg::clear_msgid() {
+  msgid_ = GOOGLE_LONGLONG(0);
+  clear_has_msgid();
+}
+inline ::google::protobuf::int64 RelChatMsg::msgid() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.msgid)
+  return msgid_;
+}
+inline void RelChatMsg::set_msgid(::google::protobuf::int64 value) {
+  set_has_msgid();
+  msgid_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.RelChatMsg.msgid)
+}
+
+// optional int64 senduid = 2;
+inline bool RelChatMsg::has_senduid() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void UniqueIDItem::set_has_startid() {
+inline void RelChatMsg::set_has_senduid() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void UniqueIDItem::clear_has_startid() {
+inline void RelChatMsg::clear_has_senduid() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void UniqueIDItem::clear_startid() {
-  startid_ = 0;
-  clear_has_startid();
+inline void RelChatMsg::clear_senduid() {
+  senduid_ = GOOGLE_LONGLONG(0);
+  clear_has_senduid();
 }
-inline ::google::protobuf::int32 UniqueIDItem::startid() const {
-  // @@protoc_insertion_point(field_get:protobuf.UniqueIDItem.startid)
-  return startid_;
+inline ::google::protobuf::int64 RelChatMsg::senduid() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.senduid)
+  return senduid_;
 }
-inline void UniqueIDItem::set_startid(::google::protobuf::int32 value) {
-  set_has_startid();
-  startid_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.UniqueIDItem.startid)
+inline void RelChatMsg::set_senduid(::google::protobuf::int64 value) {
+  set_has_senduid();
+  senduid_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.RelChatMsg.senduid)
 }
 
-// optional int32 endid = 3;
-inline bool UniqueIDItem::has_endid() const {
+// optional string sendname = 3;
+inline bool RelChatMsg::has_sendname() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void UniqueIDItem::set_has_endid() {
+inline void RelChatMsg::set_has_sendname() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void UniqueIDItem::clear_has_endid() {
+inline void RelChatMsg::clear_has_sendname() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void UniqueIDItem::clear_endid() {
-  endid_ = 0;
-  clear_has_endid();
+inline void RelChatMsg::clear_sendname() {
+  sendname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_sendname();
 }
-inline ::google::protobuf::int32 UniqueIDItem::endid() const {
-  // @@protoc_insertion_point(field_get:protobuf.UniqueIDItem.endid)
-  return endid_;
+inline const ::std::string& RelChatMsg::sendname() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.sendname)
+  return sendname_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void UniqueIDItem::set_endid(::google::protobuf::int32 value) {
-  set_has_endid();
-  endid_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.UniqueIDItem.endid)
+inline void RelChatMsg::set_sendname(const ::std::string& value) {
+  set_has_sendname();
+  sendname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:protobuf.RelChatMsg.sendname)
+}
+inline void RelChatMsg::set_sendname(const char* value) {
+  set_has_sendname();
+  sendname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:protobuf.RelChatMsg.sendname)
+}
+inline void RelChatMsg::set_sendname(const char* value, size_t size) {
+  set_has_sendname();
+  sendname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:protobuf.RelChatMsg.sendname)
+}
+inline ::std::string* RelChatMsg::mutable_sendname() {
+  set_has_sendname();
+  // @@protoc_insertion_point(field_mutable:protobuf.RelChatMsg.sendname)
+  return sendname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* RelChatMsg::release_sendname() {
+  // @@protoc_insertion_point(field_release:protobuf.RelChatMsg.sendname)
+  clear_has_sendname();
+  return sendname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void RelChatMsg::set_allocated_sendname(::std::string* sendname) {
+  if (sendname != NULL) {
+    set_has_sendname();
+  } else {
+    clear_has_sendname();
+  }
+  sendname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sendname);
+  // @@protoc_insertion_point(field_set_allocated:protobuf.RelChatMsg.sendname)
 }
 
-// optional int32 steplenght = 4;
-inline bool UniqueIDItem::has_steplenght() const {
+// optional int64 recvuid = 4;
+inline bool RelChatMsg::has_recvuid() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void UniqueIDItem::set_has_steplenght() {
+inline void RelChatMsg::set_has_recvuid() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void UniqueIDItem::clear_has_steplenght() {
+inline void RelChatMsg::clear_has_recvuid() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void UniqueIDItem::clear_steplenght() {
-  steplenght_ = 0;
-  clear_has_steplenght();
+inline void RelChatMsg::clear_recvuid() {
+  recvuid_ = GOOGLE_LONGLONG(0);
+  clear_has_recvuid();
 }
-inline ::google::protobuf::int32 UniqueIDItem::steplenght() const {
-  // @@protoc_insertion_point(field_get:protobuf.UniqueIDItem.steplenght)
-  return steplenght_;
+inline ::google::protobuf::int64 RelChatMsg::recvuid() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.recvuid)
+  return recvuid_;
 }
-inline void UniqueIDItem::set_steplenght(::google::protobuf::int32 value) {
-  set_has_steplenght();
-  steplenght_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.UniqueIDItem.steplenght)
+inline void RelChatMsg::set_recvuid(::google::protobuf::int64 value) {
+  set_has_recvuid();
+  recvuid_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.RelChatMsg.recvuid)
 }
 
-// optional int32 startcount = 5;
-inline bool UniqueIDItem::has_startcount() const {
+// optional string recvname = 5;
+inline bool RelChatMsg::has_recvname() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void UniqueIDItem::set_has_startcount() {
+inline void RelChatMsg::set_has_recvname() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void UniqueIDItem::clear_has_startcount() {
+inline void RelChatMsg::clear_has_recvname() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void UniqueIDItem::clear_startcount() {
-  startcount_ = 0;
-  clear_has_startcount();
+inline void RelChatMsg::clear_recvname() {
+  recvname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_recvname();
 }
-inline ::google::protobuf::int32 UniqueIDItem::startcount() const {
-  // @@protoc_insertion_point(field_get:protobuf.UniqueIDItem.startcount)
-  return startcount_;
+inline const ::std::string& RelChatMsg::recvname() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.recvname)
+  return recvname_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void UniqueIDItem::set_startcount(::google::protobuf::int32 value) {
-  set_has_startcount();
-  startcount_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.UniqueIDItem.startcount)
+inline void RelChatMsg::set_recvname(const ::std::string& value) {
+  set_has_recvname();
+  recvname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:protobuf.RelChatMsg.recvname)
+}
+inline void RelChatMsg::set_recvname(const char* value) {
+  set_has_recvname();
+  recvname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:protobuf.RelChatMsg.recvname)
+}
+inline void RelChatMsg::set_recvname(const char* value, size_t size) {
+  set_has_recvname();
+  recvname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:protobuf.RelChatMsg.recvname)
+}
+inline ::std::string* RelChatMsg::mutable_recvname() {
+  set_has_recvname();
+  // @@protoc_insertion_point(field_mutable:protobuf.RelChatMsg.recvname)
+  return recvname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* RelChatMsg::release_recvname() {
+  // @@protoc_insertion_point(field_release:protobuf.RelChatMsg.recvname)
+  clear_has_recvname();
+  return recvname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void RelChatMsg::set_allocated_recvname(::std::string* recvname) {
+  if (recvname != NULL) {
+    set_has_recvname();
+  } else {
+    clear_has_recvname();
+  }
+  recvname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), recvname);
+  // @@protoc_insertion_point(field_set_allocated:protobuf.RelChatMsg.recvname)
+}
+
+// optional int32 sendtime = 6;
+inline bool RelChatMsg::has_sendtime() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void RelChatMsg::set_has_sendtime() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void RelChatMsg::clear_has_sendtime() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void RelChatMsg::clear_sendtime() {
+  sendtime_ = 0;
+  clear_has_sendtime();
+}
+inline ::google::protobuf::int32 RelChatMsg::sendtime() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.sendtime)
+  return sendtime_;
+}
+inline void RelChatMsg::set_sendtime(::google::protobuf::int32 value) {
+  set_has_sendtime();
+  sendtime_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.RelChatMsg.sendtime)
+}
+
+// optional .protobuf.MsgObject msgobj = 7;
+inline bool RelChatMsg::has_msgobj() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void RelChatMsg::set_has_msgobj() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void RelChatMsg::clear_has_msgobj() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void RelChatMsg::clear_msgobj() {
+  if (msgobj_ != NULL) msgobj_->::protobuf::MsgObject::Clear();
+  clear_has_msgobj();
+}
+inline const ::protobuf::MsgObject& RelChatMsg::msgobj() const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatMsg.msgobj)
+  return msgobj_ != NULL ? *msgobj_ : *default_instance_->msgobj_;
+}
+inline ::protobuf::MsgObject* RelChatMsg::mutable_msgobj() {
+  set_has_msgobj();
+  if (msgobj_ == NULL) {
+    msgobj_ = new ::protobuf::MsgObject;
+  }
+  // @@protoc_insertion_point(field_mutable:protobuf.RelChatMsg.msgobj)
+  return msgobj_;
+}
+inline ::protobuf::MsgObject* RelChatMsg::release_msgobj() {
+  // @@protoc_insertion_point(field_release:protobuf.RelChatMsg.msgobj)
+  clear_has_msgobj();
+  ::protobuf::MsgObject* temp = msgobj_;
+  msgobj_ = NULL;
+  return temp;
+}
+inline void RelChatMsg::set_allocated_msgobj(::protobuf::MsgObject* msgobj) {
+  delete msgobj_;
+  msgobj_ = msgobj;
+  if (msgobj) {
+    set_has_msgobj();
+  } else {
+    clear_has_msgobj();
+  }
+  // @@protoc_insertion_point(field_set_allocated:protobuf.RelChatMsg.msgobj)
 }
 
 // -------------------------------------------------------------------
 
-// MyUniqueID
+// RelChatProto
 
-// repeated .protobuf.UniqueIDItem uuids = 1;
-inline int MyUniqueID::uuids_size() const {
-  return uuids_.size();
+// repeated .protobuf.RelChatMsg msglist = 1;
+inline int RelChatProto::msglist_size() const {
+  return msglist_.size();
 }
-inline void MyUniqueID::clear_uuids() {
-  uuids_.Clear();
+inline void RelChatProto::clear_msglist() {
+  msglist_.Clear();
 }
-inline const ::protobuf::UniqueIDItem& MyUniqueID::uuids(int index) const {
-  // @@protoc_insertion_point(field_get:protobuf.MyUniqueID.uuids)
-  return uuids_.Get(index);
+inline const ::protobuf::RelChatMsg& RelChatProto::msglist(int index) const {
+  // @@protoc_insertion_point(field_get:protobuf.RelChatProto.msglist)
+  return msglist_.Get(index);
 }
-inline ::protobuf::UniqueIDItem* MyUniqueID::mutable_uuids(int index) {
-  // @@protoc_insertion_point(field_mutable:protobuf.MyUniqueID.uuids)
-  return uuids_.Mutable(index);
+inline ::protobuf::RelChatMsg* RelChatProto::mutable_msglist(int index) {
+  // @@protoc_insertion_point(field_mutable:protobuf.RelChatProto.msglist)
+  return msglist_.Mutable(index);
 }
-inline ::protobuf::UniqueIDItem* MyUniqueID::add_uuids() {
-  // @@protoc_insertion_point(field_add:protobuf.MyUniqueID.uuids)
-  return uuids_.Add();
+inline ::protobuf::RelChatMsg* RelChatProto::add_msglist() {
+  // @@protoc_insertion_point(field_add:protobuf.RelChatProto.msglist)
+  return msglist_.Add();
 }
-inline ::google::protobuf::RepeatedPtrField< ::protobuf::UniqueIDItem >*
-MyUniqueID::mutable_uuids() {
-  // @@protoc_insertion_point(field_mutable_list:protobuf.MyUniqueID.uuids)
-  return &uuids_;
+inline ::google::protobuf::RepeatedPtrField< ::protobuf::RelChatMsg >*
+RelChatProto::mutable_msglist() {
+  // @@protoc_insertion_point(field_mutable_list:protobuf.RelChatProto.msglist)
+  return &msglist_;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::protobuf::UniqueIDItem >&
-MyUniqueID::uuids() const {
-  // @@protoc_insertion_point(field_list:protobuf.MyUniqueID.uuids)
-  return uuids_;
-}
-
-// -------------------------------------------------------------------
-
-// RelInfo
-
-// optional int64 uid = 1;
-inline bool RelInfo::has_uid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void RelInfo::set_has_uid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void RelInfo::clear_has_uid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void RelInfo::clear_uid() {
-  uid_ = GOOGLE_LONGLONG(0);
-  clear_has_uid();
-}
-inline ::google::protobuf::int64 RelInfo::uid() const {
-  // @@protoc_insertion_point(field_get:protobuf.RelInfo.uid)
-  return uid_;
-}
-inline void RelInfo::set_uid(::google::protobuf::int64 value) {
-  set_has_uid();
-  uid_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.RelInfo.uid)
-}
-
-// optional int32 rel = 2;
-inline bool RelInfo::has_rel() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void RelInfo::set_has_rel() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void RelInfo::clear_has_rel() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void RelInfo::clear_rel() {
-  rel_ = 0;
-  clear_has_rel();
-}
-inline ::google::protobuf::int32 RelInfo::rel() const {
-  // @@protoc_insertion_point(field_get:protobuf.RelInfo.rel)
-  return rel_;
-}
-inline void RelInfo::set_rel(::google::protobuf::int32 value) {
-  set_has_rel();
-  rel_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.RelInfo.rel)
-}
-
-// optional int32 createtime = 3;
-inline bool RelInfo::has_createtime() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void RelInfo::set_has_createtime() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void RelInfo::clear_has_createtime() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void RelInfo::clear_createtime() {
-  createtime_ = 0;
-  clear_has_createtime();
-}
-inline ::google::protobuf::int32 RelInfo::createtime() const {
-  // @@protoc_insertion_point(field_get:protobuf.RelInfo.createtime)
-  return createtime_;
-}
-inline void RelInfo::set_createtime(::google::protobuf::int32 value) {
-  set_has_createtime();
-  createtime_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.RelInfo.createtime)
-}
-
-// optional int32 dealreltime = 4;
-inline bool RelInfo::has_dealreltime() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void RelInfo::set_has_dealreltime() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void RelInfo::clear_has_dealreltime() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void RelInfo::clear_dealreltime() {
-  dealreltime_ = 0;
-  clear_has_dealreltime();
-}
-inline ::google::protobuf::int32 RelInfo::dealreltime() const {
-  // @@protoc_insertion_point(field_get:protobuf.RelInfo.dealreltime)
-  return dealreltime_;
-}
-inline void RelInfo::set_dealreltime(::google::protobuf::int32 value) {
-  set_has_dealreltime();
-  dealreltime_ = value;
-  // @@protoc_insertion_point(field_set:protobuf.RelInfo.dealreltime)
+inline const ::google::protobuf::RepeatedPtrField< ::protobuf::RelChatMsg >&
+RelChatProto::msglist() const {
+  // @@protoc_insertion_point(field_list:protobuf.RelChatProto.msglist)
+  return msglist_;
 }
 
 // -------------------------------------------------------------------
 
 // Relation
 
-// repeated .protobuf.RelInfo rels = 99;
-inline int Relation::rels_size() const {
-  return rels_.size();
+// optional int64 uid = 1;
+inline bool Relation::has_uid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Relation::clear_rels() {
-  rels_.Clear();
+inline void Relation::set_has_uid() {
+  _has_bits_[0] |= 0x00000001u;
 }
-inline const ::protobuf::RelInfo& Relation::rels(int index) const {
-  // @@protoc_insertion_point(field_get:protobuf.Relation.rels)
-  return rels_.Get(index);
+inline void Relation::clear_has_uid() {
+  _has_bits_[0] &= ~0x00000001u;
 }
-inline ::protobuf::RelInfo* Relation::mutable_rels(int index) {
-  // @@protoc_insertion_point(field_mutable:protobuf.Relation.rels)
-  return rels_.Mutable(index);
+inline void Relation::clear_uid() {
+  uid_ = GOOGLE_LONGLONG(0);
+  clear_has_uid();
 }
-inline ::protobuf::RelInfo* Relation::add_rels() {
-  // @@protoc_insertion_point(field_add:protobuf.Relation.rels)
-  return rels_.Add();
+inline ::google::protobuf::int64 Relation::uid() const {
+  // @@protoc_insertion_point(field_get:protobuf.Relation.uid)
+  return uid_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::protobuf::RelInfo >*
-Relation::mutable_rels() {
-  // @@protoc_insertion_point(field_mutable_list:protobuf.Relation.rels)
-  return &rels_;
+inline void Relation::set_uid(::google::protobuf::int64 value) {
+  set_has_uid();
+  uid_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.Relation.uid)
 }
-inline const ::google::protobuf::RepeatedPtrField< ::protobuf::RelInfo >&
-Relation::rels() const {
-  // @@protoc_insertion_point(field_list:protobuf.Relation.rels)
-  return rels_;
+
+// optional string name = 2;
+inline bool Relation::has_name() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Relation::set_has_name() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Relation::clear_has_name() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Relation::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_name();
+}
+inline const ::std::string& Relation::name() const {
+  // @@protoc_insertion_point(field_get:protobuf.Relation.name)
+  return name_.GetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Relation::set_name(const ::std::string& value) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:protobuf.Relation.name)
+}
+inline void Relation::set_name(const char* value) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:protobuf.Relation.name)
+}
+inline void Relation::set_name(const char* value, size_t size) {
+  set_has_name();
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:protobuf.Relation.name)
+}
+inline ::std::string* Relation::mutable_name() {
+  set_has_name();
+  // @@protoc_insertion_point(field_mutable:protobuf.Relation.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Relation::release_name() {
+  // @@protoc_insertion_point(field_release:protobuf.Relation.name)
+  clear_has_name();
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Relation::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    set_has_name();
+  } else {
+    clear_has_name();
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:protobuf.Relation.name)
+}
+
+// optional int32 rel = 3;
+inline bool Relation::has_rel() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Relation::set_has_rel() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Relation::clear_has_rel() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Relation::clear_rel() {
+  rel_ = 0;
+  clear_has_rel();
+}
+inline ::google::protobuf::int32 Relation::rel() const {
+  // @@protoc_insertion_point(field_get:protobuf.Relation.rel)
+  return rel_;
+}
+inline void Relation::set_rel(::google::protobuf::int32 value) {
+  set_has_rel();
+  rel_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.Relation.rel)
+}
+
+// optional int32 createtime = 4;
+inline bool Relation::has_createtime() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Relation::set_has_createtime() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Relation::clear_has_createtime() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Relation::clear_createtime() {
+  createtime_ = 0;
+  clear_has_createtime();
+}
+inline ::google::protobuf::int32 Relation::createtime() const {
+  // @@protoc_insertion_point(field_get:protobuf.Relation.createtime)
+  return createtime_;
+}
+inline void Relation::set_createtime(::google::protobuf::int32 value) {
+  set_has_createtime();
+  createtime_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.Relation.createtime)
+}
+
+// optional int32 dealreltime = 5;
+inline bool Relation::has_dealreltime() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void Relation::set_has_dealreltime() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void Relation::clear_has_dealreltime() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void Relation::clear_dealreltime() {
+  dealreltime_ = 0;
+  clear_has_dealreltime();
+}
+inline ::google::protobuf::int32 Relation::dealreltime() const {
+  // @@protoc_insertion_point(field_get:protobuf.Relation.dealreltime)
+  return dealreltime_;
+}
+inline void Relation::set_dealreltime(::google::protobuf::int32 value) {
+  set_has_dealreltime();
+  dealreltime_ = value;
+  // @@protoc_insertion_point(field_set:protobuf.Relation.dealreltime)
+}
+
+// optional .protobuf.RelChatProto relchat = 6;
+inline bool Relation::has_relchat() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void Relation::set_has_relchat() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void Relation::clear_has_relchat() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void Relation::clear_relchat() {
+  if (relchat_ != NULL) relchat_->::protobuf::RelChatProto::Clear();
+  clear_has_relchat();
+}
+inline const ::protobuf::RelChatProto& Relation::relchat() const {
+  // @@protoc_insertion_point(field_get:protobuf.Relation.relchat)
+  return relchat_ != NULL ? *relchat_ : *default_instance_->relchat_;
+}
+inline ::protobuf::RelChatProto* Relation::mutable_relchat() {
+  set_has_relchat();
+  if (relchat_ == NULL) {
+    relchat_ = new ::protobuf::RelChatProto;
+  }
+  // @@protoc_insertion_point(field_mutable:protobuf.Relation.relchat)
+  return relchat_;
+}
+inline ::protobuf::RelChatProto* Relation::release_relchat() {
+  // @@protoc_insertion_point(field_release:protobuf.Relation.relchat)
+  clear_has_relchat();
+  ::protobuf::RelChatProto* temp = relchat_;
+  relchat_ = NULL;
+  return temp;
+}
+inline void Relation::set_allocated_relchat(::protobuf::RelChatProto* relchat) {
+  delete relchat_;
+  relchat_ = relchat;
+  if (relchat) {
+    set_has_relchat();
+  } else {
+    clear_has_relchat();
+  }
+  // @@protoc_insertion_point(field_set_allocated:protobuf.Relation.relchat)
+}
+
+// -------------------------------------------------------------------
+
+// RelationProto
+
+// repeated .protobuf.Relation relation = 1;
+inline int RelationProto::relation_size() const {
+  return relation_.size();
+}
+inline void RelationProto::clear_relation() {
+  relation_.Clear();
+}
+inline const ::protobuf::Relation& RelationProto::relation(int index) const {
+  // @@protoc_insertion_point(field_get:protobuf.RelationProto.relation)
+  return relation_.Get(index);
+}
+inline ::protobuf::Relation* RelationProto::mutable_relation(int index) {
+  // @@protoc_insertion_point(field_mutable:protobuf.RelationProto.relation)
+  return relation_.Mutable(index);
+}
+inline ::protobuf::Relation* RelationProto::add_relation() {
+  // @@protoc_insertion_point(field_add:protobuf.RelationProto.relation)
+  return relation_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::protobuf::Relation >*
+RelationProto::mutable_relation() {
+  // @@protoc_insertion_point(field_mutable_list:protobuf.RelationProto.relation)
+  return &relation_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::protobuf::Relation >&
+RelationProto::relation() const {
+  // @@protoc_insertion_point(field_list:protobuf.RelationProto.relation)
+  return relation_;
 }
 
 // -------------------------------------------------------------------
 
 // UserBinary
 
-// optional .protobuf.MyCounters counters = 1;
+// optional .protobuf.CounterProto counters = 1;
 inline bool UserBinary::has_counters() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1382,29 +1808,29 @@ inline void UserBinary::clear_has_counters() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void UserBinary::clear_counters() {
-  if (counters_ != NULL) counters_->::protobuf::MyCounters::Clear();
+  if (counters_ != NULL) counters_->::protobuf::CounterProto::Clear();
   clear_has_counters();
 }
-inline const ::protobuf::MyCounters& UserBinary::counters() const {
+inline const ::protobuf::CounterProto& UserBinary::counters() const {
   // @@protoc_insertion_point(field_get:protobuf.UserBinary.counters)
   return counters_ != NULL ? *counters_ : *default_instance_->counters_;
 }
-inline ::protobuf::MyCounters* UserBinary::mutable_counters() {
+inline ::protobuf::CounterProto* UserBinary::mutable_counters() {
   set_has_counters();
   if (counters_ == NULL) {
-    counters_ = new ::protobuf::MyCounters;
+    counters_ = new ::protobuf::CounterProto;
   }
   // @@protoc_insertion_point(field_mutable:protobuf.UserBinary.counters)
   return counters_;
 }
-inline ::protobuf::MyCounters* UserBinary::release_counters() {
+inline ::protobuf::CounterProto* UserBinary::release_counters() {
   // @@protoc_insertion_point(field_release:protobuf.UserBinary.counters)
   clear_has_counters();
-  ::protobuf::MyCounters* temp = counters_;
+  ::protobuf::CounterProto* temp = counters_;
   counters_ = NULL;
   return temp;
 }
-inline void UserBinary::set_allocated_counters(::protobuf::MyCounters* counters) {
+inline void UserBinary::set_allocated_counters(::protobuf::CounterProto* counters) {
   delete counters_;
   counters_ = counters;
   if (counters) {
@@ -1415,92 +1841,48 @@ inline void UserBinary::set_allocated_counters(::protobuf::MyCounters* counters)
   // @@protoc_insertion_point(field_set_allocated:protobuf.UserBinary.counters)
 }
 
-// optional .protobuf.MyUniqueID uniqueid = 2;
-inline bool UserBinary::has_uniqueid() const {
+// optional .protobuf.RelationProto relations = 3;
+inline bool UserBinary::has_relations() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void UserBinary::set_has_uniqueid() {
+inline void UserBinary::set_has_relations() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void UserBinary::clear_has_uniqueid() {
+inline void UserBinary::clear_has_relations() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void UserBinary::clear_uniqueid() {
-  if (uniqueid_ != NULL) uniqueid_->::protobuf::MyUniqueID::Clear();
-  clear_has_uniqueid();
+inline void UserBinary::clear_relations() {
+  if (relations_ != NULL) relations_->::protobuf::RelationProto::Clear();
+  clear_has_relations();
 }
-inline const ::protobuf::MyUniqueID& UserBinary::uniqueid() const {
-  // @@protoc_insertion_point(field_get:protobuf.UserBinary.uniqueid)
-  return uniqueid_ != NULL ? *uniqueid_ : *default_instance_->uniqueid_;
+inline const ::protobuf::RelationProto& UserBinary::relations() const {
+  // @@protoc_insertion_point(field_get:protobuf.UserBinary.relations)
+  return relations_ != NULL ? *relations_ : *default_instance_->relations_;
 }
-inline ::protobuf::MyUniqueID* UserBinary::mutable_uniqueid() {
-  set_has_uniqueid();
-  if (uniqueid_ == NULL) {
-    uniqueid_ = new ::protobuf::MyUniqueID;
+inline ::protobuf::RelationProto* UserBinary::mutable_relations() {
+  set_has_relations();
+  if (relations_ == NULL) {
+    relations_ = new ::protobuf::RelationProto;
   }
-  // @@protoc_insertion_point(field_mutable:protobuf.UserBinary.uniqueid)
-  return uniqueid_;
+  // @@protoc_insertion_point(field_mutable:protobuf.UserBinary.relations)
+  return relations_;
 }
-inline ::protobuf::MyUniqueID* UserBinary::release_uniqueid() {
-  // @@protoc_insertion_point(field_release:protobuf.UserBinary.uniqueid)
-  clear_has_uniqueid();
-  ::protobuf::MyUniqueID* temp = uniqueid_;
-  uniqueid_ = NULL;
+inline ::protobuf::RelationProto* UserBinary::release_relations() {
+  // @@protoc_insertion_point(field_release:protobuf.UserBinary.relations)
+  clear_has_relations();
+  ::protobuf::RelationProto* temp = relations_;
+  relations_ = NULL;
   return temp;
 }
-inline void UserBinary::set_allocated_uniqueid(::protobuf::MyUniqueID* uniqueid) {
-  delete uniqueid_;
-  uniqueid_ = uniqueid;
-  if (uniqueid) {
-    set_has_uniqueid();
+inline void UserBinary::set_allocated_relations(::protobuf::RelationProto* relations) {
+  delete relations_;
+  relations_ = relations;
+  if (relations) {
+    set_has_relations();
   } else {
-    clear_has_uniqueid();
+    clear_has_relations();
   }
-  // @@protoc_insertion_point(field_set_allocated:protobuf.UserBinary.uniqueid)
-}
-
-// optional .protobuf.Relation relation = 3;
-inline bool UserBinary::has_relation() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void UserBinary::set_has_relation() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void UserBinary::clear_has_relation() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void UserBinary::clear_relation() {
-  if (relation_ != NULL) relation_->::protobuf::Relation::Clear();
-  clear_has_relation();
-}
-inline const ::protobuf::Relation& UserBinary::relation() const {
-  // @@protoc_insertion_point(field_get:protobuf.UserBinary.relation)
-  return relation_ != NULL ? *relation_ : *default_instance_->relation_;
-}
-inline ::protobuf::Relation* UserBinary::mutable_relation() {
-  set_has_relation();
-  if (relation_ == NULL) {
-    relation_ = new ::protobuf::Relation;
-  }
-  // @@protoc_insertion_point(field_mutable:protobuf.UserBinary.relation)
-  return relation_;
-}
-inline ::protobuf::Relation* UserBinary::release_relation() {
-  // @@protoc_insertion_point(field_release:protobuf.UserBinary.relation)
-  clear_has_relation();
-  ::protobuf::Relation* temp = relation_;
-  relation_ = NULL;
-  return temp;
-}
-inline void UserBinary::set_allocated_relation(::protobuf::Relation* relation) {
-  delete relation_;
-  relation_ = relation;
-  if (relation) {
-    set_has_relation();
-  } else {
-    clear_has_relation();
-  }
-  // @@protoc_insertion_point(field_set_allocated:protobuf.UserBinary.relation)
+  // @@protoc_insertion_point(field_set_allocated:protobuf.UserBinary.relations)
 }
 
 // -------------------------------------------------------------------
@@ -1658,6 +2040,8 @@ inline void WsUser::set_level(::google::protobuf::int32 value) {
 }
 
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

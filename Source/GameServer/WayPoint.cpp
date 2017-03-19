@@ -74,7 +74,7 @@ bool WayPoint::init(zXMLParser *parser,const xmlNodePtr node,DWORD countryid)
 		else
 		{
 			//return false;
-			Zebra::logger->warn("xml跳转点配置有错误数据");
+			H::logger->warn("xml跳转点配置有错误数据");
 			cnode=parser->getNextNode(cnode,NULL);
 		}
 	}

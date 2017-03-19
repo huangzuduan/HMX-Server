@@ -3336,7 +3336,7 @@ class ChannelM : public zEntryMgr< zEntryID, zEntryTempID ,zEntryName >
 private:
 	zUniqueDWORDID *channelUniqeID;
 	zMutex mlock;
-	ObjPool<Channel> objpool;
+	zObjPool<Channel> objpool;
 
 	bool getUniqeID(QWORD &tempid);
 	void putUniqeID(const QWORD &tempid);

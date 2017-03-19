@@ -14,11 +14,11 @@ ProcSsHandler::~ProcSsHandler()
 void ProcSsHandler::RqSceneRegister(zSession* pSession, const NetMsgSS* pMsg,int32 nSize)
 {
 	zSession* session = static_cast<zSession*>(pSession);
-	const S2WRegisterScene* packet = static_cast<const S2WRegisterScene*>(pMsg);
+	const S::SSRqRegisterScene* packet = static_cast<const S::SSRqRegisterScene*>(pMsg);
 	SceneReg* reg = SceneRegMgr::getMe().get(packet->sceneid);
 	if (reg)
 	{
-		Zebra::logger->error("已经注册了这个场景ID");
+		H::logger->error("已经注册了这个场景ID");
 		return;
 	}
 	else
@@ -29,7 +29,7 @@ void ProcSsHandler::RqSceneRegister(zSession* pSession, const NetMsgSS* pMsg,int
 		reg->sessid = pSession->id;
 		reg->mapid = packet->mapid;
 		bool ret = SceneRegMgr::getMe().add(reg);
-		Zebra::logger->info("注册该场景%s,id=%lld,name=%s",ret?"成功":"失败", packet->sceneid, packet->name);
+		H::logger->info("注册该场景%s,id=%lld,name=%s",ret?"成功":"失败", packet->sceneid, packet->name);
 	}
 }
 
@@ -143,7 +143,7 @@ void ProcSsHandler::RpChangeScene(zSession* pSession, const NetMsgSS* pMsg, int3
 	//	//sMsg.nFepServerID = user->fepSession->id;
 	//	//sMsg.nEnterType = 1;
 
-	//	//user->sendToSs(&sMsg, sMsg.GetPackLength());
+	//	//user->sendToSs(&sMsg, ssizeof(msg));
 
 	//	Zebra::logger->info("Send to dist scene of requst enter this %lld scene", user->sessid);
 	//	return;
@@ -160,9 +160,9 @@ void ProcSsHandler::RpChangeScene(zSession* pSession, const NetMsgSS* pMsg, int3
 
 void ProcSsHandler::TurnChatToOne(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const S2WChatToOne* cmd = static_cast<const S2WChatToOne*>(pMsg);
+	const S::SSRqChatToOne* cmd = static_cast<const S::SSRqChatToOne*>(pMsg);
 	
-	WorldUser* toUser = NetService::getMe().getWorldUserMgr().get(cmd->toUID);
+	WorldUser* toUser = GameService::getMe().getWorldUserMgr().get(cmd->toUID);
 	if (toUser == NULL) /* 不在线上 */ 
 	{
 		/* 将消息推送到离线场景服处理 */
@@ -177,8 +177,8 @@ void ProcSsHandler::TurnChatToOne(zSession* pSession, const NetMsgSS* pMsg, int3
 
 void ProcSsHandler::NtBroadcastMsg(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const C2SChatToWorld* packet = static_cast<const C2SChatToWorld*>(pMsg);
-//	Zebra::logger->info("世界聊天:%s", Utf8ToGBK(packet->msg.data));
+	const C::RqChatToWorld* packet = static_cast<const C::RqChatToWorld*>(pMsg);
+//	Zebra::logger->info("世界聊天:%s", zUtility::Utf8ToGBK(packet->msg.data));
 
 	// 转发到网关 
 }
@@ -186,18 +186,18 @@ void ProcSsHandler::NtBroadcastMsg(zSession* pSession, const NetMsgSS* pMsg, int
 
 void ProcSsHandler::rqRelAdd(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
 {
-	const C2SRelationAdd* packet = static_cast<const C2SRelationAdd*>(pMsg);
+	const C::RqRelationAdd* packet = static_cast<const C::RqRelationAdd*>(pMsg);
 	
-	OfflineUser* offuser = NetService::getMe().getOfflineUserMgr().getUserByName(packet->name);
+	OfflineUser* offuser = GameService::getMe().getOfflineUserMgr().getUserByName(packet->name);
 	if (offuser == NULL)
 	{
-		Zebra::logger->warn("找不到该好友[%s]",Utf8ToGBK(packet->name));
+		H::logger->warn("找不到该好友[%s]", zUtility::Utf8ToGBK(packet->name));
 		return;
 	}
 
 	pSession->sendMsg(pMsg, nSize);
 
-	WorldUser* worldUser = NetService::getMe().getWorldUserMgr().getByName(packet->name);
+	WorldUser* worldUser = GameService::getMe().getWorldUserMgr().getByName(packet->name);
 	if (worldUser)
 	{
 		// 通知下被加的人 

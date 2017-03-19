@@ -138,12 +138,12 @@ public:
 
 protected:
 
-	mutex   m_cMutex;		// 读/写锁 
-	int32  m_nBegin;       // 下一次读/写的位置 
-	int32  m_nLen;			// 已经接收数据长度(可能有多个包)  
-	char*   m_pBuffer;		// 字段容器  
-	char*	m_pBuffer2;		// 字段容器2 
-	int32	m_nMax;         // 最大字段长度  
+	boost::mutex m_cMutex;		// 读/写锁 
+	int32 m_nBegin;       // 下一次读/写的位置 
+	int32 m_nLen;			// 已经接收数据长度(可能有多个包)  
+	char* m_pBuffer;		// 字段容器  
+	char* m_pBuffer2;		// 字段容器2 
+	int32 m_nMax;         // 最大字段长度  
 
 };
 

@@ -4353,7 +4353,7 @@ class CSubject
     ~CSubject()
     {
 #ifdef _DEBUG      
-      Zebra::logger->debug("~CSubject:%s",this->title);
+      H::logger->debug("~CSubject:%s",this->title);
 #endif        
     }
     

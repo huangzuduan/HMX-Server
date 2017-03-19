@@ -2,7 +2,7 @@
 #define __BASE_H_
 
 #include "BaseDefine.h"
-#include "ServerDefine.h"
+
 
 
 class SceneUser;

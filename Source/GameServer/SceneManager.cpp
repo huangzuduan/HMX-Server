@@ -10,7 +10,7 @@ std::map<WORD, stRangMap*> RangMapData;
 std::vector<DWORD> BmapBaseID;
 
 //using namespace Cmd::Session;
-using namespace Zebra;
+using namespace H;
 ///SceneManager的唯一实例
 SceneManager *SceneManager::sm(new SceneManager());
 
@@ -137,7 +137,7 @@ bool SceneManager::init()
 	if (inited) return inited;
 
 	//为每个场景服务器生成不相交叉的场景临时ID分配器,最小的从10000开始,每个有49998个ID可用
-	DWORD firstTempID = 10000+(NetService::getMe().getServerID()%100)*50000;
+	DWORD firstTempID = 10000+(GameService::getMe().getServerID()%100)*50000;
 	sceneUniqeID = new zUniqueDWORDID(firstTempID,firstTempID+49998);
 
 	////sky 生成不相交的场景队伍临时ID分配器最小从10000开始,每个有4998个ID可用
@@ -146,7 +146,7 @@ bool SceneManager::init()
 
 	//// 初始化所有地图
 	zXMLParser parser;
-	if (parser.initFile(Zebra::global["confdir"] + "scenesinfo.xml"))
+	if (parser.initFile(H::global["confdir"] + "scenesinfo.xml"))
 	{
 		xmlNodePtr root = parser.getRootNode("ScenesInfo");
 		xmlNodePtr countryNode = parser.getChildNode(root, "countryinfo");
@@ -163,7 +163,7 @@ bool SceneManager::init()
 					parser.getNodePropStr(subnode,"name",info.name,sizeof(info.name));
 					parser.getNodePropNum(subnode,"mapID",&info.mapid,sizeof(info.mapid));
 					parser.getNodePropNum(subnode,"function",&info.function,sizeof(info.function));
-					Zebra::logger->info("加载国家名称(%u,%s,%u,%u)",info.id,info.name,info.mapid,info.function);
+					H::logger->info("加载国家名称(%u,%s,%u,%u)",info.id,info.name,info.mapid,info.function);
 					country_info.insert(CountryMap_value_type(info.id,info));
 				}
 				subnode = parser.getNextNode(subnode,NULL);
@@ -210,7 +210,7 @@ bool SceneManager::init()
 		while (serverNode) {
 			int id = 0;
 			parser.getNodePropNum(serverNode,"id",&id,sizeof(id));
-			if (NetService::getMe().getServerID() == id) {
+			if (GameService::getMe().getServerID() == id) {
 				int mapCount=0;
 				xmlNodePtr countryNode=parser.getChildNode(serverNode,"country");
 				while(countryNode)
@@ -224,7 +224,7 @@ bool SceneManager::init()
 						DWORD mapid = 0;
 						if (!parser.getNodePropNum(mapNode,"mapID", &mapid,sizeof(mapid)))
 						{
-							Zebra::logger->error("得到地图编号失败");
+							H::logger->error("得到地图编号失败");
 							return inited;
 						}
 
@@ -234,17 +234,17 @@ bool SceneManager::init()
 						if (newScene)
 						{
 							printf("向session发送注册消息(%s-%d-%d)\n",newScene->name,newScene->id,newScene->tempid);
-							Zebra::logger->info("加载%s(%d,%d)成功",newScene->name,newScene->id,newScene->tempid);
-							S2WRegisterScene regscene;
+							H::logger->info("加载%s(%d,%d)成功",newScene->name,newScene->id,newScene->tempid);
+							S::SSRqRegisterScene regscene;
 							regscene.sceneid = newScene->id;
-							//Zebra::logger->info("[地图真实ID]:%d",loaded->id&0x0FFF);
+							//H::logger->info("[地图真实ID]:%d",loaded->id&0x0FFF);
 							regscene.sceneTempID=newScene->tempid;
 							regscene.mapid = mapid;
 							strncpy(regscene.name,newScene->name,MAX_NAMESIZE);
 							strncpy(regscene.fileName,newScene->getFileName(),MAX_NAMESIZE);
 							regscene.dwCountryID = countryid;
 							regscene.byLevel = newScene->getLevel();
-							NetService::getMe().getSessionMgr().sendToWs(&regscene, regscene.GetPackLength());
+							GameService::getMe().getSessionMgr().sendToWs(&regscene, sizeof(regscene));
 							mapCount++;
 						}
 						else
@@ -255,17 +255,17 @@ bool SceneManager::init()
 					}
 					countryNode=parser.getNextNode(countryNode,"country");
 				}
-				Zebra::logger->info("ScenesServer id=%d加载%d张地图.",id,mapCount);
+				H::logger->info("ScenesServer id=%d加载%d张地图.",id,mapCount);
 			}
 			else{
-				Zebra::logger->info("skip id=%d != %d.",id, NetService::getMe().getServerID());
+				H::logger->info("skip id=%d != %d.",id, GameService::getMe().getServerID());
 			}
 			serverNode=parser.getNextNode(serverNode,"server");
 		}
 		inited=true;
 	}
 	else
-		Zebra::logger->warn("SceneManager 解析配置文件失败.");
+		H::logger->warn("SceneManager 解析配置文件失败.");
 	//刷新玉如意需要的地图信息
 	freshEverySceneField(); 
 	return inited;
@@ -397,7 +397,7 @@ DWORD SceneManager::getMapId(DWORD countryid,DWORD mapid)
  */
 Scene * SceneManager::loadScene(int type/*Scene::SceneType type*/,DWORD countryid,DWORD mapid)
 {
-  Zebra::logger->info("SceneManager::loadScene type=%d,countryid=%d,mapid=%d",type,countryid,mapid);
+  H::logger->info("SceneManager::loadScene type=%d,countryid=%d,mapid=%d",type,countryid,mapid);
   zEntry *s=NULL;
   switch(type)
   {
@@ -408,7 +408,7 @@ Scene * SceneManager::loadScene(int type/*Scene::SceneType type*/,DWORD countryi
 		 // s=new GangScene();
       break;
     default:
-        Zebra::logger->error("未知场景类型");
+        H::logger->error("未知场景类型");
         return false;
   }
   rwlock.wrlock();
@@ -417,11 +417,11 @@ Scene * SceneManager::loadScene(int type/*Scene::SceneType type*/,DWORD countryi
   {
     ret=addEntry(s);
     if (!ret)
-      Zebra::logger->error("SceneManager::loadScene addEntry[%s]失败.",s->name);
-    else Zebra::logger->info("SceneManager::loadScene[%s]成功",s->name);
+      H::logger->error("SceneManager::loadScene addEntry[%s]失败.",s->name);
+    else H::logger->info("SceneManager::loadScene[%s]成功",s->name);
   }
   else
-    Zebra::logger->error("SceneManager::loadScene init[%s]失败.",s->name);
+    H::logger->error("SceneManager::loadScene init[%s]失败.",s->name);
   rwlock.unlock();
   if (!ret)
   {
@@ -471,12 +471,12 @@ Scene * SceneManager::loadBattleScene(DWORD baseid)
 	//{
 	//	ret=addEntry(s);
 	//	if (!ret)
-	//		Zebra::logger->error("SceneManager::loadScene addEntry[%s]失败.",s->name);
+	//		H::logger->error("SceneManager::loadScene addEntry[%s]失败.",s->name);
 	//	else 
-	//		Zebra::logger->info("SceneManager::loadScene[%s]成功",s->name);
+	//		H::logger->info("SceneManager::loadScene[%s]成功",s->name);
 	//}
 	//else
-	//	Zebra::logger->error("SceneManager::loadScene init[%s]失败.",s->name);
+	//	H::logger->error("SceneManager::loadScene init[%s]失败.",s->name);
 	//rwlock.unlock();
 	//if (!ret)
 	//{
@@ -499,7 +499,7 @@ void SceneManager::unloadScene(std::string &name)
     removeEntry(ret);
   SAFE_DELETE(ret);
   rwlock.unlock();
-  Zebra::logger->debug("SceneManager::unloadScene");
+  H::logger->debug("SceneManager::unloadScene");
 }
 
 /**
@@ -514,7 +514,7 @@ void SceneManager::unloadScene(Scene * &scene)
   removeEntry((zEntry *)scene);
   SAFE_DELETE(scene);
   rwlock.unlock();
-  Zebra::logger->debug("SceneManager::unloadScene");
+  H::logger->debug("SceneManager::unloadScene");
 }
 
 /**
@@ -531,7 +531,7 @@ void SceneManager::unloadAllScene()
     SAFE_DELETE(ret);
   }
   rwlock.unlock();
-  Zebra::logger->debug("SceneManager::unloadAllScene");
+  H::logger->debug("SceneManager::unloadAllScene");
 }
 
 /**
@@ -547,7 +547,7 @@ void SceneManager::checkUnloadOneScene()
     Scene *scene = (Scene *)it->second;
     if (scene->getRunningState() == SCENE_RUNNINGSTATE_REMOVE)
     {
-      Zebra::logger->debug("卸载场景%s",scene->name);
+      H::logger->debug("卸载场景%s",scene->name);
       SceneNpcManager::getMe().removeNpcInOneScene(scene);
       scene->removeSceneObjectInOneScene();
       unloadScene(scene);
@@ -595,7 +595,7 @@ void SceneManager::freshEverySceneField()
     }
     bool exec(Scene *scene)
     {
-      //Zebra::logger->debug("%d,%d,%d,%s",scene->getCountryID(),_old_scene->getCountryID(),scene->isMainCity(),scene->getFileName());
+      //H::logger->debug("%d,%d,%d,%s",scene->getCountryID(),_old_scene->getCountryID(),scene->isMainCity(),scene->getFileName());
       //if (/*scene != _old_scene && */_old_scene->isMainCity() && scene->getCountryID() == _old_scene->getCountryID() && scene->isField() && _old_scene->getWayPoint(scene->getFileName()))
       //{
       //  _old_scene->addFieldMapName(scene->name);
@@ -815,7 +815,7 @@ bool SceneManager::randzPosNewZone(Scene *intoScene,zPos &findedPos)
 //		TeamManager * team = new TeamManager();
 //		if(team == NULL)
 //		{
-//			Zebra::logger->debug("内存不足!组队失败");
+//			H::logger->debug("内存不足!组队失败");
 //			putTeamID(teamid);
 //			return false;
 //		}
@@ -865,7 +865,7 @@ bool SceneManager::randzPosNewZone(Scene *intoScene,zPos &findedPos)
 //	TeamManager * team = new TeamManager();
 //	if(team == NULL)
 //	{
-//		Zebra::logger->debug("内存不足!跨场景建立新队伍失败");
+//		H::logger->debug("内存不足!跨场景建立新队伍失败");
 //		return false;
 //	}
 //

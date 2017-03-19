@@ -3,7 +3,7 @@ syntax = "proto2";
 package protobuf;
 
 // 计数器 
-message CounterInfo
+message Counter
 {
 	optional int32 itemid = 1;
 	optional int32 itemval = 2;
@@ -11,48 +11,57 @@ message CounterInfo
 	optional int32 endtime = 4;
 }
 
-message MyCounters
+message CounterProto
 {
-	repeated CounterInfo counters = 1; 
+	repeated Counter counter = 1; 
 }
 
-// 单项记录唯一ID 
-message UniqueIDItem
+//消息的结构体
+message MsgObject
 {
-	optional int32 itemid = 1;
-	optional int32 startid = 2;
-	optional int32 endid = 3;
-	optional int32 steplenght = 4;
-	optional int32 startcount = 5;
+	optional string conent = 1;
 }
 
-// 我的所有项唯一ID
-message MyUniqueID
+// 单条信息数据全部数据
+message RelChatMsg
 {
-	repeated UniqueIDItem uuids = 1; 
+	optional int64 msgid = 1; 		// 唯一消息编号
+	optional int64 senduid = 2;		// 发送者ID
+	optional string sendname = 3;	// 发送者名字
+	optional int64 recvuid = 4;		// 接收者ID
+	optional string recvname = 5;	// 接收者名字
+	optional int32 sendtime = 6;	// 发送时间
+	optional MsgObject msgobj =7;	// 消息的结构体	
+}
+
+// 成员聊天信息
+message RelChatProto
+{
+	repeated RelChatMsg msglist = 1;
 }
 
 // 社会成员
-message RelInfo
+message Relation
 {
 	optional int64 uid = 1;
-	optional int32 rel = 2;
-	optional int32 createtime = 3;
-	optional int32 dealreltime = 4;
+	optional string name = 2;
+	optional int32 rel = 3;
+	optional int32 createtime = 4;
+	optional int32 dealreltime = 5;
+	optional RelChatProto relchat = 6; //与该成员的聊天信息
 }
 
 // 社会关系
-message Relation
+message RelationProto
 {
-	repeated RelInfo rels = 99;
+	repeated Relation relation = 1;
 }
 
 // 角色二进制数据 
-message UserBinary {
-
-	optional MyCounters counters = 1;	// 计数器 
-	optional MyUniqueID uniqueid = 2;	// 唯一ID
-	optional Relation   relation = 3;   
+message UserBinary 
+{
+	optional CounterProto counters = 1;	// 计数器 
+	optional RelationProto relations = 3;   
 }
 
 

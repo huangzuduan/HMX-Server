@@ -113,8 +113,8 @@ void NetServer::Run()
 void NetServer::Start()
 {
 	// Start socket use a new thread , that can loop
-	thread t(boost::bind(&NetServer::HandleStart, this));
-	this_thread::yield();		// Temporarily give up a CPU time , to other threads
+	boost::thread t(boost::bind(&NetServer::HandleStart, this));
+	boost::this_thread::yield();		// Temporarily give up a CPU time , to other threads
 	t.swap(m_cServiceThread);	// Swaps the state of the object with that of mServiceThread
 }
 
@@ -134,12 +134,12 @@ void NetServer::HandleStart()
 	{
 		SetAccept(*m_arrSocket[i]);
 	}
-	thread_group tg;
+	boost::thread_group tg;
 	for (int i = 0; i < MAX_THREAD; ++i)
 	{
 		tg.create_thread(boost::bind(&NetServer::Run, this));
 	}
-	this_thread::yield();
+	boost::this_thread::yield();
 	tg.join_all();
 }
 
@@ -150,7 +150,7 @@ void NetServer::Stop()
 
 void NetServer::OnUpdateAccept()
 {
-	mutex::scoped_lock cLock(m_cClientListMutex);
+	boost::mutex::scoped_lock cLock(m_cClientListMutex);
 	for (SocketMapIter it = m_mapAcceptSocket.begin(); it != m_mapAcceptSocket.end(); ++it)
 	{
 		(m_pOnEnter)(*it->second);
@@ -233,7 +233,7 @@ void NetServer::HandleAccept(const boost::system::error_code& rError, NetSocket*
 		return;
 	}
 
-	mutex::scoped_lock lock(m_cClientListMutex);
+	boost::mutex::scoped_lock lock(m_cClientListMutex);
 	pSocket->Clear();
 	m_mapAcceptSocket[pSocket->SLongID()] = pSocket;
 	pSocket->Run();

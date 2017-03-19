@@ -25,16 +25,16 @@ bool SceneNpcManager::init()
 SceneNpcManager::SceneNpcManager()
 {
   if (!loadNpcCommonChatTable())
-    Zebra::logger->error("读取npc说话内容失败");
+    H::logger->error("读取npc说话内容失败");
 #ifdef _DEBUG  
-  Zebra::logger->debug("SceneNpcManager::SceneNpcManager");
+  H::logger->debug("SceneNpcManager::SceneNpcManager");
 #endif    
 }
 
 SceneNpcManager::~SceneNpcManager()
 {
 #ifdef _DEBUG  
-  Zebra::logger->debug("SceneNpcManager::~SceneNpcManager()");
+  H::logger->debug("SceneNpcManager::~SceneNpcManager()");
 #endif    
 
 }
@@ -70,7 +70,7 @@ bool SceneNpcManager::addSpecialNpc(SceneNpc *sceneNpc,bool force)
 //  {
 //    specialNpc.insert(sceneNpc);
 //#ifdef _DEBUG
-//    //Zebra::logger->debug("addSceneNpc(): 增加特殊npc %s",sceneNpc->name);
+//    //H::logger->debug("addSceneNpc(): 增加特殊npc %s",sceneNpc->name);
 //#endif
 //    rwlock.unlock();
 //    return true;
@@ -107,7 +107,7 @@ void SceneNpcManager::removeSpecialNpc(SceneNpc *sceneNpc)
   rwlock.wrlock();
   specialNpc.erase(sceneNpc);
 #ifdef _DEBUG
-  //Zebra::logger->debug("removeSpecialNpc(): 删除特殊npc %s(%u)",sceneNpc->name,sceneNpc->tempid);
+  //H::logger->debug("removeSpecialNpc(): 删除特殊npc %s(%u)",sceneNpc->name,sceneNpc->tempid);
 #endif
   rwlock.unlock();
 }
@@ -200,7 +200,7 @@ void SceneNpcManager::destroyMe()
 void SceneNpcManager::removeNpcInOneScene(Scene *scene)
 {
 #ifdef _DEBUG  
-  Zebra::logger->debug("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SceneNpcManger::removeNpcInOneScene");
+  H::logger->debug("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!SceneNpcManger::removeNpcInOneScene");
 #endif    
 
   struct UnloadSceneExec :public execEntry<SceneNpc>
@@ -244,9 +244,9 @@ void SceneNpcManager::SpecialAI()
 bool SceneNpcManager::loadNpcCommonChatTable()
 {
   zXMLParser xml;
-  if (!xml.initFile(Zebra::global["confdir"] + "NpcCommonChat.xml"))
+  if (!xml.initFile(H::global["confdir"] + "NpcCommonChat.xml"))
   {
-    Zebra::logger->error("不能读取NpcCommonChat.xml");
+    H::logger->error("不能读取NpcCommonChat.xml");
     return false;
   }
 
@@ -271,7 +271,7 @@ bool SceneNpcManager::loadNpcCommonChatTable()
         bzero(str,sizeof(str));
         xml.getNodePropStr(contentNode,"str",str,sizeof(str));
         strTable.push_back(std::string(str));
-        //Zebra::logger->debug("loadNpcCommonChatTable:%s",std::string(str).c_str());
+        //H::logger->debug("loadNpcCommonChatTable:%s",std::string(str).c_str());
         itemCount++;
         contentNode = xml.getNextNode(contentNode,"content");
       }
@@ -280,7 +280,7 @@ bool SceneNpcManager::loadNpcCommonChatTable()
     chatNode = xml.getNextNode(chatNode,"chat");
   }
 
-  Zebra::logger->info("加载npc随机聊天文件成功,共%d类%d条",NpcCommonChatTable.size(),itemCount);
+  H::logger->info("加载npc随机聊天文件成功,共%d类%d条",NpcCommonChatTable.size(),itemCount);
   return true;
 }
 

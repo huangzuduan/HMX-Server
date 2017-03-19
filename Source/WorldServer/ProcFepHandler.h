@@ -13,10 +13,14 @@ public:
 	ProcFepHandler();
 	~ProcFepHandler();
 
-	void RqPlayerExit(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RqSelectRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RqCreateRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RqDeleteRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doLoginTask(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+
+	void doPlayerExit(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doSelectRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doCreateRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doDeleteRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+
+	void doMessageTask(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
 
 };
 

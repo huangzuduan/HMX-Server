@@ -31,25 +31,11 @@ struct DRelation
 	int32 dealreltime;
 };
 
-struct BinaryHeader
-{
-	int32 version;
-	int32 size;
-	char data[0];
-};
-
 struct DUserRecord
 {
 	int64 uid;
 	int32 size;
 	BinaryHeader header;
-};
-
-struct BinaryMember
-{
-	int32 type;
-	int32 size;
-	char data[0];
 };
 
 #pragma pack(pop)

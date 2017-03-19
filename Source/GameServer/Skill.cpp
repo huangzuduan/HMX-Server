@@ -456,7 +456,7 @@ bool zSkill::action(const Cmd::stAttackMagicUserCmd *rev,const DWORD cmdLen)
   }
   else
   {
-    Zebra::logger->error("学习的技能中_entry指针为空");
+    H::logger->error("学习的技能中_entry指针为空");
   }
   return false;
 }

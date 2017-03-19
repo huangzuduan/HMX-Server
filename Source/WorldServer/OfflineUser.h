@@ -15,6 +15,9 @@ public:
 	~OfflineUser();
 
 	bool loadDB();
+	void saveDB();
+	void readBinary(const char* data,int32 len);
+	int32 writeBinary(char* data);
 
 public:
 

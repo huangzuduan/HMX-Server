@@ -1,7 +1,7 @@
 #ifndef __DEF_RESOURCE_H_
 #define __DEF_RESOURCE_H_
 
-#include "ServerDefine.h"
+
 
 
 #pragma pack(push, 1)
