@@ -1,0 +1,106 @@
+syntax = "proto2";
+package msg_maj;
+
+/*
+enum c_cmd_mail {
+	// 转动到event中
+}
+*/
+
+enum opt_type_mail
+{
+	opt_t_read 		= 1;  // 查看邮件
+	opt_t_fetch 	= 2;  // 领取奖励
+	opt_t_delete	= 3;  // 删除
+}
+
+enum mark_type
+{
+	mark_t_unread 	= 1; // 未读
+	mark_t_readed 	= 2; // 已读
+	mark_t_deleted 	= 3; // 已删除
+}
+
+
+enum mail_type
+{
+	mail_t_system_one = 1; // 系统个人邮件
+	mail_t_system_all = 2; // 系统全服邮件
+}
+
+message MailListReq 
+{
+    required uint64 start_index  = 1; // 记录开始序号, 用于大量数据时提高性能，从该ID后开始返回
+}
+
+enum from_type
+{
+	from_t_list = 1; // 列表请求
+	from_t_add  = 2; // 新增 
+}
+
+message MailListResp {
+    required from_type type = 1; // 来源类型 
+    repeated MailRecordC record_list  = 2;
+}
+
+// 操作请求
+message MailOptReq {
+    required uint64 id = 1;  	// 邮件ID
+    required opt_type_mail opt = 2; 	// 操作类型
+}
+
+/*
+// 操作返回
+message MailOptResp {
+	required uint64 id = 1;		// 邮件ID
+	required opt_type_mail opt = 2; 	// 操作类型
+	required mark_type mark = 3;// 邮件操作的类型
+	required uint64 fetch_time = 4;// 领取时间 
+}
+*/
+
+message MailRecordC
+{
+	required uint64 id    	= 1; // 记录ID
+	required mail_type type = 2;	// 邮件类型
+	required string from_name = 3;// 发送者名字
+	required string title	= 4; // 标题
+    required string content = 5;  // 内容
+    required int32 room_cards  = 6; // 房卡
+    required mark_type mark	= 7; // 标记
+	required uint64 create_time = 8;// 生成时间
+	required uint64 fetch_time = 9; // 领取奖励时间
+}
+
+// 邮件数据
+message MailRecordS
+{
+    required uint64 id    	= 1; // 记录ID
+	required int32 type = 2;	// 邮件类型
+	required uint64 from_id	= 3; // 发送者ID
+	required string from_name = 4;// 发送者名字
+	required uint64 to_id	= 5;
+	required string to_name	= 6;
+	required string title	= 7; // 标题
+    required string content = 8;  // 内容
+    required int32 room_cards  = 9; // 房卡
+    required int32 mark	= 10; // 标记
+	required uint64 create_time = 11;// 生成时间
+	required uint32 fetch_time = 12;// 领取奖励时间
+}
+
+// 邮件公共日志
+message MailSystemLogS
+{
+	required uint64 id = 1; // 记录ID
+	required uint64 mail_id = 2;// 邮件ID
+	required uint64 uid = 3;// 用户ID
+	required int32 mark	= 4; // 标记
+	required uint64 create_time = 5;// 生成时间
+	required uint32 fetch_time = 6;// 领取奖励时间
+}
+
+
+
+

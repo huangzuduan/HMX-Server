@@ -1,2 +1,2 @@
 include ../Makefile.in
-PROG = ../../Bin/Debug/WorldServerD 
+PROG = ../Bin/WorldServerD 

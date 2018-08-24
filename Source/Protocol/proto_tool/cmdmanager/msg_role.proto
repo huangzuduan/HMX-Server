@@ -1,0 +1,262 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_role {
+    setting_req 		= 1;
+    setting_resp 		= 2;
+    set_logo_req 		= 3;
+    set_logo_resp 		= 4;
+    get_title_list_req 	= 5;
+    get_title_list_resp = 6;
+    set_title_req 		= 7;
+    set_title_resp 		= 8;
+	player_info_req 	= 9;//查看在线玩家信息
+	player_info_resp	= 10;
+	update_role_req     = 19;
+    update_role_data    = 20;
+	gps_upload_req 		= 21;	// 上传自己的gps
+	sync_role_to_ws		= 22;	// 
+	cardinfo_req 		= 23;   // 
+	notify_lose_game	= 24; 	
+}
+
+message SettingReq {
+    required uint32 sound	= 1; // 音效
+    required uint32 music	= 2; // 音乐
+    required bool buzzes	= 3; // 震动
+}
+
+message SettingResp {
+    required uint32 sound	= 1; // 音效
+    required uint32 music	= 2; // 音乐
+    required bool buzzes	= 3; // 震动
+}
+
+message SetLogoReq {
+    required uint32 logo_icon = 1;
+}
+
+message SetLogoResp {
+    required uint32 logo_icon = 1;
+}
+
+message GetTitleListReq {
+    repeated Title title = 1;
+}
+
+message Title {
+    required uint32 id		= 1;
+    required string title	= 2;
+}
+
+message GetTitleListResp {
+}
+
+message SetTitleReq {
+    required uint32 id = 1;
+}
+
+message SetTitleResp {
+}
+
+message PlayerInfoReq
+{
+	required uint64 uid = 1;
+}
+
+message PlayerInfoResp
+{
+	required RoleC role = 1;
+}
+
+message Data
+{
+    optional uint64 reset_time          = 1; //重置时间
+    optional uint32 first_show_status   = 2; //首次分享状态 0:未分享 1:已分享 2:已领取奖励
+    optional uint32 has_inv_friend_num  = 3; //已成功邀请好友的数量
+    optional uint32 has_get_room_card   = 4; //已成功领取房卡的数量
+    optional uint32 can_get_room_card   = 5; //还可以领取房卡的数量
+
+    //被邀请的数据
+    optional uint32 be_invitation_id    = 6; //被邀请，发出邀请人的ID
+    optional uint32 play_games          = 7; //所玩的局数
+    optional uint32 recv_reward_status  = 8; //领取奖励状态（0：不可领取 1：可领取 2：已领取）
+}
+
+// 角色信息(总)
+message Role {
+    optional uint64 id 				= 1; // 玩家id
+    optional string account         = 2; // 玩家账号
+    optional string nickname 		= 3; // 玩家昵称
+    optional uint32 level 			= 4; // 玩家等级
+    optional string logo_icon 		= 5; // 头像
+    optional uint32 title 			= 6; // 称号
+    optional uint32 diamond 		= 7; // 钻石
+    optional uint32 coin 			= 8; // 公共场豆子的数量
+	optional uint32 sexual			= 9; // 性别
+    optional uint32 room_card       = 10; // 房卡数
+    optional uint32 total_games 	= 11; // 总局数
+    optional uint32 win_games 		= 12; // 胜利局数
+    optional uint32 con_games       = 13; // 连胜局数
+    optional uint32 his_max_score   = 14; // 历史最高分
+	optional uint32 his_max_con		= 15; // 历史最高连胜
+    optional uint32 week_max_score  = 16; // 本周最高分(未用到)
+	optional uint64 top_wins_ymd	= 17; // 排行榜记录日期
+	optional int32	top_wins_total	= 18; // 排行榜记录胜局
+	optional uint64 top_score_ymd	= 19; // 排行榜记录日期
+	optional int32	top_score_total	= 20; // 排行榜记录积分
+	optional uint64 blocktime 		= 21; // 封停时间
+	optional uint32 today_play_num  = 22; // 今天打的场次（无解散）
+	optional string readname		= 23; // 真名
+	optional string readcard		= 24; // 身份证ID
+	optional uint64 last_game_end 	= 25; // 上局结束时间
+	optional uint64 login_time		= 26; // 上次登录时间
+	optional string ip				= 27; // ip
+	optional Data data              = 99; // 其他相关数据
+}
+
+// 角色offline
+message RoleOff
+{
+	optional uint64 id 				= 1; // 玩家id
+    optional string account         = 2; // 玩家账号
+    optional string nickname 		= 3; // 玩家昵称
+    optional uint32 level 			= 4; // 玩家等级
+    optional string logo_icon 		= 5; // 头像
+    optional uint32 title 			= 6; // 称号
+    optional uint32 diamond 		= 7; // 钻石
+    optional uint32 coin 			= 8; // 公共场豆子的数量
+	optional uint32 sexual			= 9; // 性别
+    optional uint32 room_card       = 10;  // 房卡数
+    optional uint32 total_games 	= 11; // 总局数
+    optional uint32 win_games 		= 12; // 胜利局数
+    optional uint32 con_games       = 13; // 连胜局数
+    optional uint32 his_max_score   = 14; // 历史最高分
+	optional uint32 his_max_con		= 15; // 历史最高连胜
+    optional uint32 week_max_score  = 16; // 本周最高分(未用到)
+	optional uint64 top_wins_ymd	= 17; // 排行榜记录日期
+	optional int32	top_wins_total	= 18; // 排行榜记录胜局
+	optional uint64 top_score_ymd	= 19; // 排行榜记录日期
+	optional int32	top_score_total	= 20; // 排行榜记录积分
+	optional uint64 blocktime 		= 21; // 封停时间
+	optional uint32 today_play_num  = 22; //
+	optional string readname		= 23; // 真名
+	optional string readcard		= 24; // 身份证ID
+	optional uint64 last_game_end 	= 25; // 上局结束时间
+	optional uint64 login_time		= 26; // 上次登录时间
+	optional string ip				= 27; // ip
+	optional Data data              = 99; // 其他相关数据
+}
+
+// 角色ws
+message RoleWs
+{
+	optional uint64 id 					= 1; // 玩家id
+	optional string account				= 2;
+    optional string nickname 			= 3; // 玩家昵称
+    optional string logo_icon 			= 4; // 头像
+    optional uint32 room_card       	= 5; // 房卡数
+    optional uint32 total_games 		= 6; // 总局数
+    optional uint32 win_games 			= 7; // 胜利局数
+    optional uint32 his_max_con       	= 8; // 历史连胜局数
+    optional uint32 his_max_score   	= 9; // 历史最高分
+    optional int32 top_score_total 		= 10; // 今日排行榜积分
+}
+
+// 角色fep
+message RoleFep
+{
+	optional uint64 id 					= 1; // 玩家id
+	optional uint64 sessionid			= 2; // sessid
+	optional uint32 serverid 			= 3; // 服务器id
+}
+
+// 角色信息(前端)
+message RoleC
+{
+	optional uint64 id 					= 1; // 玩家id
+    optional string nickname 			= 2; // 玩家昵称
+    optional string logo_icon 			= 3; // 头像
+	optional uint32 sexual				= 4; // 性别
+    optional uint32 room_card       	= 5; // 房卡数
+    optional uint32 total_games 		= 6; // 总局数
+    optional uint32 win_games 			= 7; // 胜利局数
+    optional uint32 his_con_games       = 8; // 历史连胜局数
+    optional uint32 his_max_score   	= 9; // 历史最高分
+    optional int32 top_score_total 		= 10; // 今日排行榜积分
+	optional string address				= 11; // 物理地址
+}
+
+
+// 货币类型
+enum money_type
+{
+	money_t_roomcard = 1;// 房卡
+}
+
+//房卡数据
+message RoomCardData
+{
+    optional uint32 room_card   = 1; //房卡数量
+}
+
+// 更新角色数据
+message UpdateRoleData
+{
+    optional RoomCardData room_card_data   = 1; //房卡数据
+}
+
+// 日记记录
+message MoneyLog
+{
+	required uint64 log_id = 1;		//唯一ID
+	required int32 money_type = 2;	//货币类型
+	required int32 money_num = 3;	//数量
+	required int32 log_type = 4; 	//日志事件
+	required uint64 char_id = 6;	//用户ID
+	required uint64 log_time = 7;   //生成时间
+}
+
+// 上传自己的gps
+message GpsUploadReq
+{
+	required double longitude = 1; 	// 经度
+	required double latitude = 2;	// 伟度
+	required string address = 3;	// 位置
+}
+
+// 请求刷新
+message UpdateRoleReq
+{
+
+}
+
+// 同步到ws
+message SyncRoleToWs
+{
+	required uint64 uid 		= 1;
+	required uint64 room_id 	= 2;
+	required uint32 room_seat 	= 3;
+	required uint32 room_card 	= 4;
+	required bool 	disconnect 	= 5;
+	required bool 	robotPlaying= 6; 
+	required uint32 hisConGames = 7;	//最大连胜局数
+	required uint32	hisMaxScore = 8;	//历史最高分
+}
+
+
+message CardinfoReq
+{
+	optional uint32 do_type = 1;
+	optional string readname  = 2;
+	optional string readcard  = 3;
+}
+
+message NotifyLoseGame
+{
+	optional uint32 level = 1; 	// 沉迷级别
+	optional uint32 time = 2; 	// 用时
+}
+
+
+

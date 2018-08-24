@@ -1,26 +1,32 @@
 #ifndef _FEP_SERVER_PROC_HANDLER_H_
 #define _FEP_SERVER_PROC_HANDLER_H_
 
+#include "SrvEngine.h"
 #include "Single.h"
-#include "BaseProcHandler.h"
 
 class zSession;
 struct NetMsgSS;
 
-class ProcFepHandler : public BaseProcHandler, public Single<ProcFepHandler>
+
+size_t onProxyGameZone(void *buffer, size_t size, size_t nmemb, void *parm);
+
+class ProcFepHandler : public Single<ProcFepHandler>
 {
 public:
 	ProcFepHandler();
 	~ProcFepHandler();
 
-	void doLoginTask(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void HandleLoginOut(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void HandleLoginPlayer(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
 
-	void doPlayerExit(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void doSelectRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void doCreateRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void doDeleteRole(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void doLoginTask(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
 
-	void doMessageTask(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void HandlePlayerExit(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void doSelectRole(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void doCreateRole(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void doDeleteRole(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+
+	void doMessageTask(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
 
 };
 

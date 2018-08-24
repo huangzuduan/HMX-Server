@@ -1,0 +1,90 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_match {
+    match_baoming_req = 1; // 请求报名 
+    match_baoming_resp = 2;// 返回报名
+	match_sort_req = 3; // 请求排行榜(只能查看自己所在的比赛)
+	match_sort_resp = 4;// 返回排行榜
+}
+
+enum match_type {
+	match_t_2r8j_taotai 	= 1; 	// 淘汰
+	match_t_2r8j_zhifen 	= 2;	// 积分
+}
+
+message BaoMingReq
+{
+	optional int32 id = 1;
+}
+
+message BaoMingResp
+{
+	optional int32 id = 1;
+	optional int32 status = 2; // 0:成功,1:报名时间不在范围内,2:钻石不足
+}
+
+// 进入(创建)房间
+message MatchOpenRoom 
+{
+	optional int32 id = 1;
+}
+
+message MatchReq {
+    required rank_type type = 1; 
+	optional int32 last = 2; 	// 0当前,1上届
+}
+
+// 返回前端用的排行榜
+message MatchInfo 
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜/积分
+	optional uint32 sort	= 4; 	// 排名
+	optional string actor_addr = 5; // 头像
+}
+
+// 返回的排行榜数据
+message MatchResp 
+{
+    required rank_type sorttype = 1;
+	optional int32 last 		= 2; // 0当前,1上届
+	required int32 mysort 		= 3;
+	required int32 myvalue 		= 4;
+	repeated MatchInfo rank 		= 5;
+}
+
+message TaotaiInfo
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message ZhifenInfo 
+{
+	optional uint64 uid 	= 1;	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message MatchConsList
+{
+	 repeated TaotaiInfo ranks = 1;
+}
+
+message MatchZhifenList
+{
+	repeated ZhifenInfo ranks = 1;
+}
+
+

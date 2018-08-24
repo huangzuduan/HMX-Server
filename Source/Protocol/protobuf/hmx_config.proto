@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package config;
+
+// 服务器类型
+enum server_type
+{
+	server_t_gateway = 1;
+	server_t_login = 2;
+	server_t_world = 3;
+	server_t_scene = 4;
+	server_t_database = 5;
+}
+
+// 服务的本地信息
+message ServerInfo
+{
+	optional uint32 ServerID = 1;			// 服务器ID
+	optional string ServerName= 2;			// 服务器名
+	optional bool Recvsrvlist = 3;			// 服务器接收其他列表
+	optional bool Broadcastlist = 4;		// 服务器广播自己出去
+}
+
+// 服务的配置
+message SerivceInfo
+{	
+	optional uint32 SerivceID = 1; 			// 服务编号
+	optional string SerivceName= 2;			// 服务名server,client,mysqld
+	optional string SerivceFun = 3;			// 服务说明
+	optional string SerivceIP = 4;			// 服务IP
+	optional uint32 SerivcePort = 5;		// 服务端口
+	optional uint32 SerivceRemoteid = 6;	// 服务器远程ID	
+	optional string SerivceUser = 7;	
+	optional string SerivcePasswd = 8;
+	optional string SerivceValue = 9;	
+	optional uint32 Maxconntions = 10; 		// 最大连接数
+}
+

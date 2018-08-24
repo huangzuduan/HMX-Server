@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package hmx_cmd;
+
+// 大协议
+enum h_cmd
+{
+	msg_login 	= 1;	// 登录
+	msg_role	= 2;	// 角色
+}
+
+
+
+
+
+

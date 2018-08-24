@@ -1,0 +1,420 @@
+syntax = "proto2";
+
+package msg_maj;
+
+import "msg_maj.proto";
+
+enum c_cmd_room {
+	c_cmd_none		= 0;
+    room_list_req   = 1;
+    room_list_resp  = 2;
+    open_room_req   = 3;
+    open_room_resp  = 4;
+    enter_room_req  = 5;
+    enter_room_resp = 6;
+    role_enter_room = 9;
+    role_leave_room = 10;
+    leave_room_req  = 11;
+    dismiss_room_req = 12; // 发起解散
+    dismiss_room_resp = 13; // 解散最终结果
+    dismiss_room_vote_accept = 14; // 客户端是否同意解散
+    dismiss_room_vote_notify = 15; // 解散投票状态同步
+    room_ready_notify = 16; // 房间人已满，可开始游戏
+    room_reconnect_req   = 17;
+    room_reconnect_resp  = 18;
+    role_online_notify      = 19; // 玩家在线状态更新消息(在线, 离线, 离开？游戏中？)
+    kick_role_req           = 20; // 踢掉玩家
+    kick_role_notify        = 21; // 踢掉玩家的通知
+	reconnect_fin	        = 22; // 重连完成
+    dismiss_room_notify     = 23; //解散房间通知
+    enter_room_ready        = 24; //进入房间准备好
+    roomcard_price_req      = 25; //房卡价格列表请求
+    roomcard_price_resp     = 26; //房卡价格列表回复
+    sync_room_role_info     = 27; //同步房间玩家信息
+	sync_romm_inn_info		= 28; //房间每局基本数据
+
+    notify_room_dismiss     = 29; //通知房间已解散
+    leave_room_resp         = 30; //离开房间回复
+
+	start_robot_req			= 31; // 请求机器人代替
+	stop_robot_req			= 32; // 请求机器人结束
+	
+	add_room_to_ws			= 33;
+	upate_room_to_ws		= 34;
+	remove_room_to_ws		= 35;
+	
+	coin_notenough_notity	= 36; // 豆子不足，被踢出房间
+}
+
+enum RoomType {
+    ROOM_NORMAL = 0;// 普通局
+    ROOM_PRIVATE= 1;// 私人局
+	ROOM_GOLD	= 2;// 赚金场（分再1-6底分不同场）
+	ROOM_MATCH	= 3;// 比赛场
+}
+
+enum EnterType {
+    ROOM_AUTO = 0; // 自动选择
+    ROOM_ROOM_NO = 1; // 按房间号
+}
+
+enum PlayType {
+    ROOM_NO_HANZI = 0;   // 无字麻将
+    ROOM_HAVE_HANZI = 1; // 有字麻将
+}
+
+enum VoteState {
+    VOTE_WAIT       = 0;
+    VOTE_AGREE      = 1;
+    VOTE_DISAGREE   = 2;
+}
+
+enum VoteResult {
+    VOTE_RESULT_WAIT = 0;
+    VOTE_RESULT_PASS = 1;
+    VOTE_RESULT_FAIL = 2;
+}
+
+// 房间等级列表
+message RoomListReq {
+
+}
+
+message RoomListResp {
+    repeated RoomListInfo room = 1;
+}
+
+// 开房
+message OpenRoomReq {
+    required RoomType room_type 	= 1;	// 房间类型,如:私人局
+    required maj_type game_type 	= 2; 	// 游戏类型,如:抚州麻将，湖南麻将
+    required RoomOption option 		= 3;	// 游戏选项
+}
+
+message OpenRoomResp {
+    enum error_code {
+        SUCCESS             = 1;
+        FAIL                = 2;
+        ALREADY_IN          = 3; // 已经在房间中了
+        NO_DIAMOND          = 4; // 钻石不足
+        ROOMCARD_NOTENOUTH  = 5; // 房卡不足
+		MAINTENANCE			= 6; // 维护
+    }
+    required error_code code = 1;
+    optional RoomInfo info = 2;
+    optional RoleInfo role = 3;
+}
+
+// 进入房间
+message EnterRoomReq {
+    required EnterType type = 1;
+    optional uint32 room_no = 2;
+}
+
+message EnterRoomResp {
+    enum msg_room_code {
+        SUCCESS         = 1;
+        FAIL            = 2;
+        ALREADY_IN      = 3; // 已经在房间中了
+        PERSONS_FULL    = 4; // 房间人数已满
+    }
+    required msg_room_code code = 1;
+    optional RoomInfo info = 2;
+    repeated RoleInfo roleList = 3;
+    optional uint32 self_seat = 4; // 自己位置
+    optional uint32 banker_seat = 5; // 庄家位置
+}
+
+//进入房间准备好
+message EnterRoomReady
+{
+    
+}
+
+//同步房间玩家信息
+message SyncRoomRoleInfo
+{
+    repeated RoleInfo roleList = 1;
+}
+
+// 离开房间
+message LeaveRoomReq {
+}
+
+// 离开房间
+message LeaveRoomResp 
+{
+    enum error_code 
+    {
+        HAS_LEAVE_ROOM = 1; //玩家已经离开房间了
+    }
+    required error_code code = 1;
+}
+
+// 其他玩家进入房间
+message RoleEnterRoomNotify {
+    required RoleInfo role = 1;
+}
+
+// 其他玩家离开房间
+message RoleLeaveRoomNotify {
+    required uint32 seat = 1;
+    required bool is_roomer = 2; // 是否为房主 房主离开全部退出去
+}
+
+// 发起解散房间请求
+message DismissRoomReq {
+}
+
+// 解散房间通知弹框
+message DismissRoomNotify
+{
+    required string nickname    = 1;
+    required uint32 seat        = 2;
+    optional uint32 timer_sec   = 3; //定时器时间-秒 //时间到默认同意解散
+}
+
+
+// 服务端同步客户端投票状态
+message DismissRoomVoteNotify {
+    repeated VoteInfo infoList = 1;
+}
+
+message VoteInfo {
+    required string nickname = 1;
+    required VoteState state = 2;
+}
+
+// 客户端回应投票，同意/不同意
+message DismissRoomVoteAcceptReq {
+    required VoteState state = 1;
+}
+
+// 解散房间
+message DismissRoomResp {
+     enum error_code {
+        SUCCESS             = 1;
+        FAIL                = 2;
+        PROTECTION_TIME     = 3; // 玩家掉线保护时间内无法解散房间，保护时间还剩下xx秒
+    }
+    optional error_code code    = 1; //返回结果错误码
+    optional uint32 remain_time = 2; //剩余保护时间
+    optional bool isDissMis     = 3; //是否解散
+}
+
+// 房主动作
+enum RoomerAction 
+{
+    can_start           = 1; // 可以开始
+    cancel_start        = 2; // 取消开始
+}
+
+// 房间已准备好，可开始游戏
+message RoomReadyNotify {
+    required RoomerAction roomer_aciton = 1;
+}
+
+// 发起重连，当登录客户端返回已经登录时，发起reconnect
+message ReconnectReq {
+}
+
+// 服务器给出的重连消息
+message ReconnectResp {
+    enum error_code {
+        SUCCESS     = 1;
+        FAIL        = 2;
+        NOT_IN_ROOM = 3;
+    }
+    required error_code code = 1;
+    optional RoomInfo room_info = 2;
+    repeated RoleInfo user_list = 3;
+	optional uint32 self_seat = 4; // 自己位置
+    optional uint32 banker_seat = 5; // 庄家位置
+    optional bool is_roomer = 6; //是否房主
+    optional bool is_start = 7; //是否是点击开始游戏之后游戏开始
+}
+
+// 重连完成
+message ReconnectFin {
+}
+
+enum online_state_room {
+    online = 1;
+    offline = 2;
+}
+
+// 用户在线状态变化通知消息
+message RoleOnlineNotify {
+    required online_state_room state = 1;
+}
+
+message RoomInfo {
+    required uint32 room_id         = 1; // 房间号
+    required RoomType room_type = 2; // 房间类型
+    required RoomOption option      = 3; // 房间属性
+}
+
+// deprecated. 获取房间列表用的
+message RoomListInfo {
+    required uint32 lvlel       = 1;
+    required string name        = 2; // 描述
+    required uint32 betx        = 3; // 底注
+    required uint32 min_coin    = 4; // 最低准入金币数
+}
+
+message RoleInfo {
+    required uint64 uid         = 1; // 玩家ID
+    required string nickname    = 2; // 用户昵称
+    required string logo_icon   = 3; // 用户头像
+	required int32 sexual		= 4; // 性别
+    required int32 seat_id     	= 5; // 座位号
+    required int32 status      	= 6; // 玩家状态 1:正常 2:断线 3:连接中
+    required int32 score        = 7; // 分数
+}
+
+// 发送是否答应解散房间
+message AgreeDismissReq {
+    required uint32 seat = 1; // 方位
+    required bool isAgree = 2; // 是否同意
+}
+
+//玩家解散同意与否
+message DismissStatus
+{
+    optional uint32 seat    = 1; // 方位
+    optional bool isagree   = 2; //是否同意
+}
+
+// 接收其他玩家是否答应解散房间
+message AgreeDismissResp {
+    required uint32 seat                = 1; // 方位
+    required bool isAgree               = 2; // 是否同意
+    repeated DismissStatus dismiss_list = 3; // 整个房间内的解散与否状态(字段2为true时读取)
+}
+
+// 踢人
+message KickRoleReq {
+    required uint32 victim_seat = 1;
+}
+
+message KickRoleNotify {
+    required uint32 seat = 1; // 离开的座位号
+}
+
+// 玉林
+message YLOption
+{
+	optional int32 useType 	= 1;     	// 用牌
+    optional int32 wanFaType = 2;       // 玩法 1:无鬼加陪,2:大胡加番,4:可接炮胡,8:可杠上炮 16抢杠包三家 32杠上花包三家,64:258做将,128:258做将加番,256:胡258加番,512:清一色加番,1024:无鬼加番,2048:大胡可点炮
+	optional int32 maiMaType = 3; 		// 买码类型
+}
+
+// 博白
+message BBOption
+{
+    optional int32 useType = 1;     	// 用牌
+	optional int32 wanFaType = 2;       // 玩法 1:无鬼加陪,2:大胡加番,4:可接炮胡,8:可杠上炮 16抢杠包三家 32杠上花包三家,64:258做将,128:258做将加番,256:胡258加番,512:清一色加番,1024:无鬼加番,2048:大胡可点炮
+	optional int32 maiMaType = 3; 		// 买码类型
+}
+
+// 陆川
+message LCOption
+{
+    optional int32 useType = 1;     	// 用牌
+	optional int32 wanFaType = 2;       // 玩法 1:无鬼加陪,2:大胡加番,4:可接炮胡,8:可杠上炮 16抢杠包三家 32杠上花包三家,64:258做将,128:258做将加番,256:胡258加番,512:清一色加番,1024:无鬼加番,2048:大胡可点炮
+	optional int32 maiMaType = 3; 		// 买码类型
+}
+
+// 血战
+message XZOption
+{
+	optional int32 mode		= 1;		// 模式 1:换三张,2:呼叫转移
+	optional int32 zimo		= 2;		// 1自摸不加倍 2自摸加底 3自摸加倍
+	optional int32 diangang = 3;		// 1:点杠花当自摸,2:点杠花当点炮
+    optional int32 wanFaType = 4;       // 玩法 1:
+	optional int32 multi	= 5;		// 0：无,1:8倍,2:16倍,3:32倍
+}
+
+// 血流
+message XLOption
+{
+	optional int32 mode		= 1;		// 模式
+	optional int32 zimo		= 2;		// 自摸加倍
+	optional int32 diangang = 3;		// 1:点杠花当自摸,2:点杠花当点炮
+    optional int32 wanFaType = 4;       // 玩法 1:
+	optional int32 multi	= 5;		// 0：无,1:8倍,2:16倍,3:32倍
+}
+
+message RoomOption {
+	optional int32 game_type 		= 1; // 什么游戏
+	optional int32 renShuType 		= 2; // 人数类型1:2人,2:3人,
+	optional int32 payType			= 3; // 支付类型1 房主,2 AA
+	optional int32 baseScoreType	= 4; // 底分
+	optional int32 juShuType 		= 5; // 局数
+	optional int32 fengDingType		= 6; // 封顶
+	optional int32 total_pai_num 	= 7; // 总牌数(创建房间后再赋值)
+	optional YLOption yl_option 	= 11; // 
+	optional BBOption bb_option 	= 12; // 
+	optional LCOption lc_option 	= 13; // 
+	optional XZOption xz_option		= 14; // 血战
+	optional XLOption xl_option		= 15; // 血流
+}
+
+// 房卡价格请求
+message RoomCardPriceReq
+{
+    
+}
+
+// 房卡价格回复
+message RoomCardPriceResp
+{
+    repeated uint32 room_cards = 1; //房卡数
+}
+
+// 同步每局基础数据
+message SyncRommInnInfo
+{
+	required int32 inn_id = 1;
+}
+
+// 通知房间已解散
+message NotifyRoomDismiss
+{
+    
+}
+
+message StartRobotReq
+{
+	required uint32 session_id = 1;
+	required uint64 uid = 2;
+}
+
+message StopRobotReq
+{
+	required uint64 uid = 1;
+}
+
+message AddRoomToWs
+{
+	required uint32	room_id = 1;
+	required RoomInfo room_info = 2;
+	repeated RoleInfo role_list = 3;
+}
+
+message UpdateRoomToWs
+{
+	required uint32	room_id = 1;
+	repeated RoleInfo role_list = 2;
+}
+
+message RemoveRoomToWs
+{
+	required uint32	room_id = 1;
+}
+
+message NtCoinNotenough
+{
+
+}
+

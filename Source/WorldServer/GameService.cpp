@@ -1,12 +1,22 @@
-#include "WorldServer_PCH.h"
+#include "GameService.h"
+#include "NetIncludes.h"
+#include "NetMsgHandler.h"
+#include "DBConnection.h"
+#include "CSortsManager.hpp"
+#include "COnlineRecord.h"
+#include "MyHttpServer.h"
+#include "WorldUserMgr.h"
+#include "OfflineUserMgr.h"
+#include "MessageMgr.h"
+#include "SceneRoomMgr.h"
 
-
-GameService::GameService():zNetSerivce(H::logger->getName())
+GameService::GameService()
+	:zNetSerivce(H::logger->getName())
 {
-	dbCoon = NULL;
-	netioTaskTimer = NULL;
-	timeTickTaskTimer = NULL;
-	H::timeTick = new zTimeTick();
+	mWorldUserMgr = new WorldUserMgr();
+	mOfflineUserMgr = new OfflineUserMgr();
+	mMessageMgr = new MessageMgr();
+	mSceneRoomMgr = new SceneRoomMgr();
 }
 
 GameService::~GameService()
@@ -16,7 +26,11 @@ GameService::~GameService()
 
 bool GameService::run()
 {
-	SSleep(10);
+#ifdef WIN32
+	Sleep(MAIN_LOOP_TIME);
+#else
+	usleep(MAIN_LOOP_TIME);
+#endif
 	return true;
 }
 
@@ -25,128 +39,127 @@ void GameService::finaly()
 
 }
 
+
+bool GameService::doBindServer(const ::config::SerivceInfo& info)
+{
+	bool bResult = SessionMgr()->bind(this,info,
+		boost::bind(&NetMsgHandler::OnNetMsgEnter, NetMsgHandler::Instance(), _1),
+		boost::bind(&NetMsgHandler::OnNetMsg, NetMsgHandler::Instance(), _1, _2, _3),
+		boost::bind(&NetMsgHandler::OnNetMsgExit, NetMsgHandler::Instance(), _1)
+		);
+	if (!bResult)
+	{
+		H::logger->error("Bind Server Fail!");
+		ASSERT(0);
+		return false;
+	}
+	return true;
+}
+
+bool GameService::doConnectServer(const ::config::SerivceInfo& info)
+{
+	zSession* session = SessionMgr()->connect(this,info,
+		boost::bind(&NetMsgHandler::OnNetMsgEnter, NetMsgHandler::Instance(), _1),
+		boost::bind(&NetMsgHandler::OnNetMsg, NetMsgHandler::Instance(), _1, _2, _3),
+		boost::bind(&NetMsgHandler::OnNetMsgExit, NetMsgHandler::Instance(), _1)
+		);
+	if (!session)
+	{
+		H::logger->error("Connect Server Fail!");
+		ASSERT(0);
+		return false;
+	}
+	return true;
+}
+
 void GameService::netioUpdate(const zTaskTimer* timer)
 {
 	/* 与ws,fep,dp之前socket定时处理IO消息，包括消息协议的处理  */
-	sessionMgr.updateIO(timer);
+	SessionMgr()->updateIO(timer);
 
 	/* 玩家定时处理有需要的时间事件(业务逻辑) */
 	if (timer->is1Min())
 	{
 		pingToServer();
-
 	}
 }
 
-void GameService::timerTickUpdate(const zTaskTimer* timer)
+boost::asio::io_service* GameService::GetIoService()
 {
-	if (H::timeTick)
-	{
-		H::timeTick->update();
-	}
-}
-
-void GameService::pingToServer()
-{
-	struct MyPing : public execEntry<zSession>
-	{
-		virtual bool exec(zSession* entry)
-		{
-			if (entry->serverType == zSession::SERVER_TYPE_CLIENT)
-			{
-				static S::SSRqPingToS send;
-				entry->sendMsg(&send, sizeof(send));
-			}
-			return true;
-		}
-	};
-	MyPing ping;
-	sessionMgr.execEveryConn(ping);
+	return  SessionMgr()->GetNetServer(1);
 }
 
 bool GameService::init()
 {
-	// 初始化NetService所有变量等数据 
-
-	serverID = strtoul(H::global["serverid"].c_str(), (char**)NULL, 10);
-	serverType = serverID / 1000;
-
-	bool bResult = serverCfgMgr.loadConfig("serivces.xml");
+	bool bResult = SrvSerivceMgr()->LoadConfig(H::global["confdir"] + "/serivces.xml");
 	if (!bResult)
 	{
-		H::logger->error("Load serivces.xml fail");
+		H::logger->error("Load serivces.xml fail,path=%s", "serivces.xml");
 		return false;
 	}
 
-	const zSerivceCfgMgr::Server* server = serverCfgMgr.getServer(serverID);
-	std::map<int32, zSerivceCfgMgr::Serivce>::const_iterator it = server->serivces.begin();
-	for (;it != server->serivces.end();++it)
+	zServerMgr* pSrvMgr = SrvSerivceMgr()->GetServerMgr(GetServerID());
+	if (!pSrvMgr)
 	{
-		const zSerivceCfgMgr::Serivce& info = it->second;
-		if (stricmp(info.name.c_str(),"server") == 0)
-		{
-			bResult = sessionMgr.bind(info.id, info.ip.c_str(), info.port, info.maxConnects,
-				boost::bind(&NetMsgHandler::OnNetMsgEnter, NetMsgHandler::Instance(), _1),
-				boost::bind(&NetMsgHandler::OnNetMsg, NetMsgHandler::Instance(), _1, _2, _3),
-				boost::bind(&NetMsgHandler::OnNetMsgExit, NetMsgHandler::Instance(), _1)
-			);
-			if (!bResult)
-			{
-				H::logger->error("Bind Server Fail!");
-				ASSERT(0);
-				return false;
-			}
-		}
-		else if (stricmp(info.name.c_str(),"client") == 0)
-		{
-			zSession* session = sessionMgr.connect(info.id, info.ip.c_str(), info.port,
-				boost::bind(&NetMsgHandler::OnNetMsgEnter, NetMsgHandler::Instance(), _1),
-				boost::bind(&NetMsgHandler::OnNetMsg, NetMsgHandler::Instance(), _1, _2, _3),
-				boost::bind(&NetMsgHandler::OnNetMsgExit, NetMsgHandler::Instance(), _1)
-			);
-			if (!session)
-			{
-				H::logger->error("Connect Server Fail!");
-				ASSERT(0);
-				return false;
-			}
-			session->setSessionType(zSession::FOR_WORLD);
-			session->setServerID(info.remoteid);
-		}
-		else if (stricmp(info.name.c_str(), "mysqld") == 0)
-		{
-			if(!dbCoon)
-			{
-				dbCoon = new DbMysql();
-				bResult = dbCoon->Open(info.ip.c_str(),info.port,info.user.c_str(),info.passwd.c_str(),info.value.c_str());
-				if (!bResult)
-				{
-					H::logger->error("Connect DB Fail!");
-					ASSERT(0);
-					return false;
-				}
-			}
-		}
+		H::logger->error("Not found serverID=%u serivces.xml", GetServerID());
+		return false;
 	}
 
-	offlineUserMgr.loadDB();
+	if (!pSrvMgr->StartSerivces(this))
+	{
+		H::logger->error("Server Start Fail!");
+		return false;
+	}
 
-	netioTaskTimer = new zTaskTimer(IO_UPDTATE_TIME, 0, boost::bind(&GameService::netioUpdate,this,_1));
-	netioTaskTimer->start();
+	app = new MyHttpServer("WS_HTTP_SERVER",8090);
+	app->start();
 
-	timeTickTaskTimer = new zTaskTimer(TIMETICK_UPDATE_TIME, 0, boost::bind(&GameService::timerTickUpdate,this,_1));
-	timeTickTaskTimer->start();
+	// 预先加载数据 
+	mOfflineUserMgr->loadDB();
+	CSortsManager::Instance()->loadDB();
 
-	H::logger->error("Server Start Success !");
+	COnlineRecord::Instance()->Init();
+	CSortsManager::Instance()->Init();
+
+	H::logger->info("Server Start Success !");
 
 	return true;
 }
 
+int GameService::CheckMd5(int64_t accid, int32_t keytime, const char* keymd5)
+{
+	// 校验md5
+	std::ostringstream outstr;
+	outstr << accid;
+	outstr << "maj2017";
+	outstr << keytime;
+
+	char md5str[33] = { 0 };
+	EncryptMD5str(md5str,outstr.str().c_str(), outstr.str().length());
+
+	if (STRNICMP(md5str, keymd5, 32) != 0)
+	{
+		H::logger->error("Md5检验失败，密钥不匹配 需要:%s,传入:%s", md5str, keymd5);
+		return 1;
+	}
+
+	if (keytime + 86400 < time(NULL))
+	{
+		H::logger->error("Md5检验失败,时间过期");
+		return 2;
+	}
+
+	H::logger->info("Md5检验成功!");
+
+	return 0;
+}
 
 /* 参数 -c cfg.xml -l 日志文件  */ 
 int main(int argc, const char * argv[])
 {
 	H::logger = new zLogger("WorldServer");
+	H::logger->addLocalFileLog("./ws");
+
 	/* 设置缺省参数  */
 	H::global["datadir"] = "data/";
 	H::global["confdir"] = "conf/";
@@ -156,21 +169,8 @@ int main(int argc, const char * argv[])
 
 	H::logger->setLevel(H::global["log"]);
 
-
-	std::string strServerID = "3001";
-	if (argc > 2)
-	{
-		for (int32 i = 1; i < argc;)
-		{
-			if (strncmp("-c", argv[i], 2) == 0)
-			{
-				strServerID = argv[i + 1];
-			}
-			i += 2;
-		}
-	}
-
-	H::global["serverid"] = strServerID;
+	H::global["confdir"] = (argc >= 2 ? argv[1] : ".");
+	H::global["serverid"] = "3001";
 
 	GameService::getMe().main();
 	GameService::delMe();

@@ -1,4 +1,3 @@
-#include "WorldServer_PCH.h"
 #include "SortsManager.h"
 
 void SortsManager::Serialize(::protobuf::LevelTable& proto)
@@ -6,7 +5,7 @@ void SortsManager::Serialize(::protobuf::LevelTable& proto)
 	//proto.add_levels();
 	std::vector<LevelSortValue> levelTop;
 	levels.GetAllList(levelTop, 100);
-	for (int i = 0; i < levelTop.size(); ++i)
+	for (size_t i = 0; i < levelTop.size(); ++i)
 	{
 		LevelSortValue& item = levelTop[i];
 		::protobuf::LevelRow* row = proto.add_levels();
@@ -21,20 +20,20 @@ void SortsManager::Serialize(::protobuf::LevelTable& proto)
 
 void SortsManager::UnSerialize(const ::protobuf::LevelTable& proto)
 {
-	for (int i = 0; i < proto.levels_size(); ++i)
+	for (size_t i = 0; i < proto.levels_size(); ++i)
 	{
 		const ::protobuf::LevelRow& row = proto.levels(i);
-		int64 uid = row.uid();
-		string name = row.name();
+		int64_t uid = row.uid();
+		std::string name = row.name();
 
 		LevelSortKey key;
 		key.uid = uid;
-		strncpy(key.name, name.c_str(), MAX_NAMESIZE);
+		key.name = name.c_str();
 		key.nLevel = row.level();
 
 		LevelSortValue val;
 		val.uid = uid;
-		strncpy(val.name, name.c_str(), MAX_NAMESIZE);
+		val.name = name;
 		val.nLevel = row.level();
 		val.sortid = row.sortid();
 		val.nLevel = row.level();

@@ -1,0 +1,2612 @@
+
+enum cmd{
+    msg_login       = 1;  // 登录
+	msg_ss			= 2;  // 
+	msg_base        = 10; // 
+    msg_role        = 21; // 个人信息
+    msg_friend      = 22; // 好友
+    msg_room        = 23; // 房间
+	msg_rank        = 24; // 排行榜
+	msg_broadcast   = 25; // 广播
+	msg_shop        = 26; // 商店
+	msg_mail        = 27; // 邮件
+	msg_activity    = 28; // 活动
+	msg_achieve     = 29; // 成就
+	msg_event		= 30; // 事件/邮件
+    msg_maj         = 31; // 房间
+    msg_test        = 32; // 测试模块
+    msg_hist        = 33; // 历史记录
+    msg_gm          = 34; // gm操作
+}
+
+enum c_cmd_activity {
+	get_share_info_req 			= 1; //获取分享信息请求
+	get_share_info_resp 		= 2; //获取分享信息回复
+    share_Report_req 			= 3; //分享完成上报请求
+    share_Report_resp 			= 4; //分享完成上报回复
+    Recv_share_reward_req 		= 5; //领取分享奖励请求
+    Recv_share_reward_resp 		= 6; //领取分享奖励回复
+
+    get_invitation_info_req 	= 7; //获取邀请信息请求
+	get_invitation_info_resp 	= 8; //获取邀请信息回复
+    Recv_invitation_reward_req 	= 9; //领取邀请奖励请求
+    Recv_invitation_reward_resp = 10; //领取邀请奖励回复
+
+    get_binding_agent_info_req 	= 11; //获取已绑定代理请求
+    get_binding_agent_info_resp	= 12; //获取已绑定代理回复
+    binding_agent_req 			= 13; //绑定代理请求
+    binding_agent_resp 			= 14; //绑定代理回复
+
+    Sync_activity_info 			= 15; //同步活动信息
+
+    input_invitation_code_req 	= 17; //输入邀请码请求
+    input_invitation_code_resp 	= 18; //输入邀请码回复
+}
+
+message GetShareInfoReq
+{
+	
+}
+
+message GetShareInfoResp
+{
+	optional uint32 status 		= 1; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 room_card 	= 2; //奖励房卡数
+}
+
+message ShareReportReq
+{
+	
+}
+
+message ShareReportResp
+{
+	optional uint32 share_status  = 1; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 today_status1 = 2; //今天1状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 today_status2 = 3; //今天2状态(0:未分享 1:已分享 2:已领取奖励)
+}
+
+message RecvShareRewardReq
+{
+	
+}
+
+message RecvShareRewardResp
+{
+	enum ErrorCode
+	{
+		SUCCESS = 1; //成功
+		FAIL = 2; //失败
+	}
+
+	required ErrorCode code 	= 1; //结果
+	optional uint32 status 		= 2; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+}
+
+message GetInvitationInfoReq
+{
+	
+}
+
+message GetInvitationInfoResp
+{
+	optional uint32 inv_friend_room_card	= 1; //邀请一位好友可领取房卡数量
+	optional uint32 has_inv_friend_num 		= 2; //已成功邀请好友的数量
+    optional uint32 has_get_room_card   	= 3; //已成功领取房卡的数量
+    optional uint32 can_get_room_card   	= 4; //还可以领取房卡的数量
+
+
+    optional string invitation_player   	= 5; //邀请者名字
+    optional uint32 need_player_games 		= 6; //还需玩的局数
+    optional uint32 reward_room_card 		= 7; //玩完局数的奖励房卡数
+    optional uint32 recv_reward_status 		= 8; //领取奖励状态（0：不可领取 1：可领取 2：已领取）
+}
+
+message RecvInvitationRewardReq
+{
+	optional uint32 reward_type = 1; //邀请奖励类型（1：主动邀请奖励 2：被邀请玩游戏后的奖励）
+}
+
+message RecvInvitationRewardResp
+{
+	enum ErrorCode
+	{
+		SUCCESS = 1; //成功
+		FAIL = 2; //失败
+	}
+
+	required ErrorCode code 			= 1; //结果
+	optional uint32 reward_type 		= 2; //邀请奖励类型（1：主动邀请奖励 2：被邀请玩游戏后的奖励）
+
+    optional uint32 has_get_room_card   = 3; //已成功领取房卡的数量
+    optional uint32 can_get_room_card   = 4; //还可以领取房卡的数量
+
+    optional uint32 recv_reward_status 	= 5; //领取奖励状态（0：不可领取 1：可领取 2：已领取）
+}
+
+message GetBindingAgentInfoReq
+{
+
+}
+
+message GetBindingAgentInfoResp
+{
+	optional uint32 user_id 	= 1; //代理ID
+	optional string name 		= 2; //代理名称
+	optional string wx_account 	= 3; //微信号
+	optional string icon 		= 4; //头像地址
+}
+
+message BindingAgentReq
+{
+	optional uint32 user_id 	= 1; //代理ID
+}
+
+message BindingAgentResp
+{
+	required int32 code 		= 1; //结果
+	optional uint32 user_id 	= 2; //代理ID
+	optional string name 		= 3; //代理名称
+	optional string wx_account 	= 4; //微信号
+	optional string icon 		= 5; //头像地址
+	optional string code_info 	= 6; //错误码描述
+}
+
+message SyncActivityInfo
+{
+	optional uint32 share_status 			= 1; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 inv_can_get_room_card   = 2; //邀请可以领取房卡的数量
+}
+
+message InputInvitationCodeReq
+{
+	optional string invitation_code = 1; //邀请码
+}
+
+message InputInvitationCodeResp
+{
+	optional int32 code 			 = 1; //结果
+    optional uint32 reward_room_card = 2; //玩完局数的奖励房卡数
+	optional string code_info		 = 3;
+}
+
+
+enum c_cmd_base {
+    heartbeat_req = 0;
+    heartbeat_resp = 1;
+    time_req = 3;
+    time_resp = 4;
+}
+
+// 心跳
+message HeartbeatReq {
+}
+
+message HeartbeatResp {
+}
+
+// 时间同步请求
+message TimeReq {
+}
+
+message TimeResp {
+    required uint64 time = 1; // 时间戳(毫秒)
+}
+
+
+// 广播相关，获奖消息广播等
+
+enum c_cmd_bcast {
+    bcast_world_resp = 1; //全局广播
+    bcast_room_resp = 2; //房间广播
+}
+
+// 全局广播信息
+message BcastWorldResp {
+    required string content = 1; // 广播内容
+}
+
+// 房间广播信息
+message BcastRoomResp {
+    required string content = 1; // 广播内容
+}
+
+
+
+enum c_cmd_event {
+	update_event_list 	= 1; // 完整更新事件/邮箱列表
+	add_friend			= 2; // 好友请求事件
+	invite_game			= 4; // 邀请游戏
+	resp_invite_game	= 5; // 回应邀请游戏
+	notice_list_resp  	= 6; // 通告列表返回，登录后返回
+	mail_list_req    	= 7; // 邮件列表请求
+    mail_list_resp   	= 8; // 邮件列表返回
+    mail_opt_req    	= 9; // 邮件操作请求
+    mail_opt_resp   	= 10; // 邮件操作回复
+	tip_nt_resp			= 11;	// 通告前端提示
+}
+
+// 好友请求事件
+message AddFriend {
+	required uint64 uid			= 1; // 发起请求者的uid
+	required string nickname	= 2; // 发起请求者的nickname
+	required uint32 mail_id 	= 3; // 事件唯一码
+}
+
+// 回应请求事件
+message RespAddFriend {
+	required uint32 mail_id = 1; // 事件唯一码
+	required bool accept = 2; // 是否同意
+}
+
+// 邀请游戏
+message InviteGame {
+	required uint64 uid			= 1; // 邀请者的uid
+	required string nickname	= 2; // 邀请者的nickname
+	required uint32 room_no		= 3; // 桌号
+	required uint32 mail_id 	= 4; // 事件唯一码
+}
+
+// 回应邀请游戏
+message RespInviteGame {
+	required uint32 mail_id = 1; // 事件唯一码
+	required bool accept = 2; // 是否同意
+}
+
+// 领取金币等
+
+// 更新事件的消息
+message UpdateEventList {
+	repeated EventWrap events = 1;
+}
+
+// 消息包裹结果，用于更新消息
+message EventWrap {
+	optional AddFriend add_friend = 1;
+	optional InviteGame invite_game = 2;
+}
+
+
+enum opt_type_event
+{
+	opt_t_all_list = 1; // 刷新整个公告列表数据
+	opt_t_new_one = 2;	// 更新或添加单个公告
+}
+
+message NoticeListResp
+{
+	required opt_type_event type = 1; 
+	repeated NoticeS notice_list = 2;
+}
+
+message NoticeS
+{
+	required uint64 id = 1;				// id
+	required string content = 2;		// 播放内容
+	required uint64 begin_time = 3;		// 开始时间
+	required uint64 break_time = 4;		// 中止时间 
+	required uint32 minute_time = 5;  	// 播放时间点分
+	required uint32 sort_level = 6;		// 优化级
+}
+
+// 所有错误/提示码---部分是前端处理
+enum tip_type
+{
+	tip_t_version = 1;
+	tip_t_exit = 2;
+	tip_t_needconn = 3;
+	tip_t_disconn = 4;
+	tip_t_accbad = 5;
+	tip_t_acclogined = 6;
+	tip_t_weixinfail = 7;
+	tip_t_qqfail = 8;
+	tip_t_accchange = 9;
+	tip_t_roomcard_notenough = 10;
+	tip_t_roomid_fail = 11;
+	tip_t_room_full = 12;
+	tip_t_room_join = 13;
+	tip_t_room_exit = 14;
+	tip_t_room_disconn = 15;
+	tip_t_room_reconn = 16;
+	tip_t_room_startbtn = 17;
+	tip_t_room_refusebtn = 18;
+	tip_t_room_disband = 19;
+	tip_t_room_kicked = 20;
+	tip_t_room_apply_disband = 21;
+	tip_t_room_disbanded = 22;
+	tip_t_room_disconn_disband = 23;
+	tip_t_room_apple_disband_must = 24;
+	tip_t_room_quick_msg_must = 25;
+	tip_t_donwload_fail = 26;
+}
+
+// 提示码通知前端
+message TipResp
+{
+	required tip_type type = 1; // 提示类型
+	optional string args = 2; 	// 参数,该类型永远为a,b,c格式，前端根据文本进行选择前面的参数使用
+}
+
+
+
+
+//获奖名单
+enum c_cmd_friend {
+    friend_info_req		= 1;
+    friend_info_resp	= 2;
+    add_friend_req		= 3;
+	add_friend_resp		= 4;
+    del_friend_req		= 5;
+	del_friend_resp		= 6;
+	update_friend_list  = 7;
+	invite_game			= 8; // 邀请好友游戏
+	follow_game			= 9; // 跟随好友游戏
+	friend_list_req		= 10;
+	friend_list_resp	= 11;
+}
+
+enum online_state {
+	off_line	= 0; // 离线
+	on_line		= 1; // 空闲
+	wait_game	= 2; // 等待游戏（比如人不够）
+	in_game		= 3; // 正在游戏
+}
+
+
+// 获取某一个好友的详细信息
+message FriendInfoReq {
+	required uint64 uid = 1;
+}
+
+message FriendInfoResp {
+    required Friend info = 1;
+}
+
+// 加好友
+message AddFriendReq {
+    required uint64 id = 1; // 唯一Id
+}
+
+// 添加好友结果
+message AddFriendResp {
+	enum ErrCode {
+		OK = 1;
+		FAIL = 2;
+		FRIEND_FULL = 3; // 自己好友列表已满
+		INVITEE_FULL = 4; // 被邀请者好友列表满了
+	}
+	required ErrCode code = 1; // 是否通过
+	optional FriendStatus info = 2; // 朋友信息
+}
+
+// 删除好友
+message DelFriendReq {
+    required uint64 id = 1; // 唯一Id
+}
+
+message DelFriendResp {
+	required uint64 id = 1; // 被删除的uid
+}
+
+// 好友列表变更
+message FriendListUpdate {
+	repeated FriendStatus info = 1;
+}
+
+//message InviteFriGame {
+//	required uint64 invitee = 1; // 被邀请者
+//	required uint32 room_no = 2; // 房间号
+//}
+
+message FollowGame {
+	required uint32 friend_id = 1; // 跟随好友x
+}
+
+message FriendListReq {
+}
+
+message FriendListResp {
+	repeated FriendStatus info = 1;
+}
+
+/////////////////////////////////////  子数据结构  /////////////////////////////////////
+
+// 玩家信息(简单)
+message FriendStatus {
+    required uint64 id = 1; // 唯一Id
+    required string nickname = 2; // 昵称
+    required uint32 logo_icon = 3; // 头像
+    required online_state online_state = 4; // 玩家状态
+}
+
+// 玩家信息(详情)
+message Friend {
+    required uint64 id 				= 1; // 唯一Id
+    required string nickname 		= 2; // 昵称
+    required uint32 logo_icon 		= 3; // 头像
+	required uint32 max_win_streak 	= 4; //最高连胜
+	required uint32 win_curr_week 	= 5; // 本周胡牌数
+	required uint32 total_inn 		= 6; // 总局数
+	required uint32 total_win 		= 7; // 总胡牌数
+	required uint32 max_win_score 	= 8; // 最高胡牌番数
+	required uint32 max_lose_score 	= 9; // 最高输番数
+	required uint32 coin 			= 10; // 金币数
+}
+
+
+
+
+enum c_cmd_gm {
+    remaining_card_req = 0;
+    remaining_card_resp = 1;
+    assign_all_cards_req = 2;
+    assign_all_cards_resp = 3;
+    assign_next_card_req = 4;
+    assign_next_card_resp = 5;
+
+    gm_common_oper_req = 6;
+    gm_common_oper_resp = 7;
+}
+
+enum seat_type {
+    zj = 0;//庄家
+    zx = 1;//庄下
+    zd = 2;//庄对
+    zs = 3;//庄上
+}
+
+// 请求所有未发出来的牌
+message RemainingCardsReq {
+}
+
+// 请求剩余牌信息的回复报文
+message RemainingCardsResp {
+    optional uint32 ret = 1;//成功返回1
+    repeated uint32 cards = 2;//所有未发出来的牌
+}
+
+//请求指定初始牌型
+message AssignAllCardsReq {
+    repeated uint32 zjCards = 1;//庄家
+    repeated uint32 zxCards = 2;//庄下
+    repeated uint32 zdCards = 3;//庄对
+    repeated uint32 zsCards = 4;//庄上
+    optional uint32 nextCard = 5;//庄家的第一张摸牌
+}
+
+//指定初始牌型的回复
+message AssignAllCardsResp {
+    optional uint32 ret = 1;
+}
+
+//请求指定下一张牌
+message AssignNextCardReq {
+    optional seat_type  seat = 1;//0-3分别为庄家、庄下、庄对、庄上
+    optional uint32     card = 2;//请求的下一张牌，需要判断是否被摸走(不需要特意保留)
+}
+
+//指定下一张牌的回复
+message AssignNextCardResp {
+    optional uint32 ret = 1;
+}
+
+//GM通用的操作请求
+message GMCommonOperReq
+{
+    optional string content = 1; //字符串内容
+}
+
+//GM通用的操作回复
+message GMCommonOperResp
+{
+    optional uint32 ret = 1; //结果
+}
+
+
+
+
+
+enum c_cmd_hist {
+    history_list_req    = 1; // 历史记录请求
+    history_list_resp   = 2; // 历史记录回复
+    replay_req          = 3; // 回放请求
+    replay_resp         = 4; // 回放回复
+	history_room_req	= 5; // 查看某房间内的所有局请求
+	history_room_resp	= 6; // 查看某房间内的所有局回复
+	history_inn_req		= 7; // 查看某局的结果请求
+	history_inn_resp 	= 8; // 查看某局的结果回复
+}
+
+enum req_type
+{
+	room_list = 1; // 当前房间内的战绩查询
+	total_list =2; // 主界面面战绩查询
+}
+
+message HistoryListReq 
+{
+    required req_type type = 1;	// 查询类型
+    required uint64 start_index  = 2; // 记录开始序号, 用于大量数据时提高性能，从该ID后开始返回
+}
+
+message HistoryListResp {
+	required req_type type = 1;	// 查询类型
+    repeated HistoryRecord record_list   = 2;
+}
+
+message HistoryRoomReq 
+{
+    required req_type type = 1;	// 查询类型
+	required uint64 record_id  = 2; // 记录id
+}
+
+// 房间内所有局数的数据
+message HistoryRoomResp 
+{
+	required req_type type 					= 1; // 查询类型
+    required uint64 record_id             	= 2; // 记录ID
+	required uint32 room_id             	= 3; // 房间ID
+    required RoomOption option 	= 4; // option
+    repeated InnRecord inn_list         	= 5; // 单局游戏数据(InnRecord里面GameResultSeat中的seat和total_score有数据)
+	repeated SeatTotalScore score_list  	= 6; // 番数列表
+}
+
+//  查看某局的结果请求
+message HistoryInnReq
+{
+    required uint64 record_id = 1;  // 记录ID
+    required uint32 inn_id = 2; 	// 局数ID
+}
+
+// 查看某局的结果回复
+message HistoryInnResp
+{
+    required uint64 record_id             	= 2; // 记录ID
+	required uint32 room_id             	= 3; // 房间ID
+    required RoomOption option 	= 4; // option
+    required InnRecord 	inn		        	= 5; // 单局游戏数据
+	repeated SeatTotalScore score_list  	= 6; // 番数列表
+}
+
+// 回放请求
+message ReplayReq {
+    required uint64 record_id = 1;  // 记录ID
+    required uint32 inn_id = 2; 	// 局数ID
+}
+
+// 回放事件
+message ReplayResp {
+    // # 通用信息
+    required RoomInfo room_info 		= 1; // 房间信息
+    repeated RoleInfo user_info_list 	= 2; // 用户基本信息
+
+    // # 游戏信息
+    required uint32 banker_seat         		= 3; // 庄家座位号
+    required uint32 dice                		= 4; // 骰子
+    repeated SeatInfo seat_list 		= 5; // 初始手牌
+    repeated ReplayAction action_list   		= 6; // 操作序列
+}
+
+/////////////////////////////////////  子数据结构[客户端]  ////////////////////////////////////
+
+// 单条历史记录（对应整场游戏）
+message HistoryRecord {
+    required uint64 record_id             	= 1; // 记录ID
+	required uint32 room_id             	= 2; // 房间ID
+    required RoomOption option 	= 3; // option
+    required uint64 time                 	= 4; // 游戏时间的unix毫秒表示(UTC时间）
+    repeated SeatTotalScore score_list  	= 5; // 番数列表
+}
+
+// 每个位置的总输赢
+message SeatTotalScore {
+    required uint32 seat_id 	= 1; // 座位号
+    required int32 score    	= 2; // 番数
+    required string nickname 	= 3; // 昵称
+	optional string actor_addr	= 4; // 头像地址
+}
+
+// 一小局游戏
+message InnRecord {
+    required uint32 inn_id = 1; // 局数ID
+    repeated GameResultSeat seat_result = 2; // 座位数据
+	required uint32 banker_seat = 3; // 庄家座位号
+	required uint32 dice      	= 4; // 骰子
+	optional uint32 close_type  = 5; // 解散类型 0正常,1手动解散,2超时解散,3无人解散
+}
+
+// 回放操作
+message ReplayAction {
+    required event_type event   = 1; // 事件
+    required uint32 actor_seat          = 2; // 发起动作的人
+    optional int32 victim_seat          = 3;  // 被操作者，无时-1
+    optional HuInfo hu_info     = 4; // 胡牌信息
+    repeated uint32 event_tile_list     = 5; // 事件牌列表, 比如碰就有三个牌
+	optional int32 desk_tile_count      = 6; // 剩余牌的数量，当出牌事件时才有效
+}
+
+/////////////////////////////////////////// 子数据结构[服务端] //////////////////////////////////
+
+message HistoryRecordS
+{
+    required uint64 record_id           = 1; // 记录ID
+	optional uint32 room_id             = 2; // 房间ID
+    optional RoomInfo room_info 		= 3; // 房间信息
+	optional RoleInfoListS role_info	= 4; // 选手信息
+    optional uint64 time             	= 5; // 游戏时间的unix毫秒表示(UTC时间）
+    optional InnRecordListS innrecord 	= 6; // 单局游戏数据
+    optional SeatTotalS seat_total		= 7; // 番数列表
+	optional InnReplayActionListS inn_replay = 8; // 回放列表
+}
+
+message RoleInfoListS
+{
+	repeated RoleInfoS role_list = 1; // 角色列表
+}
+
+message RoleInfoS
+{
+	required uint32 seat = 1;
+	required uint64 uid = 2;
+	required string nick = 3;
+	optional string actor_addr  = 4; // 头像地址
+}
+
+message InnRecordListS
+{
+	repeated InnRecordS inn_list        = 1; // 单局游戏数据
+}
+
+message InnReplayActionListS
+{
+	repeated InnReplayActionS replay_list = 1;
+}
+
+// 一小局游戏
+message InnRecordS 
+{
+    required int32 inn_id 	= 1; // 局数ID
+	required uint32 banker_seat	= 2; // 庄家座位号
+    required uint32 dice      	= 3; // 骰子
+	repeated SeatInfo seat_info = 4; // 初始手牌情况
+    repeated GameResultSeat seat_result = 5; // 座位数据
+	optional int32 close_type = 6; // 解散类型 0正常,1手动解散,2超时解散,3无人解散
+}
+
+//一小局回放
+message InnReplayActionS
+{
+	required int32 inn_id 	= 1; // 局数ID
+	repeated ReplayAction replay_list	= 2; // 出牌记录
+}
+
+message SeatTotalS
+{
+	repeated SeatTotalScoreS score_list = 1; // 番数列表
+}
+
+// 每个位置的总输赢
+message SeatTotalScoreS 
+{
+    required uint32 seat_id 	= 1; // 座位号
+    required int32 score    	= 2; // 番数
+}
+
+
+
+
+
+
+enum c_cmd_login {
+    login_weixin_req        = 1;
+    login_resp              = 2;
+    login_account_req       = 3;
+    prelogin_account_req    = 4;
+    prelogin_account_resp   = 5;
+    kictout_resp            = 6;
+    logout_req              = 7;
+    login_player_req        = 8;
+    login_player_resp       = 9;
+    sdk_token_req           = 10;
+    sdk_token_resp          = 11;
+    notify_another_login    = 12; //通知异地登陆
+	notify_dis_conntion		= 13; //断开连接
+    max = 20;
+}
+
+enum login_code {
+    SUCCESS = 1; // 成功
+    FAIL = 2; // 失败
+    ERR_ACCOUNT = 3; // 错误账号
+    TOKEN_TIMEOUT = 4; // token过期
+    TOKEN_ERROR = 5; // token错误
+    OTHER_LOGIN = 6; // 异地登陆
+    FORCE_KICTOUT = 7; // 强制踢下线
+    DATA_EXCEPTION = 8; // 数据异常
+	PLAT_JOSNSTR_ERROR = 9; // 平台json错误
+	PLAT_CHECK_FAIL	= 10;	// 平台检验失败
+	PLAT_ARG_NOTENOUGH = 11;// 平台失败缺少
+	MYSQL_ISNULL = 12;		// 数据库句柄为空
+	SQL_ERROR = 13;			// SQL出错 
+	PLAT_UNNKOWN = 14;		// 未知错误
+	SCENE_NOT_FOUND = 15;	// 场景找不到
+	WSUSER_IS_NULL	= 16;	// 世界用户为空
+	PROXY_ACCESS_NOT_LOGIN = 17; // 代码帐号不能登录
+	NOT_BING_SERVER  = 18; // 未绑定服务器器
+	PLAT_REQ_TIMEOUT = 19; // 平台超时
+	SERVER_IS_BREPAIRING = 20; // 服务器维护中
+}
+
+// 微信登录
+message LoginWeixinReq {
+    required string token = 2;
+}
+
+message LoginResp {
+    required login_code code    = 1; //错误码
+    optional string ip          = 2; //游戏服IP
+    optional uint32 port        = 3; //游戏服端口
+}
+
+// 账号登录
+message LoginAccountReq {
+    required string account = 1; // 账号
+    required string password = 2; // 密码
+}
+
+message KictoutResp {
+    required login_code code = 1;
+}
+
+// 预登陆（先不做）
+//message PreloginAccountReq {
+//}
+
+// 预登陆回复（先不做）
+/*message PreloginAccountResp {
+    required string salt = 1; // 盐
+    required int32 server_time = 2; // 服务器当前时间
+    required int32 nonce = 3; // number once
+}*/
+message LogoutReq {
+}
+
+// 玩家数据请求
+message LoginPlayerReq
+{
+    optional string account     = 1; //账号
+}
+
+// 角色数据回复
+message LoginPlayerResp
+{
+    required login_code code    = 1; //错误码
+    optional bool is_reconnect  = 2; //是否重连
+    optional Role role = 3; //角色数据
+	optional uint64 srv_time 	= 4; //服务器时间
+	optional bool is_free		= 5; //是否免房卡
+}
+
+// SDK token 请求
+message SDKTokenReq
+{
+    optional string token       = 1; //token值
+}
+
+// SDK token 回复
+message SDKTokenResp
+{
+    optional int32 result       = 1; //结果
+    optional string ip          = 2; //游戏服IP
+    optional uint32 port        = 3; //游戏服端口
+    optional string account     = 4; //账号
+    optional string icon_add    = 5; //头像地址
+}
+
+//通知异地登陆
+message NotifyAnotherLogin
+{
+    
+}
+
+// 玩家断开连接
+message NotifyPlayerExit
+{
+	
+}
+
+
+
+/*
+enum c_cmd_mail {
+	// 转动到event中
+}
+*/
+
+enum opt_type_mail
+{
+	opt_t_read 		= 1;  // 查看邮件
+	opt_t_fetch 	= 2;  // 领取奖励
+	opt_t_delete	= 3;  // 删除
+}
+
+enum mark_type
+{
+	mark_t_unread 	= 1; // 未读
+	mark_t_readed 	= 2; // 已读
+	mark_t_deleted 	= 3; // 已删除
+}
+
+
+enum mail_type
+{
+	mail_t_system_one = 1; // 系统个人邮件
+	mail_t_system_all = 2; // 系统全服邮件
+}
+
+message MailListReq 
+{
+    required uint64 start_index  = 1; // 记录开始序号, 用于大量数据时提高性能，从该ID后开始返回
+}
+
+enum from_type
+{
+	from_t_list = 1; // 列表请求
+	from_t_add  = 2; // 新增 
+}
+
+message MailListResp {
+    required from_type type = 1; // 来源类型 
+    repeated MailRecordC record_list  = 2;
+}
+
+// 操作请求
+message MailOptReq {
+    required uint64 id = 1;  	// 邮件ID
+    required opt_type_mail opt = 2; 	// 操作类型
+}
+
+/*
+// 操作返回
+message MailOptResp {
+	required uint64 id = 1;		// 邮件ID
+	required opt_type_mail opt = 2; 	// 操作类型
+	required mark_type mark = 3;// 邮件操作的类型
+	required uint64 fetch_time = 4;// 领取时间 
+}
+*/
+
+message MailRecordC
+{
+	required uint64 id    	= 1; // 记录ID
+	required mail_type type = 2;	// 邮件类型
+	required string from_name = 3;// 发送者名字
+	required string title	= 4; // 标题
+    required string content = 5;  // 内容
+    required int32 room_cards  = 6; // 房卡
+    required mark_type mark	= 7; // 标记
+	required uint64 create_time = 8;// 生成时间
+	required uint64 fetch_time = 9; // 领取奖励时间
+}
+
+// 邮件数据
+message MailRecordS
+{
+    required uint64 id    	= 1; // 记录ID
+	required int32 type = 2;	// 邮件类型
+	required uint64 from_id	= 3; // 发送者ID
+	required string from_name = 4;// 发送者名字
+	required uint64 to_id	= 5;
+	required string to_name	= 6;
+	required string title	= 7; // 标题
+    required string content = 8;  // 内容
+    required int32 room_cards  = 9; // 房卡
+    required int32 mark	= 10; // 标记
+	required uint64 create_time = 11;// 生成时间
+	required uint32 fetch_time = 12;// 领取奖励时间
+}
+
+// 邮件公共日志
+message MailSystemLogS
+{
+	required uint64 id = 1; // 记录ID
+	required uint64 mail_id = 2;// 邮件ID
+	required uint64 uid = 3;// 用户ID
+	required int32 mark	= 4; // 标记
+	required uint64 create_time = 5;// 生成时间
+	required uint32 fetch_time = 6;// 领取奖励时间
+}
+
+
+
+
+
+enum c_cmd {
+    none                = 0;
+    start_game_req      = 1;
+    start_round_resp    = 2; // 进入一局
+    discard_tile_req    = 3;
+    discard_tile_resp   = 4;
+    deal_tile_notify    = 5;
+    response_req        = 6;
+    response_resp       = 7;
+    game_result_notify  = 8;  // 单局结算
+    disover_card_req    = 9;
+    total_result_notify = 10; // 总结算
+    reconnect_req       = 11; // 重连
+    reconnect_resp      = 12; // 重连回复
+    reconnect_ready_req = 13; // 客户端重连已完成，游戏重新开始
+	ask_start_game      = 14; // 询问其他人是否开始游戏
+	accept_start_req    = 15; // 客户端回复服务器询问
+	accept_start_notify = 16; // 服务器通知其他客户端的选择
+	prepare_round_req	= 17; // 准备
+	prepare_round_notify = 18; // 客户端准备状态通知
+    reconnect_sync_card = 19; //重连加载完成后同步(其他人)的牌
+    sync_player_status  = 20; //同步玩家状态
+	quickmessage_req 	= 21;// 快捷说话收到前端消息
+	quickmessage_resp 	= 22;// 快捷说话转发前端消息
+    notify_player_event = 23; //通知玩家事件
+	notify_ghostpai_result = 24; //翻双鬼的结果通知
+	notify_genzhuang_success = 25; //跟庄成功结果通知
+	ask_start_sanzhang  = 29; //换三张
+	huan_sanzhang_req   = 30; //选择换三张
+	huan_sanzhang_notify= 31; //都提交完后得到的三张
+	ask_start_dingque	= 32; //开始定缺
+	dingque_req			= 33; //定缺请求
+	dingque_notify		= 34; //定缺通知（广播）
+	hu_pailist_notify	= 35; //胡牌的牌通知
+	ting_pai_discard_notify= 36;
+	ting_pai_waite_notify = 37;
+	my_scorelist_req 	= 38;
+	my_scorelist_resp 	= 39;
+	my_ting_pai_req		= 40;
+	my_ting_pai_resp	= 41;
+	reconnect_other_ready_req = 42;
+
+	robot_reconnect_resp = 50; //
+	robot_start_round_resp = 51;
+}
+
+enum op_code {
+    ok          = 0;
+    fail        = 1;
+    not_exist   = 2;
+}
+
+// 麻将类型
+enum maj_type
+{
+	maj_t_none		= 0;  // 无
+	maj_t_yulin	  	= 1;  // 玉林
+	maj_t_bobai		= 2;  // 博白
+	maj_t_luchuan	= 3;  // 陆川
+}
+
+// 开始游戏请求
+message StartGameReq {
+}
+
+// 开始请求的回复报文
+message StartRoundResp {
+	optional uint32 deny_seat = 1;
+    optional uint32 dice = 2; //骰子的点数 个位数代表一个，十位数代表一个，比如66代表两个6
+    repeated uint32 tile_list = 3; // 牌-自己
+    optional uint32 banker_seat_id = 4; // 庄家座位号
+    repeated event_type events = 5;
+}
+
+// 打牌
+message DiscardReq {
+    required uint32 tile = 1;
+}
+
+// 事件信息
+message EventInfo
+{
+	required event_type event_t = 1; 	// 事件类型,胡，杠，碰
+	repeated uint32	event_pai 	= 2;	// 事件关联牌
+}
+
+// 同步到每个人
+message DiscardResp {
+    required uint32 seat  = 1;
+    required uint32 tile = 2;
+    required uint32 tileLeftCount = 3;
+    repeated EventInfo eventList = 4; // 可进行的操作, 比如可以碰，可以杠，
+}
+
+//提示牌
+message PromptPai
+{
+    optional uint32 hupai       = 1; //听牌后胡的牌
+	optional uint32 paidest  	= 2; //从桌面上来看，剩余数量
+    optional uint32 painum      = 3; //牌的数量 
+    optional hu_type hutype     = 4; //听牌后胡牌类型
+    optional uint32 mulit       = 5; //胡牌类型对应的分数
+}
+
+//听牌结构
+message TingPai
+{
+    optional uint32 dicard          = 1; //出的牌
+    repeated PromptPai prompt_list  = 2; //提示牌列表
+}
+
+// 听牌协议（要出牌的时候）
+message TingPaiDiscardNotify
+{
+    repeated TingPai ting_list 	= 1; //听牌列表
+}
+
+// 听牌协议（要等牌的时候）
+message TingPaiWaiteNotify
+{
+	repeated PromptPai prompt_list  = 1; //提示牌列表
+}
+
+// 发牌
+message DealNotify{
+    required uint32 seat = 1;
+    optional uint32 tile = 2; // 发牌人知道具体牌，其他人只知道发了一张牌
+    required bool tail = 3; // 是不是从后抓的牌
+    repeated EventInfo eventList = 4; // 可进行的操作, 比如可以杠
+	required int32 desk_tile_count = 5; // 桌面还剩多少牌
+}
+
+// 操作事件(碰、杠、胡……)
+message ResponseEventReq {
+    required event_type event = 1;
+	optional uint32 tile = 2; // 只有暗杠时才用得到
+}
+
+// 操作事件的回复
+message ResponseEventResp {
+    required op_code code           = 1; // 操作码
+    required uint32 seat            = 2; // 操作人座位
+    required event_type event       = 3; // 本次事件（碰 杠 胡等）
+    repeated uint32 eventTileList   = 4; // 事件牌列表, 比如碰就有三个牌
+    optional HuInfo hu_info         = 5; // 胡牌信息
+    optional uint32 victim_seat     = 6; // 放炮、放杠人的座位
+    repeated event_type triggerEvents = 7; // 触发的事件，比如抢杠胡
+	optional uint32 tileLeftCount 	= 8; // 剩余多少张牌
+	
+}
+
+// 单局游戏结果
+message GameResultNotify {
+	required bool is_end_all 		= 1; // 是否已经打完
+	required uint32 this_inn_id 	= 2; // 当前是第几局
+    repeated GameResultSeat seats 	= 3; // 座位情况
+}
+
+// 发牌完毕
+message DisCardOver {
+}
+
+// 本场所有（比如16局）牌局的结果汇总
+message TotalResultNotify {
+    repeated TotalResultSeat seats = 1; // 座位情况
+}
+
+// 重连加载数据请求
+message ReconnectLoadReq {
+}
+
+message ReconnectPrepare {
+    required uint32 seat            = 1; // 座位号
+    required bool accept            = 2; // 是否同意
+    required player_status pstatus  = 3; // 玩家状态
+}
+
+// 重连加载数据回复, 这是游戏数据更新
+message ReconnectLoadResp {
+    required bool is_start          = 1; // 是否开始(没有开始读取 ReconnectPrepare)
+    optional SeatInfo self_seat     = 2; // 自己牌的数据
+	optional uint32 banker_seat     = 3; // 房主位置
+	optional uint32 dice            = 4; // 骰子
+	optional int32 desk_tile_count  = 5; // 桌面还剩多少牌
+	repeated EventInfo self_events  = 6; // 用户事件, 自己是否需要碰杠胡操作
+	optional uint32 curr_tile       = 7; // 当前牌
+	optional bool self_discard      = 8; // 是否自己打牌
+    optional bool send_disover      = 9; // 是否发送了disover消息
+    repeated ReconnectPrepare prepare_info = 10; // 游戏准备的重连信息
+}
+
+// 客户端重连已完成
+message ReconnectReadyReq {
+}
+
+// 重连加载完成后同步(其他人)的牌
+message ReconnectSyncCard
+{
+    required int32 desk_tile_count = 1;  // 桌面还剩多少牌
+    repeated SeatInfo seats = 2; // 各个座位信息
+}
+
+// 重连加载完成后同步(其他人)的牌完成通知
+message ReconnectOtherReadyReq {
+
+}
+
+enum player_status 
+{
+    normal              = 1; // 正常
+    disconnect          = 2; // 断线
+    reconnect           = 3; // 连接中
+}
+
+// 同步玩家状态
+message SyncPlayerStatus
+{
+    required uint32 seat = 1; //玩家位置
+    required player_status pstatus = 2; //玩家状态    
+}
+
+// 单个位置信息
+message GpsSeatInfo
+{	
+	required int32 seat_id = 1;	// 座位号
+	required double longitude = 2; 	// 经度
+	required double latitude = 3;	// 伟度
+}
+
+// 询问其他人是否开始游戏
+message AskStartGame {
+	repeated SameIpSeats same_ips   = 1; // 相同ip的座位组
+    optional uint32 timer_sec       = 2; //定时器时间-秒 //时间到默认拒绝开始游戏
+	repeated GpsSeatInfo seat_gps_list = 3;// 每个座位的gps信息
+}
+
+// 客户端回复服务器询问
+message AcceptStartReq {
+	required bool accept = 1;
+}
+
+// 服务器通知其他客户端的选择
+message AcceptStartNotify {
+	required uint32 seat = 1;
+	required bool accept = 2;
+}
+
+// 准备
+message PrepareRoundReq {
+}
+
+// 客户端准备状态通知
+message PrepareRoundNotify {
+	required uint32 seat = 1;
+	required bool prepare = 2;
+}
+
+enum event_type {
+    e_none          = 0;
+    zi_mo_hu        = 1; // 自摸
+    dian_pao_hu     = 2; // 点炮
+    ming_gang       = 3; // 明杠
+    an_gang         = 4; // 暗杠
+    guo_shou_gang   = 5; // 过手杠
+    pong            = 6; // 碰
+    pass            = 7; // 过
+    discard         = 8; // 打牌
+    deal            = 9; // 发牌
+    deal_tail       = 10; // 尾部发牌 (比如杠后抓牌)
+    e_max           = 11;
+}
+
+enum kong_type {
+    EXPOSED = 1; // 明杠
+    CONCEALED = 2; // 暗杠
+}
+
+// 胡牌类型
+enum hu_type {
+    hu_none		    	= 0;
+	
+	// 玉林
+	hu_t_yl_pinghu		= 101;	// 平胡
+	hu_t_yl_qidui		= 102;	// 七对
+	hu_t_yl_pphu		= 103;  // 碰碰胡
+	hu_t_yl_qys			= 104;	// 清一色
+	hu_t_yl_qyspphu		= 105; 	// 清一色碰碰胡
+	hu_t_yl_qysqd		= 106;	// 清一色七对
+	hu_t_yl_13yao		= 107;	// 13幺
+	hu_t_yl_tianhu		= 108;	// 天胡
+	hu_t_yl_dihu		= 109;	// 地胡
+	
+	// 博白
+	hu_t_bb_pinghu		= 201;	// 平胡
+	hu_t_bb_qidui		= 202;	// 七对
+	hu_t_bb_pphu		= 203;  // 碰碰胡
+	hu_t_bb_qys			= 204;	// 清一色
+	hu_t_bb_qyspphu		= 205; 	// 清一色碰碰胡
+	hu_t_bb_qysqd		= 206;	// 清一色七对
+	hu_t_bb_13yao		= 207;	// 13幺
+	hu_t_bb_tianhu		= 208;	// 天胡
+	hu_t_bb_dihu		= 209;	// 地胡
+	
+	// 陆川
+	hu_t_lc_pinghu		= 301;	// 平胡
+	hu_t_lc_qidui		= 302;	// 七对
+	hu_t_lc_pphu		= 303;  // 碰碰胡
+	hu_t_lc_qys			= 304;	// 清一色
+	hu_t_lc_qyspphu		= 305; 	// 清一色碰碰胡
+	hu_t_lc_qysqd		= 306;	// 清一色七对
+	hu_t_lc_13yao		= 307;	// 13幺
+	hu_t_lc_tianhu		= 308;	// 天胡
+	hu_t_lc_dihu		= 309;	// 地胡
+
+	
+	// 广西-血战
+	hu_t_xz_pinghu		= 1001;// 平胡
+	hu_t_xz_pphu		= 1002;// 对对胡
+	hu_t_xz_mq			= 1003;// 门清
+	hu_t_xz_duanyj		= 1004;// 断幺九
+	hu_t_xz_qys			= 1005;// 清一色
+	hu_t_xz_daiyj		= 1006;// 带幺九
+	hu_t_xz_qidui		= 1007;// 七对
+	hu_t_xz_jgg			= 1008;// 金钩钓
+	hu_t_xz_qingdui		= 1009;// 清对
+	hu_t_xz_longqd		= 1010;// 龙七对
+	hu_t_xz_qingqd		= 1011;// 清七对
+	hu_t_xz_qingyj		= 1012;// 清幺九
+	hu_t_xz_jjgg		= 1013;// 将金钩钓
+	hu_t_xz_qjgg		= 1014;// 清金钩钓
+	hu_t_xz_tianhu		= 1015;// 天胡
+	hu_t_xz_dihu		= 1016;// 地胡
+	hu_t_xz_qinglqd		= 1017;// 清龙七对
+	hu_t_xz_18lh		= 1018;// 十八罗汉
+	
+	// 广西-血流
+	hu_t_xl_pinghu		= 1101;// 平胡
+	hu_t_xl_pphu		= 1102;// 对对胡
+	hu_t_xl_mq			= 1103;// 门清
+	hu_t_xl_duanyj		= 1104;// 断幺九
+	hu_t_xl_qys			= 1105;// 清一色
+	hu_t_xl_daiyj		= 1106;// 带幺九
+	hu_t_xl_qidui		= 1107;// 七对
+	hu_t_xl_jgg			= 1108;// 金钩钓
+	hu_t_xl_qingdui		= 1109;// 清对
+	hu_t_xl_longqd		= 1110;// 龙七对
+	hu_t_xl_qingqd		= 1111;// 清七对
+	hu_t_xl_qingyj		= 1112;// 清幺九
+	hu_t_xl_jjgg		= 1113;// 将金钩钓
+	hu_t_xl_qjgg		= 1114;// 清金钩钓
+	hu_t_xl_tianhu		= 1115;// 天胡
+	hu_t_xl_dihu		= 1116;// 地胡
+	hu_t_xl_qinglqd		= 1117;// 清龙七对
+	hu_t_xl_18lh		= 1118;// 十八罗汉
+	
+    hu_max 				= 1513;
+}
+
+//胡牌方式
+enum hu_way
+{
+    hu_way_none         = 0;
+	
+	// 示例,尾数尾数是按该顺序
+    hu_way_zimo         = 1; //自摸
+	hu_way_qiangganghu  = 2; //抢杠胡
+    hu_way_gangshangpao = 3; //杠上炮
+    hu_way_gangkaihua  	= 4; //杠开花
+	hu_way_dianpao      = 5; //点炮胡
+	hu_way_zimo_haidi   = 6; //自摸海底
+	hu_way_dianpao_haidi= 7; //点炮胡海底
+	
+	// 玉林
+	hu_way_yl_zimo			= 11;//自摸胡
+	hu_way_yl_qiangganghu	= 12;//抢杠胡
+	hu_way_yl_gangshangpao	= 13;//杠后炮
+	hu_way_yl_gangkaihua	= 14;//杠开花
+	hu_way_yl_dianpao       = 15;//点炮胡
+	hu_way_yl_zimo_haidi    = 16;//自摸海底
+	hu_way_yl_dianpao_haidi = 17;//点炮胡海底
+	
+	// 博白
+	hu_way_bb_zimo			= 21;//自摸胡
+	hu_way_bb_qiangganghu	= 22;//抢杠胡
+	hu_way_bb_gangshangpao	= 23;//杠后炮
+	hu_way_bb_gangkaihua	= 24;//杠开花
+	hu_way_bb_dianpao       = 25;//点炮胡
+	hu_way_bb_zimo_haidi    = 26;//自摸海底
+	hu_way_bb_dianpao_haidi = 27;//点炮胡海底
+	
+	// 陆川
+	hu_way_lc_zimo			= 31;//自摸胡
+	hu_way_lc_qiangganghu	= 32;//抢杠胡
+	hu_way_lc_gangshangpao	= 33;//杠后炮
+	hu_way_lc_gangkaihua	= 34;//杠开花
+	hu_way_lc_dianpao       = 35;//点炮胡
+	hu_way_lc_zimo_haidi    = 36;//自摸海底
+	hu_way_lc_dianpao_haidi = 37;//点炮胡海底
+	
+	// 血战
+	hu_way_xz_zimo			= 101;//自摸胡
+	hu_way_xz_qiangganghu	= 102;//抢杠胡
+	hu_way_xz_gangshangpao	= 103;//杠后炮
+	hu_way_xz_gangkaihua	= 104;//杠开花
+	hu_way_xz_dianpao       = 105;//点炮胡
+	hu_way_xz_zimo_haidi    = 106;//自摸海底
+	hu_way_xz_dianpao_haidi = 107;//点炮胡海底
+	
+	// 血流
+	hu_way_xl_zimo			= 111;//自摸胡
+	hu_way_xl_qiangganghu	= 112;//抢杠胡
+	hu_way_xl_gangshangpao	= 113;//杠后炮
+	hu_way_xl_gangkaihua	= 114;//杠开花
+	hu_way_xl_dianpao       = 115;//点炮胡
+	hu_way_xl_zimo_haidi    = 116;//自摸海底
+	hu_way_xl_dianpao_haidi = 117;//点炮胡海底
+	
+    hu_way_max = 100;
+}
+
+message TotalResultSeat {
+    required uint32 seat            = 1; // 座位号 /
+    required int32 total_score      = 2; //总的番数 /
+    optional bool big_win           = 3; //是否是大赢家
+    optional uint32 zimo_cnt        = 4; //自摸的次数 /
+	optional uint32 ghost_zimo_cnt	= 5; //有鬼自摸次数
+    optional uint32 dianpao_cnt     = 6; //点炮的次数 /
+    optional uint32 angang_cnt      = 7; //暗杠的次数 /
+    optional uint32 minggang_cnt    = 8; //明杠的次数 /
+    optional uint32 guoshougang_cnt = 9; //过手杠的次数
+    optional uint32 total_gang_cnt  = 10; //所有杠的次数
+    optional uint32 fanggang_times  = 11; //放杠次数 /
+	optional uint32 hit_ma_cnt		= 12; //中码次数
+	optional uint32 hu_total_cnt	= 13; //胡的次数
+}
+
+// （单局）开始时的座位牌情况
+message SeatInfo 
+{
+    required uint32 seat            = 1; // 座位号
+    repeated uint32 hand_tiles      = 2; // 自己的手牌
+    repeated OpenTile open_tiles    = 3; // 碰、杠的牌
+    repeated uint32 discard_tiles   = 4; // 打出的牌
+	repeated uint32 hu_tiles		= 5; // 胡的牌
+    required player_status pstatus  = 6; // 玩家状态
+    required int32 score            = 7; // 分数
+	optional int32 dingque			= 8; // 定阙
+}
+
+// （单局）结束后座位输赢情况
+message GameResultSeat 
+{
+    required uint32 seat         = 1; 	// 座位号
+    required int32 total_score   = 2; 	// 输赢番数
+    repeated uint32 hand_tiles   = 3; 	// 牌
+    repeated OpenTile open_tiles = 4; 	// 碰、杠的牌
+    optional uint32 an_gang      = 5; 	// 暗杠的番数
+    optional uint32 ming_gang    = 6; 	// 明杠的番数
+    optional uint32 guo_shou_gang = 7; 	// 过手杠的番数
+    optional HuInfo hu_info      = 8; 	// 胡牌信息
+    optional uint32 hu_tile      = 9; 	// 胡的牌
+	optional uint32 dingque		 = 10;	// 定阙的类型
+	repeated ScoreDetail score_detail = 11;	// 胡牌详细
+	optional uint32 game_type	= 12;	// 游戏玩法
+}
+
+// 胡牌的详细
+message HuDetail
+{
+	optional int32 mySeat 	= 1;	// 我的位置,如果我的位置与胡的位置相同，则显示自摸，如不同，则被自摸
+	optional int32 huSeat 	= 2;	// 胡的位置
+	optional int32 doedSeat = 3;	// 被操作位置(-1:三家,0本家,1下家,2对家,3上家)
+	optional int32 score 	= 4;	// 加减分
+	optional int32 huway 	= 5;	// 胡的方式
+	optional int32 hutype 	= 6;    // 胡的类型
+	optional int32 humulti 	= 7;    // 胡的倍数
+	optional uint32 huTile 	= 8;	// 胡的牌
+	
+	optional int32 item1 = 9;
+	optional int32 item2 = 10;
+	optional int32 item3 = 11;
+	optional int32 item4 = 12;
+	optional int32 item5 = 13; 
+	optional int32 item6 = 14; 
+	optional int32 item7 = 15;
+	optional int32 item8 = 16;
+	optional int32 item9 = 17;
+	optional int32 item10 = 18;
+	optional int32 item11 = 19;
+	
+	repeated int32 doedmultiseat = 20; // 被操作的位置，针对胡的人
+
+}
+
+// 括风下雨
+message FengYuDetail
+{
+	optional int32 mySeat = 1;		// 我的位置 
+	optional int32 huSeat = 2;		// 杠的位置
+	optional int32 doedSeat = 3;	// 被操作位置(-1:三家,0本家,1下家,2对家,3上家)
+	optional int32 score = 4;		// 加减分
+	optional int32 fengYuType = 5;  // 1:刮风点杠,2:补杠,3:暗杠
+	repeated int32 doedmultiseat= 6;// 被操作的位置，针对括风下雨的人
+}
+
+// 查花猪
+message HuaZhuDetail{
+	optional int32 mySeat = 1;		// 我的位置 
+	optional int32 huSeat = 2;		// 花猪的位置
+	optional int32 doedSeat = 3;	// 被操作位置
+	optional int32 score = 4;		// 加减分
+}
+
+// 查大叫
+message DaJiaoDetail{
+	optional int32 mySeat = 1;		// 我的位置 
+	optional int32 huSeat = 2;		// 大叫的位置
+	optional int32 doedSeat = 3;	// 被操作位置(-1:三家,0本家,1下家,2对家,3上家)
+	optional int32 score = 4;		// 加减分
+}
+
+// 算分详细项
+message ScoreDetail{
+	optional int32 type = 1;	// 1胡,2刮风下雨,3花猪,4大叫,5退税,6呼叫转移
+	optional HuDetail hu = 2;
+	optional FengYuDetail fengyu = 3;
+	optional HuaZhuDetail huazhu = 4;
+	optional DaJiaoDetail dajiao = 5;
+	optional int32 backtax = 6;
+	optional int32 hujzy = 7;
+}
+
+message OpenTile {
+    required event_type type  = 1; // 碰、明杠、暗杠、过手杠
+    repeated uint32 tile_list = 2; // 牌列表
+}
+
+
+
+// 玉林
+message YlHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 博白
+message BbHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 陆川
+message LcHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 血战
+message XzHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 血流
+message XlHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+message HuInfo {
+	required uint32 game_type	= 1;
+	optional YlHuInfo yl_info	= 2; 
+	optional BbHuInfo bb_info 	= 3;
+	optional LcHuInfo lc_info 	= 4;
+}
+
+message SameIpSeats {
+	repeated uint32 seat = 1; // 座位号
+}
+
+// 快捷说话收到前端消息
+message QuickMessageReq
+{
+    required uint32 msg_index       = 1; //消息序号
+	required uint32 seat 			= 2; //座位号
+}
+
+// 快捷说话转发前端消息
+message QuickMessageResp
+{
+    required uint32 ret             = 1; //0正常,1太频繁
+    required uint32 msg_index       = 2; //消息序号
+	required uint32 seat 			= 3; //座位号
+}
+
+// 通知玩家事件
+message NotifyPlayerEvent
+{
+    repeated EventInfo event_list  = 1; // 通知玩家事件
+}
+
+// 鬼牌的结果通知
+message NotifyGhostPaiListResult
+{
+	required int32 game_type = 1;		// 游戏类型
+	required int32 desk_tile_count = 2; // 桌面还剩多少牌
+	required int32 fan_pai = 3;			// 翻开出来的牌(0不需要牌，>0需要翻开显示动画的牌)
+	repeated int32 ghost_pai = 4;		// 鬼牌
+	required bool is_disconn = 5;		// （false非断线重连，true断线重连）
+}
+
+// 跟庄成功
+message NotifyGenzhuang
+{
+
+}
+
+
+// 通知换三张
+message AskSanZhang
+{
+	required int32 lesstype = 1; // 1:筒,2:条,3:万
+}
+
+// 每个人选择的换三张
+message HuanSanZhangReq
+{
+	required int32 seat = 1;
+	required int32 type = 2;
+	repeated int32 pais = 3; // 三张同花的牌
+}
+
+// 都选好的换三张通知(分别通知)
+message HuanSanZhangNotify
+{
+	required int32 direct 	= 1;// 0顺针针，1对向
+	required int32 seat 	= 2;
+	required int32 type 	= 3;
+	repeated int32 pais 	= 4;
+}
+
+// 通知定缺
+message AskDingQue
+{
+	required int32 lesstype = 1; // 1:筒,2:条,3:万
+}
+
+// 选择定缺
+message DingQueReq
+{
+	required int32 seat = 1;
+	required int32 type = 2;
+}
+
+// 广播所有人的定缺
+message DingQueNotify
+{
+	repeated DingQueReq quelist = 1;
+}
+
+// 胡牌的牌列表通知
+message HuPaiListNotify
+{
+	required int32 seat = 1;
+	repeated int32 tiles = 2;
+}
+
+// 请求我的积分列表
+message MyScoreListReq
+{
+
+}
+
+message MyScoreListResp
+{
+	required int32 myscore = 1;
+	repeated ScoreDetail scorelist = 2;
+	optional int32 game_type = 3;
+}
+
+// 请求听牌
+message MyTingPaiListReq{
+
+}
+
+
+
+enum c_cmd_match {
+    match_baoming_req = 1; // 请求报名 
+    match_baoming_resp = 2;// 返回报名
+	match_sort_req = 3; // 请求排行榜(只能查看自己所在的比赛)
+	match_sort_resp = 4;// 返回排行榜
+}
+
+enum match_type {
+	match_t_2r8j_taotai 	= 1; 	// 淘汰
+	match_t_2r8j_zhifen 	= 2;	// 积分
+}
+
+message BaoMingReq
+{
+	optional int32 id = 1;
+}
+
+message BaoMingResp
+{
+	optional int32 id = 1;
+	optional int32 status = 2; // 0:成功,1:报名时间不在范围内,2:钻石不足
+}
+
+// 进入(创建)房间
+message MatchOpenRoom 
+{
+	optional int32 id = 1;
+}
+
+message MatchReq {
+    required rank_type type = 1; 
+	optional int32 last = 2; 	// 0当前,1上届
+}
+
+// 返回前端用的排行榜
+message MatchInfo 
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜/积分
+	optional uint32 sort	= 4; 	// 排名
+	optional string actor_addr = 5; // 头像
+}
+
+// 返回的排行榜数据
+message MatchResp 
+{
+    required rank_type sorttype = 1;
+	optional int32 last 		= 2; // 0当前,1上届
+	required int32 mysort 		= 3;
+	required int32 myvalue 		= 4;
+	repeated MatchInfo rank 		= 5;
+}
+
+message TaotaiInfo
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message ZhifenInfo 
+{
+	optional uint64 uid 	= 1;	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message MatchConsList
+{
+	 repeated TaotaiInfo ranks = 1;
+}
+
+message MatchZhifenList
+{
+	repeated ZhifenInfo ranks = 1;
+}
+
+
+
+enum c_cmd_rank {
+    rank_req = 0; // 请求排行榜 
+    rank_resp = 1;// 返回排行榜
+}
+
+enum rank_type {
+	rank_t_wins 	= 1; 	// 胜局
+	rank_t_score 	= 2;	// 积分
+}
+
+message RankReq {
+    required rank_type type = 1; 
+	optional int32 last = 2; 	// 0当前,1上届
+}
+
+// 返回前端用的排行榜
+message RankInfo 
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜/积分
+	optional uint32 sort	= 4; 	// 排名
+	optional string actor_addr = 5; // 头像
+}
+
+// 返回的排行榜数据
+message RankResp 
+{
+    required rank_type sorttype = 1;
+	optional int32 last 		= 2; // 0当前,1上届
+	required int32 mysort 		= 3;
+	required int32 myvalue 		= 4;
+	repeated RankInfo rank 		= 5;
+}
+
+message WinsInfo
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message ScoreInfo 
+{
+	optional uint64 uid 	= 1;	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message RankConsList
+{
+	 repeated WinsInfo ranks = 1;
+}
+
+
+
+message RankScoreList
+{
+	repeated ScoreInfo ranks = 1;
+}
+
+
+
+enum c_cmd_role {
+    setting_req 		= 1;
+    setting_resp 		= 2;
+    set_logo_req 		= 3;
+    set_logo_resp 		= 4;
+    get_title_list_req 	= 5;
+    get_title_list_resp = 6;
+    set_title_req 		= 7;
+    set_title_resp 		= 8;
+	player_info_req 	= 9;//查看在线玩家信息
+	player_info_resp	= 10;
+	update_role_req     = 19;
+    update_role_data    = 20;
+	gps_upload_req 		= 21;	// 上传自己的gps
+	sync_role_to_ws		= 22;	// 
+	cardinfo_req 		= 23;   // 
+	notify_lose_game	= 24; 	
+}
+
+message SettingReq {
+    required uint32 sound	= 1; // 音效
+    required uint32 music	= 2; // 音乐
+    required bool buzzes	= 3; // 震动
+}
+
+message SettingResp {
+    required uint32 sound	= 1; // 音效
+    required uint32 music	= 2; // 音乐
+    required bool buzzes	= 3; // 震动
+}
+
+message SetLogoReq {
+    required uint32 logo_icon = 1;
+}
+
+message SetLogoResp {
+    required uint32 logo_icon = 1;
+}
+
+message GetTitleListReq {
+    repeated Title title = 1;
+}
+
+message Title {
+    required uint32 id		= 1;
+    required string title	= 2;
+}
+
+message GetTitleListResp {
+}
+
+message SetTitleReq {
+    required uint32 id = 1;
+}
+
+message SetTitleResp {
+}
+
+message PlayerInfoReq
+{
+	required uint64 uid = 1;
+}
+
+message PlayerInfoResp
+{
+	required RoleC role = 1;
+}
+
+message Data
+{
+    optional uint64 reset_time          = 1; //重置时间
+    optional uint32 first_show_status   = 2; //首次分享状态 0:未分享 1:已分享 2:已领取奖励
+    optional uint32 has_inv_friend_num  = 3; //已成功邀请好友的数量
+    optional uint32 has_get_room_card   = 4; //已成功领取房卡的数量
+    optional uint32 can_get_room_card   = 5; //还可以领取房卡的数量
+
+    //被邀请的数据
+    optional uint32 be_invitation_id    = 6; //被邀请，发出邀请人的ID
+    optional uint32 play_games          = 7; //所玩的局数
+    optional uint32 recv_reward_status  = 8; //领取奖励状态（0：不可领取 1：可领取 2：已领取）
+}
+
+// 角色信息(总)
+message Role {
+    optional uint64 id 				= 1; // 玩家id
+    optional string account         = 2; // 玩家账号
+    optional string nickname 		= 3; // 玩家昵称
+    optional uint32 level 			= 4; // 玩家等级
+    optional string logo_icon 		= 5; // 头像
+    optional uint32 title 			= 6; // 称号
+    optional uint32 diamond 		= 7; // 钻石
+    optional uint32 coin 			= 8; // 公共场豆子的数量
+	optional uint32 sexual			= 9; // 性别
+    optional uint32 room_card       = 10; // 房卡数
+    optional uint32 total_games 	= 11; // 总局数
+    optional uint32 win_games 		= 12; // 胜利局数
+    optional uint32 con_games       = 13; // 连胜局数
+    optional uint32 his_max_score   = 14; // 历史最高分
+	optional uint32 his_max_con		= 15; // 历史最高连胜
+    optional uint32 week_max_score  = 16; // 本周最高分(未用到)
+	optional uint64 top_wins_ymd	= 17; // 排行榜记录日期
+	optional int32	top_wins_total	= 18; // 排行榜记录胜局
+	optional uint64 top_score_ymd	= 19; // 排行榜记录日期
+	optional int32	top_score_total	= 20; // 排行榜记录积分
+	optional uint64 blocktime 		= 21; // 封停时间
+	optional uint32 today_play_num  = 22; // 今天打的场次（无解散）
+	optional string readname		= 23; // 真名
+	optional string readcard		= 24; // 身份证ID
+	optional uint64 last_game_end 	= 25; // 上局结束时间
+	optional uint64 login_time		= 26; // 上次登录时间
+	optional string ip				= 27; // ip
+	optional Data data              = 99; // 其他相关数据
+}
+
+// 角色offline
+message RoleOff
+{
+	optional uint64 id 				= 1; // 玩家id
+    optional string account         = 2; // 玩家账号
+    optional string nickname 		= 3; // 玩家昵称
+    optional uint32 level 			= 4; // 玩家等级
+    optional string logo_icon 		= 5; // 头像
+    optional uint32 title 			= 6; // 称号
+    optional uint32 diamond 		= 7; // 钻石
+    optional uint32 coin 			= 8; // 公共场豆子的数量
+	optional uint32 sexual			= 9; // 性别
+    optional uint32 room_card       = 10;  // 房卡数
+    optional uint32 total_games 	= 11; // 总局数
+    optional uint32 win_games 		= 12; // 胜利局数
+    optional uint32 con_games       = 13; // 连胜局数
+    optional uint32 his_max_score   = 14; // 历史最高分
+	optional uint32 his_max_con		= 15; // 历史最高连胜
+    optional uint32 week_max_score  = 16; // 本周最高分(未用到)
+	optional uint64 top_wins_ymd	= 17; // 排行榜记录日期
+	optional int32	top_wins_total	= 18; // 排行榜记录胜局
+	optional uint64 top_score_ymd	= 19; // 排行榜记录日期
+	optional int32	top_score_total	= 20; // 排行榜记录积分
+	optional uint64 blocktime 		= 21; // 封停时间
+	optional uint32 today_play_num  = 22; //
+	optional string readname		= 23; // 真名
+	optional string readcard		= 24; // 身份证ID
+	optional uint64 last_game_end 	= 25; // 上局结束时间
+	optional uint64 login_time		= 26; // 上次登录时间
+	optional string ip				= 27; // ip
+	optional Data data              = 99; // 其他相关数据
+}
+
+// 角色ws
+message RoleWs
+{
+	optional uint64 id 					= 1; // 玩家id
+	optional string account				= 2;
+    optional string nickname 			= 3; // 玩家昵称
+    optional string logo_icon 			= 4; // 头像
+    optional uint32 room_card       	= 5; // 房卡数
+    optional uint32 total_games 		= 6; // 总局数
+    optional uint32 win_games 			= 7; // 胜利局数
+    optional uint32 his_max_con       	= 8; // 历史连胜局数
+    optional uint32 his_max_score   	= 9; // 历史最高分
+    optional int32 top_score_total 		= 10; // 今日排行榜积分
+}
+
+// 角色fep
+message RoleFep
+{
+	optional uint64 id 					= 1; // 玩家id
+	optional uint64 sessionid			= 2; // sessid
+	optional uint32 serverid 			= 3; // 服务器id
+}
+
+// 角色信息(前端)
+message RoleC
+{
+	optional uint64 id 					= 1; // 玩家id
+    optional string nickname 			= 2; // 玩家昵称
+    optional string logo_icon 			= 3; // 头像
+	optional uint32 sexual				= 4; // 性别
+    optional uint32 room_card       	= 5; // 房卡数
+    optional uint32 total_games 		= 6; // 总局数
+    optional uint32 win_games 			= 7; // 胜利局数
+    optional uint32 his_con_games       = 8; // 历史连胜局数
+    optional uint32 his_max_score   	= 9; // 历史最高分
+    optional int32 top_score_total 		= 10; // 今日排行榜积分
+	optional string address				= 11; // 物理地址
+}
+
+
+// 货币类型
+enum money_type
+{
+	money_t_roomcard = 1;// 房卡
+}
+
+//房卡数据
+message RoomCardData
+{
+    optional uint32 room_card   = 1; //房卡数量
+}
+
+// 更新角色数据
+message UpdateRoleData
+{
+    optional RoomCardData room_card_data   = 1; //房卡数据
+}
+
+// 日记记录
+message MoneyLog
+{
+	required uint64 log_id = 1;		//唯一ID
+	required int32 money_type = 2;	//货币类型
+	required int32 money_num = 3;	//数量
+	required int32 log_type = 4; 	//日志事件
+	required uint64 char_id = 6;	//用户ID
+	required uint64 log_time = 7;   //生成时间
+}
+
+// 上传自己的gps
+message GpsUploadReq
+{
+	required double longitude = 1; 	// 经度
+	required double latitude = 2;	// 伟度
+	required string address = 3;	// 位置
+}
+
+// 请求刷新
+message UpdateRoleReq
+{
+
+}
+
+// 同步到ws
+message SyncRoleToWs
+{
+	required uint64 uid 		= 1;
+	required uint64 room_id 	= 2;
+	required uint32 room_seat 	= 3;
+	required uint32 room_card 	= 4;
+	required bool 	disconnect 	= 5;
+	required bool 	robotPlaying= 6; 
+	required uint32 hisConGames = 7;	//最大连胜局数
+	required uint32	hisMaxScore = 8;	//历史最高分
+}
+
+
+message CardinfoReq
+{
+	optional uint32 do_type = 1;
+	optional string readname  = 2;
+	optional string readcard  = 3;
+}
+
+message NotifyLoseGame
+{
+	optional uint32 level = 1; 	// 沉迷级别
+	optional uint32 time = 2; 	// 用时
+}
+
+
+
+
+
+
+enum c_cmd_room {
+	c_cmd_none		= 0;
+    room_list_req   = 1;
+    room_list_resp  = 2;
+    open_room_req   = 3;
+    open_room_resp  = 4;
+    enter_room_req  = 5;
+    enter_room_resp = 6;
+    role_enter_room = 9;
+    role_leave_room = 10;
+    leave_room_req  = 11;
+    dismiss_room_req = 12; // 发起解散
+    dismiss_room_resp = 13; // 解散最终结果
+    dismiss_room_vote_accept = 14; // 客户端是否同意解散
+    dismiss_room_vote_notify = 15; // 解散投票状态同步
+    room_ready_notify = 16; // 房间人已满，可开始游戏
+    room_reconnect_req   = 17;
+    room_reconnect_resp  = 18;
+    role_online_notify      = 19; // 玩家在线状态更新消息(在线, 离线, 离开？游戏中？)
+    kick_role_req           = 20; // 踢掉玩家
+    kick_role_notify        = 21; // 踢掉玩家的通知
+	reconnect_fin	        = 22; // 重连完成
+    dismiss_room_notify     = 23; //解散房间通知
+    enter_room_ready        = 24; //进入房间准备好
+    roomcard_price_req      = 25; //房卡价格列表请求
+    roomcard_price_resp     = 26; //房卡价格列表回复
+    sync_room_role_info     = 27; //同步房间玩家信息
+	sync_romm_inn_info		= 28; //房间每局基本数据
+
+    notify_room_dismiss     = 29; //通知房间已解散
+    leave_room_resp         = 30; //离开房间回复
+
+	start_robot_req			= 31; // 请求机器人代替
+	stop_robot_req			= 32; // 请求机器人结束
+	
+	add_room_to_ws			= 33;
+	upate_room_to_ws		= 34;
+	remove_room_to_ws		= 35;
+	
+	coin_notenough_notity	= 36; // 豆子不足，被踢出房间
+}
+
+enum RoomType {
+    ROOM_NORMAL = 0;// 普通局
+    ROOM_PRIVATE= 1;// 私人局
+	ROOM_GOLD	= 2;// 赚金场（分再1-6底分不同场）
+	ROOM_MATCH	= 3;// 比赛场
+}
+
+enum EnterType {
+    ROOM_AUTO = 0; // 自动选择
+    ROOM_ROOM_NO = 1; // 按房间号
+}
+
+enum PlayType {
+    ROOM_NO_HANZI = 0;   // 无字麻将
+    ROOM_HAVE_HANZI = 1; // 有字麻将
+}
+
+enum VoteState {
+    VOTE_WAIT       = 0;
+    VOTE_AGREE      = 1;
+    VOTE_DISAGREE   = 2;
+}
+
+enum VoteResult {
+    VOTE_RESULT_WAIT = 0;
+    VOTE_RESULT_PASS = 1;
+    VOTE_RESULT_FAIL = 2;
+}
+
+// 房间等级列表
+message RoomListReq {
+
+}
+
+message RoomListResp {
+    repeated RoomListInfo room = 1;
+}
+
+// 开房
+message OpenRoomReq {
+    required RoomType room_type 	= 1;	// 房间类型,如:私人局
+    required maj_type game_type 	= 2; 	// 游戏类型,如:抚州麻将，湖南麻将
+    required RoomOption option 		= 3;	// 游戏选项
+}
+
+message OpenRoomResp {
+    enum error_code {
+        SUCCESS             = 1;
+        FAIL                = 2;
+        ALREADY_IN          = 3; // 已经在房间中了
+        NO_DIAMOND          = 4; // 钻石不足
+        ROOMCARD_NOTENOUTH  = 5; // 房卡不足
+		MAINTENANCE			= 6; // 维护
+    }
+    required error_code code = 1;
+    optional RoomInfo info = 2;
+    optional RoleInfo role = 3;
+}
+
+// 进入房间
+message EnterRoomReq {
+    required EnterType type = 1;
+    optional uint32 room_no = 2;
+}
+
+message EnterRoomResp {
+    enum msg_room_code {
+        SUCCESS         = 1;
+        FAIL            = 2;
+        ALREADY_IN      = 3; // 已经在房间中了
+        PERSONS_FULL    = 4; // 房间人数已满
+    }
+    required msg_room_code code = 1;
+    optional RoomInfo info = 2;
+    repeated RoleInfo roleList = 3;
+    optional uint32 self_seat = 4; // 自己位置
+    optional uint32 banker_seat = 5; // 庄家位置
+}
+
+//进入房间准备好
+message EnterRoomReady
+{
+    
+}
+
+//同步房间玩家信息
+message SyncRoomRoleInfo
+{
+    repeated RoleInfo roleList = 1;
+}
+
+// 离开房间
+message LeaveRoomReq {
+}
+
+// 离开房间
+message LeaveRoomResp 
+{
+    enum error_code 
+    {
+        HAS_LEAVE_ROOM = 1; //玩家已经离开房间了
+    }
+    required error_code code = 1;
+}
+
+// 其他玩家进入房间
+message RoleEnterRoomNotify {
+    required RoleInfo role = 1;
+}
+
+// 其他玩家离开房间
+message RoleLeaveRoomNotify {
+    required uint32 seat = 1;
+    required bool is_roomer = 2; // 是否为房主 房主离开全部退出去
+}
+
+// 发起解散房间请求
+message DismissRoomReq {
+}
+
+// 解散房间通知弹框
+message DismissRoomNotify
+{
+    required string nickname    = 1;
+    required uint32 seat        = 2;
+    optional uint32 timer_sec   = 3; //定时器时间-秒 //时间到默认同意解散
+}
+
+
+// 服务端同步客户端投票状态
+message DismissRoomVoteNotify {
+    repeated VoteInfo infoList = 1;
+}
+
+message VoteInfo {
+    required string nickname = 1;
+    required VoteState state = 2;
+}
+
+// 客户端回应投票，同意/不同意
+message DismissRoomVoteAcceptReq {
+    required VoteState state = 1;
+}
+
+// 解散房间
+message DismissRoomResp {
+     enum error_code {
+        SUCCESS             = 1;
+        FAIL                = 2;
+        PROTECTION_TIME     = 3; // 玩家掉线保护时间内无法解散房间，保护时间还剩下xx秒
+    }
+    optional error_code code    = 1; //返回结果错误码
+    optional uint32 remain_time = 2; //剩余保护时间
+    optional bool isDissMis     = 3; //是否解散
+}
+
+// 房主动作
+enum RoomerAction 
+{
+    can_start           = 1; // 可以开始
+    cancel_start        = 2; // 取消开始
+}
+
+// 房间已准备好，可开始游戏
+message RoomReadyNotify {
+    required RoomerAction roomer_aciton = 1;
+}
+
+// 发起重连，当登录客户端返回已经登录时，发起reconnect
+message ReconnectReq {
+}
+
+// 服务器给出的重连消息
+message ReconnectResp {
+    enum error_code {
+        SUCCESS     = 1;
+        FAIL        = 2;
+        NOT_IN_ROOM = 3;
+    }
+    required error_code code = 1;
+    optional RoomInfo room_info = 2;
+    repeated RoleInfo user_list = 3;
+	optional uint32 self_seat = 4; // 自己位置
+    optional uint32 banker_seat = 5; // 庄家位置
+    optional bool is_roomer = 6; //是否房主
+    optional bool is_start = 7; //是否是点击开始游戏之后游戏开始
+}
+
+// 重连完成
+message ReconnectFin {
+}
+
+enum online_state_room {
+    online = 1;
+    offline = 2;
+}
+
+// 用户在线状态变化通知消息
+message RoleOnlineNotify {
+    required online_state_room state = 1;
+}
+
+message RoomInfo {
+    required uint32 room_id         = 1; // 房间号
+    required RoomType room_type = 2; // 房间类型
+    required RoomOption option      = 3; // 房间属性
+}
+
+// deprecated. 获取房间列表用的
+message RoomListInfo {
+    required uint32 lvlel       = 1;
+    required string name        = 2; // 描述
+    required uint32 betx        = 3; // 底注
+    required uint32 min_coin    = 4; // 最低准入金币数
+}
+
+message RoleInfo {
+    required uint64 uid         = 1; // 玩家ID
+    required string nickname    = 2; // 用户昵称
+    required string logo_icon   = 3; // 用户头像
+	required int32 sexual		= 4; // 性别
+    required int32 seat_id     	= 5; // 座位号
+    required int32 status      	= 6; // 玩家状态 1:正常 2:断线 3:连接中
+    required int32 score        = 7; // 分数
+}
+
+// 发送是否答应解散房间
+message AgreeDismissReq {
+    required uint32 seat = 1; // 方位
+    required bool isAgree = 2; // 是否同意
+}
+
+//玩家解散同意与否
+message DismissStatus
+{
+    optional uint32 seat    = 1; // 方位
+    optional bool isagree   = 2; //是否同意
+}
+
+// 接收其他玩家是否答应解散房间
+message AgreeDismissResp {
+    required uint32 seat                = 1; // 方位
+    required bool isAgree               = 2; // 是否同意
+    repeated DismissStatus dismiss_list = 3; // 整个房间内的解散与否状态(字段2为true时读取)
+}
+
+// 踢人
+message KickRoleReq {
+    required uint32 victim_seat = 1;
+}
+
+message KickRoleNotify {
+    required uint32 seat = 1; // 离开的座位号
+}
+
+// 玉林
+message YLOption
+{
+	optional int32 useType 	= 1;     	// 用牌
+    optional int32 wanFaType = 2;       // 玩法 1:无鬼加陪,2:大胡加番,4:可接炮胡,8:可杠上炮 16抢杠包三家 32杠上花包三家,64:258做将,128:258做将加番,256:胡258加番,512:清一色加番,1024:无鬼加番,2048:大胡可点炮
+	optional int32 maiMaType = 3; 		// 买码类型
+}
+
+// 博白
+message BBOption
+{
+    optional int32 useType = 1;     	// 用牌
+	optional int32 wanFaType = 2;       // 玩法 1:无鬼加陪,2:大胡加番,4:可接炮胡,8:可杠上炮 16抢杠包三家 32杠上花包三家,64:258做将,128:258做将加番,256:胡258加番,512:清一色加番,1024:无鬼加番,2048:大胡可点炮
+	optional int32 maiMaType = 3; 		// 买码类型
+}
+
+// 陆川
+message LCOption
+{
+    optional int32 useType = 1;     	// 用牌
+	optional int32 wanFaType = 2;       // 玩法 1:无鬼加陪,2:大胡加番,4:可接炮胡,8:可杠上炮 16抢杠包三家 32杠上花包三家,64:258做将,128:258做将加番,256:胡258加番,512:清一色加番,1024:无鬼加番,2048:大胡可点炮
+	optional int32 maiMaType = 3; 		// 买码类型
+}
+
+// 血战
+message XZOption
+{
+	optional int32 mode		= 1;		// 模式 1:换三张,2:呼叫转移
+	optional int32 zimo		= 2;		// 1自摸不加倍 2自摸加底 3自摸加倍
+	optional int32 diangang = 3;		// 1:点杠花当自摸,2:点杠花当点炮
+    optional int32 wanFaType = 4;       	// 玩法 1:
+	optional int32 multi	= 5;		// 0：无,1:8倍,2:16倍,3:32倍
+}
+
+// 血流
+message XLOption
+{
+	optional int32 mode		= 1;		// 模式
+	optional int32 zimo		= 2;		// 自摸加倍
+	optional int32 diangang = 3;		// 1:点杠花当自摸,2:点杠花当点炮
+    optional int32 wanFaType = 4;       	// 玩法 1:
+	optional int32 multi	= 5;		// 0：无,1:8倍,2:16倍,3:32倍
+}
+
+message RoomOption {
+	optional int32 game_type 		= 1; // 什么游戏
+	optional int32 renShuType 		= 2; // 人数类型1:2人,2:3人,
+	optional int32 payType			= 3; // 支付类型1 房主,2 AA
+	optional int32 baseScoreType	= 4; // 底分
+	optional int32 juShuType 		= 5; // 局数
+	optional int32 fengDingType		= 6; // 封顶
+	optional int32 total_pai_num 	= 7; // 总牌数(创建房间后再赋值)
+	optional YLOption yl_option 	= 11; // 玉林
+	optional BBOption bb_option 	= 12; // 博白
+	optional LCOption lc_option 	= 13; // 陆川
+}
+
+// 房卡价格请求
+message RoomCardPriceReq
+{
+    
+}
+
+// 房卡价格回复
+message RoomCardPriceResp
+{
+    repeated uint32 room_cards = 1; //房卡数
+}
+
+// 同步每局基础数据
+message SyncRommInnInfo
+{
+	required int32 inn_id = 1;
+}
+
+// 通知房间已解散
+message NotifyRoomDismiss
+{
+    
+}
+
+message StartRobotReq
+{
+	required uint32 session_id = 1;
+	required uint64 uid = 2;
+}
+
+message StopRobotReq
+{
+	required uint64 uid = 1;
+}
+
+message AddRoomToWs
+{
+	required uint32	room_id = 1;
+	required RoomInfo room_info = 2;
+	repeated RoleInfo role_list = 3;
+}
+
+message UpdateRoomToWs
+{
+	required uint32	room_id = 1;
+	repeated RoleInfo role_list = 2;
+}
+
+message RemoveRoomToWs
+{
+	required uint32	room_id = 1;
+}
+
+message NtCoinNotenough
+{
+
+}
+
+
+enum c_cmd_shop {
+    wxpayorderinfo_req 	= 1;
+    wxpayorderinfo_resp	= 2;
+}
+
+message WxPayOrderInfoReq {
+    required uint32 sound	= 1; // 
+    required uint32 music	= 2; // 
+}
+
+
+
+
+
+enum c_cmd_ss
+{
+	login_to_scene_req = 1;
+	QueryPlayerResponseID = 2;
+
+    QueryMailResponseID = 5;
+	QueryMailSysLogResponseID = 6;
+	GetMaxUUIDResponseID = 7;
+	SendRoomCardID = 8;
+	SendEditRoomCardID = 9;
+	SendMailID = 10;
+	SendNoticeID = 11;
+	DeleteNoticeID = 12;
+	SendBlockUserID = 13;
+	SessionAccountNameID = 14;
+	UpdateRoomInfoID = 15;
+	ChangeGameServerID= 16;
+	ZhanjiQueryListResponseID= 17;
+	ZhanjiRespReplyResponseID= 18;
+	NotifyOnConnectionID= 19;
+	VerifyPaiResponseID= 20;
+    ReloadConfigFormID= 21;
+	
+	HandshakeRequestID = 23;
+	QueryPlayerRequestID = 24;
+	SavePlayerDataReqID = 25;
+	ZhanJiRecordAddRequestID = 26;
+	ZhanJiFinishRequestID = 27;
+	ZhanjiQueryListRequestID = 28;
+	ZhanjiQueryReplyRequestID = 29;
+	QueryMailRequestID = 30;
+	SaveMailRequestID = 31;
+	GetMaxUUIDRequestID = 32;
+	RechargeRoomCardID = 33;
+
+	
+	QueryMailSysLogRequestID = 34;
+	SaveMailSysLogRequestID = 35;
+	
+	UpdateRankRequestID = 36;
+	InnRecordAddLogRequestID = 37;
+	
+	UpdateFepUserID = 38;
+	
+    UpdateRankSortResponseID = 39;
+	QueryRankRequestID = 40;
+	QueryRankResponseID = 41;
+	
+	//QueryAdminChargeUserID = 50;
+	QueryAdminFindUserInfoID = 51;
+	
+	SaveMoneyLogRequestID = 60;
+	SaveOnlinePlayerID = 61;
+	
+	ZhanjiQueryRoomRequestID = 62;
+	ZhanjiQueryRoomResponseID = 63;
+	ZhanjiQueryInnRequestID	= 64;
+	ZhanjiQueryInnResponseID = 65;
+	
+	GetFreeConfigReqID	= 66;
+	GetFreeConfigRespID	= 67;
+	GetRewardConfigReqID = 68;
+	GetRewardConfigRespID =69;
+	GetNotifyConfigReqID =70;
+	GetNotifyConfigRespID =71;
+	GetRoomSetConfigReqID =72;
+	GetRoomSetConfigRespID =73;
+
+	RespEditRoomCardID	= 76;		
+	RespSendRoomCardID	= 77;		
+	SendFindUserID	= 78;			 // 查在线玩家信息
+	RespFindUserID	= 79;				
+	SendFindOnlineID = 80;		 // 查在线玩家数量
+	RespFindOnlineID = 81;			
+	GetBindingAgentInfoReqID = 82;	 // 查询绑定代理信息（游戏服 -> 后台）
+	GetBindingAgentInfoRespID = 83;	 // 查询绑定代理信息（后台 -> 游戏服）
+	BindingAgentReqID = 84;			 // 绑定代理（游戏服 -> 后台）
+	BindingAgentRespID	= 85;		 // 绑定代理（后台 -> 游戏服）
+	RefreshConfigID	= 86;			 // 刷新后台配置（后台 -> 游戏服）
+	RefreshFreeID = 87;				 // 刷新免费配置（后台 -> 游戏服）
+	InputInviteCodeReqID= 90;
+	InputInviteCodeRespID=91;
+	LoginTokenNotifyID = 100; 
+	
+	req_robot_join_room = 110;
+	
+	UserEditCardID = 111; // 修改用户信息
+	
+	SaveRoomOptionReqID = 112; // 保存房间选项信息
+	
+	UpdateRoomOptionReqID = 113; // 更新房间信息
+	
+	ServerIsBrepairingNotifyID = 114; // 服务器正在维护中
+	
+}  
+
+// 登录进入游戏服
+message LoginToScene
+{
+	optional uint64 uid = 1;	// 角色id
+	optional bool repeat_login = 2; // 是否重复登录
+	optional uint32 new_session_id = 3;// 新的sessionid
+	optional uint32 join_room_id = 4; // 是否加入房间
+}
+
+// 帐号登录信息
+message LoginToken
+{
+	optional string openid 		= 1;
+	optional string nickname 	= 2;
+	optional int32 sex 			= 3;
+	optional string province 	= 4;
+	optional string city 		= 5;
+	optional string country 	= 6;
+	optional string headimgurl 	= 7;
+	optional string unionid 	= 8;
+	optional string ip			= 9;
+}
+
+// 同步微信登录信息到ws
+message LoginTokenNotify
+{
+	optional LoginToken acctoken = 1;
+}
+
+// 踢下线
+message KickSession
+{
+	optional uint64 session_id = 1;
+}
+
+// 邀请机器人加入房间
+message ReqRobotJoinRoom
+{
+	optional int32 room_id = 1;
+}
+
+message ServerBrepairingNotify 
+{
+	optional int32 status = 1;
+}
+
+
+

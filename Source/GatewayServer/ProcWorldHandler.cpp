@@ -1,4 +1,3 @@
-#include "GatewayServer_PCH.h"
 #include "ProcWorldHandler.h"
 
 
@@ -12,7 +11,7 @@ ProcWorldHandler::~ProcWorldHandler()
 }
 
 
-void ProcWorldHandler::ReqLogin(zSession* pSession, const NetMsgSS* pMsg,int32 nSize)
+void ProcWorldHandler::ReqLogin(zSession* pSession, const NetMsgSS* pMsg,int32_t nSize)
 {
 
 	if(pSession->status != E_SERVER_STATUS_CONNETED)

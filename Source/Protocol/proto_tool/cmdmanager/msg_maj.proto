@@ -1,0 +1,699 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd {
+    none                = 0;
+    start_game_req      = 1;
+    start_round_resp    = 2; // 进入一局
+    discard_tile_req    = 3;
+    discard_tile_resp   = 4;
+    deal_tile_notify    = 5;
+    response_req        = 6;
+    response_resp       = 7;
+    game_result_notify  = 8;  // 单局结算
+    disover_card_req    = 9;
+    total_result_notify = 10; // 总结算
+    reconnect_req       = 11; // 重连
+    reconnect_resp      = 12; // 重连回复
+    reconnect_ready_req = 13; // 客户端重连已完成，游戏重新开始
+	ask_start_game      = 14; // 询问其他人是否开始游戏
+	accept_start_req    = 15; // 客户端回复服务器询问
+	accept_start_notify = 16; // 服务器通知其他客户端的选择
+	prepare_round_req	= 17; // 准备
+	prepare_round_notify = 18; // 客户端准备状态通知
+    reconnect_sync_card = 19; //重连加载完成后同步(其他人)的牌
+    sync_player_status  = 20; //同步玩家状态
+	quickmessage_req 	= 21;// 快捷说话收到前端消息
+	quickmessage_resp 	= 22;// 快捷说话转发前端消息
+    notify_player_event = 23; //通知玩家事件
+	notify_ghostpai_result = 24; //翻双鬼的结果通知
+	notify_genzhuang_success = 25; //跟庄成功结果通知
+	ask_start_sanzhang  = 29; //换三张
+	huan_sanzhang_req   = 30; //选择换三张
+	huan_sanzhang_notify= 31; //都提交完后得到的三张
+	ask_start_dingque	= 32; //开始定缺
+	dingque_req			= 33; //定缺请求
+	dingque_notify		= 34; //定缺通知（广播）
+	hu_pailist_notify	= 35; //胡牌的牌通知
+	ting_pai_discard_notify= 36;
+	ting_pai_waite_notify = 37;
+	my_scorelist_req 	= 38;
+	my_scorelist_resp 	= 39;
+	my_ting_pai_req		= 40;
+	my_ting_pai_resp	= 41;
+	reconnect_other_ready_req = 42;
+
+	robot_reconnect_resp = 50; //
+	robot_start_round_resp = 51;
+}
+
+enum op_code {
+    ok          = 0;
+    fail        = 1;
+    not_exist   = 2;
+}
+
+// 麻将类型
+enum maj_type
+{
+	maj_t_none		= 0;  // 无
+	maj_t_yulin	  	= 1;  // 玉林
+	maj_t_bobai		= 2;  // 博白
+	maj_t_luchuan	= 3;  // 陆川
+}
+
+// 开始游戏请求
+message StartGameReq {
+}
+
+// 开始请求的回复报文
+message StartRoundResp {
+	optional uint32 deny_seat = 1;
+    optional uint32 dice = 2; //骰子的点数 个位数代表一个，十位数代表一个，比如66代表两个6
+    repeated uint32 tile_list = 3; // 牌-自己
+    optional uint32 banker_seat_id = 4; // 庄家座位号
+    repeated event_type events = 5;
+}
+
+// 打牌
+message DiscardReq {
+    required uint32 tile = 1;
+}
+
+// 事件信息
+message EventInfo
+{
+	required event_type event_t = 1; 	// 事件类型,胡，杠，碰
+	repeated uint32	event_pai 	= 2;	// 事件关联牌
+}
+
+// 同步到每个人
+message DiscardResp {
+    required uint32 seat  = 1;
+    required uint32 tile = 2;
+    required uint32 tileLeftCount = 3;
+    repeated EventInfo eventList = 4; // 可进行的操作, 比如可以碰，可以杠，
+}
+
+//提示牌
+message PromptPai
+{
+    optional uint32 hupai       = 1; //听牌后胡的牌
+	optional uint32 paidest  	= 2; //从桌面上来看，剩余数量
+    optional uint32 painum      = 3; //牌的数量 
+    optional hu_type hutype     = 4; //听牌后胡牌类型
+    optional uint32 mulit       = 5; //胡牌类型对应的分数
+}
+
+//听牌结构
+message TingPai
+{
+    optional uint32 dicard          = 1; //出的牌
+    repeated PromptPai prompt_list  = 2; //提示牌列表
+}
+
+// 听牌协议（要出牌的时候）
+message TingPaiDiscardNotify
+{
+    repeated TingPai ting_list 	= 1; //听牌列表
+}
+
+// 听牌协议（要等牌的时候）
+message TingPaiWaiteNotify
+{
+	repeated PromptPai prompt_list  = 1; //提示牌列表
+}
+
+// 发牌
+message DealNotify{
+    required uint32 seat = 1;
+    optional uint32 tile = 2; // 发牌人知道具体牌，其他人只知道发了一张牌
+    required bool tail = 3; // 是不是从后抓的牌
+    repeated EventInfo eventList = 4; // 可进行的操作, 比如可以杠
+	required int32 desk_tile_count = 5; // 桌面还剩多少牌
+}
+
+// 操作事件(碰、杠、胡……)
+message ResponseEventReq {
+    required event_type event = 1;
+	optional uint32 tile = 2; // 只有暗杠时才用得到
+}
+
+// 操作事件的回复
+message ResponseEventResp {
+    required op_code code           = 1; // 操作码
+    required uint32 seat            = 2; // 操作人座位
+    required event_type event       = 3; // 本次事件（碰 杠 胡等）
+    repeated uint32 eventTileList   = 4; // 事件牌列表, 比如碰就有三个牌
+    optional HuInfo hu_info         = 5; // 胡牌信息
+    optional uint32 victim_seat     = 6; // 放炮、放杠人的座位
+    repeated event_type triggerEvents = 7; // 触发的事件，比如抢杠胡
+	optional uint32 tileLeftCount 	= 8; // 剩余多少张牌
+	
+}
+
+// 单局游戏结果
+message GameResultNotify {
+	required bool is_end_all 		= 1; // 是否已经打完
+	required uint32 this_inn_id 	= 2; // 当前是第几局
+    repeated GameResultSeat seats 	= 3; // 座位情况
+}
+
+// 发牌完毕
+message DisCardOver {
+}
+
+// 本场所有（比如16局）牌局的结果汇总
+message TotalResultNotify {
+    repeated TotalResultSeat seats = 1; // 座位情况
+}
+
+// 重连加载数据请求
+message ReconnectLoadReq {
+}
+
+message ReconnectPrepare {
+    required uint32 seat            = 1; // 座位号
+    required bool accept            = 2; // 是否同意
+    required player_status pstatus  = 3; // 玩家状态
+}
+
+// 重连加载数据回复, 这是游戏数据更新
+message ReconnectLoadResp {
+    required bool is_start          = 1; // 是否开始(没有开始读取 ReconnectPrepare)
+    optional SeatInfo self_seat     = 2; // 自己牌的数据
+	optional uint32 banker_seat     = 3; // 房主位置
+	optional uint32 dice            = 4; // 骰子
+	optional int32 desk_tile_count  = 5; // 桌面还剩多少牌
+	repeated EventInfo self_events  = 6; // 用户事件, 自己是否需要碰杠胡操作
+	optional uint32 curr_tile       = 7; // 当前牌
+	optional bool self_discard      = 8; // 是否自己打牌
+    optional bool send_disover      = 9; // 是否发送了disover消息
+    repeated ReconnectPrepare prepare_info = 10; // 游戏准备的重连信息
+}
+
+// 客户端重连已完成
+message ReconnectReadyReq {
+}
+
+// 重连加载完成后同步(其他人)的牌
+message ReconnectSyncCard
+{
+    required int32 desk_tile_count = 1;  // 桌面还剩多少牌
+    repeated SeatInfo seats = 2; // 各个座位信息
+}
+
+// 重连加载完成后同步(其他人)的牌完成通知
+message ReconnectOtherReadyReq {
+
+}
+
+enum player_status 
+{
+    normal              = 1; // 正常
+    disconnect          = 2; // 断线
+    reconnect           = 3; // 连接中
+}
+
+// 同步玩家状态
+message SyncPlayerStatus
+{
+    required uint32 seat = 1; //玩家位置
+    required player_status pstatus = 2; //玩家状态    
+}
+
+// 单个位置信息
+message GpsSeatInfo
+{	
+	required int32 seat_id = 1;	// 座位号
+	required double longitude = 2; 	// 经度
+	required double latitude = 3;	// 伟度
+}
+
+// 询问其他人是否开始游戏
+message AskStartGame {
+	repeated SameIpSeats same_ips   = 1; // 相同ip的座位组
+    optional uint32 timer_sec       = 2; //定时器时间-秒 //时间到默认拒绝开始游戏
+	repeated GpsSeatInfo seat_gps_list = 3;// 每个座位的gps信息
+}
+
+// 客户端回复服务器询问
+message AcceptStartReq {
+	required bool accept = 1;
+}
+
+// 服务器通知其他客户端的选择
+message AcceptStartNotify {
+	required uint32 seat = 1;
+	required bool accept = 2;
+}
+
+// 准备
+message PrepareRoundReq {
+}
+
+// 客户端准备状态通知
+message PrepareRoundNotify {
+	required uint32 seat = 1;
+	required bool prepare = 2;
+}
+
+enum event_type {
+    e_none          = 0;
+    zi_mo_hu        = 1; // 自摸
+    dian_pao_hu     = 2; // 点炮
+    ming_gang       = 3; // 明杠
+    an_gang         = 4; // 暗杠
+    guo_shou_gang   = 5; // 过手杠
+    pong            = 6; // 碰
+    pass            = 7; // 过
+    discard         = 8; // 打牌
+    deal            = 9; // 发牌
+    deal_tail       = 10; // 尾部发牌 (比如杠后抓牌)
+    e_max           = 11;
+}
+
+enum kong_type {
+    EXPOSED = 1; // 明杠
+    CONCEALED = 2; // 暗杠
+}
+
+// 胡牌类型
+enum hu_type {
+    hu_none		    	= 0;
+	
+	// 玉林
+	hu_t_yl_pinghu		= 101;	// 平胡
+	hu_t_yl_qidui		= 102;	// 七对
+	hu_t_yl_pphu		= 103;  // 碰碰胡
+	hu_t_yl_qys			= 104;	// 清一色
+	hu_t_yl_qyspphu		= 105; 	// 清一色碰碰胡
+	hu_t_yl_qysqd		= 106;	// 清一色七对
+	hu_t_yl_13yao		= 107;	// 13幺
+	hu_t_yl_tianhu		= 108;	// 天胡
+	hu_t_yl_dihu		= 109;	// 地胡
+	
+	// 博白
+	hu_t_bb_pinghu		= 201;	// 平胡
+	hu_t_bb_qidui		= 202;	// 七对
+	hu_t_bb_pphu		= 203;  // 碰碰胡
+	hu_t_bb_qys			= 204;	// 清一色
+	hu_t_bb_qyspphu		= 205; 	// 清一色碰碰胡
+	hu_t_bb_qysqd		= 206;	// 清一色七对
+	hu_t_bb_13yao		= 207;	// 13幺
+	hu_t_bb_tianhu		= 208;	// 天胡
+	hu_t_bb_dihu		= 209;	// 地胡
+	
+	// 陆川
+	hu_t_lc_pinghu		= 301;	// 平胡
+	hu_t_lc_qidui		= 302;	// 七对
+	hu_t_lc_pphu		= 303;  // 碰碰胡
+	hu_t_lc_qys			= 304;	// 清一色
+	hu_t_lc_qyspphu		= 305; 	// 清一色碰碰胡
+	hu_t_lc_qysqd		= 306;	// 清一色七对
+	hu_t_lc_13yao		= 307;	// 13幺
+	hu_t_lc_tianhu		= 308;	// 天胡
+	hu_t_lc_dihu		= 309;	// 地胡
+
+	
+	// 广西-血战
+	hu_t_xz_pinghu		= 1001;// 平胡
+	hu_t_xz_pphu		= 1002;// 对对胡
+	hu_t_xz_mq			= 1003;// 门清
+	hu_t_xz_duanyj		= 1004;// 断幺九
+	hu_t_xz_qys			= 1005;// 清一色
+	hu_t_xz_daiyj		= 1006;// 带幺九
+	hu_t_xz_qidui		= 1007;// 七对
+	hu_t_xz_jgg			= 1008;// 金钩钓
+	hu_t_xz_qingdui		= 1009;// 清对
+	hu_t_xz_longqd		= 1010;// 龙七对
+	hu_t_xz_qingqd		= 1011;// 清七对
+	hu_t_xz_qingyj		= 1012;// 清幺九
+	hu_t_xz_jjgg		= 1013;// 将金钩钓
+	hu_t_xz_qjgg		= 1014;// 清金钩钓
+	hu_t_xz_tianhu		= 1015;// 天胡
+	hu_t_xz_dihu		= 1016;// 地胡
+	hu_t_xz_qinglqd		= 1017;// 清龙七对
+	hu_t_xz_18lh		= 1018;// 十八罗汉
+	
+	// 广西-血流
+	hu_t_xl_pinghu		= 1101;// 平胡
+	hu_t_xl_pphu		= 1102;// 对对胡
+	hu_t_xl_mq			= 1103;// 门清
+	hu_t_xl_duanyj		= 1104;// 断幺九
+	hu_t_xl_qys			= 1105;// 清一色
+	hu_t_xl_daiyj		= 1106;// 带幺九
+	hu_t_xl_qidui		= 1107;// 七对
+	hu_t_xl_jgg			= 1108;// 金钩钓
+	hu_t_xl_qingdui		= 1109;// 清对
+	hu_t_xl_longqd		= 1110;// 龙七对
+	hu_t_xl_qingqd		= 1111;// 清七对
+	hu_t_xl_qingyj		= 1112;// 清幺九
+	hu_t_xl_jjgg		= 1113;// 将金钩钓
+	hu_t_xl_qjgg		= 1114;// 清金钩钓
+	hu_t_xl_tianhu		= 1115;// 天胡
+	hu_t_xl_dihu		= 1116;// 地胡
+	hu_t_xl_qinglqd		= 1117;// 清龙七对
+	hu_t_xl_18lh		= 1118;// 十八罗汉
+	
+    hu_max 				= 1513;
+}
+
+//胡牌方式
+enum hu_way
+{
+    hu_way_none         = 0;
+	
+	// 示例,尾数尾数是按该顺序
+    hu_way_zimo         = 1; //自摸
+	hu_way_qiangganghu  = 2; //抢杠胡
+    hu_way_gangshangpao = 3; //杠上炮
+    hu_way_gangkaihua  	= 4; //杠开花
+	hu_way_dianpao      = 5; //点炮胡
+	hu_way_zimo_haidi   = 6; //自摸海底
+	hu_way_dianpao_haidi= 7; //点炮胡海底
+	
+	// 玉林
+	hu_way_yl_zimo			= 11;//自摸胡
+	hu_way_yl_qiangganghu	= 12;//抢杠胡
+	hu_way_yl_gangshangpao	= 13;//杠后炮
+	hu_way_yl_gangkaihua	= 14;//杠开花
+	hu_way_yl_dianpao       = 15;//点炮胡
+	hu_way_yl_zimo_haidi    = 16;//自摸海底
+	hu_way_yl_dianpao_haidi = 17;//点炮胡海底
+	
+	// 博白
+	hu_way_bb_zimo			= 21;//自摸胡
+	hu_way_bb_qiangganghu	= 22;//抢杠胡
+	hu_way_bb_gangshangpao	= 23;//杠后炮
+	hu_way_bb_gangkaihua	= 24;//杠开花
+	hu_way_bb_dianpao       = 25;//点炮胡
+	hu_way_bb_zimo_haidi    = 26;//自摸海底
+	hu_way_bb_dianpao_haidi = 27;//点炮胡海底
+	
+	// 陆川
+	hu_way_lc_zimo			= 31;//自摸胡
+	hu_way_lc_qiangganghu	= 32;//抢杠胡
+	hu_way_lc_gangshangpao	= 33;//杠后炮
+	hu_way_lc_gangkaihua	= 34;//杠开花
+	hu_way_lc_dianpao       = 35;//点炮胡
+	hu_way_lc_zimo_haidi    = 36;//自摸海底
+	hu_way_lc_dianpao_haidi = 37;//点炮胡海底
+	
+	// 血战
+	hu_way_xz_zimo			= 101;//自摸胡
+	hu_way_xz_qiangganghu	= 102;//抢杠胡
+	hu_way_xz_gangshangpao	= 103;//杠后炮
+	hu_way_xz_gangkaihua	= 104;//杠开花
+	hu_way_xz_dianpao       = 105;//点炮胡
+	hu_way_xz_zimo_haidi    = 106;//自摸海底
+	hu_way_xz_dianpao_haidi = 107;//点炮胡海底
+	
+	// 血流
+	hu_way_xl_zimo			= 111;//自摸胡
+	hu_way_xl_qiangganghu	= 112;//抢杠胡
+	hu_way_xl_gangshangpao	= 113;//杠后炮
+	hu_way_xl_gangkaihua	= 114;//杠开花
+	hu_way_xl_dianpao       = 115;//点炮胡
+	hu_way_xl_zimo_haidi    = 116;//自摸海底
+	hu_way_xl_dianpao_haidi = 117;//点炮胡海底
+	
+    hu_way_max = 100;
+}
+
+message TotalResultSeat {
+    required uint32 seat            = 1; // 座位号 /
+    required int32 total_score      = 2; //总的番数 /
+    optional bool big_win           = 3; //是否是大赢家
+    optional uint32 zimo_cnt        = 4; //自摸的次数 /
+	optional uint32 ghost_zimo_cnt	= 5; //有鬼自摸次数
+    optional uint32 dianpao_cnt     = 6; //点炮的次数 /
+    optional uint32 angang_cnt      = 7; //暗杠的次数 /
+    optional uint32 minggang_cnt    = 8; //明杠的次数 /
+    optional uint32 guoshougang_cnt = 9; //过手杠的次数
+    optional uint32 total_gang_cnt  = 10; //所有杠的次数
+    optional uint32 fanggang_times  = 11; //放杠次数 /
+	optional uint32 hit_ma_cnt		= 12; //中码次数
+	optional uint32 hu_total_cnt	= 13; //胡的次数
+}
+
+// （单局）开始时的座位牌情况
+message SeatInfo 
+{
+    required uint32 seat            = 1; // 座位号
+    repeated uint32 hand_tiles      = 2; // 自己的手牌
+    repeated OpenTile open_tiles    = 3; // 碰、杠的牌
+    repeated uint32 discard_tiles   = 4; // 打出的牌
+	repeated uint32 hu_tiles		= 5; // 胡的牌
+    required player_status pstatus  = 6; // 玩家状态
+    required int32 score            = 7; // 分数
+	optional int32 dingque			= 8; // 定阙
+}
+
+// （单局）结束后座位输赢情况
+message GameResultSeat 
+{
+    required uint32 seat         = 1; 	// 座位号
+    required int32 total_score   = 2; 	// 输赢番数
+    repeated uint32 hand_tiles   = 3; 	// 牌
+    repeated OpenTile open_tiles = 4; 	// 碰、杠的牌
+    optional uint32 an_gang      = 5; 	// 暗杠的番数
+    optional uint32 ming_gang    = 6; 	// 明杠的番数
+    optional uint32 guo_shou_gang = 7; 	// 过手杠的番数
+    optional HuInfo hu_info      = 8; 	// 胡牌信息
+    optional uint32 hu_tile      = 9; 	// 胡的牌
+	optional uint32 dingque		 = 10;	// 定阙的类型
+	repeated ScoreDetail score_detail = 11;	// 胡牌详细
+	optional uint32 game_type	= 12;	// 游戏玩法
+}
+
+// 胡牌的详细
+message HuDetail
+{
+	optional int32 mySeat 	= 1;	// 我的位置,如果我的位置与胡的位置相同，则显示自摸，如不同，则被自摸
+	optional int32 huSeat 	= 2;	// 胡的位置
+	optional int32 doedSeat = 3;	// 被操作位置(-1:三家,0本家,1下家,2对家,3上家)
+	optional int32 score 	= 4;	// 加减分
+	optional int32 huway 	= 5;	// 胡的方式
+	optional int32 hutype 	= 6;    // 胡的类型
+	optional int32 humulti 	= 7;    // 胡的倍数
+	optional uint32 huTile 	= 8;	// 胡的牌
+	
+	optional int32 item1 = 9;
+	optional int32 item2 = 10;
+	optional int32 item3 = 11;
+	optional int32 item4 = 12;
+	optional int32 item5 = 13; 
+	optional int32 item6 = 14; 
+	optional int32 item7 = 15;
+	optional int32 item8 = 16;
+	optional int32 item9 = 17;
+	optional int32 item10 = 18;
+	optional int32 item11 = 19;
+	
+	repeated int32 doedmultiseat = 20; // 被操作的位置，针对胡的人
+
+}
+
+// 括风下雨
+message FengYuDetail
+{
+	optional int32 mySeat = 1;		// 我的位置 
+	optional int32 huSeat = 2;		// 杠的位置
+	optional int32 doedSeat = 3;	// 被操作位置(-1:三家,0本家,1下家,2对家,3上家)
+	optional int32 score = 4;		// 加减分
+	optional int32 fengYuType = 5;  // 1:刮风点杠,2:补杠,3:暗杠
+	repeated int32 doedmultiseat= 6;// 被操作的位置，针对括风下雨的人
+}
+
+// 查花猪
+message HuaZhuDetail{
+	optional int32 mySeat = 1;		// 我的位置 
+	optional int32 huSeat = 2;		// 花猪的位置
+	optional int32 doedSeat = 3;	// 被操作位置
+	optional int32 score = 4;		// 加减分
+}
+
+// 查大叫
+message DaJiaoDetail{
+	optional int32 mySeat = 1;		// 我的位置 
+	optional int32 huSeat = 2;		// 大叫的位置
+	optional int32 doedSeat = 3;	// 被操作位置(-1:三家,0本家,1下家,2对家,3上家)
+	optional int32 score = 4;		// 加减分
+}
+
+// 算分详细项
+message ScoreDetail{
+	optional int32 type = 1;	// 1胡,2刮风下雨,3花猪,4大叫,5退税,6呼叫转移
+	optional HuDetail hu = 2;
+	optional FengYuDetail fengyu = 3;
+	optional HuaZhuDetail huazhu = 4;
+	optional DaJiaoDetail dajiao = 5;
+	optional int32 backtax = 6;
+	optional int32 hujzy = 7;
+}
+
+message OpenTile {
+    required event_type type  = 1; // 碰、明杠、暗杠、过手杠
+    repeated uint32 tile_list = 2; // 牌列表
+}
+
+
+
+// 玉林
+message YlHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 博白
+message BbHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 陆川
+message LcHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 血战
+message XzHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+// 血流
+message XlHuInfo {
+    required hu_way huway       = 1; // 胡牌方式
+    required hu_type huType     = 2; // 胡牌类型
+	repeated uint32 ma_pai_all  = 3; // 所有的马牌
+    repeated uint32 ma_pai_hit  = 4; // 中马的牌
+}
+
+message HuInfo {
+	required uint32 game_type	= 1;
+	optional YlHuInfo yl_info	= 2; 
+	optional BbHuInfo bb_info 	= 3;
+	optional LcHuInfo lc_info 	= 4;
+}
+
+message SameIpSeats {
+	repeated uint32 seat = 1; // 座位号
+}
+
+// 快捷说话收到前端消息
+message QuickMessageReq
+{
+    required uint32 msg_index       = 1; //消息序号
+	required uint32 seat 			= 2; //座位号
+}
+
+// 快捷说话转发前端消息
+message QuickMessageResp
+{
+    required uint32 ret             = 1; //0正常,1太频繁
+    required uint32 msg_index       = 2; //消息序号
+	required uint32 seat 			= 3; //座位号
+}
+
+// 通知玩家事件
+message NotifyPlayerEvent
+{
+    repeated EventInfo event_list  = 1; // 通知玩家事件
+}
+
+// 鬼牌的结果通知
+message NotifyGhostPaiListResult
+{
+	required int32 game_type = 1;		// 游戏类型
+	required int32 desk_tile_count = 2; // 桌面还剩多少牌
+	required int32 fan_pai = 3;			// 翻开出来的牌(0不需要牌，>0需要翻开显示动画的牌)
+	repeated int32 ghost_pai = 4;		// 鬼牌
+	required bool is_disconn = 5;		// （false非断线重连，true断线重连）
+}
+
+// 跟庄成功
+message NotifyGenzhuang
+{
+
+}
+
+
+// 通知换三张
+message AskSanZhang
+{
+	required int32 lesstype = 1; // 1:筒,2:条,3:万
+}
+
+// 每个人选择的换三张
+message HuanSanZhangReq
+{
+	required int32 seat = 1;
+	required int32 type = 2;
+	repeated int32 pais = 3; // 三张同花的牌
+}
+
+// 都选好的换三张通知(分别通知)
+message HuanSanZhangNotify
+{
+	required int32 direct 	= 1;// 0顺针针，1对向
+	required int32 seat 	= 2;
+	required int32 type 	= 3;
+	repeated int32 pais 	= 4;
+}
+
+// 通知定缺
+message AskDingQue
+{
+	required int32 lesstype = 1; // 1:筒,2:条,3:万
+}
+
+// 选择定缺
+message DingQueReq
+{
+	required int32 seat = 1;
+	required int32 type = 2;
+}
+
+// 广播所有人的定缺
+message DingQueNotify
+{
+	repeated DingQueReq quelist = 1;
+}
+
+// 胡牌的牌列表通知
+message HuPaiListNotify
+{
+	required int32 seat = 1;
+	repeated int32 tiles = 2;
+}
+
+// 请求我的积分列表
+message MyScoreListReq
+{
+
+}
+
+message MyScoreListResp
+{
+	required int32 myscore = 1;
+	repeated ScoreDetail scorelist = 2;
+	optional int32 game_type = 3;
+}
+
+// 请求听牌
+message MyTingPaiListReq{
+
+}
+
+

@@ -1,0 +1,120 @@
+syntax = "proto2";
+package msg_event;
+
+
+enum c_cmd_event {
+	update_event_list 	= 1; // 完整更新事件/邮箱列表
+	add_friend			= 2; // 好友请求事件
+	invite_game			= 4; // 邀请游戏
+	resp_invite_game	= 5; // 回应邀请游戏
+	notice_list_resp  	= 6; // 通告列表返回，登录后返回
+	mail_list_req    	= 7; // 邮件列表请求
+    mail_list_resp   	= 8; // 邮件列表返回
+    mail_opt_req    	= 9; // 邮件操作请求
+    mail_opt_resp   	= 10; // 邮件操作回复
+	tip_nt_resp			= 11;	// 通告前端提示
+}
+
+// 好友请求事件
+message AddFriend {
+	required uint64 uid			= 1; // 发起请求者的uid
+	required string nickname	= 2; // 发起请求者的nickname
+	required uint32 mail_id 	= 3; // 事件唯一码
+}
+
+// 回应请求事件
+message RespAddFriend {
+	required uint32 mail_id = 1; // 事件唯一码
+	required bool accept = 2; // 是否同意
+}
+
+// 邀请游戏
+message InviteGame {
+	required uint64 uid			= 1; // 邀请者的uid
+	required string nickname	= 2; // 邀请者的nickname
+	required uint32 room_no		= 3; // 桌号
+	required uint32 mail_id 	= 4; // 事件唯一码
+}
+
+// 回应邀请游戏
+message RespInviteGame {
+	required uint32 mail_id = 1; // 事件唯一码
+	required bool accept = 2; // 是否同意
+}
+
+// 领取金币等
+
+// 更新事件的消息
+message UpdateEventList {
+	repeated EventWrap events = 1;
+}
+
+// 消息包裹结果，用于更新消息
+message EventWrap {
+	optional AddFriend add_friend = 1;
+	optional InviteGame invite_game = 2;
+}
+
+
+enum opt_type_event
+{
+	opt_t_all_list = 1; // 刷新整个公告列表数据
+	opt_t_new_one = 2;	// 更新或添加单个公告
+}
+
+message NoticeListResp
+{
+	required opt_type_event type = 1; 
+	repeated NoticeS notice_list = 2;
+}
+
+message NoticeS
+{
+	required uint64 id = 1;				// id
+	required string content = 2;		// 播放内容
+	required uint64 begin_time = 3;		// 开始时间
+	required uint64 break_time = 4;		// 中止时间 
+	required uint32 minute_time = 5;  	// 播放时间点分
+	required uint32 sort_level = 6;		// 优化级
+}
+
+// 所有错误/提示码---部分是前端处理
+enum tip_type
+{
+	tip_t_version = 1;
+	tip_t_exit = 2;
+	tip_t_needconn = 3;
+	tip_t_disconn = 4;
+	tip_t_accbad = 5;
+	tip_t_acclogined = 6;
+	tip_t_weixinfail = 7;
+	tip_t_qqfail = 8;
+	tip_t_accchange = 9;
+	tip_t_roomcard_notenough = 10;
+	tip_t_roomid_fail = 11;
+	tip_t_room_full = 12;
+	tip_t_room_join = 13;
+	tip_t_room_exit = 14;
+	tip_t_room_disconn = 15;
+	tip_t_room_reconn = 16;
+	tip_t_room_startbtn = 17;
+	tip_t_room_refusebtn = 18;
+	tip_t_room_disband = 19;
+	tip_t_room_kicked = 20;
+	tip_t_room_apply_disband = 21;
+	tip_t_room_disbanded = 22;
+	tip_t_room_disconn_disband = 23;
+	tip_t_room_apple_disband_must = 24;
+	tip_t_room_quick_msg_must = 25;
+	tip_t_donwload_fail = 26;
+}
+
+// 提示码通知前端
+message TipResp
+{
+	required tip_type type = 1; // 提示类型
+	optional string args = 2; 	// 参数,该类型永远为a,b,c格式，前端根据文本进行选择前面的参数使用
+}
+
+
+

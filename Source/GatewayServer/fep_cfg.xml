@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-	<!-- æœ¬åœ°Server_For_Ssæœï¼Œç»™å…¶ä»–æœåŠ¡å™¨é€šä¿¡ç”¨ï¼Œå¦‚ss,lsçš„è¿žæŽ¥ -->
+	<!-- ±¾µØServer_For_Ss·þ£¬¸øÆäËû·þÎñÆ÷Í¨ÐÅÓÃ£¬Èçss,lsµÄÁ¬½Ó -->
 	<local id="1001" host="127.0.0.1" port="9101" type="1"/>
-	<!-- æœ¬åœ°Client_Connect_Wsï¼Œè¿žæŽ¥ä¸–ç•Œæœ -->
+	<!-- ±¾µØClient_Connect_Ws£¬Á¬½ÓÊÀ½ç·þ -->
 	<remote id="3001" host="127.0.0.1" port="9903" type="3"/>
-	<!-- æœ¬åœ°Server_For_Clientæœï¼Œç»™å¤–ç•Œè¿žæŽ¥ç”¨ï¼Œå¦‚çŽ©å®¶å®¢æˆ·ç«¯ -->
+	<!-- ±¾µØServer_For_Client·þ£¬¸øÍâ½çÁ¬½ÓÓÃ£¬ÈçÍæ¼Ò¿Í»§¶Ë -->
 	<client id="0" host="127.0.0.1" port="9001" type="0"/>
 </items>

@@ -1,7 +1,7 @@
 #include "DbRecordSet.h"
 #include "DbRecord.h"
 
-const uint32 INVALID_KEY = UINT_MAX;
+const uint32_t INVALID_KEY = UINT_MAX;
 
 DbRecordSet::DbRecordSet():m_nCursor( 0 ),m_nKeyIndex( INVALID_KEY ) ,m_nAutoIncIndex( INVALID_KEY )
 {
@@ -32,7 +32,7 @@ std::vector<DbFieldInfo>& DbRecordSet::GetFieldInfos()
 	return m_vecFieldInfo;
 }
 
-int32 DbRecordSet::FieldsCount() const
+int32_t DbRecordSet::FieldsCount() const
 {
 	return m_vecFieldInfo.size();
 }
@@ -42,12 +42,12 @@ char* DbRecordSet::GetTableName()
 	return m_arrTableName;
 }
 
-const DbFieldInfo&	DbRecordSet::GetFieldInfo(int32 nIndex) const
+const DbFieldInfo&	DbRecordSet::GetFieldInfo(int32_t nIndex) const
 {
 	return m_vecFieldInfo[nIndex];
 }
 
-int32 DbRecordSet::Rows() const
+int32_t DbRecordSet::Rows() const
 {
 	return m_vecRecord.size();
 }
@@ -59,9 +59,9 @@ bool DbRecordSet::Create( MYSQL_RES* pRes )
 
 	// 填写字段信息
 	MYSQL_FIELD* field = NULL;
-	uint32 unNumFields = mysql_num_fields( pRes );
+	uint32_t unNumFields = mysql_num_fields( pRes );
 	MYSQL_FIELD* fields = mysql_fetch_fields( pRes );
-	for (uint32 i = 0 ; i < unNumFields; i++)
+	for (uint32_t i = 0 ; i < unNumFields; i++)
 	{
 		field = mysql_fetch_field_direct(pRes,i);
 		DbFieldInfo fieldInfo;
@@ -81,8 +81,8 @@ bool DbRecordSet::Create( MYSQL_RES* pRes )
 		return false;
 	}
 
-	int64 ulNumRecord = mysql_num_rows( pRes );
-	for ( uint32 r = 0 ; r < ulNumRecord ; r++ )
+	int64_t ulNumRecord = mysql_num_rows( pRes );
+	for ( uint32_t r = 0 ; r < ulNumRecord ; r++ )
 	{
 		mysql_data_seek( pRes , r );// 移动到第i个记录 
 		MYSQL_ROW row = mysql_fetch_row( pRes );// 取第i个记录数据 
@@ -113,14 +113,14 @@ IDbRecord* DbRecordSet::GetRecord() const
 	return m_vecRecord[m_nCursor];
 }
 
-void* DbRecordSet::GetRecordData(uint32 nIndex) const 
+void* DbRecordSet::GetRecordData(uint32_t nIndex) const 
 {	
 	if ( nIndex >= m_vecRecord.size() )
 		return NULL;
 	return (m_vecRecord[nIndex])->GetRowBuff();
 }
 
-void DbRecordSet::Move( uint32 nIndex )
+void DbRecordSet::Move( uint32_t nIndex )
 {	
 	if ( m_vecRecord.empty() )
 	{
@@ -128,7 +128,7 @@ void DbRecordSet::Move( uint32 nIndex )
 		return;
 	}
 	if ( nIndex >= m_vecRecord.size() )
-		m_nCursor = (int32)m_vecRecord.size() - 1;
+		m_nCursor = (int32_t)m_vecRecord.size() - 1;
 	else
 		m_nCursor = nIndex;
 }

@@ -1,10 +1,9 @@
 #ifndef _PROC_WORLD_HANDLER_H_
 #define _PROC_WORLD_HANDLER_H_
 
-#include "BaseDefine.h"
+#include "SrvEngine.h"
 #include "Single.h"
 
-class zSession;
 struct NetMsgSS;
 
 /*-------------------------------------------------------------------
@@ -18,7 +17,7 @@ public:
 	ProcWorldHandler();
 	~ProcWorldHandler();
 
-	void ReqLogin(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize);
+	void ReqLogin(zSession* pBaseSession, const NetMsgSS* pMsg,int32_t nSize);
 };
 
 

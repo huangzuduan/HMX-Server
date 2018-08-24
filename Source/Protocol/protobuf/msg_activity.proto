@@ -1,0 +1,154 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_activity {
+	get_share_info_req 			= 1; //获取分享信息请求
+	get_share_info_resp 		= 2; //获取分享信息回复
+    share_Report_req 			= 3; //分享完成上报请求
+    share_Report_resp 			= 4; //分享完成上报回复
+    Recv_share_reward_req 		= 5; //领取分享奖励请求
+    Recv_share_reward_resp 		= 6; //领取分享奖励回复
+
+    get_invitation_info_req 	= 7; //获取邀请信息请求
+	get_invitation_info_resp 	= 8; //获取邀请信息回复
+    Recv_invitation_reward_req 	= 9; //领取邀请奖励请求
+    Recv_invitation_reward_resp = 10; //领取邀请奖励回复
+
+    get_binding_agent_info_req 	= 11; //获取已绑定代理请求
+    get_binding_agent_info_resp	= 12; //获取已绑定代理回复
+    binding_agent_req 			= 13; //绑定代理请求
+    binding_agent_resp 			= 14; //绑定代理回复
+
+    Sync_activity_info 			= 15; //同步活动信息
+
+    input_invitation_code_req 	= 17; //输入邀请码请求
+    input_invitation_code_resp 	= 18; //输入邀请码回复
+}
+
+message GetShareInfoReq
+{
+	
+}
+
+message GetShareInfoResp
+{
+	optional uint32 status 		= 1; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 room_card 	= 2; //奖励房卡数
+}
+
+message ShareReportReq
+{
+	
+}
+
+message ShareReportResp
+{
+	optional uint32 share_status  = 1; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 today_status1 = 2; //今天1状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 today_status2 = 3; //今天2状态(0:未分享 1:已分享 2:已领取奖励)
+}
+
+message RecvShareRewardReq
+{
+	
+}
+
+message RecvShareRewardResp
+{
+	enum ErrorCode
+	{
+		SUCCESS = 1; //成功
+		FAIL = 2; //失败
+	}
+
+	required ErrorCode code 	= 1; //结果
+	optional uint32 status 		= 2; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+}
+
+message GetInvitationInfoReq
+{
+	
+}
+
+message GetInvitationInfoResp
+{
+	optional uint32 inv_friend_room_card	= 1; //邀请一位好友可领取房卡数量
+	optional uint32 has_inv_friend_num 		= 2; //已成功邀请好友的数量
+    optional uint32 has_get_room_card   	= 3; //已成功领取房卡的数量
+    optional uint32 can_get_room_card   	= 4; //还可以领取房卡的数量
+
+
+    optional string invitation_player   	= 5; //邀请者名字
+    optional uint32 need_player_games 		= 6; //还需玩的局数
+    optional uint32 reward_room_card 		= 7; //玩完局数的奖励房卡数
+    optional uint32 recv_reward_status 		= 8; //领取奖励状态（0：不可领取 1：可领取 2：已领取）
+}
+
+message RecvInvitationRewardReq
+{
+	optional uint32 reward_type = 1; //邀请奖励类型（1：主动邀请奖励 2：被邀请玩游戏后的奖励）
+}
+
+message RecvInvitationRewardResp
+{
+	enum ErrorCode
+	{
+		SUCCESS = 1; //成功
+		FAIL = 2; //失败
+	}
+
+	required ErrorCode code 			= 1; //结果
+	optional uint32 reward_type 		= 2; //邀请奖励类型（1：主动邀请奖励 2：被邀请玩游戏后的奖励）
+
+    optional uint32 has_get_room_card   = 3; //已成功领取房卡的数量
+    optional uint32 can_get_room_card   = 4; //还可以领取房卡的数量
+
+    optional uint32 recv_reward_status 	= 5; //领取奖励状态（0：不可领取 1：可领取 2：已领取）
+}
+
+message GetBindingAgentInfoReq
+{
+
+}
+
+message GetBindingAgentInfoResp
+{
+	optional uint32 user_id 	= 1; //代理ID
+	optional string name 		= 2; //代理名称
+	optional string wx_account 	= 3; //微信号
+	optional string icon 		= 4; //头像地址
+}
+
+message BindingAgentReq
+{
+	optional uint32 user_id 	= 1; //代理ID
+}
+
+message BindingAgentResp
+{
+	required int32 code 		= 1; //结果
+	optional uint32 user_id 	= 2; //代理ID
+	optional string name 		= 3; //代理名称
+	optional string wx_account 	= 4; //微信号
+	optional string icon 		= 5; //头像地址
+	optional string code_info 	= 6; //错误码描述
+}
+
+message SyncActivityInfo
+{
+	optional uint32 share_status 			= 1; //分享状态(0:未分享 1:已分享 2:已领取奖励)
+	optional uint32 inv_can_get_room_card   = 2; //邀请可以领取房卡的数量
+}
+
+message InputInvitationCodeReq
+{
+	optional string invitation_code = 1; //邀请码
+}
+
+message InputInvitationCodeResp
+{
+	optional int32 code 			 = 1; //结果
+    optional uint32 reward_room_card = 2; //玩完局数的奖励房卡数
+	optional string code_info		 = 3;
+}
+

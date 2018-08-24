@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package protobuf;
+
+message LevelBinary
+{
+	optional int32 other = 1;
+}
+
+message LevelRow
+{
+	optional int32 sortid = 1; 	// 排名序号 当前 1- 100,上次101-200 
+	optional int64 uid = 2; 	// 用户ID 
+	optional string name = 3;	// 用户名 
+	optional int32 level =4;	// 等级
+	optional LevelBinary binData =  5; // 其他数据
+}
+
+// 等级排行表 
+message LevelTable
+{
+	optional int32 itemid = 1; 		// 类型ID 
+	repeated LevelRow levels = 2; 	// 列表 
+}
+
+
+

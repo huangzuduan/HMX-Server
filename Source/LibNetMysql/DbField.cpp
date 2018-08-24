@@ -55,23 +55,7 @@ DbField::operator char() const
 }
 
 
-
-DbField::operator uchar() const
-{ 
-	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
-		||m_Info.nType == FIELD_TYPE_SHORT 
-		|| m_Info.nType == FIELD_TYPE_LONG 
-		|| m_Info.nType == FIELD_TYPE_LONGLONG 
-		|| m_Info.nType == FIELD_TYPE_FLOAT 
-		|| m_Info.nType == FIELD_TYPE_DOUBLE )
-	{
-		FireError();
-	}
-	return 0;
-}
-
-
-DbField::operator int16() const
+DbField::operator int16_t() const
 { 
 	if ( (UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_LONG 
@@ -84,7 +68,7 @@ DbField::operator int16() const
 	return 0;
 }
 
-DbField::operator uint16() const
+DbField::operator uint16_t() const
 { 
 	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_LONG 
@@ -97,7 +81,7 @@ DbField::operator uint16() const
 	return 0;
 }
 
-DbField::operator int32() const
+DbField::operator int32_t() const
 { 
 	if ( (UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_LONGLONG 
@@ -109,7 +93,7 @@ DbField::operator int32() const
 	return 0;
 }
 
-DbField::operator uint32() const
+DbField::operator uint32_t() const
 {
 	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_LONGLONG 
@@ -121,7 +105,7 @@ DbField::operator uint32() const
 	return 0;
 }
 
-DbField::operator int64() const
+DbField::operator int64_t() const
 {
 	if ( (UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_FLOAT 
@@ -132,7 +116,7 @@ DbField::operator int64() const
 	return 0;
 }
 
-DbField::operator uint64() const
+DbField::operator uint64_t() const
 {
 	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_FLOAT 
@@ -190,18 +174,7 @@ IDbData& DbField::operator = ( char cOp )
 	return *this;
 }
 
-IDbData& DbField::operator = ( uchar ucOp )
-{
-	if ( !(UNSIGNED_FLAG & m_Info.nAttr))
-	{
-		FireError();
-	}
-
-	m_bChanged = true;
-	return *this;
-}
-
-IDbData& DbField::operator = ( int16 sOp )
+IDbData& DbField::operator = ( int16_t sOp )
 {	
 	if ( (UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_TINY )
@@ -213,7 +186,7 @@ IDbData& DbField::operator = ( int16 sOp )
 	return *this;
 }
 
-IDbData& DbField::operator = ( uint16 usOp )
+IDbData& DbField::operator = ( uint16_t usOp )
 {	
 	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_TINY )
@@ -225,7 +198,7 @@ IDbData& DbField::operator = ( uint16 usOp )
 	return *this;
 }
 
-IDbData& DbField::operator = ( int32 iOp )
+IDbData& DbField::operator = ( int32_t iOp )
 {	
 	if ( (UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_TINY
@@ -238,7 +211,7 @@ IDbData& DbField::operator = ( int32 iOp )
 	return *this;
 }
 
-IDbData& DbField::operator = ( uint32 uiOp )
+IDbData& DbField::operator = ( uint32_t uiOp )
 {	
 	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_TINY
@@ -251,7 +224,7 @@ IDbData& DbField::operator = ( uint32 uiOp )
 	return *this;
 }
 
-IDbData& DbField::operator = ( int64 i64Op )
+IDbData& DbField::operator = ( int64_t i64Op )
 {
 	if ( (UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_TINY
@@ -265,7 +238,7 @@ IDbData& DbField::operator = ( int64 i64Op )
 	return *this;
 }
 
-IDbData& DbField::operator = ( uint64 ui64Op )
+IDbData& DbField::operator = ( uint64_t ui64Op )
 {
 	if ( !(UNSIGNED_FLAG & m_Info.nAttr)
 		|| m_Info.nType == FIELD_TYPE_TINY
@@ -330,17 +303,17 @@ const char* DbField::GetName() const
 	return m_Info.strName.c_str();
 }
 
-uint32 DbField::GetType() const
+uint32_t DbField::GetType() const
 {
 	return m_Info.nType;
 }
 
-uint32 DbField::GetAttr() const
+uint32_t DbField::GetAttr() const
 {
 	return m_Info.nAttr;
 }
 
-uint32 DbField::GetLen() const
+uint32_t DbField::GetLen() const
 {
 	return m_Info.nLen;
 }

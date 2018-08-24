@@ -14,5 +14,7 @@
 #include "NetSocket.h"
 #include "NetClient.h"
 #include "NetServer.h"
+#include "CWebClient.h"
+#include "CWebServer.h"
 
 #endif

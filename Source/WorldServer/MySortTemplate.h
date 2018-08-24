@@ -1,7 +1,7 @@
 #ifndef __MY_SORT_TEMPLATE_H_
 #define __MY_SORT_TEMPLATE_H_
 
-#include "Includes.h"
+#include "csCommon.h"
 
 /*-------------------------------------------------------------------
  * @Brief : 这里需要打通与DB表相通，当DB启动后，需要加载DB的表的排序榜
@@ -36,8 +36,6 @@ public:
 	}
 };
 
-
-
 // 排序类模板类 
 template<typename TSortKey,typename TSortValue,typename TSortComparetor = SortCompareBase<TSortKey> >
 class MySortTemplate
@@ -47,7 +45,7 @@ public:
 	typedef typename SortMultiMap::iterator						SortMultiMapIter;
 public:
 
-	MySortTemplate(int32 _itemid,const char* _name, int32 _mCycle, int32 _mCountMax)
+	MySortTemplate(int32_t _itemid,const char* _name, int32_t _mCycle, int32_t _mCountMax)
 		:itemid(_itemid)
 		,mCycle(_mCycle)
 		,mCountMax(_mCountMax)
@@ -64,10 +62,10 @@ public:
 
 public:
 
-	int32 itemid;					/* 排行榜类型 */
-	char name[MAX_NAME_LENGTH];		/* 排行榜名 */
-	int32 mCycle;					/* 周期 */
-	int32 mCountMax;				/* 入榜最大数 */	
+	int32_t itemid;					/* 排行榜类型 */
+	char name[MAX_NAME_LEN];		/* 排行榜名 */
+	int32_t mCycle;					/* 周期 */
+	int32_t mCountMax;				/* 入榜最大数 */	
 	
 	SortMultiMap& mCurrSortList;				/* 当前数据容器 */  
 	SortMultiMap& mLastSortList;				/* 当前数据容器 */ 
@@ -98,7 +96,7 @@ public:
 		}
 	}
 
-	void GetTopList(std::vector<TSortValue>& vecSort,int32 nNum = 100)
+	inline void GetTopList(std::vector<TSortValue>& vecSort,uint32_t nNum = 100)
 	{
 		SortMultiMapIter it = mCurrSortList.begin();
 		SortMultiMapIter itEnd = mCurrSortList.end();
@@ -113,7 +111,7 @@ public:
 		mLastSortList.insert(std::make_pair(key, value));
 	}
 
-	void GetLastTopList(std::vector<TSortValue>& vecSort, int32 nNum = 100)
+	inline void GetLastTopList(std::vector<TSortValue>& vecSort, int32_t nNum = 100)
 	{
 		SortMultiMapIter it = mLastSortList.begin();
 		SortMultiMapIter itEnd = mLastSortList.end();
@@ -123,7 +121,7 @@ public:
 		}
 	}
 
-	inline void GetAllList(std::vector<TSortValue>& vecSort,int32 nNum = 100 )
+	inline void GetAllList(std::vector<TSortValue>& vecSort, uint32_t nNum = 100 )
 	{
 		GetTopList(vecSort, nNum);
 		GetLastTopList(vecSort, nNum);

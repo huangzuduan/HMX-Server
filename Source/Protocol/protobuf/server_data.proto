@@ -1,0 +1,328 @@
+syntax = "proto2";
+package fogs.proto.msg;
+
+import "msg_role.proto";
+import "msg_rank.proto";
+import "msg_mail.proto";
+import "msg_history.proto";
+import "msg_room.proto";
+import "msg_event.proto";
+
+message QueryPlayerRequest
+{
+	optional uint64 uid 	= 1; //
+	optional string account = 2; //账号
+	optional uint32 room_id = 3; //房间号
+}
+
+message QueryPlayerResponse
+{
+	optional int32 result 				= 1; //结果
+	optional msg_maj.Role role_info 	= 2; //角色数据
+	optional uint32 room_id = 3; //房间号
+}
+
+message InputInviteCodeReq
+{
+	optional uint64 user_id = 1;
+	optional string code 	= 2;
+}
+
+message InputInviteCodeResp
+{
+	optional uint32 result 			= 1; //结果
+	optional uint32 room_card		= 2; //获得的房卡
+	optional string code_info		= 3; //信息
+}
+
+message SavePlayerRequest
+{
+	required int32 type					= 1; //0正常,1下线
+	required msg_maj.Role role_info 	= 2; //角色数据
+}
+
+message DBAccountID
+{
+	optional string account 	= 1; //账号
+	optional uint32 id 			= 2; //ID
+}
+
+
+message QueryRankRequest
+{
+	optional msg_maj.rank_type ranktype = 1; // 排行榜的类型
+	required uint64 char_id = 2; // 角色ID
+}
+
+// 查询基本的保存记录
+message QueryBase
+{
+	optional uint32 id = 1;
+	optional uint64 value = 2;
+}
+
+// 加载排行榜
+message QuerySaveRanks
+{
+	optional msg_maj.rank_type ranktype = 1; // 加载保存类型 
+	repeated msg_maj.WinsInfo  winsinfo = 2;
+	repeated msg_maj.ScoreInfo scoreinfo = 3;
+}
+
+// 更新某条排行榜
+message UpdateSaveRanks
+{
+	optional msg_maj.rank_type ranktype = 1; // 加载保存类型 
+	optional msg_maj.WinsInfo  winsinfo = 2;
+	optional msg_maj.ScoreInfo scoreinfo = 3;
+}
+
+// 查询自己看到的排行榜信息
+message QueryRankReqResp
+{
+	required msg_maj.rank_type ranktype = 1; // 查看类型 
+	required uint64	char_id = 2;
+	optional int32 last = 3;
+	optional msg_maj.RankResp ranklist = 4;
+}
+
+// 刷新名次
+message UpdatePlayerSort
+{
+	required msg_maj.rank_type ranktype = 1; //类型 
+	required uint64	char_id = 2;
+	required uint32 sort = 3; //名次 
+	required uint32 value = 4; 
+}
+
+// 查询战绩历史记录
+message QueryHistoryRequset
+{
+	required uint64 start_index = 1; 
+}
+
+message QueryHistoryResponse
+{
+	required uint32 last_num = 1; 	//剩余未发完数量
+	repeated msg_maj.HistoryRecordS record_list = 2;
+}
+
+// 保存单条历史记录
+message SaveHistoryRequest
+{
+	required msg_maj.HistoryRecordS records = 1;
+}
+
+// 战绩新增一局
+message ZhanjiRecordAdd
+{
+	required uint64 record_id = 1;
+	optional uint32 room_id = 2;
+	optional msg_maj.RoomInfo room_info = 3;
+	optional msg_maj.RoleInfoListS role_info = 4;
+	required msg_maj.InnRecordS inn_record = 5;
+	required msg_maj.InnReplayActionS inn_replay = 6;
+	optional uint64 start_time = 7;
+}
+
+// 战绩结束协议s2db
+message ZhanJiFinish
+{
+	required uint64 record_id = 1;
+}
+
+// 战绩查询
+message ZhanjiQueryList
+{
+	required uint64 char_id = 1;
+	required msg_maj.HistoryListReq req = 2;
+}
+
+// 战绩查询返回
+message ZhanjiQueryResp
+{
+	required uint64 char_id = 1;
+	required msg_maj.HistoryListResp resp = 2;
+}
+
+// 战绩查询房间
+message ZhanjiQueryRoom
+{
+	required uint64 char_id = 1;
+	required msg_maj.HistoryRoomReq req = 2;
+}
+
+// 战绩查询房间返回
+message ZhanjiQueryRoomResp
+{
+	required uint64 char_id = 1;
+	required msg_maj.HistoryRoomResp resp = 2;
+}
+
+// 
+message ZhanjiQueryInnReq
+{
+	required uint64 char_id = 1;
+	required msg_maj.HistoryInnReq req = 2;
+}
+
+message ZhanjiQueryInnResp
+{
+	required uint64 char_id = 1;
+	required msg_maj.HistoryInnResp resp = 2;
+}
+
+// 战绩回放请求
+message ZhanjiQueryReply
+{
+	required uint64 char_id = 1;
+	required msg_maj.ReplayReq req = 2;
+}
+
+// 战绩回放返回
+message ZhanjiRespReply
+{
+	required uint64 char_id = 1;
+	required msg_maj.ReplayResp resp = 2;
+}
+
+// 查询邮件
+message QueryMailRequest
+{
+	required uint64 uid = 1;
+	required uint64 start_index = 2;
+}
+
+// 查询公共邮件个人日志
+message QueryMailSystemLogRequest
+{
+	required uint64 uid = 1;
+}
+
+// 返回所有邮件
+message QueryMailResponse
+{
+	required uint64 uid = 1;
+	required uint32 last_num = 2; 	//剩余未发完数量
+	repeated msg_maj.MailRecordS record_list = 3;
+}
+
+// 返回共用邮件个人日志
+message QueryMailSystemLogResponse
+{
+	required uint64 uid = 1;
+	required uint32 last_num = 2; 	//剩余未发完数量
+	repeated msg_maj.MailSystemLogS record_list = 3;
+}
+
+// 保存个人邮件
+message SaveMailRequest
+{
+	required msg_maj.MailRecordS records = 1;
+}
+
+// 保存个人系统共用邮件
+message SaveMailSystemLogRequest
+{
+	required msg_maj.MailSystemLogS records = 1;
+}
+
+//获取最大的UUID
+message GetMaxUUIDRequest
+{
+	optional uint32 server_id 		= 1; //服务器ID
+	repeated uint32 uuid_type_list 	= 2; //UUUID类型列表 1:charid 2:mailid
+}
+
+message UUID
+{
+	optional uint64 uuid = 1;
+}
+message UUIDData
+{
+	optional uint32 uuid_type 	= 1; //UUID类型
+	optional uint64 uuid 		= 2; //UUID
+}
+message GetMaxUUIDResponse
+{
+	optional int32 result 		= 1; //结果
+	optional uint32 server_id 	= 2; //服务器ID
+	repeated UUIDData uuid_list = 3; //UUID列表
+}
+
+message AccountEnterGame
+{
+	optional string account 	= 1; //账号
+	optional uint32 server_id 	= 2; //服务器ID
+	optional uint64 charid 		= 3; //角色ID
+}
+
+message AccountLeaveGame
+{
+	optional string account 	= 1; //账号
+	optional uint64 charid 		= 2; //角色ID
+}
+
+message ChangeGameServer
+{
+	required msg_maj.Role role_info 		= 1; //角色数据
+	optional uint64 session_id 				= 2; //sessionID
+	optional uint32 fepserverid				= 3; //fepserver
+	optional uint32 room_id 				= 4; //房间ID
+	optional string icon_addr 				= 5; //头像地址
+	repeated msg_maj.MailRecordS mail_list = 6; //邮件信息	
+}
+
+message RechargeRoomCard
+{
+	optional string order_no 	= 1; //订单号
+	optional uint32 user_id 	= 2; //用户ID
+	optional uint32 room_card 	= 3; //房卡数量
+	optional uint32 is_add 		= 4; //是否增加
+	optional uint64 time 		= 5; //增加时间
+	optional uint32 from_uid	= 6; //
+}
+
+
+// 保存公告
+message SaveNoticeRequest
+{
+	required msg_event.NoticeS records = 1;
+}
+
+// 查询离线数据
+message QueryOfflineUserProto
+{
+	repeated msg_maj.RoleOff user_list = 2;
+}
+
+// 观察详细数据
+message QueryWatchUserProto
+{
+
+
+}
+
+//*****************分享数据****************
+message ShareData
+{
+	optional uint32 user_id = 1; //用户ID
+	optional uint32 num 	= 2; //数量
+}
+// 获取分享数据
+message GetShareDataRequest
+{
+	
+}
+// 获取分享数据
+message GetShareDataResponse
+{
+	repeated ShareData share_list = 1; //分享列表
+}
+// 保存分享数据
+message SaveShareData
+{
+	repeated ShareData share_list = 1; //分享列表
+}
+
+

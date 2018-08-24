@@ -1,8 +1,8 @@
 #ifndef __CLIENT_NET_HANDLER_H_
 #define __CLIENT_NET_HANDLER_H_
 
-#include "Includes.h"
-#include "BaseProcHandler.h"
+#include "SrvEngine.h"
+#include "Single.h"
 
 class Player;
 
@@ -13,7 +13,7 @@ class Player;
  *  Created by hzd 2015/01/26  
  *
  */
-class PlayerProcHandler : public BaseProcHandler, public Single<PlayerProcHandler>
+class PlayerProcHandler : public Single<PlayerProcHandler>
 {
 public:
 
@@ -51,30 +51,30 @@ public:
 
 	/////////////////////////////Ω” ’/////////////////////////////////////////////
 
-	void RecvEncryptInfo(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvLoginReadyFinish(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvEnterScene(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvChatWorld(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvSceneInitResult(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvRandNames(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void RecvEncryptInfo(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvLoginReadyFinish(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvEnterScene(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvChatWorld(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvSceneInitResult(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvRandNames(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
 
-	void RecvRelationList(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvRelationUpdate(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvRelationDelete(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvUserPackages(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void RecvRelationList(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvRelationUpdate(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvRelationDelete(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvUserPackages(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
 	
 
 	//////////////////////////////////////////////////////////////////////////
-	void RecvLoginAccountResult(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvCharacterList(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvRoleCreateResult(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvCharacterMainData(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvQuestMainData(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvSendDataFinish(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvEnterSceneInfo(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void RecvLoginAccountResult(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvCharacterList(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvRoleCreateResult(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvCharacterMainData(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvQuestMainData(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvSendDataFinish(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvEnterSceneInfo(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
 
-	void RecvChannelJion(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
-	void RecvChannelLeave(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void RecvChannelJion(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
+	void RecvChannelLeave(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
 
 };
 

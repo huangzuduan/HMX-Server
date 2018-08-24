@@ -1,0 +1,202 @@
+syntax = "proto2";
+
+package data;
+
+message QueryUserProto
+{
+	repeated UserInfo user_list = 1;
+}
+
+message UserInfo
+{
+	optional uint64 ID = 1;
+	optional uint64 ACCID = 2;
+	optional string NAME = 3;
+	optional uint32 LEVEL = 4;
+	optional uint32 VIP = 5;
+	optional uint32 STATUS = 6;
+	optional uint64 SCENEID = 7;
+	optional uint32 MAPID = 8;
+	optional uint32 ROLETYPE = 9;
+	optional uint32 EXP = 10;
+	optional int32 POSX = 11;
+	optional int32 POSY = 12;
+	optional int32 GOLD = 13;
+	optional int32 SILVER = 14;
+	optional int32 COPPER = 15;
+	optional uint32 LASTLOGIN = 16;
+	optional uint32 COUNTRY = 17;
+	optional uint32 TEAMID = 18;
+	optional UserBin INFO = 19;
+}
+
+message UserBin
+{
+	optional int32 testID = 1;
+}
+
+message QueryOfflineUserProto
+{
+	repeated OfflineUserInfo user_list = 1;
+}
+
+message OfflineUserInfo
+{
+	optional uint64 ID = 1;
+	optional uint64 ACCID = 2;
+	optional string NAME = 3;
+	optional uint32 LEVEL = 4;
+	optional uint32 VIP = 5;
+}
+
+
+message WorldUserInfo
+{
+	optional uint64 ID = 1;
+	optional uint64 ACCID = 2;
+	optional string NAME = 3;
+	optional uint32 LEVEL = 4;
+	optional uint32 SCENEID = 5;
+	optional uint32 MAPID = 6;
+}
+
+// 计数器 
+message Counter
+{
+	optional int32 itemid = 1;
+	optional int32 itemval = 2;
+	optional int32 starttime = 3;
+	optional int32 endtime = 4;
+}
+
+message CounterProto
+{
+	repeated Counter counter = 1; 
+}
+
+//消息的结构体
+message MsgObject
+{
+	optional string conent = 1;
+}
+
+// 单条信息数据全部数据
+message RelChatMsg
+{
+	optional int64 msgid = 1; 		// 唯一消息编号
+	optional int64 senduid = 2;		// 发送者ID
+	optional string sendname = 3;	// 发送者名字
+	optional int64 recvuid = 4;		// 接收者ID
+	optional string recvname = 5;	// 接收者名字
+	optional int32 sendtime = 6;	// 发送时间
+	optional MsgObject msgobj =7;	// 消息的结构体	
+}
+
+// 成员聊天信息
+message RelChatProto
+{
+	repeated RelChatMsg msglist = 1;
+}
+
+// 社会成员
+message Relation
+{
+	optional int64 uid = 1;
+	optional string name = 2;
+	optional int32 rel = 3;
+	optional int32 createtime = 4;
+	optional int32 dealreltime = 5;
+	optional RelChatProto relchat = 6; //与该成员的聊天信息
+}
+
+// 社会关系
+message RelationProto
+{
+	repeated Relation relation = 1;
+}
+
+// 角色二进制数据 
+message UserBinary 
+{
+	optional CounterProto counters = 1;	// 计数器 
+	optional RelationProto relations = 3;   
+}
+
+
+// 离线数据角色表（WS）
+message WsUser
+{
+	optional int64 char_id = 1;
+	optional int64 account_id = 2;
+	optional string name = 3;
+	optional int32 type = 4;
+	optional int32 level = 5;
+}
+
+// 查询角色列表数据
+message QueryWsUserProto
+{
+	repeated WorldUserInfo user_list = 1;
+}
+
+// 查询最大的角色ID
+message QueryUserMaxIDProto
+{
+	optional uint64 ID = 1;
+}
+
+// 查询加载角色
+message QueryUserDataProto
+{
+	optional uint64 ID = 1;
+	optional UserInfo user = 2;
+}
+
+// 查询帐号数据
+message QueryAccountProto
+{
+	repeated AccountWxInfo account_list = 3;
+}
+
+// wx帐号数据
+message AccountWxInfo
+{
+	optional string openid 		= 1;
+	optional string nickname 	= 2;
+	optional int32 sex 			= 3;
+	optional string province 	= 4;
+	optional string city 		= 5;
+	optional string country 	= 6;
+	optional string headimgurl 	= 7;
+	optional string unionid 	= 8;
+	optional string wxtoken		= 9;
+	optional string ip			= 10;
+}
+
+message AccountBin
+{
+	optional uint32 Test = 1;
+}
+
+
+// 网关User数据
+message GateUserInfo
+{
+	optional uint64 ID = 1;				// 角色ID
+	optional uint32 fepserverid = 2;	// 所在的网关fep
+	optional uint32 ssservierid = 3;	// 所在的场景
+	optional uint64 sessionid = 4;		// 连接ID
+	
+	optional uint32 countryid = 5;
+	optional uint32 mapid = 6;
+	optional uint32 sceneid = 7;
+	optional uint32 zoneid = 8;
+	optional uint32 pos_x = 9;
+	optional uint32 pos_y = 10;
+	optional uint32 teamid = 11;
+}
+
+
+
+
+

@@ -14,6 +14,7 @@ IF(MSVC)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zm500")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4819")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4996")
+   #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
    
 ELSEIF(UNIX)
     IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -27,18 +28,26 @@ include(cmake/options.cmake)
 include(cmake/FindPCHSupport.cmake)
 include(cmake/cxx_flag_overrides.cmake)
 
-# foreach(flag_var
-        # CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-        # CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-   # if(${flag_var} MATCHES "/MD")
-      # string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
-   # endif(${flag_var} MATCHES "/MD")
+include(cmake/boost.cmake)
+include(cmake/protobuf.cmake)
+include(cmake/libxml.cmake)
+include(cmake/mysql.cmake)
+include(cmake/curl.cmake)
+include(cmake/iconv.cmake)
+include(cmake/openssl.cmake)
+
+ foreach(flag_var
+         CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
+         CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
+    if(${flag_var} MATCHES "/MD")
+       string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
+    endif(${flag_var} MATCHES "/MD")
    
    # # if(${flag_var} MATCHES "/Zi")
       # # string(REGEX REPLACE "/Zi" "/C7" ${flag_var} "${${flag_var}}")
    # # endif(${flag_var} MATCHES "/Zi")
    
-# endforeach(flag_var)
+ endforeach(flag_var)
 
 # turn off PCH totally if enabled (hidden setting, mainly for devs)
 if( NOPCH )
@@ -48,11 +57,6 @@ endif()
 #find_package(PCHSupport)
 
 # Find Lib path:
-
-#
-#  原该项目为win32，现在将boost,mysql编译为64位，其他的引用暂时无空编译64，有空再弄
-#
-#
 
 
 IF(WIN32)
@@ -73,479 +77,191 @@ IF(WIN32)
         # ssleay32MD.lib is identical to ../ssleay32.lib
 		
 		
-		FIND_PATH(ICONV_INCLUDE_DIR
-          NAMES
-            iconv.h
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/iconv/include
-        )
-		MARK_AS_ADVANCED(ICONV_INCLUDE_DIR)
+		###### Include 
 		
-		FIND_LIBRARY(LIB_ICONV_DEBUG
+		FIND_PATH(COMMON_INCLUDE_DIR
           NAMES
-            iconv
+            SrvEngine.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/iconv/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/Common
         )
-		MARK_AS_ADVANCED(LIB_ICONV_DEBUG)
+		MARK_AS_ADVANCED(COMMON_INCLUDE_DIR)
 		
-		FIND_PATH(LIBXML_INCLUDE_DIR
+		FIND_PATH(PROTOCOL_INCLUDE_DIR
           NAMES
-            libxml/list.h
+            data.pb.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/libxml2/include
+            ${HMX_Server_Cmake_SOURCE_DIR}/Protocol
         )
-		MARK_AS_ADVANCED(LIBXML_INCLUDE_DIR)
+		MARK_AS_ADVANCED(PROTOCOL_INCLUDE_DIR)
 		
-		FIND_LIBRARY(LIB_LIBXML_DEBUG
+		FIND_PATH(XML_INCLUDE_DIR
           NAMES
-            libxml2
+            Poco/XML/XML.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/libxml2/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/XML/include
         )
-		MARK_AS_ADVANCED(LIB_LIBXML_DEBUG)
+		MARK_AS_ADVANCED(XML_INCLUDE_DIR)
 		
-		FIND_PATH(OPENSSL_INCLUDE_DIR
+		FIND_LIBRARY(LIB_XML_DEBUG
           NAMES
-            openssl/aes.h
+            PocoXMLmtd
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/openssl/include
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/XML/lib
         )
-		MARK_AS_ADVANCED(OPENSSL_INCLUDE_DIR)
+		MARK_AS_ADVANCED(LIB_XML_DEBUG)
 		
-		FIND_LIBRARY(LIB_LIBEAY32_DEBUG
+		FIND_LIBRARY(LIB_XML_RELEASE
           NAMES
-            libeay32
+            PocoXMLmt
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/openssl/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/XML/lib
         )
-		MARK_AS_ADVANCED(LIB_LIBEAY32_DEBUG)
+		MARK_AS_ADVANCED(LIB_XML_RELEASE)
 		
-		FIND_LIBRARY(LIB_SSLEAY32_DEBUG
+		FIND_PATH(UTIL_INCLUDE_DIR
           NAMES
-            ssleay32
+            Poco/Util/Option.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/openssl/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Util/include
         )
-		MARK_AS_ADVANCED(LIB_SSLEAY32_DEBUG)
+		MARK_AS_ADVANCED(UTIL_INCLUDE_DIR)
 		
-		FIND_PATH(PROTOBUL_INCLUDE_DIR
+		FIND_LIBRARY(LIB_UTIL_DEBUG
           NAMES
-            google/protobuf/any.h
+            PocoUtilmtd
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/protobuf/include
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Util/lib
         )
-		MARK_AS_ADVANCED(PROTOBUL_INCLUDE_DIR)
+		MARK_AS_ADVANCED(LIB_UTIL_DEBUG)
 		
-		FIND_LIBRARY(LIB_PROTOBUF_DEBUG
+		FIND_LIBRARY(LIB_UTIL_RELEASE
           NAMES
-            libprotobufd
+            PocoUtilmt
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/protobuf/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Util/lib
         )
-		MARK_AS_ADVANCED(LIB_PROTOBUF_DEBUG)
+		MARK_AS_ADVANCED(LIB_UTIL_RELEASE)
 		
-		FIND_PATH(MYSQL_INCLUDE_DIR
+		FIND_PATH(FOUNDATION_INCLUDE_DIR
           NAMES
-            mysql.h
+            Poco/Any.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/mysql/include
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Foundation/include
         )
-        MARK_AS_ADVANCED(MYSQL_INCLUDE_DIR)
+		MARK_AS_ADVANCED(FOUNDATION_INCLUDE_DIR)
 		
-		FIND_PATH(DEPENDENCE_INCLUDE_DIR
+		FIND_LIBRARY(LIB_FOUNDATION_DEBUG
           NAMES
-            audiere/audiere.h
+            PocoFoundationmtd
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Foundation/lib
         )
-        MARK_AS_ADVANCED(DEPENDENCE_INCLUDE_DIR)
+		MARK_AS_ADVANCED(LIB_FOUNDATION_DEBUG)
 		
-		FIND_LIBRARY(LIB_MYSQL_COMMON
+		FIND_LIBRARY(LIB_FOUNDATION_RELEASE
           NAMES
-            libmysql
+            PocoFoundationmt
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/mysql/lib
-		  NO_DEFAULT_PATH
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Foundation/lib
         )
-
-        FIND_LIBRARY(LIB_MYSQL_DEBUG
-          NAMES
-            mysqlclient_debug
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/mysql/lib
-        )
-
-        FIND_LIBRARY(LIB_MYSQL_RELEASE
-          NAMES
-            mysqlclient_release
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/mysql/lib
-        )
-
-        MARK_AS_ADVANCED(LIB_MYSQL_COMMON LIB_MYSQL_DEBUG LIB_MYSQL_RELEASE)
-
-        FIND_PATH(BOOST_INCLUDE_DIR
-          NAMES
-            boost/unordered_map.hpp
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/include
-        )
-        MARK_AS_ADVANCED(BOOST_INCLUDE_DIR)
-
-        FIND_LIBRARY(LIB_BOOST_SYSTEM_DEBUG
-          NAMES
-            libboost_system-VC140-mt-gd-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-		  NO_DEFAULT_PATH
-        )
+		MARK_AS_ADVANCED(LIB_FOUNDATION_RELEASE)
 		
-		FIND_LIBRARY(LIB_BOOST_SYSTEM_RELEASE
+		FIND_PATH(NET_INCLUDE_DIR
           NAMES
-            libboost_system-VC140-mt-1_60
+            Poco/Net/HTTPServer.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Net/include
         )
-
-        FIND_LIBRARY(LIB_BOOST_DATA_TIME_DEBUG
+		MARK_AS_ADVANCED(NET_INCLUDE_DIR)
+		
+		FIND_LIBRARY(LIB_NET_DEBUG
           NAMES
-            libboost_date_time-VC140-mt-gd-1_60
+            PocoNetmtd
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Net/lib
         )
-
-        FIND_LIBRARY(LIB_BOOST_THREAD_DEBUG
+		MARK_AS_ADVANCED(LIB_NET_DEBUG)
+		
+		FIND_LIBRARY(LIB_NET_RELEASE
           NAMES
-            libboost_thread-VC140-mt-gd-1_60
+            PocoNetmt
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/Net/lib
         )
-
-        FIND_LIBRARY(LIB_BOOST_FILESYSTEM_DEBUG
+		MARK_AS_ADVANCED(LIB_NET_RELEASE)
+		
+		FIND_PATH(JSON_INCLUDE_DIR
           NAMES
-            libboost_filesystem-VC140-mt-gd-1_60
+            Poco/JSON/JSON.h
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/JSON/include
         )
-
-        FIND_LIBRARY(LIB_BOOST_PROGRAM_OPTIONS_DEBUG
+		MARK_AS_ADVANCED(JSON_INCLUDE_DIR)
+		
+		FIND_LIBRARY(LIB_JSON_DEBUG
           NAMES
-            libboost_program_options-VC140-mt-gd-1_60
+            PocoJSONmtd
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/JSON/lib
         )
-
-        FIND_LIBRARY(LIB_BOOST_CHRONO_DEBUG
+		MARK_AS_ADVANCED(LIB_JSON_DEBUG)
+		
+		FIND_LIBRARY(LIB_JSON_RELEASE
           NAMES
-            libboost_chrono-VC140-mt-gd-1_60
+            PocoJSONmt
           PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
+            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/JSON/lib
         )
-
-        FIND_LIBRARY(LIB_BOOST_REGEX_DEBUG
-          NAMES
-            libboost_regex-VC140-mt-gd-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        FIND_LIBRARY(LIB_BOOST_DATA_TIME_RELEASE
-          NAMES
-            libboost_date_time-VC140-mt-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        FIND_LIBRARY(LIB_BOOST_THREAD_RELEASE
-          NAMES
-            libboost_thread-VC140-mt-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        FIND_LIBRARY(LIB_BOOST_FILESYSTEM_RELEASE
-          NAMES
-            libboost_filesystem-VC140-mt-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        FIND_LIBRARY(LIB_BOOST_PROGRAM_OPTIONS_RELEASE
-          NAMES
-            libboost_program_options-VC140-mt-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        FIND_LIBRARY(LIB_BOOST_CHRONO_RELEASE
-          NAMES
-            libboost_chrono-VC140-mt-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        FIND_LIBRARY(LIB_BOOST_REGEX_RELEASE
-          NAMES
-            libboost_regex-VC140-mt-1_60
-          PATHS
-            ${HMX_Server_Cmake_SOURCE_DIR}/dependence/boost/lib
-        )
-
-        MARK_AS_ADVANCED(   LIB_BOOST_SYSTEM_DEBUG
-                            LIB_BOOST_SYSTEM_RELEASE
-                            LIB_BOOST_DATA_TIME_DEBUG
-                            LIB_BOOST_DATA_TIME_RELEASE
-                            LIB_BOOST_THREAD_DEBUG
-                            LIB_BOOST_THREAD_RELEASE
-                            LIB_BOOST_FILESYSTEM_DEBUG
-                            LIB_BOOST_FILESYSTEM_RELEASE
-                            LIB_BOOST_PROGRAM_OPTIONS_DEBUG
-                            LIB_BOOST_PROGRAM_OPTIONS_RELEASE
-                            LIB_BOOST_CHRONO_DEBUG
-                            LIB_BOOST_CHRONO_RELEASE
-                            LIB_BOOST_REGEX_DEBUG
-                            LIB_BOOST_REGEX_RELEASE)
+		MARK_AS_ADVANCED(LIB_JSON_RELEASE)
 
         IF( CMAKE_BUILD_TYPE )
-          SET( MYSQL_LIBRARIES
-			debug ${LIB_MYSQL_COMMON}
-            debug ${LIB_MYSQL_DEBUG}
-			optimized ${LIB_MYSQL_COMMON}
-            optimized ${LIB_MYSQL_RELEASE}
-          )
-          SET( BOOST_LIBRARIES
-            debug ${LIB_BOOST_SYSTEM_DEBUG}
-            debug ${LIB_BOOST_DATA_TIME_DEBUG}
-            debug ${LIB_BOOST_THREAD_DEBUG}
-            debug ${LIB_BOOST_FILESYSTEM_DEBUG}
-            debug ${LIB_BOOST_PROGRAM_OPTIONS_DEBUG}
-            debug ${LIB_BOOST_CHRONO_DEBUG}
-            debug ${LIB_BOOST_REGEX_DEBUG}
-            optimized ${LIB_BOOST_SYSTEM_RELEASE}
-            optimized ${LIB_BOOST_DATA_TIME_RELEASE}
-            optimized ${LIB_BOOST_THREAD_RELEASE}
-            optimized ${LIB_BOOST_FILESYSTEM_RELEASE}
-            optimized ${LIB_BOOST_PROGRAM_OPTIONS_RELEASE}
-            optimized ${LIB_BOOST_CHRONO_RELEASE}
-            optimized ${LIB_BOOST_REGEX_RELEASE}
-          )
+		  
+		  SET ( THIRD_LIBRARIES
+			debug ${LIB_FOUNDATION_DEBUG}
+			debug ${LIB_NET_DEBUG}
+			debug ${LIB_UTIL_DEBUG}
+			debug ${LIB_XML_DEBUG}
+			debug ${LIB_JSON_DEBUG}
+			optimized ${LIB_FOUNDATION_RELEASE}	
+			optimized ${LIB_NET_RELEASE}
+			optimized ${LIB_UTIL_RELEASE}
+			optimized ${LIB_XML_RELEASE}
+			optimized ${LIB_JSON_RELEASE}
+		  )
+		  
         ELSE()
-          SET( MYSQL_LIBRARIES
-            ${LIB_MYSQL_RELEASE}
-          )
-          SET( BOOST_LIBRARIES
-            ${LIB_BOOST_SYSTEM_RELEASE}
-            ${LIB_BOOST_DATA_TIME_RELEASE}
-            ${LIB_BOOST_THREAD_RELEASE}
-            ${LIB_BOOST_FILESYSTEM_RELEASE}
-            ${LIB_BOOST_PROGRAM_OPTIONS_RELEASE}
-            ${LIB_BOOST_CHRONO_RELEASE}
-            ${LIB_BOOST_REGEX_RELEASE}
-          )
+		  
+		  SET ( THIRD_LIBRARIES
+			optimized ${LIB_FOUNDATION_RELEASE}
+			optimized ${LIB_NET_RELEASE}
+			optimized ${LIB_UTIL_RELEASE}
+			optimized ${LIB_XML_RELEASE}
+			optimized ${LIB_JSON_RELEASE}
+		  )
+		  
         ENDIF()
 
     ENDIF(MSVC)
 ENDIF(WIN32)
 
-IF(UNIX)
-    # /MD and /MDd are the standard values - if someone wants to use
-    # others, the libnames have to change here too
-    # use also ssl and ssleay32 in debug as fallback for openssl < 0.9.8b
-    # TODO: handle /MT and static lib
-    # In Visual C++ naming convention each of these four kinds of Windows libraries has it's standard suffix:
-    #   * MD for dynamic-release
-    #   * MDd for dynamic-debug
-    #   * MT for static-release
-    #   * MTd for static-debug
-
-    # Implementation details:
-    # We are using the libraries located in the VC subdir instead of the parent directory eventhough :
-    # libeay32MD.lib is identical to ../libeay32.lib, and
-    # ssleay32MD.lib is identical to ../ssleay32.lib
-
-    FIND_PATH(MYSQL_INCLUDE_DIR
-      NAMES
-        mysql.h
-      PATHS
-        /usr/local/mysql/include
-    )
-    MARK_AS_ADVANCED(MYSQL_INCLUDE_DIR)
-
-    FIND_LIBRARY(LIB_MYSQL_DEBUG
-      NAMES
-        libmysqlclient
-      PATHS
-         /usr/local/mysql/lib
-    )
-
-    FIND_LIBRARY(LIB_MYSQL_RELEASE
-      NAMES
-        libmysqlclient
-      PATHS
-        /usr/local/mysql/lib
-    )
-
-    MARK_AS_ADVANCED(LIB_MYSQL_DEBUG LIB_MYSQL_RELEASE)
-
-    SET(BOOST_INCLUDE_DIR
-      #NAMES
-      #  boost/unordered_map.hpp
-      #PATHS
-        /usr/local/boost/include
-    )
-    MARK_AS_ADVANCED(BOOST_INCLUDE_DIR)
-
-    FIND_LIBRARY(LIB_BOOST_SYSTEM_DEBUG
-      NAMES
-        libboost_system
-      PATHS
-         /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_DATA_TIME_DEBUG
-      NAMES
-        libboost_date_time
-      PATHS
-         /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_THREAD_DEBUG
-      NAMES
-        libboost_thread
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_FILESYSTEM_DEBUG
-      NAMES
-        libboost_filesystem
-      PATHS
-         /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_PROGRAM_OPTIONS_DEBUG
-      NAMES
-        libboost_program_options
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_REGEX_DEBUG
-      NAMES
-        libboost_regex
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_SYSTEM_RELEASE
-      NAMES
-        libboost_system
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_DATA_TIME_RELEASE
-      NAMES
-        libboost_date_time
-      PATHS
-         /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_THREAD_RELEASE
-      NAMES
-        libboost_thread
-      PATHS
-         /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_FILESYSTEM_RELEASE
-      NAMES
-        libboost_filesystem
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_PROGRAM_OPTIONS_RELEASE
-      NAMES
-        libboost_program_options
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    FIND_LIBRARY(LIB_BOOST_REGEX_RELEASE
-      NAMES
-        libboost_regex
-      PATHS
-        /usr/local/boost/lib
-    )
-
-    MARK_AS_ADVANCED(   LIB_BOOST_SYSTEM_DEBUG
-                        LIB_BOOST_SYSTEM_RELEASE
-                        LIB_BOOST_DATA_TIME_DEBUG
-                        LIB_BOOST_DATA_TIME_RELEASE
-                        LIB_BOOST_THREAD_DEBUG
-                        LIB_BOOST_THREAD_RELEASE
-                        LIB_BOOST_FILESYSTEM_DEBUG
-                        LIB_BOOST_FILESYSTEM_RELEASE
-                        LIB_BOOST_PROGRAM_OPTIONS_DEBUG
-                        LIB_BOOST_PROGRAM_OPTIONS_RELEASE
-                        LIB_BOOST_REGEX_DEBUG
-                        LIB_BOOST_REGEX_RELEASE)
-
-    IF( CMAKE_BUILD_TYPE )
-      SET( MYSQL_LIBRARIES
-        debug ${LIB_MYSQL_DEBUG}
-        optimized ${LIB_MYSQL_RELEASE}
-      )
-      SET( BOOST_LIBRARIES
-        debug ${LIB_BOOST_SYSTEM_DEBUG}
-        debug ${LIB_BOOST_DATA_TIME_DEBUG}
-        debug ${LIB_BOOST_THREAD_DEBUG}
-        debug ${LIB_BOOST_FILESYSTEM_DEBUG}
-        debug ${LIB_BOOST_PROGRAM_OPTIONS_DEBUG}
-        debug ${LIB_BOOST_CHRONO_DEBUG}
-        debug ${LIB_BOOST_REGEX_DEBUG}
-        optimized ${LIB_BOOST_SYSTEM_RELEASE}
-        optimized ${LIB_BOOST_DATA_TIME_RELEASE}
-        optimized ${LIB_BOOST_THREAD_RELEASE}
-        optimized ${LIB_BOOST_FILESYSTEM_RELEASE}
-        optimized ${LIB_BOOST_PROGRAM_OPTIONS_RELEASE}
-        optimized ${LIB_BOOST_CHRONO_RELEASE}
-        optimized ${LIB_BOOST_REGEX_RELEASE}
-      )
-    ELSE()
-      SET( MYSQL_LIBRARIES
-        ${LIB_MYSQL_RELEASE}
-      )
-      SET( BOOST_LIBRARIES
-        ${LIB_BOOST_SYSTEM_RELEASE}
-        ${LIB_BOOST_DATA_TIME_RELEASE}
-        ${LIB_BOOST_THREAD_RELEASE}
-        ${LIB_BOOST_FILESYSTEM_RELEASE}
-        ${LIB_BOOST_PROGRAM_OPTIONS_RELEASE}
-        ${LIB_BOOST_CHRONO_RELEASE}
-        ${LIB_BOOST_REGEX_RELEASE}
-      )
-    ENDIF()
-
-ENDIF(UNIX)
 
 # Recurse into the "Hello" and "Demo" subdirectories. This does not actually
 # cause another cmake executable to run. The same process will walk through
 # the project's entire directory structure.
 
-add_subdirectory(Include)
-add_subdirectory(LibSrvcore)
+#add_subdirectory(Include)
+add_subdirectory(Common)
 add_subdirectory(LibNetSocket)
-add_subdirectory(LibNetMysql)
-add_subdirectory(LibProtocol)
+#add_subdirectory(LibNetMysql)
+add_subdirectory(Protocol)
 add_subdirectory(WorldServer)
 #add_subdirectory(LogServer)
 add_subdirectory(DBServer)
 add_subdirectory(GameServer)
 add_subdirectory(LoginServer)
 add_subdirectory(GatewayServer)
-add_subdirectory(Client)
+#add_subdirectory(Client)
+#add_subdirectory(PayCenterServer)
 #add_subdirectory(HelpTools)
 

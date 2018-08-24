@@ -1,6 +1,6 @@
 CC      = g++
 
-CFLAGS = -c -g \
+CFLAGS = -c -g -O0 \
 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -D_USE_FAST_MACRO
 #-W -Wall warring -Wcast-qual -Wcast-align
 #-Waggregate-return
@@ -58,15 +58,18 @@ ifneq ($(SYSPATH),)
 endif
 ###########################################################
 #-----------------------------------------------------------
-#CFLAGS += -I. -Iå¼•å…¥å¤´æ–‡ä»¶è·¯å¾„  -Iå¼•å…¥å¤´æ–‡ä»¶è·¯å¾„
-#EXTLIBS = å…¶ä»–libsè·¯å¾„
-#LDFLAGS = -Låº“è·¯å¾„ -lè½½å…¥çš„
+#CFLAGS += -I. -IÒýÈëÍ·ÎÄ¼þÂ·¾¶  -IÒýÈëÍ·ÎÄ¼þÂ·¾¶
+#EXTLIBS = ÆäËûlibsÂ·¾¶
+#LDFLAGS = -L¿âÂ·¾¶ -lÔØÈëµÄ
 #-----------------------------------------------------------
-CFLAGS += -I. -I/usr/local/boost/include -I/usr/local/mysql/include -I/usr/local/protobuf/include \
-	-I../DyNetMysql -I../DyNetSocket -I../Shared/CommonDef -I../Shared/Protocol -I../Shared/Utility -I../Shared/Zebra
-EXTLIBS = -lnetmysql -lnetsocket -lprotobuf -lmysqlclient \
-	-lboost_system -lboost_thread -lboost_date_time -lboost_iostreams -lboost_program_options -lboost_regex -lboost_filesystem -lboost_chrono
-LDFLAGS = -L/usr/local/boost/lib -L/usr/local/mysql/lib  -L/usr/local/protobuf/lib -L../DyNetMysql/lib -L../DyNetSocket/lib \
+CFLAGS += -I. -I/usr/local/include/boost/include -I/usr/local/include/mysql/include -I/usr/local/include/libxml2/include -I/usr/local/include/protobuf/include \
+    -I/usr/local/include/curl -I/usr/local/include/Foundation/include -I/usr/local/include/iconv/include -I/usr/local/include/JSON/include \
+	-I/usr/local/include/Net/include -I/usr/local/include/openssl/include -I/usr/local/include/Util/include -I/usr/local/include/XML/include \
+	-I../Common -I../Protocol -I../LibNetMysql -I../LibNetSocket
+EXTLIBS = -lprotobuf -lmysqlclient -lcrypt -lssl -lxml2 \
+	-lboost_system -lboost_thread -lboost_date_time -lboost_iostreams -lboost_program_options -lboost_regex -lboost_filesystem -lboost_chrono \
+	-lPocoNet -lPocoJSON -lPocoUtil -lPocoXML -lPocoFoundation -lcurl -liconv
+LDFLAGS = -L/usr/local/lib -L/usr/lib  -L/usr/lib64 -L/usr/local/include/protobuf/lib -L/usr/local/include/boost/lib -L/usr/local/include/pocolib -L/usr/local/include/iconv/lib \
 	$(EXTLIBS) $(SYSLIB)
 
 COMPILE = $(CC) $(CFLAGS)
@@ -76,31 +79,33 @@ OBJ_PATH = .
 
 #Project's objs
 
-SRCPRO := $(wildcard ../Shared/Protocol/*.cc) $(UTIL)
+SRCPRO := $(wildcard ../Protocol/*.cc ../Protocol/base/*cc ../Protocol/maj/*.cc) $(UTIL)
 OBJPRO := $(patsubst %.cc, $(OBJ_PATH)/%.o, $(notdir $(SRCPRO)))
 
-#$(OBJ_PATH)/%.pb.o: ../Shared/Protocol/%.pb.cc
-#	$(COMPILE) $< -o $@
+$(OBJ_PATH)/%.pb.o: ../Protocol/%.pb.cc
+	$(COMPILE) $< -o $@
+
+$(OBJ_PATH)/%.pb.o: ../Protocol/base/%.pb.cc
+
+	$(COMPILE) $< -o $@
+	
+$(OBJ_PATH)/%.pb.o: ../Protocol/maj/%.pb.cc
+	$(COMPILE) $< -o $@
 
 ###########################################################
 
-SRC := $(wildcard *.cpp) $(wildcard ../Shared/CommonDef/*.cpp)  $(wildcard ../Shared/Utility/*.cpp) $(wildcard ../Shared/Zebra/*.cpp) $(UTIL)
+SRC := $(wildcard *.cpp) $(wildcard ../Common/*.cpp) $(wildcard ../LibNetMysql/*.cpp) $(wildcard ../LibNetSocket/*.cpp) $(UTIL)
 OBJ := $(patsubst %.cpp, $(OBJ_PATH)/%.o, $(notdir $(SRC)))
-
 
 
 $(OBJ_PATH)/%.o: %.cpp
 	$(COMPILE) $< -o $@
-$(OBJ_PATH)/%.o: ../Shared/CommonDef/%.cpp
+$(OBJ_PATH)/%.o: ../LibNetMysql/%.cpp	
 	$(COMPILE) $< -o $@
-$(OBJ_PATH)/%.o: ../Shared/Protocol/%.cc
+$(OBJ_PATH)/%.o: ../LibNetSocket/%.cpp	
 	$(COMPILE) $< -o $@
-$(OBJ_PATH)/%.o: ../Shared/Utility/%.cpp
+$(OBJ_PATH)/%.o: ../Common/%.cpp	
 	$(COMPILE) $< -o $@
-$(OBJ_PATH)/%.o: ../Shared/Zebra/%.cpp
-	$(COMPILE) $< -o $@
-
-
 
 .PHONY = all clean
 all: RM $(OBJPRO) $(OBJ)

@@ -1,79 +1,53 @@
 #include "NetServer.h"
 #include "NetSocket.h"
 
-NetServer::NetServer(int32 nMaxConnected, int32 nMaxRecivedSize, int32 nMaxSendoutSize, int32 nMaxRecivedCacheSize, int32 nMaxSendoutCacheSize):m_nMaxConnected(nMaxConnected),m_cAcceptor(*this)
+NetServer::NetServer(int32_t nMaxConnected):m_nMaxConnected(nMaxConnected),m_cAcceptor(*this)
 {
-	int32 _nPreCacehTotal = 1024 * 1024 * 512; // 500M
-	int32 _nMaxConnectNum = _nPreCacehTotal / (nMaxRecivedCacheSize + nMaxSendoutCacheSize);
-	int32 _nMaxRecivedCacheSize = (_nPreCacehTotal - nMaxConnected * nMaxSendoutCacheSize) / nMaxConnected;
-	int32 _nMaxSendoutCacheSize = (_nPreCacehTotal - nMaxConnected * nMaxRecivedCacheSize) / nMaxConnected;
-	if (!(0 < nMaxConnected && nMaxConnected < _nMaxConnectNum))
-	{
-		printf("[ERROR]:nMaxConnectd need <= 1000 & Cache Max is 500M\n");
-		ASSERT(0);
-		return;
-	}
-
-	if (nMaxRecivedSize < 1 || nMaxRecivedSize > 65536 || nMaxSendoutSize < 1 || nMaxSendoutSize > 65536 ||
-		nMaxRecivedCacheSize < 1 || nMaxRecivedCacheSize > _nMaxRecivedCacheSize || nMaxSendoutCacheSize < 1 || nMaxSendoutCacheSize > _nMaxSendoutCacheSize)
-	{
-		printf("[ERROR]:nMaxRecivedSize | nMaxSendoutSize | nMaxRecivedCacheSize | nMaxSendoutCacheSize Need < ? & > 0\n");
-		ASSERT(0);
-		return;
-	}
-
-	if (nMaxConnected > (sizeof(m_arrSocket) / sizeof(m_arrSocket[0])) )
-	{
-		printf("[ERROR]:nMaxConnected > %lld", (sizeof(m_arrSocket) / sizeof(m_arrSocket[0])));
-		ASSERT(0);
-		return;
-	}
-
-	static int32 s_nIncreaseNetServerID = 0;
+	static int32_t s_nIncreaseNetServerID = 0;
 	m_nServerID = ++s_nIncreaseNetServerID;
 
-	for (int32 i = 0; i < nMaxConnected; i++)
+	for (int32_t i = 0; i < nMaxConnected && i < MAX_SOCKETS; i++)
 	{
-		m_arrSocket[i] = new NetSocket(*this, nMaxRecivedSize, nMaxSendoutSize, nMaxRecivedCacheSize, nMaxSendoutCacheSize);
-		m_setAcceptSocket.insert(std::make_pair(m_arrSocket[i]->SLongID(), m_arrSocket[i]));
+		m_vecSocket.push_back(new NetSocket(*this));
 	}
 }
 
 
 NetServer::~NetServer()
 {
-	for (int32 i = 0; i < m_nMaxConnected; i++)
+	for (int32_t i = 0; i < m_nMaxConnected; i++)
 	{
-		NetSocket* pSocket = m_arrSocket[i];
+		NetSocket* pSocket = m_vecSocket[i];
 		if (pSocket)
 		{
 			delete pSocket;
 			pSocket = NULL;
 		}
 	}
-	m_setAcceptSocket.clear();
+	m_setWaitAccept.clear();
 }
 
-int32 NetServer::SID()
+int32_t NetServer::SocketID()
 {
 	return m_nServerID;
 }
 
-void NetServer::SetTimeout(int32 nTimeout)
+void NetServer::SetTimeout(int32_t nTimeout)
 {
-	for (int32 i = 0; i < m_nMaxConnected; i++)
+	for (int32_t i = 0; i < m_nMaxConnected; i++)
 	{
-		m_arrSocket[i]->SetTimeout(nTimeout);
+		m_vecSocket[i]->SetTimeout(nTimeout);
 	}
 }
 
 void NetServer::SetAccept(NetSocket& rSocket)
 {
+	m_setWaitAccept.insert(std::make_pair(rSocket.SocketID(), &rSocket));
 	m_cAcceptor.async_accept(rSocket, boost::bind(&NetServer::HandleAccept, this, boost::asio::placeholders::error, &rSocket));
 }
 
 
-void NetServer::SetAddress(const char* pIp, uint16 nPort)
+void NetServer::SetAddress(const char* pIp, uint16_t nPort)
 {
 	boost::system::error_code ec;
 	m_cServerAddr = tcp::endpoint(address::from_string(pIp, ec), nPort);
@@ -127,12 +101,18 @@ void NetServer::HandleStart()
 	m_cAcceptor.set_option(tcp::acceptor::reuse_address(true), ec);
 	assert(!ec);
 	m_cAcceptor.bind(m_cServerAddr, ec);
-	assert(!ec);
+	if (ec)
+	{
+		printf("[ERROR]:bind port fail \n");
+		assert(!ec);
+		return;
+	}
+	
 	m_cAcceptor.listen(socket_base::max_connections, ec);
 	assert(!ec);
 	for (int i = 0; i < m_nMaxConnected; ++i)
 	{
-		SetAccept(*m_arrSocket[i]);
+		SetAccept(*m_vecSocket[i]);
 	}
 	boost::thread_group tg;
 	for (int i = 0; i < MAX_THREAD; ++i)
@@ -151,22 +131,18 @@ void NetServer::Stop()
 void NetServer::OnUpdateAccept()
 {
 	boost::mutex::scoped_lock cLock(m_cClientListMutex);
-	for (SocketMapIter it = m_mapAcceptSocket.begin(); it != m_mapAcceptSocket.end(); ++it)
+	for (SocketMapIter it = m_mapHadAccepted.begin(); it != m_mapHadAccepted.end(); ++it)
 	{
 		(m_pOnEnter)(*it->second);
-		m_mapUsedSocket[it->second->SLongID()] = it->second;
+		m_mapIsUsing[it->second->SocketID()] = it->second;
 	}
-	m_mapAcceptSocket.clear();
+	m_mapHadAccepted.clear();
 	cLock.unlock();
 }
 
 void NetServer::OnUpdateRecived()
 {
-	static size_t nSocketSize = 0;
-	static int32 nMsgBodyLen = 0;
-	static NetMsgSS* pMsg = NULL;
-	
-	for (SocketMapIter it = m_mapUsedSocket.begin(); it != m_mapUsedSocket.end();)
+	for (SocketMapIter it = m_mapIsUsing.begin(); it != m_mapIsUsing.end();)
 	{
 		NetSocket* pSocket = it->second;
 		if (!pSocket)
@@ -175,36 +151,41 @@ void NetServer::OnUpdateRecived()
 			continue;
 		}
 			
-		/* Pre处理事件 */ 
-		if (pSocket->HadEventClose())
+		/* 处理关闭事件 */ 
+		if (pSocket->GetIsClose())
 		{
-			(m_pOnExit)(*pSocket);
-			m_mapUsedSocket.erase(it++);
-			pSocket->Disconnect();
-			SSleep(10); // for disconnect
-			SetAccept(*pSocket);
+			if (!pSocket->GetIsCloseBegin())
+			{
+				pSocket->SetIsCloseBeing(true);
+				(m_pOnExit)(*pSocket);
+				pSocket->Disconnect();
+			}
+			if (pSocket->GetIsCloseFinish())
+			{
+				pSocket->SetLocalClose(false);
+#ifdef WIN32
+				Sleep(10);
+#else
+				usleep(10);
+#endif
+				m_mapIsUsing.erase(it++);
+				SetAccept(*pSocket);
+			}
 			continue;
 		}
 		else
 		{
-			int msgStatus = pSocket->ReadMsg(&pMsg, nMsgBodyLen);
-			switch (msgStatus)
+			uint8_t* data = NULL;
+			int32_t len = pSocket->ReadDataMsg(&data);
+			if (len == -1)
 			{
-			case MSG_READ_INVALID: /* 断开socket，再设置为重新等待 */
-			{
-				pSocket->AddEventLocalClose();
+				pSocket->SetLocalClose(true);
+				return;
 			}
-			break;
-			case MSG_READ_OK: /* 收到正常的数据请求 */
+			if (len > 0)
 			{
-
-				(m_pOnMsg)(*pSocket, pMsg, nMsgBodyLen);
-				pSocket->RemoveMsg(PACKAGE_HEADER_SIZE + nMsgBodyLen);
-			}
-			break;
-			case MSG_READ_WAITTING:
-			case MSG_READ_REVCING:
-				break;
+				(m_pOnMsg)(*pSocket, (NetMsgSS*)data, len);
+				pSocket->RemoveQueueHeader();
 			}
 			++it;
 		}
@@ -214,12 +195,12 @@ void NetServer::OnUpdateRecived()
 
 void NetServer::OnUpdate()
 {
-	if (!m_mapAcceptSocket.empty())
+	if (!m_mapHadAccepted.empty())
 	{
 		OnUpdateAccept();
 	}
 
-	if (!m_mapUsedSocket.empty())
+	if (!m_mapIsUsing.empty())
 	{
 		OnUpdateRecived();
 	}
@@ -227,48 +208,52 @@ void NetServer::OnUpdate()
 
 void NetServer::HandleAccept(const boost::system::error_code& rError, NetSocket* pSocket)
 {
+	SocketMapIter it = m_setWaitAccept.find(pSocket->SocketID());
+	if (it != m_setWaitAccept.end())
+	{
+		m_setWaitAccept.erase(it);
+	}
 	if (rError)
 	{
 		SetAccept(*pSocket);
 		return;
 	}
-
 	boost::mutex::scoped_lock lock(m_cClientListMutex);
 	pSocket->Clear();
-	m_mapAcceptSocket[pSocket->SLongID()] = pSocket;
+	m_mapHadAccepted[pSocket->SocketID()] = pSocket;
 	pSocket->Run();
 	lock.unlock();
 }
 
-NetSocket& NetServer::GetSocket(int32 nIndex)
+NetSocket& NetServer::GetSocket(int32_t nIndex)
 {
-	return *m_arrSocket[nIndex];
+	return *m_vecSocket[nIndex];
 }
 
 size_t NetServer::ConnectedSockets()
 {
-	return m_mapUsedSocket.size();
+	return m_mapIsUsing.size();
 }
 
 size_t NetServer::AcceptingSockets()
 {
-	return m_mapAcceptSocket.size();
+	return m_mapHadAccepted.size();
 }
 
-NetSocket* NetServer::getAcceptSocket(int64 socketid)
+NetSocket* NetServer::getAcceptSocket(int64_t socketid)
 {
-	SocketMapIter it = m_mapAcceptSocket.find(socketid);
-	if (it != m_mapAcceptSocket.end())
+	SocketMapIter it = m_mapHadAccepted.find(socketid);
+	if (it != m_mapHadAccepted.end())
 	{
 		return it->second;
 	}
 	return NULL;
 }
 
-NetSocket* NetServer::getUsedSocket(int64 socketid)
+NetSocket* NetServer::getUsedSocket(int64_t socketid)
 {
-	SocketMapIter it = m_mapUsedSocket.find(socketid);
-	if (it != m_mapUsedSocket.end())
+	SocketMapIter it = m_mapIsUsing.find(socketid);
+	if (it != m_mapIsUsing.end())
 	{
 		return it->second;
 	}

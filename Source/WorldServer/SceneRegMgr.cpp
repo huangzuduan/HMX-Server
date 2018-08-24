@@ -1,9 +1,8 @@
-#include "WorldServer_PCH.h"
 #include "SceneRegMgr.h"
 
 struct MyScene : public execEntry<SceneReg>
 {
-	MyScene(int32 _mapid):mapid(_mapid)
+	MyScene(int32_t _mapid):mapid(_mapid)
 	{
 		scene = NULL;
 	}
@@ -16,7 +15,7 @@ struct MyScene : public execEntry<SceneReg>
 		return true;
 	}
 
-	int32 mapid;
+	int32_t mapid;
 	SceneReg* scene;
 };
 
@@ -43,29 +42,29 @@ void SceneRegMgr::DestroyObj(SceneReg* obj)
 
 bool SceneRegMgr::add(SceneReg* scene)
 {
-	return zEntryMgr::addEntry(scene);
+	return zEntryMgr< zEntryID<0> >::addEntry(scene);
 }
 
 void SceneRegMgr::remove(SceneReg* scene)
 {
-	zEntryMgr::removeEntry(scene);
+	zEntryMgr< zEntryID<0> >::removeEntry(scene);
 }
 
-SceneReg* SceneRegMgr::get(int64 id)
+SceneReg* SceneRegMgr::get(int64_t id)
 {
-	return (SceneReg*)zEntryMgr::getEntryByID(id);
+	return (SceneReg*)zEntryMgr< zEntryID<0> >::getEntryByID(id);
 }
 
-SceneReg* SceneRegMgr::getBymapid(int32 mapid)
+SceneReg* SceneRegMgr::getBymapid(int32_t mapid)
 {
 	MyScene exec(mapid);
-	zEntryMgr::execEveryEntry(exec);
+	zEntryMgr< zEntryID<0> >::execEveryEntry(exec);
 	return exec.scene;
 }
 
-SceneReg* SceneRegMgr::getFreeBymapid(int32 mapid)
+SceneReg* SceneRegMgr::getFreeBymapid(int32_t mapid)
 {
 	MyScene exec(mapid); // todo 
-	zEntryMgr::execEveryEntry(exec);
+	zEntryMgr< zEntryID<0> >::execEveryEntry(exec);
 	return exec.scene;
 }

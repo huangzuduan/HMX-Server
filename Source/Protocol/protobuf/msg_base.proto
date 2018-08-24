@@ -1,0 +1,25 @@
+syntax = "proto2";
+package msg_base;
+
+enum c_cmd_base {
+    heartbeat_req = 0;
+    heartbeat_resp = 1;
+    time_req = 3;
+    time_resp = 4;
+}
+
+// 心跳
+message HeartbeatReq {
+}
+
+message HeartbeatResp {
+}
+
+// 时间同步请求
+message TimeReq {
+}
+
+message TimeResp {
+    required uint64 time = 1; // 时间戳(毫秒)
+}
+

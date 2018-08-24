@@ -1,8 +1,11 @@
 #ifndef __SORTS_MANAGER_H_
 #define __SORTS_MANAGER_H_
 
+
+#include "base/hmx_sorlists.pb.h"
 #include "MySortTemplate.h"
-#include "sorlists.pb.h"
+#include "Single.h"
+
 
 /* 排行榜数据表，自增ID也是按UID结构，方便合服使用 */
 enum MySortItem
@@ -17,12 +20,11 @@ enum MySortItem
 template<typename TKey>
 struct SortKey
 {
-	int64 uid;
-	char name[MAX_NAMESIZE + 1];
+	int64_t uid;
+	std::string name;
 	SortKey()
 	{
 		uid = 0;
-		memset(name,0,sizeof(name));
 	}
 	virtual bool Compare(const TKey& key) const = 0;
 };
@@ -30,7 +32,7 @@ struct SortKey
 
 struct LevelSortKey : public SortKey<LevelSortKey>
 {
-	int32 nLevel;
+	int32_t nLevel;
 	LevelSortKey()
 	{
 		nLevel = 0;
@@ -45,7 +47,7 @@ struct LevelSortKey : public SortKey<LevelSortKey>
 
 struct LevelSortValue : public LevelSortKey
 {
-	int32 sortid;
+	int32_t sortid;
 	// 后续字段加在后面 
 
 	LevelSortValue()

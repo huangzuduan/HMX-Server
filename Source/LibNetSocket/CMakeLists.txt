@@ -1,4 +1,4 @@
-file(GLOB_RECURSE headers_DyNetSocket_H *.h)
+file(GLOB_RECURSE headers_DyNetSocket_H *.h *.hpp)
 
 file(GLOB_RECURSE sources_DyNetSocket_CC *.cc)
 file(GLOB_RECURSE sources_DyNetSocket_CPP *.cpp)
@@ -6,9 +6,8 @@ file(GLOB_RECURSE sources_DyNetSocket_CPP *.cpp)
 #ADD_DEFINITIONS("-DLIB_SOCKET_API")
 
 include_directories(
-
   ${BOOST_INCLUDE_DIR}
-  
+  ${PROTOBUL_INCLUDE_DIR}
 )
 
 set(DyNetSocket_SRCS
@@ -19,12 +18,6 @@ set(DyNetSocket_SRCS
 
 add_library(LIBSocket STATIC 
   ${DyNetSocket_SRCS}
-)
-
-target_link_libraries(LIBSocket
-
-    ${BOOST_LIBRARIES}
-
 )
 
 if( WIN32 )

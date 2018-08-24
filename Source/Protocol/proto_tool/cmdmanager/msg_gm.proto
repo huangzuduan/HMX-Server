@@ -1,0 +1,70 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_gm {
+    remaining_card_req = 0;
+    remaining_card_resp = 1;
+    assign_all_cards_req = 2;
+    assign_all_cards_resp = 3;
+    assign_next_card_req = 4;
+    assign_next_card_resp = 5;
+
+    gm_common_oper_req = 6;
+    gm_common_oper_resp = 7;
+}
+
+enum seat_type {
+    zj = 0;//庄家
+    zx = 1;//庄下
+    zd = 2;//庄对
+    zs = 3;//庄上
+}
+
+// 请求所有未发出来的牌
+message RemainingCardsReq {
+}
+
+// 请求剩余牌信息的回复报文
+message RemainingCardsResp {
+    optional uint32 ret = 1;//成功返回1
+    repeated uint32 cards = 2;//所有未发出来的牌
+}
+
+//请求指定初始牌型
+message AssignAllCardsReq {
+    repeated uint32 zjCards = 1;//庄家
+    repeated uint32 zxCards = 2;//庄下
+    repeated uint32 zdCards = 3;//庄对
+    repeated uint32 zsCards = 4;//庄上
+    optional uint32 nextCard = 5;//庄家的第一张摸牌
+}
+
+//指定初始牌型的回复
+message AssignAllCardsResp {
+    optional uint32 ret = 1;
+}
+
+//请求指定下一张牌
+message AssignNextCardReq {
+    optional seat_type  seat = 1;//0-3分别为庄家、庄下、庄对、庄上
+    optional uint32     card = 2;//请求的下一张牌，需要判断是否被摸走(不需要特意保留)
+}
+
+//指定下一张牌的回复
+message AssignNextCardResp {
+    optional uint32 ret = 1;
+}
+
+//GM通用的操作请求
+message GMCommonOperReq
+{
+    optional string content = 1; //字符串内容
+}
+
+//GM通用的操作回复
+message GMCommonOperResp
+{
+    optional uint32 ret = 1; //结果
+}
+
+

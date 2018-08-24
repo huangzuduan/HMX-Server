@@ -1,8 +1,8 @@
-#include "WorldServer_PCH.h"
 #include "OfflineUserMgr.h"
-
 #include "SceneRegMgr.h"
+#include "GameService.h"
 
+#include "MysqlProtobufHelper.h"
 
 OfflineUserMgr::OfflineUserMgr()
 {
@@ -14,66 +14,41 @@ OfflineUserMgr::~OfflineUserMgr()
 
 }
 
-bool OfflineUserMgr::getUniqeID(QWORD& tempid)
-{
-	return true;
-}
-
-void OfflineUserMgr::putUniqeID(const QWORD& tempid)
-{
-}
-
-OfflineUser* OfflineUserMgr::CreateObj()
-{
-	return objpool.CreateObj();
-}
-
-void OfflineUserMgr::DestroyObj(OfflineUser* user)
-{
-	objpool.DestroyObj(user);
-}
-
 void OfflineUserMgr::loadDB()
 {
-
-	const dbCol user_id[] =
+	::fogs::proto::msg::QueryOfflineUserProto proto;
+	int32_t nRet = doQueryRepeatedProto(*GameService::Instance()->GetDataRef(), "SELECT * FROM `tb_role`", *proto.mutable_user_list());
+	if (nRet != 0)
 	{
-		{"ID",DB_QWORD,sizeof(QWORD)},
-		{NULL,0,0},
-	};
-
-#pragma pack(push,1)
-	struct dbUserID
-	{
-		QWORD id;
-	};
-#pragma pack(pop)
-
-	dbUserID* dataList, *dataTmp;
-	int ret = GameService::getMe().getDbMysql()->ExecSelect("USER", user_id, NULL, NULL, (unsigned char**)&dataList);
-	if (ret > 0)
-	{
-		int usercount = 0;
-		int failcount = 0;
-		for (int c = 0; c < ret; ++c)
-		{
-			dataTmp = &dataList[c];
-			OfflineUser* user = CreateObj();
-			user->id = dataTmp->id;
-			if (user->loadDB() && addUser(user))
-			{
-				usercount++;
-			}
-			else
-			{
-				failcount++;
-				H::logger->error("加载角色失败[ID:%lld]",user->id);
-				removeUser(user);
-			}
-		}
-
-		SAFE_DELETE_VEC(dataList);
-		H::logger->info("共%d条数据，成功加载%d条,失败%d条",ret,usercount,failcount);
-
+		H::logger->error("加载 USER 出错!");
+		return;
 	}
+
+	int usercount = 0;
+	int failcount = 0;
+	for (int i = 0; i < proto.user_list_size(); ++i)
+	{
+		if (NULL == addUser(proto.user_list(i)))
+		{
+			failcount++;
+		}
+		else
+		{
+			usercount++;
+		}
+	}
+
+	H::logger->info("共%d条数据，成功加载%d条,失败%d条", usercount + failcount, usercount, failcount);
+}
+
+OfflineUser* OfflineUserMgr::addUser(const ::msg_maj::RoleOff& proto)
+{
+	OfflineUser* obj = objpool.construct(proto);
+	bool ret = zEntryMgr<  zEntryID<0>, zEntryName >::addEntry(obj);
+	if (!ret)
+	{
+		objpool.destroy(obj);
+		return NULL;
+	}
+	return obj;
 }

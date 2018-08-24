@@ -1,0 +1,73 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_rank {
+    rank_req = 0; // 请求排行榜 
+    rank_resp = 1;// 返回排行榜
+}
+
+enum rank_type {
+	rank_t_wins 	= 1; 	// 胜局
+	rank_t_score 	= 2;	// 积分
+}
+
+message RankReq {
+    required rank_type type = 1; 
+	optional int32 last = 2; 	// 0当前,1上届
+}
+
+// 返回前端用的排行榜
+message RankInfo 
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜/积分
+	optional uint32 sort	= 4; 	// 排名
+	optional string actor_addr = 5; // 头像
+}
+
+// 返回的排行榜数据
+message RankResp 
+{
+    required rank_type sorttype = 1;
+	optional int32 last 		= 2; // 0当前,1上届
+	required int32 mysort 		= 3;
+	required int32 myvalue 		= 4;
+	repeated RankInfo rank 		= 5;
+}
+
+message WinsInfo
+{
+	optional uint64 uid 	= 1;   	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message ScoreInfo 
+{
+	optional uint64 uid 	= 1;	// 角色id
+	optional string name 	= 2;	// 名字
+	optional uint32 value 	= 3;	// 连胜次数
+	optional uint32 sort	= 4;	// 当前排序
+	optional uint64 time	= 5;	// 更新时间
+	optional uint32 type 	= 6;	// 所属类型
+	optional string actor_addr = 7; // 头像
+}
+
+message RankConsList
+{
+	 repeated WinsInfo ranks = 1;
+}
+
+
+
+message RankScoreList
+{
+	repeated ScoreInfo ranks = 1;
+}
+
+

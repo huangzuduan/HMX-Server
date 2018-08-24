@@ -13,24 +13,26 @@ enum
 class Player : public zEntry
 {
 public:
-	Player();
+	Player(zSession* _session);
 	~Player();
 
-	int64 getUid() { return id; }
+	inline uint64_t GetID(){ return id; };
+	inline uint64_t GetTempID() { return _entry_tempid; };
+	inline const std::string& GetName() { return _entry_name; };
 
-	void SendMsg(NetMsgSS* msg, int32 nSize);
+	void SendMsg(NetMsgSS* msg, int32_t nSize);
 	void Update(const zTaskTimer* timer);
 
-	void setCharList(const std::vector<int64>& arrCharID)
+	void setCharList(const std::vector<int64_t>& arrCharID)
 	{
 		charCount = arrCharID.size();
-		for (int32 i = 0 ; i < charCount; ++i)
+		for (int32_t i = 0 ; i < charCount; ++i)
 		{
 			charIDList[i] = arrCharID[i];
 		}	
 	}
 
-	int64 getFirstCharID()
+	int64_t getFirstCharID()
 	{
 		if(charCount)
 		{
@@ -39,16 +41,21 @@ public:
 		return 0;
 	}
 
-public:
+	void setSession(zSession* _session)
+	{
+		session = _session;
+	}
 
+public:
+	uint64_t id;
 	zSession* session;
 	bool bChating; // ÊÇ·ñÔÚÁÄÌì 
-	int64 accid;	
-	int32 charCount;
-	int64 charIDList[MAX_ROLE_TYPE_COUNT];
+	int64_t accid;	
+	int32_t charCount;
+	int64_t charIDList[MAX_ROLE_TYPE_COUNT];
 
 	char keymd5[MAX_NAMESIZE + 1];
-	int32 keytime;
+	int32_t keytime;
 
 };
 

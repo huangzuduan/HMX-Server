@@ -1,39 +1,38 @@
 #ifndef __WORLD_USER_MGR_H_
 #define __WORLD_USER_MGR_H_
 
-#include "BaseDefine.h"
-#include "Single.h"
+
+#include "SrvEngine.h"
 #include "WorldUser.h"
 
-class WorldUserMgr : protected zEntryMgrsessid< zEntryIDsessid, zEntryTempIDsessid, zEntryNamesessid >
+#include <boost/pool/object_pool.hpp>
+
+class WorldUserMgr : protected zEntryMgr< zEntryID<0>, zEntryName >
 {
 public:
 	WorldUserMgr();
 	~WorldUserMgr();
-	bool getUniqeID(QWORD& tempid);
-	void putUniqeID(const QWORD& tempid);
-	WorldUser* CreateObj();
-	void DestroyObj(WorldUser* user);
-	bool add(WorldUser *user);
-	WorldUser* get(QWORD id);
-	WorldUser* getBySessID(QWORD sessid);
-	WorldUser* getByName(const char* name);
-	void remove(WorldUser* user);
+	
+	WorldUser* AddUser(const ::msg_maj::RoleWs& proto, uint64_t _clientSessID);
 
+	WorldUser* getByUID(uint64_t id);
+	WorldUser* getBySessID(uint64_t sessid);
+	WorldUser* getByName(const char* name);
+	void OfflineUser(WorldUser* user);
 	template <class YourUserEntry>
 	bool execEveryUser(execEntry<YourUserEntry> &exec)
 	{
-		return zEntryMgr::execEveryEntry<>(exec);
+		return zEntryMgr< zEntryID<0>,zEntryName >::execEveryEntry<>(exec);
 	}
 
 public:
 
-	bool checkmd5(int64 accid,int32 keytime,const char* keymd5);
-	void sendRoleList(int64 accid, int64 fepsid, int64 sessid);
+	void sendRoleList(int64_t accid, int64_t fepsid, int64_t sessid);
+	inline uint32_t GetOnlineNum() const { return zEntryMgr< zEntryID<0>, zEntryName >::size(); }
 
 private:
 
-	zObjPool<WorldUser> objpool;
+	boost::object_pool<WorldUser> objpool;
 	
 };
 

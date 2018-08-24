@@ -1,0 +1,254 @@
+syntax = "proto2";
+package fogs.proto.msg;
+
+import "msg_event.proto";
+
+
+// 比赛活动数据表(该表由后台直接操作管理)
+message MatchActInfo
+{
+	optional uint32 match_id = 1;				// 比赛ID
+	optional string match_name = 2;				// 比赛名称
+	optional uint32 match_type = 3;				// 比赛类型
+	optional uint64 baoming_begin_time = 4;		// 报名时间
+	optional uint64 baoming_end_time = 5;
+	optional uint64 match_begin_time = 6;		// 参赛时间
+	optional uint64 match_end_time = 7;
+	optional uint32 max_users = 8;				// 最大参赛人数
+	optional uint32 need_roomcards = 9;			// 需要消耗房卡
+	optional uint32 award_roomcards_1 = 10;		// 奖励第一名
+	optional uint32 award_roomcards_2 = 11;		// 奖励第二名
+	optional uint32 award_roomcards_3 = 12;		// 奖励第三名
+	optional uint32 status = 13; 				//0 关闭,1开启
+	optional uint64 create_time = 14; 			// 创建时间
+}
+
+// 比赛每小局数据表(该表由游戏管理，后台仅能查询)
+message MatchUserInfo
+{
+	optional uint64 record_id = 1; 			// 创建的房间唯一ID
+	optional uint64 record_time = 2;		// 创建房间
+	optional uint32 room_no	= 3;			// 房间号
+	optional uint32 inn_id = 4;				// 第几局
+	optional uint32 match_id = 5;			// 比赛ID
+	optional uint64 inn_time = 6;			// 每小局结束时间 
+	optional int32 huway = 7;				// 胡牌方式
+	optional int32 hutype = 8;				// 胡牌牌形
+	optional int32 huseat = 9;				// 胡牌位置
+	
+	optional uint64 u_1_id = 10;			// ID
+	optional int32 u_1_score = 11; 			// 得分 
+	optional int32 u_1_total = 12; 			// 总分
+	optional int32 u_1_angang = 13;			// 暗杠次数
+	optional int32 u_1_minggang = 14;		// 明本次数
+	optional int32 u_1_goushouggang = 15;	// 过手杠次数
+	
+	optional uint64 u_2_id = 20;			
+	optional int32 u_2_score = 21; 			
+	optional int32 u_2_total = 22; 					
+	optional int32 u_2_angang = 23;			
+	optional int32 u_2_minggang = 24;		
+	optional int32 u_2_goushouggang = 25;	
+	
+	optional uint64 u_3_id = 30;			
+	optional int32 u_3_score = 31; 			
+	optional int32 u_3_total = 32; 					
+	optional int32 u_3_angang = 33;			
+	optional int32 u_3_minggang = 34;		
+	optional int32 u_3_goushouggang = 35;
+	
+	optional uint64 u_4_id = 40;			
+	optional int32 u_4_score = 41; 			
+	optional int32 u_4_total = 42; 					
+	optional int32 u_4_angang = 43;			
+	optional int32 u_4_minggang = 44;		
+	optional int32 u_4_goushouggang = 45;
+	
+	optional HupaiTiles hupaitiles = 46; // 胡牌有鬼的情况手牌
+	
+	optional int32 game_type	= 47; // 游戏类型
+}
+
+message HupaiTiles
+{
+	repeated uint32 tile_list = 1; // 默认记第一个人胡牌手牌(详细过程看战绩)
+}
+
+message VerifyPai
+{
+	optional uint32 pai1 	= 1;
+	optional uint32 pai2 	= 2;
+	optional uint32 pai3 	= 3;
+	optional uint32 pai4 	= 4;
+	optional uint32 pai5 	= 5;
+	optional uint32 pai6 	= 6;
+	optional uint32 pai7 	= 7;
+	optional uint32 pai8 	= 8;
+	optional uint32 pai9 	= 9;
+	optional uint32 pai10 	= 10;
+	optional uint32 pai11 	= 11;
+	optional uint32 pai12 	= 12;
+	optional uint32 pai13 	= 13;
+	optional uint32 pai14 	= 14;
+	optional string param 	= 15;
+}
+
+message VerifyPaiRequest
+{
+
+}
+
+message VerifyPaiResponse
+{
+	repeated VerifyPai verify_list = 1; //验证列表
+}
+
+message SaveVerifyPai
+{
+	optional VerifyPai verify_pai = 1; //验证牌
+}
+
+message RobotVerifyPai
+{
+	optional uint32 ghost_num 	= 1; // 鬼牌数量
+	repeated uint32 pai_list 	= 2; // 牌列表
+}
+
+message SaveMoneyLogRequest
+{
+	required MoneyLog moneyLog = 1;
+}
+
+enum log_type
+{
+	log_t_roomcard_add_charge 	= 1; 	// 充值获得
+	log_t_roomcard_add_mail 	= 2; 	// 邮件领取
+	log_t_roomcard_add_gm		= 3;	// GM指令增加
+	log_t_roomcard_add_admin	= 4;	// 后台
+	log_t_roomcard_add_share	= 5;	// 分享
+	log_t_roomcard_add_inv		= 6;	// 邀请好友
+
+	log_t_roomcard_sub_startmatch 	= 20; // 开局
+	log_t_roomcard_sub_admin		= 21;	// 后台
+	log_t_roomcard_sub_gm			= 22;	// GM指令增加
+}
+
+// 日记记录
+message MoneyLog
+{
+	required uint64 log_id 	= 1;	//唯一ID
+	required int32 log_type = 2; 	//日志事件
+	required uint64 user_id = 3;	//用户ID
+	required int32 room_card = 4;	//数量
+	required int32 room_total = 5;	//共数量
+	required uint64 time 	= 6;   	//生成时间
+}
+
+// 奖励配置
+message RewardConfig
+{
+	optional uint32 id 			= 1; //ID
+	optional uint32 room_card 	= 2; //房卡
+}
+
+// 获取奖励配置请求
+message GetRewardConfigReq
+{
+}
+
+// 获取奖励配置回复
+message GetRewardConfigResp
+{
+	optional RewardConfig invitation_reward = 1; //邀请奖励
+	optional RewardConfig share_reward 		= 2; //分享奖励
+}
+
+// 获取免费配置请求
+message GetFreeConfigReq
+{
+}
+
+// 获取免费配置回复
+message GetFreeConfigResp
+{
+	optional uint64 start_time = 1; //开始时间
+	optional uint64 end_time = 2; 	//结束时间
+}
+
+// 获得公告配置
+message GetNotifyConfigReq 
+{
+}
+
+//
+message GetNotifyConfigResp
+{
+	optional msg_event.NoticeS record = 1;
+}
+
+// 获得房间配置
+message GetRoomSetConfigReq
+{
+}
+
+message GetRoomSetConfigResp
+{
+	optional int32 start_robot = 1; // 是否启动机器人
+	optional int32 limit_time = 2;  // 是否限制时间
+}
+
+// 在线人数房间统计
+message SaveOnlinePlayer
+{
+	optional uint64 time = 1;	// 时间 
+	optional uint32 online_num = 2;	// 在线人数
+	optional uint32 roomcard_num = 3;	// 消耗房卡数
+	optional uint32 inn_num = 4;	// 结束的局数
+}
+
+// 创建房间日志
+message RoomOptionCreate
+{
+	optional uint64 id = 1;
+	optional uint64 gameid = 2;
+	optional uint32 room_no = 3;
+	optional uint64 create_time = 4;
+	optional uint64 start_time = 5;
+	optional uint64 end_time = 6;
+	optional uint32 play_type = 7;
+	optional uint32 person_type = 8;
+	optional uint32 pay_type = 9;
+	optional uint32 jushu_type = 10;
+	optional uint32 score_type = 11;
+	optional uint32 top_type = 12;
+	optional uint32 maima_type = 13;
+	optional uint32 wanfaval = 14;
+}
+
+message RoomOptionEnd
+{
+	optional uint64 id = 1;
+	optional uint64 end_time = 2;
+}
+
+
+// 房间关闭日志
+message RoomCloseLog
+{
+	required uint32 room_no 	= 1;	//房间号
+	required uint32 room_host 	= 2;	//数量
+	required uint32 close_type 	= 3; 	//日志事件
+	required uint64 close_time 	= 4; 	//日志事件
+}
+
+// 分享日志
+message ShareLog
+{
+	required uint64 uid = 1; 
+	required uint64 time = 2; 
+}
+
+
+
+
+

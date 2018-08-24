@@ -134,8 +134,8 @@ BASE_OBJ = $(patsubst %.cpp, $(OBJ_PATH_DST)/%.o, $(notdir $(BASE_SRC)))
 OBJS_DST = $(BASE_OBJ)
 ###########################################################
 
-LIB_ACL_PATH = /usr/local/mysql
-CFLAGS += -I $(LIB_ACL_PATH)/include
+LIB_ACL_PATH = /usr/local/include/boost
+CFLAGS += -I $(LIB_ACL_PATH)
 
 STATIC_LIBNAME = libnetsocket.a
 SHARED_LIBNAME = libnetsocket.so
@@ -155,7 +155,7 @@ static: $(OBJS_DST)
 	$(RANLIB) $(LIB_PATH_DST)/$(STATIC_LIBNAME)
 	@echo 'build $(LIB_PATH_DST)/$(STATIC_LIBNAME) ok!'
 
-shared_ldflags = -l_acl -lrt -lpthread
+shared_ldflags = -lrt -lpthread
 shared: $(OBJS_DST)
 	@echo ''
 	@echo 'creating $(SHARED_LIBNAME)'

@@ -1,0 +1,20 @@
+syntax = "proto2";
+package msg_bcast;
+
+// 广播相关，获奖消息广播等
+
+enum c_cmd_bcast {
+    bcast_world_resp = 1; //全局广播
+    bcast_room_resp = 2; //房间广播
+}
+
+// 全局广播信息
+message BcastWorldResp {
+    required string content = 1; // 广播内容
+}
+
+// 房间广播信息
+message BcastRoomResp {
+    required string content = 1; // 广播内容
+}
+

@@ -44,26 +44,18 @@ using namespace boost::system;
 using namespace boost::asio::ip;
 using namespace boost::asio;
 
+typedef wchar_t						wchar;
+typedef unsigned char				uchar;
+typedef float						float32;
+typedef double						float64;
 	
-#ifdef WIN32
-	typedef __int64                     int64;
-#else
-	typedef int64_t                     int64;
+#ifndef S_SAFE_DELETE
+#define S_SAFE_DELETE(x) { if (NULL != x) { delete (x); (x) = NULL; } }
 #endif
-	typedef unsigned long long          uint64;
-	typedef wchar_t						wchar;
-	typedef unsigned char				uchar;
-	typedef char						int8;
-	typedef unsigned char				uint8;
-	typedef short						int16;
-	typedef unsigned short				uint16;
-	typedef int							int32;
-	typedef unsigned int				uint32;
-	typedef float						float32;
-	typedef double						float64;
-	
-#define S_SAFE_DELETE(a) if( a ){ delete a;a=NULL; }
-#define S_SAFE_RELEASE(a) if( a ){ a->Release(); }
+
+#ifndef S_SAFE_DELETE_VEC
+#define S_SAFE_DELETE_VEC(x) { if (NULL != x) { delete [] (x); (x) = NULL; } }
+#endif
 	
 #define S_USE_PRINT
 
@@ -72,56 +64,129 @@ using namespace boost::asio;
 #define ATOF atof
 #define ATOI atoi
 #define ATOL atol
-
-#ifdef WIN32
-#define SSleep(ms) Sleep(ms)
-#else
-#define SSleep(ms) usleep(ms)
-#endif
-
 #define RAND rand
-
-#ifdef ASSERT
-#undef ASSERT
-#endif 
-#define ASSERT assert
 
 typedef vector< std::string > StringVector;
 typedef vector< std::string >::iterator StringIter;
-typedef vector< int32 > IntVector;
-typedef vector< int32 >::iterator IntIter;
-
-
+typedef vector< int32_t > IntVector;
+typedef vector< int32_t >::iterator IntIter;
 
 #define MAX_THREAD 4
 
 #pragma pack(push, 1)
 
 // 包头大小设置为4个字节，表示后面body的长度   
-#define PACKAGE_HEADER_SIZE 4
+#define PACKAGE_HEADER_SIZE		4		
+#define PACKAGE_BODY_MAX_SIZE	4092
+#define PACKAGE_MAX_SIZE		4096
 
-struct NetMsgSS // s to s
+struct BaseMsg
 {
-	NetMsgSS(int32 _protocol) :protocol(_protocol)
+	BaseMsg()
 	{
-		sessid = fepsid = /*uid = */0;
+		protocol = 0;
 	}
-
-	int32 protocol;	// 协议  
-	int64 sessid;	// fep上，玩家socket的SLONGID，也是SocketID的64位类型  
-	int32 fepsid;	// 从哪个FepServer发出去的ServerID
-	//int64 uid;		// 玩家的UID，当玩家有选择角色成功后，该值才不为0 
-
+	union // 协议 
+	{
+		uint32_t protocol;	// 协议 
+		struct
+		{
+			uint16_t cmd;
+			uint16_t cmdType;
+		};
+	};
 };
 
-struct NetMsgC // s to c
+struct NetMsgSS : public BaseMsg
 {
-	NetMsgC(int32 _protocol) :protocol(_protocol)
+	NetMsgSS(uint32_t _protocol)
 	{
+		protocol = _protocol;
+		clientSessID = fepServerID = 0;
+	}
+	NetMsgSS(uint16_t _cmd,uint16_t _cmdType) 
+	{
+		cmd = _cmd; cmdType = _cmdType;
+		clientSessID = fepServerID = 0;
+	}
+	uint64_t clientSessID;	// fep上，玩家socket的SLONGID，也是SocketID的64位类型  
+	uint32_t fepServerID;	// 从哪个FepServer发出去的ServerID
+};
 
+struct NetMsgC : public BaseMsg
+{
+	NetMsgC(int32_t _protocol)
+	{
+		protocol = _protocol;
+	}
+	NetMsgC(uint16_t _cmd, uint16_t _cmdType) 
+	{
+		cmd = _cmd; cmdType = _cmdType;
+	}
+};
+
+struct PbMsgWeb : public BaseMsg
+{
+	PbMsgWeb()
+	{
+	}
+	PbMsgWeb(int32_t _protocol)
+	{
+		protocol = _protocol;
+	}
+	PbMsgWeb(uint16_t _cmd, uint16_t _cmdType)
+	{
+		cmd = _cmd; cmdType = _cmdType;
+	}
+	char data[0];
+};
+
+struct PbMsgWebSS : public BaseMsg
+{
+	PbMsgWebSS()
+	{
+		clientSessID = fepServerID = 0;
+	}
+	PbMsgWebSS(int32_t _protocol)
+	{
+		protocol = _protocol;
+		clientSessID = fepServerID = size = 0;
+	}
+	PbMsgWebSS(uint16_t _cmd, uint16_t _cmdType)
+	{
+		cmd = _cmd; cmdType = _cmdType;
+		clientSessID = fepServerID = size = 0;
+	}
+	uint64_t clientSessID;	// fep上，玩家socket的SLONGID，也是SocketID的64位类型  
+	uint32_t fepServerID;	// 从哪个FepServer发出去的ServerID
+	int32_t size;
+	char data[0];
+};
+
+enum {
+	MAX_RCV_LEN = 96 * 1024, // 1M, experimental val.
+							 //MAX_SEND_SIZE = 1024 * 300 // 300K, we have verification code
+	MAX_SEND_SIZE = 96 * 1024 // boost bug, no more than 64K
+};
+
+struct DataBuffer
+{
+	uint8_t* data_all;
+	uint32_t data_len;
+	DataBuffer* next;
+	DataBuffer(const uint8_t* _data, int32_t _len) :data_all(NULL), data_len(0), next(NULL)
+	{
+		data_len = PACKAGE_HEADER_SIZE + _len;
+		data_all = new uint8_t[data_len];
+		memcpy(data_all, &_len, PACKAGE_HEADER_SIZE);
+		memcpy(data_all + PACKAGE_HEADER_SIZE, _data, _len);
 	}
 
-	int32 protocol;
+	~DataBuffer()
+	{
+		delete [] data_all;
+		next = NULL;
+	}
 };
 
 #pragma pack(pop)

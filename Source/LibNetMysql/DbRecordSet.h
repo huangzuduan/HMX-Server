@@ -23,15 +23,15 @@ public:
 	virtual bool Create(MYSQL_RES* pRES);
 	virtual void Release();
 	virtual IDbRecord* GetRecord() const;
-	virtual void* GetRecordData(uint32 nIndex) const;
-	virtual int32 Rows() const;
-	virtual void Move( uint32 nIndex );
+	virtual void* GetRecordData(uint32_t nIndex) const;
+	virtual int32_t Rows() const;
+	virtual void Move( uint32_t nIndex );
 	std::vector<DbFieldInfo>& GetFieldInfos();
-	int32 FieldsCount() const;
+	int32_t FieldsCount() const;
 
 	void Remove( DbRecord* pRec );
 	char* GetTableName();
-	const DbFieldInfo&	GetFieldInfo( int32 nIndex ) const;
+	const DbFieldInfo&	GetFieldInfo( int32_t nIndex ) const;
 
 private:                                                                                                                                                                                                                                                                                                                                                                           
 
@@ -40,10 +40,10 @@ private:
 
 private:
 
-	int32		m_nCursor;
+	int32_t		m_nCursor;
 	char		m_arrTableName[32];
-	uint32		m_nKeyIndex;			// 
-	uint32		m_nAutoIncIndex;
+	uint32_t		m_nKeyIndex;			// 
+	uint32_t		m_nAutoIncIndex;
 
 	std::vector<DbRecord*>		m_vecRecord;
 	std::vector<DbFieldInfo>		m_vecFieldInfo;

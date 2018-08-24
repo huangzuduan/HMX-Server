@@ -1,7 +1,7 @@
 #ifndef LOG_CONFIG_H_
 #define LOG_CONFIG_H_
 
-#include "../DyNetMysql/DbConfig.h"
+#include "../LibNetMysql/DbConfig.h"
 
 // 
 #ifdef _DEBUG

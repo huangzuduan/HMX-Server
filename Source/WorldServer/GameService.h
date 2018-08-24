@@ -1,11 +1,14 @@
-#ifndef __SCENES_SERVICE_H_
-#define __SCENES_SERVICE_H_
+#ifndef __WORLD_SERVICE_H_
+#define __WORLD_SERVICE_H_
 
 #include "SrvEngine.h"
-#include "DbMysql.h"
-#include "WorldUserMgr.h"
-#include "OfflineUserMgr.h"
-#include "MessageMgr.h"
+#include "Single.h"
+
+class WorldUserMgr;
+class OfflineUserMgr;
+class MyHttpServer;
+class MessageMgr;
+class SceneRoomMgr;
 
 class GameService : public zNetSerivce, public Single<GameService>
 {
@@ -17,75 +20,29 @@ protected:
 	virtual bool run();
 	virtual void finaly();
 
+	virtual bool doBindServer(const ::config::SerivceInfo& info);
+	virtual bool doConnectServer(const ::config::SerivceInfo& info);
 	void netioUpdate(const zTaskTimer* timer);
-	void timerTickUpdate(const zTaskTimer* timer);
-
-	void pingToServer();
+	
 	
 public:
+	virtual boost::asio::io_service* GetIoService();
+	inline WorldUserMgr* GetWorldUserMgr(){ return mWorldUserMgr;}
+	inline OfflineUserMgr* GetOfflineUserMgr(){ return mOfflineUserMgr;}
+	inline MessageMgr* GetMessageMgr(){ return mMessageMgr;}
+	inline SceneRoomMgr* GetSceneRoomMgr() { return mSceneRoomMgr; }
 
-	int32 getServerID()
-	{
-		return serverID;
-	}
-
-	int32 getServerType()
-	{
-		return serverType;
-	}
-
-	DbMysql* getDbMysql()
-	{
-		return dbCoon;
-	}
-
-	zSessionMgr& getSessionMgr()
-	{
-		return sessionMgr;
-	}
-
-	zSerivceCfgMgr& getServerCfgMgr()
-	{
-		return serverCfgMgr;
-	}
-
-	zServerRegMgr& getServerRegMgr()
-	{
-		return serverRegMgr;
-	}
-
-	WorldUserMgr& getWorldUserMgr()
-	{
-		return worldUserMgr;
-	}
-
-	OfflineUserMgr& getOfflineUserMgr()
-	{
-		return offlineUserMgr;
-	}
-
-	MessageMgr& getMessageMgr()
-	{
-		return messageMgr;
-	}
+	int CheckMd5(int64_t accid, int32_t keytime, const char* keymd5);
 
 private:
 
-	int32 serverID;
-	int32 serverType;
+	WorldUserMgr*		mWorldUserMgr;
+	OfflineUserMgr*		mOfflineUserMgr;
 
-	DbMysql* dbCoon;
-	zSessionMgr sessionMgr;
-	zSerivceCfgMgr serverCfgMgr;
-	zServerRegMgr serverRegMgr;
+	MessageMgr*			mMessageMgr;
+	MyHttpServer*		app;
 
-	zTaskTimer* netioTaskTimer;
-	zTaskTimer*	timeTickTaskTimer;
-
-	WorldUserMgr worldUserMgr;
-	OfflineUserMgr offlineUserMgr;
-
-	MessageMgr messageMgr;
+	SceneRoomMgr*		mSceneRoomMgr;
 	
 };
 

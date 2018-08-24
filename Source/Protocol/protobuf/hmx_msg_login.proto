@@ -1,0 +1,76 @@
+syntax = "proto2";
+
+package hmx_msg_login;
+import "hmx_config.proto";
+
+
+// 协议
+enum hmx_c_cmd
+{
+	login_req 		= 100;		// 请求登录
+	login_resp 		= 200;		// 登录结果
+	ping_req		= 300;		// 发送ping信息
+	ping_resp 		= 301;		// 收到ping信息
+	srvlist_notify 	= 400; 		// 服务器列表
+}
+
+//----------------------服务器---------------------------
+// 请求登录远程(双方都需要)
+message LoginReq
+{
+	optional config.ServerInfo server_info = 1; // 本身的服务器信息
+	repeated config.SerivceInfo broad_serivce_list = 2;// 需要广播的服务器信息
+}
+
+enum LoginResult
+{
+	login_r_success = 0;
+	login_r_fail = 1;
+}
+
+// 请求Ping
+message PingServerClientProto
+{
+	optional uint64 time = 1; 
+	optional uint32 from_server_id = 2; // 来源的服务器ID
+	optional uint32 to_server_id = 3;	// 抵达的服务器ID
+}
+
+// 登录结果
+message LoginResp
+{
+	optional LoginResult result = 1; 
+	optional int32 server_id = 2;
+	optional int32 server_type = 3;
+}
+
+// 广播列表列表
+message SerivceListResp
+{
+	repeated config.SerivceInfo serivce_list = 1;
+}
+
+// 帐户信息
+message users
+{
+	optional uint32 uid = 1;
+	optional string username = 2;
+	optional string avatar = 3;
+}
+
+
+//-----------------------CLIENT------------------------------
+
+enum client_status
+{
+	client_s_inited 		= 0;	// 初始化时，当Client连接成功时，初始化该Session时
+	client_s_connected 		= 1;	// 初始化完成后，设置为已经连接成功状态，这时仅能请求密钥接口
+	client_s_encrypted		= 2;	// 已经请求获得密钥成功，此时，Client是不能请求任何接口的，这时服务器正给它分配负载最低的dp,ls服务器ID
+	client_s_notify_inited 	= 3;	// 分配ls,dp服务器id成功，此时client仅可以向ls发送帐号登录
+	client_s_logined		= 4;	// 登录完成完成 
+    client_s_selected		= 5;	// 选择角色完成 
+    client_s_in_world		= 6;	// 可以进行数据交互完成 
+    client_s_in_scene		= 7;	// 在游戏场景中 
+}
+
+

@@ -1,6 +1,6 @@
 ########### DBServer ###############
 
-file(GLOB_RECURSE WorldServer_SRCS *.h *.cpp *.cc)
+file(GLOB_RECURSE WorldServer_SRCS *.h *hpp *.cpp *.cc)
 
 # precompiled header
 if (USE_COREPCH)
@@ -11,13 +11,18 @@ endif ()
 include_directories(
     ${MYSQL_INCLUDE_DIR}
     ${BOOST_INCLUDE_DIR}
-	${PROTOBUL_INCLUDE_DIR}
 	${ICONV_INCLUDE_DIR}
 	${LIBXML_INCLUDE_DIR}
-    ${CMAKE_SOURCE_DIR}/Include	
-	${CMAKE_SOURCE_DIR}/LibSrvcore
-	${CMAKE_SOURCE_DIR}/LibProtocol
-	${CMAKE_SOURCE_DIR}/LibNetMysql
+	${OPENSSL_INCLUDE_DIR}
+	${NET_INCLUDE_DIR}
+	${PROTOBUL_INCLUDE_DIR}
+	${FOUNDATION_INCLUDE_DIR}
+	${JSON_INCLUDE_DIR}
+	${XML_INCLUDE_DIR}
+	${UTIL_INCLUDE_DIR}
+	${CURL_INCLUDE_DIR}
+	${CMAKE_SOURCE_DIR}/Common
+	${CMAKE_SOURCE_DIR}/Protocol
 	${CMAKE_SOURCE_DIR}/LibNetSocket
 )
 
@@ -26,15 +31,17 @@ add_executable(WorldServer
 )
 
 target_link_libraries(WorldServer
-	LIBMysql
 	LIBSocket
-	LibSrvcore
-	LibProtocol
+	LIBProto
+	LIBCommon
     ${MYSQL_LIBRARIES}
     ${BOOST_LIBRARIES}
-	${LIB_PROTOBUF_DEBUG}
-	${LIB_ICONV_DEBUG}
-	${LIB_LIBXML_DEBUG}
+	${THIRD_LIBRARIES}
+	${ICONV_LIBRARIES}
+	${CURL_LIBRARIES}
+	${LIBXML_LIBRARIES}
+	${OPENSSL_LIBRARIES}
+	${PROTOBUF_LIBRARIES}
 )
 
 IF(UNIX)
@@ -55,13 +62,14 @@ if( WIN32 )
     SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../Bin/)
     add_custom_command(TARGET WorldServer
       POST_BUILD
-      COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml $(TargetDir)
-	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml ${PROJECT_BINARY_DIR}/WorldServer
-	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml ${PROJECT_BINARY_DIR}/GatewayServer
-	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml ${PROJECT_BINARY_DIR}/GameServer
-	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml ${PROJECT_BINARY_DIR}/DBServer
-	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml ${PROJECT_BINARY_DIR}/LoginServer
-	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/serivces.xml ${PROJECT_BINARY_DIR}/Client
+      COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/serivces.xml $(TargetDir)
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/serivces.xml ${PROJECT_BINARY_DIR}/WorldServer
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/serivces.xml ${PROJECT_BINARY_DIR}/GatewayServer
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/serivces.xml ${PROJECT_BINARY_DIR}/GameServer
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/hutype.xml ${PROJECT_BINARY_DIR}/GameServer
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/notice.xml ${PROJECT_BINARY_DIR}/GameServer
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/serivces.xml ${PROJECT_BINARY_DIR}/LoginServer
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../Conf/serivces.xml ${PROJECT_BINARY_DIR}/Client
     )
 	
   endif()

@@ -12,8 +12,10 @@ include_directories(
     ${MYSQL_INCLUDE_DIR}
     ${BOOST_INCLUDE_DIR}
 	${PROTOBUL_INCLUDE_DIR}
+	${ICONV_INCLUDE_DIR}
+	${LIBXML_INCLUDE_DIR}
     ${CMAKE_SOURCE_DIR}/Include	
-	${CMAKE_SOURCE_DIR}/LibSrvCore
+	${CMAKE_SOURCE_DIR}/LibSrvcore
 	${CMAKE_SOURCE_DIR}/LibProtocol
 	${CMAKE_SOURCE_DIR}/LibNetMysql
 	${CMAKE_SOURCE_DIR}/LibNetSocket
@@ -26,11 +28,15 @@ add_executable(HelpTools
 target_link_libraries(HelpTools
 	LIBMysql
 	LIBSocket
-	LibSrvCore
+	LibSrvcore
 	LibProtocol
     ${MYSQL_LIBRARIES}
     ${BOOST_LIBRARIES}
-	${LIB_PROTOBUF_DEBUG}
+	${THIRD_LIBRARIES}
+	${LIB_ICONV_DEBUG}
+	${LIB_LIBXML_DEBUG}
+	${LIB_LIBEAY32_DEBUG}
+	${LIB_SSLEAY32_DEBUG}
 )
 
 IF(UNIX)

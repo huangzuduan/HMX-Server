@@ -1,0 +1,108 @@
+syntax = "proto2";
+package msg_maj;
+
+//获奖名单
+enum c_cmd_friend {
+    friend_info_req		= 1;
+    friend_info_resp	= 2;
+    add_friend_req		= 3;
+	add_friend_resp		= 4;
+    del_friend_req		= 5;
+	del_friend_resp		= 6;
+	update_friend_list  = 7;
+	invite_game			= 8; // 邀请好友游戏
+	follow_game			= 9; // 跟随好友游戏
+	friend_list_req		= 10;
+	friend_list_resp	= 11;
+}
+
+enum online_state {
+	off_line	= 0; // 离线
+	on_line		= 1; // 空闲
+	wait_game	= 2; // 等待游戏（比如人不够）
+	in_game		= 3; // 正在游戏
+}
+
+
+// 获取某一个好友的详细信息
+message FriendInfoReq {
+	required uint64 uid = 1;
+}
+
+message FriendInfoResp {
+    required Friend info = 1;
+}
+
+// 加好友
+message AddFriendReq {
+    required uint64 id = 1; // 唯一Id
+}
+
+// 添加好友结果
+message AddFriendResp {
+	enum ErrCode {
+		OK = 1;
+		FAIL = 2;
+		FRIEND_FULL = 3; // 自己好友列表已满
+		INVITEE_FULL = 4; // 被邀请者好友列表满了
+	}
+	required ErrCode code = 1; // 是否通过
+	optional FriendStatus info = 2; // 朋友信息
+}
+
+// 删除好友
+message DelFriendReq {
+    required uint64 id = 1; // 唯一Id
+}
+
+message DelFriendResp {
+	required uint64 id = 1; // 被删除的uid
+}
+
+// 好友列表变更
+message FriendListUpdate {
+	repeated FriendStatus info = 1;
+}
+
+//message InviteFriGame {
+//	required uint64 invitee = 1; // 被邀请者
+//	required uint32 room_no = 2; // 房间号
+//}
+
+message FollowGame {
+	required uint32 friend_id = 1; // 跟随好友x
+}
+
+message FriendListReq {
+}
+
+message FriendListResp {
+	repeated FriendStatus info = 1;
+}
+
+/////////////////////////////////////  子数据结构  /////////////////////////////////////
+
+// 玩家信息(简单)
+message FriendStatus {
+    required uint64 id = 1; // 唯一Id
+    required string nickname = 2; // 昵称
+    required uint32 logo_icon = 3; // 头像
+    required online_state online_state = 4; // 玩家状态
+}
+
+// 玩家信息(详情)
+message Friend {
+    required uint64 id 				= 1; // 唯一Id
+    required string nickname 		= 2; // 昵称
+    required uint32 logo_icon 		= 3; // 头像
+	required uint32 max_win_streak 	= 4; //最高连胜
+	required uint32 win_curr_week 	= 5; // 本周胡牌数
+	required uint32 total_inn 		= 6; // 总局数
+	required uint32 total_win 		= 7; // 总胡牌数
+	required uint32 max_win_score 	= 8; // 最高胡牌番数
+	required uint32 max_lose_score 	= 9; // 最高输番数
+	required uint32 coin 			= 10; // 金币数
+}
+
+
+

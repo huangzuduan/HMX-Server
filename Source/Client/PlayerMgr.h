@@ -1,10 +1,11 @@
 #ifndef __CLIENT_PLAYER_MGR_H_
 #define __CLIENT_PLAYER_MGR_H_
 
+#include "SrvEngine.h"
 #include "Player.h"
+#include "Single.h"
 
-
-class PlayerMgr : protected zEntryMgr<zEntryID>, public Single<PlayerMgr>
+class PlayerMgr : protected zEntryMgr< zEntryID<0> >, public Single<PlayerMgr>
 {
 protected:
 	friend class Single<PlayerMgr>;
@@ -12,10 +13,10 @@ protected:
 	~PlayerMgr();
 public:
 
-	Player* CreateObj();
+	Player* CreateObj(zSession* _session);
 	void DestoryObj(Player* obj);
 
-	Player* get(int64 id);
+	Player* get(int64_t id);
 	bool add(Player* obj);
 	void remove(Player* obj);
 

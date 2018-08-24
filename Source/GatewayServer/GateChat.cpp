@@ -1,5 +1,7 @@
 #include "GatewaysServer.h"
+#include "GameService.h"
 #include "GateUser.h"
+#include "PlayerMsgHandler.h"
 
 extern DWORD cancel_country_need_money;
 extern DWORD is_cancel_country;
@@ -8,19 +10,19 @@ extern DWORD is_cancel_country;
 template<typename TMsg>
 struct MsgSendToAllPlayer : public execEntry<zSession>
 {
-	MsgSendToAllPlayer(TMsg* __msg, int32 __size) :_msg(__msg), _size(__size)
+	MsgSendToAllPlayer(TMsg* __msg, int32_t __size) :_msg(__msg), _size(__size)
 	{
 	}
 	virtual bool exec(zSession *entry)
 	{
-		if (entry->sessionType == zSession::FOR_PLAYER)
+		if (entry->GetRemoteServerType() == 0)
 		{
 			PlayerMsgHandler::getMe().SendToPlayer(entry, _msg, _size);
 		}
 		return true;
 	}
 	TMsg* _msg;
-	int32 _size;
+	int32_t _size;
 };
 
 
@@ -82,16 +84,16 @@ bool sendCmdByName(char * name, const void *cmd, int len)
 */
 GateChannel::GateChannel(GateUser *pUser) :zEntry()
 {
-	creater.id = pUser->id;
-	creater.tempid = pUser->tempid;
-	strncpy(creater.name, pUser->name, MAX_NAMESIZE);
+	creater->_entry_id = pUser->GetID();
+	creater->_entry_tempid = pUser->GetTempID();
+	creater->_entry_name = pUser->GetName();
 }
 
 GateChannel::GateChannel(DWORD chID, const std::string& _name)
 {
-	creater.id = chID;
-	creater.tempid = chID;
-	strncpy(creater.name, _name.c_str(), MAX_NAMESIZE);
+	creater->_entry_id = chID;
+	creater->_entry_tempid = chID;
+	creater->_entry_name = _name;
 }
 
 GateChannel::~GateChannel()
@@ -109,14 +111,14 @@ GateChannel::~GateChannel()
 */
 bool GateChannel::sendCmdToAll(const NetMsgSS *cmd, int len)
 {
-	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
-	send->regid = 0;
-	send->size = len;
-	memcpy(send->data, cmd, len);
+	//BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	//send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
+	//send->regid = 0;
+	//send->size = len;
+	//memcpy(send->data, cmd, len);
 
-	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
-	GameService::getMe().getSessionMgr().execEveryConn(exec);
+	//MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	//GameService::getMe().SessionMgr()->execEveryConn(exec);
 
 	return true;
 }
@@ -133,9 +135,9 @@ bool GateChannel::remove(const char *uname)
 	WORD found = has(uname);
 	if (found != (WORD)-1)
 	{
-		H::logger->info("%s离开%s的聊天频道", uname, creater.name);
+		/*H::logger->info("%s离开%s的聊天频道", uname, creater->GetName().c_str());
 		C::RtChannelLeave send;
-		send.channelID = tempid;
+		send.channelID = _entry_tempid;
 		strncpy(send.name, uname, MAX_NAMESIZE);
 		sendCmdToAll(&send, sizeof(send));
 
@@ -143,7 +145,7 @@ bool GateChannel::remove(const char *uname)
 		{
 			userlist[found] = userlist.back();
 		}
-		userlist.pop_back();
+		userlist.pop_back();*/
 	}
 	if (userlist.empty())
 		return false;
@@ -162,22 +164,22 @@ bool GateChannel::add(GateUser *pUser)
 {
 	if (pUser != NULL)
 	{
-		WORD found = has(pUser->name);
+		WORD found = has(pUser->GetName().c_str());
 		if (found == (WORD)-1)
 		{
-			H::logger->info("%s加入%s的聊天频道", zUtility::Utf8ToGBK(pUser->name), creater.name);
+			H::logger->info("%s加入%s的聊天频道", pUser->GetName().c_str(), creater->GetName().c_str());
 
-			zEntryC temp;
-			temp.id = pUser->id;
-			temp.tempid = pUser->tempid;
-			strncpy(temp.name, pUser->name, MAX_NAMESIZE);
-			userlist.push_back(temp);
+			//GateUser temp;
+			//temp._entry_id = pUser->GetID();
+			//temp._entry_tempid = pUser->GetTempID();
+			//temp._entry_name = pUser->GetName();
+			//userlist.push_back(temp);
 
 			/* 把自己发送给所有人 */
-			C::RtChannelJion send;
-			send.channelID = tempid;
-			strncpy(send.name, pUser->name, MAX_NAMESIZE);
-			sendCmdToAll(&send, sizeof(send));
+			//C::RtChannelJion send;
+			//send.channelID = _entry_tempid;
+			//strncpy(send.name, pUser->GetName().c_str(), MAX_NAMESIZE);
+			//sendCmdToAll(&send, sizeof(send));
 
 			/* 发送所有成员给自己 */
 			//for (DWORD i = 0; i < userlist.size(); i++)
@@ -204,7 +206,7 @@ WORD GateChannel::has(const char *name)
 	{
 		for (DWORD i = 0; i < userlist.size(); i++)
 		{
-			if (strncmp(userlist[i].name, name, MAX_NAMESIZE) == 0)
+			if (strncmp(userlist[i].GetName().c_str(), name, MAX_NAMESIZE) == 0)
 				return i;
 		}
 	}
@@ -222,13 +224,13 @@ WORD GateChannel::has(const char *name)
 */
 bool GateChannel::sendNine(GateUser *pUser, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
-	send->regid = 0;
-	send->size = len;
-	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
-	GameService::getMe().getSessionMgr().execEveryConn(exec);
+	//BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	//send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
+	//send->regid = 0;
+	//send->size = len;
+	//memcpy(send->data, cmd, len);
+	//MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send,sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	//GameService::getMe().SessionMgr()->execEveryConn(exec);
 	return true;
 }
 
@@ -296,13 +298,13 @@ bool GateChannel::sendCountry(GateUser *pUser, const char *pattern, ...)
 */
 bool GateChannel::sendCountry(GateUser *pUser, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
-	send->regid = 0;
-	send->size = len;
-	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
-	GameService::getMe().getSessionMgr().execEveryConn(exec);
+	//BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	//send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
+	//send->regid = 0;
+	//send->size = len;
+	//memcpy(send->data, cmd, len);
+	//MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	//GameService::getMe().SessionMgr()->execEveryConn(exec);
 	return true;
 }
 
@@ -317,13 +319,13 @@ bool GateChannel::sendCountry(GateUser *pUser, const NetMsgSS *cmd, DWORD len)
 */
 bool GateChannel::sendCmdToMap(DWORD mapID, const NetMsgSS *cmd, int len)
 {
-	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
-	send->regid = mapID;
-	send->size = len;
-	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
-	GameService::getMe().getSessionMgr().execEveryConn(exec);
+	//BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	//send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
+	//send->regid = mapID;
+	//send->size = len;
+	//memcpy(send->data, cmd, len);
+	//MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	//GameService::getMe().SessionMgr()->execEveryConn(exec);
 	return true;
 }
 
@@ -338,13 +340,13 @@ bool GateChannel::sendCmdToMap(DWORD mapID, const NetMsgSS *cmd, int len)
 */
 bool GateChannel::sendTeam(DWORD teamid, const NetMsgSS *cmd, DWORD len)
 {
-	BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
-	send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
-	send->regid = teamid;
-	send->size = len;
-	memcpy(send->data, cmd, len);
-	MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
-	GameService::getMe().getSessionMgr().execEveryConn(exec);
+	//BUFFER_CMD(S::SSNtBoradCastMsg, send, MAX_BUFFERSIZE);
+	//send->msgtype = S::SSNtBoradCastMsg::TYPE_ALL;
+	//send->regid = teamid;
+	//send->size = len;
+	//memcpy(send->data, cmd, len);
+	//MsgSendToAllPlayer<S::SSNtBoradCastMsg> exec(send, sizeof(S::SSNtBoradCastMsg) + send->size * sizeof(send->data[0]));
+	//GameService::getMe().SessionMgr()->execEveryConn(exec);
 	return true;
 }
 
@@ -410,7 +412,7 @@ GateChannelM::GateChannelM()
 
 GateChannelM::~GateChannelM()
 {
-	SAFE_DELETE(channelUniqeID);
+	S_SAFE_DELETE(channelUniqeID);
 }
 
 /**
@@ -479,7 +481,7 @@ void GateChannelM::remove(DWORD dwChannelID)
 {
 	GateChannel *ret = NULL;
 	mlock.lock();
-	ret = (GateChannel *)getEntryByTempID(dwChannelID);
+	ret = (GateChannel *)zEntryID<1>::getEntryByID(dwChannelID);
 	removeEntry(ret);
 	mlock.unlock();
 }
@@ -495,7 +497,7 @@ GateChannel *GateChannelM::get(DWORD dwChannelID)
 {
 	GateChannel *ret = NULL;
 	mlock.lock();
-	ret = (GateChannel *)getEntryByTempID(dwChannelID);
+	ret = (GateChannel *)zEntryID<1>::getEntryByID(dwChannelID);
 	mlock.unlock();
 	return ret;
 }

@@ -1,9 +1,9 @@
 #include "DbRecord.h"
 
-DbRecord::DbRecord( DbRecordSet& rRecordSet , uint32 nFieldNum ): 
+DbRecord::DbRecord( DbRecordSet& rRecordSet , uint32_t nFieldNum ): 
 m_rRecordSet( rRecordSet ),m_nBuffBegin(0)
 {	
-	for ( uint32 i = 0 ; i < nFieldNum ; i++ )
+	for ( uint32_t i = 0 ; i < nFieldNum ; i++ )
 	{
 		DbField sDbField( rRecordSet.GetFieldInfo(i) ,*this );
 		m_vecFields.push_back( sDbField );
@@ -11,10 +11,10 @@ m_rRecordSet( rRecordSet ),m_nBuffBegin(0)
 }
 
 
-DbRecord::DbRecord( DbRecordSet& rRecordSet , MYSQL_ROW row , uint32& nFieldNum ):
+DbRecord::DbRecord( DbRecordSet& rRecordSet , MYSQL_ROW row , uint32_t& nFieldNum ):
 m_rRecordSet( rRecordSet ),m_nBuffBegin(0)
 {	
-	for ( uint32 i = 0 ; i < nFieldNum ; i++ )
+	for ( uint32_t i = 0 ; i < nFieldNum ; i++ )
 	{
 		DbField sDbField( rRecordSet.GetFieldInfo(i) , *this );
 		sDbField.SetValue( row[i]);
@@ -23,10 +23,10 @@ m_rRecordSet( rRecordSet ),m_nBuffBegin(0)
 	}
 }
 
-DbRecord::DbRecord( DbRecordSet& rRecordSet , MYSQL_FIELD* fields , uint32& nFieldNum ):
+DbRecord::DbRecord( DbRecordSet& rRecordSet , MYSQL_FIELD* fields , uint32_t& nFieldNum ):
 m_rRecordSet( rRecordSet ),m_nBuffBegin(0)
 {	
-	for ( uint32 i = 0 ; i < nFieldNum ; i++ )
+	for ( uint32_t i = 0 ; i < nFieldNum ; i++ )
 	{
 		DbField sDbField( rRecordSet.GetFieldInfo(i),*this );
 		sDbField.SetValue( fields[i].def );
@@ -46,14 +46,14 @@ void DbRecord::Release()
 	delete this;
 }
 
-IDbData& DbRecord::Field( uint32 unIndex )
+IDbData& DbRecord::Field( uint32_t unIndex )
 {
 	if (unIndex >= m_vecFields.size() )
 		unIndex	= 0;
 	return m_vecFields[unIndex];
 }
 
-IDbData& DbRecord::Field(uint32 unIndex) const
+IDbData& DbRecord::Field(uint32_t unIndex) const
 {
 	return this->Field(unIndex);
 }
@@ -62,7 +62,7 @@ IDbData& DbRecord::Field( const char* pszName )
 {
 	if ( pszName )
 	{
-		for( uint32 i = 0 ; i < m_vecFields.size() ; i++ )
+		for( uint32_t i = 0 ; i < m_vecFields.size() ; i++ )
 		{
 			DbField& field = m_vecFields[i];
 
@@ -101,7 +101,7 @@ bool DbRecord::BuildSQLOperation( char* pszOperationSQL )
 	bool bFirst = true;
 	bool bFlag = true;
 
-	for (uint32 i = 0 ; i < m_vecFields.size() ; i++ )
+	for (uint32_t i = 0 ; i < m_vecFields.size() ; i++ )
 	{	
 		DbField& field = m_vecFields[i];
 	
@@ -182,10 +182,10 @@ bool DbRecord::BuildSQLOperation( char* pszOperationSQL )
 void DbRecord::BuildSQLCondition( char* pszConditionSQL )
 {
 	pszConditionSQL[0] ='\0';
-	sprintf(pszConditionSQL,"%s=%d",this->KeyName(),(int32)this->Key());
+	sprintf(pszConditionSQL,"%s=%d",this->KeyName(),(int32_t)this->Key());
 }
 
-uint32 DbRecord::GetFieldCount()
+uint32_t DbRecord::GetFieldCount()
 {
 	return	m_vecFields.size();
 }
@@ -194,9 +194,9 @@ std::vector<DbField>& DbRecord::GetMFields(){
 	return m_vecFields;
 }
 
-void DbRecord::StrToBytes(const char* pszValue, uint32 nLen, int32 nType)
+void DbRecord::StrToBytes(const char* pszValue, uint32_t nLen, int32_t nType)
 {
-	int64 mI64Val;
+	int64_t mI64Val;
 	float64 mF64Val;
 	switch (nType)
 	{
@@ -288,29 +288,29 @@ void DbRecord::StrToBytes(const char* pszValue, uint32 nLen, int32 nType)
 
 		ptime	pt = time_from_string(pszValue);
 		date	dd = pt.date();
-		int32  year = dd.year();
+		int32_t  year = dd.year();
 		memcpy(&m_arrRowBuff[m_nBuffBegin], &year, 4);
 		m_nBuffBegin += 4;
 
-		int32  month = dd.month();
+		int32_t  month = dd.month();
 		memcpy(&m_arrRowBuff[m_nBuffBegin], &month, 4);
 		m_nBuffBegin += 4;
 
-		int32  day = dd.day();
+		int32_t  day = dd.day();
 		memcpy(&m_arrRowBuff[m_nBuffBegin], &day, 4);
 		m_nBuffBegin += 4;
 
 		time_duration tt = pt.time_of_day();
 
-		int32 hour = tt.hours();
+		int32_t hour = tt.hours();
 		memcpy(&m_arrRowBuff[m_nBuffBegin], &hour, 4);
 		m_nBuffBegin += 4;
 
-		int32 minute = tt.minutes();
+		int32_t minute = tt.minutes();
 		memcpy(&m_arrRowBuff[m_nBuffBegin], &minute, 4);
 		m_nBuffBegin += 4;
 
-		int32 second = tt.seconds();
+		int32_t second = tt.seconds();
 		memcpy(&m_arrRowBuff[m_nBuffBegin], &second, 4);
 		m_nBuffBegin += 4;
 
@@ -326,7 +326,7 @@ void* DbRecord::GetRowBuff()
 	return m_arrRowBuff;
 }
 
-uint32 DbRecord::GetRecordSize()
+uint32_t DbRecord::GetRecordSize()
 {
 	return m_nBuffBegin;
 }

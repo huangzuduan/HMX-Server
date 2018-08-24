@@ -1,10 +1,5 @@
 #include "LoginAccountMgr.h"
 
-
-
-
-zObjPool<StAccountInfo> LoginAccountMgr::s_cAccountInfoFactory;
-
 LoginAccountMgr::LoginAccountMgr(void)
 {
 }
@@ -14,12 +9,12 @@ LoginAccountMgr::~LoginAccountMgr(void)
 {
 }
 
-void LoginAccountMgr::Update(int32 nServerTimes)
+void LoginAccountMgr::Update(int32_t nServerTimes)
 {
 
 }
 
-StAccountInfo* LoginAccountMgr::GetAccountInfo(int32 nFepSessionId)
+StAccountInfo* LoginAccountMgr::GetAccountInfo(int32_t nFepSessionId)
 {
 	AccountInfoMapType::iterator it = m_mapAccountInfo.find(nFepSessionId);
 	if(it != m_mapAccountInfo.end())
@@ -27,7 +22,7 @@ StAccountInfo* LoginAccountMgr::GetAccountInfo(int32 nFepSessionId)
 	return NULL;
 }
 
-StAccountInfo* LoginAccountMgr::AddAccountInfo(int32 nFepSessionId)
+StAccountInfo* LoginAccountMgr::AddAccountInfo(int32_t nFepSessionId)
 {
 	if(StAccountInfo* pAccountInfo = s_cAccountInfoFactory.CreateObj(nFepSessionId))
 	{
@@ -37,7 +32,7 @@ StAccountInfo* LoginAccountMgr::AddAccountInfo(int32 nFepSessionId)
 	return NULL;
 }
 
-void LoginAccountMgr::RemoveAccountInfo(int32 nFepSessionId)
+void LoginAccountMgr::RemoveAccountInfo(int32_t nFepSessionId)
 {
 	AccountInfoMapType::iterator it = m_mapAccountInfo.find(nFepSessionId);
 	if(it != m_mapAccountInfo.end())

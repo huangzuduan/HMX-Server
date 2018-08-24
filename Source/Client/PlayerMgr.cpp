@@ -1,6 +1,4 @@
-#include "Client_PCH.h"
 #include "PlayerMgr.h"
-
 
 PlayerMgr::PlayerMgr()
 {
@@ -12,9 +10,9 @@ PlayerMgr::~PlayerMgr()
 
 }
 
-Player* PlayerMgr::CreateObj()
+Player* PlayerMgr::CreateObj(zSession* _session)
 {
-	return objpool.CreateObj();
+	return objpool.CreateObj(_session);
 }
 
 void PlayerMgr::DestoryObj(Player* obj)
@@ -22,19 +20,19 @@ void PlayerMgr::DestoryObj(Player* obj)
 	objpool.DestroyObj(obj);
 }
 
-Player* PlayerMgr::get(int64 id)
+Player* PlayerMgr::get(int64_t id)
 {
-	return (Player*)zEntryMgr::getEntryByID(id);
+	return (Player*)zEntryMgr< zEntryID<0> >::getEntryByID(id);
 }
 
 bool PlayerMgr::add(Player* obj)
 {
-	return zEntryMgr::addEntry(obj);
+	return zEntryMgr< zEntryID<0> >::addEntry(obj);
 }
 
 void PlayerMgr::remove(Player* obj)
 {
-	zEntryMgr::removeEntry(obj);
+	zEntryMgr< zEntryID<0> >::removeEntry(obj);
 }
 
 void PlayerMgr::Update(const zTaskTimer* timer)
@@ -53,5 +51,5 @@ void PlayerMgr::Update(const zTaskTimer* timer)
 	};
 
 	MyStruct exec(timer);
-	zEntryMgr::execEveryEntry(exec);
+	zEntryMgr< zEntryID<0> >::execEveryEntry(exec);
 }

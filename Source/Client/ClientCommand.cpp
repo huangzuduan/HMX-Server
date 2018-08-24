@@ -1,29 +1,28 @@
-#include "Client_PCH.h"
 #include "ClientCommand.h"
 #include "PlayerProcHandler.h"
+#include "GameService.h"
+#include "Player.h"
+#include "PlayerMgr.h"
 
 #ifdef WIN32 
-
 #include "conio.h"
 #else
-
 int _kbhit()
 {
-    struct timeval tv;
-    fd_set rdfs;  
-    tv.tv_sec = 0;
-    tv.tv_usec = 0;
-    FD_ZERO( &rdfs );
-    FD_SET ( STDIN_FILENO , &rdfs );
-    select( STDIN_FILENO + 1 , &rdfs , NULL , NULL , &tv );
-    return FD_ISSET( STDIN_FILENO , &rdfs );
+	struct timeval tv;
+	fd_set rdfs;
+	tv.tv_sec = 0;
+	tv.tv_usec = 0;
+	FD_ZERO(&rdfs);
+	FD_SET(STDIN_FILENO, &rdfs);
+	select(STDIN_FILENO + 1, &rdfs, NULL, NULL, &tv);
+	return FD_ISSET(STDIN_FILENO, &rdfs);
 }
 
 int _getch()
 {
-    return getchar();
+	return getchar();
 }
-
 #endif
 
 
@@ -60,7 +59,7 @@ void GameCommand::LoopInput()
 
 	if( _kbhit() )
 	{
-		int32 nKey = _getch();
+		int32_t nKey = _getch();
 		switch( nKey )
 		{
 #ifdef WIN32

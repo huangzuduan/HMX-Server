@@ -1,0 +1,22 @@
+syntax = "proto2";
+package comdef;
+
+enum cmd{
+    msg_login       = 1;  // 登录
+	msg_ss			= 2;  // 
+	msg_base        = 10; // 
+    msg_role        = 21; // 个人信息
+    msg_friend      = 22; // 好友
+    msg_room        = 23; // 房间
+	msg_rank        = 24; // 排行榜
+	msg_broadcast   = 25; // 广播
+	msg_shop        = 26; // 商店
+	msg_mail        = 27; // 邮件
+	msg_activity    = 28; // 活动
+	msg_achieve     = 29; // 成就
+	msg_event		= 30; // 事件/邮件
+    msg_maj         = 31; // 房间
+    msg_test        = 32; // 测试模块
+    msg_hist        = 33; // 历史记录
+    msg_gm          = 34; // gm操作
+}

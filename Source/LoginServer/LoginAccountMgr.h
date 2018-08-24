@@ -1,11 +1,9 @@
 #ifndef __LOGIN_ACCOUNT_MGR_H_
 #define __LOGIN_ACCOUNT_MGR_H_
 
-#include "BaseDefine.h"
+
 #include "Single.h"
-
-
-
+#include "SrvEngine.h"
 
 /*------------------------------------------------------------------
  *
@@ -23,13 +21,13 @@
 struct StAccountInfo
 {
 
-	int32 nSessionID;
-	int32 nAccountId;
+	int32_t nSessionID;
+	int32_t nAccountId;
 	char  arrName[MAX_ACCOUNT_LENG];
-	int32 nLastLogin;
-	int32 nIllegalTime;
+	int32_t nLastLogin;
+	int32_t nIllegalTime;
 
-	StAccountInfo(int32 _nSessionID)
+	StAccountInfo(int32_t _nSessionID)
 	{
 		nSessionID = _nSessionID;
 		nAccountId = nLastLogin = nIllegalTime = 0;
@@ -42,11 +40,7 @@ struct StAccountInfo
 	 *-------------------------------------------*/
 	void AddLoginTimes()
 	{
-		int32 now = H::timeTick->now();
-		if(now - nLastLogin < 1) // 小于1称重登都是属于非法 
-		{
-			nIllegalTime++;
-		}
+		nIllegalTime++;
 	}
 
 	/*--------------------------------------------
@@ -78,37 +72,36 @@ public:
 	 *  @input	  :
 	 *  @return   :	
 	 *-------------------------------------------*/
-	void Update(int32 nServerTimes);
+	void Update(int32_t nServerTimes);
 
 	/*--------------------------------------------
 	 *  @brief    :	获得帐号信息
 	 *  @input	  :
 	 *  @return   :	
 	 *-------------------------------------------*/
-	StAccountInfo* GetAccountInfo(int32 nFepSessionId);
+	StAccountInfo* GetAccountInfo(int32_t nFepSessionId);
 
 	/*--------------------------------------------
 	 *  @brief    :	增加帐号记录
 	 *  @input	  :
 	 *  @return   :	
 	 *-------------------------------------------*/
-	StAccountInfo* AddAccountInfo(int32 nFepSessionId);
+	StAccountInfo* AddAccountInfo(int32_t nFepSessionId);
 
 	/*--------------------------------------------
 	 *  @brief    :	删除一个帐号记录
 	 *  @input	  :
 	 *  @return   :	
 	 *-------------------------------------------*/
-	void RemoveAccountInfo(int32 nFepSessionId);
+	void RemoveAccountInfo(int32_t nFepSessionId);
 
 private:
 
-	typedef std::map<int32,StAccountInfo*> AccountInfoMapType;
-
+	typedef std::map<int32_t,StAccountInfo*> AccountInfoMapType;
 
 	AccountInfoMapType m_mapAccountInfo;
 
-	static zObjPool<StAccountInfo> s_cAccountInfoFactory;
+	zObjPool<StAccountInfo> s_cAccountInfoFactory;
 
 };
 

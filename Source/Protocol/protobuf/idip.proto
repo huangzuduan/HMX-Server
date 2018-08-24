@@ -1,0 +1,150 @@
+syntax = "proto2";
+package fogs.proto.msg;
+
+// 协议请求
+message SendMsgRequest
+{
+	optional string connect = 1; //内容
+}
+// 协议回复
+message SendMsgResponse
+{
+	optional int32 result 	= 1; //结果
+}
+
+//发送房卡
+message SendRoomCard
+{
+	optional uint64 user_id 	= 1; //用户ID
+	optional int32 cards 		= 2; //房卡数
+	optional string order_no 	= 3; //订单号
+	optional uint64 from_uid 	= 4; //来源于ID
+}
+
+//修改用户信息
+message UserEditCard
+{
+	optional uint64 user_id 	= 1; //用户ID
+	optional int32 cards 		= 2; //房卡数
+	optional int32 level 		= 3; //等级
+	optional uint64 from_uid 	= 4; //来源于ID
+}
+
+//修改房卡
+message EditRoomCard
+{
+	optional uint64 user_id 		= 1; //用户ID
+	optional int32 roomcard_num 	= 2; //房卡数量
+	optional int32 roomcard_total	= 3; //总数量
+	optional string nickname 		= 4; //昵称
+}
+
+//发邮件
+message SendMailToPlayer
+{
+	repeated uint64 user_ids = 1;
+	optional string mail_title = 2;
+	optional string mail_content = 3;
+	optional uint32 award_type = 4;
+	optional uint32 award_num = 5;
+}
+
+//发通告
+message SendNoticeToGame
+{
+	optional uint64 id = 1;
+	optional uint64 begin_time = 2;
+	optional uint64 break_time = 3;
+	optional uint32 loop_time = 4;
+	optional string content = 5;
+}
+
+//删通告
+message DeleteNoticeToGame
+{
+	optional uint64 id = 1;
+}
+
+//解封角色
+message SendBlockUser
+{
+	optional uint64 user_id = 1;
+	optional uint64 closureTime = 2;
+}
+
+// 查看玩家
+message SendFindUser
+{
+	optional uint64 user_id = 1;
+}
+
+// 返回查看玩家
+message RespFindUser
+{
+	optional bool is_online = 1;// false无查到，后来数据无用
+	optional uint64 user_id = 2;	
+}
+
+// 查看在线总数
+message SendFindOnline
+{
+
+}
+
+// 返回查看在线
+message RespFindOnline
+{
+	optional uint32 total = 1;
+}
+
+//获取绑定代理信息
+message GetBindingAgentInfoReq
+{
+	optional uint32 user_id 		= 1; //用户ID
+}
+//获取绑定代理信息
+message GetBindingAgentInfoResp
+{
+	optional uint32 user_id 		= 1; //用户ID
+	optional uint32 agent_id 		= 2; //代理ID
+	optional string agent_name 		= 3; //代理名称
+	optional string agent_wx_account= 4; //微信号
+	optional string agent_icon 		= 5; //头像地址
+}
+
+//绑定代理
+message BindingAgentReq
+{
+	optional uint32 user_id 		= 1; //用户ID
+	optional uint32 agent_id 		= 2; //代理ID
+}
+//绑定代理
+message BindingAgentResp
+{
+	optional int32 result 			= 1; //结果
+	optional uint32 user_id 		= 2; //用户ID
+	optional uint32 agent_id 		= 3; //代理ID
+	optional string agent_name 		= 4; //代理名称
+	optional string agent_wx_account= 5; //微信号
+	optional string agent_icon 		= 6; //头像地址
+	optional string code_info 		= 7; //错误码描述
+}
+
+//配置类型
+enum ConfigType
+{
+	ConfigType_Share 		= 1; //分享配置
+	ConfigType_Invitation 	= 2; //邀请配置
+}
+//刷新后台配置
+message RefreshConfig
+{
+	optional ConfigType config_type = 1; //配置类型
+}
+
+//刷新免费配置
+message RefreshFree
+{
+	
+}
+

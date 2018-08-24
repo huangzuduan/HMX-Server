@@ -1,0 +1,6 @@
+F:\MT\proto_tool\Cmd\Cmd\bin\Debug\Cmd.dll
+F:\MT\proto_tool\Cmd\Cmd\bin\Debug\Cmd.pdb
+F:\MT\proto_tool\Cmd\Cmd\bin\Debug\protobuf-net.dll
+F:\MT\proto_tool\Cmd\Cmd\obj\Debug\Cmd.csprojResolveAssemblyReference.cache
+F:\MT\proto_tool\Cmd\Cmd\obj\Debug\Cmd.dll
+F:\MT\proto_tool\Cmd\Cmd\obj\Debug\Cmd.pdb

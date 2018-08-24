@@ -4,6 +4,8 @@
 #define MAX_PATH1 260
 
 #include "NetSocket.h"
+#include "SrvEngine.h"
+#include "Single.h"
 
 class Player;
 class GameCommand;
@@ -90,7 +92,7 @@ private:
 
 	VectorCommand	commands;
 	char			mArrBuffer[ MAX_PATH1 ];
-	int32			mCommandCount;
+	int32_t			mCommandCount;
 };
 
 

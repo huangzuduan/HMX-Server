@@ -157,6 +157,33 @@ public:
 		cout << "end" << endl;
 	};
 
+	// --------------------------------------------
+	void test()
+	{
+		SceneNode scene = SceneNode();
+		// 增加
+		scene.Add("a", 1, 5);
+		scene.Add("f", 6, 6);
+		scene.Add("c", 3, 1);
+		scene.Add("b", 2, 2);
+		scene.Add("e", 5, 3);
+		DoubleNode * node = scene.Add("d", 3, 3);
+
+		scene.PrintLink();
+		scene.PrintAOI(node, 2, 2);
+
+		// 移动
+		cout << endl << "[MOVE]" << endl;
+		scene.Move(node, 4, 4);
+		scene.PrintLink();
+		scene.PrintAOI(node, 2, 2);
+
+		// 删除
+		cout << endl << "[LEAVE]" << endl;
+		scene.Leave(node);
+		scene.PrintLink();
+	}
+
 private:
 	DoubleNode * _head;
 	DoubleNode * _tail;
@@ -195,32 +222,7 @@ private:
 	}
 };
 
-// --------------------------------------------
-void test()
-{
-	SceneNode scene = SceneNode();
-	// 增加
-	scene.Add("a", 1, 5);
-	scene.Add("f", 6, 6);
-	scene.Add("c", 3, 1);
-	scene.Add("b", 2, 2);
-	scene.Add("e", 5, 3);
-	DoubleNode * node = scene.Add("d", 3, 3);
 
-	scene.PrintLink();
-	scene.PrintAOI(node, 2, 2);
-
-	// 移动
-	cout << endl << "[MOVE]" << endl;
-	scene.Move(node, 4, 4);
-	scene.PrintLink();
-	scene.PrintAOI(node, 2, 2);
-
-	// 删除
-	cout << endl << "[LEAVE]" << endl;
-	scene.Leave(node);
-	scene.PrintLink();
-}
 
 #endif
 

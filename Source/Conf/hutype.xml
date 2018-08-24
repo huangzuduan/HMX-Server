@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="GB2312"?>
+<hutype>
+	<!-- keyscore -->
+	<!--shanxi -->
+	<type id="0" name="流局" value="0"/>
+	<type id="101" name="平胡" value="1"/>
+	<type id="102" name="七对" value="2"/>
+	<type id="103" name="碰碰胡" value="2"/>
+	<type id="104" name="清一色" value="2"/>
+	<type id="105" name="清一色碰碰胡" value="4"/>
+	<type id="106" name="清一色七对" value="4"/>
+	<type id="107" name="13幺" value="16"/>
+	<type id="108" name="天胡" value="2"/>
+	<type id="109" name="地胡" value="2"/>
+	<!-- xian -->
+	<type id="201" name="平胡" value="1"/>
+	<type id="202" name="七对" value="2"/>
+	<type id="203" name="碰碰胡" value="2"/>
+	<type id="204" name="清一色" value="2"/>
+	<type id="205" name="清一色碰碰胡" value="4"/>
+	<type id="206" name="清一色七对" value="4"/>
+	<type id="207" name="13幺" value="16"/>
+	<type id="208" name="天胡" value="2"/>
+	<type id="209" name="地胡" value="2"/>
+	<!-- xuezhan -->
+	<type id="1001" name="平胡" value="1"/>
+	<type id="1002" name="对对胡" value="2"/>
+	<type id="1003" name="门清" value="2"/>
+	<type id="1004" name="断幺九" value="2"/>
+	<type id="1005" name="清一色" value="4"/>
+	<type id="1006" name="带幺九" value="4"/>
+	<type id="1007" name="七对" value="4"/>
+	<type id="1008" name="金钩钓" value="4"/>
+	<type id="1009" name="清对" value="8"/>	
+	<type id="1010" name="龙七对" value="16"/>
+	<type id="1011" name="清七对" value="16"/>
+	<type id="1012" name="清幺九" value="16"/>
+	<type id="1013" name="将金钩钓" value="16"/>
+	<type id="1014" name="清金钩钓" value="16"/>
+	<type id="1015" name="天胡" value="32"/>
+	<type id="1016" name="地胡" value="32"/>
+	<type id="1017" name="清龙七对" value="32"/>
+	<type id="1018" name="十八罗汉" value="32"/>
+	<!-- xueliu -->
+	<type id="1101" name="平胡" value="1"/>
+	<type id="1102" name="对对胡" value="2"/>
+	<type id="1103" name="门清" value="2"/>
+	<type id="1104" name="断幺九" value="2"/>
+	<type id="1105" name="清一色" value="4"/>
+	<type id="1106" name="带幺九" value="4"/>
+	<type id="1107" name="七对" value="4"/>
+	<type id="1108" name="金钩钓" value="4"/>
+	<type id="1109" name="清对" value="8"/>	
+	<type id="1110" name="龙七对" value="16"/>
+	<type id="1111" name="清七对" value="16"/>
+	<type id="1112" name="清幺九" value="16"/>
+	<type id="1113" name="将金钩钓" value="16"/>
+	<type id="1114" name="清金钩钓" value="16"/>
+	<type id="1115" name="天胡" value="32"/>
+	<type id="1116" name="地胡" value="32"/>
+	<type id="1117" name="清龙七对" value="32"/>
+	<type id="1118" name="十八罗汉" value="32"/>
+	
+</hutype>

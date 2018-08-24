@@ -4,10 +4,9 @@
 #include <bitset>
 #include <assert.h>
 
-#include "UnorderedSet.h"
-#include "SceneChannel.h"
 #include "SrvEngine.h"
-#include "ScenesServer.h"
+#include "UnorderedSet.h"
+
 
 class SceneRegion;
 class Scene;
@@ -28,11 +27,11 @@ public:
 	SceneEntryPk(const SceneEntryType entrytype);
 	virtual ~SceneEntryPk() {}
 
-	virtual int32 getLevel() { return 0;}
-	virtual int32 getHp(){ return 0;}
-	virtual int32 getHpMax(){ return 0;}
-	virtual int32 getMp(){return 0;}
-	virtual int32 getMpMax(){return 0;}
+	virtual int32_t getLevel() { return 0;}
+	virtual int32_t getHp(){ return 0;}
+	virtual int32_t getHpMax(){ return 0;}
+	virtual int32_t getMp(){return 0;}
+	virtual int32_t getMpMax(){return 0;}
 
 	inline const zPos &getPos() const { return pos; }
 	void setPos(const zPos& zPos) { pos = zPos; }
@@ -40,7 +39,6 @@ public:
 public:
 
 	Scene*	scene; 
-	PkValue pkVal;/* pk属性 */
 
 	///脱离战斗状态的时间 
 //	zRTime endBattleTime;
@@ -152,8 +150,6 @@ public:
 	BYTE damtohpper;  /// 角色的伤害转化成生命值的几率;
 	BYTE damtohpvalper; /// 角色的伤害转化成生命值的百分比
 
-	SkillStatusManager skillStatusM;  /// 技能状态管理器
-	SkillStatusCarrier carrier;      /// 技能操作投送器
 	std::map<BYTE, BYTE>  _effectState;  /// 技能状态特效计数器
 	SceneEntryPk *attackTarget;      /// 武器附带攻击状态攻击目标
 
@@ -330,11 +326,6 @@ public:
 	virtual bool needType(const DWORD &needtype) = 0;
 
 	/**
-	* \brief 需要的职业类型,决定可以使用的技能类型
-	*/
-	virtual bool addSkillToMe(zSkill *skill) = 0;
-
-	/**
 	* \brief 是否有该技能需要的武器
 	* \return true 有 false 没有
 	*/
@@ -367,13 +358,6 @@ public:
 	* \return 伤害加成
 	*/
 	virtual WORD getDamageBonus() { return 0; }
-
-	/**
-	* \brief 施放技能所导致的消耗MP,HP,SP
-	* \param base 技能基本属性对象
-	* \return true 消耗成功 false 失败
-	*/
-	virtual bool doSkillCost(const zSkillB *base) = 0;
 
 	virtual void showCurrentEffect(const WORD &state, bool isShow, bool notify = true) = 0;
 

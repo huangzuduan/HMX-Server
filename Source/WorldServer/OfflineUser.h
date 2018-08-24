@@ -1,8 +1,9 @@
 #ifndef __OFFLINE_USER_H_
 #define __OFFLINE_USER_H_
 
-#include "Includes.h"
-#include "character.pb.h"
+
+#include "SrvEngine.h"
+#include "base/hmx_data.pb.h"
 
 
 /*
@@ -11,20 +12,14 @@
 class OfflineUser : public zEntry
 {
 public:
-	OfflineUser();
+	OfflineUser(const ::msg_maj::RoleOff& proto);
 	~OfflineUser();
-
-	bool loadDB();
-	void saveDB();
-	void readBinary(const char* data,int32 len);
-	int32 writeBinary(char* data);
-
+	inline uint64_t GetID(){ return dataProto.id(); }
+	inline uint64_t GetTempID(){ return _entry_tempid; }
+	inline const std::string& GetName(){ return dataProto.nickname(); }
 public:
 
-	int16 level;
-	int8 vip;
-	int8 country;
-	int32 teamid;
+	::msg_maj::RoleOff dataProto;
 
 };
 

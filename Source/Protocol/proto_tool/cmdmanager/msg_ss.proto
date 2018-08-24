@@ -1,0 +1,147 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_ss
+{
+	login_to_scene_req = 1;
+	QueryPlayerResponseID = 2;
+
+    QueryMailResponseID = 5;
+	QueryMailSysLogResponseID = 6;
+	GetMaxUUIDResponseID = 7;
+	SendRoomCardID = 8;
+	SendEditRoomCardID = 9;
+	SendMailID = 10;
+	SendNoticeID = 11;
+	DeleteNoticeID = 12;
+	SendBlockUserID = 13;
+	SessionAccountNameID = 14;
+	UpdateRoomInfoID = 15;
+	ChangeGameServerID= 16;
+	ZhanjiQueryListResponseID= 17;
+	ZhanjiRespReplyResponseID= 18;
+	NotifyOnConnectionID= 19;
+	VerifyPaiResponseID= 20;
+    ReloadConfigFormID= 21;
+	
+	HandshakeRequestID = 23;
+	QueryPlayerRequestID = 24;
+	SavePlayerDataReqID = 25;
+	ZhanJiRecordAddRequestID = 26;
+	ZhanJiFinishRequestID = 27;
+	ZhanjiQueryListRequestID = 28;
+	ZhanjiQueryReplyRequestID = 29;
+	QueryMailRequestID = 30;
+	SaveMailRequestID = 31;
+	GetMaxUUIDRequestID = 32;
+	RechargeRoomCardID = 33;
+
+	
+	QueryMailSysLogRequestID = 34;
+	SaveMailSysLogRequestID = 35;
+	
+	UpdateRankRequestID = 36;
+	InnRecordAddLogRequestID = 37;
+	
+	UpdateFepUserID = 38;
+	
+    UpdateRankSortResponseID = 39;
+	QueryRankRequestID = 40;
+	QueryRankResponseID = 41;
+	
+	//QueryAdminChargeUserID = 50;
+	QueryAdminFindUserInfoID = 51;
+	
+	SaveMoneyLogRequestID = 60;
+	SaveOnlinePlayerID = 61;
+	
+	ZhanjiQueryRoomRequestID = 62;
+	ZhanjiQueryRoomResponseID = 63;
+	ZhanjiQueryInnRequestID	= 64;
+	ZhanjiQueryInnResponseID = 65;
+	
+	GetFreeConfigReqID	= 66;
+	GetFreeConfigRespID	= 67;
+	GetRewardConfigReqID = 68;
+	GetRewardConfigRespID =69;
+	GetNotifyConfigReqID =70;
+	GetNotifyConfigRespID =71;
+	GetRoomSetConfigReqID =72;
+	GetRoomSetConfigRespID =73;
+
+	RespEditRoomCardID	= 76;		
+	RespSendRoomCardID	= 77;		
+	SendFindUserID	= 78;			 // 查在线玩家信息
+	RespFindUserID	= 79;				
+	SendFindOnlineID = 80;		 // 查在线玩家数量
+	RespFindOnlineID = 81;			
+	GetBindingAgentInfoReqID = 82;	 // 查询绑定代理信息（游戏服 -> 后台）
+	GetBindingAgentInfoRespID = 83;	 // 查询绑定代理信息（后台 -> 游戏服）
+	BindingAgentReqID = 84;			 // 绑定代理（游戏服 -> 后台）
+	BindingAgentRespID	= 85;		 // 绑定代理（后台 -> 游戏服）
+	RefreshConfigID	= 86;			 // 刷新后台配置（后台 -> 游戏服）
+	RefreshFreeID = 87;				 // 刷新免费配置（后台 -> 游戏服）
+	InputInviteCodeReqID= 90;
+	InputInviteCodeRespID=91;
+	LoginTokenNotifyID = 100; 
+	
+	req_robot_join_room = 110;
+	
+	UserEditCardID = 111; // 修改用户信息
+	
+	SaveRoomOptionReqID = 112; // 保存房间选项信息
+	
+	UpdateRoomOptionReqID = 113; // 更新房间信息
+	
+	ServerIsBrepairingNotifyID = 114; // 服务器正在维护中
+	
+}  
+
+// 登录进入游戏服
+message LoginToScene
+{
+	optional uint64 uid = 1;	// 角色id
+	optional bool repeat_login = 2; // 是否重复登录
+	optional uint32 new_session_id = 3;// 新的sessionid
+	optional uint32 join_room_id = 4; // 是否加入房间
+}
+
+// 帐号登录信息
+message LoginToken
+{
+	optional string openid 		= 1;
+	optional string nickname 	= 2;
+	optional int32 sex 			= 3;
+	optional string province 	= 4;
+	optional string city 		= 5;
+	optional string country 	= 6;
+	optional string headimgurl 	= 7;
+	optional string unionid 	= 8;
+	optional string ip			= 9;
+}
+
+// 同步微信登录信息到ws
+message LoginTokenNotify
+{
+	optional LoginToken acctoken = 1;
+}
+
+// 踢下线
+message KickSession
+{
+	optional uint64 session_id = 1;
+}
+
+// 邀请机器人加入房间
+message ReqRobotJoinRoom
+{
+	optional int32 room_id = 1;
+}
+
+message ServerBrepairingNotify 
+{
+	optional int32 status = 1;
+}
+
+
+

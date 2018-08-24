@@ -1,0 +1,48 @@
+syntax = "proto2";
+package fogs.proto.msg;
+
+//数据库配置
+message DBConfig
+{
+	optional string name 			= 1; //数据库名
+	optional string ip				= 2; //IP
+	optional uint32 port 			= 3; //端口
+	optional string user 			= 4; //用户名
+	optional string pwd 			= 5; //密码
+	optional uint32 table_num 		= 6; //表数量
+	optional uint32 readtimeout 	= 7; //读超时时间
+	optional uint32 writetimeout 	= 8; //写超时时间
+	optional uint32 conntimeout 	= 9; //连接超时时间
+}
+
+//连接的服务器
+message ConServerConfig
+{
+	optional string name 		= 1; //服务器名字
+	optional uint32 type 		= 2; //服务器类型
+	optional uint32 id 			= 3; //服务器ID
+	optional string ip 			= 4; //服务器IP
+	optional uint32 port 		= 5; //服务器端口
+}
+
+//服务器配置
+message ServerConfig
+{
+	optional string name 			= 1; //服务器名字
+	optional uint32 type 			= 2; //服务器类型
+	optional uint32 id 				= 3; //服务器ID
+	optional string server_ip 		= 4; //服务器IP
+	optional string client_ip 		= 5; //客户端IP
+	optional uint32 port 			= 6; //服务器端口	
+	optional uint32 thread_num 		= 7; //线程数量
+	optional uint32 reconnet_time 	= 8; //重连时间
+	repeated ConServerConfig con_list= 9; //连接信息
+	optional DBConfig db 			= 10; //数据库配置
+	optional string sdk_web 		= 11; //SDK地址
+}
+
+
+
+
+
+

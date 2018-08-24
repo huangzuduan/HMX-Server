@@ -1,0 +1,16 @@
+syntax = "proto2";
+package msg_maj;
+
+enum c_cmd_shop {
+    wxpayorderinfo_req 	= 1;
+    wxpayorderinfo_resp	= 2;
+}
+
+message WxPayOrderInfoReq {
+    required uint32 sound	= 1; // 
+    required uint32 music	= 2; // 
+}
+
+
+
+

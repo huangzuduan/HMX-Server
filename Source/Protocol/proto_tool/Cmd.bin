@@ -1,0 +1,1026 @@
+
+ÁŠ
+	Cmd.proto"
+GetShareInfoReq"5
+GetShareInfoResp
+status (
+	room_card ("
+ShareReportReq"!
+ShareReportResp
+status ("
+RecvShareRewardReq"w
+RecvShareRewardResp,
+code (2.RecvShareRewardResp.ErrorCode
+status (""
+	ErrorCode
+SUCCESS
+FAIL"
+GetInvitationInfoReq"ó
+GetInvitationInfoResp
+inv_friend_room_card (
+has_inv_friend_num (
+has_get_room_card (
+can_get_room_card (
+invitation_player (	
+need_player_games (
+reward_room_card (
+recv_reward_status (".
+RecvInvitationRewardReq
+reward_type ("Ø
+RecvInvitationRewardResp1
+code (2#.RecvInvitationRewardResp.ErrorCode
+reward_type (
+has_get_room_card (
+can_get_room_card (
+recv_reward_status (""
+	ErrorCode
+SUCCESS
+FAIL"
+GetBindingAgentInfoReq"Z
+GetBindingAgentInfoResp
+user_id (
+name (	
+
+wx_account (	
+icon (	""
+BindingAgentReq
+user_id ("Ï
+BindingAgentResp)
+code (2.BindingAgentResp.ErrorCode
+user_id (
+name (	
+
+wx_account (	
+icon (	
+	code_info (	"»
+	ErrorCode
+SUCCESS
+FAIL
+USERID_NULL
+AGENTID_NULL
+MSGID_ERROR
+AGENTID_ERROR
+SYSTEM_EXCEPTION
+USER_NOT_EXIST
+NOT_BIND_SLFE
+NOT_BIND_MUTUAL"G
+SyncActivityInfo
+share_status (
+inv_can_get_room_card ("1
+InputInvitationCodeReq
+invitation_code ("¿
+InputInvitationCodeResp0
+code (2".InputInvitationCodeResp.ErrorCode
+invitation_player (	
+need_player_games (
+reward_room_card (""
+	ErrorCode
+SUCCESS
+FAIL"
+HeartbeatReq"
+HeartbeatResp"	
+TimeReq"
+TimeResp
+time (";
+	AddFriend
+uid (
+nickname (	
+mail_id ("0
+RespAddFriend
+mail_id (
+accept ("M
+
+InviteGame
+uid (
+nickname (	
+room_no (
+mail_id ("1
+RespInviteGame
+mail_id (
+accept ("-
+UpdateEventList
+events (2
+.EventWrap"M
+	EventWrap
+
+add_friend (2
+.AddFriend 
+invite_game (2.InviteGame"O
+NoticeListResp
+type (2.opt_type_notice
+notice_list (2.NoticeS"w
+NoticeS
+
+id (
+content (	
+
+begin_time (
+
+break_time (
+minute_time (
+
+sort_level ("0
+TipResp
+type (2	.tip_type
+args (	"
+RemainingCardsReq"0
+RemainingCardsResp
+ret (
+cards ("i
+AssignAllCardsReq
+zjCards (
+zxCards (
+zdCards (
+zsCards (
+nextCard ("!
+AssignAllCardsResp
+ret (";
+AssignNextCardReq
+seat (2
+.seat_type
+card ("!
+AssignNextCardResp
+ret (""
+GMCommonOperReq
+content (	"
+GMCommonOperResp
+ret (">
+HistoryListReq
+type (2	.req_type
+start_index ("O
+HistoryListResp
+type (2	.req_type#
+record_list (2.HistoryRecord"<
+HistoryRoomReq
+type (2	.req_type
+	record_id ("®
+HistoryRoomResp
+type (2	.req_type
+	record_id (
+room_id (
+option (2.RoomOption
+inn_list (2
+.InnRecord#
+
+score_list (2.SeatTotalScore"2
+HistoryInnReq
+	record_id (
+inn_id ("
+HistoryInnResp
+	record_id (
+room_id (
+option (2.RoomOption
+inn (2
+.InnRecord#
+
+score_list (2.SeatTotalScore"ƒ
+HistoryRecord
+	record_id (
+room_id (
+option (2.RoomOption
+time (#
+
+score_list (2.SeatTotalScore"‘
+SeatTotalScore
+seat_id (
+score (
+nickname (	
+
+actor_addr (	
+qiang_times (
+	zuo_times (
+	tui_times ("v
+	InnRecord
+inn_id (
+banker_seat ($
+seat_result (2.GameResultSeat
+	seat_hand (2.FanPaiInfo"w
+
+InnRecordS
+inn_id (
+banker_seat ($
+seat_result (2.GameResultSeat
+	seat_hand (2.FanPaiInfo"È
+HistoryRecordS
+	record_id (
+room_id (
+	room_info (2	.RoomInfo!
+	role_info (2.RoleInfoListS
+time ("
+	innrecord (2.InnRecordListS
+
+seat_total (2.SeatTotalS".
+RoleInfoListS
+	role_list (2
+.RoleInfoS"H
+	RoleInfoS
+seat (
+uid (
+nick (	
+
+actor_addr (	"/
+InnRecordListS
+inn_list (2.InnRecordS"6
+
+SeatTotalS(
+
+score_list (2.TotalGameResultSeat"
+LoginWeixinReq
+token (	"@
+	LoginResp
+code (2.login_code
+
+ip (	
+port ("4
+LoginAccountReq
+account (	
+password (	"(
+KictoutResp
+code (2.login_code"
+	LogoutReq"!
+LoginPlayerReq
+account (	"z
+LoginPlayerResp
+code (2.login_code
+is_reconnect (
+role (2.Role
+srv_time (
+is_free ("
+SDKTokenReq
+token (	"[
+SDKTokenResp
+result (
+
+ip (	
+port (
+account (	
+icon_add (	"
+NotifyAnotherLogin""
+MailListReq
+start_index ("K
+MailListResp
+type (2
+.from_type!
+record_list (2.MailRecordC"5
+
+MailOptReq
+
+id (
+opt (2.opt_type_mail"½
+MailRecordC
+
+id (
+type (2
+.mail_type
+	from_name (	
+title (	
+content (	
+
+room_cards (
+mark (2
+.mark_type
+create_time (
+
+fetch_time	 ("Ö
+MailRecordS
+
+id (
+type (
+from_id (
+	from_name (	
+to_id (
+to_name (	
+title (	
+content (	
+
+room_cards	 (
+mark
+ (
+create_time (
+
+fetch_time ("q
+MailSystemLogS
+
+id (
+mail_id (
+uid (
+mark (
+create_time (
+
+fetch_time ("
+StartGameReq"L
+StartGameNotify
+pai_list (
+	cur_games (
+is_reconnect (";
+CanQiangZhuangNotify
+timer (
+multiple_max (""
+QiangZhuangReq
+multiple ("1
+QiangZhuangInfo
+seat (
+multiple ("?
+QiangZhuangNotify*
+qiangzhuang_list (2.QiangZhuangInfo"N
+QiangZhuangFinish
+
+banker_uid (
+banker_seat (
+multiple ("4
+CanXiaZhuNotify
+timer (
+
+score_list ("
+	XiaZhuReq
+score (")
+
+XiaZhuInfo
+seat (
+score ("0
+XiaZhuNotify 
+xiazhu_list (2.XiaZhuInfo"?
+XiaZhuFinish 
+xiazhu_list (2.XiaZhuInfo
+timer ("
+	FanPaiReq"Z
+
+FanPaiInfo
+seat (
+pai_list (
+niu_type (2.NiuType
+multiple ("0
+FanPaiNotify 
+fanpai_list (2.FanPaiInfo"
+ReadyStartReq" 
+ReadyStartNotify
+seat ("¥
+GameResultSeat
+seat (
+xiazhu_score (
+	win_score (
+	cur_score (
+is_tui (
+qiang_times (
+	zuo_times (
+	tui_times ("K
+SingleGameResultNotify"
+	seat_list (2.GameResultSeat
+timer ("”
+TotalGameResultSeat
+uid (
+seat (
+total_score (
+big_win (
+banker_times (
+qiang_times (
+	tui_times ("@
+TotalGameResultNotify'
+	seat_list (2.TotalGameResultSeat"%
+UpdateStartButton
+is_click ("
+CompareCardSize"<
+	EventInfo
+event_t (2.event_type
+	event_pai ("]
+DiscardResp
+seat (
+tile (
+tileLeftCount (
+event_t (2
+.EventInfo"l
+
+DealNotify
+seat (
+tile (
+tail (
+event_t (2
+.EventInfo
+desk_tile_count ("<
+ResponseEventReq
+event (2.event_type
+tile ("¤
+ResponseEventResp
+code (2.op_code
+seat (
+event (2.event_type
+eventTileList (
+victim_seat (!
+triggerEvent (2.event_type"
+DisCardOver"
+ReconnectReadyReq"
+SameIpSeats
+seat ("2
+QuickMessageReq
+	msg_index (
+seat ("@
+QuickMessageSend
+ret (
+	msg_index (
+seat ("3
+NotifyPlayerEvent
+
+event_list (2
+.EventInfo"1
+RankReq
+type (2
+.rank_type
+last ("V
+RankInfo
+uid (
+name (	
+value (
+sort (
+
+actor_addr (	"p
+RankResp
+sorttype (2
+.rank_type
+last (
+mysort (
+myvalue (
+rank (2	.RankInfo"r
+WinsInfo
+uid (
+name (	
+value (
+sort (
+time (
+type (
+
+actor_addr (	"s
+	ScoreInfo
+uid (
+name (	
+value (
+sort (
+time (
+type (
+
+actor_addr (	"(
+RankConsList
+ranks (2	.WinsInfo"*
+RankScoreList
+ranks (2
+.ScoreInfo":
+
+SettingReq
+sound (
+music (
+buzzes (";
+SettingResp
+sound (
+music (
+buzzes ("
+
+SetLogoReq
+	logo_icon (" 
+SetLogoResp
+	logo_icon ("(
+GetTitleListReq
+title (2.Title""
+Title
+
+id (
+title (	"
+GetTitleListResp"
+SetTitleReq
+
+id ("
+SetTitleResp"
+PlayerInfoReq
+uid ("&
+PlayerInfoResp
+role (2.RoleC"Ñ
+Data
+
+reset_time (
+first_show_status (
+has_inv_friend_num (
+has_get_room_card (
+can_get_room_card (
+be_invitation_id (
+
+play_games (
+recv_reward_status ("
+Role
+
+id (
+account (	
+nickname (	
+level (
+	logo_icon (	
+title (
+diamond (
+coin (
+	room_card	 (
+total_games
+ (
+	win_games (
+	con_games (
+his_max_score (
+his_max_con (
+week_max_score (
+top_wins_ymd (
+top_wins_total (
+top_score_ymd (
+top_score_total (
+	blocktime (
+data (2.Data"ë
+RoleC
+
+id (
+nickname (	
+	logo_icon (	
+	room_card (
+total_games (
+	win_games (
+his_con_games (
+his_max_score (
+top_score_total	 (
+register_time
+ (
+city (	
+
+ip (	"!
+RoomCardData
+	room_card ("7
+UpdateRoleData%
+room_card_data (2.RoomCardData"3
+GpsUploadReq
+	longitude (
+latitude ("
+RoomListReq"d
+RoomListInfo
+room_id (
+inn_cur (
+	inn_total (
+persons (
+watchs ("0
+RoomListResp 
+	room_list (2.RoomListInfo"ð
+
+MingOption
+play_score_type (
+play_num_type (
+pay_type (
+hua_type (
+extra_multi (
+pai_type (
+zhuang_multi (
+
+start_type (
+tuizhu_type	 (
+extra_setting
+ (
+	is_daikai ("L
+
+RoomOption
+	puke_type (2	.PukeType 
+ming_option (2.MingOption"M
+OpenRoomReq
+	room_type (2	.RoomType 
+room_option (2.RoomOption"o
+RoomInfo
+room_id (
+
+roomer_uid (
+	room_type (2	.RoomType 
+room_option (2.RoomOption"‚
+RoleInfo
+uid (
+nickname (	
+	logo_icon (	
+seat_id ($
+player_status (2.PlayerStatus
+score ("Ì
+OpenRoomResp%
+code (2.OpenRoomResp.ErrorCode
+	room_info (2	.RoomInfo
+seat (
+score ("Z
+	ErrorCode
+SUCCESS
+FAIL
+
+ALREADY_IN
+
+NO_DIAMOND
+ROOMCARD_NOTENOUTH"
+DismissRoomReq"4
+DismissRoomNotify
+seat (
+	timer_sec ("%
+DismissRoomAccept
+is_agree (".
+DismissStatus
+seat (
+isagree ("_
+DismissRoomAcceptNotify
+seat (
+is_agree ($
+dismiss_list (2.DismissStatus"4
+DismissRoomResult
+room_id (
+result ("
+HasDismissRoomNotify"
+ChangeSeatReq
+seat ("C
+ChangeSeatNotify
+uid (
+seat_bef (
+seat_now ("9
+EnterRoomReq
+type (2
+.EnterType
+room_no ("¸
+EnterRoomResp&
+code (2.EnterRoomResp.ErrorCode
+	room_info (2	.RoomInfo
+seat (
+score ("D
+	ErrorCode
+SUCCESS
+FAIL
+
+ALREADY_IN
+PERSONS_FULL"
+EnterRoomReady",
+SyncRoleInfo
+	role_list (2	.RoleInfo"
+LeaveRoomReq",
+LeaveRoomNotify
+uid (
+seat ("
+KickRoleReq
+seat ("
+KickRoleNotify
+seat ("7
+VoteInfo
+nickname (	
+state (2
+.VoteState"-
+ReconnectResp
+	room_info (2	.RoomInfo"
+ReconnectLoadReady"h
+SyncReconnectData
+	seat_list (2	.RoleInfo 
+room_status (2.RoomStatus
+banker_seat ("F
+SyncPlayerStatus
+seat ($
+player_status (2.PlayerStatus"0
+RoleOnlineNotify
+state (2.online_state"
+RoomCardPriceReq"'
+RoomCardPriceResp
+
+room_cards ("
+WatchListReq"*
+WatchListResp
+	role_list (2.RoleC*£
+cmd
+msg_base
+	msg_login
+msg_role
+msg_room
+msg_puke
+msg_rank
+	msg_event
+msg_activity
+msg_hist	
+
+msg_gm
+
+msg_test*#
+RoomType
+
+NORMAL
+PRIVATE*"
+	EnterType
+AUTO 
+ROOM_NO*(
+PlayType
+NO_HANZI 
+
+HAVE_HANZI*=
+	VoteState
+	VOTE_WAIT 
+
+VOTE_AGREE
+VOTE_DISAGREE*N
+
+VoteResult
+VOTE_RESULT_WAIT 
+VOTE_RESULT_PASS
+VOTE_RESULT_FAIL*E
+online_state
+off_line 
+on_line
+	wait_game
+in_game*è
+c_cmd_activity
+get_share_info_req
+get_share_info_resp
+share_Report_req
+share_Report_resp
+Recv_share_reward_req
+Recv_share_reward_resp
+get_invitation_info_req
+get_invitation_info_resp
+Recv_invitation_reward_req	
+Recv_invitation_reward_resp
+
+get_binding_agent_info_req
+get_binding_agent_info_resp
+binding_agent_req
+binding_agent_resp
+Sync_activity_info
+input_invitation_code_req
+input_invitation_code_resp*P
+
+c_cmd_base
+heartbeat_req 
+heartbeat_resp
+time_req
+	time_resp*Î
+c_cmd_event
+update_event_list
+
+add_friend
+invite_game
+resp_invite_game
+notice_list_resp
+mail_list_req
+mail_list_resp
+mail_opt_req	
+mail_opt_resp
+
+tip_nt_resp*8
+opt_type_notice
+opt_t_all_list
+opt_t_new_one*ñ
+tip_type
+tip_t_version
+
+tip_t_exit
+tip_t_needconn
+tip_t_disconn
+tip_t_accbad
+tip_t_acclogined
+tip_t_weixinfail
+tip_t_qqfail
+tip_t_accchange	
+tip_t_roomcard_notenough
+
+tip_t_roomid_fail
+tip_t_room_full
+tip_t_room_join
+tip_t_room_exit
+tip_t_room_disconn
+tip_t_room_reconn
+tip_t_room_startbtn
+tip_t_room_refusebtn
+tip_t_room_disband
+tip_t_room_kicked
+tip_t_room_apply_disband
+tip_t_room_disbanded
+tip_t_room_disconn_disband!
+tip_t_room_apple_disband_must
+tip_t_room_quick_msg_must
+tip_t_donwload_fail*Ö
+c_cmd_gm
+remaining_card_req 
+remaining_card_resp
+assign_all_cards_req
+assign_all_cards_resp
+assign_next_card_req
+assign_next_card_resp
+gm_common_oper_req
+gm_common_oper_resp*+
+	seat_type
+zj 
+zx
+zd
+zs*µ
+c_cmd_history
+history_list_req
+history_list_resp
+
+replay_req
+replay_resp
+history_room_req
+history_room_resp
+history_inn_req
+history_inn_resp*)
+req_type
+	room_list
+
+total_list*
+c_cmd_login
+login_weixin_req
+
+login_resp
+login_account_req
+prelogin_account_req
+prelogin_account_resp
+kictout_resp
+
+logout_req
+login_player_req
+login_player_resp	
+sdk_token_req
+
+sdk_token_resp
+notify_another_login*¦
+
+login_code
+SUCCESS
+FAIL
+ERR_ACCOUNT
+TOKEN_TIMEOUT
+OTHER_LOGIN
+FORCE_KICTOUT
+DATA_EXCEPTION
+CHECK_EXPIRATION
+TOKEN_ERROR*B
+opt_type_mail
+
+opt_t_read
+opt_t_fetch
+opt_t_delete*E
+	mark_type
+mark_t_unread
+mark_t_readed
+mark_t_deleted*9
+	mail_type
+mail_t_system_one
+mail_t_system_all*,
+	from_type
+from_t_list
+
+from_t_add*¨
+
+c_cmd_puke
+StartGameReqID
+StartGameNotifyID
+CanQiangZhuangNotifyID
+QiangZhuangReqID
+QiangZhuangNotifyID
+QiangZhuangFinishID
+CanXiaZhuNotifyID
+XiaZhuReqID
+XiaZhuNotifyID	
+XiaZhuFinishID
+
+FanPaiReqID
+FanPaiNotifyID
+ReadyStartReqID
+ReadyStartNotifyID
+SingleGameResultNotifyID
+TotalGameResultNotifyID
+UpdateStartButtonID
+CompareCardSizeID*k
+
+PukeTypeNN
+PukeTypeNN_FangKuai
+PukeTypeNN_MeiHua
+PukeTypeNN_HongXin
+PukeTypeNN_HeiTao**
+op_code
+ok 
+fail
+	not_exist*a
+PukeType
+PukeType_none 
+PukeType_nn_ming
+PukeType_nn_ziyou
+PukeType_nn_shang*ú
+NiuType
+	NiuType_0 
+	NiuType_1
+	NiuType_2
+	NiuType_3
+	NiuType_4
+	NiuType_5
+	NiuType_6
+	NiuType_7
+	NiuType_8
+	NiuType_9	
+
+NiuType_10
+
+NiuType_Silver
+NiuType_Gold
+NiuType_Bomb
+NiuType_small*Y
+
+event_type
+
+e_none 	
+ready
+
+rob_banker
+check_in
+show_on	
+e_max*'
+	kong_type
+EXPOSED
+	CONCEALED*ˆ
+hu_type
+hu_none 
+	hu_t_nn_0
+
+	hu_t_nn_1
+	hu_t_nn_2
+	hu_t_nn_3
+	hu_t_nn_4
+	hu_t_nn_5
+	hu_t_nn_6
+	hu_t_nn_7
+	hu_t_nn_8
+	hu_t_nn_9
+
+hu_t_nn_10
+
+hu_t_nn_11
+
+hu_t_nn_12
+
+hu_t_nn_13
+
+hu_t_nn_14
+
+hu_max*)
+
+c_cmd_rank
+rank_req 
+	rank_resp*.
+	rank_type
+rank_t_wins
+rank_t_score*
+
+c_cmd_role
+setting_req
+setting_resp
+set_logo_req
+set_logo_resp
+get_title_list_req
+get_title_list_resp
+set_title_req
+set_title_resp
+player_info_req	
+player_info_resp
+
+update_role_data
+gps_upload_req*"
+
+money_type
+money_t_roomcard*œ
+
+c_cmd_room
+RoomListReqID
+RoomListRespID
+OpenRoomReqID
+OpenRoomRespID
+DismissRoomReqID
+DismissRoomNotifyID
+DismissRoomAcceptID
+DismissRoomAcceptNotifyID
+DismissRoomResultID	
+HasDismissRoomNotifyID
+
+ChangeSeatReqID
+ChangeSeatNotifyID
+EnterRoomReqID
+EnterRoomRespID
+EnterRoomReadyID
+SyncRoleInfoID
+LeaveRoomReqID
+LeaveRoomNotifyID
+KickRoleReqID
+KickRoleNotifyID
+ReconnectRespID
+ReconnectLoadReadyID
+SyncReconnectDataID
+SyncPlayerStatusID
+role_online_notify
+roomcard_price_req
+roomcard_price_resp
+watch_list_req
+watch_list_resp*`
+PlayerStatus
+PlayerStatus_Normal
+PlayerStatus_Disconnect
+PlayerStatus_Reconnect*í
+
+RoomStatus
+RoomStatus_Ready
+RoomStatus_Click
+RoomStatus_QiangZhuang"
+RoomStatus_DeterminationBanker
+RoomStatus_XiaZhu
+RoomStatus_FanPai
+RoomStatus_CompareSize
+RoomStatus_End
+RoomStatus_EndAll	

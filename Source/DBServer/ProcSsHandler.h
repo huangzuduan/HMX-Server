@@ -1,12 +1,12 @@
 #ifndef __PROC_SERVER_HANDLER_H_
 #define __PROC_SERVER_HANDLER_H_
 
-#include "Includes.h"
-#include "DbRecordSet.h"
+#include "Single.h"
+#include "SrvEngine.h"
 
 class zSession;
 class ClientSession;
-struct NetMsgSS;
+struct PbMsgWebSS;
 
 /*
  *	业务逻辑 
@@ -17,28 +17,36 @@ public:
 	ProcSsHandler(void);
 	~ProcSsHandler(void);
 
-	// client登录查询 
-	void ReqAccountLogin(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize);
+	void onQueryPlayerRequest(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onSavePlayerDataReq(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onZhanjiAddRecordRequest(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onZhanjiFinishRequest(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onZhanjiQueryList(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onZhanjiRoomList(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onZhanjiInnList(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onZhanjiQueryReply(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void Recond2ProtoC(const ::msg_maj::HistoryRecordS& srcProto, ::msg_maj::HistoryRecord& distProto);
+	void Recond2ProtoCRoom(const ::msg_maj::HistoryRecordS& srcProto, ::msg_maj::HistoryRoomResp& distProto);
+	void Recond2ProtoCInn(const ::msg_maj::HistoryRecordS& srcProto, ::msg_maj::HistoryInnResp& distProto, int32_t inn_id);
+	void onInnRecordAddLogRequest(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
 
-	// 创建角色 
-	void ReqRoleCreate(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize);
+	void onQueryMailRequest(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onSaveMailRequest(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onQueryMailSysLogRequest(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onSaveMailSysLogRequest(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onMaxUUIDRequest(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onRechargeRoomCard(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onSendBlockUser(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onEditRoomCard(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
+	void onSaveMoneyLogRequest(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onGetRewardConfigReq(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onGetFreeConfigReq(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onGetNotifyConfigReq(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
+	void onGetRoomSetConfigReq(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
 
-	// ss 中加载角色数据 
-	void ReqLoadUser(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize);
-
-	// ss 中保存数据 
-	void ReqSaveUser(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize);
-
-	void ReqSaveMixItemNumber(zSession* pBaseSession, const NetMsgSS* pMsg,int32 nSize);
+private:
 
 
-	//------------------db回调函数--------------------
-public:
-
-	// 创建角色
-	static void DbRoleCreate(void* pSession,const void* pData);
-
-	static void QueryCharacterList(ClientSession* pClientSession,int64 nAccountID = 0 , int64 nCharacterID = 0);
 	
 };
 

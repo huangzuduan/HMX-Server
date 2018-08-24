@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hmx_msg_mail;
+
+// 协议
+enum hmx_c_cmd
+{
+	msg_mail_list_req = 1;
+}
+
+
+
+
+
+

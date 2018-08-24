@@ -7,26 +7,45 @@
 #include "DbResult.h"
 #include "DbRequest.h"
 
-DbMysql::DbMysql():m_pMysql(NULL),m_bOpen(false) 
+DbMysql::DbMysql():m_pMysql(NULL), m_bOpen(false)
 {	
-	memset(m_arrHost,0,sizeof(m_arrHost));
-	memset(m_arrUser,0,sizeof(m_arrUser));
-	memset(m_arrPasswd,0,sizeof(m_arrPasswd));
-	memset(m_arrDBName,0,sizeof(m_arrDBName));
-	static uint32 s_nIncDbID = 0;
+	uint32_t s_nIncDbID = 0;
 	m_nID = ++s_nIncDbID;
+
+	readTimeout_ = 100; //
+	writeTimeout_ = 100;
+	connectTimeout_ = 100;
+
+}
+
+DbMysql::DbMysql(const DbMysql& other)
+{
+	this->m_strHost = other.m_strHost;
+	this->m_strUser = other.m_strUser;
+	this->m_nID = other.m_nID;
+	this->m_strPasswd = other.m_strPasswd;
+	this->m_strDBName = other.m_strDBName;
+}
+
+DbMysql& DbMysql::operator=(const DbMysql& other)
+{
+	return *this;
 }
 
 DbMysql::~DbMysql()
 {
 	while ( m_queAsyncSQLRequest.size() )
 	{
-		SSleep(100);
+#ifdef WIN32
+		Sleep(100);
+#else
+		usleep(100);
+#endif
 	}
 	this->Close();
 }
 
-uint32 DbMysql::ID()
+uint32_t DbMysql::ID()
 {
 	return m_nID;
 }
@@ -36,7 +55,7 @@ void DbMysql::Release()
 	delete this;
 }
 
-int32 DbMysql::OnThreadDestroy()
+int32_t DbMysql::OnThreadDestroy()
 {
 	mysql_thread_end();
 	return 0;
@@ -45,7 +64,11 @@ int32 DbMysql::OnThreadDestroy()
 void DbMysql::Close()
 {
 	m_bOpen = false;
-	SSleep(100);
+#ifdef WIN32
+	Sleep(100);
+#else
+	usleep(100);
+#endif
 	if (m_pMysql != NULL)
 	{
 		mysql_close(m_pMysql);
@@ -53,63 +76,66 @@ void DbMysql::Close()
 	}
 }
 
-bool DbMysql::Open(const char* ip, uint16 port, const char* username, const char* passwd, const char* dbname, bool bSQLChk /*= true*/)
+bool DbMysql::Open(const std::string& ip, uint16_t port, const std::string& username, const std::string& passwd, const std::string& dbname, bool bSQLChk /*= true*/)
 {
-	strncpy(m_arrHost, ip, DB_MAX_STRINGSIZE);
-	strncpy(m_arrUser, username, DB_MAX_STRINGSIZE);
-	strncpy(m_arrPasswd, passwd, DB_MAX_STRINGSIZE);
-	strncpy(m_arrDBName, dbname, DB_MAX_STRINGSIZE);
-
-	if (!ip || !username || !passwd || !dbname)
-		return false;
-
-	m_pMysql = this->Connect( m_arrHost, m_arrUser, m_arrPasswd, m_arrDBName, port);
-	if (m_pMysql)
-	{	
-		m_bOpen =  true;
-		boost::thread t(boost::bind( &DbMysql::OnThreadCreate, this ));
-		printf("dbtool connect success.\n");
-		return true;
-	}else
+	m_strHost = ip;
+	m_strUser = username;
+	m_strPasswd = passwd;
+	m_strDBName = dbname;
+	if (this->Reconnect(m_strHost, m_strUser, m_strPasswd, m_strDBName, port))
+	{
+		if (m_pMysql)
+		{
+			m_bOpen = true;
+			boost::thread t(boost::bind(&DbMysql::OnThreadCreate, this));
+			printf("dbtool connect success.\n");
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
 	{
 		printf("ERROR: dbtool connect failed.\n");
 		return false;
 	}
 }
 
-MYSQL* DbMysql::Connect(char* ip, char* user, char* passwd, char* dbname, uint16 port, char* dbsocket, int32 timeout)
+bool DbMysql::Reconnect(const std::string& ip, const std::string& user, const std::string& passwd, const std::string& dbname, uint16_t port, char* dbsocket, int32_t timeout)
 {	
-	if(MYSQL* pHdbc = mysql_init( NULL ))
+	m_pMysql = mysql_init(NULL);
+	if (NULL == m_pMysql)
+		return false;
+
+	mysql_options(m_pMysql, MYSQL_OPT_CONNECT_TIMEOUT, &connectTimeout_);
+	mysql_options(m_pMysql, MYSQL_OPT_READ_TIMEOUT, &readTimeout_);
+	mysql_options(m_pMysql, MYSQL_OPT_WRITE_TIMEOUT, &writeTimeout_);
+
+	MYSQL* handle = mysql_real_connect(m_pMysql, ip.c_str(),
+		user.c_str(), passwd.c_str(),
+		dbname.c_str(), port, NULL, CLIENT_MULTI_STATEMENTS);
+
+	if (!handle || mysql_errno(m_pMysql) != 0)
 	{
-		mysql_options( pHdbc , MYSQL_READ_DEFAULT_GROUP , "" );
-		mysql_options( pHdbc , MYSQL_OPT_CONNECT_TIMEOUT , "" );
-
-		pHdbc->options.read_timeout = timeout;
-		pHdbc->reconnect = 1;
-		pHdbc->free_me = 1;
-
-		if ( mysql_real_connect( pHdbc , ip, user, passwd, dbname,
-			port, dbsocket , CLIENT_MULTI_RESULTS | CLIENT_MULTI_STATEMENTS | CLIENT_FOUND_ROWS | CLIENT_INTERACTIVE ) )
-		{
-			mysql_set_character_set( pHdbc, "utf8" );
-			mysql_set_server_option( pHdbc, MYSQL_OPTION_MULTI_STATEMENTS_ON );
-			return pHdbc;
-		}else
-		{
-			printf( "ERROR: dbtool real connect failed: %s \n" , mysql_error(pHdbc) );
-			mysql_close(pHdbc);
-			return NULL;
-		}
+		const char* errMsg = mysql_error(m_pMysql);
+		printf("ERROR: errMsg=%s", errMsg);
+		mysql_close(m_pMysql);
+		return false;
 	}
-	return NULL;
+
+	mysql_set_character_set(m_pMysql, "utf8");
+
+	return true;
 }
 
-uint32 DbMysql::GetRequestSize()
+uint32_t DbMysql::GetRequestSize()
 { 
 	return m_queAsyncSQLRequest.size();
 }
 
-uint32 DbMysql::GetResultSize()
+uint32_t DbMysql::GetResultSize()
 { 
 	return m_queAsyncSQLResult.size(); 
 }
@@ -135,7 +161,7 @@ void DbMysql::WsSQLReplaceStr(char *to,const char *from,unsigned long length)
 	to[length] = '\0';
 }
 
-int32 DbMysql::OnThreadCreate() 
+int32_t DbMysql::OnThreadCreate() 
 {
 	while( m_bOpen && m_pMysql )
 	{
@@ -144,7 +170,7 @@ int32 DbMysql::OnThreadCreate()
 	return 0;
 }
 
-int32 DbMysql::OnThreadProcess()
+int32_t DbMysql::OnThreadProcess()
 {
 	if (m_queAsyncSQLRequest.size())
 	{
@@ -204,7 +230,11 @@ int32 DbMysql::OnThreadProcess()
 	}
 	else
 	{
-		SSleep(1);
+#ifdef WIN32
+		Sleep(1);
+#else
+		usleep(1);
+#endif
 		return 0;
 	}
 }
@@ -227,7 +257,7 @@ MYSQL_RES* DbMysql::ResultSQL(const char* pszSQL)
 	return pRes; //mysql_free_result(pRes); 在使用完成pRes后，调用释放 
 }
 
-int32 DbMysql::ExecSQL(const char* pszSQL ,int length)
+int32_t DbMysql::ExecSQL(const char* pszSQL ,int length)
 {
 	m_dbMutex.lock();
 #ifdef _DEBUG
@@ -275,7 +305,7 @@ bool DbMysql::ExecSQLAsync(const char* pszSQL, DBQueryFunc* queryFun)
 	// chk sql
 	if ( !(pszSQL && strlen(pszSQL) > 0 && strlen(pszSQL) < 10240) )
 	{
-		printf("strlen(pszSQL) = %d.\n", (int32)strlen(pszSQL));
+		printf("strlen(pszSQL) = %d.\n", (int32_t)strlen(pszSQL));
 		return false;
 	}
 
@@ -307,7 +337,7 @@ bool DbMysql::ExecSelectAsync(const char* tableName, const dbCol *column, const 
 	int retsize = FetchSelectSql(tableName, column, swhere, order);
 	if (retsize == 0)
 	{
-		printf("MysqlClientHandle::FetchSelectSql null pointer error.\n");
+		printf("MysqlClientHandle::FetchSelectSql null pointer error.retsize=%d \n", retsize);
 		return false;
 	}
 
@@ -426,11 +456,11 @@ unsigned int DbMysql::fullSelectDataByRow(MYSQL_ROW row, unsigned long* lengths,
 			{
 				if (row[i])
 				{
-					*(int16*)(tempData + offset) = strtoul(row[i], (char**)NULL, 10);
+					*(int16_t*)(tempData + offset) = strtoul(row[i], (char**)NULL, 10);
 				}
 				else
 				{
-					*(int16*)(tempData + offset) = 0;
+					*(int16_t*)(tempData + offset) = 0;
 				}
 			}
 			break;
@@ -438,11 +468,11 @@ unsigned int DbMysql::fullSelectDataByRow(MYSQL_ROW row, unsigned long* lengths,
 			{
 				if (row[i])
 				{
-					*(int32*)(tempData + offset) = strtoul(row[i], (char**)NULL, 10);
+					*(int32_t*)(tempData + offset) = strtoul(row[i], (char**)NULL, 10);
 				}
 				else
 				{
-					*(int32*)(tempData + offset) = 0L;
+					*(int32_t*)(tempData + offset) = 0L;
 				}
 			}
 			break;
@@ -450,11 +480,11 @@ unsigned int DbMysql::fullSelectDataByRow(MYSQL_ROW row, unsigned long* lengths,
 			{
 				if (row[i])
 				{
-					*(int64*)(tempData + offset) = strtoull(row[i], (char**)NULL, 10);
+					*(int64_t*)(tempData + offset) = strtoull(row[i], (char**)NULL, 10);
 				}
 				else
 				{
-					*(int64*)(tempData + offset) = 0LL;
+					*(int64_t*)(tempData + offset) = 0LL;
 				}
 			}
 			break;
@@ -470,10 +500,10 @@ unsigned int DbMysql::fullSelectDataByRow(MYSQL_ROW row, unsigned long* lengths,
 			break;
 			case DB_BIN2:
 			{
-				memset(tempData + offset, 0, sizeof(int32));
+				memset(tempData + offset, 0, sizeof(int32_t));
 				if (row[i])
 				{
-					int32 bin2size = *((int32*)row[i]) + sizeof(int32);
+					uint32_t bin2size = *((int32_t*)row[i]) + sizeof(int32_t);
 					memset(tempData + offset,0,bin2size);
 					memcpy(tempData + offset, row[i], bin2size > lengths[i] ? lengths[i]: bin2size);
 				}
@@ -482,13 +512,13 @@ unsigned int DbMysql::fullSelectDataByRow(MYSQL_ROW row, unsigned long* lengths,
 			}
 			i++;
 		}
-		offset += temp->size == 0 ? *((int32*)tempData + offset) : temp->size;
+		offset += temp->size == 0 ? *((int32_t*)tempData + offset) : temp->size;
 		temp++;
 	}
 	return offset;
 }
 
-int32 DbMysql::ExecSelect(const char* tableName,const dbCol *column,const char *where,const char *order,unsigned char** data, unsigned int limit, int32 limit_from)
+int32_t DbMysql::ExecSelect(const char* tableName,const dbCol *column,const char *where,const char *order,unsigned char** data, unsigned int limit, int32_t limit_from)
 {
 	
 	int retval=-1;
@@ -502,7 +532,7 @@ int32 DbMysql::ExecSelect(const char* tableName,const dbCol *column,const char *
 	int retsize = FetchSelectSql(tableName,column,where,order,limit,limit_from);
 	if(retsize < 1)
 	{
-		printf("MysqlClientHandle::FetchSelectSql null pointer error.\n");
+		printf("MysqlClientHandle::FetchSelectSql null pointer error.retsize=%d \n",retsize);
 		return retval;
 	}
 	
@@ -547,7 +577,7 @@ int32 DbMysql::ExecSelect(const char* tableName,const dbCol *column,const char *
 	return count;
 }
 
-int32 DbMysql::ExecSelectLimit(const char* tableName, const dbCol *column, const char *where, const char *order, unsigned char* data, unsigned int limit, int32 limit_from)
+int32_t DbMysql::ExecSelectLimit(const char* tableName, const dbCol *column, const char *where, const char *order, unsigned char* data, unsigned int limit, int32_t limit_from)
 {
 	int retval = -1;
 	*data = NULL;
@@ -560,7 +590,7 @@ int32 DbMysql::ExecSelectLimit(const char* tableName, const dbCol *column, const
 	int retsize = FetchSelectSql(tableName, column, where, order,limit,limit_from);
 	if (retsize < 1)
 	{
-		printf("MysqlClientHandle::FetchSelectSql null pointer error.\n");
+		printf("MysqlClientHandle::FetchSelectSql null pointer error.retsize=%d \n", retsize);
 		return retval;
 	}
 
@@ -595,7 +625,7 @@ int32 DbMysql::ExecSelectLimit(const char* tableName, const dbCol *column, const
 	return count;
 }
 
-int DbMysql::FetchSelectSql(const char* tableName,const dbCol *column,const char *wheres,const char *order,int32 limit/* = 0*/,int32 limit_from/* = 0*/, bool UseBak/* = false*/)
+int DbMysql::FetchSelectSql(const char* tableName,const dbCol *column,const char *wheres,const char *order,int32_t limit/* = 0*/,int32_t limit_from/* = 0*/, bool UseBak/* = false*/)
 {
 	int retsize=0;
 	const dbCol *temp;
@@ -654,7 +684,7 @@ int DbMysql::FetchSelectSql(const char* tableName,const dbCol *column,const char
 	return retsize;
 }
 
-int32 DbMysql::ExecInsert(const char *tableName,const dbCol *column,const char *data)
+int32_t DbMysql::ExecInsert(const char *tableName,const dbCol *column,const char *data)
 {
 	const dbCol *temp;
 	if (tableName == NULL || data==NULL || column==NULL)
@@ -688,6 +718,7 @@ int32 DbMysql::ExecInsert(const char *tableName,const dbCol *column,const char *
 	int offset=0;
 	// [ranqd] 需要绑定的二进制数据容器 
 	BINDDATA ltBind;
+	BDATA td;
 	while(temp->name) 
 	{
 		if (strlen(temp->name)!=0)
@@ -711,20 +742,20 @@ int32 DbMysql::ExecInsert(const char *tableName,const dbCol *column,const char *
 				}
 				break;
 			case DB_WORD:
-				strSql << *(const int16*)(data+offset);
+				strSql << *(const int16_t*)(data+offset);
 				break;
 			case DB_DWORD:
-				strSql << *(const int32*)(data+offset);
+				strSql << *(const int32_t*)(data+offset);
 				break;
 			case DB_FLOAT:
 				strSql << *(const float*)(data+offset);
 				break;
 			case DB_QWORD:
-				strSql << *(const int64*)(data+offset);
+				strSql << *(const int64_t*)(data+offset);
 				break;
 			case DB_STR:
 				{
-					int32 len = strlen((const char *)(data+offset));
+					uint32_t len = strlen((const char *)(data+offset));
 					len = (len > temp->size) ? temp->size : len;
 					char* strData=new char[len * 2 + 1];
 					strData[0] = '\0';
@@ -734,42 +765,36 @@ int32 DbMysql::ExecInsert(const char *tableName,const dbCol *column,const char *
 				}
 				break;
 			case DB_BIN:
-				{
-					// [ranqd] SQLServer对二进制数据的处理不能直接放到SQL语句中，先把数据放到ltBind容器，后面执行SQL前再绑定 
-					BDATA td;					
-					//td.pData = new char[temp->size * 2 + 1];
-					WsSQLReplaceStr( td.pData,(const char *)(data+offset),temp->size );
-					td.len = temp->size;
-					BinaryToString((const char *)(data + offset), td.pData, temp->size);
-					strSql << "\'" << td.pData << "\'";
-				}
-				break;
+			{
+				td.len = temp->size;
+				BinaryToString((const char *)(data + offset), td.pData, temp->size);
+				strSql << "\'" << td.pData << "\'";
+			}
+			break;
 			case DB_BIN2:
-				{
-					int32 _size = *((int32 *)(data + offset));
-					_size += sizeof(int32);
-					BDATA td;
-					//td.pData = new char[temp->size * 2 + 1];
-					WsSQLReplaceStr(td.pData, (const char *)(data + offset), _size);
-					td.len = _size;
-					BinaryToString((const char *)(data + offset), td.pData, _size);
-					strSql << "\'" << td.pData << "\'";
-				}
-				break;
+			{
+				int32_t _size = *((int32_t*)(data + offset)) + sizeof(int32_t);  // +size
+				int32_t binsize = _size * 2 + 1; // tosize = fromsize * 2 + 1 					int32 binsize = _size * 2 + 1; // tosize = fromsize * 2 + 1 是mysql将char2str的最小约定 
+				char* bindata = new char[binsize];
+				BinaryToString((const char *)(data + offset), bindata, _size);
+				strSql << "\'" << bindata << "\'";
+				delete[] bindata;
+			}
+			break;
 			default:
 				printf("invalid zebra mysql type.\n");
-				return (int32)-1;
+				return (int32_t)-1;
 			}
 		}
 		if (temp->size==0)
-			offset+=(*((const int32 *)(data+offset)) + sizeof(int32));
+			offset+=(*((const int32_t *)(data+offset)) + sizeof(int32_t));
 		else
 			offset+=temp->size;
 		temp++;
 	}   
 	strSql << ")";
 
-	int32 ret = ExecSQL(strSql.str().c_str());
+	int32_t ret = ExecSQL(strSql.str().c_str());
 	if (ret == 0)
 	{
 		return mysql_insert_id(m_pMysql);
@@ -781,11 +806,11 @@ int32 DbMysql::ExecInsert(const char *tableName,const dbCol *column,const char *
 }
 
 
-int32 DbMysql::ExecDelete(const char *tableName,const char *where)
+int32_t DbMysql::ExecDelete(const char *tableName,const char *where)
 {
 	if (tableName==NULL)
 	{
-		return (int32)-1;
+		return (int32_t)-1;
 	}
 	std::ostringstream out_sql;
 
@@ -799,14 +824,14 @@ int32 DbMysql::ExecDelete(const char *tableName,const char *where)
 	return ExecSQL(out_sql.str().c_str());
 }
 
-int32 DbMysql::ExecUpdate(const char *tableName,const dbCol *column,const char *data,const char *where)
+int32_t DbMysql::ExecUpdate(const char *tableName,const dbCol *column,const char *data,const char *where)
 {
 	std::ostringstream out_sql;
 	const dbCol *temp;
 	if (tableName==NULL || column==NULL || data==NULL)
 	{
 		printf("MysqlClientHandle::exeUpdate null pointer error.\n");
-		return (int32)-1;
+		return (int32_t)-1;
 	}
 	out_sql << "UPDATE `" << tableName << "` SET `";
 	temp = column;
@@ -841,17 +866,17 @@ int32 DbMysql::ExecUpdate(const char *tableName,const dbCol *column,const char *
 				}
 				break;
 			case DB_WORD:
-				out_sql << *(const int16 *)(data+offset);
+				out_sql << *(const int16_t *)(data+offset);
 				break;
 			case DB_DWORD:
-				out_sql << *(const int32 *)(data+offset);
+				out_sql << *(const int32_t *)(data+offset);
 				break;
 			case DB_QWORD:
-				out_sql << *(const int64 *)(data+offset);
+				out_sql << *(const int64_t *)(data+offset);
 				break;
 			case DB_STR:
 				{
-					int32 _len=strlen((const char *)(data+offset));
+					uint32_t _len=strlen((const char *)(data+offset));
 					_len = (_len > temp->size) ? temp->size : _len;
 					char* strData=new char[_len * 2 + 1];
 					WsSQLReplaceStr(strData,(const char *)(data+offset),_len);
@@ -868,8 +893,8 @@ int32 DbMysql::ExecUpdate(const char *tableName,const dbCol *column,const char *
 				break;
 			case DB_BIN2:
 				{
-					int32 _size = *((int32*)(data+offset)) + sizeof(int32);  // +size 字段大小 
-					int32 binsize = _size * 2 + 1; // tosize = fromsize * 2 + 1 是mysql将char2str的最小约定 
+					int32_t _size = *((int32_t*)(data+offset)) + sizeof(int32_t);  // +size 字段大小 
+					int32_t binsize = _size * 2 + 1; // tosize = fromsize * 2 + 1 是mysql将char2str的最小约定 
 					char* bindata = new char[binsize];
 					BinaryToString((const char *)(data + offset), bindata, _size);
 					out_sql << "\'" << bindata << "\'";
@@ -878,11 +903,11 @@ int32 DbMysql::ExecUpdate(const char *tableName,const dbCol *column,const char *
 				break;
 			default:
 				printf("invalid zebra mysql type.\n");
-				return (int32)-1;
+				return (int32_t)-1;
 			}
 		}
 		if (temp->size==0)
-			offset+=(*((int32 *)(data+offset)) + sizeof(int32));
+			offset+=(*((int32_t *)(data+offset)) + sizeof(int32_t));
 		else
 			offset+=temp->size;
 		temp++;
@@ -898,7 +923,7 @@ int32 DbMysql::ExecUpdate(const char *tableName,const dbCol *column,const char *
 	memset(sql,0,sizeof(sql));
 	sql[0] = '\0';
 	strncpy( sql, out_sql.str().c_str(), sizeof(sql));
-	int32 ret = ExecSQL(sql, sizeof(sql));
+	int32_t ret = ExecSQL(sql, sizeof(sql));
 	if(ret == 0)
 	{
 		do

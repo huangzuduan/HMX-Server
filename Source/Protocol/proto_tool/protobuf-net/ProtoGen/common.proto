@@ -1,0 +1,114 @@
+//option optimize_for = LITE_RUNTIME;
+
+
+message CProtoElem
+
+{
+	
+required int32 ElemID = 1;
+	
+required int32 HoleID = 2;
+	
+required int32 TID = 3;
+	
+optional int32 ling_qi_zhi = 4;
+
+};
+
+
+message   CProtoProp
+
+{
+	
+repeated int32 nArrData = 1;
+	
+repeated int64 i64ArrData = 2;
+	
+repeated CProtoElem Elem = 3;
+	
+required int64 prop_id = 4;
+	
+repeated int32 bao_shi = 5;
+}
+;
+
+message CProtoShowAttr
+
+{
+	
+required int32 wu_gong = 1;
+	
+required int32 wu_fang = 2;
+	
+required int32 fa_gong = 3;
+	
+required int32 fa_fang = 4;
+	
+required int32 gen_gu = 5;
+	
+required int32 ti_po = 6;
+	
+required int32 wu_xing = 7;
+	
+required int32 sheng_fa = 8;
+
+};
+
+
+message CProtoBianQiang
+{
+	required int32 sub_id = 1;
+	required int32 count = 2;
+	required int32 status = 3;
+};
+
+message CProtoMainBQAward
+{
+	required int32 main_id = 1;
+	required bool award = 2;
+};
+
+
+message MsgTarget
+{
+	required int64 uin = 1;
+	required int32 dst_id = 2;
+};
+
+message FwdMsgHead
+{
+	required int32 type = 1;
+	required int32 cmd = 2;
+	required int32 src_id = 3;
+	repeated MsgTarget targets = 4;
+};
+
+//普通错误码
+message CProtoCmdNotifyErrorType
+{
+	required int32 errortype = 1;
+};
+
+//道具类型
+enum Prop_Type
+{
+	Prop_Type_NULL = 0;
+	Prop_Equip_Start = 1;
+	Prop_Type_Weapon = 1;//武器类型
+	Prop_Type_HeadWear = 2;//头盔
+	Prop_Type_Clothes = 3;//铠甲
+	Prop_Type_Bracelet = 4;//护手
+	Prop_Type_Shose = 5;//鞋子
+	Prop_Type_Necklace = 6;//项链
+	Prop_Type_Earring = 7;//耳环
+	Prop_Type_Ring = 8;//戒指
+	Prop_Type_Wing = 9;//翅膀
+	Prop_Type_Dress = 10;//时装
+	Prop_Equip_End = 11;//以上是装备
+	
+	
+	
+	Prop_Type_Quest = 30;//任务道具
+	Prop_Type_Stuff = 31;//
+	Prop_Type_Gem = 31;//
+};

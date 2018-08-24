@@ -50,6 +50,11 @@ ENDIF(UNIX)
 if( WIN32 )
   if ( MSVC )
     SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../Bin/)
+    add_custom_command(TARGET LogServer
+      POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../serivces.xml $(TargetDir)
+	  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/../serivces.xml ${PROJECT_BINARY_DIR}/LogServer
+    )
   endif()
 endif()
 

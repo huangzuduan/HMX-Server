@@ -1,10 +1,11 @@
 #ifndef _DP_SERVER_PROC_HANDLER_H_
 #define _DP_SERVER_PROC_HANDLER_H_
 
-#include "Single.h"
-#include "BaseProcHandler.h"
 
-class ProcDpHandler : public BaseProcHandler, public Single<ProcDpHandler>
+#include "SrvEngine.h"
+#include "Single.h"
+
+class ProcDpHandler : public Single<ProcDpHandler>
 {
 public:
 	ProcDpHandler();
@@ -16,7 +17,7 @@ public:
 	 *  @input	: 
 	 *  @return :	
 	 *-------------------------------------------*/
-	void RqGlobalInfo(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+	void RqGlobalInfo(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
 
 
 	/*--------------------------------------------
@@ -24,9 +25,9 @@ public:
 	 *  @input	: 
 	 *  @return :	
 	 *-------------------------------------------*/
-	void RtSelectRoleResult(zSession* pSession, const NetMsgSS* pMsg,int32 nSize);
+	void RtSelectRoleResult(zSession* pSession, const PbMsgWebSS* pMsg,int32_t nSize);
 
-	void NtLoadSortLists(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void NtLoadSortLists(zSession* pSession, const PbMsgWebSS* pMsg, int32_t nSize);
 
 };
 

@@ -1,0 +1,124 @@
+syntax = "proto2";
+package msg_maj;
+
+import "msg_role.proto";
+
+enum c_cmd_login {
+    login_weixin_req        = 1;
+    login_resp              = 2;
+    login_account_req       = 3;
+    prelogin_account_req    = 4;
+    prelogin_account_resp   = 5;
+    kictout_resp            = 6;
+    logout_req              = 7;
+    login_player_req        = 8;
+    login_player_resp       = 9;
+    sdk_token_req           = 10;
+    sdk_token_resp          = 11;
+    notify_another_login    = 12; //通知异地登陆
+	notify_dis_conntion		= 13; //断开连接
+    max = 20;
+}
+
+enum login_code {
+    SUCCESS = 1; // 成功
+    FAIL = 2; // 失败
+    ERR_ACCOUNT = 3; // 错误账号
+    TOKEN_TIMEOUT = 4; // token过期
+    TOKEN_ERROR = 5; // token错误
+    OTHER_LOGIN = 6; // 异地登陆
+    FORCE_KICTOUT = 7; // 强制踢下线
+    DATA_EXCEPTION = 8; // 数据异常
+	PLAT_JOSNSTR_ERROR = 9; // 平台json错误
+	PLAT_CHECK_FAIL	= 10;	// 平台检验失败
+	PLAT_ARG_NOTENOUGH = 11;// 平台失败缺少
+	MYSQL_ISNULL = 12;		// 数据库句柄为空
+	SQL_ERROR = 13;			// SQL出错 
+	PLAT_UNNKOWN = 14;		// 未知错误
+	SCENE_NOT_FOUND = 15;	// 场景找不到
+	WSUSER_IS_NULL	= 16;	// 世界用户为空
+	PROXY_ACCESS_NOT_LOGIN = 17; // 代码帐号不能登录
+	NOT_BING_SERVER  = 18; // 未绑定服务器器
+	PLAT_REQ_TIMEOUT = 19; // 平台超时
+	SERVER_IS_BREPAIRING = 20; // 服务器维护中
+}
+
+// 微信登录
+message LoginWeixinReq {
+    required string token = 2;
+}
+
+message LoginResp {
+    required login_code code    = 1; //错误码
+    optional string ip          = 2; //游戏服IP
+    optional uint32 port        = 3; //游戏服端口
+}
+
+// 账号登录
+message LoginAccountReq {
+    required string account = 1; // 账号
+    required string password = 2; // 密码
+}
+
+message KictoutResp {
+    required login_code code = 1;
+}
+
+// 预登陆（先不做）
+//message PreloginAccountReq {
+//}
+
+// 预登陆回复（先不做）
+/*message PreloginAccountResp {
+    required string salt = 1; // 盐
+    required int32 server_time = 2; // 服务器当前时间
+    required int32 nonce = 3; // number once
+}*/
+message LogoutReq {
+}
+
+// 玩家数据请求
+message LoginPlayerReq
+{
+    optional string account     = 1; //账号
+}
+
+// 角色数据回复
+message LoginPlayerResp
+{
+    required login_code code    = 1; //错误码
+    optional bool is_reconnect  = 2; //是否重连
+    optional Role role = 3; //角色数据
+	optional uint64 srv_time 	= 4; //服务器时间
+	optional bool is_free		= 5; //是否免房卡
+}
+
+// SDK token 请求
+message SDKTokenReq
+{
+    optional string token       = 1; //token值
+}
+
+// SDK token 回复
+message SDKTokenResp
+{
+    optional int32 result       = 1; //结果
+    optional string ip          = 2; //游戏服IP
+    optional uint32 port        = 3; //游戏服端口
+    optional string account     = 4; //账号
+    optional string icon_add    = 5; //头像地址
+}
+
+//通知异地登陆
+message NotifyAnotherLogin
+{
+    
+}
+
+// 玩家断开连接
+message NotifyPlayerExit
+{
+	
+}
+
+

@@ -7,18 +7,20 @@
  *
  * @Author:hzd 2012/04/03
  *------------------------------------------------------------------*/
-NetClient::NetClient(int32 RecivedSize,int32 SendoutSize,int32 RecivedCacheSize,int32 SendoutCacheSize)
+NetClient::NetClient()
+	:m_connected(false)
+	,m_onconnected(false)
 {
-	pSocket = new NetSocket(*this, RecivedSize, SendoutSize, RecivedCacheSize, SendoutCacheSize);
-	m_connected = m_onconnected = false;
+	static int32_t g_s_nClientID = 0; m_ID = ++g_s_nClientID;
+	m_pSocket = new NetSocket(*this);
 }
 
 NetClient::~NetClient(void)
 {
-	if (pSocket)
+	if (m_pSocket)
 	{ 
-		delete pSocket;
-		pSocket = NULL;
+		delete m_pSocket;
+		m_pSocket = NULL;
 	}
 }
 
@@ -34,7 +36,7 @@ void NetClient::HandleStart()
 {
 	// Use thread group can add code to connect more servers 
 	// here can SetConnect more socket connect
-	SetConnect(*pSocket);
+	SetConnect();
 
 	boost::thread_group tg;
 	tg.create_thread(boost::bind(&NetClient::Run, this));
@@ -43,36 +45,39 @@ void NetClient::HandleStart()
 
 }
 
-void NetClient::SetAddress(const char* ip, uint16 port)
+void NetClient::SetAddress(const char* ip, uint16_t port)
 {
 	boost::system::error_code ec;
 	m_serverAddr = tcp::endpoint(address::from_string(ip, ec), port);
 	assert(!ec);
 }
 
-void NetClient::SetConnect(NetSocket& rSocket)
+void NetClient::SetConnect()
 {
-	rSocket.async_connect(m_serverAddr, boost::bind(&NetClient::HandleConnect, this, boost::asio::placeholders::error, &rSocket));
+	this->Clear();
+	m_pSocket->async_connect(m_serverAddr, boost::bind(&NetClient::HandleConnect, this, boost::asio::placeholders::error, m_pSocket));
 }
 
 
-void NetClient::HandleConnect(const boost::system::error_code& error, NetSocket* pSocket)
+void NetClient::HandleConnect(const boost::system::error_code& error, NetSocket* _socket)
 {
 	if (error)
 	{
-		printf("[NOTE]:Connected Fail.................ok\n");
-		SetConnect(*pSocket);
-		printf("[NOTE]:SetConnect Again.................ok\n");
+		printf("[NOTE]:Connected Fail,SetConnect Again..................ok\n");
+#ifdef WIN32
+		Sleep(1000);
+#else
+		usleep(1000);
+#endif
+		SetConnect();
 	}
 	else
 	{
-		/* 设置连接成功 */ 
 		m_connected = true;
 		m_onconnected = false;
-		//printf("[NOTE]:Connected Success.................ok\n");
-		pSocket->Clear();
-		pSocket->Run();/* 绑定该线程读头消息，这个操作必须是该线程 */ 
-		//printf("[NOTE]:Socket io event start.................ok\n");
+		printf("[NOTE]:Connected Success.................ok\n");
+		m_pSocket->Clear();
+		m_pSocket->Run();
 	}
 }
 
@@ -109,7 +114,10 @@ void NetClient::Run()
 void NetClient::OnUpdate()
 {
 	OnUpdateConnected();
-	OnUpdateRecived();
+	if (m_onconnected && m_connected)
+	{
+		OnUpdateRecived();
+	}
 }
 
 void NetClient::OnUpdateConnected()
@@ -117,53 +125,64 @@ void NetClient::OnUpdateConnected()
 	if (!m_onconnected && m_connected)
 	{
 		m_onconnected = true;
-		(m_pOnMsgConnected)(*pSocket);
+		(m_pOnMsgConnected)(*m_pSocket);
 	}
 }
 
 void NetClient::OnUpdateRecived()
 {
-
-	/* Pre处理事件 */ 
-	if (pSocket->HadEventClose())
+	/* 处理关闭事件 */
+	if (m_pSocket->GetIsClose())
 	{
-		(m_pOnMsgDisconnect)(*pSocket);
-		pSocket->Disconnect();
+		if (!m_pSocket->GetIsCloseBegin())
+		{
+			m_pSocket->SetIsCloseBeing(true);
+			(m_pOnMsgDisconnect)(*m_pSocket);
+			m_pSocket->Disconnect();
+		}
+
+		if (m_pSocket->GetIsCloseFinish())
+		{
+			m_pSocket->SetLocalClose(false);
+#ifdef WIN32
+			Sleep(10);
+#else
+			usleep(10);
+#endif
+			SetConnect();
+		}
 		return;
 	}
 
-	static int32 nBodyLen = 0;
-	static NetMsgSS* pMsg = NULL;
-	int32 nMsgResult = pSocket->ReadMsg(&pMsg, nBodyLen);
-	switch (nMsgResult)
+	uint8_t* data = NULL;
+	int32_t len = m_pSocket->ReadDataMsg(&data);
+	if (len == -1)
 	{
-	case MSG_READ_INVALID:
+		m_pSocket->SetLocalClose(true);
+		return;
+	}
+	
+	if (len > 0)
 	{
-		pSocket->AddEventLocalClose();
+		(m_pOnMsgRecevied)(*m_pSocket, (NetMsgSS*)data, len);
+		m_pSocket->RemoveQueueHeader();
+		return;
 	}
-	break;
-	case MSG_READ_OK:
-	{
-		
-		(m_pOnMsgRecevied)(*pSocket, pMsg, nBodyLen);
-		pSocket->RemoveMsg(PACKAGE_HEADER_SIZE + nBodyLen);
-	}
-	break;
-	case MSG_READ_WAITTING:
-	case MSG_READ_REVCING:
-		break;
-	}
-
-	/* Afer检查定义事件 */ 
+	
 }
 
 NetSocket* NetClient::GetSocket()
 { 
-	return pSocket; 
+	return m_pSocket; 
 }
 
 void NetClient::Disconnect()
 {
-	pSocket->OnEventColse();
+	m_pSocket->OnEventColse();
+}
+
+void NetClient::Clear()
+{
+	m_connected = m_onconnected = false;
 }
 

@@ -1,50 +1,44 @@
 #ifndef __OFFLINE_USER_MGR_H_
 #define __OFFLINE_USER_MGR_H_
 
-#include "Includes.h"
+#include "SrvEngine.h"
 #include "OfflineUser.h"
+#include <boost/pool/object_pool.hpp>
 
-class OfflineUserMgr : protected zEntryMgr< zEntryID, zEntryName >
+class OfflineUserMgr : protected zEntryMgr< zEntryID<0>, zEntryName >
 {
 public:
 	OfflineUserMgr();
 	~OfflineUserMgr();
-	bool getUniqeID(QWORD& tempid);
-	void putUniqeID(const QWORD& tempid);
-	OfflineUser* CreateObj();
-	void DestroyObj(OfflineUser* user);
 
 	void loadDB();
 
-	bool addUser(OfflineUser *user)
-	{
-		return zEntryMgr::addEntry(user);
-	}
+	OfflineUser* addUser(const ::msg_maj::RoleOff& proto);
 
 	OfflineUser* getUserByName(const char * name)
 	{
-		return (OfflineUser *)zEntryMgr::getEntryByName(name);
+		return (OfflineUser *)zEntryMgr<  zEntryID<0>, zEntryName >::getEntryByName(name);
 	}
 
 	OfflineUser* getUserByID(QWORD id)
 	{
-		return (OfflineUser *)zEntryMgr::getEntryByID(id);
+		return (OfflineUser *)zEntryMgr<  zEntryID<0>, zEntryName >::getEntryByID(id);
 	}
 
 	void removeUser(OfflineUser *user)
 	{
-		zEntryMgr::removeEntry(user);
+		zEntryMgr<  zEntryID<0>, zEntryName >::removeEntry(user);
 	}
 
 	template <class YourUserEntry>
 	bool execEveryUser(execEntry<YourUserEntry> &exec)
 	{
-		return zEntryMgr::execEveryEntry<>(exec);
+		return zEntryMgr<  zEntryID<0>, zEntryName >::execEveryEntry<>(exec);
 	}
 
 private:
 
-	zObjPool<OfflineUser> objpool;
+	boost::object_pool<OfflineUser> objpool;
 	
 };
 

@@ -1,0 +1,196 @@
+syntax = "proto2";
+
+package msg_maj;
+
+import "msg_maj.proto";
+import "msg_room.proto";
+
+enum c_cmd_hist {
+    history_list_req    = 1; // 历史记录请求
+    history_list_resp   = 2; // 历史记录回复
+    replay_req          = 3; // 回放请求
+    replay_resp         = 4; // 回放回复
+	history_room_req	= 5; // 查看某房间内的所有局请求
+	history_room_resp	= 6; // 查看某房间内的所有局回复
+	history_inn_req		= 7; // 查看某局的结果请求
+	history_inn_resp 	= 8; // 查看某局的结果回复
+}
+
+enum req_type
+{
+	room_list = 1; // 当前房间内的战绩查询
+	total_list =2; // 主界面面战绩查询
+}
+
+message HistoryListReq 
+{
+    required req_type type = 1;	// 查询类型
+    required uint64 start_index  = 2; // 记录开始序号, 用于大量数据时提高性能，从该ID后开始返回
+}
+
+message HistoryListResp {
+	required req_type type = 1;	// 查询类型
+    repeated HistoryRecord record_list   = 2;
+}
+
+message HistoryRoomReq 
+{
+    required req_type type = 1;	// 查询类型
+	required uint64 record_id  = 2; // 记录id
+}
+
+// 房间内所有局数的数据
+message HistoryRoomResp 
+{
+	required req_type type 					= 1; // 查询类型
+    required uint64 record_id             	= 2; // 记录ID
+	required uint32 room_id             	= 3; // 房间ID
+    required RoomOption option 	= 4; // option
+    repeated InnRecord inn_list         	= 5; // 单局游戏数据(InnRecord里面GameResultSeat中的seat和total_score有数据)
+	repeated SeatTotalScore score_list  	= 6; // 番数列表
+}
+
+//  查看某局的结果请求
+message HistoryInnReq
+{
+    required uint64 record_id = 1;  // 记录ID
+    required uint32 inn_id = 2; 	// 局数ID
+}
+
+// 查看某局的结果回复
+message HistoryInnResp
+{
+    required uint64 record_id             	= 2; // 记录ID
+	required uint32 room_id             	= 3; // 房间ID
+    required RoomOption option 	= 4; // option
+    required InnRecord 	inn		        	= 5; // 单局游戏数据
+	repeated SeatTotalScore score_list  	= 6; // 番数列表
+}
+
+// 回放请求
+message ReplayReq {
+    required uint64 record_id = 1;  // 记录ID
+    required uint32 inn_id = 2; 	// 局数ID
+}
+
+// 回放事件
+message ReplayResp {
+    // # 通用信息
+    required RoomInfo room_info 		= 1; // 房间信息
+    repeated RoleInfo user_info_list 	= 2; // 用户基本信息
+
+    // # 游戏信息
+    required uint32 banker_seat         		= 3; // 庄家座位号
+    required uint32 dice                		= 4; // 骰子
+    repeated SeatInfo seat_list 		= 5; // 初始手牌
+    repeated ReplayAction action_list   		= 6; // 操作序列
+}
+
+/////////////////////////////////////  子数据结构[客户端]  ////////////////////////////////////
+
+// 单条历史记录（对应整场游戏）
+message HistoryRecord {
+    required uint64 record_id             	= 1; // 记录ID
+	required uint32 room_id             	= 2; // 房间ID
+    required RoomOption option 	= 3; // option
+    required uint64 time                 	= 4; // 游戏时间的unix毫秒表示(UTC时间）
+    repeated SeatTotalScore score_list  	= 5; // 番数列表
+}
+
+// 每个位置的总输赢
+message SeatTotalScore {
+    required uint32 seat_id 	= 1; // 座位号
+    required int32 score    	= 2; // 番数
+    required string nickname 	= 3; // 昵称
+	optional string actor_addr	= 4; // 头像地址
+}
+
+// 一小局游戏
+message InnRecord {
+    required uint32 inn_id = 1; // 局数ID
+    repeated GameResultSeat seat_result = 2; // 座位数据
+	required uint32 banker_seat = 3; // 庄家座位号
+	required uint32 dice      	= 4; // 骰子
+	optional uint32 close_type  = 5; // 解散类型 0正常,1手动解散,2超时解散,3无人解散
+}
+
+// 回放操作
+message ReplayAction {
+    required event_type event   = 1; // 事件
+    required uint32 actor_seat          = 2; // 发起动作的人
+    optional int32 victim_seat          = 3;  // 被操作者，无时-1
+    optional HuInfo hu_info     = 4; // 胡牌信息
+    repeated uint32 event_tile_list     = 5; // 事件牌列表, 比如碰就有三个牌
+	optional int32 desk_tile_count      = 6; // 剩余牌的数量，当出牌事件时才有效
+}
+
+/////////////////////////////////////////// 子数据结构[服务端] //////////////////////////////////
+
+message HistoryRecordS
+{
+    required uint64 record_id           = 1; // 记录ID
+	optional uint32 room_id             = 2; // 房间ID
+    optional RoomInfo room_info 		= 3; // 房间信息
+	optional RoleInfoListS role_info	= 4; // 选手信息
+    optional uint64 time             	= 5; // 游戏时间的unix毫秒表示(UTC时间）
+    optional InnRecordListS innrecord 	= 6; // 单局游戏数据
+    optional SeatTotalS seat_total		= 7; // 番数列表
+	optional InnReplayActionListS inn_replay = 8; // 回放列表
+}
+
+message RoleInfoListS
+{
+	repeated RoleInfoS role_list = 1; // 角色列表
+}
+
+message RoleInfoS
+{
+	required uint32 seat = 1;
+	required uint64 uid = 2;
+	required string nick = 3;
+	optional string actor_addr  = 4; // 头像地址
+}
+
+message InnRecordListS
+{
+	repeated InnRecordS inn_list        = 1; // 单局游戏数据
+}
+
+message InnReplayActionListS
+{
+	repeated InnReplayActionS replay_list = 1;
+}
+
+// 一小局游戏
+message InnRecordS 
+{
+    required int32 inn_id 	= 1; // 局数ID
+	required uint32 banker_seat	= 2; // 庄家座位号
+    required uint32 dice      	= 3; // 骰子
+	repeated SeatInfo seat_info = 4; // 初始手牌情况
+    repeated GameResultSeat seat_result = 5; // 座位数据
+	optional int32 close_type = 6; // 解散类型 0正常,1手动解散,2超时解散,3无人解散
+}
+
+//一小局回放
+message InnReplayActionS
+{
+	required int32 inn_id 	= 1; // 局数ID
+	repeated ReplayAction replay_list	= 2; // 出牌记录
+}
+
+message SeatTotalS
+{
+	repeated SeatTotalScoreS score_list = 1; // 番数列表
+}
+
+// 每个位置的总输赢
+message SeatTotalScoreS 
+{
+    required uint32 seat_id 	= 1; // 座位号
+    required int32 score    	= 2; // 番数
+}
+
+
+
+

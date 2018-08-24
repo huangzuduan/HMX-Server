@@ -8,4 +8,4 @@
 # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-option(USE_COREPCH      "Use precompiled headers when compiling servers"              1)
+option(USE_COREPCH      "Use precompiled headers when compiling servers"              0)

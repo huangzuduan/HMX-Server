@@ -1,6 +1,6 @@
 ########### DBServer ###############
 
-file(GLOB_RECURSE Client_SRCS *.h *.cpp *.cc)
+file(GLOB_RECURSE SRCS_1 *.h *.cpp)
 
 # precompiled header
 if (USE_COREPCH)
@@ -8,36 +8,35 @@ if (USE_COREPCH)
   set(Client_PCH_SRC Client_PCH.cpp)
 endif ()
 
-include_directories(
+include_directories( 
     ${MYSQL_INCLUDE_DIR}
     ${BOOST_INCLUDE_DIR}
-	${PROTOBUL_INCLUDE_DIR}
 	${ICONV_INCLUDE_DIR}
 	${LIBXML_INCLUDE_DIR}
 	${OPENSSL_INCLUDE_DIR}
-    ${CMAKE_SOURCE_DIR}/Include	
-	${CMAKE_SOURCE_DIR}/LibSrvcore
-	${CMAKE_SOURCE_DIR}/LibProtocol
-	${CMAKE_SOURCE_DIR}/LibNetMysql
+	${NET_INCLUDE_DIR}
+	${PROTOBUL_INCLUDE_DIR}
+	${FOUNDATION_INCLUDE_DIR}
+	${CMAKE_SOURCE_DIR}/Common
+	${CMAKE_SOURCE_DIR}/Protocol
 	${CMAKE_SOURCE_DIR}/LibNetSocket
 )
 
 add_executable(Client
-    ${Client_SRCS}
+    ${SRCS_1}
 )
 
 target_link_libraries(Client
-	LIBMysql
 	LIBSocket
-	LibSrvcore
-	LibProtocol
+	LIBProto
+	LIBCommon
     ${MYSQL_LIBRARIES}
     ${BOOST_LIBRARIES}
-	${LIB_PROTOBUF_DEBUG}
-	${LIB_ICONV_DEBUG}
-	${LIB_LIBXML_DEBUG}
-	${LIB_LIBEAY32_DEBUG}
-	${LIB_SSLEAY32_DEBUG}
+	${THIRD_LIBRARIES}
+	${ICONV_LIBRARIES}
+	${LIBXML_LIBRARIES}
+	${OPENSSL_LIBRARIES}
+	${PROTOBUF_LIBRARIES}
 )
 
 IF(UNIX)
@@ -58,7 +57,6 @@ ENDIF(UNIX)
 if( WIN32 )
   if ( MSVC )
     SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/../Bin/)
-
     add_custom_command(TARGET Client
       POST_BUILD
       COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/c_cfg.xml $(TargetDir)
@@ -71,3 +69,4 @@ endif()
 if (USE_COREPCH)
         add_cxx_pch(Client ${Client_PCH_HDR} ${Client_PCH_SRC})
 endif ()
+

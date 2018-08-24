@@ -26,7 +26,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	void InitBuffer(int32 nMax);
+	void InitBuffer(int32_t nMax);
 
 	/*
 	 *
@@ -44,7 +44,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	bool Write(char* c, int32 nLen);
+	bool Write(char* c, int32_t nLen);
 
 	/*
 	 *
@@ -53,7 +53,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	void Read(void** b, int32 nLen);
+	void Read(void** b, int32_t nLen);
 
 	/*
 	 *
@@ -62,7 +62,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	int32 ReadRemove(void* pMsg, int32 nLen);
+	int32_t ReadRemove(void* pMsg, int32_t nLen);
 
 	/*
 	 *
@@ -71,7 +71,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	void RemoveBuffer(int32 nLen);
+	void RemoveBuffer(int32_t nLen);
 
 	/*
 	 *
@@ -80,7 +80,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	int32 GetLen();
+	int32_t GetLen();
 
 	/*
 	 *
@@ -89,7 +89,7 @@ public:
 	 *  Created by hzd 2015/05/31  
 	 *
 	 */
-	int32 GetSpace();
+	int32_t GetSpace();
 
 	/*
 	 *
@@ -139,11 +139,10 @@ public:
 protected:
 
 	boost::mutex m_cMutex;		// 读/写锁 
-	int32 m_nBegin;       // 下一次读/写的位置 
-	int32 m_nLen;			// 已经接收数据长度(可能有多个包)  
+	int32_t m_nBegin;       // 下一次读/写的位置 
+	int32_t m_nLen;			// 已经接收数据长度(可能有多个包)  
 	char* m_pBuffer;		// 字段容器  
-	char* m_pBuffer2;		// 字段容器2 
-	int32 m_nMax;         // 最大字段长度  
+	int32_t m_nMax;         // 最大字段长度  
 
 };
 

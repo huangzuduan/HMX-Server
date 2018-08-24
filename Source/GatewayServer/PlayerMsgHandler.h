@@ -1,9 +1,9 @@
 #ifndef CLIENT_MSG_HANDLER_H_
 #define CLIENT_MSG_HANDLER_H_
 
-#include "Single.h"
+
 #include "SrvEngine.h"
-#include "BaseDefine.h"
+#include "Single.h"
 
 class NetSocket;
 struct NetMsgSS;
@@ -70,40 +70,40 @@ public:
 	virtual void OnNetMsgEnter(NetSocket& rSocket);
 
 	// 有客户端消息收到 
-	virtual void OnNetMsg(NetSocket& rSocket, NetMsgSS* pMsg,int32 nSize);
+	virtual void OnNetMsg(NetSocket& rSocket, NetMsgSS* pMsg,int32_t nSize);
 
 	// 有客户端断开回调(此时socket已经回收)  
 	virtual void OnNetMsgExit(NetSocket& rSocket);
 
 	// 发送到 ls
-	void ReqSendToLoginServer(zSession* pSession,const NetMsgSS* pMsg,int32 nSize);
+	void ReqSendToLoginServer(zSession* pSession,const NetMsgSS* pMsg,int32_t nSize);
 
 	// 发送到 ss
-	void ReqSendToSceneServer(zSession* pSession,const NetMsgSS* pMsg,int32 nSize);
+	void ReqSendToSceneServer(zSession* pSession,const NetMsgSS* pMsg,int32_t nSize);
 
 	// 发送到 ws
-	void ReqSendToWorldServer(zSession* pSession,const NetMsgSS* pMsg,int32 nSize);
+	void ReqSendToWorldServer(zSession* pSession,const NetMsgSS* pMsg,int32_t nSize);
 
 	// 发送到 player 
-	void SendToPlayer(zSession* pSession, const NetMsgSS* pMsg, int32 nSize);
+	void SendToPlayer(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize);
 
 	//-----------------------------本地处理协议---------------------------------
 	// fep
-	void ReqFepEncyptHandler(zSession* pSession,const NetMsgSS* pMsg,int32 nSize);
+	void ReqFepEncyptHandler(zSession* pSession,const NetMsgSS* pMsg,int32_t nSize);
 
 	//////////////////////////////////////////////////////////////////////////
 	virtual bool ForWsOnExit(NetSocket& rSocket) { return true; };
-	virtual bool ForClientToServerOnMsgEnter(NetSocket& rSocket, int32 nLocalServerType) { return true; };
-	virtual bool ForServerOnMsgEnter(NetSocket& rSocket, int32 nServerType) { return true; };
+	virtual bool ForClientToServerOnMsgEnter(NetSocket& rSocket, int32_t nLocalServerType) { return true; };
+	virtual bool ForServerOnMsgEnter(NetSocket& rSocket, int32_t nServerType) { return true; };
 	virtual bool ForServerOnMsgExit(NetSocket& rSocket) { return true; };
 	virtual bool ForServerOnLogin(zSession* pSession, const NetMsgSS* pMsg) { return true; };
 	virtual bool ForServerTimeOutCancel(zSession* pSession) { return true; };
-	virtual bool ForWsUpdateClientToFepDp(zSession* pSession, const NetMsgSS* pMsg, int32 nOnServerType) { return true; };
+	virtual bool ForWsUpdateClientToFepDp(zSession* pSession, const NetMsgSS* pMsg, int32_t nOnServerType) { return true; };
 
-	virtual bool ForWsOnMsgEnter(NetSocket& rSocket, int32 nLocalServerType) { return true; };
-	virtual bool ForWsOnMsg(zMsgHandler& baseMsgHandler, NetSocket& rSocket, NetMsgSS* pMsg, int32 nSize) { return true; };
-	virtual bool ForWsUpdateClientToLsSs(zSession* pSession, const NetMsgSS* pMsg, int32 nOnServerType) { return true; };
-	virtual bool ForServerOnMsg(zMsgHandler& baseMsgHandler, NetSocket& rSocket, NetMsgSS* pMsg, int32 nSize) { return true; };
+	virtual bool ForWsOnMsgEnter(NetSocket& rSocket, int32_t nLocalServerType) { return true; };
+	virtual bool ForWsOnMsg(zMsgHandler& baseMsgHandler, NetSocket& rSocket, NetMsgSS* pMsg, int32_t nSize) { return true; };
+	virtual bool ForWsUpdateClientToLsSs(zSession* pSession, const NetMsgSS* pMsg, int32_t nOnServerType) { return true; };
+	virtual bool ForServerOnMsg(zMsgHandler& baseMsgHandler, NetSocket& rSocket, NetMsgSS* pMsg, int32_t nSize) { return true; };
 
 };
 
@@ -116,8 +116,8 @@ public:
 {\
 	vecMsgBuffer.resize(nSize); \
 	memcpy(&vecMsgBuffer[0], pMsg, nSize); \
-	reinterpret_cast<NetMsgSS*>(&vecMsgBuffer[0])->sessid = _sessid; \
-	reinterpret_cast<NetMsgSS*>(&vecMsgBuffer[0])->fepsid = _fepsid; \
+	reinterpret_cast<NetMsgSS*>(&vecMsgBuffer[0])->clientSessID = _sessid; \
+	reinterpret_cast<NetMsgSS*>(&vecMsgBuffer[0])->fepServerID = _fepsid; \
 }\
 
 

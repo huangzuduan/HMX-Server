@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	需要获得已经连接了WS的服务器列表
+	fun:为谁服务器
+-->
+
+<Serivces>
+	<!--测试客户端-->
+	<Server id="1" name="player">
+		<Serivce id="1" name="client" fun="forfep" ip="127.0.0.1" port="9000"/>
+	</Server>
+	<!--网关服-->
+	<Server id="1001" name="gatewayserver" broadcastlist="1">
+		<Serivce id="1" name="server" fun="forss" ip="127.0.0.1" port="9901" maxConnects="10"/>	
+		<Serivce id="2" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>
+		<Serivce id="3" name="server" fun="foruser" ip="127.0.0.1" port="9000" maxConnects="100"/>
+		<Serivce id="4" name="webserver" fun="foruser" ip="127.0.0.1" port="9001" maxConnects="100"/>
+	</Server>
+	<Server id="1002" name="gatewayserver" broadcastlist="1">
+		<Serivce id="1" name="server" fun="forss" ip="127.0.0.1" port="9902" maxConnects="10"/>
+		<Serivce id="2" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>
+		<Serivce id="3" name="server" fun="foruser" ip="127.0.0.1" port="9001" maxConnects="100"/>
+	</Server>
+	<!--登录服-->
+	<Server id="2001" name="loginserver" recvsrvlist="1" platUrl="http://127.0.0.1:8080/AgentServer/gameLogin">
+		<Serivce id="1" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_config"/>
+		<Serivce id="2" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_data"/>
+		<Serivce id="3" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_log"/>	
+		<Serivce id="4" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>	
+		<Serivce id="5" name="webserver" fun="foruser" ip="127.0.0.1" port="9201" maxConnects="100"/>
+	</Server>
+	<!--世界服-->
+	<Server id="3001" name="worldserver" platUrl="http://127.0.0.1:8080/AgentServer/gameLogin">
+		<Serivce id="1" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_config"/>
+		<Serivce id="2" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_data"/>
+		<Serivce id="3" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_log"/>	
+		<Serivce id="4" name="server" fun="forss" ip="127.0.0.1" port="9903" maxConnects="10"/>
+	</Server>
+	<!--场景服,广西区-->
+	<Server id="4000" name="sceneserver" recvsrvlist="1">
+		<Serivce id="1" name="client" fun="forss" remoteid="3001" ip="127.0.0.1" port="9903"/>
+	</Server>
+	<!--场景服,南宁区-->
+	<Server id="4001" name="sceneserver" recvsrvlist="1">
+		<Serivce id="1" name="client" fun="forss" remoteid="3001" ip="127.0.0.1" port="9903"/>
+	</Server>
+	<!--场景服,柳州区-->
+	<Server id="4002" name="sceneserver" recvsrvlist="1">
+		<Serivce id="1" name="client" fun="forss" remoteid="3001" ip="127.0.0.1" port="9903"/>
+	</Server>
+	<!--数据处理服-->
+	<Server id="5001" name="dbserver" broadcastlist="1">
+		<Serivce id="1" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_config"/>
+		<Serivce id="2" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_data"/>
+		<Serivce id="3" name="mysqld" fun="fordb" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_log"/>		
+		<Serivce id="4" name="server" fun="forss" ip="127.0.0.1" port="9905" maxConnects="10"/>
+		<Serivce id="5" name="client" fun="forws" remoteid="3001" ip="127.0.0.1" port="9903"/>
+	</Server>
+	<!--中心服-->
+	<Server id="6001" name="paycenterserver">
+		<Serivce id="1" name="mysqld" ip="127.0.0.1" port="3306" user="root" passwd="123456" value="hmx_paycenter"/>
+	</Server>
+</Serivces>

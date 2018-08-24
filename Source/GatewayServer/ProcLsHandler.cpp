@@ -1,4 +1,3 @@
-#include "GatewayServer_PCH.h"
 #include "ProcLsHandler.h"
 
 
@@ -11,7 +10,7 @@ ProcLsHandler::~ProcLsHandler()
 {
 }
 
-void ProcLsHandler::RqLoadList(zSession* pSession, const NetMsgSS* pMsg, int32 nSize)
+void ProcLsHandler::RqLoadList(zSession* pSession, const NetMsgSS* pMsg, int32_t nSize)
 {
 
 }

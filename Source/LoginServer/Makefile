@@ -1,2 +1,2 @@
 include ../Makefile.in
-PROG = ../../Bin/Debug/LoginServerD 
+PROG = ../Bin/LoginServerD 

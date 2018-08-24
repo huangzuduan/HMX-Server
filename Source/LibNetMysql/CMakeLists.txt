@@ -6,10 +6,8 @@ file(GLOB_RECURSE sources_DyNetMysql_CPP *.cpp)
 #ADD_DEFINITIONS("-DLIB_MYSQL_API")
 
 include_directories(
-
   ${BOOST_INCLUDE_DIR}
   ${MYSQL_INCLUDE_DIR}
-  
 )
 
 set(DyNetMysql_SRCS
@@ -21,12 +19,6 @@ set(DyNetMysql_SRCS
 add_library(LIBMysql STATIC 
 
   ${DyNetMysql_SRCS}
-)
-
-
-target_link_libraries(LIBMysql
-    ${MYSQL_LIBRARIES}
-    ${BOOST_LIBRARIES}
 )
 
 if( WIN32 )

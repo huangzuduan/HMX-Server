@@ -1,9 +1,10 @@
-#ifndef __SCENES_SERVICE_H_
-#define __SCENES_SERVICE_H_
+#ifndef __GAME_SERVICE_H_
+#define __GAME_SERVICE_H_
 
-#include "SrvEngine.h"
-#include "DbMysql.h"
-#include "AccountMgr.h"
+#include "SrvIncludes.h"
+#include "DBConnection.h"
+
+class AccountWxMgr;
 
 class GameService : public zNetSerivce, public Single<GameService>
 {
@@ -15,65 +16,36 @@ protected:
 	virtual bool run();
 	virtual void finaly();
 
+	virtual bool doBindServer(const ::config::SerivceInfo& info);
+	virtual bool doWebServer(const ::config::SerivceInfo& info);
+	virtual bool doConnectServer(const ::config::SerivceInfo& info);
+	virtual boost::asio::io_service* GetIoService();
+
 	void netioUpdate(const zTaskTimer* timer);
-	void timerTickUpdate(const zTaskTimer* timer);
-
-	void pingToServer();
-
+	
+	
 public:
 
-	int32 getServerID()
-	{
-		return serverID;
-	}
+	inline AccountWxMgr* getAccountMgr() { return mAccountMgr; }
+	inline zSessionMgr* PlayerSessMgr() const { return mPlayerSessMgr; }
+	inline void SetIsBrepairing(bool status) { mIsBrepairing = status; };
+	inline bool GetIsBrepairing() const { return mIsBrepairing; }
 
-	int32 getServerType()
-	{
-		return serverType;
-	}
-
-	DbMysql* getDbMysql()
-	{
-		return dbCoon;
-	}
-
-	zSessionMgr& getSessionMgr()
-	{
-		return sessionMgr;
-	}
-
-	zSerivceCfgMgr& getServerCfgMgr()
-	{
-		return serverCfgMgr;
-	}
-
-	zServerRegMgr& getServerRegMgr()
-	{
-		return serverRegMgr;
-	}
-
-	AccountMgr& getAccountMgr()
-	{
-		return accountMgr;
-	}
+	void SendToWs(uint16_t cmd, uint16_t cmdType, const ::google::protobuf::Message& proto);
+	void SendToWs(uint16_t cmd, uint16_t cmdType, uint64_t clientSessID, uint32_t fepServerID, const ::google::protobuf::Message& proto);
+	void SendToDp(uint16_t cmd, uint16_t cmdType, const ::google::protobuf::Message& proto);
+	void SendToDp(uint16_t cmd, uint16_t cmdType, uint64_t clientSessID, uint32_t fepServerID, const ::google::protobuf::Message& proto);
 
 private:
 
-	int32 serverID;
-	int32 serverType;
+	zSessionMgr* mPlayerSessMgr;
 
-	DbMysql* dbCoon;
-	zSessionMgr sessionMgr;
-	zSerivceCfgMgr serverCfgMgr;
-	zServerRegMgr serverRegMgr;
+	CWebServer*	m_pWebServer;
+	AccountWxMgr*	mAccountMgr;
 
-	AccountMgr accountMgr;
-
-	zTaskTimer* netioTaskTimer;
-	zTaskTimer*	timeTickTaskTimer;
-
+	bool			mIsBrepairing;
+	
 };
-
 
 
 #endif
